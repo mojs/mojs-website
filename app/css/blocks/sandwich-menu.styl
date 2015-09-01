@@ -1,0 +1,36 @@
+menuHeight = 55
+{el = '.sandwich-menu'}
+  position          absolute
+  right             0
+  top               0
+  width             6.5*gs
+  height            menuHeight*PX
+  cursor            pointer
+  &.is-open
+    {el}__bg
+      opacity       1
+    {el}__line
+      transform     rotate(45deg)
+  lineWidth  = 25
+  lineHeight = 2
+  lineShift  = 3.5
+  &__line
+    position        absolute
+    width           lineWidth*PX
+    height          lineHeight*PX
+    background      c-orange
+    left            50%
+    margin-left    -(lineWidth/2)*PX
+    margin-top     -(lineHeight/2)*PX
+    border-radius   4*PX
+    transition      all .3s ease-out
+    &--top
+      top       ((menuHeight/2) - lineShift)*PX
+    &--bottom
+      top       ((menuHeight/2) + lineShift)*PX
+  &__bg
+    background  c-white-semi
+    opacity     0
+    transition  all .3s ease-out
+    transform   translateZ(0)
+    rect        100%

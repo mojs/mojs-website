@@ -1,0 +1,58 @@
+@import '~imports.styl'
+@import './mole-scene.styl'
+
+.mole-hand
+  width             49*PX
+  height            129*PX
+  background        url('./i/mole-hand.svg') no-repeat center center
+  border-radius     BRADIUS
+  position          absolute
+  nw                50%
+  margin-left      -25*PX 
+  margin-top       -40*PX
+  transform-origin  center 2*gs
+  &--squash
+    margin-top      -70*PX
+
+size = 4
+.path-easing-rectangle
+  rect          size*gs
+  background    c-purple
+  position      absolute
+  top           4*gs
+  left          50%
+  margin-left  -(size/2)*gs
+  border-radius BRADIUS
+  
+  &--quake
+    top         50%
+    margin-top -(size/2)*gs
+    
+  &--eased-quake
+    top         2*gs
+    
+.mole-skew-sample
+  transform     scale(.75)
+  
+
+.mole-tongue-example
+  width         100*PX
+  height        60*PX
+  border-radius BRADIUS 
+  // border-radius 50%
+  border        2*PX solid white
+  position      absolute
+  nw            50%
+  margin-left  -50*PX 
+  margin-top   -30*PX 
+  overflow      hidden
+  &__tongue
+    rect 100%
+    border-radius BRADIUS
+    position    absolute
+    nw          0
+    margin-left -100*PX 
+    svg
+      rect 100%
+
+

@@ -1,0 +1,177 @@
+@import '../imports'
+@import '../blocks/feature'
+@import '../blocks/motion-lettering'
+@import '../blocks/code-block'
+@import '../blocks/motion-demo'
+
+{el = '.main-page'}
+  // position relative
+  // background  #3A0839 url('../i/pattern.png') repeat
+  &__content
+    max-width 70*gs
+    fly()
+    +mobile()
+      padding 0 2*gs
+      overflow-x hidden
+  .motion-lettering
+    margin-top    16*gs
+    margin-bottom 2*gs
+    fly()
+    +desktop()
+      margin-top    12*gs
+      margin-bottom 0*gs
+    +tablet()
+      margin-top    8*gs
+    +mobile()
+      margin-top    4.5*gs
+      margin-bottom 3.5*gs
+  +mobile()
+    .code-block
+      &__body
+        padding         1.5*gs 1.5*gs
+  &__quick-start
+    margin-top          3*gs
+    padding-top         gs
+    padding-bottom      4*gs
+    +mobile()
+      border-bottom       PX solid c-white-transparent
+      .code-block
+        &__body
+          font-size     9*PX
+        &__footer
+          line-height   1.9
+          width         80%
+          font-size     11*PX
+  &__quick-start-normal
+    +mobile()
+      display     none
+  &__quick-start-mobile
+    display       none
+    +mobile()
+      display     block
+  &__buttons
+    margin-top    9*gs
+    fly()
+    .button
+      display     block
+      width       100%
+    +mobile()
+      margin-top -1.5*gs
+    .grid-bit
+      +mobile()
+        width     100%
+        max-width 24*gs
+        float     none
+        fly()
+  .button
+    +mobile()
+      margin-top  3*gs
+      font-size   14*PX
+      
+  .motion-demo
+    padding-top   7*gs
+    position      relative
+    +mobile()
+      padding-top 4*gs
+  {social = '.social-networks-about'}
+    margin-top        13.5*gs
+    fly()
+    +mobile()
+      margin-top      7.5*gs
+      {social}__text
+        margin-top    -1*gs
+  .api-demo
+    z-index           1
+      
+  feature       = '.feature'
+  featureMargin = 2
+  &__features-row
+    padding-top           6*gs
+    padding-bottom        6*gs
+    +mobile()
+      padding-top         0
+      padding-bottom      0
+      {feature}
+        width             100%
+        text-align        left
+        max-width         32*gs
+        height            10*gs
+        fly()
+        &__header
+          font-size       14*PX
+          margin-bottom   1.5*gs
+          letter-spacing  1.3*PX
+        &__text
+          font-size       10*PX
+          letter-spacing  .8*PX
+          line-height     1.6
+        &__image
+          position relative
+        &__header
+          margin-top    0
+        &--fast
+          {feature}__image
+            top           gs
+        &--retina
+          {feature}__image
+            top           .5*gs
+            left          -.5*gs
+        &--simple
+          {feature}__text,
+          {feature}__header
+            margin-left   12*gs
+          {feature}__image
+            margin-left   1.5*gs
+            top           .5*gs
+        &--modular
+          {feature}__text,
+          {feature}__header
+            width    55%
+          {feature}__image
+            top      gs
+            // left   - gs
+        &--robust
+          {feature}__image
+            margin-left   -4*gs
+            top           gs
+            left          2*gs
+        &--open-sourced
+          {feature}__text,
+          {feature}__header
+            width    55%
+          {feature}__image
+            top      .5*gs
+            left    -1*gs
+      .grid-bit
+        width             100%
+        margin-bottom     2*gs
+        float             none
+        clearfix()
+      &--1
+        .grid-bit
+          &:nth-of-type(odd)
+            {feature}__image
+              float         left
+              margin-right  featureMargin*gs
+          &:nth-of-type(even)
+            {feature}__image
+              float         right
+              margin-left   featureMargin*gs
+      &--2
+        border-bottom       PX solid c-white-transparent
+        padding-bottom      .5*gs
+        .grid-bit
+          &:nth-of-type(even)
+            {feature}__image
+              float         left
+              margin-right  featureMargin*gs
+          &:nth-of-type(odd)
+            {feature}__image
+              float         right
+              margin-left   featureMargin*gs
+            
+
+
+
+
+          

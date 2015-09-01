@@ -1,0 +1,31 @@
+@import '../imports.styl'
+
+{el = '.orx-line'}
+  position      relative
+  width         100%
+  &:after,
+  &:before
+    content     ''
+    position    absolute
+    height      PX
+    background  c-orange
+    left        8*gs
+    right       0
+    top         .7*gs
+    opacity     .5
+  &:after
+    display     none
+  &--center
+    {el}__shapes
+      fly()
+    shift = 5
+    &:before
+      left          50%
+      right         0
+      margin-left   shift*gs
+    &:after
+      left          0
+      right         50%
+      margin-right  shift*gs
+      display       block
+      

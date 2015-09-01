@@ -1,0 +1,127 @@
+@import '../imports'
+@import '../blocks/motion-lettering'
+
+sidebarWidth = 21
+{el = '.tutorials-page'}
+  // height        200*gs
+  padding-top     18.5*gs
+  padding-bottom  14*gs
+  @media all and (max-width: 900px)
+    padding-left  4*gs
+    padding-right 4*gs
+  +mobile()
+    padding-left  2*gs
+    padding-right 2*gs
+    padding-top   9*gs
+    padding-bottom 5*gs
+  &.is-sidebar-open
+    .react-sticky
+      left          2%
+      @media all and (max-width: 1300px)
+        left        1%
+      @media all and (max-width: 1200px)
+        left        0
+    {el}__sidebar
+      &:before
+        opacity   1
+    {el}__expand-btn
+      &:before
+        opacity 1
+    {el}__svg-arrow
+      transform   rotateY(180deg) translate3d(1*PX, 0, 0)
+    {el}__content
+      margin-left   sidebarWidth*gs
+      @media all and (max-width: 1080px)
+        margin-left 0
+  &__content
+    position        relative
+    transition      margin .3s ease-out
+  &__sidebar-scroll
+    height          100%
+    overflow-y      auto
+    position        absolute
+    top             0
+    left            0
+    padding-bottom  4*gs
+    padding-left    3.5*gs
+  &__sidebar
+    width         sidebarWidth*gs
+    position      absolute
+    left          0
+    height        100%
+    z-index       headerLayer + 1
+    // padding-bottom 4*gs
+    @media all and (max-width: 1120px)
+      left            0
+      padding-left    3.5*gs
+      background      rgba(c-purple, .95)
+      padding-top     5*gs
+      padding-bottom  5*gs
+      transform       translateX(-100%)
+      &:before
+        content       ''
+        position      absolute
+        top           4*gs
+        right       - gs
+        height        100%
+        width         gs
+        opacity       0
+        transition    opacity .3s ease-out
+        background    rgba(0,0,0,.2)
+      &:after
+        content       ''
+        width         100%
+        height        4*gs
+        background    inherit
+        position      absolute
+        left          0
+        bottom       -4*gs
+        // hl()
+  &__expand-btn
+    position        absolute
+    top             2.5*gs
+    right          -4*gs
+    z-index         1
+    cursor          pointer
+    transform       translateZ(0)
+    // display         none
+    circle          4*gs
+    &:before,
+    &:after
+      content       ''
+      position      absolute
+      height        100%
+      width         60%
+      border-top-right-radius    2*gs
+      border-bottom-right-radius 2*gs
+    &:after
+      background    c-orange
+    &:before
+      background    rgba(0,0,0,.2)
+      left          .8*gs
+      top           .5*gs
+      opacity       0
+    &:active
+      &:after,
+      {el}__svg-arrow
+        transform   translate3d(2*PX, 2*PX, 0)
+      &:before
+        transform   translate3d(-2*PX, -2*PX, 0)
+    // @media all and (max-width: 1120px)
+    //   display     block
+  .react-sticky
+    position        absolute
+    min-height      100%
+  .sticky
+    bottom          0
+    z-index         21
+    right auto !important
+  .tutorials-sidebar
+    fly()
+  &__svg-arrow
+    position        absolute
+    z-index         2
+  .post
+    max-width       80*gs
+    fly()
+ 

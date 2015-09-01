@@ -1,0 +1,27 @@
+{ el = '.easing-graph-line' }
+  height        120%
+  width         0
+  border-left   2*PX solid c-white-transparent
+  position      absolute
+  z-index       1
+  top          -10%
+  &__label
+    position    absolute
+    font-size   8*PX
+    transform   translate(-50%)
+    &--top
+      bottom    100%
+    &--bottom
+      top       100%
+      
+  &--horizontal
+    left        50%
+    top         40%
+    margin-top - PX 
+    transform   rotate(90deg)
+    {el}__label
+      transform translate(-52%) rotate(-90deg)
+      &--top
+        bottom  104%
+      &--bottom
+        top     104%
