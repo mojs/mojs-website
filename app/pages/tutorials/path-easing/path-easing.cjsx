@@ -94,7 +94,7 @@ module.exports = React.createClass
         { js: """var square = document.querySelector('#js-square');
                   new mojs.Tween({
                     onUpdate: function (progress) {
-                      square.style.transform = 'translateY(' + 100*progress + 'px)';
+                      square.style.transform = 'translateY(' + 200*progress + 'px)';
                     }
                   }).start();
           """
@@ -116,7 +116,7 @@ module.exports = React.createClass
                   new mojs.Tween({
                     onUpdate: function (progress) {
                       var bounceProgress = mojs.easing.bounce.out(progress);
-                      square.style.transform = 'translateY(' + 100*bounceProgress + 'px)';
+                      square.style.transform = 'translateY(' + 200*bounceProgress + 'px)';
                     }
                   }).start();
           """
@@ -173,7 +173,7 @@ module.exports = React.createClass
       <p>
         We will amplify the bouncing curves a bit, to add our motion feel of much more lighter object 
         (or much more bouncy one - made of rubber instead of wood).
-        Thats what it the bouncy graph might look like:
+        Thats what the bouncy graph might look like:
       </p>
 
       <EasingObjectGraph
@@ -421,7 +421,7 @@ module.exports = React.createClass
 
       <p>
         Now lets add another property curve for scale to imitate squash&stretch of the hand.
-        That's how it will look like at it's own:
+        That's how it will look like on it's own:
       </p>
 
       <EasingObjectGraph
@@ -444,7 +444,7 @@ module.exports = React.createClass
         To make the hand's squash&stretch motion, we can substract curve's value from 1 
         for <span className="highlight">scaleX</span> property and add the value to 
         1 for <span className="highlight">scaleY</span> property respectively.
-        Waving and squash&stretch curves together:
+        Waving and squash&stretch curves altogether:
       </p>
 
       <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
@@ -509,7 +509,7 @@ module.exports = React.createClass
 
           mojs.h.style(@moleEl, 'transform', "skewX(#{75*o.easedP}deg) translateZ(0)");
 
-          "skewX(#{(100*o.easedP).toFixed(2)}deg)"
+          "skewX(#{(75*o.easedP).toFixed(2)}deg)"
         }
 
         label="angle"
@@ -519,6 +519,26 @@ module.exports = React.createClass
         <MoleSample id="js-mole-sample-1" />
 
       </EasingObjectGraph>
+
+      <p>
+        Our curve goes above 0 slightly to implement the back move then it goes below 
+        zero to make the forward move. This is base curve for our scene, we will use 
+        it more further on.
+      </p>
+
+      <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
+        { js: """var moleEl = document.querySelector('#js-mole'),
+                      skewEasing = mojs.easing.path('M0,100 L3.13085938,99.9098435 C11.128418,-42.5703735 24.7357688,10.2827309 24.7357688,10.2827309 C24.7357688,10.2827309 35.4207115,6.37990438 35.420711,19.4955507 C35.420711,19.4955507 35.4207115,28.4642364 38.4679491,20.0448329 C45.9122391,-2.47328083 48.2480469,19.2718256 49.4205542,19.2718262 C49.4205546,6.82379606 55.0592461,-3.56955878 59,15.8223683 C60.6251608,22.53696 56.8918457,-3.39703265 65.4951172,-3.39703265 C68.7340668,-3.59873581 69.730594,6.54639177 70.328125,13.9672245 C70.9301836,21.4442862 74.0961573,26.974048 74.7888322,18.7754178 C75.3742722,5.88443799 81.9388046,2.60654815 84.8170547,9.46624826 C88.6793176,21.7631952 90.7471271,6.55096632 93.7893906,-0.121967559 C95.5135217,-3.90369547 98.2082808,0.193576387 100,0');
+
+                  new Tween({
+                    onUpdate: function (progress) {
+                      var skewProgress = skewEasing(progress);
+                      mole.style['transform'] = 'skewX(' + 75*skewProgress + 'deg)';
+                    }
+                  }).start();
+          """
+        }
+      </CodeSample>
       
       <p>
         Now lets describe hand's curve. We will work 
