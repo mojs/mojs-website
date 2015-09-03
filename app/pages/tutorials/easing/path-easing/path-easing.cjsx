@@ -158,7 +158,8 @@ module.exports = React.createClass
         But what if we want to change the weight parameter of our object so it will 
         have much wider bouncing amplitude range? That’s the point where the 
         <span className="highlight">path easing</span> become irreplaceable. 
-        Lets jump to vector graphics editor with <a href="">this common graph</a> as a bootstrap. 
+        Lets jump to vector graphics editor 
+        with <UniteLink link="/app/pages/tutorials/easing/path-easing/files/bounce-easing.svg">this common graph</UniteLink> as a bootstrap. 
       </p>
 
       <em>
@@ -193,7 +194,7 @@ module.exports = React.createClass
       </em>
 
       <p>
-        There is my <a href="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</a> with the bouncy graph.
+        There is my <UniteLink href="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</UniteLink> with the bouncy graph.
         Now we can generate our custom easing function from the SVG path commands the 
         path's <span className="highlight">d attribute</span> contains.
         For this simply copy the commands and pass it to 
@@ -228,7 +229,8 @@ module.exports = React.createClass
 
       <ul>
         <li>
-          like <span className="highlight">extreme ease-in-out</span> :
+          like <span className="highlight">extreme ease-in-out</span> (
+          <UniteLink link="/app/pages/tutorials/easing/path-easing/files/extreme-ease-in-out.svg">.svg file</UniteLink>) :
         </li>
       </ul>
 
@@ -270,7 +272,8 @@ module.exports = React.createClass
 
       <ul>
         <li>
-          or even <span className="highlight">extreme ease-in-elastic-out</span> :
+          or even <span className="highlight">extreme ease-in-elastic-out</span> (
+          <UniteLink link="/app/pages/tutorials/easing/path-easing/files/extreme-ease-in-elastic-out.svg">.svg file</UniteLink>):
         </li>
       </ul>
 
@@ -308,7 +311,7 @@ module.exports = React.createClass
 
       <em>
         <i>Note</i>: 
-        As you can see in the <a href="">.svg file</a>, by default <span className="highlight">mo· js</span> expects you to draw your easing paths in rectangle of 100x100, but 
+        As you can see in the <UniteLink href="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</UniteLink>, by default <span className="highlight">mo· js</span> expects you to draw your easing paths in rectangle of 100x100, but 
         you can change that with special option, we will talk about it a bit later, 
         in <span className="highlight">options</span> section of this tutorial.
       </em>
@@ -316,15 +319,15 @@ module.exports = React.createClass
       <p>
         Imagine what amount of 
         freedom <span className="highlight">path easing</span> can give you 
-        and how comprehensive your easing functions can now be. But it has much more 
-        powerfull purposes, keep reading!
+        and how comprehensive your easing functions can now be. It has much more 
+        powerfull purposes though, keep reading!
       </p>
 
       <h2>Property curves</h2>
 
       <p>
         If you are familiar with After Effects workflow and have ever worked 
-        with <a href="http://www.schoolofmotion.com/intro-to-animation-curves-in-after-effects/">animation curves </a> (go watch this video, I will wait on you here) 
+        with <UniteLink link="http://www.schoolofmotion.com/intro-to-animation-curves-in-after-effects/">animation curves</UniteLink> (go watch this video, I will wait on you here) 
         this idea won't be entirely new for you.
         If you haven't - no worries, it is pretty easy but be attentive it can change 
         the way you are treating your animations!
@@ -449,9 +452,9 @@ module.exports = React.createClass
         and have cristal clear understanding what the property 
         curves are and how to use them. It is definitelly takes some time to wrap 
         head around this notion and start thinking in curves, but it will hundred percent worth your time investment. If you still unconfortable with this idea, feel 
-        free to <a href="# link to websites repo / issues">ask me anything</a> by kick offing an issue on the repo. 
+        free to <UniteLink link="https://github.com/legomushroom/mojs-website/issues">ask me anything</UniteLink> by kick offing an issue on the repo. 
         I've build a bit more complicated demo almost entirely on this concept and 
-        pushed it to <a href="# link to property curves demo repo">the github repo</a> so you can play with it more. Here <a href="# link to the demo pen">it is on CodePen</a> also!
+        pushed it to <UniteLink link="https://github.com/legomushroom/property-curves">the github repo</UniteLink> so you can play with it more. Here <UniteLink href="# link to the demo pen">it is on CodePen</UniteLink> also!
       </p>
 
       <h2>Thinking in property curves</h2>
@@ -1146,13 +1149,13 @@ module.exports = React.createClass
 
       <p style= { textAlign: 'center' }>
         <UniteLink link="http://codepen.io/">demo on CodePen</UniteLink> | 
-        <UniteLink link="http://github.com/">demo's repo on GitHub</UniteLink> | 
-        <UniteLink link="http://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
+        <UniteLink link="https://github.com/legomushroom/property-curves">demo's repo on GitHub</UniteLink> | 
+        <UniteLink link="https://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
       </p>
 
       <p style= { textAlign: 'center' }>
         <br />
-        Next: &nbsp;<UniteLink link="/tutorials/mix" isDisabled="true" className="highlight">Easing: Mix tutorial</UniteLink>
+        Next: &nbsp;<UniteLink link="/tutorials/easing/mix" isDisabled="true" className="highlight">Easing: Mix tutorial</UniteLink>
       </p>
 
       <ORXLine className="post__last-orx-line" type="center" />

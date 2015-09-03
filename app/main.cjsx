@@ -9,7 +9,7 @@ Main      = require './pages/main'
 Tutorials = require './pages/tutorials'
 GettingStarted = require './pages/tutorials/getting-started'
 MotionPath     = require './pages/tutorials/motion-path'
-PathEasing     = require './pages/tutorials/path-easing/path-easing.cjsx'
+PathEasing     = require './pages/tutorials/easing/path-easing/path-easing.cjsx'
 
 routes = (
   <Route     name="app" path="/"    handler={App}>

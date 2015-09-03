@@ -11,13 +11,13 @@ module.exports = React.createClass
     classAttr = "link touchable #{@props.className} #{btnClass}"
     classAttr += if @props.isDisabled then ' is-disabled' else ''
 
-    if @props.isDisabled
+    if @props.isDisabled or !@props.link
       <span href="#{@props.link}" className="#{classAttr}">
         { @props.children }
         <span className="link__underline"></span>
       </span>
     else
-      if @props.link.match /https?/
+      if @props.link.match(/https?/) or @props.link.match(/\.[a-zA-Z0-9]{3}$/)
         <a href="#{@props.link}" className="#{classAttr}">
           { @props.children }
           <span className="link__underline"></span>
