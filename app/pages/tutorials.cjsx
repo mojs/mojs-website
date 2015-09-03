@@ -73,7 +73,7 @@ module.exports = React.createClass
   _redirect:->
     if @context.router.getCurrentPath() is '/tutorials'
       setTimeout =>
-        @context.router.transitionTo('/tutorials/path-easing')
+        @context.router.transitionTo('/tutorials/easing/path-easing')
       , 150
 
   render:()->

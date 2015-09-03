@@ -15,9 +15,11 @@ routes = (
   <Route     name="app" path="/"    handler={App}>
     <Route   name="main"            handler={Main}/>
     <Route   name="tutorials"       handler={Tutorials}>
-      <Route name="path-easing"     handler={PathEasing} />
-      {#<Route name="getting-started" handler={GettingStarted} />}
-      {#<Route name="motion-path"     handler={MotionPath} />}
+      <Route   name="easing">
+        <Route name="path-easing"   handler={PathEasing} />
+        {#<Route name="getting-started" handler={GettingStarted} />}
+        {#<Route name="motion-path"     handler={MotionPath} />}
+      </Route>
     </Route>
     <DefaultRoute                   handler={Main}/>
   </Route>

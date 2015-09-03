@@ -24,12 +24,6 @@ module.exports = React.createClass
     <div className="post">
       <div className="post__header">Easing / Path Easing</div>
       <div className="post__description"> This post is about path easing functions for your precise timing control.</div>
-
-      <p style= { textAlign: 'left', fontSize: '.65em', opacity: '.75', marginTop: '15px' }>
-        <a href="">demo on CodePen</a> | <a href="">demo's repo on GitHub</a> | 
-        <a href="">mo· js on GitHub</a>
-      </p>
-      
       <ORXLine className="post__orx-line" />
       
       { ###
@@ -64,13 +58,13 @@ module.exports = React.createClass
         Fortunately <span className="highlight">mo· js</span> 
         &nbsp;has the best set of easing functions of various 
         types in the modern web. Besides 
-          <UniteLink link="/" isDisabled="true">
+          <UniteLink link="/easing/basic" isDisabled="true">
             Base Easing Functions
           </UniteLink>, 
-          <UniteLink link="/" isDisabled="true">
+          <UniteLink link="/easing/bezier-curves" isDisabled="true">
             Bezier Curves
           </UniteLink> and 
-          <UniteLink link="/" isDisabled="true">
+          <UniteLink link="/easing/springs" isDisabled="true">
             Springs
           </UniteLink> that you can find in other web animation libraries, 
           <span className="highlight">mo· js</span>
@@ -347,117 +341,9 @@ module.exports = React.createClass
 
       <p>
         Yes exactly. We can draw for instance, how a translate or scale(or any other) 
-        propety will behave on progress change.
+        propety will behave on progress change. Let me describe it more verbosely 
+        with some examples.
       </p>
-
-      <p>
-        Let me describe it more verbosely with code snippet and codepen.
-        Imagine our previous rectangle is very heavy and not bouncy at all.
-        When it hits the ground, it stays still and causes a small earthquake.
-        That's what the quake graph will look like:
-      </p>
-
-      <EasingObjectGraph
-        duration={ 250 }
-        onUpdate = { (o)=>
-          shift = 100*o.easedP
-          mojs.h.style o.objEl, 'transform', "translateY(#{shift}px) translateZ(0)"
-          "#{shift.toFixed(0)} px"
-        }
-        label="translateY"
-        background="#F1E2D7"
-        path="M0,100 C0,100 4.0173199,82.9648449 6.6417514,100 C9.2661829,116.22712 13.2779121,100 13.2779121,100 C13.2779121,100 16.5033366,87.4358263 21.4140571,100 C26.3247776,111.756139 30.6617252,100 30.6617252,100 C30.6617252,100 37.196174,76.3465416 36.5598618,100 C35.9235497,122.845424 43.9988668,100 43.9988668,100 C43.9988668,100 52.464346,75.7550222 58.5137014,100 C64.5630569,123.436943 71.5901242,100 71.5901242,100 C71.5901242,100 76.5794972,84.1964285 77.2506861,100 C77.921875,114.995537 86.5100569,100 86.5100569,100 C86.5100569,100 90.656647,90.8900683 92.252708,100 C93.84877,108.301897 97.195841,100 97.195841,100 C97.195841,100 98.303581,96.0117193 99.740517,100">
-        
-        <div className="path-easing-rectangle path-easing-rectangle--quake"></div>
-      
-      </EasingObjectGraph>
-
-      <em>
-        <i>Note</i>: This path easing is used in the final demo, 
-        particularly when mole severely closes the door.
-      </em>
-
-      <p>
-       Consider the graph at right. The <span className="highlight">x</span> axis represents progress of our animation.
-       The <span className="highlight">y</span> axis is the change of our property in time, 
-       in this particularly example this is <span className="highlight">translateY</span> property.
-       As you can see, curve's <span className="highlight">Y</span> value shouldn't 
-       start at <span className="highlight">0</span> and end 
-       at <span className="highlight">1</span>, it can take any value you want.
-       But the <span className="highlight">x</span> value must start 
-       at <span className="highlight">0</span> and end 
-       at <span className="highlight">1</span> because progress can't go 
-       beyond <span className="highlight">100%</span> as it makes no sense.
-       Now lets jump to codepen to see how does it work exactly:
-      </p>
-
-      <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
-        { js: """var square = document.querySelector('#js-square'),
-                      quakeEasing = mojs.easing.path(''),
-                      fallAmount = 100;
-
-                  new mojs.Tween({
-                    onUpdate: function (progress) {
-                      var fallProgress = mojs.easing.cubic.in(progress);
-                      square.style.transform = 'translateY(' + fallAmount*fallProgress + 'px)';
-                    },
-                    onComplete: function () { quakeTween.start(); }
-                  }).start();
-
-                  var quakeTween = new mojs.Tween({
-                    onUpdate: function (progress) {
-                      var quakeProgress = quakeEasing(progress);
-                      // set translateY to the current translateY (fallAmount) 
-                      // + (quakeProgress * 20)
-                      square.style.transform = 'translateY(' + fallAmount + 20*quakeProgress + 'px)';
-                    },
-                  });
-          """
-        }
-      </CodeSample>
-
-      <p>
-        In codepen above, we have changed the bouncy easing 
-        to <span className="highlight">cubic.in</span> to express the gravity force
-        that is appied to the rectangle (line 7). After the first tween completes, 
-        it launches the second one (line 10) with the quake curve applied to the 
-        <span className="highlight">translateY</span> property (line 18).
-      </p>
-
-      <em>
-        <i>Note</i>: You probably want to add these tweens to a 
-        <span className="highlight">timeline</span> for better project organization, it is 
-        possible with <span className="highlight">mo· js</span> but was omitted here for clarity's sake.
-      </em>
-
-      <p>
-        We can even draw a combined version of this two curves <span className="highlight">cubic.in + quake</span> to use it as one property curve:
-      </p>
-
-      <EasingObjectGraph
-        duration = { 350  }
-        delay    = { 2000 }
-        onUpdate = { (o)=>
-          shift = 180*o.easedP
-          mojs.h.style o.objEl,   'transform', "translateY(#{shift}px) translateZ(0)"
-          "#{shift.toFixed(0)} px"
-        }
-        label="translateY"
-        background="#F1E2D7"
-        path="M0,100 C0,100 35.8588122,105.035225 50,-1.95399252e-14 C50,0.404017439 52.0138856,-7.44383313 53.3295152,0.404017439 C54.6451448,8.25186829 56.6562278,0.404017439 56.6562278,0.404017439 C56.6562278,0.404017439 58.2731357,-5.33408001 60.7348837,0.404017439 C63.1966318,6.14211536 65.3707471,0.404017439 65.3707471,0.404017439 C65.3707471,0.404017439 68.6464714,-10.566858 68.3274876,0.404017439 C68.0085039,11.3748935 72.0566667,0.404017439 72.0566667,0.404017439 C72.0566667,0.404017439 76.3004181,-10.8459823 79.3329648,0.404017439 C82.3655115,11.6540177 85.8881858,0.404017439 85.8881858,0.404017439 C85.8881858,0.404017439 88.3893625,-6.8626772 88.72583,0.404017439 C89.0622975,7.67071265 93.3675599,0.404017439 93.3675599,0.404017439 C93.3675599,0.404017439 95.4462488,-3.7041028 96.2463554,0.404017439 C97.0464626,4.51213815 98.7243519,0.404017439 98.7243519,0.404017439 C98.7243519,0.404017439 99.2796628,-1.28731369 100,0">
-        
-        <div className="path-easing-rectangle path-easing-rectangle--eased-quake"></div>
-      
-      </EasingObjectGraph>
-
-
-
-      <p>
-        I hope you had the <span className="highlight">Aha!</span> moment right now. <br />
-        Anyways I will add more use cases just to be sure you got it well.
-      </p>
-
-      <h2>More property curves examples</h2>
 
       <p>
         Pretend you need to animate a character that is angry and arguing to somebody.
@@ -559,7 +445,8 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        I hope you have cristal clear understanding now what the property 
+        I hope you had the <span className="highlight">Aha!</span> moment right now <br />
+        and have cristal clear understanding what the property 
         curves are and how to use them. It is definitelly takes some time to wrap 
         head around this notion and start thinking in curves, but it will hundred percent worth your time investment. If you still unconfortable with this idea, feel 
         free to <a href="# link to websites repo / issues">ask me anything</a> by kick offing an issue on the repo. 
