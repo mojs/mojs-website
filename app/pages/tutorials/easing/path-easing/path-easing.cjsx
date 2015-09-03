@@ -193,7 +193,7 @@ module.exports = React.createClass
       </em>
 
       <p>
-        There is my <a href="">.svg file</a> with the bouncy graph.
+        There is my <a href="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</a> with the bouncy graph.
         Now we can generate our custom easing function from the SVG path commands the 
         path's <span className="highlight">d attribute</span> contains.
         For this simply copy the commands and pass it to 
