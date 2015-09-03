@@ -35,12 +35,10 @@ module.exports = React.createClass
       { ###
         <p>TODO: add links everywhere on the post</p>
         <p>TODO: add pens</p>
+
         <p>TODO: fix motion for the web demo</p>
         <p>TODO: add server rendering to this website</p>
-        <p>TODO: move it to another repo</p>
         <p>TODO: buy domain</p>
-        <p>TODO: make mojs' release</p>
-        <p>TODO: add easing graph background</p>
       ### }
 
       <p>
@@ -93,10 +91,12 @@ module.exports = React.createClass
       <CodeSample pen="3b0aa7072d18806d8a6e80fe7e22051b">
         { js: """var square = document.querySelector('#js-square');
                   new mojs.Tween({
+                    repeat:   999,
+                    delay:    2000,
                     onUpdate: function (progress) {
                       square.style.transform = 'translateY(' + 200*progress + 'px)';
                     }
-                  }).start();
+                  }).run();
           """
         }
       </CodeSample>
@@ -111,14 +111,16 @@ module.exports = React.createClass
         like something falling down at all, so lets add bounce easing:
       </p>
 
-      <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
+      <CodeSample pen="bd62b1fd5a638e34f03607f6a6968769">
         { js: """var square = document.querySelector('#js-square');
                   new mojs.Tween({
+                    repeat:   999,
+                    delay:    2000,
                     onUpdate: function (progress) {
                       var bounceProgress = mojs.easing.bounce.out(progress);
                       square.style.transform = 'translateY(' + 200*bounceProgress + 'px)';
                     }
-                  }).start();
+                  }).run();
           """
         }
       </CodeSample>
@@ -126,7 +128,7 @@ module.exports = React.createClass
       <p>
         The bounce easing was added by passing the linear progress 
         thru <span className="highlight">bounce.out</span> function 
-        (line 4)
+        (line 6)
         &nbsp;that is available on 
         <span className="highlight">mojs.easing</span> object - the place where 
         all easing functions and helpers are stored. 
@@ -204,16 +206,19 @@ module.exports = React.createClass
         the <span className="highlight">mojs.easing.path</span> function (line 2):
       </p>
 
-      <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
-        { js: """var square = document.querySelector('#js-square'),
-                      bouncyEasing = mojs.easing.path('M0,100 C2.45434624,97.8269293 16.3464551,108.82637 36.7536484,1.51862764 C57.1552734,140.170898 73.4575653,0 73.4575634,0.417637977 C84.8740234,87.625 91.391449,0 91.391449,0 C97.2792969,51.6884766 100,0 100,0');
+      <CodeSample pen="c4b415a9167718d3134df04f07ac609b">
+        { js: """var square = document.querySelector('#js-square');
+                  var bouncyEasing = mojs.easing.path('M0,100 C6.50461245,96.8525391 12.6278439,88.3497543 16.6678547,0 C16.6678547,-1.79459817 31.6478577,115.871587 44.1008572,0 C44.1008572,-0.762447191 54.8688736,57.613472 63.0182497,0 C63.0182497,-0.96434046 70.1500549,29.0348701 76.4643231,0 C76.4643231,0 81.9085007,16.5050125 85.8902733,0 C85.8902733,-0.762447191 89.4362183,8.93311024 92.132216,0 C92.132216,-0.156767385 95.0157166,4.59766248 96.918051,0 C96.918051,-0.156767385 98.7040751,1.93815588 100,0');
 
-                  new Tween({
+                  new mojs.Tween({
+                    repeat:   999,
+                    delay:    2000,
+                    duration: 1500,
                     onUpdate: function (progress) {
                       var bounceProgress = bouncyEasing(progress);
-                      square.style.transform = 'translateY(' + 100*bounceProgress + 'px)';
+                      square.style.transform = 'translateY(' + 200*bounceProgress + 'px)';
                     }
-                  }).start();
+                  }).run();
           """
         }
       </CodeSample>
@@ -222,13 +227,90 @@ module.exports = React.createClass
         Yay! We've drawn our custom path easing!
         Our square feels much more bouncy now!
       </p>
-      
+
       <p>
-        You can imagine what amount of 
-        freedom <span className="highlight">path easing</span> can give you 
-        and how comprehensive your easing functions can now be. But it has much more 
-        powerfull purposes, keep reading!
+        You can literally draw your easing functions.
       </p>
+
+      <ul>
+        <li>
+          like <span className="highlight">extreme ease-in-out</span> :
+        </li>
+      </ul>
+
+      <EasingObjectGraph
+        duration={ 3000 }
+        onUpdate = { (o)=>
+          shift = 1 - .9*o.easedP
+          mojs.h.style o.objEl, 'transform', "scale(#{shift}) translateZ(0)"
+          "scale( #{shift.toFixed(0)} )"
+        }
+        label="scale"
+        background="#F1E2D7"
+        path="M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0">
+        
+        <div className="path-easing-rectangle path-easing-rectangle--extreme-ease"></div>
+      
+      </EasingObjectGraph>
+
+      <CodeSample pen="bf7056db37e491eacb20b33665d13260">
+        { js: """var square = document.querySelector('#js-square');
+                  var extremeInOutEasing = mojs.easing.path('M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0');
+
+                  new mojs.Tween({
+                    repeat:   999,
+                    delay:    2000,
+                    duration: 1500,
+                    onUpdate: function (progress) {
+                      var extremeInOutProgress = extremeInOutEasing(progress);
+                      square.style.transform = 'scale(' + (1 - (.9*extremeInOutProgress)) + ')';
+                    }
+                  }).run();
+
+
+          """
+        }
+      </CodeSample>
+
+      <br />
+
+      <ul>
+        <li>
+          or even <span className="highlight">extreme ease-in-elastic-out</span> :
+        </li>
+      </ul>
+
+      <EasingObjectGraph
+        duration={ 1500 }
+        onUpdate = { (o)=>
+          shift = 1 - .9*o.easedP
+          mojs.h.style o.objEl, 'transform', "scale(#{shift}) translateZ(0)"
+          "scale( #{shift.toFixed(0)} )"
+        }
+        label="scale"
+        background="#F1E2D7"
+        path="M0,100 C50,100 50,100 50,50 C50,-15.815625 53.7148438,-19.1218754 60.4981394,0 C62.2625924,4.97393188 66.4286578,6.07928485 68.3303467,0 C71.3633751,-6.23011049 74.5489919,-1.10166123 75.7012545,0 C79.6946191,3.60945678 84.2063904,-0.104182975 84.2063905,0 C87.5409362,-2.25875668 90.4589294,-0.0327241098 93.4950242,0 C97.3271182,0.20445262 100,-0.104182352 100,0">
+        
+        <div className="path-easing-rectangle path-easing-rectangle--extreme-ease"></div>
+      
+      </EasingObjectGraph>
+
+      <CodeSample pen="54b59e63f48373df2bd39baab02b1f9b">
+        { js: """var square = document.querySelector('#js-square');
+                  var extremeInElasticOutEasing = mojs.easing.path('M0,100 C50,100 50,100 50,50 C50,-15.815625 53.7148438,-19.1218754 60.4981394,0 C62.2625924,4.97393188 66.4286578,6.07928485 68.3303467,0 C71.3633751,-6.23011049 74.5489919,-1.10166123 75.7012545,0 C79.6946191,3.60945678 84.2063904,-0.104182975 84.2063905,0 C87.5409362,-2.25875668 90.4589294,-0.0327241098 93.4950242,0 C97.3271182,0.20445262 100,-0.104182352 100,0');
+
+                  new mojs.Tween({
+                    repeat:   999,
+                    delay:    2000,
+                    duration: 1500,
+                    onUpdate: function (progress) {
+                      var extremeInElasticOutProgress = extremeInElasticOutEasing(progress);
+                    square.style.transform = 'scale(' + (1 - (.9*extremeInElasticOutProgress)) + ')';
+                    }
+                  }).run();
+          """
+        }
+      </CodeSample>
 
       <em>
         <i>Note</i>: 
@@ -236,6 +318,13 @@ module.exports = React.createClass
         you can change that with special option, we will talk about it a bit later, 
         in <span className="highlight">options</span> section of this tutorial.
       </em>
+      
+      <p>
+        Imagine what amount of 
+        freedom <span className="highlight">path easing</span> can give you 
+        and how comprehensive your easing functions can now be. But it has much more 
+        powerfull purposes, keep reading!
+      </p>
 
       <h2>Property curves</h2>
 
@@ -248,7 +337,7 @@ module.exports = React.createClass
       </p>
 
       <p>
-        Let me try to describe the idea of property curves in one sentence:
+        Let me try to describe the idea of property curves with one sentence:
       </p>
 
       <Cite author="LegoMushroom">
@@ -528,7 +617,7 @@ module.exports = React.createClass
 
       <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
         { js: """var moleEl = document.querySelector('#js-mole'),
-                      skewEasing = mojs.easing.path('M0,100 L3.13085938,99.9098435 C11.128418,-42.5703735 24.7357688,10.2827309 24.7357688,10.2827309 C24.7357688,10.2827309 35.4207115,6.37990438 35.420711,19.4955507 C35.420711,19.4955507 35.4207115,28.4642364 38.4679491,20.0448329 C45.9122391,-2.47328083 48.2480469,19.2718256 49.4205542,19.2718262 C49.4205546,6.82379606 55.0592461,-3.56955878 59,15.8223683 C60.6251608,22.53696 56.8918457,-3.39703265 65.4951172,-3.39703265 C68.7340668,-3.59873581 69.730594,6.54639177 70.328125,13.9672245 C70.9301836,21.4442862 74.0961573,26.974048 74.7888322,18.7754178 C75.3742722,5.88443799 81.9388046,2.60654815 84.8170547,9.46624826 C88.6793176,21.7631952 90.7471271,6.55096632 93.7893906,-0.121967559 C95.5135217,-3.90369547 98.2082808,0.193576387 100,0');
+                      skewEasing = mojs.easing.path('M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100');
 
                   new Tween({
                     onUpdate: function (progress) {
@@ -542,8 +631,26 @@ module.exports = React.createClass
       
       <p>
         Now lets describe hand's curve. We will work 
-        with <span className="highlight">rotate</span> property obviously:
+        with <span className="highlight">rotate</span> property obviously. 
+        It has basically the same shape that 
+        the <span className="highlight">skewX</span> curve have. The slight 
+        difference is -- it rises a lot higher(all way to 1) and does it more steeply.
+        The second part is almost the same:
       </p>
+
+      <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
+        { js: """var moleEl = document.querySelector('#js-mole'),
+                      skewEasing = mojs.easing.path('M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100');
+
+                  new Tween({
+                    onUpdate: function (progress) {
+                      var skewProgress = skewEasing(progress);
+                      mole.style['transform'] = 'skewX(' + 75*skewProgress + 'deg)';
+                    }
+                  }).start();
+          """
+        }
+      </CodeSample>
 
       <EasingObjectGraph
         duration = { 1800 }
@@ -854,7 +961,7 @@ module.exports = React.createClass
           mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*skewP}px)")
           @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*o.easedP)}, 30 25 T 50 30");
           
-          "M0 30 Q 20 #{10+(550*o.easedP).toFixed(2)}, 30 25 T 50 30"
+          "M0 30 Q 20 #{(10+(550*o.easedP)).toFixed(2)}, 30 25 T 50 30"
         }
 
         label="path's d attribute"
@@ -925,7 +1032,7 @@ module.exports = React.createClass
           mojs.h.style(@tongueEl, 'transform', "translateX(#{-140*skewP}px)")
           @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*noizeP)}, 30 25 T 50 30");
           
-          "M0 30 Q 20 #{10+(550*noizeP).toFixed(2)}, 30 25 T 50 30"
+          "M0 30 Q 20 #{(10+(550*noizeP)).toFixed(2)}, 30 25 T 50 30"
         }
 
         label="path's d attribute"
@@ -1021,7 +1128,7 @@ module.exports = React.createClass
           mojs.h.style(@tongueEl, 'transform', "translateX(#{-140*skewP}px)")
           @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*noizeP)}, 30 25 T 50 30");
           
-          "M0 30 Q 20 #{10+(550*noizeP).toFixed(2)}, 30 25 T 50 30"
+          "M0 30 Q 20 #{(10+(550*noizeP)).toFixed(2)}, 30 25 T 50 30"
         }
 
         label="path's d attribute"
