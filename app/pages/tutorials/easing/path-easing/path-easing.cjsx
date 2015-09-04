@@ -575,6 +575,29 @@ module.exports = React.createClass
         }
       </CodeSample>
 
+      <p>
+        Pretty neat, ha? Property curves allow us to visualize how certain properties 
+        behave in time. Then we can compose them together to get our motion contexture.
+        Yep it takes some time to wrap your head around this concept, but when you 
+        using it for few times, it feels very natural and intuitive. You 
+        start to see the matrix in those random hieroglyphs(read path's coordinates).
+      </p>
+
+      <p>
+        "We can use 5 tweens here instead of property curves here" - you will say 
+        and you will be right. We can use 5 tweens instead of two property curves. 
+        One, delayed, for translateY property and four for squash&strech motion 
+        (two for squash and two for streatch). Also this 5 tweens should be precisely 
+        timed to get the same eventual motion. You should keep in mind all this 
+        little timing nuances and envision what would the result look like.
+        Maintaining such chain would be itchy.
+        By contrast, property curves are much more intuitive and convient way 
+        to correlate property change and time. 
+        Also it is more visual way to proceed with your motion and gives you 
+        lots of control over the property behavior.
+        Maitaining a property is a cinch.
+      </p>
+
 
       <h2>Thinking in property curves</h2>
 
