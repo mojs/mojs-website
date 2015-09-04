@@ -27,10 +27,11 @@ module.exports = React.createClass
       <ORXLine className="post__orx-line" />
       
       { ###
-        <p>TODO: add links everywhere on the post</p>
+        
+        <p>TODO: check the hard content component</p>
+        <p>TODO: add jumping square example</p>
         <p>TODO: add pens</p>
-
-        <p>TODO: fix motion for the web demo</p>
+        <p>TODO: fix motion for the wxeb demo</p>
         <p>TODO: add server rendering to this website</p>
         <p>TODO: buy domain</p>
       ### }
@@ -334,7 +335,7 @@ module.exports = React.createClass
       </p>
 
       <p>
-        Let me try to describe the idea of property curves with one sentence:
+        Let me try to play the idea of property curves to one sentence:
       </p>
 
       <Cite author="LegoMushroom">
@@ -344,8 +345,8 @@ module.exports = React.createClass
 
       <p>
         Yes exactly. We can draw for instance, how a translate or scale(or any other) 
-        propety will behave on progress change. Let me describe it more verbosely 
-        with some examples.
+        propety will behave on progress change. To describe it more verbosely consider
+        the next use case.
       </p>
 
       <p>
@@ -380,10 +381,10 @@ module.exports = React.createClass
         angle delta. Despite the fact it can look like an easing(it 
         starts at 0 and ends at 1 Y), it is more likely a 
         <span className="highlight">property curve</span> since we are describing 
-        how does certain property acts in time. Lets jump to the code:
+        how does certain property acts in time. There is the code:
       </p>
 
-      <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
+      <CodeSample pen="65f003acd3c23be2350b71399fd95000">
         { js: """var hand = document.querySelector('#js-hand'),
                       handCurve = mojs.easing.path('M0,100 L3.13085938,99.9098435 C11.128418,-42.5703735 24.7357688,10.2827309 24.7357688,10.2827309 C24.7357688,10.2827309 35.4207115,6.37990438 35.420711,19.4955507 C35.420711,19.4955507 35.4207115,28.4642364 38.4679491,20.0448329 C45.9122391,-2.47328083 48.2480469,19.2718256 49.4205542,19.2718262 C49.4205546,6.82379606 55.0592461,-3.56955878 59,15.8223683 C60.6251608,22.53696 56.8918457,-3.39703265 65.4951172,-3.39703265 C68.7340668,-3.59873581 69.730594,6.54639177 70.328125,13.9672245 C70.9301836,21.4442862 74.0961573,26.974048 74.7888322,18.7754178 C75.3742722,5.88443799 81.9388046,2.60654815 84.8170547,9.46624826 C88.6793176,21.7631952 90.7471271,6.55096632 93.7893906,-0.121967559 C95.5135217,-3.90369547 98.2082808,0.193576387 100,0');
 
@@ -392,7 +393,7 @@ module.exports = React.createClass
                       var handProgress = handCurve(progress);
                       square.style.transform = 'rotate(' + -200*handProgress + 'deg)';
                     }
-                  }).start();
+                  }).run();
           """
         }
       </CodeSample>
@@ -410,7 +411,7 @@ module.exports = React.createClass
         }
         label="scale"
         background="#F1E2D7"
-        path="M0,100 C0,100 5.01160836,100.097038 8.74856937,100.270866 C15.1440434,57.219434 23.7860103,98.447299 23.7860103,100.097037 C30.2913574,71.1380541 36.1603623,98.3939125 36.160361,100.162142 C41.9325738,44.182975 49.1344299,98.9199542 49.1344299,100.053418 C53.6287224,80.2298508 59.2720971,99.9303714 59.2720971,99.9303714 C59.2720971,99.9303714 63.6972656,56.5605469 70.2742418,100.003578 C72.7851563,131.47461 74.5979385,101.614397 75,100.097038 C78.8691406,68.734375 82.3889542,100.577847 94.1109085,100.097038 L100,100">
+        path="M0,100 L3.41243177,100 C3.41243177,100 14.0876245,62.3100999 25,100 C25,99.9999998 29.9944115,87.0416487 36,99.9999998 C36,99.9999998 41.5199242,78.9802778 49.1912971,100 C49.1912971,99.9442732 54.2007408,67.9702111 59,99.9999998 C59,99.9999998 63.5640526,47.0787218 70,99.9999998 C70,99.9999998 72.6154327,58.0861233 76,99.9999998 C76,99.9999998 80.4341888,79.0878103 85,99.9999998 C85,99.9999998 88.3800278,71.7979296 92.2636317,99.9999999 C92.2636337,99.9999998 96.1419067,87.1020792 100,100">
         
         <div className="mole-hand mole-hand--squash"></div>
       
@@ -425,24 +426,25 @@ module.exports = React.createClass
         Waving and squash&stretch curves altogether:
       </p>
 
-      <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
-        { js: """var hand = document.querySelector('#js-hand'),
-                      handCurve = mojs.easing.path('M0,100 L3.13085938,99.9098435 C11.128418,-42.5703735 24.7357688,10.2827309 24.7357688,10.2827309 C24.7357688,10.2827309 35.4207115,6.37990438 35.420711,19.4955507 C35.420711,19.4955507 35.4207115,28.4642364 38.4679491,20.0448329 C45.9122391,-2.47328083 48.2480469,19.2718256 49.4205542,19.2718262 C49.4205546,6.82379606 55.0592461,-3.56955878 59,15.8223683 C60.6251608,22.53696 56.8918457,-3.39703265 65.4951172,-3.39703265 C68.7340668,-3.59873581 69.730594,6.54639177 70.328125,13.9672245 C70.9301836,21.4442862 74.0961573,26.974048 74.7888322,18.7754178 C75.3742722,5.88443799 81.9388046,2.60654815 84.8170547,9.46624826 C88.6793176,21.7631952 90.7471271,6.55096632 93.7893906,-0.121967559 C95.5135217,-3.90369547 98.2082808,0.193576387 100,0'),
-                      handStretchCurve = mojs.easing.path('M0,100 L3.13085938,99.9098435 C11.128418,-42.5703735 24.7357688,10.2827309 24.7357688,10.2827309 C24.7357688,10.2827309 35.4207115,6.37990438 35.420711,19.4955507 C35.420711,19.4955507 35.4207115,28.4642364 38.4679491,20.0448329 C45.9122391,-2.47328083 48.2480469,19.2718256 49.4205542,19.2718262 C49.4205546,6.82379606 55.0592461,-3.56955878 59,15.8223683 C60.6251608,22.53696 56.8918457,-3.39703265 65.4951172,-3.39703265 C68.7340668,-3.59873581 69.730594,6.54639177 70.328125,13.9672245 C70.9301836,21.4442862 74.0961573,26.974048 74.7888322,18.7754178 C75.3742722,5.88443799 81.9388046,2.60654815 84.8170547,9.46624826 C88.6793176,21.7631952 90.7471271,6.55096632 93.7893906,-0.121967559 C95.5135217,-3.90369547 98.2082808,0.193576387 100,0');
+      <CodeSample pen="097277ee9452f4fc593c4738fdff675f">
+        { js: """var hand = document.querySelector('#js-mole-hand'),
+                    handCurve = mojs.easing.path('M0,100 L3.13085938,99.9098435 C11.128418,-42.5703735 24.7357688,10.2827309 24.7357688,10.2827309 C24.7357688,10.2827309 35.4207115,6.37990438 35.420711,19.4955507 C35.420711,19.4955507 35.4207115,28.4642364 38.4679491,20.0448329 C45.9122391,-2.47328083 48.2480469,19.2718256 49.4205542,19.2718262 C49.4205546,6.82379606 55.0592461,-3.56955878 59,15.8223683 C60.6251608,22.53696 56.8918457,-3.39703265 65.4951172,-3.39703265 C68.7340668,-3.59873581 69.730594,6.54639177 70.328125,13.9672245 C70.9301836,21.4442862 74.0961573,26.974048 74.7888322,18.7754178 C75.3742722,5.88443799 81.9388046,2.60654815 84.8170547,9.46624826 C88.6793176,21.7631952 90.7471271,6.55096632 93.7893906,-0.121967559 C95.5135217,-3.90369547 98.2082808,0.193576387 100,0'),
+                    handStretchCurve = mojs.easing.path('M0,100 L3.41243177,100 C3.41243177,100 14.0876245,62.3100999 25,100 C25,99.9999998 29.9944115,87.0416487 36,99.9999998 C36,99.9999998 41.5199242,78.9802778 49.1912971,100 C49.1912971,99.9442732 54.2007408,67.9702111 59,99.9999998 C59,99.9999998 63.5640526,47.0787218 70,99.9999998 C70,99.9999998 72.6154327,58.0861233 76,99.9999998 C76,99.9999998 80.4341888,79.0878103 85,99.9999998 C85,99.9999998 88.3800278,71.7979296 92.2636317,99.9999999 C92.2636337,99.9999998 96.1419067,87.1020792 100,100');
 
-                  new Tween({
-                    onUpdate: function (progress) {
-                      var handProgress = handCurve(progress);
-                      var stretchProgress = handStretchCurve(progress);
-                      
-                      square.style.transform = ''
-                        // squash&stretch
-                        + 'scaleX(' + (1-stretchProgress) + ') scaleY(' + (1+stretchProgress) + ') '
-                        // waving
-                        + 'rotate(' + -200*handProgress + 'deg)';
-
-                    }
-                  }).start();
+                new mojs.Tween({
+                  repeat: 999,
+                  duration: 1800,
+                  delay: 2000,
+                  onUpdate: function (progress) {
+                    var handProgress = handCurve(progress);
+                    var stretchProgress = handStretchCurve(progress);
+                    hand.style.transform = ''
+                      // squash&stretch
+                      + 'scaleX(' + (1-.4*stretchProgress) + ') scaleY(' + (1+1.2*stretchProgress) + ') '
+                      // waving
+                      + 'rotate(' + -200*handProgress + 'deg)';
+                 }
+                }).run();
           """
         }
       </CodeSample>
@@ -456,6 +458,123 @@ module.exports = React.createClass
         I've build a bit more complicated demo almost entirely on this concept and 
         pushed it to <UniteLink link="https://github.com/legomushroom/property-curves">the github repo</UniteLink> so you can play with it more. Here <UniteLink href="# link to the demo pen">it is on CodePen</UniteLink> also!
       </p>
+
+      <p>
+        Consider the next example. We have our square that jumps away with 
+        squash&stretch motion. It will consist of 
+        2 <span className="highlight">property curves</span>.
+        The first one for y position or <span className="highlight">translateY</span> property, 
+        the second for the <span className="highlight">scale</span> property to describe 
+        squash&stretch.
+      </p>
+
+      <p>
+        The first <span className="highlight">translateY</span> path will look like this:
+      </p>
+
+      <EasingObjectGraph
+        duration={ 1000 }
+        onUpdate = { (o)=>
+          shift = -180*o.easedP
+          mojs.h.style o.objEl, 'transform', "translateY(#{shift}px) translateZ(0)"
+          "translateY( #{shift.toFixed(0)} px )"
+        }
+        label="translateY"
+        background="#F1E2D7"
+        path="M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0">
+        
+        <div className="path-easing-rectangle path-easing-rectangle--jump"></div>
+      
+      </EasingObjectGraph>
+
+      <p>
+        The delay at path's very start was made to give some time to initial squash 
+        easing to act. The 
+        second, <span className="highlight">scale</span> property curve 
+        will look like this:
+      </p>
+
+      <EasingObjectGraph
+        duration={ 1000 }
+        onUpdate = { (o)=>
+          squashP = 2*o.easedP
+          scaleX = 1-squashP; scaleY = 1+squashP
+          mojs.h.style o.objEl, 'transform', "scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
+          "scaleX( #{scaleX.toFixed(2)} ) scaleY( #{scaleY.toFixed(2)} )"
+        }
+        label="translateY"
+        background="#F1E2D7"
+        path="M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,59.1393229 64.2747421,100 100,100">
+        
+        <div className="path-easing-rectangle path-easing-rectangle--jump"></div>
+      
+      </EasingObjectGraph>
+
+      <p>
+        While the <span className="highlight">translateY</span> curve in passive state, 
+        this curve goes under <span className="highlight">0</span> imitating squash motion to show that our rectangle 
+        accumulates some power for the subsequent jump. When the first curve starts to 
+        lift our rectangle in air, this curve goes 
+        over <span className="highlight">0</span> imitating stretch that object 
+        will get when it is moving fast. At the end this curve returns 
+        back to <span className="highlight">0</span> showing 
+        that's there is no power left for the movement.
+        As you can notice the <span className="highlight">scale</span> property 
+        curve represents deviation from <span className="highlight">0</span>. 
+        We can 
+        set <span className="highlight">scaleY</span>&nbsp;
+        as <span className="highlight">1 + curve progress</span>&nbsp;
+        and <span className="highlight">scaleX</span> as <span className="highlight">1 - curve progress</span>
+        to imitate the desired effect.
+      </p>
+
+      <p>
+        That's how our two property curves work together:
+      </p>
+
+      <EasingObjectGraph
+        duration={ 1000 }
+        onUpdate = { (o)=>
+          @easing ?= mojs.easing.path 'M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0'
+          squashP = 2*o.easedP
+          scaleX = 1-squashP; scaleY = 1+squashP
+          mojs.h.style o.objEl, 'transform', "translateY(#{-180*@easing(o.p)}px) scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
+          "translateY(#{(-180*@easing(o.p)).toFixed(2)}px) scaleX( #{scaleX.toFixed(2)} ) scaleY( #{scaleY.toFixed(2)} )"
+        }
+        label="translateY + scale"
+        background="#F1E2D7"
+        path="M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,59.1393229 64.2747421,100 100,100">
+        
+        <div className="path-easing-rectangle path-easing-rectangle--jump"></div>
+      
+      </EasingObjectGraph>
+
+      <CodeSample pen="c7b99f1a216498818cbb9f0c881fc542">
+        { js: """var square = document.querySelector('#js-square'),
+                      translateCurve = mojs.easing.path('M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0'),
+                      squashCurve = mojs.easing.path('M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,59.1393229 64.2747421,100 100,100');
+
+                  new mojs.Tween({
+                    repeat:   999,
+                    delay:    2000,
+                    duration: 1000,
+                    onUpdate: function (progress) {
+                      var translateProgress = translateCurve(progress),
+                          squashProgress = squashCurve(progress),
+                          scaleX = 1 - 2*squashProgress,
+                          scaleY = 1 + 2*squashProgress;
+                      
+                      square.style.transform = 
+                        'translateY(' + -180*translateProgress + 'px) '+
+                        'scaleX(' + scaleX + ') ' + 'scaleY(' + scaleY + ')';
+                    }
+                  }).run();
+
+
+          """
+        }
+      </CodeSample>
+
 
       <h2>Thinking in property curves</h2>
 

@@ -5,12 +5,11 @@
   width             49*PX
   height            129*PX
   background        url('./i/mole-hand.svg') no-repeat center center
-  border-radius     BRADIUS
   position          absolute
   nw                50%
   margin-left      -25*PX 
   margin-top       -40*PX
-  transform-origin  center 2*gs
+  transform-origin  center gs
   &--squash
     margin-top      -70*PX
 
@@ -36,6 +35,11 @@ size = 4
     border-radius 100%
     rect          size*PX
     centerize     size/2
+  
+  &--jump
+    top           auto
+    bottom        6*gs
+    transform-origin center bottom
     
 .mole-skew-sample
   transform     scale(.75)
