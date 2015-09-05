@@ -2,8 +2,10 @@ React     = require 'react'
 Resizable = require 'react-component-resizable'
 Tappable  = require 'react-tappable'
 
+
+require 'css/partials/hefty-content'
+
 module.exports = React.createClass
-  
   componentDidMount:->
     if @props.isLaunchOnHover then @setState isShow: true
     else @_bindWIndowResize(); @_getPosition(); @_loop()
@@ -43,21 +45,24 @@ module.exports = React.createClass
 
     isMobile = ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch)
     onTap = if isMobile then @_toggleRun else null
+
     style =
       opacity:    if !@state.isShow then 0 else 1
       visibility: if @props.isVisibilityToggle then visibility else null
+      cursor:     'default'
 
-    <Resizable  className    = "#{@props.className or ''}"
+
+    <Tappable  className    = "hefty-content #{@props.className or ''}"
                 style        = style
-                onResize     = @_getPosition >
-        <Tappable
-          style        = { cursor: 'default' }
-          onMouseEnter = @_onShow
-          onMouseLeave = @_onHide
-          onTap        = { onTap } >
+                onMouseEnter = @_onShow
+                onMouseLeave = @_onHide
+                onTap        = { onTap } >
 
-          {@props.children}
-
-        </Tappable>
-    </Resizable>
+      <div className="hefty-content__curtain"></div>
+      <Resizable onResize = @_getPosition>
+        {@props.children}
+      </Resizable>
+      
+    </Tappable>
+    
 
