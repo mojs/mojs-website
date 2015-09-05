@@ -2,13 +2,33 @@
 
 
 .hefty-content
-  position        relative
-  display         inline-block
-  line-height     0
+  // line-height     0
+  text-align      center
+  display block
+  height    100%
+  &__inner
+    line-height   0
+    display       inline-block
+    position      relative
   &__curtain
-    position absolute
-    nw 0
-    rect 100%
-    background      rgba(c-creamy, .8)
+    position        absolute
+    nw              0
+    rect            100%
+    background      rgba(c-creamy, .85)
     z-index         10
-    border-radius  BRADIUS
+    border-radius   BRADIUS
+    transform       translateZ(0)
+  &__curtain-label
+    line-height     1.4
+    display         inline-block
+    color           c-orange
+    // color           c-creamy
+    font-size       11*PX
+    background      c-purple
+    border-radius   2*PX
+    padding         1*PX 8*PX 2*PX
+    letter-spacing  .5*PX  
+    position        absolute
+    nw              50%
+    transform       translate(-50%)
+    text-transform  lowercase

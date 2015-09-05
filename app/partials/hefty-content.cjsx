@@ -34,11 +34,28 @@ module.exports = React.createClass
     return if @isStop; @_checkVisibility()
     requestAnimationFrame(@_loop)
 
-  _onShow:-> @props.onShow?()
-  _onHide:-> @props.onHide?()
+  _onShow:-> @_hideCurtain(=> @props.onShow?())
+  _onHide:-> @_showCurtain(=> @props.onHide?())
 
-  _toggleRun:->
-    if (@_isRun = !@_isRun) then @_onShow() else @_onHide()
+  _hideCurtain:(callback)->
+    @_curtainEl ?= @refs.curtain.getDOMNode()
+    @_curtainHideTween ?= new mojs.Tween
+      duration: 250
+      easing:   'cubic.out'
+      onUpdate: (p)=> @_curtainEl.style.opacity = 1-p
+      onComplete: callback
+    @_curtainHideTween.run()
+
+  _showCurtain:(callback)->
+    @_curtainEl ?= @refs.curtain.getDOMNode()
+    @_curtainShowTween ?= new mojs.Tween
+      duration: 250
+      easing:   'cubic.in'
+      onUpdate:(p)=> @_curtainEl.style.opacity = p
+      onComplete: callback
+    @_curtainShowTween.run()
+
+  _toggleRun:-> if (@_isRun = !@_isRun) then @_onShow() else @_onHide()
 
   render:->
     visibility = if !@state.isShow then 'hidden' else 'visible'
@@ -46,23 +63,35 @@ module.exports = React.createClass
     isMobile = ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch)
     onTap = if isMobile then @_toggleRun else null
 
+    urgeLabel = if isMobile then 'Tap' else 'Hover'
+
     style =
       opacity:    if !@state.isShow then 0 else 1
       visibility: if @props.isVisibilityToggle then visibility else null
       cursor:     'default'
 
+    curtainStyle = { display: if @props.isLaunchOnHover then 'block' else 'none' }
 
     <Tappable  className    = "hefty-content #{@props.className or ''}"
-                style        = style
-                onMouseEnter = @_onShow
-                onMouseLeave = @_onHide
-                onTap        = { onTap } >
+                style        = style >
 
-      <div className="hefty-content__curtain"></div>
-      <Resizable onResize = @_getPosition>
-        {@props.children}
-      </Resizable>
-      
+      <div
+        className    = "hefty-content__inner"
+        onMouseEnter = @_onShow
+        onMouseLeave = @_onHide
+        onTap        = { onTap } >
+
+        <div className="hefty-content__curtain" ref="curtain" >
+          <div className="hefty-content__curtain-label">
+            <span>{ urgeLabel }</span> to see
+          </div>
+        </div>
+
+        <Resizable onResize = @_getPosition>
+          {@props.children}
+        </Resizable>
+      </div>
+
     </Tappable>
     
 

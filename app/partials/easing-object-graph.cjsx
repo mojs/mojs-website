@@ -16,7 +16,7 @@ module.exports = React.createClass
     delay:    1000
 
   _start:-> @_isTweensAdded and @_timeline.start(); @_isShow = true
-  _stop:->  @_timeline.stop(); @_isShow = false
+  _stop:->  @_timeline.pause(); @_isShow = false
   _onAdd:-> @_isTweensAdded = true; (@_isShow or !@_isShow?) and @_start()
 
   render:->
