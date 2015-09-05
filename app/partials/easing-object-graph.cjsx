@@ -24,8 +24,9 @@ module.exports = React.createClass
     @_easing   ?= mojs.easing.path @props.path, precompute: 2000, eps: .001
 
     <HeftyContent
-      className="easing-object-graph"
-      onShow={ => @_start() } onHide={ => @_stop() }>
+      className       = "easing-object-graph"
+      onShow          = { => @_start() } onHide={ => @_stop() }
+      isLaunchOnHover = { true } >
 
       <div className="easing-object-graph__inner">
         <EasingObject

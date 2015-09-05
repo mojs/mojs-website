@@ -1,9 +1,12 @@
 React     = require 'react'
 Resizable = require 'react-component-resizable'
+Tappable  = require 'react-tappable'
 
 module.exports = React.createClass
   
-  componentDidMount:-> @_bindWIndowResize(); @_getPosition(); @_loop()
+  componentDidMount:->
+    if @props.isLaunchOnHover then @setState isShow: true
+    else @_bindWIndowResize(); @_getPosition(); @_loop()
   componentWillUnmount:-> @isStop = true
 
   getInitialState:-> {}
@@ -29,15 +32,22 @@ module.exports = React.createClass
     return if @isStop; @_checkVisibility()
     requestAnimationFrame(@_loop)
 
+  _onMouseEnter:-> @props.onShow?()
+  _onMouseLeave:-> @props.onHide?()
+
   render:->
     visibility = if !@state.isShow then 'hidden' else 'visible'
     style =
       opacity:    if !@state.isShow then 0 else 1
       visibility: if @props.isVisibilityToggle then visibility else null
-    <Resizable  className="#{@props.className or ''}"
-                style=style
-                onResize=@_getPosition>
-
-        {@props.children}
+    <Resizable  className    = "#{@props.className or ''}"
+                style        = style
+                onResize     = @_getPosition >
+        <Tappable 
+          onMouseEnter = @_onMouseEnter
+          onMouseLeave = @_onMouseLeave >
+          
+          {@props.children}
+        </Tappable>
     </Resizable>
 
