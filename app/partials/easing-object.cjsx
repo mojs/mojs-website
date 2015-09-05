@@ -16,15 +16,16 @@ module.exports = React.createClass
     @_tween = new mojs.Tween
       onStart:  @props.onStart
       duration: @props.duration
-      delay:    @props.delay
       onUpdate: (p)=>
         return if !@props.onUpdate?
         easedP = @props.easing(p)
         @setState label: @props.onUpdate { objEl, easedP, p }
-    @props.timeline?.add @_tween
 
-  _run:->  @_tween.run()
-  _stop:-> @_tween.stop()
+    @props.timeline?.add @_tween
+    @props.timeline?.append(new mojs.Tween duration: @props.delay) if @props.delay
+
+  # _run:->  @_tween.run()
+  # _stop:-> @_tween.stop()
 
   render:->
     bg = if @props.background? then @props.background else null

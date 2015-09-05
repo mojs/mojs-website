@@ -32,22 +32,32 @@ module.exports = React.createClass
     return if @isStop; @_checkVisibility()
     requestAnimationFrame(@_loop)
 
-  _onMouseEnter:-> @props.onShow?()
-  _onMouseLeave:-> @props.onHide?()
+  _onShow:-> @props.onShow?()
+  _onHide:-> @props.onHide?()
+
+  _toggleRun:->
+    if (@_isRun = !@_isRun) then @_onShow() else @_onHide()
 
   render:->
     visibility = if !@state.isShow then 'hidden' else 'visible'
+
+    isMobile = ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch)
+    onTap = if isMobile then @_toggleRun else null
     style =
       opacity:    if !@state.isShow then 0 else 1
       visibility: if @props.isVisibilityToggle then visibility else null
+
     <Resizable  className    = "#{@props.className or ''}"
                 style        = style
                 onResize     = @_getPosition >
-        <Tappable 
-          onMouseEnter = @_onMouseEnter
-          onMouseLeave = @_onMouseLeave >
-          
+        <Tappable
+          style        = { cursor: 'default' }
+          onMouseEnter = @_onShow
+          onMouseLeave = @_onHide
+          onTap        = { onTap } >
+
           {@props.children}
+
         </Tappable>
     </Resizable>
 

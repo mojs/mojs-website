@@ -19,7 +19,6 @@ module.exports = React.createClass
 
     @_tween = new mojs.Tween
       duration: @props.duration
-      delay:    @props.delay
       onUpdate: (p)=>
         easedP = @props.easing(p)
 
@@ -31,10 +30,12 @@ module.exports = React.createClass
           progressLabel: p.toFixed(2)
           customLabel:   easedP.toFixed(2)
 
-    @props.timeline?.add(@_tween); @props.onAdd?()
+    @props.timeline?.add(@_tween)
+    @props.timeline?.append(new mojs.Tween duration: @props.delay) if @props.delay
+    @props.onAdd?()
 
-  _run:->  @_tween.run()
-  _stop:-> @_tween.stop()
+  # _run:->  @_tween.run()
+  # _stop:-> @_tween.stop()
 
   render:->
     <div className="easing-graph">
