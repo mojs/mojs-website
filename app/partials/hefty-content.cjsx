@@ -8,12 +8,11 @@ require 'css/partials/hefty-content'
 module.exports = React.createClass
   componentDidMount:->
     if @props.isLaunchOnHover then @setState isShow: true
-    else @_bindWIndowResize(); @_getPosition(); @_loop()
+    else @_bindWIndowResize(); setTimeout((=> @_getPosition();), 1000); @_loop()
   componentWillUnmount:-> @isStop = true
 
   getInitialState:-> {}
-  _bindWIndowResize:->
-    window.addEventListener 'resize', @_getPosition
+  _bindWIndowResize:-> window.addEventListener 'resize', @_getPosition
   _getScrollY:->
     if window.pageYOffset? then window.pageYOffset else document.scrollTop
   _getPosition:->
@@ -22,6 +21,9 @@ module.exports = React.createClass
     @top = scrollY + rect.top; @bottom = scrollY + rect.bottom
   _checkVisibility:->
     scrollY = @_getScrollY()
+    if @props.isIt
+      # console.clear()
+      console.log @top - 100, scrollY + @wHeight, @bottom + 100, @state.isShow
     isShow = if scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100 then true
     else false
     
@@ -34,8 +36,10 @@ module.exports = React.createClass
     return if @isStop; @_checkVisibility()
     requestAnimationFrame(@_loop)
 
-  _onShow:-> @_hideCurtain(=> @props.onShow?())
-  _onHide:-> @_showCurtain(=> @props.onHide?())
+  _onShow:->
+    if @props.isLaunchOnHover then @_hideCurtain(=> @props.onShow?()) else @props.onShow?()
+  _onHide:->
+    if @props.isLaunchOnHover then @_showCurtain(=> @props.onHide?()) else @props.onHide?()
 
   _hideCurtain:(callback)->
     @_curtainEl ?= @refs.curtain.getDOMNode()
@@ -81,7 +85,7 @@ module.exports = React.createClass
         onMouseLeave = @_onHide
         onTap        = { onTap } >
 
-        <div className="hefty-content__curtain" ref="curtain" >
+        <div className="hefty-content__curtain" ref="curtain" style = { curtainStyle }>
           <div className="hefty-content__curtain-label">
             <span>{ urgeLabel }</span> to see
           </div>
