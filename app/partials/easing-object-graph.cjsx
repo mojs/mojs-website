@@ -33,7 +33,8 @@ module.exports = React.createClass
       isLaunchOnHover = { true } >
 
       <div className="easing-object-graph__inner">
-        { ### <EasingObject
+        <EasingObject
+          isIt        = @props.isIt
           timeline    = {@_timeline}
           easing      = {@_easing}
           duration    = {@props.duration}
@@ -44,10 +45,7 @@ module.exports = React.createClass
           {@props.children}
         </EasingObject>
 
-        ### }
-
         <EasingGraph
-          isIt = @props.isIt
           easing    = {@_easing}
           timeline  = {@_timeline}
           label     = {@props.label}

@@ -142,7 +142,7 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration={ 1000 }
         onUpdate = { (o)=>
-          shift = 180*o.easedP
+          shift = 180*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "translateY(#{shift}px) translateZ(0)"
           "#{shift.toFixed(0)} px"
         }
@@ -176,7 +176,7 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration={ 1500 }
         onUpdate = { (o)=>
-          shift = 180*o.easedP
+          shift = 180*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "translateY(#{shift}px) translateZ(0)"
           "#{shift.toFixed(0)} px"
         }
@@ -237,7 +237,7 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration={ 3000 }
         onUpdate = { (o)=>
-          shift = 1 - .9*o.easedP
+          shift = 1 - .9*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "scale(#{shift}) translateZ(0)"
           "scale( #{shift.toFixed(0)} )"
         }
@@ -280,7 +280,7 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration={ 1500 }
         onUpdate = { (o)=>
-          shift = 1 - .9*o.easedP
+          shift = 1 - .9*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "scale(#{shift}) translateZ(0)"
           "scale( #{shift.toFixed(0)} )"
         }
@@ -356,7 +356,7 @@ module.exports = React.createClass
 
       <EasingObjectGraph
         onUpdate = { (o)=>
-          angle = -200*o.easedP
+          angle = -200*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "rotate(#{angle}deg) translateZ(0)"
           "#{angle.toFixed(0)} deg"
         }
@@ -404,7 +404,7 @@ module.exports = React.createClass
 
       <EasingObjectGraph
         onUpdate = { (o)=>
-          scaleX = 1-o.easedP; scaleY = 1+o.easedP
+          scaleX = 1-o.easedP[0]; scaleY = 1+o.easedP[0]
           mojs.h.style o.objEl, 'transform', "scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
           "scaleX(#{scaleX.toFixed(2)}) scaleY(#{scaleY.toFixed(2)})"
         }
@@ -474,7 +474,7 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration={ 1000 }
         onUpdate = { (o)=>
-          shift = -180*o.easedP
+          shift = -180*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "translateY(#{shift}px) translateZ(0)"
           "translateY( #{shift.toFixed(0)} px )"
         }
@@ -496,7 +496,7 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration={ 1000 }
         onUpdate = { (o)=>
-          squashP = 2*o.easedP
+          squashP = 2*o.easedP[0]
           scaleX = 1-squashP; scaleY = 1+squashP
           mojs.h.style o.objEl, 'transform', "scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
           "scaleX( #{scaleX.toFixed(2)} ) scaleY( #{scaleY.toFixed(2)} )"
@@ -533,13 +533,12 @@ module.exports = React.createClass
 
       <EasingObjectGraph
         duration={ 1000 }
-        isIt = true
         onUpdate = { (o)=>
-          @easing ?= mojs.easing.path 'M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0'
-          squashP = 2*o.easedP
+          squashP = 2*o.easedP[0]
+          translateP = -180*o.easedP[1]
           scaleX = 1-squashP; scaleY = 1+squashP
-          mojs.h.style o.objEl, 'transform', "translateY(#{-180*@easing(o.p)}px) scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
-          "translateY(#{(-180*@easing(o.p)).toFixed(2)}px) scaleX( #{scaleX.toFixed(2)} ) scaleY( #{scaleY.toFixed(2)} )"
+          mojs.h.style o.objEl, 'transform', "translateY(#{translateP}px) scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
+          "translateY(#{(translateP).toFixed(2)}px) scaleX( #{scaleX.toFixed(2)} ) scaleY( #{scaleY.toFixed(2)} )"
         }
         label={['scale', 'translateY']}
         background="#F1E2D7"
@@ -615,7 +614,7 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration={ 1500 }
         onUpdate = { (o)=>
-          shift = 180*o.easedP
+          shift = 180*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "translateY(#{shift}px) translateZ(0)"
           "#{shift.toFixed(0)} px"
         }
@@ -635,7 +634,7 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration={ 1500 }
         onUpdate = { (o)=>
-          shift = 180*o.easedP
+          shift = 180*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "translateY(#{shift}px) translateZ(0)"
           "#{shift.toFixed(0)} px"
         }
@@ -650,8 +649,8 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration={ 2500 }
         onUpdate = { (o)=>
-          scaleX = 1+1.5*o.easedP
-          scaleY = 1-1.5*o.easedP
+          scaleX = 1+1.5*o.easedP[0]
+          scaleY = 1-1.5*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
           ""
         }
@@ -668,8 +667,8 @@ module.exports = React.createClass
         onUpdate = { (o)=>
           @translateC ?= mojs.easing.path 'M0,100 C4.09332506,96.8557232 7.94664867,88.3615401 10.4890103,0.101163189 L21.0369247,0.0529570347 C21.0369247,-1.65137514 30.4637771,115.895775 38.3003969,0.121056532 L46.9324469,0.201100531 C46.9324469,-0.645830728 53.708714,57.6710335 58.8370818,0.108432613 L64.7902198,0.101163189 C64.7902198,-0.884162099 69.2782346,29.0847003 73.2517768,0.0563486783 L77.4798577,0.0566611047 C77.4798577,0.0345576664 80.9058556,16.5228732 83.4115682,0.0345576664 L86.3881372,0.0345576664 C86.5206567,-0.645437439 88.7521049,9.04031166 90.4486848,0.0730637537 L92.4781637,0.0726514455 C92.6134623,-0.122912361 94.428037,4.62670777 95.6251679,0.0336964333 L97.1134524,0.0262594354 C97.1134524,0.00758931351 98.2373898,1.95224833 99.0529099,0.00758931351 L100,0'
           translateP = @translateC o.p
-          scaleX = 1 + 1.5*o.easedP
-          scaleY = 1 - 1.5*o.easedP
+          scaleX = 1 + 1.5*o.easedP[0]
+          scaleY = 1 - 1.5*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "translateY(#{180*translateP}px) scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
           ""
         }
@@ -711,9 +710,9 @@ module.exports = React.createClass
           @scopeEl ?= document.querySelector '#js-mole-sample-1'
           @moleEl ?= @scopeEl.querySelector '#js-mole'
 
-          mojs.h.style(@moleEl, 'transform', "skewX(#{75*o.easedP}deg) translateZ(0)");
+          mojs.h.style(@moleEl, 'transform', "skewX(#{75*o.easedP[0]}deg) translateZ(0)");
 
-          "skewX(#{(75*o.easedP).toFixed(2)}deg)"
+          "skewX(#{(75*o.easedP[0]).toFixed(2)}deg)"
         }
 
         label="angle"
@@ -1038,9 +1037,9 @@ module.exports = React.createClass
           @scopeEl    ?= document.querySelector '#js-mole-sample-8'
           @tongueEl   ?= @scopeEl.querySelector '#js-sample-tongue'
 
-          mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*o.easedP}px)")
+          mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*o.easedP[0]}px)")
           
-          "translateX(#{(-550*o.easedP).toFixed(2)}px)"
+          "translateX(#{(-550*o.easedP[0]).toFixed(2)}px)"
         }
 
         label="translateX"
@@ -1074,9 +1073,9 @@ module.exports = React.createClass
           skewP = @skewEasing o.p
 
           mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*skewP}px)")
-          @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*o.easedP)}, 30 25 T 50 30");
+          @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*o.easedP[0])}, 30 25 T 50 30");
           
-          "M0 30 Q 20 #{(10+(550*o.easedP)).toFixed(2)}, 30 25 T 50 30"
+          "M0 30 Q 20 #{(10+(550*o.easedP[0])).toFixed(2)}, 30 25 T 50 30"
         }
 
         label="path's d attribute"

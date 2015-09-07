@@ -18,7 +18,11 @@ module.exports = React.createClass
       duration: @props.duration
       onUpdate: (p)=>
         return if !@props.onUpdate?
-        easedP = @props.easing(p)
+        
+        easedP = if mojs.h.isArray @props.easing
+          easing(p) for easing, i in @props.easing
+        else @props.easing(p)
+        
         @setState label: @props.onUpdate { objEl, easedP, p }
 
     @props.timeline?.add @_tween
