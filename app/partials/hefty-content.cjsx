@@ -47,7 +47,7 @@ module.exports = React.createClass
       duration: 250
       easing:   'cubic.out'
       onUpdate: (p)=> @_curtainEl.style.opacity = 1-p
-      onComplete: callback
+      onComplete: => @_curtainEl.style.display = 'none'; callback()
     @_curtainHideTween.run()
 
   _showCurtain:(callback)->
@@ -55,6 +55,7 @@ module.exports = React.createClass
     @_curtainShowTween ?= new mojs.Tween
       duration: 250
       easing:   'cubic.in'
+      onStart: => @_curtainEl.style.display = 'block'
       onUpdate:(p)=> @_curtainEl.style.opacity = p
       onComplete: callback
     @_curtainShowTween.run()

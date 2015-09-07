@@ -29,6 +29,10 @@ module.exports = React.createClass
       { ###
         
         <p>TODO: add jumping square example</p>
+        <p>TODO: fix easing object hover </p>
+        <p>TODO: add body tap </p>
+        <p>TODO: add draggable progress </p>
+
         <p>TODO: add pens</p>
         <p>TODO: fix motion for the wxeb demo</p>
         <p>TODO: add server rendering to this website</p>
