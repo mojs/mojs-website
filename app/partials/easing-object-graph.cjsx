@@ -21,7 +21,11 @@ module.exports = React.createClass
 
   render:->
     @_timeline ?= new mojs.Timeline repeat: 9999999999
-    @_easing   ?= mojs.easing.path @props.path, precompute: 2000, eps: .001
+
+    @_easing ?= if mojs.h.isArray @props.path
+      for path, i in @props.path
+        mojs.easing.path @props.path[i], precompute: 2000, eps: .001
+    else [ mojs.easing.path @props.path, precompute: 2000, eps: .001 ]
 
     <HeftyContent
       className       = "easing-object-graph"
@@ -29,7 +33,7 @@ module.exports = React.createClass
       isLaunchOnHover = { true } >
 
       <div className="easing-object-graph__inner">
-        <EasingObject
+        { ### <EasingObject
           timeline    = {@_timeline}
           easing      = {@_easing}
           duration    = {@props.duration}
@@ -40,7 +44,10 @@ module.exports = React.createClass
           {@props.children}
         </EasingObject>
 
+        ### }
+
         <EasingGraph
+          isIt = @props.isIt
           easing    = {@_easing}
           timeline  = {@_timeline}
           label     = {@props.label}

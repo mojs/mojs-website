@@ -523,7 +523,7 @@ module.exports = React.createClass
         We can 
         set <span className="highlight">scaleY</span>&nbsp;
         as <span className="highlight">1 + curve progress</span>&nbsp;
-        and <span className="highlight">scaleX</span> as <span className="highlight">1 - curve progress</span>
+        and <span className="highlight">scaleX</span> as <span className="highlight">1 - curve progress</span>&nbsp;
         to imitate the desired effect.
       </p>
 
@@ -533,6 +533,7 @@ module.exports = React.createClass
 
       <EasingObjectGraph
         duration={ 1000 }
+        isIt = true
         onUpdate = { (o)=>
           @easing ?= mojs.easing.path 'M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0'
           squashP = 2*o.easedP
@@ -542,7 +543,7 @@ module.exports = React.createClass
         }
         label="translateY + scale"
         background="#F1E2D7"
-        path="M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,59.1393229 64.2747421,100 100,100">
+        path={['M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,59.1393229 64.2747421,100 100,100', 'M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0' ]}>
         
         <div className="path-easing-rectangle path-easing-rectangle--jump"></div>
       

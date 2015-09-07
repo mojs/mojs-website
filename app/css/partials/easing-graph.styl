@@ -51,7 +51,29 @@
     top              50%
     transform        rotate(-90deg)
     background-color inherit
-
+      
+  &__line-wrapper
+    height          100%
+    width           0
+    // z-index         1
+    // position relative
+    
+{ el = '.easing-graph-part' }
+  position absolute
+  rect 100%
+  
+  size = 8
+  &__point
+    circle          size*PX
+    margin-left     -(size/2)*PX
+    margin-top      -(size/2)*PX
+    background      c-orange
+    position        absolute
+    top             100%
+    z-index         2
+  .easing-graph-line
+    position absolute
+    
   &__graph
     position        absolute
     nw              0
@@ -66,21 +88,4 @@
       stroke-width      1*PX
       stroke-miterlimit 0
       stroke-linecap    round
-  
-  size = 8
-  &__point
-    circle          size*PX
-    margin-left     -(size/2)*PX
-    margin-top      -(size/2)*PX
-    background      c-orange
-    position        absolute
-    top             100%
-    z-index         2
-      
-  &__line-wrapper
-    height          100%
-    width           0
-    // z-index         1
-    // position relative
-  .easing-graph-line
-    position absolute
+
