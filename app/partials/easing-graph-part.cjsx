@@ -1,7 +1,6 @@
 React         = require 'react'
 mojs          = require 'mo-js'
 
-
 require '../css/partials/easing-graph-part.styl'
 
 module.exports = React.createClass
@@ -11,6 +10,7 @@ module.exports = React.createClass
     path:     'M0,100 L100,0'
     duration: 2000
     delay:    1000
+    colors:   ['#F64040', '#00F87F']
 
   componentDidMount:->
     customEl   = @refs['custom-line'].getDOMNode()
@@ -27,12 +27,11 @@ module.exports = React.createClass
     @props.timeline?.add(@_tween)
 
   render:->
-    @_colors = ['#F64040', '#00F87F']
     <div className="easing-graph-part">
       <div
         className="easing-graph-part__point"
         ref="point"
-        style = { backgroundColor: @_colors[@props.index] }  />
+        style = { backgroundColor: @props.colors[@props.index] }  />
 
       <div ref="custom-line" className="easing-graph__line-wrapper">
         <div className="easing-graph-line easing-graph-line--horizontal">

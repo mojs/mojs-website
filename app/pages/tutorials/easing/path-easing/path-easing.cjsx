@@ -541,7 +541,7 @@ module.exports = React.createClass
           mojs.h.style o.objEl, 'transform', "translateY(#{-180*@easing(o.p)}px) scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
           "translateY(#{(-180*@easing(o.p)).toFixed(2)}px) scaleX( #{scaleX.toFixed(2)} ) scaleY( #{scaleY.toFixed(2)} )"
         }
-        label="translateY + scale"
+        label={['scale', 'translateY']}
         background="#F1E2D7"
         path={['M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,59.1393229 64.2747421,100 100,100', 'M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0' ]}>
         
