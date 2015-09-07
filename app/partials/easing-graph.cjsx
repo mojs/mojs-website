@@ -32,27 +32,27 @@ module.exports = React.createClass
   # _run:->  @_tween.run()
   # _stop:-> @_tween.stop()
 
-  _makeGraph:(path, i)->
+  _makeGraph:(path=@props.path, i=0)->
     <Graph
       colors   = { @props.colors }
       timeline = { @props.timeline }
       delay    = { @props.delay }
       duration = { @props.duration }
-      easing   = {@props.easing}
-      path     = {path}
-      index    = {i}
-      isIt     = {@props.isIt} />
+      easing   = { @props.easing }
+      path     = { path }
+      index    = { i }
+      isIt     = { @props.isIt } />
+
+  _makeLabel:(label=@props.label, i=0)->
+    <GraphLabel label={label} index={i} color = {@props.colors[i]} />
 
   render:->
 
-    graphs = if mojs.h.isArray @props.path
-      @_makeGraph(value, i) for value, i in @props.path
-    else @_makeGraph(@props.path, 0)
+    graphs = if !mojs.h.isArray @props.path then @_makeGraph()
+    else @_makeGraph(value, i) for value, i in @props.path
 
-    labels = if mojs.h.isArray @props.label
-      for label, i in @props.label
-        <GraphLabel label={label} index={i} color = {@props.colors[i]} />
-    else <GraphLabel label={@props.label} index={0} color = {@props.colors[0]} />
+    labels = if !mojs.h.isArray @props.label then @_makeLabel()
+    else @_makeLabel(label, i) for label, i in @props.label
 
     <div className="easing-graph">
       <div className="easing-graph__center">
