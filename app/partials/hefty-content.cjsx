@@ -9,9 +9,7 @@ module.exports = React.createClass
   componentDidMount:->
     if @props.isLaunchOnHover then @setState isShow: true
     else @_bindWIndowResize(); setTimeout((=> @_getPosition();), 1000); @_loop()
-
-    isMobile = !("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch)
-    isMobile and (new Hammer document.body).on 'tap', @_onHide
+    (new Hammer document.body).on 'tap', @_onHide
     
   componentWillUnmount:-> @isStop = true
   getInitialState:-> {}
@@ -45,6 +43,8 @@ module.exports = React.createClass
     return if !@_isShow; @_isShow = false
     if @props.isLaunchOnHover then @_showCurtain() else @props.onHide?()
 
+  _stopPropagation:(e)-> e.stopPropagation()
+
   _hideCurtain:->
     @_curtainEl ?= @refs.curtain.getDOMNode()
     @_curtainHideTween ?= new mojs.Tween
@@ -67,8 +67,6 @@ module.exports = React.createClass
   render:->
     visibility = if !@state.isShow then 'hidden' else 'visible'
 
-    isMobile = ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch)
-
     style =
       opacity:    if !@state.isShow then 0 else 1
       visibility: if @props.isVisibilityToggle then visibility else null
@@ -77,12 +75,11 @@ module.exports = React.createClass
     curtainStyle = { display: (if @props.isLaunchOnHover then 'block' else 'none'), cursor: 'default' }
 
     <Tappable  className = "hefty-content #{@props.className or ''}"
-                style    = style >
-      <div
-        className    = "hefty-content__inner"
-        onMouseEnter = @_onShow
-        onMouseLeave = @_onHide >
-
+                style    = style
+                onTap    = @_stopPropagation >
+      
+      <div className    = "hefty-content__inner" >
+        
         <Tappable className="hefty-content__curtain" ref="curtain" style = { curtainStyle } onTap = @_onShow>
           <div className="hefty-content__curtain-label">
             tap to see
