@@ -40,8 +40,7 @@ module.exports = React.createClass
       duration = { @props.duration }
       easing   = { @props.easing }
       path     = { path }
-      index    = { i }
-      isIt     = { @props.isIt } />
+      index    = { i } />
 
   _makeLabel:(label=@props.label, i=0)->
     <GraphLabel label={label} index={i} color = {@props.colors[i]} />

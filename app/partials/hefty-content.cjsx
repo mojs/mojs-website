@@ -45,8 +45,10 @@ module.exports = React.createClass
 
   _stopPropagation:(e)-> e.stopPropagation()
 
-  _hideCurtain:->
+  _hideCurtain:(e)->
+    e?.stopPropagation()
     @_curtainEl ?= @refs.curtain.getDOMNode()
+    @_mainEl    ?= @getDOMNode()
     @_curtainHideTween ?= new mojs.Tween
       duration: 250
       easing:   'cubic.out'
@@ -56,6 +58,7 @@ module.exports = React.createClass
 
   _showCurtain:(callback = @props.onHide)->
     @_curtainEl ?= @refs.curtain.getDOMNode()
+    @_mainEl    ?= @getDOMNode()
     @_curtainShowTween ?= new mojs.Tween
       duration: 250
       easing:   'cubic.in'
@@ -70,9 +73,8 @@ module.exports = React.createClass
     style =
       opacity:    if !@state.isShow then 0 else 1
       visibility: if @props.isVisibilityToggle then visibility else null
-      cursor:     'default'
 
-    curtainStyle = { display: (if @props.isLaunchOnHover then 'block' else 'none'), cursor: 'default' }
+    curtainStyle = { display: (if @props.isLaunchOnHover then 'block' else 'none') }
 
     <Tappable  className = "hefty-content #{@props.className or ''}"
                 style    = style

@@ -16,5 +16,29 @@
   .easing-graph
     border-top-left-radius     0
     border-bottom-left-radius  0
+  .easing-object,
+  .easing-graph
+    transition transform .2s ease-out
+  &.is-squash
+    .easing-object
+      transform translateX(50%)
+      border-top-right-radius    BRADIUS
+      border-bottom-right-radius BRADIUS
+    .easing-graph
+      transform translateX(-50%)
+      border-top-left-radius     BRADIUS
+      border-bottom-left-radius  BRADIUS
+  &.is-pop-object
+    .easing-object
+      z-index 3
+  &.is-pop-graph
+    .easing-graph,
+    .easing-object
+      z-index 3
+    &.is-squash
+      .easing-graph
+        background #5F325A url('../i/pattern.png') repeat
+    
+    
     
     

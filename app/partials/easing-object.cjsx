@@ -1,5 +1,5 @@
 React         = require 'react'
-Tappable      = require 'react-tappable'
+# Tappable      = require 'react-tappable'
 mojs          = require 'mo-js'
 
 require '../css/partials/easing-object.styl'

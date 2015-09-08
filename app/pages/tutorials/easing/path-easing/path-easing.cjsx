@@ -1171,7 +1171,7 @@ module.exports = React.createClass
 
       <EasingObjectGraph
         duration = { 1800 }
-        onUpdate = { (o)->
+        onUpdate = { (o)=>
           @scopeEl    ?= document.querySelector '#js-mole-sample-11'
           @moleEl     ?= @scopeEl.querySelector '#js-mole'
           @moleHandEl ?= @scopeEl.querySelector '#js-mole-hand'
@@ -1182,6 +1182,7 @@ module.exports = React.createClass
           @glassesLeftEl  ?= @scopeEl.querySelector '#js-mole-glasses-left'
           @moleEyeEl ?= @scopeEl.querySelector('#js-mole-eye')
           @moleEyeLashEl ?= @scopeEl.querySelector('#js-mole-eye-lash')
+
 
           if !@burst?
             @burst = new mojs.Burst({
