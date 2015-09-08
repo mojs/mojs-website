@@ -46,7 +46,6 @@ module.exports = React.createClass
   _stopPropagation:(e)-> e.stopPropagation()
 
   _hideCurtain:(e)->
-    e?.stopPropagation()
     @_curtainEl ?= @refs.curtain.getDOMNode()
     @_mainEl    ?= @getDOMNode()
     @_curtainHideTween ?= new mojs.Tween
@@ -80,9 +79,12 @@ module.exports = React.createClass
                 style    = style
                 onTap    = @_stopPropagation >
       
-      <div className    = "hefty-content__inner" >
-        
-        <Tappable className="hefty-content__curtain" ref="curtain" style = { curtainStyle } onTap = @_onShow>
+      <Tappable
+        className = "hefty-content__inner"
+        onTap     = { @_onHide }
+        style     = { cursor: 'default' } >
+
+        <Tappable className="hefty-content__curtain" ref="curtain" style = { curtainStyle } onTap = @_onShow >
           <div className="hefty-content__curtain-label">
             tap to see
           </div>
@@ -91,6 +93,7 @@ module.exports = React.createClass
         <Resizable onResize = @_getPosition>
           {@props.children}
         </Resizable>
-      </div>
+
+      </Tappable>
 
     </Tappable>
