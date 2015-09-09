@@ -9,15 +9,16 @@ module.exports = React.createClass
   componentDidMount:->
     if @props.isLaunchOnHover then @setState isShow: true
     
-    @_bindWindowResize(); setTimeout((=> @_getPosition();), 1000); @_loop()
+    @_bindWindowResize(); setTimeout((=> @_getPosition();), 5000); @_loop()
 
-    (new Hammer document.body).on 'tap', (e)=> @_onHide(e)
+    (new Hammer document.body).on 'tap', (e)=>
+      console.log 'body!'
+      @_onHide(e)
     
   componentWillUnmount:-> @isStop = true
   getInitialState:-> {}
   _bindWindowResize:-> window.addEventListener 'resize', @_getPosition
-  _getScrollY:->
-    if window.pageYOffset? then window.pageYOffset else document.scrollTop
+  _getScrollY:-> if window.pageYOffset? then window.pageYOffset else document.scrollTop
   _getPosition:->
     node = @getDOMNode().childNodes[0]; rect = node.getBoundingClientRect()
     scrollY = @_getScrollY(); @wHeight = window.innerHeight
@@ -34,10 +35,15 @@ module.exports = React.createClass
 
   _checkHide:->
     scrollY = @_getScrollY()
-    isShow = if scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100 then true
-    else false
+    # console.log scrollY
+    isShow = scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100
 
-    if isShow is false and @state.isShow isnt isShow then @_onHide()
+    if isShow is false and @_isShow
+      # if @props.isIt
+      #   console.log 'HIDE!', isShow
+      #   console.log scrollY + @wHeight, @top - 100, scrollY + @wHeight > @top - 100
+      #   console.log scrollY, @bottom + 100, scrollY < @bottom + 100
+      @_onHide()
 
   _loop:->
     return @_onHide() if @isStop

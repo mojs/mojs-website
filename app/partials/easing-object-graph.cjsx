@@ -37,6 +37,7 @@ module.exports = React.createClass
     className = if (@state.isSquash) then "is-squash is-pop-#{@state.pop}" else ''
 
     <HeftyContent
+      isIt = @props.isIt
       className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
       onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() }
       isLaunchOnHover = { true } >

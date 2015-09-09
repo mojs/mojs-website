@@ -636,6 +636,7 @@ module.exports = React.createClass
       </p>
 
       <EasingObjectGraph
+        isIt = true
         duration={ 1500 }
         onUpdate = { (o)=>
           shift = 180*o.easedP[0]
@@ -835,7 +836,6 @@ module.exports = React.createClass
       </p>
 
       <EasingObjectGraph
-        isIt = true
         duration = { 1800 }
         onUpdate = { (o)->
           @scopeEl    ?= document.querySelector '#js-mole-sample-4'
