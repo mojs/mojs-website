@@ -17,7 +17,7 @@ module.exports = React.createClass
     delay:    1000
 
   _start:-> @_isTweensAdded and @_timeline.start(); @_isShow = true
-  _stop:->  @_timeline.pause(); @_isShow = false
+  _stop:->  @_timeline.pause(); console.log 'pause!' ; @_isShow = false
   _onAdd:-> @_isTweensAdded = true; (@_isShow or !@_isShow?) and @_start()
 
   _onHide:-> @setState isSquash: false
@@ -27,7 +27,7 @@ module.exports = React.createClass
   _toggleSquash:(e)-> e?.stopPropagation(); @setState isSquash: !@state.isSquash
 
   render:->
-    @_timeline ?= new mojs.Timeline repeat: 9999999999
+    @_timeline ?= new mojs.Timeline repeat: 99999999
 
     @_easing ?= if mojs.h.isArray @props.path
       for path, i in @props.path
@@ -37,7 +37,7 @@ module.exports = React.createClass
     className = if (@state.isSquash) then "is-squash is-pop-#{@state.pop}" else ''
 
     <HeftyContent
-      className       = "easing-object-graph #{className}"
+      className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
       onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() }
       isLaunchOnHover = { true } >
 
