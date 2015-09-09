@@ -11,7 +11,7 @@ module.exports = React.createClass
     
     @_bindWindowResize(); setTimeout((=> @_getPosition();), 1000); @_loop()
 
-    (new Hammer document.body).on 'tap', @_onHide
+    (new Hammer document.body).on 'tap', (e)=> @_onHide(e)
     
   componentWillUnmount:-> @isStop = true
   getInitialState:-> {}
@@ -39,7 +39,6 @@ module.exports = React.createClass
 
     if isShow is false and @state.isShow isnt isShow then @_onHide()
 
-
   _loop:->
     return @_onHide() if @isStop
     if @props.isLaunchOnHover then @_checkHide() else @_checkVisibility()
@@ -54,7 +53,7 @@ module.exports = React.createClass
     return if !@_isShow; @_isShow = false
     if @props.isLaunchOnHover then @_showCurtain() else @props.onHide?()
 
-  _hideCurtain:(e)->
+  _hideCurtain:()->
     @_curtainEl ?= @refs.curtain.getDOMNode()
     @_mainEl    ?= @getDOMNode()
     @_curtainHideTween ?= new mojs.Tween
@@ -62,9 +61,10 @@ module.exports = React.createClass
       easing:   'cubic.out'
       onUpdate: (p)=> @_curtainEl.style.opacity = 1-p
       onComplete: => @_curtainEl.style.display = 'none'; @props.onShow?()
+    @_curtainShowTween?.stop()
     @_curtainHideTween.run()
 
-  _showCurtain:(callback = @props.onHide)->
+  _showCurtain:()->
     @_curtainEl ?= @refs.curtain.getDOMNode()
     @_mainEl    ?= @getDOMNode()
     @_curtainShowTween ?= new mojs.Tween
@@ -72,7 +72,8 @@ module.exports = React.createClass
       easing:   'cubic.in'
       onStart: => @_curtainEl.style.display = 'block'
       onUpdate:(p)=> @_curtainEl.style.opacity = p
-      onComplete: @props.onHide
+      onComplete: => @_curtainEl.style.opacity = 1; @props.onHide?()
+    @_curtainHideTween?.stop()
     @_curtainShowTween.run()
 
   render:->
