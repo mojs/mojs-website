@@ -51,9 +51,9 @@ module.exports = React.createClass
       <p>
         Animation with equal interim spacing(read with linear easing) can 
         envoke in human brain nothing than suspicious or dull response. 
-        By contrast, excellent crafted easing appeal user's attention, araise curiosity
-        and involvement.
-        That's why so important to have full control of easing functions.
+        By contrast, excellent crafted easing appeal user's attention, 
+        araise curiosity so involvement.
+        That's why so crutial to embrace the full control of easing functions.
       </p>
 
       <p>
@@ -68,10 +68,10 @@ module.exports = React.createClass
           </UniteLink> and 
           <UniteLink link="/easing/springs" isDisabled="true">
             Springs
-          </UniteLink> that you can find in other web animation libraries, 
+          </UniteLink> which you can find in other web animation libraries, 
           <span className="highlight">mo· js</span>
           &nbsp;has super precise easing function type 
-          - <span className="highlight">Path Easing</span>.
+          - <span className="highlight">path easing</span>.
           It allows you to draw your timing functions! 
           That's what this tutorial is dedicated to, hang tight!
       </p>
@@ -103,7 +103,16 @@ module.exports = React.createClass
       </em>
 
       <p>
-        We have one sloppy movement here, it doesn’t really look 
+        We've created a tween here by constracting 
+        the <span className="highlight">mojs.Tween</span> class (line 2), 
+        on every frame update we multiply tween's progress(it is in range of from 0 to 1) 
+        on 200 and set the result as the current 
+        <span className="highlight">translateY</span> property (line 6) of our 
+        <span className="highlight">square</span> object (line 1).
+      </p>
+
+      <p>
+        As the result we have one sloppy movement here, it doesn’t really look 
         like something falling down at all, so lets add bounce easing:
       </p>
 
@@ -128,17 +137,10 @@ module.exports = React.createClass
         &nbsp;that is available on 
         <span className="highlight">mojs.easing</span> object - the place where 
         all easing functions and helpers are stored. 
-        The result is pretty obvious - you probably did it thousands times - 
+        The outcome is pretty obvious - you probably did it thousands times - 
         we have something that kind of looking like falling object with it’s own physics, 
-        despite the fact that it is not.
-      </p>
-
-      <p>
-        If you'll think about it, this bounce easing represents our object's 
-        parameters like the material it is made of or it's weight or acceleration it has. 
-        Savvy readers starting to grasp the main problem with the usual easing function 
-        - it is limited to one set of these parameters and we can’t change them 
-        effecively - they are hardcoded into this graph:
+        despite the fact that it doesnt obey any physics laws, its behavior is hardcoded 
+        into this graph:
       </p>
 
       <EasingObjectGraph
@@ -157,6 +159,13 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
       <p>
+        If you'll think about it, this common bounce easing graph represents our object's 
+        parameters like the material it is made of or it's weight or acceleration it has. 
+        Savvy readers starting to grasp the main problem with this widespread easing function 
+        - the limit to one set of these parameters that can not be changed.
+      </p>
+
+      <p>
         But what if we want to change the weight parameter of our object so it will 
         have much wider bouncing amplitude range? That’s the point where the 
         <span className="highlight">path easing</span> become irreplaceable. 
@@ -172,7 +181,7 @@ module.exports = React.createClass
       <p>
         We will amplify the bouncing curves a bit, to add our motion feel of much more lighter object 
         (or much more bouncy one - made of rubber instead of wood).
-        Thats what the bouncy graph might look like:
+        That's what the bouncy graph might look like:
       </p>
 
       <EasingObjectGraph
@@ -196,10 +205,10 @@ module.exports = React.createClass
       </em>
 
       <p>
-        There is my <UniteLink href="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</UniteLink> with the bouncy graph.
-        Now we can generate our custom easing function from the SVG path commands the 
-        path's <span className="highlight">d attribute</span> contains.
-        For this simply copy the commands and pass it to 
+        There is my <UniteLink link="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</UniteLink> with this bouncy graph.
+        Now we can generate our custom easing function from this SVG path.
+        For this simply copy the Path's commands from 
+        <span className="highlight">d attribute</span> and pass them to 
         the <span className="highlight">mojs.easing.path</span> function (line 2):
       </p>
 
@@ -226,12 +235,13 @@ module.exports = React.createClass
       </p>
 
       <p>
-        You can literally draw your easing functions.
+        You can literally draw your easing functions with <span className="highlight">Path easing</span>.
+        There are few more examples of drawn custom easing:
       </p>
 
       <ul>
         <li>
-          like <span className="highlight">extreme ease-in-out</span> (
+          extreme ease-in-out (
           <UniteLink link="/app/pages/tutorials/easing/path-easing/files/extreme-ease-in-out.svg">.svg file</UniteLink>) :
         </li>
       </ul>
@@ -320,9 +330,10 @@ module.exports = React.createClass
       
       <p>
         Imagine what amount of 
-        freedom <span className="highlight">path easing</span> can give you 
-        and how comprehensive your easing functions can now be. It has much more 
-        powerfull purposes though, keep reading!
+        freedom <span className="highlight">path easing</span> can give you,  
+        how comprehensive your easing functions can now be.
+        <br />
+        Nonetheless, <span className="highlight">it has much more powerfull purposes</span>, so keep reading!
       </p>
 
       <h2>Property curves</h2>
