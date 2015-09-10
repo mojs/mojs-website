@@ -2,17 +2,18 @@ React         = require 'react'
 {PrismCode}   = require 'react-prism'
 Tappable      = require 'react-tappable'
 mojs          = require 'mo-js'
-HeftyContent  = require './hefty-content'
+HeftyContent  = require 'partials/hefty-content'
+Pen           = require 'partials/codepen'
 
 require '../css/partials/code-sample.styl'
 
 module.exports = React.createClass
-  _loadPen:->
-    if !(document.querySelector '#js-codepen-script')?
-      pen = document.createElement('script'); pen.type = 'text/javascript'; pen.async = true
-      pen.src = '//assets.codepen.io/assets/embed/ei.js'; pen.id  = 'js-codepen-script'
-      (document.getElementsByTagName('head')[0] or document.getElementsByTagName('body')[0]).appendChild(pen)
-    else CodePenEmbed?._showCodePenEmbeds?()
+  # _loadPen:->
+  #   if !(document.querySelector '#js-codepen-script')?
+  #     pen = document.createElement('script'); pen.type = 'text/javascript'; pen.async = true
+  #     pen.src = '//assets.codepen.io/assets/embed/ei.js'; pen.id  = 'js-codepen-script'
+  #     (document.getElementsByTagName('head')[0] or document.getElementsByTagName('body')[0]).appendChild(pen)
+  #   else CodePenEmbed?._showCodePenEmbeds?()
 
   _showjs:->  @state.show isnt 'js'  and @setState show: 'js'
   _showes6:-> @state.show isnt 'es6' and @setState show: 'es6'
@@ -31,7 +32,7 @@ module.exports = React.createClass
       onUpdate:(p)-> activeEl.style.opacity = p
       onComplete:-> activeEl.style.opacity = 1
     tween.run()
-    @_loadPen()
+    # @_loadPen()
 
   render:->
     items = []; itemButtons = []
@@ -52,9 +53,6 @@ module.exports = React.createClass
       itemButtons.push <Tappable className="code-sample__button #{showClass}" onTap=@["_show#{key}"] key={i}>{key}</Tappable>
 
 
-    penEl = if !@state.isInit then null
-    else <p data-height="345" data-theme-id="15571" data-slug-hash="#{@props.pen}" data-default-tab="result" data-user="sol0mka" className='codepen'>See the Pen <a href='http://codepen.io/sol0mka/pen/8312611e3618e83d4103390afc2c8bef/'>8312611e3618e83d4103390afc2c8bef</a> by LegoMushroom (<a href='http://codepen.io/sol0mka'>@sol0mka</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-
     className = if !@props.pen? then 'is-alone' else ''
     <div className="code-sample #{className}">
       <div className="code-sample__syntax" id="js-syntax">
@@ -63,7 +61,7 @@ module.exports = React.createClass
       </div>
       <div className="code-sample__pen">
         <HeftyContent isVisibilityToggle={true} onShow = @_initPen >
-          { penEl }
+          { if !@state.isInit then null else <Pen pen={@props.pen} /> }
         </HeftyContent>
       </div>
     </div>

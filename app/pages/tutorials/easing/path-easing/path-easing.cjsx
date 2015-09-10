@@ -340,14 +340,14 @@ module.exports = React.createClass
 
       <p>
         If you are familiar with After Effects workflow and have ever worked 
-        with <UniteLink link="http://www.schoolofmotion.com/intro-to-animation-curves-in-after-effects/">animation curves</UniteLink> (go watch this video, I will wait on you here) 
+        with <UniteLink link="http://www.schoolofmotion.com/intro-to-animation-curves-in-after-effects/">animation curves</UniteLink> (go watch this video, I'll be waiting on you here) 
         this idea won't be entirely new for you.
         If you haven't - no worries, it is pretty easy but be attentive it can change 
         the way you are treating your animations!
       </p>
 
       <p>
-        Let me try to play the idea of property curves to one sentence:
+        Let me try to express the idea of property curves in one sentence:
       </p>
 
       <Cite author="LegoMushroom">
@@ -357,123 +357,18 @@ module.exports = React.createClass
 
       <p>
         Yes exactly. We can draw for instance, how a translate or scale(or any other) 
-        propety will behave on progress change. To describe it more verbosely consider
+        propety will act on progress change. To describe it more verbosely consider
         the next use case.
       </p>
 
       <p>
-        Pretend you need to animate a character that is angry and arguing to somebody.
-        Meanwhile the blame his hand is waving in the air to exaggerate his bad mood.
-        We can describe the hand angle property with a path like this:
+        We have our square, but now it starts at very bottom, then jumps up with squash&stretch motion. 
+        Just like this:
       </p>
 
-      <EasingObjectGraph
-        onUpdate = { (o)=>
-          angle = -200*o.easedP[0]
-          mojs.h.style o.objEl, 'transform', "rotate(#{angle}deg) translateZ(0)"
-          "#{angle.toFixed(0)} deg"
-        }
-        label="angle"
-        background="#F1E2D7"
-        path="M0,100 L3.13085938,99.9098435 C11.128418,-42.5703735 24.7357688,10.2827309 24.7357688,10.2827309 C24.7357688,10.2827309 35.4207115,6.37990438 35.420711,19.4955507 C35.420711,19.4955507 35.4207115,28.4642364 38.4679491,20.0448329 C45.9122391,-2.47328083 48.2480469,19.2718256 49.4205542,19.2718262 C49.4205546,6.82379606 55.0592461,-3.56955878 59,15.8223683 C60.6251608,22.53696 56.8918457,-3.39703265 65.4951172,-3.39703265 C68.7340668,-3.59873581 69.730594,6.54639177 70.328125,13.9672245 C70.9301836,21.4442862 74.0961573,26.974048 74.7888322,18.7754178 C75.3742722,5.88443799 81.9388046,2.60654815 84.8170547,9.46624826 C88.6793176,21.7631952 90.7471271,6.55096632 93.7893906,-0.121967559 C95.5135217,-3.90369547 98.2082808,0.193576387 100,0">
-        
-        <div className="mole-hand"></div>
-      
-      </EasingObjectGraph>
-
-      <em>
-        <i>Note</i>: This path easing is used in the final demo, 
-        particularly when mole tries to persuade bullies to stop 
-        their knock-a-door-run game(as he dummy thinks).
-      </em>
-
+      CodePenc7b99f1a216498818cbb9f0c881fc542
       <p>
-        As you can see, the hand is in 0 position at the start, then rises steeply, 
-        then twitching up and down the rest of the progress with relatively small
-        angle delta. Despite the fact it can look like an easing(it 
-        starts at 0 and ends at 1 Y), it is more likely a 
-        <span className="highlight">property curve</span> since we are describing 
-        how does certain property acts in time. There is the code:
-      </p>
-
-      <CodeSample pen="65f003acd3c23be2350b71399fd95000">
-        { js: """var hand = document.querySelector('#js-hand'),
-                      handCurve = mojs.easing.path('M0,100 L3.13085938,99.9098435 C11.128418,-42.5703735 24.7357688,10.2827309 24.7357688,10.2827309 C24.7357688,10.2827309 35.4207115,6.37990438 35.420711,19.4955507 C35.420711,19.4955507 35.4207115,28.4642364 38.4679491,20.0448329 C45.9122391,-2.47328083 48.2480469,19.2718256 49.4205542,19.2718262 C49.4205546,6.82379606 55.0592461,-3.56955878 59,15.8223683 C60.6251608,22.53696 56.8918457,-3.39703265 65.4951172,-3.39703265 C68.7340668,-3.59873581 69.730594,6.54639177 70.328125,13.9672245 C70.9301836,21.4442862 74.0961573,26.974048 74.7888322,18.7754178 C75.3742722,5.88443799 81.9388046,2.60654815 84.8170547,9.46624826 C88.6793176,21.7631952 90.7471271,6.55096632 93.7893906,-0.121967559 C95.5135217,-3.90369547 98.2082808,0.193576387 100,0');
-
-                  new Tween({
-                    onUpdate: function (progress) {
-                      var handProgress = handCurve(progress);
-                      square.style.transform = 'rotate(' + -200*handProgress + 'deg)';
-                    }
-                  }).run();
-          """
-        }
-      </CodeSample>
-
-      <p>
-        Now lets add another property curve for scale to imitate squash&stretch of the hand.
-        That's how it will look like on it's own:
-      </p>
-
-      <EasingObjectGraph
-        onUpdate = { (o)=>
-          scaleX = 1-o.easedP[0]; scaleY = 1+o.easedP[0]
-          mojs.h.style o.objEl, 'transform', "scaleX(#{scaleX}) scaleY(#{scaleY}) translateZ(0)"
-          "scaleX(#{scaleX.toFixed(2)}) scaleY(#{scaleY.toFixed(2)})"
-        }
-        label="scale"
-        background="#F1E2D7"
-        path="M0,100 L3.41243177,100 C3.41243177,100 14.0876245,62.3100999 25,100 C25,99.9999998 29.9944115,87.0416487 36,99.9999998 C36,99.9999998 41.5199242,78.9802778 49.1912971,100 C49.1912971,99.9442732 54.2007408,67.9702111 59,99.9999998 C59,99.9999998 63.5640526,47.0787218 70,99.9999998 C70,99.9999998 72.6154327,58.0861233 76,99.9999998 C76,99.9999998 80.4341888,79.0878103 85,99.9999998 C85,99.9999998 88.3800278,71.7979296 92.2636317,99.9999999 C92.2636337,99.9999998 96.1419067,87.1020792 100,100">
-        
-        <div className="mole-hand mole-hand--squash"></div>
-      
-      </EasingObjectGraph>
-
-      <p>
-        As you can notice, this property curve represents deviation from 0 
-        and stays in range of about <span className="highlight">±.25</span>.
-        To make the hand's squash&stretch motion, we can substract curve's value from 1 
-        for <span className="highlight">scaleX</span> property and add the value to 
-        1 for <span className="highlight">scaleY</span> property respectively.
-        Waving and squash&stretch curves altogether:
-      </p>
-
-      <CodeSample pen="097277ee9452f4fc593c4738fdff675f">
-        { js: """var hand = document.querySelector('#js-mole-hand'),
-                    handCurve = mojs.easing.path('M0,100 L3.13085938,99.9098435 C11.128418,-42.5703735 24.7357688,10.2827309 24.7357688,10.2827309 C24.7357688,10.2827309 35.4207115,6.37990438 35.420711,19.4955507 C35.420711,19.4955507 35.4207115,28.4642364 38.4679491,20.0448329 C45.9122391,-2.47328083 48.2480469,19.2718256 49.4205542,19.2718262 C49.4205546,6.82379606 55.0592461,-3.56955878 59,15.8223683 C60.6251608,22.53696 56.8918457,-3.39703265 65.4951172,-3.39703265 C68.7340668,-3.59873581 69.730594,6.54639177 70.328125,13.9672245 C70.9301836,21.4442862 74.0961573,26.974048 74.7888322,18.7754178 C75.3742722,5.88443799 81.9388046,2.60654815 84.8170547,9.46624826 C88.6793176,21.7631952 90.7471271,6.55096632 93.7893906,-0.121967559 C95.5135217,-3.90369547 98.2082808,0.193576387 100,0'),
-                    handStretchCurve = mojs.easing.path('M0,100 L3.41243177,100 C3.41243177,100 14.0876245,62.3100999 25,100 C25,99.9999998 29.9944115,87.0416487 36,99.9999998 C36,99.9999998 41.5199242,78.9802778 49.1912971,100 C49.1912971,99.9442732 54.2007408,67.9702111 59,99.9999998 C59,99.9999998 63.5640526,47.0787218 70,99.9999998 C70,99.9999998 72.6154327,58.0861233 76,99.9999998 C76,99.9999998 80.4341888,79.0878103 85,99.9999998 C85,99.9999998 88.3800278,71.7979296 92.2636317,99.9999999 C92.2636337,99.9999998 96.1419067,87.1020792 100,100');
-
-                new mojs.Tween({
-                  repeat: 999,
-                  duration: 1800,
-                  delay: 2000,
-                  onUpdate: function (progress) {
-                    var handProgress = handCurve(progress);
-                    var stretchProgress = handStretchCurve(progress);
-                    hand.style.transform = ''
-                      // squash&stretch
-                      + 'scaleX(' + (1-.4*stretchProgress) + ') scaleY(' + (1+1.2*stretchProgress) + ') '
-                      // waving
-                      + 'rotate(' + -200*handProgress + 'deg)';
-                 }
-                }).run();
-          """
-        }
-      </CodeSample>
-
-      <p>
-        I hope you had the <span className="highlight">Aha!</span> moment right now <br />
-        and have cristal clear understanding what the property 
-        curves are and how to use them. It is definitelly takes some time to wrap 
-        head around this notion and start thinking in curves, but it will hundred percent worth your time investment. If you still unconfortable with this idea, feel 
-        free to <UniteLink link="https://github.com/legomushroom/mojs-website/issues">ask me anything</UniteLink> by kick offing an issue on the repo. 
-        I've build a bit more complicated demo almost entirely on this concept and 
-        pushed it to <UniteLink link="https://github.com/legomushroom/property-curves">the github repo</UniteLink> so you can play with it more. Here <UniteLink href="# link to the demo pen">it is on CodePen</UniteLink> also!
-      </p>
-
-      <p>
-        Consider the next example. We have our square that jumps away with 
-        squash&stretch motion. It will consist of 
+        It will consist of 
         2 <span className="highlight">property curves</span>.
         The first one for y position or <span className="highlight">translateY</span> property, 
         the second for the <span className="highlight">scale</span> property to describe 
