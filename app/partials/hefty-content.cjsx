@@ -20,7 +20,6 @@ module.exports = React.createClass
     window.addEventListener 'resize', setTimeout @_getPosition.bind(@), 500
   _getScrollY:-> if window.pageYOffset? then window.pageYOffset else document.scrollTop
   _getPosition:->
-    @props.isIt and console.log 'get pos'
     node = @getDOMNode().childNodes[0]; rect = node.getBoundingClientRect()
     scrollY = @_getScrollY(); @wHeight = window.innerHeight
     @top = scrollY + rect.top; @bottom = scrollY + rect.bottom
@@ -47,6 +46,7 @@ module.exports = React.createClass
   _onShow:(e)->
     e?.stopPropagation?(); e?.preventDefault?();
     return if @_isShow; @_isShow = true
+    @_getPosition()
     if @props.isLaunchOnHover then @_hideCurtain() else @props.onShow?()
   _onHide:(e)->
     e?.preventDefault?(); e?.stopPropagation?()
