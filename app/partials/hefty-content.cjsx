@@ -13,6 +13,7 @@ module.exports = React.createClass
       has = e.srcEvent.target.classList.contains.bind e.srcEvent.target.classList
       return if has('hefty-content__curtain') or has('hefty-content__curtain-label')
       @_onHide(e)
+      true
     
   componentWillUnmount:-> @isStop = true
   getInitialState:-> {}

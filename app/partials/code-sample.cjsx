@@ -27,7 +27,9 @@ module.exports = React.createClass
     activeEl = node.querySelector '.line-numbers.is-show'
     syntax   = node.querySelector '#js-syntax'
     syntax.style.height = "#{activeEl.offsetHeight + 2}px"
-    tween    = new mojs.Tween onUpdate:(p)-> activeEl.style.opacity = p
+    tween    = new mojs.Tween
+      onUpdate:(p)-> activeEl.style.opacity = p
+      onComplete:-> activeEl.style.opacity = 1
     tween.run()
     @_loadPen()
 
