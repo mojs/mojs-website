@@ -8,18 +8,19 @@ require 'css/partials/hefty-content'
 module.exports = React.createClass
   componentDidMount:->
     if @props.isLaunchOnHover then @setState isShow: true
-    
-    @_bindWindowResize(); setTimeout((=> @_getPosition();), 5000); @_loop()
-
+    @_bindWindowResize(); setTimeout((=> @_getPosition();), 15000); @_loop()
     (new Hammer document.body).on 'tap', (e)=>
-      console.log 'body!'
+      has = e.srcEvent.target.classList.contains.bind e.srcEvent.target.classList
+      return if has('hefty-content__curtain') or has('hefty-content__curtain-label')
       @_onHide(e)
     
   componentWillUnmount:-> @isStop = true
   getInitialState:-> {}
-  _bindWindowResize:-> window.addEventListener 'resize', @_getPosition
+  _bindWindowResize:->
+    window.addEventListener 'resize', setTimeout @_getPosition.bind(@), 500
   _getScrollY:-> if window.pageYOffset? then window.pageYOffset else document.scrollTop
   _getPosition:->
+    @props.isIt and console.log 'get pos'
     node = @getDOMNode().childNodes[0]; rect = node.getBoundingClientRect()
     scrollY = @_getScrollY(); @wHeight = window.innerHeight
     @top = scrollY + rect.top; @bottom = scrollY + rect.bottom
@@ -35,15 +36,8 @@ module.exports = React.createClass
 
   _checkHide:->
     scrollY = @_getScrollY()
-    # console.log scrollY
     isShow = scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100
-
-    if isShow is false and @_isShow
-      # if @props.isIt
-      #   console.log 'HIDE!', isShow
-      #   console.log scrollY + @wHeight, @top - 100, scrollY + @wHeight > @top - 100
-      #   console.log scrollY, @bottom + 100, scrollY < @bottom + 100
-      @_onHide()
+    @_onHide() if isShow is false and @_isShow
 
   _loop:->
     return @_onHide() if @isStop
@@ -51,7 +45,7 @@ module.exports = React.createClass
     requestAnimationFrame(@_loop)
 
   _onShow:(e)->
-    e?.stopPropagation?()
+    e?.stopPropagation?(); e?.preventDefault?();
     return if @_isShow; @_isShow = true
     if @props.isLaunchOnHover then @_hideCurtain() else @props.onShow?()
   _onHide:(e)->
@@ -92,16 +86,16 @@ module.exports = React.createClass
 
     curtainStyle = { display: (if @props.isLaunchOnHover then 'block' else 'none') }
 
-    <Tappable  className = "hefty-content #{@props.className or ''}"
+    <div  className = "hefty-content #{@props.className or ''}"
                 style    = style
                 onTap    = { @_onHide } >
       
-      <Tappable
+      <div
         className = "hefty-content__inner"
         onTap     = { @_onHide }
         style     = { cursor: 'default' } >
 
-        <Tappable className="hefty-content__curtain" ref="curtain" style = { curtainStyle } onTap = @_onShow >
+        <Tappable className="hefty-content__curtain" ref="curtain" style = { curtainStyle } onTap = {@_onShow} stopPropagation = {true}>
           <div className="hefty-content__curtain-label">
             tap to see
           </div>
@@ -111,6 +105,6 @@ module.exports = React.createClass
           {@props.children}
         </Resizable>
 
-      </Tappable>
+      </div>
 
-    </Tappable>
+    </div>
