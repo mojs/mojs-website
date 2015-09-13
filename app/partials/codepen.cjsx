@@ -9,7 +9,7 @@ module.exports = React.createClass
     else CodePenEmbed?._showCodePenEmbeds?()
 
   render:->
-    setTimeout @_loadPen.bind(@), 10
+    setTimeout @_loadPen, 10
     <p
       data-height="345"
       data-theme-id="15571"

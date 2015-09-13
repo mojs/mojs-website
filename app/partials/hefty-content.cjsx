@@ -17,8 +17,7 @@ module.exports = React.createClass
     
   componentWillUnmount:-> @isStop = true
   getInitialState:-> {}
-  _bindWindowResize:->
-    window.addEventListener 'resize', setTimeout @_getPosition.bind(@), 500
+  _bindWindowResize:-> window.addEventListener 'resize', setTimeout @_getPosition, 500
   _getScrollY:-> if window.pageYOffset? then window.pageYOffset else document.scrollTop
   _getPosition:->
     node = @getDOMNode().childNodes[0]; rect = node.getBoundingClientRect()

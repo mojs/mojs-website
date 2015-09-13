@@ -1,7 +1,7 @@
 @import '~imports.styl'
 
 
-.hefty-content
+{ el = '.hefty-content' }
   // line-height     0
   text-align      center
   display block
@@ -32,3 +32,6 @@
     nw              50%
     transform       translate(-50%)
     text-transform  lowercase
+  &.is-full-width
+    {el}__inner
+      width         100%

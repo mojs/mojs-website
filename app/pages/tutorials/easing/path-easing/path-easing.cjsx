@@ -10,7 +10,9 @@ PostImage     = require 'partials/post-image'
 Cite          = require 'partials/cite'
 ORXLine       = require 'partials/orx-line'
 CodeSample    = require 'partials/code-sample'
+Pen           = require 'partials/codepen'
 EasingObjectGraph = require 'partials/easing-object-graph'
+EasingGraph   = require 'partials/easing-graph'
 
 HeftyContent  = require 'partials/hefty-content'
 DisqusComments      = require 'partials/disqus-comments'
@@ -337,6 +339,8 @@ module.exports = React.createClass
       </p>
 
       <h2>Property curves</h2>
+      
+      <h3>Make acquaintance</h3>
 
       <p>
         If you are familiar with After Effects workflow and have ever worked 
@@ -366,17 +370,21 @@ module.exports = React.createClass
         Just like this:
       </p>
 
-      CodePenc7b99f1a216498818cbb9f0c881fc542
+      <HeftyContent className="is-full-width">
+        <Pen pen="c7b99f1a216498818cbb9f0c881fc542"></Pen>
+      </HeftyContent>
+
       <p>
-        It will consist of 
-        2 <span className="highlight">property curves</span>.
-        The first one for y position or <span className="highlight">translateY</span> property, 
-        the second for the <span className="highlight">scale</span> property to describe 
+        As you may guessed, it will compose this motion with help of 2 <span className="highlight">property curves</span>.
+        The first one for <span className="highlight">y</span> position 
+        or <span className="highlight">translateY</span> property, 
+        the second one is for the <span className="highlight">scale</span> property to describe 
         squash&stretch.
       </p>
 
       <p>
-        The first <span className="highlight">translateY</span> path will look like this:
+        The first <span className="highlight">translateY</span> property curve 
+        will look like this:
       </p>
 
       <EasingObjectGraph
@@ -395,9 +403,18 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
       <p>
-        The delay at path's very start was made to give some time to initial squash 
-        easing to act. The 
-        second, <span className="highlight">scale</span> property curve 
+        The delay at very start was made to give some time for initial squash 
+        easing to act. So it waits some time and then increases to 1 with
+        something like cubic-out easing. Dont get fooled by the fact that it looks 
+        like an easing -- yes it starts at 0 and ends and 
+        1 <span className="highlight">Y</span> -- my intention was 
+        to describe how <span className="highlight">translateY</span> property 
+        will act in time, but not ease the change. Consider the next example for 
+        better understanding what I mean.
+      </p>
+
+      <p>
+        The second, <span className="highlight">scale</span> property curve 
         will look like this:
       </p>
 
@@ -418,21 +435,33 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
       <p>
-        While the <span className="highlight">translateY</span> curve in passive state, 
-        this curve goes under <span className="highlight">0</span> imitating squash motion to show that our rectangle 
-        accumulates some power for the subsequent jump. When the first curve starts to 
-        lift our rectangle in air, this curve goes 
-        over <span className="highlight">0</span> imitating stretch that object 
-        will get when it is moving fast. At the end this curve returns 
-        back to <span className="highlight">0</span> showing 
-        that's there is no power left for the movement.
-        As you can notice the <span className="highlight">scale</span> property 
+        The <span className="highlight">scale</span> property 
         curve represents deviation from <span className="highlight">0</span>. 
-        We can 
-        set <span className="highlight">scaleY</span>&nbsp;
+        We can set <span className="highlight">scaleY</span>&nbsp;
         as <span className="highlight">1 + curve progress</span>&nbsp;
         and <span className="highlight">scaleX</span> as <span className="highlight">1 - curve progress</span>&nbsp;
         to imitate the desired effect.
+
+        While the <span className="highlight">translateY</span> curve in passive state 
+        at the begining, this curve goes 
+        under <span className="highlight">0</span> imitating squash motion to 
+        show that our rectangle 
+        accumulates some power for the subsequent jump. When the first curve starts to 
+        lift our rectangle in air, this curve goes 
+        over <span className="highlight">0</span> imitating stretch that object 
+        will get when it is moving. At the end this curve returns 
+        back to <span className="highlight">0</span> showing 
+        that's there is no acceleration left in the movement.
+      </p>
+
+      <p>
+        You can notice that now it doesn't starts at 0 and ends at 
+        1 <span className="highlight">Y</span>. In 
+        fact <span className="highlight">property curves</span> can get 
+        any <span className="highlight">Y</span> value you want. It should obey 
+        the law for <span className="highlight">X</span> value though. 
+        It should start at 0 and end at 1, as it represents the progress and 
+        progress can't go beyond 1 as it makes no sense.
       </p>
 
       <p>
@@ -483,10 +512,10 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        Pretty neat, ha? Property curves allow us to visualize how certain properties 
-        behave in time. Then we can compose them together to get our motion contexture.
+        Pretty neat, ha? These type of curves allow us to visualize how certain properties 
+        behave in time. Then we can compose them together to get our final motion.
         Yep it takes some time to wrap your head around this concept, but when you 
-        using it for few times, it feels very natural and intuitive. You 
+        using it for few times, it feels very intuitive. You 
         start to see the matrix in those random hieroglyphs(read path's coordinates).
       </p>
 
@@ -494,24 +523,27 @@ module.exports = React.createClass
         "We can use 5 common tweens here instead of these property curves." - one will say 
         and will be right. We can use 5 tweens instead of two property curves. 
         One, delayed, for translateY property and four for squash&strech motion 
-        (two for squash and two for streatch). Also this 5 tweens should be precisely 
+        (two for squash and two for stretch). But there are few problems though. 
+        Even if we omit amount of code we will get, these 5 tweens should be precisely 
         timed to get the same eventual motion. All this 
-        little timing nuances should be kept in mind and the 
-        the result should be envisioned. Ugh.
+        little timing nuances should be kept in your head and  
+        the result should be envisioned while you are coding. Ugh.
         Also maintaining such chain would be itchy.
         By contrast, property curves are much more intuitive and convient way 
         to correlate property change and time. 
         Also it is more visual way to proceed with your motion and gives you 
         lots of control over the property behavior.
-        Maitaining a property curve is not harder than maintaining one svg file 
-        so is a cinch.
+        Maitaining a property curve wouldn't be much harder than 
+        merely maintaining one clean svg file.
       </p>
 
+      <h3>More complex property curve</h3>
+
       <p>
-        Consider the next more complex example, where the common tweens helpless. 
+        Consider the next more complex example, where the tween animation is helpless. 
         Splitting a motion like that to bunch of tweens will be nightmare.
-        I will consist of two property cursves just like hte previous example 
-        but it will be much more advanced curves so don't freak out. They are 
+        It will also consist of two property curves just like the previous example 
+        but it will have much more advanced curves so don't freak out. They are 
         so complicated only for demonstration purposes.
       </p>
 
@@ -555,6 +587,13 @@ module.exports = React.createClass
       
       </EasingObjectGraph>
 
+
+      <p>
+        As we have property curve 
+        for <span className="highlight">translateY</span>, lets sketch 
+        the <span className="highlight">scale</span> property curve:
+      </p>
+
       <EasingObjectGraph
         duration={ 2500 }
         onUpdate = { (o)=>
@@ -570,6 +609,23 @@ module.exports = React.createClass
         <div className="path-easing-rectangle path-easing-rectangle--jump"></div>
       
       </EasingObjectGraph>
+
+      <p>
+        Don't freak out, it is actually easy one. If you will take some time, you 
+        may notice that the pattern is repeatative. On every translateY period, 
+        we have according squash&streatch period and then it recur over and over:
+      </p>
+
+      <EasingGraph
+        className = "fly-g"
+        label     = {'scale'}
+        path      = {'M0,100 C7.81150159,99.8552004 10.5,124.956388 10.5,124.956388 C10.6364142,-0.167048257 20.7999985,99.8575387 20.8,99.8575415 C20.8000015,99.8575443 26.8367187,138.182953 30.6039062,99.857543 C36.3236123,99.9221201 38.1,118.97564 38.1,118.97564 C38.2039989,23.5845053 46.8999988,99.923904 46.9,99.9239062 C46.9000012,99.9239083 50.8279858,129.142288 53.7,99.923906 C57.6148517,99.9884282 58.9,113.065132 58.9,113.065132 C58.9711335,47.8192476 64.7999992,99.989649 64.8,99.9896504 C64.8000008,99.9896519 67.4706109,119.974518 69.4350189,99.9896506 C72.3313246,100.046231 73.2,109.611947 73.2,109.611947 C73.2519882,61.9267379 77.3999994,100.047123 77.4,100.047124 C77.4000006,100.047125 79.4204624,114.653142 80.8561577,100.047124 C82.8367206,100.021884 83.3999999,106.746427 83.3999999,106.746427 C83.4364957,73.2713076 86.4999995,100.02251 86.4999999,100.022511 C86.5000003,100.022512 87.6948194,110.275967 88.7026805,100.022511 C90.1283952,100.031273 90.5289739,104.813463 90.5289739,104.813463 C90.5549281,81.0074753 92.3999997,100.031718 92.4,100.031719 C92.4000003,100.031719 93.5948603,107.323512 94.3116055,100.031719 C95.2672636,99.9339509 95.7,103.132754 95.7,103.132754 C95.7175753,87.0120996 97.0999998,99.9342524 97.1,99.9342527 C97.1000002,99.9342531 97.6146431,104.872022 98.1,100 L100,100'} >
+        <div className="path-easing-tutorial__repeatative"></div>
+      </EasingGraph>
+
+      <p>
+        That's how our two property curves work together:
+      </p>
 
       <EasingObjectGraph
         duration={ 1500 }
@@ -587,6 +643,17 @@ module.exports = React.createClass
         <div className="path-easing-rectangle path-easing-rectangle--paused-jump"></div>
       
       </EasingObjectGraph>
+
+      <p>
+        Whoo! That's one cute motion!
+        <br />
+        Imaging you would have to write a tween for every cube's movement. 
+        I can't.
+        <br />
+        <span className="highlight">Property curves</span> save us a lot of 
+        time and effort. Bring our work to the whole new level by allowing 
+        us to intuitively describe our motion intention.
+      </p>
 
 
       <h2>Thinking in property curves</h2>

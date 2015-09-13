@@ -53,7 +53,10 @@ module.exports = React.createClass
     labels = if !mojs.h.isArray @props.label then @_makeLabel()
     else @_makeLabel(label, i) for label, i in @props.label
 
-    <div className="easing-graph">
+    <div className="easing-graph #{@props.className}">
+
+      {@props.children}
+
       <div className="easing-graph__center">
 
         { graphs }
