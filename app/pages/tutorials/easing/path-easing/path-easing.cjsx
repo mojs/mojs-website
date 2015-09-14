@@ -777,7 +777,7 @@ module.exports = React.createClass
       <p>
         For the left hand we can use the same 
         <span className="highlight">skew</span> graph for 
-        <span className="highlight">translate</span> and <span className="highlight">rotate</span> properties :
+        <span className="highlight">translate</span> and <span className="highlight">rotate</span> properties:
       </p>
 
       <EasingObjectGraph
@@ -808,9 +808,11 @@ module.exports = React.createClass
 
       </EasingObjectGraph>
 
-      <CodeSample pen="95e3300c59686dc1d534d2b38c208ecc">
+      <CodeSample pen="f9b5528666780ef4e26e83fba7e4a4bb">
         { js: """var moleEl          = document.querySelector('#js-mole'),
                       moleHandEl      = document.querySelector('#js-mole-hand'),
+                      moleHandLeftEl  = document.querySelector('#js-mole-hand-left'),
+                      
                       handAngleEasing = mojs.easing.path('M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100'),
                       skewEasing      = mojs.easing.path('M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100');
 
@@ -821,9 +823,10 @@ module.exports = React.createClass
                     onUpdate: function (progress) {
                       var skewProgress      = skewEasing(progress),
                           handAngleProgress = handAngleEasing(progress);
-                          
+                      
                       moleEl.style['transform']     = 'skewX(' + 75*skewProgress + 'deg)';
                       moleHandEl.style['transform'] = 'rotate(' + (-200*handAngleProgress) + 'deg)';
+                      moleHandLeftEl.style['transform'] = 'translate(' + (100*skewProgress) + 'px,' + (-80*skewProgress) + 'px) rotate(' + (-110*skewProgress) + 'deg)';
                     }
                   }).run();
           """
@@ -870,10 +873,42 @@ module.exports = React.createClass
 
       </EasingObjectGraph>
 
+      <CodeSample pen="8d52f3b9b4f35d80cf72bf4dce24276d">
+        { js: """var moleEl          = document.querySelector('#js-mole'),
+                    moleHandEl      = document.querySelector('#js-mole-hand'),
+                    moleHandLeftEl  = document.querySelector('#js-mole-hand-left'),
+                    mouthEl         = document.querySelector('#js-mole-mouth'),
+                    
+                    handAngleEasing = mojs.easing.path('M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100'),
+                    skewEasing      = mojs.easing.path('M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100'),
+                    mouthEasing     = mojs.easing.path('M0,0 C0,-145.307194 29.1828098,57.0115012 32.0031223,63.7232245 C86.2226562,57.0115012 100,72.4825934 100,72.4825934');
+
+                new mojs.Tween({
+                  repeat:   99999,
+                  duration: 1800,
+                  delay:    2000,
+                  onUpdate: function (progress) {
+                    var skewProgress      = skewEasing(progress),
+                        handAngleProgress = handAngleEasing(progress),
+                        mouthProgress     = mouthEasing(progress);
+                    
+                    moleEl.style['transform']         = 'skewX(' + 75*skewProgress + 'deg)';
+                    moleHandEl.style['transform']     = 'rotate(' + (-200*handAngleProgress) + 'deg)';
+                    moleHandLeftEl.style['transform'] = 'translate(' + (100*skewProgress) + 'px,' + (-80*skewProgress) + 'px) rotate(' + (-110*skewProgress) + 'deg)';
+                    mouthEl.style['transform']        = 'scale(' + mouthProgress + ') translateX(' + (-100*skewProgress) + 'px)';
+                  }
+                }).run();
+          """
+        }
+      </CodeSample>
+
+
+
+
       <p>
-        The <span className="highlight">skew</span> graph was added here for 
+        The <span className="highlight">skew</span> curve was added here for 
         the <span className="highlight">translateX</span> property, just to add 
-        a small horizontal motion.
+        a small horizontal shift.
       </p>
 
       <p>
