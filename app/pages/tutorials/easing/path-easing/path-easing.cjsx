@@ -720,26 +720,11 @@ module.exports = React.createClass
       
       <p>
         Now lets describe hand's curve. We will work 
-        with <span className="highlight">rotate</span> property obviously. 
-        It has basically the same shape that 
-        the <span className="highlight">skewX</span> curve have. The slight 
-        difference is -- it rises a lot higher(all way to 1) and does it more steeply.
+        with <span className="highlight">rotate</span> property. 
+        The slight difference with the previous curve is -- it rises 
+        a lot higher and more steeply(all way to 1) at the beggining.
         The second part is almost the same:
       </p>
-
-      <CodeSample pen="a7c9ab066b13db760c74bc1536204b61">
-        { js: """var moleEl = document.querySelector('#js-mole'),
-                      skewEasing = mojs.easing.path('M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100');
-
-                  new mojs.Tween({
-                    onUpdate: function (progress) {
-                      var skewProgress = skewEasing(progress);
-                      mole.style['transform'] = 'skewX(' + 75*skewProgress + 'deg)';
-                    }
-                  }).start();
-          """
-        }
-      </CodeSample>
 
       <EasingObjectGraph
         duration = { 1800 }
@@ -766,6 +751,28 @@ module.exports = React.createClass
         <MoleSample id="js-mole-sample-2" />
 
       </EasingObjectGraph>
+
+      <CodeSample pen="95e3300c59686dc1d534d2b38c208ecc">
+        { js: """var moleEl          = document.querySelector('#js-mole'),
+                      moleHandEl      = document.querySelector('#js-mole-hand'),
+                      handAngleEasing = mojs.easing.path('M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100'),
+                      skewEasing      = mojs.easing.path('M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100');
+
+                  new mojs.Tween({
+                    repeat:   99999,
+                    duration: 1800,
+                    delay:    2000,
+                    onUpdate: function (progress) {
+                      var skewProgress      = skewEasing(progress),
+                          handAngleProgress = handAngleEasing(progress);
+
+                      moleEl.style['transform']     = 'skewX(' + 75*skewProgress + 'deg)';
+                      moleHandEl.style['transform'] = 'rotate(' + (-200*handAngleProgress) + 'deg)';
+                    }
+                  }).run();
+          """
+        }
+      </CodeSample>
 
       <p>
         For the left hand we can use the same 
@@ -800,6 +807,28 @@ module.exports = React.createClass
         <MoleSample id="js-mole-sample-3" />
 
       </EasingObjectGraph>
+
+      <CodeSample pen="95e3300c59686dc1d534d2b38c208ecc">
+        { js: """var moleEl          = document.querySelector('#js-mole'),
+                      moleHandEl      = document.querySelector('#js-mole-hand'),
+                      handAngleEasing = mojs.easing.path('M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100'),
+                      skewEasing      = mojs.easing.path('M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100');
+
+                  new mojs.Tween({
+                    repeat:   99999,
+                    duration: 1800,
+                    delay:    2000,
+                    onUpdate: function (progress) {
+                      var skewProgress      = skewEasing(progress),
+                          handAngleProgress = handAngleEasing(progress);
+                          
+                      moleEl.style['transform']     = 'skewX(' + 75*skewProgress + 'deg)';
+                      moleHandEl.style['transform'] = 'rotate(' + (-200*handAngleProgress) + 'deg)';
+                    }
+                  }).run();
+          """
+        }
+      </CodeSample>
 
       <p>
         To implement mouth motion we need to scale it up, and then scale it down with 
