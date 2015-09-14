@@ -512,7 +512,7 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        Pretty neat, ha? These type of curves allow us to visualize how certain properties 
+        Pretty neat, ha? These type of curves allow us to visualy describe how certain properties 
         behave in time. Then we can compose them together to get our final motion.
         Yep it takes some time to wrap your head around this concept, but when you 
         using it for few times, it feels very intuitive. You 
@@ -526,13 +526,10 @@ module.exports = React.createClass
         (two for squash and two for stretch). But there are few problems though. 
         Even if we omit amount of code we will get, these 5 tweens should be precisely 
         timed to get the same eventual motion. All this 
-        little timing nuances should be kept in your head and  
-        the result should be envisioned while you are coding. Ugh.
+        little timing nuances should be kept in your head while you are coding. Ugh.
         Also maintaining such chain would be itchy.
         By contrast, property curves are much more intuitive and convient way 
-        to correlate property change and time. 
-        Also it is more visual way to proceed with your motion and gives you 
-        lots of control over the property behavior.
+        to correlate property change with time. 
         Maitaining a property curve wouldn't be much harder than 
         merely maintaining one clean svg file.
       </p>
@@ -543,12 +540,12 @@ module.exports = React.createClass
         Consider the next more complex example, where the tween animation is helpless. 
         Splitting a motion like that to bunch of tweens will be nightmare.
         It will also consist of two property curves just like the previous example 
-        but it will have much more advanced curves so don't freak out. They are 
+        but it will have much more advanced curves so don't freak out, they are 
         so complicated only for demonstration purposes.
       </p>
 
       <p>
-        Lets take our first custom easing function with bouncy easing:
+        Lets get out our first custom easing function with bouncy easing:
       </p>
 
       <EasingObjectGraph
@@ -589,9 +586,8 @@ module.exports = React.createClass
 
 
       <p>
-        As we have property curve 
-        for <span className="highlight">translateY</span>, lets sketch 
-        the <span className="highlight">scale</span> property curve:
+        That's our <span className="highlight">translateY</span> property curve, 
+        lets sketch the <span className="highlight">scale</span> one now:
       </p>
 
       <EasingObjectGraph
@@ -611,9 +607,10 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
       <p>
-        Don't freak out, it is actually easy one. If you will take some time, you 
+        Don't freak out, it is actually an easy one. If you will take some time, you 
         may notice that the pattern is repeatative. On every translateY period, 
-        we have according squash&streatch period and then it recur over and over:
+        we have according squash&streatch period and then it recur over and over.
+        One period such period looks like this:
       </p>
 
       <EasingGraph
@@ -624,7 +621,7 @@ module.exports = React.createClass
       </EasingGraph>
 
       <p>
-        That's how our two property curves work together:
+        Now we can compose out two property curves to get our motion:
       </p>
 
       <EasingObjectGraph
@@ -645,9 +642,9 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
       <p>
-        Whoo! That's one cute motion!
+        Whoo! This one is cute!
         <br />
-        Imaging you would have to write a tween for every cube's movement. 
+        Imaging you have to write a tween for every cube's movement. 
         I can't.
         <br />
         <span className="highlight">Property curves</span> save us a lot of 
@@ -659,7 +656,7 @@ module.exports = React.createClass
       <h2>Thinking in property curves</h2>
 
       <p>
-        Now when you have some clue what the property curves are, this section will 
+        Ok, now when you have some clue what the heck property curves are, this section will 
         help you to gain some skill how and when to use them. We can use curves in 
         <UniteLink link="https://vimeo.com/111574737">lots of different angles</UniteLink>, 
         but here I will show you how to think in curves when you want to move an object 
@@ -704,16 +701,19 @@ module.exports = React.createClass
         it more further on.
       </p>
 
-      <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
+      <CodeSample pen="a7c9ab066b13db760c74bc1536204b61">
         { js: """var moleEl = document.querySelector('#js-mole'),
                       skewEasing = mojs.easing.path('M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100');
 
-                  new Tween({
+                  new mojs.Tween({
+                    repeat:   99999,
+                    duration: 1800,
+                    delay:    2000,
                     onUpdate: function (progress) {
                       var skewProgress = skewEasing(progress);
-                      mole.style['transform'] = 'skewX(' + 75*skewProgress + 'deg)';
+                      moleEl.style['transform'] = 'skewX(' + 75*skewProgress + 'deg)';
                     }
-                  }).start();
+                  }).run();
           """
         }
       </CodeSample>
@@ -727,11 +727,11 @@ module.exports = React.createClass
         The second part is almost the same:
       </p>
 
-      <CodeSample pen="8312611e3618e83d4103390afc2c8bef">
+      <CodeSample pen="a7c9ab066b13db760c74bc1536204b61">
         { js: """var moleEl = document.querySelector('#js-mole'),
                       skewEasing = mojs.easing.path('M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100');
 
-                  new Tween({
+                  new mojs.Tween({
                     onUpdate: function (progress) {
                       var skewProgress = skewEasing(progress);
                       mole.style['transform'] = 'skewX(' + 75*skewProgress + 'deg)';
@@ -858,6 +858,7 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration = { 1800 }
         onUpdate = { (o)->
+          return
           @scopeEl    ?= document.querySelector '#js-mole-sample-5'
           @moleEl     ?= @scopeEl.querySelector '#js-mole'
           @moleHandEl ?= @scopeEl.querySelector '#js-mole-hand'
