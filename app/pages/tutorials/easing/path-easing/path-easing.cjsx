@@ -664,7 +664,7 @@ module.exports = React.createClass
       </p>
 
       <p>
-        Consider the <UniteLink link="http://final demo">final demo</UniteLink>, particulary this 
+        Consider the <UniteLink link="http://final demo">final demo</UniteLink>, particulary the 
         part when mole deviates slightly back to inhale some air and then bend forward swiftly with his tongue out:
       </p>
 
@@ -696,9 +696,10 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
       <p>
-        Our curve goes above 0 slightly to implement the back move then it goes below 
-        zero to make the forward move. This is base curve for our scene, we will use 
-        it more further on.
+        As you can see, our curve goes <span className="highlight">above 0</span> slightly 
+        to implement the backward move then it goes <span className="highlight">below 0</span> to 
+        make the forward move. This is base curve for our scene, we will use 
+        it more further on. Behold the code:
       </p>
 
       <CodeSample pen="a7c9ab066b13db760c74bc1536204b61">
@@ -719,8 +720,11 @@ module.exports = React.createClass
       </CodeSample>
       
       <p>
-        Now lets describe hand's curve. We will work 
-        with <span className="highlight">rotate</span> property. 
+        Our mole moves now, but errr.. This motion doesn't convey too much.
+        Lets add a secondary action to fulfill our scene.
+        We will rise mole's hand up very fast when mole deviates backward 
+        and then we will move the hand down severly, when mole moves forward.
+        For this we will work with <span className="highlight">rotate</span> property. 
         The slight difference with the previous curve is -- it rises 
         a lot higher and more steeply(all way to 1) at the beggining.
         The second part is almost the same:
@@ -775,9 +779,12 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        For the left hand we can use the same 
+        Ok thats better. Now lets work with the left hand. 
+        Luckily we can use the same 
         <span className="highlight">skew</span> graph for 
-        <span className="highlight">translate</span> and <span className="highlight">rotate</span> properties:
+        <span className="highlight">translate</span> and <span className="highlight">rotate</span> properties.
+        This is highly illustrative situation - you will often reuse the same 
+        curves on one scene:
       </p>
 
       <EasingObjectGraph
@@ -834,8 +841,14 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        To implement mouth motion we need to scale it up, and then scale it down with 
-        roughly the same cadance:
+        We will continue working on secondary actions step by step adding to our 
+        scene motion deepness. 
+        Now it is the mouth's turn. 
+        To implement mouth motion we need to scale it 
+        up <span className="highlight">above 1</span> conveying inhale and then scale it down to 
+        about <span className="highlight">.4</span> conveying exhale, after that we need to continue 
+        scaling it down slowly to convey the air comming out of the mouth moved by mole's 
+        lagger presure:
       </p>
 
       <EasingObjectGraph
@@ -902,13 +915,11 @@ module.exports = React.createClass
         }
       </CodeSample>
 
-
-
-
       <p>
-        The <span className="highlight">skew</span> curve was added here for 
-        the <span className="highlight">translateX</span> property, just to add 
-        a small horizontal shift.
+        As you can notice, we've reused the 
+        base <span className="highlight">skew</span> curve for 
+        the <span className="highlight">translateX</span> property, to add our mouth 
+        more cartoony feel.
       </p>
 
       <p>
