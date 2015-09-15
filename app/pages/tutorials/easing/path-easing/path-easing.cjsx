@@ -656,11 +656,11 @@ module.exports = React.createClass
       <h2>Thinking in property curves</h2>
 
       <p>
-        Ok, now when you have some clue what the heck property curves are, this section will 
-        help you to gain some skill how and when to use them. We can use curves in 
-        <UniteLink link="https://vimeo.com/111574737">lots of different angles</UniteLink>, 
-        but here I will show you how to think in curves when you want to move an object 
-        on screen or transform it from one state to another.
+        Ok, now you have some clue what the heck property curves are, this section will 
+        help you to gain some skill how and when to use them. Generally, we can use curves in 
+        <UniteLink link="https://vimeo.com/111574737">lots of different purposes</UniteLink>, 
+        but here we will talk with you how to think in curves when you want to move an object 
+        on screen or transform it from one state into another.
       </p>
 
       <p>
