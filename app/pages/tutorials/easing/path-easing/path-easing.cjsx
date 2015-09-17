@@ -721,13 +721,12 @@ module.exports = React.createClass
       
       <p>
         Our mole moves now, but errr.. This motion doesn't convey too much.
-        Lets add a secondary action to fulfill our scene.
-        We will rise mole's hand up very fast when mole deviates backward 
-        and then we will move the hand down severly, when mole moves forward.
-        For this we will work with <span className="highlight">rotate</span> property. 
-        The slight difference with the previous curve is -- it rises 
-        a lot higher and more steeply(all way to 1) at the beggining.
-        The second part is almost the same:
+        Lets add a secondary action to fulfill(наполнить) our scene.
+        We will rise mole's hand up(by rotating it) very fast when mole deviates 
+        backward, so our curve should rise steeply at the beggining. Then, when 
+        mole bends forward, we will rotate our hand to small negative number, so the curve 
+        goes below zero. After that, when mole moves to it's start position 
+        we will change hand's angle all way up to zero slowly:
       </p>
 
       <EasingObjectGraph
@@ -779,12 +778,12 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        Ok thats better. Now lets work with the left hand. 
+        Ok thats better. Now lets work on the left hand. 
         Luckily we can use the same 
-        <span className="highlight">skew</span> graph for 
+        <span className="highlight">skew</span> curve for 
         <span className="highlight">translate</span> and <span className="highlight">rotate</span> properties.
         This is highly illustrative situation - you will often reuse the same 
-        curves on one scene:
+        curves on a scene:
       </p>
 
       <EasingObjectGraph
@@ -841,9 +840,9 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        We will continue working on secondary actions step by step adding to our 
-        scene motion deepness. 
-        Now it is the mouth's turn. 
+        We will continue working on secondary actions step by step making our scene 
+        comprehensive. 
+        It is the mouth's turn now. 
         To implement mouth motion we need to scale it 
         up <span className="highlight">above 1</span> conveying inhale and then scale it down to 
         about <span className="highlight">.4</span> conveying exhale, after that we need to continue 
@@ -916,11 +915,13 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        As you can notice, we've reused the 
-        base <span className="highlight">skew</span> curve for 
-        the <span className="highlight">translateX</span> property, to add our mouth 
-        more cartoony feel.
+        As you can notice, we've added some motion to the 
+        <span className="highlight">translateX</span> property 
+        by reusing the base <span className="highlight">skew</span> curve. 
+        It adds kind of cartoony feel to the mouth's movement.
       </p>
+
+      <p> --- --- --- </p>
 
       <p>
         Now lets add to the exhale motion some twitching to emphasize mole's effort by adding a "noize" curve. We will add this curve for all parts of our character:
@@ -933,7 +934,6 @@ module.exports = React.createClass
       <EasingObjectGraph
         duration = { 1800 }
         onUpdate = { (o)->
-          return
           @scopeEl    ?= document.querySelector '#js-mole-sample-5'
           @moleEl     ?= @scopeEl.querySelector '#js-mole'
           @moleHandEl ?= @scopeEl.querySelector '#js-mole-hand'
