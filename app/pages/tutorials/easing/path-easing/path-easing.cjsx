@@ -921,7 +921,149 @@ module.exports = React.createClass
         It adds kind of cartoony feel to the mouth's movement.
       </p>
 
-      <p> --- --- --- </p>
+      <p>
+        Ok cool. Lets add tongue's motion. We need to wrap it with 
+        a <span className="highlight">overflow: hidden;</span> wrapper,
+        then apply the very first basic <span className="highlight">skew</span> curve 
+        for <span className="highlight">translate</span> property:
+      </p>
+
+      <EasingObjectGraph
+        duration = { 1800 }
+        onUpdate = { (o)->
+          @scopeEl    ?= document.querySelector '#js-mole-sample-8'
+          @tongueEl   ?= @scopeEl.querySelector '#js-sample-tongue'
+
+          mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*o.easedP[0]}px)")
+          
+          "translateX(#{(-550*o.easedP[0]).toFixed(2)}px)"
+        }
+
+        label="translateX"
+        background="#50E3C2"
+        path="M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100">
+        
+        <div className="mole-tongue-example" id="js-mole-sample-8">
+          <div className="mole-tongue-example__tongue" id="js-sample-tongue">
+            <svg viewBox="0 0 60 60">
+              <path id="js-mole-tongue-path" d="M0 30 Q 20 10, 30 25 T 50 30" stroke="#C95549" fill="none" strokeWidth="18" strokeLinecap="round" />
+            </svg>
+          </div>
+        </div>
+
+      </EasingObjectGraph>
+
+      <p>
+        Pretty simple and neat. Now we can add <span className="highlight">noize</span> curve to imitate 
+        tongue's wiggle:
+      </p>
+
+      <EasingObjectGraph
+        duration = { 1800 }
+        onUpdate = { (o)->
+          @scopeEl      ?= document.querySelector '#js-mole-sample-9'
+          @tongueEl     ?= @scopeEl.querySelector '#js-sample-tongue'
+          @tonguePathEl ?= @scopeEl.querySelector '#js-mole-tongue-path'
+
+          @skewEasing  = mojs.easing.path 'M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100'
+
+          skewP = @skewEasing o.p
+
+          mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*skewP}px)")
+          @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*o.easedP[0])}, 30 25 T 50 30");
+          
+          "M0 30 Q 20 #{(10+(550*o.easedP[0])).toFixed(2)}, 30 25 T 50 30"
+        }
+
+        label="path's d attribute"
+        background="#50E3C2"
+        path="M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100">
+        
+        <div className="mole-tongue-example" id="js-mole-sample-9">
+          <div className="mole-tongue-example__tongue" id="js-sample-tongue">
+            <svg viewBox="0 0 60 60">
+              <path id="js-mole-tongue-path" d="M0 30 Q 20 10, 30 25 T 50 30" stroke="#C95549" fill="none" strokeWidth="18" strokeLinecap="round" />
+            </svg>
+          </div>
+        </div>
+
+      </EasingObjectGraph>
+
+      <p>
+        Now lets add tongue to the entire scene:
+      </p>
+
+      <EasingObjectGraph
+        duration = { 1800 }
+        onUpdate = { (o)->
+          @scopeEl    ?= document.querySelector '#js-mole-sample-10'
+          @moleEl     ?= @scopeEl.querySelector '#js-mole'
+          @moleHandEl ?= @scopeEl.querySelector '#js-mole-hand'
+          @moleHandLeftEl ?= @scopeEl.querySelector '#js-mole-hand-left'
+          @mouthEl    ?= @scopeEl.querySelector '#js-mole-mouth'
+          @coneEl     ?= @scopeEl.querySelector '#js-mole-hat-cone'
+          @glassesEl  ?= @scopeEl.querySelector '#js-mole-glasses'
+          @glassesLeftEl  ?= @scopeEl.querySelector '#js-mole-glasses-left'
+          @moleEyeEl ?= @scopeEl.querySelector('#js-mole-eye')
+          @moleEyeLashEl ?= @scopeEl.querySelector('#js-mole-eye-lash')
+
+          @tongueEl     ?= @scopeEl.querySelector '#js-mole-tongue'
+          @tonguePathEl ?= @scopeEl.querySelector '#js-mole-tongue-path'
+          
+          @skewEasing ?= mojs.easing.path 'M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100'
+          @handAngleEasing ?= mojs.easing.path 'M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100'
+          @mouthEasing ?= mojs.easing.path 'M0,0 C0,-145.307194 29.1828098,57.0115012 32.0031223,63.7232245 C86.2226562,57.0115012 100,72.4825934 100,72.4825934'
+          @noizeEasing ?= mojs.easing.path 'M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100'
+
+          @squintEasing ?= mojs.easing.mix({ to: .25, value: 1 }, { to: 1, value: 'cubic.in' });
+  
+          skewP  = @skewEasing o.p
+          angleP = @handAngleEasing o.p
+          mouthP = @mouthEasing o.p
+          noizeP = @noizeEasing o.p
+
+          squintP = @squintEasing o.p
+          n_squintP = 1-squintP
+
+          mojs.h.style(@moleEl,         'transform', "skewX(#{75*skewP-(5*noizeP)}deg) skewY(#{15*noizeP}deg) translateZ(0)");
+
+          mojs.h.style(@moleHandEl,     'transform', "rotate(#{-200*angleP + 30*noizeP}deg) translateZ(0)");
+          mojs.h.style(@moleHandLeftEl, 'transform', "translate(#{100*skewP}px, #{-80*skewP}px) rotate(#{-110*skewP}deg) translateZ(0)");
+
+          mojs.h.style(@mouthEl, 'transform', "scale(#{mouthP - 3*noizeP}) translateX(#{-100*skewP}px) translateZ(0)");
+
+          mojs.h.style(@glassesEl, 'transform', "translateY(#{-15*noizeP}px)");
+          mojs.h.style(@glassesLeftEl, 'transform', "translateY(#{-15*noizeP}px)");
+          mojs.h.style(@coneEl, 'transform', "rotateZ(#{-20*noizeP}deg)");
+
+          this.moleEyeLashEl.setAttribute('d', "M0,0 Q 6.5 #{10*squintP}, 13 0");
+          this.moleEyeLashEl.setAttribute('stroke-width', 2 + 1.5*n_squintP);
+          mojs.h.style(this.moleEyeEl, 'transform', "rotate(#{37*n_squintP}deg) translate(#{7*n_squintP}px, #{-4*n_squintP}px) scaleX(#{1-.4*n_squintP})");
+
+          mojs.h.style(@tongueEl, 'transform', "translateX(#{-140*skewP}px)")
+          @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*noizeP)}, 30 25 T 50 30");
+          
+          "M0 30 Q 20 #{(10+(550*noizeP)).toFixed(2)}, 30 25 T 50 30"
+        }
+
+        label="path's d attribute"
+        background="#50E3C2"
+        path="M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100">
+        
+        <MoleSample id="js-mole-sample-10" />
+
+      </EasingObjectGraph>
+
+
+
+
+
+
+
+
+
+
+      
 
       <p>
         Now lets add to the exhale motion some twitching to emphasize mole's effort by adding a "noize" curve. We will add this curve for all parts of our character:
@@ -1072,74 +1214,6 @@ module.exports = React.createClass
         path="M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100">
         
         <MoleSample id="js-mole-sample-7" />
-
-      </EasingObjectGraph>
-
-      <p>
-        To emplement toungue's motion we need to wrap it with 
-        a <span className="highlight">overflow: hidden;</span> wrapper,
-        then apply the very first <span className="highlight">skew</span> graph
-        for <span className="highlight">translate</span> property:
-      </p>
-
-      <EasingObjectGraph
-        duration = { 1800 }
-        onUpdate = { (o)->
-          @scopeEl    ?= document.querySelector '#js-mole-sample-8'
-          @tongueEl   ?= @scopeEl.querySelector '#js-sample-tongue'
-
-          mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*o.easedP[0]}px)")
-          
-          "translateX(#{(-550*o.easedP[0]).toFixed(2)}px)"
-        }
-
-        label="translateX"
-        background="#50E3C2"
-        path="M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100">
-        
-        <div className="mole-tongue-example" id="js-mole-sample-8">
-          <div className="mole-tongue-example__tongue" id="js-sample-tongue">
-            <svg viewBox="0 0 60 60">
-              <path id="js-mole-tongue-path" d="M0 30 Q 20 10, 30 25 T 50 30" stroke="#C95549" fill="none" strokeWidth="18" strokeLinecap="round" />
-            </svg>
-          </div>
-        </div>
-
-      </EasingObjectGraph>
-
-      <p>
-        Now we can add <span className="highlight">noize</span> curve to imitate 
-        tongue's wiggle:
-      </p>
-
-      <EasingObjectGraph
-        duration = { 1800 }
-        onUpdate = { (o)->
-          @scopeEl      ?= document.querySelector '#js-mole-sample-9'
-          @tongueEl     ?= @scopeEl.querySelector '#js-sample-tongue'
-          @tonguePathEl ?= @scopeEl.querySelector '#js-mole-tongue-path'
-
-          @skewEasing  = mojs.easing.path 'M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100'
-
-          skewP = @skewEasing o.p
-
-          mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*skewP}px)")
-          @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*o.easedP[0])}, 30 25 T 50 30");
-          
-          "M0 30 Q 20 #{(10+(550*o.easedP[0])).toFixed(2)}, 30 25 T 50 30"
-        }
-
-        label="path's d attribute"
-        background="#50E3C2"
-        path="M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100">
-        
-        <div className="mole-tongue-example" id="js-mole-sample-9">
-          <div className="mole-tongue-example__tongue" id="js-sample-tongue">
-            <svg viewBox="0 0 60 60">
-              <path id="js-mole-tongue-path" d="M0 30 Q 20 10, 30 25 T 50 30" stroke="#C95549" fill="none" strokeWidth="18" strokeLinecap="round" />
-            </svg>
-          </div>
-        </div>
 
       </EasingObjectGraph>
 
