@@ -610,7 +610,7 @@ module.exports = React.createClass
         Don't freak out, it is actually an easy one. If you will take some time, you 
         may notice that the pattern is repeatative. On every translateY period, 
         we have according squash&streatch period and then it recur over and over.
-        One period such period looks like this:
+        One such period period looks like this:
       </p>
 
       <EasingGraph
@@ -656,7 +656,7 @@ module.exports = React.createClass
       <h2>Thinking in property curves</h2>
 
       <p>
-        Ok, now you have some clue what the heck property curves are, this section will 
+        Ok, now you have some clue what the heck property curves are. This section will 
         help you to gain some skill how and when to use them. Generally, we can use curves in 
         <UniteLink link="https://vimeo.com/111574737">lots of different purposes</UniteLink>, 
         but here we will talk with you how to think in curves when you want to move an object 
@@ -699,7 +699,7 @@ module.exports = React.createClass
         As you can see, our curve goes <span className="highlight">above 0</span> slightly 
         to implement the backward move then it goes <span className="highlight">below 0</span> to 
         make the forward move. This is base curve for our scene, we will use 
-        it more further on. Behold the code:
+        it more further on. The code:
       </p>
 
       <CodeSample pen="a7c9ab066b13db760c74bc1536204b61">
@@ -846,7 +846,7 @@ module.exports = React.createClass
         To implement mouth motion we need to scale it 
         up <span className="highlight">above 1</span> conveying inhale and then scale it down to 
         about <span className="highlight">.4</span> conveying exhale, after that we need to continue 
-        scaling it down slowly to convey the air comming out of the mouth moved by mole's 
+        scaling it down slowly to convey the fact that the mouth tends to close slowly, while air is comming out of the mouth moved by mole's 
         lagger presure:
       </p>
 
@@ -917,7 +917,7 @@ module.exports = React.createClass
       <p>
         As you can notice, we've added some motion to the 
         <span className="highlight">translateX</span> property 
-        by reusing the base <span className="highlight">skew</span> curve. 
+        by reusing the base <span className="highlight">skew</span> curve again. 
         It adds kind of cartoony feel to the mouth's movement.
       </p>
 
@@ -990,7 +990,8 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
       <p>
-        Now lets add tongue to the entire scene:
+        We will reuse this noize curve further on shorlty. 
+        Meanwhile lets add the tongue to the entire scene:
       </p>
 
       <EasingObjectGraph
@@ -1051,242 +1052,11 @@ module.exports = React.createClass
 
       [CODEPEN with all parts twitching]
 
-      
-
-
-
-
-
-
-
-
-
-
-
       <p>
-        Now lets add to the exhale motion some twitching to emphasize mole's effort by adding a "noize" curve. We will add this curve for all parts of our character:
-      </p>
-      
-      <ul>
-        <li> body: </li>
-      </ul>
-
-      <EasingObjectGraph
-        duration = { 1800 }
-        onUpdate = { (o)->
-          @scopeEl    ?= document.querySelector '#js-mole-sample-5'
-          @moleEl     ?= @scopeEl.querySelector '#js-mole'
-          @moleHandEl ?= @scopeEl.querySelector '#js-mole-hand'
-          @moleHandLeftEl ?= @scopeEl.querySelector '#js-mole-hand-left'
-          @mouthEl    ?= @scopeEl.querySelector '#js-mole-mouth'
-          
-
-          @skewEasing ?= mojs.easing.path 'M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100'
-          @handAngleEasing ?= mojs.easing.path 'M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100'
-          @mouthEasing ?= mojs.easing.path 'M0,0 C0,-145.307194 29.1828098,57.0115012 32.0031223,63.7232245 C86.2226562,57.0115012 100,72.4825934 100,72.4825934'
-          @noizeEasing ?= mojs.easing.path 'M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100'
-  
-          skewP  = @skewEasing o.p
-          angleP = @handAngleEasing o.p
-          mouthP = @mouthEasing o.p
-          noizeP = @noizeEasing o.p
-
-          mojs.h.style(@moleEl,         'transform', "skewX(#{75*skewP-(5*noizeP)}deg) skewY(#{25*noizeP}deg) translateZ(0)");
-
-          mojs.h.style(@moleHandEl,     'transform', "rotate(#{-200*angleP}deg) translateZ(0)");
-          mojs.h.style(@moleHandLeftEl, 'transform', "translate(#{100*skewP}px, #{-80*skewP}px) rotate(#{-110*skewP}deg) translateZ(0)");
-
-          mojs.h.style(@mouthEl, 'transform', "scale(#{mouthP}) translateX(#{-100*skewP}px) translateZ(0)");
-
-          "skewX(#{(75*skewP-(5*noizeP)).toFixed(2)}deg) skewY(#{(25*noizeP).toFixed(2)}deg)"
-        }
-
-        label="scale"
-        background="#50E3C2"
-        path="M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100">
-        
-        <MoleSample id="js-mole-sample-5" />
-
-      </EasingObjectGraph>
-
-
-      <ul>
-        <li> hand: </li>
-      </ul>
-
-      <EasingObjectGraph
-        duration = { 1800 }
-        onUpdate = { (o)->
-          @scopeEl    ?= document.querySelector '#js-mole-sample-6'
-          @moleEl     ?= @scopeEl.querySelector '#js-mole'
-          @moleHandEl ?= @scopeEl.querySelector '#js-mole-hand'
-          @moleHandLeftEl ?= @scopeEl.querySelector '#js-mole-hand-left'
-          @mouthEl    ?= @scopeEl.querySelector '#js-mole-mouth'
-          
-
-          @skewEasing ?= mojs.easing.path 'M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100'
-          @handAngleEasing ?= mojs.easing.path 'M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100'
-          @mouthEasing ?= mojs.easing.path 'M0,0 C0,-145.307194 29.1828098,57.0115012 32.0031223,63.7232245 C86.2226562,57.0115012 100,72.4825934 100,72.4825934'
-          @noizeEasing ?= mojs.easing.path 'M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100'
-  
-          skewP  = @skewEasing o.p
-          angleP = @handAngleEasing o.p
-          mouthP = @mouthEasing o.p
-          noizeP = @noizeEasing o.p
-
-          mojs.h.style(@moleEl,         'transform', "skewX(#{75*skewP-(5*noizeP)}deg) skewY(#{25*noizeP}deg) translateZ(0)");
-
-          mojs.h.style(@moleHandEl,     'transform', "rotate(#{-200*angleP + 30*noizeP}deg) translateZ(0)");
-          mojs.h.style(@moleHandLeftEl, 'transform', "translate(#{100*skewP}px, #{-80*skewP}px) rotate(#{-110*skewP}deg) translateZ(0)");
-
-          mojs.h.style(@mouthEl, 'transform', "scale(#{mouthP}) translateX(#{-100*skewP}px) translateZ(0)");
-
-          "skewX(#{(75*skewP-(5*noizeP)).toFixed(2)}deg) skewY(#{(25*noizeP).toFixed(2)}deg)"
-        }
-
-        label="scale"
-        background="#50E3C2"
-        path="M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100">
-        
-        <MoleSample id="js-mole-sample-6" />
-
-      </EasingObjectGraph>
-
-
-      <ul>
-        <li> glasses, mouth and cone: </li>
-      </ul>
-
-      <EasingObjectGraph
-        duration = { 1800 }
-        onUpdate = { (o)->
-          @scopeEl    ?= document.querySelector '#js-mole-sample-7'
-          @moleEl     ?= @scopeEl.querySelector '#js-mole'
-          @moleHandEl ?= @scopeEl.querySelector '#js-mole-hand'
-          @moleHandLeftEl ?= @scopeEl.querySelector '#js-mole-hand-left'
-          @mouthEl    ?= @scopeEl.querySelector '#js-mole-mouth'
-          @coneEl     ?= @scopeEl.querySelector '#js-mole-hat-cone'
-          @glassesEl  ?= @scopeEl.querySelector '#js-mole-glasses'
-          @glassesLeftEl  ?= @scopeEl.querySelector '#js-mole-glasses-left'
-
-          @moleEyeEl ?= @scopeEl.querySelector('#js-mole-eye')
-          @moleEyeLashEl ?= @scopeEl.querySelector('#js-mole-eye-lash')
-          
-
-          @skewEasing ?= mojs.easing.path 'M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100'
-          @handAngleEasing ?= mojs.easing.path 'M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100'
-          @mouthEasing ?= mojs.easing.path 'M0,0 C0,-145.307194 29.1828098,57.0115012 32.0031223,63.7232245 C86.2226562,57.0115012 100,72.4825934 100,72.4825934'
-          @noizeEasing ?= mojs.easing.path 'M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100'
-
-          @squintEasing ?= mojs.easing.mix({ to: .25, value: 1 }, { to: 1, value: 'cubic.in' });
-  
-          skewP  = @skewEasing o.p
-          angleP = @handAngleEasing o.p
-          mouthP = @mouthEasing o.p
-          noizeP = @noizeEasing o.p
-
-          squintP = @squintEasing o.p
-          n_squintP = 1-squintP
-
-          mojs.h.style(@moleEl,         'transform', "skewX(#{75*skewP-(5*noizeP)}deg) skewY(#{15*noizeP}deg) translateZ(0)");
-
-          mojs.h.style(@moleHandEl,     'transform', "rotate(#{-200*angleP + 30*noizeP}deg) translateZ(0)");
-          mojs.h.style(@moleHandLeftEl, 'transform', "translate(#{100*skewP}px, #{-80*skewP}px) rotate(#{-110*skewP}deg) translateZ(0)");
-
-          mojs.h.style(@mouthEl, 'transform', "scale(#{mouthP - 3*noizeP}) translateX(#{-100*skewP}px) translateZ(0)");
-
-          mojs.h.style(@glassesEl, 'transform', "translateY(#{-15*noizeP}px)");
-          mojs.h.style(@glassesLeftEl, 'transform', "translateY(#{-15*noizeP}px)");
-          mojs.h.style(@coneEl, 'transform', "rotateZ(#{-20*noizeP}deg)");
-
-          this.moleEyeLashEl.setAttribute('d', "M0,0 Q 6.5 #{10*squintP}, 13 0");
-          this.moleEyeLashEl.setAttribute('stroke-width', 2 + 1.5*n_squintP);
-          mojs.h.style(this.moleEyeEl, 'transform', "rotate(#{37*n_squintP}deg) translate(#{7*n_squintP}px, #{-4*n_squintP}px) scaleX(#{1-.4*n_squintP})");
-
-
-          "translateY(#{(-40*noizeP).toFixed(2)}px)"
-        }
-
-        label="scale"
-        background="#50E3C2"
-        path="M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100">
-        
-        <MoleSample id="js-mole-sample-7" />
-
-      </EasingObjectGraph>
-
-      <p>
-        Now lets add tongue to the entire scene:
-      </p>
-
-      <EasingObjectGraph
-        duration = { 1800 }
-        onUpdate = { (o)->
-          @scopeEl    ?= document.querySelector '#js-mole-sample-10'
-          @moleEl     ?= @scopeEl.querySelector '#js-mole'
-          @moleHandEl ?= @scopeEl.querySelector '#js-mole-hand'
-          @moleHandLeftEl ?= @scopeEl.querySelector '#js-mole-hand-left'
-          @mouthEl    ?= @scopeEl.querySelector '#js-mole-mouth'
-          @coneEl     ?= @scopeEl.querySelector '#js-mole-hat-cone'
-          @glassesEl  ?= @scopeEl.querySelector '#js-mole-glasses'
-          @glassesLeftEl  ?= @scopeEl.querySelector '#js-mole-glasses-left'
-          @moleEyeEl ?= @scopeEl.querySelector('#js-mole-eye')
-          @moleEyeLashEl ?= @scopeEl.querySelector('#js-mole-eye-lash')
-
-          @tongueEl     ?= @scopeEl.querySelector '#js-mole-tongue'
-          @tonguePathEl ?= @scopeEl.querySelector '#js-mole-tongue-path'
-          
-          @skewEasing ?= mojs.easing.path 'M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100'
-          @handAngleEasing ?= mojs.easing.path 'M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100'
-          @mouthEasing ?= mojs.easing.path 'M0,0 C0,-145.307194 29.1828098,57.0115012 32.0031223,63.7232245 C86.2226562,57.0115012 100,72.4825934 100,72.4825934'
-          @noizeEasing ?= mojs.easing.path 'M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100'
-
-          @squintEasing ?= mojs.easing.mix({ to: .25, value: 1 }, { to: 1, value: 'cubic.in' });
-  
-          skewP  = @skewEasing o.p
-          angleP = @handAngleEasing o.p
-          mouthP = @mouthEasing o.p
-          noizeP = @noizeEasing o.p
-
-          squintP = @squintEasing o.p
-          n_squintP = 1-squintP
-
-          mojs.h.style(@moleEl,         'transform', "skewX(#{75*skewP-(5*noizeP)}deg) skewY(#{15*noizeP}deg) translateZ(0)");
-
-          mojs.h.style(@moleHandEl,     'transform', "rotate(#{-200*angleP + 30*noizeP}deg) translateZ(0)");
-          mojs.h.style(@moleHandLeftEl, 'transform', "translate(#{100*skewP}px, #{-80*skewP}px) rotate(#{-110*skewP}deg) translateZ(0)");
-
-          mojs.h.style(@mouthEl, 'transform', "scale(#{mouthP - 3*noizeP}) translateX(#{-100*skewP}px) translateZ(0)");
-
-          mojs.h.style(@glassesEl, 'transform', "translateY(#{-15*noizeP}px)");
-          mojs.h.style(@glassesLeftEl, 'transform', "translateY(#{-15*noizeP}px)");
-          mojs.h.style(@coneEl, 'transform', "rotateZ(#{-20*noizeP}deg)");
-
-          this.moleEyeLashEl.setAttribute('d', "M0,0 Q 6.5 #{10*squintP}, 13 0");
-          this.moleEyeLashEl.setAttribute('stroke-width', 2 + 1.5*n_squintP);
-          mojs.h.style(this.moleEyeEl, 'transform', "rotate(#{37*n_squintP}deg) translate(#{7*n_squintP}px, #{-4*n_squintP}px) scaleX(#{1-.4*n_squintP})");
-
-          mojs.h.style(@tongueEl, 'transform', "translateX(#{-140*skewP}px)")
-          @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*noizeP)}, 30 25 T 50 30");
-          
-          "M0 30 Q 20 #{(10+(550*noizeP)).toFixed(2)}, 30 25 T 50 30"
-        }
-
-        label="path's d attribute"
-        background="#50E3C2"
-        path="M0,100 L24.2114672,99.7029845 L27.0786839,106.645089 L29.2555809,93.3549108 L32.0340385,103.816964 L35.3459816,94.6015626 L38.3783493,103.092634 L41.0513382,95.9547991 L43.7739944,106.645089 L45.6729927,96.8973214 L50,105.083147 L53.3504448,93.3549108 L57.7360497,103.816964 L60.8616066,95.9547991 L65.0345993,103.092634 L68.6997757,97.5106029 L71.6646194,102.03125 L75.5066986,96.5672433 L78.2949219,102.652344 L81.0313873,96.8973214 L84.0174408,102.328264 L86.0842667,97.7332592 L88.7289352,101.606306 L91.1429977,98.3533763 L94.3822556,101.287388 L97.0809174,98.7254467 L100,100">
-        
-        <MoleSample id="js-mole-sample-10" />
-
-      </EasingObjectGraph>
-
-      <em>
-        <i>Note</i>:
-        For simplisity's sake we omited the eye motion.
-      </em>
-
-      <p>
-        The latest touch would be to add <span className="highlight">mo· js'</span> special module type - <span className="highlight">effect generator</span> or <span className="highlight">particle emitter</span>. It is capable of generating different effects in declarative way. This one is called <span className="highlight">Burst</span> and it is out of scope of this tutorial.
+        The latest touch would be to add saliva with<span className="highlight">Burst</span> module. 
+        Basically it allows us to grenerate various effects in declarative way. 
+        We will look at it in detail in dedicated tutorial. That's our entire scene 
+        with saliva added:
       </p>
 
       <EasingObjectGraph
@@ -1377,12 +1147,17 @@ module.exports = React.createClass
 
       </EasingObjectGraph>
 
+      <em>
+        <i>Note</i>:
+        For simplisity's sake we have omited the eye motion.
+      </em>
 
       <p>
         That's basically it. We have used 4 property curves to bring our mole to life. 
         I hope you enjoined the process. Thinking in curves could be totally new  
         mindset for you, but it gets very convinient and intuitive when you are 
-        using it for a few times.
+        using it for a few times so go get some practice right now.
+        [MAYBE ADD TASKS FOR PRACTICE]
       </p>
 
 
@@ -1408,14 +1183,14 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        When you generate an easing function from a SVG path, 
-        the <span className="highlight">mojs.easing.path</span> samples 
-        it's coordinates' values. 
+        To generate an easing function from a SVG path, 
+        the <span className="highlight">mo· js</span> should sample 
+        path's coordinates values. 
         The <span className="highlight">precompute</span> option defines how 
-        much samples you would like to take from the path on initialization stage 
-        in range of <span className="highlight">100 - 10000</span>. More samples, means 
-        your result easing function would be more performant on runtime, but it will 
-        take longer to take all the samples, so to initialize.
+        much samples it should like to take from the path on initialization stage. 
+        Allowed range is <span className="highlight">100 - 10000</span> value.
+        More samples, means your result easing function would be more performant 
+        on runtime, but it will take longer to take all those samples.
       </p>
 
       <p>
@@ -1431,7 +1206,7 @@ module.exports = React.createClass
       <p>
         The <span className="highlight">rect</span> option provides 
         to <span className="highlight">mojs.easing.path</span> the rectangle size, 
-        the path was drawn in. By default the rectangle 
+        the path was drawn into. By default the rectangle 
         is <span className="highlight">100x100</span>, but you can 
         specify any size that works good for you.
       </p>
@@ -1458,7 +1233,7 @@ module.exports = React.createClass
       <p>
         The <span className="highlight">path easing</span> also allows as to 
         generate the <span className="highlight">property curves</span> - 
-        much more complex and powerfull easing paths, to descibe some property 
+        much more complex and powerfull easing paths, to descibe a property 
         change in time with a graph.
       </p>
 
@@ -1467,12 +1242,12 @@ module.exports = React.createClass
         with <span className="highlight">precompute</span> and 
         <span className="highlight">eps</span> options. 
         The <span className="highlight">rect</span> option 
-        specifies the rectangle's size the easing path was drawn in.
+        specifies the rectangle's size the easing path was drawn into.
       </p>
 
       <p>
         It is worth noting that when you draw your easing path, 
-        it must start at 0 and end at 100 
+        it's <span className="highlight">x</span> values must start at 0 and end at 100 
         (or at <span className="highlight">rect</span> option's value that you have set). 
         This rule comes from the fact that the <span className="highlight">x</span> axis 
         of your path represents <span className="highlight">progress</span> and the 
