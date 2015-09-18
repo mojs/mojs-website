@@ -1044,8 +1044,8 @@ module.exports = React.createClass
 
 
       <p>
-        Few touches left. We see how mole blames an air from his mouth, but his effort 
-        should be emphasized by adding some twitching to the whole it's body. Luckily 
+        Few touches left. We see how mole blows air from his mouth, but his effort 
+        should be emphasized by adding some twitching to the whole mole's body. Luckily 
         we already have our <span className="highlight">noize</span> curve to use here. 
         We need add it as a cofficient to all small parts to make them twitch and wiggle:
       </p>
@@ -1053,8 +1053,8 @@ module.exports = React.createClass
       [CODEPEN with all parts twitching]
 
       <p>
-        The latest touch would be to add saliva with<span className="highlight">Burst</span> module. 
-        Basically it allows us to grenerate various effects in declarative way. 
+        The latest touch would be to add saliva with <span className="highlight">Burst</span> module. 
+        In short, this module type allows us to grenerate various effects in declarative way. 
         We will look at it in detail in dedicated tutorial. That's our entire scene 
         with saliva added:
       </p>
@@ -1149,14 +1149,14 @@ module.exports = React.createClass
 
       <em>
         <i>Note</i>:
-        For simplisity's sake we have omited the eye motion.
+        For simplisity's sake we have omited the eye motion in this tutorial.
       </em>
 
       <p>
         That's basically it. We have used 4 property curves to bring our mole to life. 
         I hope you enjoined the process. Thinking in curves could be totally new  
-        mindset for you, but it gets very convinient and intuitive when you are 
-        using it for a few times so go get some practice right now.
+        mindset for you, but it gets very convinient and intuitive when you use 
+        it for a few times so go get some practice right now.
         [MAYBE ADD TASKS FOR PRACTICE]
       </p>
 
@@ -1187,10 +1187,10 @@ module.exports = React.createClass
         the <span className="highlight">mo· js</span> should sample 
         path's coordinates values. 
         The <span className="highlight">precompute</span> option defines how 
-        much samples it should like to take from the path on initialization stage. 
+        much samples it should take from the path on initialization stage. 
         Allowed range is <span className="highlight">100 - 10000</span> value.
         More samples, means your result easing function would be more performant 
-        on runtime, but it will take longer to take all those samples.
+        on runtime, but it will take longer to get all those samples.
       </p>
 
       <p>
@@ -1204,10 +1204,10 @@ module.exports = React.createClass
       </p>
 
       <p>
-        The <span className="highlight">rect</span> option provides 
-        to <span className="highlight">mojs.easing.path</span> the rectangle size, 
-        the path was drawn into. By default the rectangle 
-        is <span className="highlight">100x100</span>, but you can 
+        The <span className="highlight">rect</span> option provides desired 
+        rectangle size path was drawn into to the <span className="highlight">mojs.easing.path</span> method. 
+        By default the rectangle 
+        is <span className="highlight">100</span>(means 100x100), but you can 
         specify any size that works good for you.
       </p>
 
