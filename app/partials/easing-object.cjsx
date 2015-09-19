@@ -12,20 +12,22 @@ module.exports = React.createClass
     delay:    1000
 
   componentDidMount:->
-    objEl   = @getDOMNode().children[0]
-    @_tween = new mojs.Tween
+    objEl    = @getDOMNode().children[0]
+    @labelEl = @refs.label.getDOMNode()
+    @_tween  = new mojs.Tween
       onStart:  @props.onStart
       duration: @props.duration
       onUpdate: (p)=>
+        return
         return if !@props.onUpdate?
         
-        easedP = if mojs.h.isArray @props.easing
-          easing(p) for easing, i in @props.easing
-        else @props.easing(p)
+        # easedP = if mojs.h.isArray @props.easing
+        #   easing(p) for easing, i in @props.easing
+        # else @props.easing(p)
         
-        @setState label: @props.onUpdate { objEl, easedP, p }
+        # @labelEl.innerText = @props.onUpdate({ objEl, easedP, p }) or ''
 
-    @props.timeline?.add @_tween
+    # @props.timeline?.add @_tween
     @props.timeline?.append(new mojs.Tween duration: @props.delay) if @props.delay
 
   # _run:->  @_tween.run()
@@ -35,5 +37,5 @@ module.exports = React.createClass
     bg = if @props.background? then @props.background else null
     <div className="easing-object" style={ backgroundColor: bg } >
       { @props.children }
-      <div className="easing-object__label">{ @state.label }</div>
+      <div className="easing-object__label" ref="label"></div>
     </div>

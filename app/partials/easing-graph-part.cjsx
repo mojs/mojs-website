@@ -13,8 +13,10 @@ module.exports = React.createClass
     colors:   ['#F64040', '#00F87F']
 
   componentDidMount:->
-    customEl   = @refs['custom-line'].getDOMNode()
-    pointEl    = @refs["point"].getDOMNode()
+    customEl       = @refs['custom-line'].getDOMNode()
+    customLabel1El = @refs['customLabel1'].getDOMNode()
+    customLabel2El = @refs['customLabel2'].getDOMNode()
+    pointEl        = @refs["point"].getDOMNode()
     @_tween = new mojs.Tween
       duration: @props.duration
       onUpdate: (p)=>
@@ -22,7 +24,9 @@ module.exports = React.createClass
         mojs.h.style customEl,   'transform', "translate(100px, #{ -200*easedP }px) translateZ(0)"
         mojs.h.style pointEl,    'transform', "translate(#{ 200*p }px, #{ -200*easedP }px) translateZ(0)"
         # mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px) translateZ(0)"
-        @setState customLabel:   easedP.toFixed(2)
+        customLabel1El.innerHTML = easedP.toFixed(2)
+        customLabel2El.innerHTML = easedP.toFixed(2)
+        # @setState customLabel:   easedP.toFixed(2)
 
     @props.timeline?.add(@_tween)
 
@@ -35,8 +39,8 @@ module.exports = React.createClass
 
       <div ref="custom-line" className="easing-graph__line-wrapper">
         <div className="easing-graph-line easing-graph-line--horizontal">
-          <div className="easing-graph-line__label easing-graph-line__label--top">{ @state.customLabel }</div>
-          <div className="easing-graph-line__label easing-graph-line__label--bottom">{ @state.customLabel }</div>
+          <div className="easing-graph-line__label easing-graph-line__label--top" ref="customLabel1"></div>
+          <div className="easing-graph-line__label easing-graph-line__label--bottom" ref="customLabel2"></div>
         </div>
       </div>
 

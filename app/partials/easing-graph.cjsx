@@ -16,17 +16,21 @@ module.exports = React.createClass
     delay:    1000
     colors:   ['#F64040', '#00F87F']
   componentDidMount:->
-    progressEl = @refs['progress-line'].getDOMNode()
+    progressEl     = @refs['progress-line'] .getDOMNode()
+    progressLabel1 = @refs['progressLabel1'].getDOMNode()
+    progressLabel2 = @refs['progressLabel2'].getDOMNode()
 
     @_tween = new mojs.Tween
       duration: @props.duration
-      onUpdate: (p)=>
-        mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px) translateZ(0)"
-        
-        @setState progressLabel: p.toFixed(2)
+      onUpdate: (p)=> return
+        # mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px) translateZ(0)"
 
-    @props.timeline?.add(@_tween)
-    @props.timeline?.append(new mojs.Tween duration: @props.delay) if @props.delay
+        # fixedP = p.toFixed(2)
+        # progressLabel1.innerHTML = fixedP
+        # progressLabel2.innerHTML = fixedP
+
+    # @props.timeline?.add(@_tween)
+    # @props.timeline?.append(new mojs.Tween duration: @props.delay) if @props.delay
     @props.onAdd?()
 
   # _run:->  @_tween.run()
@@ -46,7 +50,6 @@ module.exports = React.createClass
     <GraphLabel label={label} index={i} color = {@props.colors[i]} />
 
   render:->
-
     graphs = if !mojs.h.isArray @props.path then @_makeGraph()
     else @_makeGraph(value, i) for value, i in @props.path
 
@@ -63,8 +66,8 @@ module.exports = React.createClass
 
         <div ref="progress-line" className="easing-graph__line-wrapper">
           <div className="easing-graph-line">
-            <div className="easing-graph-line__label easing-graph-line__label--top">{ @state.progressLabel }</div>
-            <div className="easing-graph-line__label easing-graph-line__label--bottom">{ @state.progressLabel }</div>
+            <div className="easing-graph-line__label easing-graph-line__label--top" ref="progressLabel1"></div>
+            <div className="easing-graph-line__label easing-graph-line__label--bottom" ref="progressLabel2"></div>
           </div>
         </div>
 

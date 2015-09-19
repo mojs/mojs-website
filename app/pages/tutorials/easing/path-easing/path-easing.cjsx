@@ -1261,7 +1261,8 @@ module.exports = React.createClass
 
       <p>
         Thanks a lot to the reader for time and effort in reading this tutorial! 
-        In a short future we are planning to add a page with a searchable list of path easings with live examples and graphs.
+        In a short future we are planning to add a page with a searchable list of path 
+        xeasings powered by live examples and graphs.
         So developers can collaborate and share their easing paths and find ones 
         that suite their current needs.
         <br />
