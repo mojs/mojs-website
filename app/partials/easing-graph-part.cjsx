@@ -24,8 +24,9 @@ module.exports = React.createClass
         mojs.h.style customEl,   'transform', "translate(100px, #{ -200*easedP }px) translateZ(0)"
         mojs.h.style pointEl,    'transform', "translate(#{ 200*p }px, #{ -200*easedP }px) translateZ(0)"
         # mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px) translateZ(0)"
-        customLabel1El.innerHTML = easedP.toFixed(2)
-        customLabel2El.innerHTML = easedP.toFixed(2)
+        fixedP = easedP.toFixed(2)
+        customLabel1El.innerText = fixedP
+        customLabel2El.innerText = fixedP
         # @setState customLabel:   easedP.toFixed(2)
 
     @props.timeline?.add(@_tween)

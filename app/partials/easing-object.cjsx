@@ -18,16 +18,15 @@ module.exports = React.createClass
       onStart:  @props.onStart
       duration: @props.duration
       onUpdate: (p)=>
-        return
         return if !@props.onUpdate?
         
-        # easedP = if mojs.h.isArray @props.easing
-        #   easing(p) for easing, i in @props.easing
-        # else @props.easing(p)
+        easedP = if mojs.h.isArray @props.easing
+          easing(p) for easing, i in @props.easing
+        else @props.easing(p)
         
-        # @labelEl.innerText = @props.onUpdate({ objEl, easedP, p }) or ''
+        @labelEl.innerText = @props.onUpdate({ objEl, easedP, p }) or ''
 
-    # @props.timeline?.add @_tween
+    @props.timeline?.add @_tween
     @props.timeline?.append(new mojs.Tween duration: @props.delay) if @props.delay
 
   # _run:->  @_tween.run()

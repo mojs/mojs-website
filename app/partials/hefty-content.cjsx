@@ -7,8 +7,9 @@ require 'css/partials/hefty-content'
 
 module.exports = React.createClass
   componentDidMount:->
+    @stopCnt = 0
     if @props.isLaunchOnHover then @setState isShow: true
-    @_bindWindowResize(); setTimeout((=> @_getPosition();), 15000); @_loop()
+    @_bindScroll(); @_bindWindowResize(); @_getPosition()
     (new Hammer document.body).on 'tap', (e)=>
       has = e.srcEvent.target.classList.contains.bind e.srcEvent.target.classList
       return if has('hefty-content__curtain') or has('hefty-content__curtain-label')
@@ -33,13 +34,22 @@ module.exports = React.createClass
       isShow and @props.onShow?()
       isShow or  @props.onHide?()
 
+  _bindScroll:-> document.addEventListener 'scroll', @_startLoop
+
   _checkHide:->
     scrollY = @_getScrollY()
     isShow = scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100
     @_onHide() if isShow is false and @_isShow
 
+  _startLoop:->
+    !@_isGotPosition and (@_getPosition(); @_isGotPosition = true)
+    !@_isLooping and @_loop()
+
   _loop:->
-    return @_onHide() if @isStop
+    if @isStop or (@stopCnt++ > 3)
+      @_onHide(); @_isLooping = false
+      return @stopCnt = 0
+    @_isLooping = true
     if @props.isLaunchOnHover then @_checkHide() else @_checkVisibility()
     requestAnimationFrame(@_loop)
 
