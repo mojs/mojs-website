@@ -54,7 +54,7 @@ module.exports = React.createClass
         Animation with equal interim spacing(read with linear easing) can 
         envoke in human brain nothing than suspicious or dull response. 
         By contrast, excellent crafted easing appeal user's attention, 
-        araise curiosity so involvement.
+        araise curiosity and so involvement.
         That's why so crutial to embrace the full control of easing functions.
       </p>
 
@@ -74,7 +74,7 @@ module.exports = React.createClass
           <span className="highlight">mo· js</span>
           &nbsp;has super precise easing function type 
           - <span className="highlight">path easing</span>.
-          It allows you to draw your timing functions! 
+          It allows you to draw your timing functions. 
           That's what this tutorial is dedicated to, hang tight!
       </p>
 
@@ -105,7 +105,7 @@ module.exports = React.createClass
       </em>
 
       <p>
-        We've created a tween here by constracting 
+        We've created a tween here by constructing 
         the <span className="highlight">mojs.Tween</span> class (line 2), 
         on every frame update we multiply tween's progress(it is in range of from 0 to 1) 
         on 200 and set the result as the current 
@@ -164,7 +164,7 @@ module.exports = React.createClass
         If you'll think about it, this common bounce easing graph represents our object's 
         parameters like the material it is made of or it's weight or acceleration it has. 
         Savvy readers starting to grasp the main problem with this widespread easing function 
-        - the limit to one set of these parameters that can not be changed.
+        - the limit to one set of these parameters that can not be changed on demand.
       </p>
 
       <p>
@@ -253,7 +253,7 @@ module.exports = React.createClass
         onUpdate = { (o)=>
           shift = 1 - .9*o.easedP[0]
           mojs.h.style o.objEl, 'transform', "scale(#{shift}) translateZ(0)"
-          "scale( #{shift.toFixed(0)} )"
+          "scale( #{shift.toFixed(2)} )"
         }
         label="scale"
         background="#F1E2D7"
