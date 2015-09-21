@@ -211,7 +211,8 @@ module.exports = React.createClass
         Now we can generate our custom easing function from this SVG path.
         For this simply copy the Path's commands from 
         <span className="highlight">d attribute</span> and pass them to 
-        the <span className="highlight">mojs.easing.path</span> function (line 2):
+        the <span className="highlight">mojs.easing.path</span> function (line 2) and 
+        you will have newely generated easing function back:
       </p>
 
       <CodeSample pen="c4b415a9167718d3134df04f07ac609b">
@@ -232,13 +233,13 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        Yay! We've drawn our custom path easing!
-        Our square feels much more bouncy now!
+        Yay! We've drawn our custom path easing - 
+        our square feels much more bouncy now!
       </p>
 
       <p>
         You can literally draw your easing functions with <span className="highlight">Path easing</span>.
-        There are few more examples of drawn custom easing:
+        There are few more examples of custom easing you can draw:
       </p>
 
       <ul>
@@ -346,7 +347,7 @@ module.exports = React.createClass
         If you are familiar with After Effects workflow and have ever worked 
         with <UniteLink link="http://www.schoolofmotion.com/intro-to-animation-curves-in-after-effects/">animation curves</UniteLink> (go watch this video, I'll be waiting on you here) 
         this idea won't be entirely new for you.
-        If you haven't - no worries, it is pretty easy but be attentive it can change 
+        If you haven't - no worries, it is pretty simple but be attentive it can change 
         the way you are treating your animations!
       </p>
 
@@ -404,10 +405,10 @@ module.exports = React.createClass
 
       <p>
         The delay at very start was made to give some time for initial squash 
-        easing to act. So it waits some time and then increases to 1 with
+        property curve to act. So it waits some time and then grows to 1 with
         something like cubic-out easing. Dont get fooled by the fact that it looks 
         like an easing -- yes it starts at 0 and ends and 
-        1 <span className="highlight">Y</span> -- my intention was 
+        1 <span className="highlight">y</span> -- my intention was 
         to describe how <span className="highlight">translateY</span> property 
         will act in time, but not ease the change. Consider the next example for 
         better understanding what I mean.
@@ -444,22 +445,22 @@ module.exports = React.createClass
 
         While the <span className="highlight">translateY</span> curve in passive state 
         at the begining, this curve goes 
-        under <span className="highlight">0</span> imitating squash motion to 
-        show that our rectangle 
-        accumulates some power for the subsequent jump. When the first curve starts to 
+        under <span className="highlight">0</span> imitating squash motion which showing 
+        that our rectangle accumulates some power for the subsequent jump. When 
+        the first curve starts to 
         lift our rectangle in air, this curve goes 
         over <span className="highlight">0</span> imitating stretch that object 
-        will get when it is moving. At the end this curve returns 
+        will get when moving. At the end this curve returns 
         back to <span className="highlight">0</span> showing 
         that's there is no acceleration left in the movement.
       </p>
 
       <p>
         You can notice that now it doesn't starts at 0 and ends at 
-        1 <span className="highlight">Y</span>. In 
+        1 <span className="highlight">y</span>. In 
         fact <span className="highlight">property curves</span> can get 
-        any <span className="highlight">Y</span> value you want. It should obey 
-        the law for <span className="highlight">X</span> value though. 
+        any <span className="highlight">y</span> value you want. It must obey 
+        the law for <span className="highlight">x</span> value though. 
         It should start at 0 and end at 1, as it represents the progress and 
         progress can't go beyond 1 as it makes no sense.
       </p>
@@ -515,7 +516,7 @@ module.exports = React.createClass
         Pretty neat, ha? These type of curves allow us to visualy describe how certain properties 
         behave in time. Then we can compose them together to get our final motion.
         Yep it takes some time to wrap your head around this concept, but when you 
-        using it for few times, it feels very intuitive. You 
+        are using it for few times, it feels very intuitive and you finally 
         start to see the matrix in those random hieroglyphs(read path's coordinates).
       </p>
 
@@ -564,7 +565,7 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
       <p>
-        Now lets insert inactive periods between the bounce ones 
+        We can insert inactive periods between the bounce ones 
         to make some room for squash motion:
       </p>
 
@@ -1262,7 +1263,7 @@ module.exports = React.createClass
       <p>
         Thanks a lot to the reader for time and effort in reading this tutorial! 
         In a short future we are planning to add a page with a searchable list of path 
-        xeasings powered by live examples and graphs.
+        easings powered by live examples and graphs.
         So developers can collaborate and share their easing paths and find ones 
         that suite their current needs.
         <br />
