@@ -55,7 +55,7 @@ module.exports = React.createClass
         envoke in human brain nothing than suspicious or dull response. 
         By contrast, excellent crafted easing appeal user's attention, 
         araise curiosity and so involvement.
-        That's why so crutial to embrace the full control of easing functions.
+        That's why so crutial to embrace the full control over easing functions.
       </p>
 
       <p>
@@ -81,7 +81,7 @@ module.exports = React.createClass
       <h2>First things first</h2>
 
       <p>
-        Consider the example below that was made to illustrate 
+        Consider the example below, 
         the case when we need precise control over easing function. 
         The start point is a simple falling square:
       </p>
@@ -139,7 +139,7 @@ module.exports = React.createClass
         &nbsp;that is available on 
         <span className="highlight">mojs.easing</span> object - the place where 
         all easing functions and helpers are stored. 
-        The outcome is pretty obvious - you probably did it thousands times - 
+        The outcome is pretty obvious - you probably did it thousands times in a row - 
         we have something that kind of looking like falling object with it’s own physics, 
         despite the fact that it doesnt obey any physics laws, its behavior is hardcoded 
         into this graph:
@@ -161,7 +161,8 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
       <p>
-        If you'll think about it, this common bounce easing graph represents our object's 
+        If you'll think about it, this common bounce easing graph represents 
+        composition of this object's 
         parameters like the material it is made of or it's weight or acceleration it has. 
         Savvy readers starting to grasp the main problem with this widespread easing function 
         - the limit to one set of these parameters that can not be changed on demand.
