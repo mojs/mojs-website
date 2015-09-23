@@ -377,11 +377,11 @@ module.exports = React.createClass
       </HeftyContent>
 
       <p>
-        As you may guessed, it will compose this motion with help of 2 <span className="highlight">property curves</span>.
+        As you may guessed, this motion will be composed with 2 <span className="highlight">property curves</span>.
         The first one for <span className="highlight">y</span> position 
         or <span className="highlight">translateY</span> property, 
         the second one is for the <span className="highlight">scale</span> property to describe 
-        squash&stretch.
+        squash&stretch effect.
       </p>
 
       <p>
@@ -407,7 +407,7 @@ module.exports = React.createClass
       <p>
         The delay at very start was made to give some time for initial squash 
         property curve to act. So it waits some time and then grows to 1 with
-        something like cubic-out easing. Dont get fooled by the fact that it looks 
+        something like cubic-out easing. Don't get fooled by the fact that it looks 
         like an easing -- yes it starts at 0 and ends and 
         1 <span className="highlight">y</span> -- my intention was 
         to describe how <span className="highlight">translateY</span> property 
@@ -446,7 +446,7 @@ module.exports = React.createClass
 
         While the <span className="highlight">translateY</span> curve in passive state 
         at the begining, this curve goes 
-        under <span className="highlight">0</span> imitating squash motion which showing 
+        under <span className="highlight">0</span> imitating squash motion, showing 
         that our rectangle accumulates some power for the subsequent jump. When 
         the first curve starts to 
         lift our rectangle in air, this curve goes 
@@ -461,7 +461,7 @@ module.exports = React.createClass
         1 <span className="highlight">y</span>. In 
         fact <span className="highlight">property curves</span> can get 
         any <span className="highlight">y</span> value you want. It must obey 
-        the law for <span className="highlight">x</span> value though. 
+        one law for <span className="highlight">x</span> value though. 
         It should start at 0 and end at 1, as it represents the progress and 
         progress can't go beyond 1 as it makes no sense.
       </p>
@@ -514,7 +514,7 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        Pretty neat, ha? These type of curves allow us to visualy describe how certain properties 
+        Pretty neat, ha? These curves type allows us to visualy describe how certain properties 
         behave in time. Then we can compose them together to get our final motion.
         Yep it takes some time to wrap your head around this concept, but when you 
         are using it for few times, it feels very intuitive and you finally 
@@ -643,6 +643,12 @@ module.exports = React.createClass
       
       </EasingObjectGraph>
 
+      <div className="post__reverse-block post__center-text">
+        <em>
+          <a href="http://codepen.io/sol0mka/pen/4f0dea6316d301d5ab55beab17021209">codepen</a> for the graph above.
+        </em>
+      </div>
+
       <p>
         Whoo! This one is cute!
         <br />
@@ -661,7 +667,7 @@ module.exports = React.createClass
         Ok, now you have some clue what the heck property curves are. This section will 
         help you to gain some skill how and when to use them. Generally, we can use curves in 
         <UniteLink link="https://vimeo.com/111574737">lots of different purposes</UniteLink>, 
-        but here we will talk with you how to think in curves when you want to move an object 
+        but here we will talk with you on how to think in curves when you want to move an object 
         on screen or transform it from one state into another.
       </p>
 
@@ -723,7 +729,7 @@ module.exports = React.createClass
       
       <p>
         Our mole moves now, but errr.. This motion doesn't convey too much.
-        Lets add a secondary action to fulfill(наполнить) our scene.
+        Lets add a secondary action to fulfill our scene.
         We will rise mole's hand up(by rotating it) very fast when mole deviates 
         backward, so our curve should rise steeply at the beggining. Then, when 
         mole bends forward, we will rotate our hand to small negative number, so the curve 
