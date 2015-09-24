@@ -398,7 +398,7 @@ module.exports = React.createClass
         }
         label="translateY"
         background="#F1E2D7"
-        path="M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0">
+        path="M0,100 L25,99.9999983 C26.2328835,75.0708847 19.7847843,0 100,0">
         
         <div className="path-easing-rectangle path-easing-rectangle--jump"></div>
       
@@ -430,7 +430,7 @@ module.exports = React.createClass
         }
         label="translateY"
         background="#F1E2D7"
-        path="M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,59.1393229 64.2747421,100 100,100">
+        path="M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,70.7741867 32.2461944,85.3230873 58.484375,94.8579105 C68.9280825,98.6531013 83.2611815,99.9999999 100,100">
         
         <div className="path-easing-rectangle path-easing-rectangle--jump"></div>
       
@@ -481,7 +481,7 @@ module.exports = React.createClass
         }
         label={['scale', 'translateY']}
         background="#F1E2D7"
-        path={['M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,59.1393229 64.2747421,100 100,100', 'M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0' ]}>
+        path={['M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,70.7741867 32.2461944,85.3230873 58.484375,94.8579105 C68.9280825,98.6531013 83.2611815,99.9999999 100,100', 'M0,100 L25,99.9999983 C26.2328835,75.0708847 19.7847843,0 100,0' ]}>
         
         <div className="path-easing-rectangle path-easing-rectangle--jump"></div>
       
@@ -489,8 +489,8 @@ module.exports = React.createClass
 
       <CodeSample pen="c7b99f1a216498818cbb9f0c881fc542">
         { js: """var square = document.querySelector('#js-square'),
-                      translateCurve = mojs.easing.path('M0,100 L25,99.9999983 C25,99.9999983 41.809064,-0.819014106 100,0'),
-                      squashCurve = mojs.easing.path('M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,59.1393229 64.2747421,100 100,100');
+                      translateCurve = mojs.easing.path('M0,100 L25,99.9999983 C26.2328835,75.0708847 19.7847843,0 100,0'),
+                      squashCurve = mojs.easing.path('M0,100.004963 C0,100.004963 25,147.596355 25,100.004961 C25,70.7741867 32.2461944,85.3230873 58.484375,94.8579105 C68.9280825,98.6531013 83.2611815,99.9999999 100,100');
 
                   new mojs.Tween({
                     repeat:   999,
@@ -1308,7 +1308,7 @@ module.exports = React.createClass
         with <span className="highlight">precompute</span> and 
         <span className="highlight">eps</span> options. 
         The <span className="highlight">rect</span> option 
-        specifies the rectangle's size the easing path was drawn into.
+        specifies the rectangle's size, easing path was drawn into.
       </p>
 
       <p>
@@ -1332,7 +1332,9 @@ module.exports = React.createClass
         So developers can collaborate and share their easing paths and find ones 
         that suite their current needs.
         <br />
-        Bunch of great stuff is comming up on other topics also so stay tuned!
+        Don't forget to do practice tasks from the next section.
+        <br />
+        Bunch of great stuff is comming up on other topics also so stay tuned! 
       </p>
 
       <br />
@@ -1341,6 +1343,12 @@ module.exports = React.createClass
         <UniteLink link="http://codepen.io/">demo on CodePen</UniteLink> | 
         <UniteLink link="https://github.com/legomushroom/property-curves">demo's repo on GitHub</UniteLink> | 
         <UniteLink link="https://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
+      </p>
+
+      <h2>Practice</h2>
+
+      <p>
+        practice tasks
       </p>
 
       <p style= { textAlign: 'center' }>
