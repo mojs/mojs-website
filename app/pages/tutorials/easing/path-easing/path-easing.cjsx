@@ -921,10 +921,10 @@ module.exports = React.createClass
       </CodeSample>
 
       <p>
-        As you can notice, we've added some motion to the 
+        As you can notice, we've added some motion to the mouth's  
         <span className="highlight">translateX</span> property 
         by reusing the base <span className="highlight">skew</span> curve again. 
-        It adds kind of cartoony feel to the mouth's movement.
+        It adds kind of cartoony feel to the movement.
       </p>
 
       <p>
@@ -1222,10 +1222,8 @@ module.exports = React.createClass
         That's basically it. We have used 4 property curves to bring our mole to life. 
         I hope you enjoined the process. Thinking in curves could be totally new  
         mindset for you, but it gets very convinient and intuitive when you use 
-        it for a few times so go get some practice right now.
+        it for a few times.
       </p>
-
-      [MAYBE ADD TASKS FOR PRACTICE]
 
       <h2>Options</h2>
 
