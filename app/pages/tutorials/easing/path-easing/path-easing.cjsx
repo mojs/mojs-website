@@ -1044,8 +1044,10 @@ module.exports = React.createClass
       </EasingObjectGraph>
 
 
-      <p>
-        [CODEPEN]
+      <p className="post__reverse-block post__center-text">
+        <em>
+          <a href="http://codepen.io/sol0mka/pen/755a7ebc62c89d16b3208b2996a49f1e">codepen</a> for the graph above (lines 27, 28 on javascript tab).
+        </em>
       </p>
 
 
