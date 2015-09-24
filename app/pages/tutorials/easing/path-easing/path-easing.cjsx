@@ -1119,7 +1119,11 @@ module.exports = React.createClass
 
       </EasingObjectGraph>
 
-      [CODEPEN with all parts twitching]
+      <p className="post__reverse-block post__center-text">
+        <em>
+          <a href="http://codepen.io/sol0mka/pen/755a7ebc62c89d16b3208b2996a49f1e">codepen</a> for the graph above (notice how noizeProgress was added to lines 26, 27 , 29, 30, 31, 32 on javascript tab).
+        </em>
+      </p>
 
       <p>
         The latest touch would be to add saliva with <span className="highlight">Burst</span> module. 
@@ -1214,6 +1218,8 @@ module.exports = React.createClass
         <MoleSample id="js-mole-sample-11" />
 
       </EasingObjectGraph>
+
+      [ codepen ]
 
       <em>
         <i>Note</i>:
