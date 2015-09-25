@@ -645,7 +645,7 @@ module.exports = React.createClass
 
       <div className="post__reverse-block post__center-text">
         <em>
-          <a href="http://codepen.io/sol0mka/pen/4f0dea6316d301d5ab55beab17021209">codepen</a> for the graph above.
+          <UniteLink link="http://codepen.io/sol0mka/pen/4f0dea6316d301d5ab55beab17021209">codepen</UniteLink> for the graph above.
         </em>
       </div>
 
@@ -1046,7 +1046,7 @@ module.exports = React.createClass
 
       <p className="post__reverse-block post__center-text">
         <em>
-          <a href="http://codepen.io/sol0mka/pen/755a7ebc62c89d16b3208b2996a49f1e">codepen</a> for the graph above (lines 27, 28 on javascript tab).
+          <UniteLink link="http://codepen.io/sol0mka/pen/755a7ebc62c89d16b3208b2996a49f1e">codepen</UniteLink> for the graph above (lines 27, 28 on javascript tab).
         </em>
       </p>
 
@@ -1121,7 +1121,7 @@ module.exports = React.createClass
 
       <p className="post__reverse-block post__center-text">
         <em>
-          <a href="http://codepen.io/sol0mka/pen/755a7ebc62c89d16b3208b2996a49f1e">codepen</a> for the graph above (notice how noizeProgress was added to lines 26, 27 , 29, 30, 31, 32 on javascript tab).
+          <UniteLink link="http://codepen.io/sol0mka/pen/8ed8b12cd586ff74c0ba67956242dcfa">codepen</UniteLink> for the graph above (notice how noizeProgress was added to lines 26, 27 , 29, 30, 31, 32 on javascript tab).
         </em>
       </p>
 
@@ -1219,7 +1219,11 @@ module.exports = React.createClass
 
       </EasingObjectGraph>
 
-      [ codepen ]
+      <p className="post__reverse-block post__center-text">
+        <em>
+          <UniteLink link="http://codepen.io/sol0mka/pen/dbb8241ed1e7eda8c58e850391f9a1a7">codepen</UniteLink> for the graph above.
+        </em>
+      </p>
 
       <em>
         <i>Note</i>:
