@@ -1355,6 +1355,14 @@ module.exports = React.createClass
         <UniteLink link="https://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
       </p>
 
+      <p style= { textAlign: 'center' }>
+        <br />
+        Next: &nbsp;<UniteLink link="/tutorials/easing/mix" isDisabled="true" className="highlight">Easing: Mix tutorial</UniteLink>
+      </p>
+
+      <ORXLine className="post__last-orx-line" type="center" />
+      <SocialNetworksAbout className="post__social-networks-about" />
+
       <h2>Practice</h2>
 
       <h3>Easing paths</h3>
@@ -1365,7 +1373,6 @@ module.exports = React.createClass
         <li></li>
       </ul>
 
-
       <h3>Property curves</h3>
 
       <ul>
@@ -1375,6 +1382,7 @@ module.exports = React.createClass
           <EasingObjectGraph
             duration = { 3000 }
             delay    = { 0 }
+            isGraphLess = { true }
             onUpdate = { (o)->
               @el ?= document.querySelector('#js-property-curve-task-0')
 
@@ -1390,6 +1398,13 @@ module.exports = React.createClass
             <div className="path-easing-tutorial__property-curve-task-0" id="js-property-curve-task-0"></div>
 
           </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="/">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+
         </li>
 
         <li>
@@ -1398,6 +1413,7 @@ module.exports = React.createClass
           <EasingObjectGraph
             duration = { 3000 }
             delay    = { 0 }
+            isGraphLess = { true }
             onUpdate = { (o)->
               @el ?= document.querySelector('#js-property-curve-task-01')
 
@@ -1413,6 +1429,13 @@ module.exports = React.createClass
             <div className="path-easing-tutorial__property-curve-task-0 path-easing-tutorial__property-curve-task-0--1" id="js-property-curve-task-01"></div>
 
           </EasingObjectGraph>
+          
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="/">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+
         </li>
 
         <li>
@@ -1482,9 +1505,6 @@ module.exports = React.createClass
           </p>
         </li>
 
-
-        <li></li>
-        <li></li>
       </ul>
 
       <p style= { textAlign: 'center' }>

@@ -26,6 +26,21 @@ module.exports = React.createClass
   _showGraph:(e)->  @_toggleSquash(e); @setState pop: 'graph'
   _toggleSquash:(e)-> e?.stopPropagation(); @setState isSquash: !@state.isSquash
 
+  _makeGraph:->
+    if !@props.isGraphLess
+      <Tappable onTap = @_showGraph >
+        <EasingGraph
+          easing    = {@_easing}
+          timeline  = {@_timeline}
+          label     = {@props.label}
+          duration  = {@props.duration}
+          delay     = {@props.delay}
+          path      = {@props.path}
+          onAdd     = {@_onAdd} >
+        </EasingGraph>
+      </Tappable>
+    else @_onAdd?()
+
   render:->
     @_timeline ?= new mojs.Timeline repeat: 99999999
 
@@ -35,7 +50,6 @@ module.exports = React.createClass
     else [ mojs.easing.path @props.path, precompute: 2000, eps: .001 ]
 
     className = if (@state.isSquash) then "is-squash is-pop-#{@state.pop}" else ''
-
     <HeftyContent
       className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
       onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() }
@@ -56,17 +70,7 @@ module.exports = React.createClass
           </EasingObject>
         </Tappable>
 
-        <Tappable onTap = @_showGraph >
-          <EasingGraph
-            easing    = {@_easing}
-            timeline  = {@_timeline}
-            label     = {@props.label}
-            duration  = {@props.duration}
-            delay     = {@props.delay}
-            path      = {@props.path}
-            onAdd     = {@_onAdd} >
-          </EasingGraph>
-        </Tappable>
+        { @_makeGraph() }
 
       </div>
     </HeftyContent>
