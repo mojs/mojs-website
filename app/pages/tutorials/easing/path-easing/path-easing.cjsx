@@ -1369,20 +1369,66 @@ module.exports = React.createClass
       <h3>Property curves</h3>
 
       <ul>
-        <li> Add heartbeat property curve for scale property to describe the next effect:</li>
+        <li>
+          Add heartbeat scale property curve to describe the next effect:
+          { propCurveEasing0 =  mojs.easing.path 'M0,0 C0,0 6.86480761,-0.0353431702 16.3642461,0 C18.3420122,1.41322897 17.7461573,2.36243652 21.4635541,-0.0487282013 C22.4315542,-0.0487282013 22.0894527,3.41074312 24.4702692,-0.046156682 C25.7707024,-5.89401203e-07 28.6047459,-58.2947559 30.7671486,-0.0278141229 C32.779686,25.227733 34.3119125,2.50839937 34.7164192,1.0658141e-14 C34.7164192,-2.46445333 37.8332109,-47.1223509 38.867691,2.13162821e-14 C40.0878906,15.4587892 40.570773,1.9003395 42.8020554,2.13162821e-14 L100,0', { precompute: 1000 } }
+          <EasingObjectGraph
+            duration = { 3000 }
+            delay    = { 0 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-property-curve-task-0')
+
+              mojs.h.style(@el, 'transform', "scale(#{propCurveEasing0(o.p)})")
+              
+              ""
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 L100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-0" id="js-property-curve-task-0"></div>
+
+          </EasingObjectGraph>
+        </li>
+
+        <li>
+          Alter the previous heartbeat scale property curve to describe the next squash&stretch effect:
+          { propCurveEasing01 =  mojs.easing.path 'M0,100 C0,100 6.86480761,99.9633906 16.3642461,100 C18.3420122,101.411963 17.7461573,102.36117 21.4635541,99.9500056 C22.4315542,99.9500056 22.0894527,103.409477 24.4702692,99.9525771 C25.7707024,99.9987332 28.6047459,41.7039778 30.7671486,99.9709197 C32.779686,125.226467 34.3119125,102.507133 34.7164192,100 C34.7164192,97.5342804 37.8332109,52.8763829 38.867691,100 C40.0878906,115.457523 40.570773,101.899073 42.8020554,100 L100,100', { precompute: 1000 } }
+          <EasingObjectGraph
+            duration = { 3000 }
+            delay    = { 0 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-property-curve-task-01')
+
+              mojs.h.style(@el, 'transform', "scaleX(#{1-propCurveEasing01(o.p)}) scaleY(#{1+propCurveEasing01(o.p)})")
+              
+              ""
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 L100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-0 path-easing-tutorial__property-curve-task-0--1" id="js-property-curve-task-01"></div>
+
+          </EasingObjectGraph>
+        </li>
+
         <li>
           <p>
             With given property curve for tranlateX property, add angle property curve 
             to descibe the next motion:
           </p>
 
+
+          { propCurveEasing1 =  mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100', { precompute: 1000 } }
           <EasingObjectGraph
             duration = { 3000 }
-            onUpdate = { (o)=>
+            onUpdate = { (o)->
               @el ?= document.querySelector('#js-property-curve-task-1')
-              @easing ?= mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100', { precompute: 1000 }
 
-              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(@easing(o.p))}deg)")
+              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing1(o.p))}deg)")
               
               ""
             }
@@ -1408,13 +1454,15 @@ module.exports = React.createClass
             at the end:
           </p>
 
+
+          { propCurveEasing2 =  mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100', { precompute: 1000 } }
+
           <EasingObjectGraph
             duration = { 3000 }
-            onUpdate = { (o)=>
+            onUpdate = { (o)->
               @el ?= document.querySelector('#js-property-curve-task-2')
-              @easing ?= mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100', { precompute: 1000 }
 
-              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(@easing(o.p))}deg)")
+              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg)")
               
               ""
             }
