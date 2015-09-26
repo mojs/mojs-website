@@ -1357,9 +1357,87 @@ module.exports = React.createClass
 
       <h2>Practice</h2>
 
-      <p>
-        practice tasks
-      </p>
+      <h3>Easing paths</h3>
+      <ul>
+        <li>make extreme heartbeat-in-elastic-out easing path</li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+
+      <h3>Property curves</h3>
+
+      <ul>
+        <li> Add heartbeat property curve for scale property to describe the next effect:</li>
+        <li>
+          <p>
+            With given property curve for tranlateX property, add angle property curve 
+            to descibe the next motion:
+          </p>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            onUpdate = { (o)=>
+              @el ?= document.querySelector('#js-property-curve-task-1')
+              @easing ?= mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100', { precompute: 1000 }
+
+              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(@easing(o.p))}deg)")
+              
+              ""
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-1"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="/">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Alter the previous angle property curve, to add the next vaciliation motion
+            at the end:
+          </p>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            onUpdate = { (o)=>
+              @el ?= document.querySelector('#js-property-curve-task-1')
+              @easing ?= mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100', { precompute: 1000 }
+
+              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(@easing(o.p))}deg)")
+              
+              ""
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-1"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="/">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+        </li>
+
+
+        <li></li>
+        <li></li>
+      </ul>
 
       <p style= { textAlign: 'center' }>
         <br />
