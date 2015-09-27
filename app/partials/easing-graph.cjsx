@@ -14,7 +14,8 @@ module.exports = React.createClass
     path:     'M0,100 L100,0'
     duration: 2000
     delay:    1000
-    colors:   ['#F64040', '#00F87F']
+    colors:   ['#F64040', '#00F87F', '#FFE952']
+    opacity:  [1]
   componentDidMount:->
     progressEl     = @refs['progress-line'] .getDOMNode()
     progressLabel1 = @refs['progressLabel1'].getDOMNode()
@@ -37,6 +38,7 @@ module.exports = React.createClass
   # _stop:-> @_tween.stop()
 
   _makeGraph:(path=@props.path, i=0)->
+    # console.log @props.opacity[i]
     <Graph
       colors   = { @props.colors }
       timeline = { @props.timeline }
@@ -44,6 +46,7 @@ module.exports = React.createClass
       duration = { @props.duration }
       easing   = { @props.easing }
       path     = { path }
+      opacity  = { @props.opacity[i] }
       index    = { i } />
 
   _makeLabel:(label=@props.label, i=0)->

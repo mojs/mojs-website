@@ -39,7 +39,8 @@ module.exports = React.createClass
           duration  = {@props.duration}
           delay     = {@props.delay}
           path      = {@props.path}
-          onAdd     = {@_onAdd} >
+          onAdd     = {@_onAdd}
+          opacity   = {@props.opacity} >
         </EasingGraph>
       </Tappable>
     else @_onAdd?()

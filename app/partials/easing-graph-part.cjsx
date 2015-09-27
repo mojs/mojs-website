@@ -10,7 +10,7 @@ module.exports = React.createClass
     path:     'M0,100 L100,0'
     duration: 2000
     delay:    1000
-    colors:   ['#F64040', '#00F87F']
+    colors:   ['#F64040', '#00F87F', '#FFE952']
 
   componentDidMount:->
     customEl       = @refs['custom-line'].getDOMNode()
@@ -32,7 +32,8 @@ module.exports = React.createClass
     @props.timeline?.add(@_tween)
 
   render:->
-    <div className="easing-graph-part">
+    opacity = if @props.opacity? then @props.opacity else 1
+    <div className="easing-graph-part" style={ opacity: opacity }>
       <div
         className="easing-graph-part__point"
         ref="point"
