@@ -1394,12 +1394,34 @@ module.exports = React.createClass
 
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="/">bootstrap codepen</UniteLink>
+              <UniteLink link="http://codepen.io/sol0mka/pen/c203d280d0ed70301e623c4034809d24">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-easing-task-1a')
+              translate = 180*o.easedP[0]
+              mojs.h.style(@el, 'transform', "translateX(#{translate}px) translateZ(0)")
+              "translateX( #{translate.toFixed(2)} px)"
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-easing-task-1a"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="http://codepen.io/sol0mka/pen/0c4b6e210d8a66d651c6c24ca853a12d">answer codepen</UniteLink>
             </em>
           </p>
 
         </li>
-
         <li>
           <span>
             Add twitching at the start, to appeal user's attention before the move:
@@ -1425,7 +1447,30 @@ module.exports = React.createClass
 
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="/">bootstrap codepen</UniteLink>
+              <UniteLink link="http://codepen.io/sol0mka/pen/cc90fd896d22164b7d69a165e5b84652">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-easing-task-2a')
+              translate = 180*o.easedP[0]
+              mojs.h.style(@el, 'transform', "translateX(#{translate}px) translateZ(0)")
+              "translateX( #{translate.toFixed(2)} px)"
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C1.984375,100 2.70793815,100.073064 4.04394531,100 C4.73828125,98.8152313 5.81738611,94.8017758 5.81738611,94.8017758 L7.85351562,104.587891 L9.27734375,97.2636719 L11.072431,102.959963 L12.4135742,98.8152313 L14.050293,101.364746 L15.6270003,98.81523 L17.1100006,100 C50,99.1317495 50,93.4111819 50,50 C50,0 50,1.73472348e-18 100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-easing-task-2a"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="http://codepen.io/sol0mka/pen/1551ef15264e7e251327db21f0603af9">answer codepen</UniteLink>
             </em>
           </p>
 
@@ -1458,7 +1503,30 @@ module.exports = React.createClass
 
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="/">bootstrap codepen</UniteLink>
+              <UniteLink link="http://codepen.io/sol0mka/pen/818dd25fe95c909b69fb71351fdb205d">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-easing-task-3a')
+              translate = 180*o.easedP[0]
+              mojs.h.style(@el, 'transform', "translateX(#{translate}px) translateZ(0)")
+              "translateX( #{translate.toFixed(2)} px)"
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C1.984375,100 2.70793815,100.073064 4.04394531,100 C4.73828125,98.8152313 5.81738611,94.8017758 5.81738611,94.8017758 L7.85351562,104.587891 L9.27734375,97.2636719 L11.072431,102.959963 L12.4135742,98.8152313 L14.050293,101.364746 L15.6270003,98.81523 L17.1100006,100 C50,99.1317495 50,93.4111819 50,50 C50,35.896697 51.1576883,7.22650422 52.4855728,1.62947522e-07 C54.3235397,-10.0024322 56.8798986,-1.9553849 57.5555038,1.12621315e-07 C58.0496101,1.4300779 59.5105476,4.3734379 61.8531456,-2.20713957e-07 C61.8531456,1.84699047e-08 63.0574226,-2.38710926 65.5352859,-2.20713957e-07 C67.220314,1.47187521 70.6500015,1.84699047e-08 79.9632797,-2.20713957e-07 C85.2195282,-2.20713957e-07 97.2131235,0 100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-easing-task-3a"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="http://codepen.io/sol0mka/pen/a840cd3b03153fed0c98ec7e21756c10">answer codepen</UniteLink>
             </em>
           </p>
 
@@ -1470,8 +1538,9 @@ module.exports = React.createClass
 
       <ul>
         <li>
-          Add heartbeat scale property curve to describe the next effect:
-          { propCurveEasing0 =  mojs.easing.path 'M0,0 C0,0 6.86480761,-0.0353431702 16.3642461,0 C18.3420122,1.41322897 17.7461573,2.36243652 21.4635541,-0.0487282013 C22.4315542,-0.0487282013 22.0894527,3.41074312 24.4702692,-0.046156682 C25.7707024,-5.89401203e-07 28.6047459,-58.2947559 30.7671486,-0.0278141229 C32.779686,25.227733 34.3119125,2.50839937 34.7164192,1.0658141e-14 C34.7164192,-2.46445333 37.8332109,-47.1223509 38.867691,2.13162821e-14 C40.0878906,15.4587892 40.570773,1.9003395 42.8020554,2.13162821e-14 L100,0', { precompute: 1000 } }
+          <p>
+            Add heartbeat scale property curve to describe the next effect:
+          </p>
           <EasingObjectGraph
             duration = { 3000 }
             delay    = { 0 }
@@ -1479,14 +1548,14 @@ module.exports = React.createClass
             onUpdate = { (o)->
               @el ?= document.querySelector('#js-property-curve-task-0')
 
-              mojs.h.style(@el, 'transform', "scale(#{propCurveEasing0(o.p)})")
+              mojs.h.style(@el, 'transform', "scale(#{o.easedP[0]})")
               
               ""
             }
 
             label="translateX"
             background="#F1E2D7"
-            path={["M0,100 L100,0"]} >
+            path={["M0,0 C0,0 6.86480761,-0.0353431702 16.3642461,0 C18.3420122,1.41322897 17.7461573,2.36243652 21.4635541,-0.0487282013 C22.4315542,-0.0487282013 22.0894527,3.41074312 24.4702692,-0.046156682 C25.7707024,-5.89401203e-07 28.6047459,-58.2947559 30.7671486,-0.0278141229 C32.779686,25.227733 34.3119125,2.50839937 34.7164192,1.0658141e-14 C34.7164192,-2.46445333 37.8332109,-47.1223509 38.867691,2.13162821e-14 C40.0878906,15.4587892 40.570773,1.9003395 42.8020554,2.13162821e-14 L100,0"]} >
             
             <div className="path-easing-tutorial__property-curve-task-0" id="js-property-curve-task-0"></div>
 
@@ -1494,15 +1563,46 @@ module.exports = React.createClass
 
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="/">bootstrap codepen</UniteLink>
+              <UniteLink link="http://codepen.io/sol0mka/pen/8ffcbcd2882a5e84b8dae36fdc5f43d0">bootstrap codepen</UniteLink>
             </em>
           </p>
+
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            delay    = { 0 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-property-curve-task-0a')
+
+              mojs.h.style(@el, 'transform', "scale(#{o.easedP[0]}) translateZ(0)")
+              
+              ""
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,0 C0,0 6.86480761,-0.0353431702 16.3642461,0 C18.3420122,1.41322897 17.7461573,2.36243652 21.4635541,-0.0487282013 C22.4315542,-0.0487282013 22.0894527,3.41074312 24.4702692,-0.046156682 C25.7707024,-5.89401203e-07 28.6047459,-58.2947559 30.7671486,-0.0278141229 C32.779686,25.227733 34.3119125,2.50839937 34.7164192,1.0658141e-14 C34.7164192,-2.46445333 37.8332109,-47.1223509 38.867691,2.13162821e-14 C40.0878906,15.4587892 40.570773,1.9003395 42.8020554,2.13162821e-14 L100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-0" id="js-property-curve-task-0a"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="http://codepen.io/sol0mka/pen/84654c28b408a052ab0746fb0e720fa6">answer codepen</UniteLink>
+            </em>
+          </p>
+
+
+
 
         </li>
 
         <li>
-          Alter the previous heartbeat scale property curve to describe the next squash&stretch effect:
-          { propCurveEasing01 =  mojs.easing.path 'M0,100 C0,100 6.86480761,99.9633906 16.3642461,100 C18.3420122,101.411963 17.7461573,102.36117 21.4635541,99.9500056 C22.4315542,99.9500056 22.0894527,103.409477 24.4702692,99.9525771 C25.7707024,99.9987332 28.6047459,41.7039778 30.7671486,99.9709197 C32.779686,125.226467 34.3119125,102.507133 34.7164192,100 C34.7164192,97.5342804 37.8332109,52.8763829 38.867691,100 C40.0878906,115.457523 40.570773,101.899073 42.8020554,100 L100,100', { precompute: 1000 } }
+          <p>
+            Alter the previous heartbeat scale property curve to describe the next squash&stretch effect:
+          </p>
+
           <EasingObjectGraph
             duration = { 3000 }
             delay    = { 0 }
@@ -1510,14 +1610,14 @@ module.exports = React.createClass
             onUpdate = { (o)->
               @el ?= document.querySelector('#js-property-curve-task-01')
 
-              mojs.h.style(@el, 'transform', "scaleX(#{1-propCurveEasing01(o.p)}) scaleY(#{1+propCurveEasing01(o.p)})")
+              mojs.h.style(@el, 'transform', "scaleX(#{1-o.easedP[0]}) scaleY(#{1+o.easedP[0]}) translateZ(0)")
               
               ""
             }
 
             label="translateX"
             background="#F1E2D7"
-            path={["M0,100 L100,0"]} >
+            path={["M0,100 C0,100 6.86480761,99.9633906 16.3642461,100 C18.3420122,101.411963 17.7461573,102.36117 21.4635541,99.9500056 C22.4315542,99.9500056 22.0894527,103.409477 24.4702692,99.9525771 C25.7707024,99.9987332 28.6047459,41.7039778 30.7671486,99.9709197 C32.779686,125.226467 34.3119125,102.507133 34.7164192,100 C34.7164192,97.5342804 37.8332109,52.8763829 38.867691,100 C40.0878906,115.457523 40.570773,101.899073 42.8020554,100 L100,100"]} >
             
             <div className="path-easing-tutorial__property-curve-task-0 path-easing-tutorial__property-curve-task-0--1" id="js-property-curve-task-01"></div>
 
@@ -1525,7 +1625,32 @@ module.exports = React.createClass
           
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="/">bootstrap codepen</UniteLink>
+              <UniteLink link="http://codepen.io/sol0mka/pen/5880d1dd49ef3612b94020c09eb1393f">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            delay    = { 0 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-property-curve-task-01a')
+
+              mojs.h.style(@el, 'transform', "scaleX(#{1-o.easedP[0]}) scaleY(#{1+o.easedP[0]}) translateZ(0)")
+              
+              ""
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C0,100 6.86480761,99.9633906 16.3642461,100 C18.3420122,101.411963 17.7461573,102.36117 21.4635541,99.9500056 C22.4315542,99.9500056 22.0894527,103.409477 24.4702692,99.9525771 C25.7707024,99.9987332 28.6047459,41.7039778 30.7671486,99.9709197 C32.779686,125.226467 34.3119125,102.507133 34.7164192,100 C34.7164192,97.5342804 37.8332109,52.8763829 38.867691,100 C40.0878906,115.457523 40.570773,101.899073 42.8020554,100 L100,100"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-0 path-easing-tutorial__property-curve-task-0--1" id="js-property-curve-task-01a"></div>
+
+          </EasingObjectGraph>
+          
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="http://codepen.io/sol0mka/pen/74b8dd0e13dd1fe014d1edf004bbb60c">answer codepen</UniteLink>
             </em>
           </p>
 
@@ -1533,10 +1658,9 @@ module.exports = React.createClass
 
         <li>
           <p>
-            With given tranlateX extreme ease movement, add angle property curve 
+            With given translateX extreme ease movement, add angle property curve 
             to describe the next motion:
           </p>
-
 
           { propCurveEasing1 =  mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100', { precompute: 1000 } }
           <EasingObjectGraph
@@ -1559,9 +1683,34 @@ module.exports = React.createClass
 
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="/">bootstrap codepen</UniteLink>
+              <UniteLink link="http://codepen.io/sol0mka/pen/cc90fd896d22164b7d69a165e5b84652">bootstrap codepen</UniteLink>
             </em>
           </p>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-property-curve-task-1a')
+
+              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*o.easedP[1]}deg)")
+              
+              ""
+            }
+
+            label={["translateX", "angle"]}
+            background="#F1E2D7"
+            path={[ "M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100" ]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-1a"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="http://codepen.io/sol0mka/pen/0e027f58c588f9a94edd08cf25e58919">answer codepen</UniteLink>
+            </em>
+          </p>
+
         </li>
 
         <li>
@@ -1588,6 +1737,43 @@ module.exports = React.createClass
             path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0"]} >
             
             <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-2"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="/">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            For the previous task, add another scale proprty curve for squash&stretch 
+            effect:
+          </p>
+
+
+          {
+            propCurveEasing3 =  mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100', { precompute: 1000 }
+            propCurveEasing4 = mojs.easing.path 'M0,100 C6.69604123,100 36.7852869,100.120092 41.8079414,100 C49.0709648,100 50,93.3039588 50,75 L53,75 C53.7799492,90.208985 56.9783087,106.849836 60.1929207,112.031548 C65.851963,121.153496 70.6802979,100 70.6802979,100 C70.6802979,100 73.6599579,81.7189484 77.2423482,100 C77.2423477,100 80.2498016,111.29863 83.7531832,100 C85.0066376,97.3673859 85.9997787,94.8164368 88.6327322,100 C90.1416016,103.389648 87.9330063,100 100,100'
+          }
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-property-curve-task-3')
+
+              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} )")
+              
+              ""
+            }
+
+            background="#F1E2D7"
+            label={['translateX', 'angle']}
+            path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-3"></div>
 
           </EasingObjectGraph>
 
