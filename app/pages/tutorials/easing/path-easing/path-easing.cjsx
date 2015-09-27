@@ -1367,10 +1367,103 @@ module.exports = React.createClass
 
       <h3>Easing paths</h3>
       <ul>
-        <li>make extreme heartbeat-in-elastic-out easing path</li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+          <span>
+            Draw an extreme-ease-in-out easing function (yep I did it in this tutorial), 
+            then generate easing function from it. Make a stick to move 180px right with 
+            this generated easing to get the next result:
+          </span>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            isGraphLess = { true }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-easing-task-1')
+              translate = 180*o.easedP[0]
+              mojs.h.style(@el, 'transform', "translateX(#{translate}px) translateZ(0)")
+              "translateX( #{translate.toFixed(2)} px)"
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-easing-task-1"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="/">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+
+        </li>
+
+        <li>
+          <span>
+            Add twitching at the start, to appeal user's attention before the move:
+          </span>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            isGraphLess = { true }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-easing-task-2')
+              translate = 180*o.easedP[0]
+              mojs.h.style(@el, 'transform', "translateX(#{translate}px) translateZ(0)")
+              "translateX( #{translate.toFixed(2)} px)"
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C1.984375,100 2.70793815,100.073064 4.04394531,100 C4.73828125,98.8152313 5.81738611,94.8017758 5.81738611,94.8017758 L7.85351562,104.587891 L9.27734375,97.2636719 L11.072431,102.959963 L12.4135742,98.8152313 L14.050293,101.364746 L15.6270003,98.81523 L17.1100006,100 C50,99.1317495 50,93.4111819 50,50 C50,0 50,1.73472348e-18 100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-easing-task-2"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="/">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+
+        </li>
+
+
+        <li>
+          <span>
+            Add "elastic" move at the end, when movement slightly overlaps 
+            the final position then goes backward:
+          </span>
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            isGraphLess = { true }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-easing-task-3')
+              translate = 180*o.easedP[0]
+              mojs.h.style(@el, 'transform', "translateX(#{translate}px) translateZ(0)")
+              "translateX( #{translate.toFixed(2)} px)"
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C1.984375,100 2.70793815,100.073064 4.04394531,100 C4.73828125,98.8152313 5.81738611,94.8017758 5.81738611,94.8017758 L7.85351562,104.587891 L9.27734375,97.2636719 L11.072431,102.959963 L12.4135742,98.8152313 L14.050293,101.364746 L15.6270003,98.81523 L17.1100006,100 C50,99.1317495 50,93.4111819 50,50 C50,35.896697 51.1576883,7.22650422 52.4855728,1.62947522e-07 C54.3235397,-10.0024322 56.8798986,-1.9553849 57.5555038,1.12621315e-07 C58.0496101,1.4300779 59.5105476,4.3734379 61.8531456,-2.20713957e-07 C61.8531456,1.84699047e-08 63.0574226,-2.38710926 65.5352859,-2.20713957e-07 C67.220314,1.47187521 70.6500015,1.84699047e-08 79.9632797,-2.20713957e-07 C85.2195282,-2.20713957e-07 97.2131235,0 100,0"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-easing-task-3"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="/">bootstrap codepen</UniteLink>
+            </em>
+          </p>
+
+        </li>
+
       </ul>
 
       <h3>Property curves</h3>
@@ -1440,8 +1533,8 @@ module.exports = React.createClass
 
         <li>
           <p>
-            With given property curve for tranlateX property, add angle property curve 
-            to descibe the next motion:
+            With given tranlateX extreme ease movement, add angle property curve 
+            to describe the next motion:
           </p>
 
 
