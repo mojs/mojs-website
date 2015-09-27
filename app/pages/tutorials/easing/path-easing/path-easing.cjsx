@@ -1742,14 +1742,41 @@ module.exports = React.createClass
 
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="/">bootstrap codepen</UniteLink>
+              <UniteLink link="http://codepen.io/sol0mka/pen/0e027f58c588f9a94edd08cf25e58919">bootstrap codepen</UniteLink>
             </em>
           </p>
+
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-property-curve-task-2a')
+
+              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg)")
+              
+              ""
+            }
+
+            label="translateX"
+            background="#F1E2D7"
+            path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0,", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-2a"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="http://codepen.io/sol0mka/pen/8d35b8f97d6db48c72820a0f776a1020">answer codepen</UniteLink>
+            </em>
+          </p>
+
+
         </li>
 
         <li>
           <p>
-            For the previous task, add another scale proprty curve for squash&stretch 
+            For the previous task, add one more scale property curve for squash&stretch 
             effect:
           </p>
 
@@ -1779,9 +1806,38 @@ module.exports = React.createClass
 
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="/">bootstrap codepen</UniteLink>
+              <UniteLink link="http://codepen.io/sol0mka/pen/4e1d51bfd17c01b678fca7cc6a5b03b3">bootstrap codepen</UniteLink>
             </em>
           </p>
+
+
+          <EasingObjectGraph
+            duration = { 3000 }
+            onUpdate = { (o)->
+              @el ?= document.querySelector('#js-property-curve-task-3a')
+
+              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} )")
+              
+              ""
+            }
+
+            background="#F1E2D7"
+            label={['translateX', 'angle', 'scale']}
+            path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100", "M0,100 C6.69604123,100 36.7852869,100.120092 41.8079414,100 C49.0709648,100 50,93.3039588 50,75 L53,75 C53.7799492,90.208985 56.9783087,106.849836 60.1929207,112.031548 C65.851963,121.153496 70.6802979,100 70.6802979,100 C70.6802979,100 73.6599579,81.7189484 77.2423482,100 C77.2423477,100 80.2498016,111.29863 83.7531832,100 C85.0066376,97.3673859 85.9997787,94.8164368 88.6327322,100 C90.1416016,103.389648 87.9330063,100 100,100"]} >
+            
+            <div className="path-easing-tutorial__property-curve-task-1 path-easing-tutorial__property-curve-task-1--fat" id="js-property-curve-task-3a"></div>
+
+          </EasingObjectGraph>
+
+          <p className="post__reverse-block post__center-text">
+            <em>
+              <UniteLink link="http://codepen.io/sol0mka/pen/1d2d3e73a3c5a390cd83bb8493158b3c">answer codepen</UniteLink>
+            </em>
+          </p>
+
+
+
+
         </li>
 
       </ul>
