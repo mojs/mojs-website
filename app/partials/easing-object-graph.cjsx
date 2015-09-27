@@ -24,7 +24,10 @@ module.exports = React.createClass
 
   _showObject:(e)-> @_toggleSquash(e); @setState pop: 'object'
   _showGraph:(e)->  @_toggleSquash(e); @setState pop: 'graph'
-  _toggleSquash:(e)-> e?.stopPropagation(); @setState isSquash: !@state.isSquash
+  _toggleSquash:(e)->
+    e?.stopPropagation();
+    return if @props.isGraphLess
+    @setState isSquash: !@state.isSquash
 
   _makeGraph:->
     if !@props.isGraphLess
