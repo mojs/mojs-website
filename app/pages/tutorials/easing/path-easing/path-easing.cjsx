@@ -1698,6 +1698,7 @@ module.exports = React.createClass
             }
 
             label={["translateX", "angle"]}
+            opacity = {[.5, 1]}
             background="#F1E2D7"
             path={[ "M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100" ]} >
             
@@ -1757,7 +1758,8 @@ module.exports = React.createClass
               ""
             }
 
-            label="translateX"
+            label={['translateX', 'angle']}
+            opacity = {[.5, 1]}
             background="#F1E2D7"
             path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0,", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100"]} >
             
@@ -1777,7 +1779,7 @@ module.exports = React.createClass
         <li>
           <p>
             For the previous task, add one more scale property curve for squash&stretch 
-            effect:
+            effect (the line was made fat just to empasize scaleX motion):
           </p>
 
 
@@ -1800,7 +1802,7 @@ module.exports = React.createClass
             label={['translateX', 'angle']}
             path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100"]} >
             
-            <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-3"></div>
+            <div className="path-easing-tutorial__property-curve-task-1 path-easing-tutorial__property-curve-task-1--fat" id="js-property-curve-task-3"></div>
 
           </EasingObjectGraph>
 
