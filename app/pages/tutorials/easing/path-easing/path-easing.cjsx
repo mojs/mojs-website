@@ -1518,6 +1518,9 @@ module.exports = React.createClass
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/818dd25fe95c909b69fb71351fdb205d">bootstrap codepen</UniteLink>
             </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/easing-task-answer-2.svg">bootstrap svg file</UniteLink>
+            </em>
           </p>
 
           <EasingObjectGraph
@@ -1540,6 +1543,9 @@ module.exports = React.createClass
           <p className="post__reverse-block post__center-text">
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/a840cd3b03153fed0c98ec7e21756c10">answer codepen</UniteLink>
+            </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/easing-task-answer-3.svg">answer svg file</UniteLink>
             </em>
           </p>
 
