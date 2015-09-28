@@ -33,6 +33,7 @@ module.exports = React.createClass
 
   render:->
     opacity = if @props.opacity? then @props.opacity else 1
+    
     <div className="easing-graph-part" style={ opacity: opacity }>
       <div
         className="easing-graph-part__point"
