@@ -1584,6 +1584,9 @@ module.exports = React.createClass
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/8ffcbcd2882a5e84b8dae36fdc5f43d0">bootstrap codepen</UniteLink>
             </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/bootstrap-property-curve.svg">bootsrap svg file</UniteLink>
+            </em>
           </p>
 
 
@@ -1610,10 +1613,10 @@ module.exports = React.createClass
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/84654c28b408a052ab0746fb0e720fa6">answer codepen</UniteLink>
             </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-1.svg">answer svg file</UniteLink>
+            </em>
           </p>
-
-
-
 
         </li>
 
@@ -1646,6 +1649,9 @@ module.exports = React.createClass
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/5880d1dd49ef3612b94020c09eb1393f">bootstrap codepen</UniteLink>
             </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-1.svg">bootsrap svg file</UniteLink>
+            </em>
           </p>
 
           <EasingObjectGraph
@@ -1671,13 +1677,16 @@ module.exports = React.createClass
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/74b8dd0e13dd1fe014d1edf004bbb60c">answer codepen</UniteLink>
             </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-2.svg">answer svg file</UniteLink>
+            </em>
           </p>
 
         </li>
 
         <li>
           <p>
-            With given translateX extreme ease movement, add angle property curve 
+            With given translateX extreme easing, add angle property curve 
             to describe the next motion:
           </p>
 
@@ -1704,6 +1713,9 @@ module.exports = React.createClass
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/cc90fd896d22164b7d69a165e5b84652">bootstrap codepen</UniteLink>
             </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/easing-task-answer-3.svg">bootstrap svg file</UniteLink>
+            </em>
           </p>
 
           <EasingObjectGraph
@@ -1728,6 +1740,9 @@ module.exports = React.createClass
           <p className="post__reverse-block post__center-text">
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/0e027f58c588f9a94edd08cf25e58919">answer codepen</UniteLink>
+            </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-3.svg">answer svg file</UniteLink>
             </em>
           </p>
 
@@ -1764,6 +1779,9 @@ module.exports = React.createClass
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/0e027f58c588f9a94edd08cf25e58919">bootstrap codepen</UniteLink>
             </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-3.svg">bootstrap svg file</UniteLink>
+            </em>
           </p>
 
 
@@ -1789,6 +1807,9 @@ module.exports = React.createClass
           <p className="post__reverse-block post__center-text">
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/8d35b8f97d6db48c72820a0f776a1020">answer codepen</UniteLink>
+            </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-4.svg">answer svg file</UniteLink>
             </em>
           </p>
 
@@ -1829,6 +1850,9 @@ module.exports = React.createClass
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/4e1d51bfd17c01b678fca7cc6a5b03b3">bootstrap codepen</UniteLink>
             </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-4.svg">bootstrap svg file</UniteLink>
+            </em>
           </p>
 
           <EasingObjectGraph
@@ -1853,6 +1877,9 @@ module.exports = React.createClass
           <p className="post__reverse-block post__center-text">
             <em>
               <UniteLink link="http://codepen.io/sol0mka/pen/1d2d3e73a3c5a390cd83bb8493158b3c">answer codepen</UniteLink>
+            </em>
+            <em>
+              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-5.svg">answer svg file</UniteLink>
             </em>
           </p>
 
