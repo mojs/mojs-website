@@ -69,7 +69,8 @@ module.exports = React.createClass
             delay       = {@props.delay}
             onStart     = {@props.onStart}
             onUpdate    = {@props.onUpdate}
-            background  = {@props.background}>
+            background  = {@props.background}
+            isAlone     = { @props.isGraphLess }>
             {@props.children}
           </EasingObject>
         </Tappable>

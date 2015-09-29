@@ -34,7 +34,8 @@ module.exports = React.createClass
 
   render:->
     bg = if @props.background? then @props.background else null
-    <div className="easing-object" style={ backgroundColor: bg } >
+    className = if @props.isAlone then 'is-alone' else ''
+    <div className="easing-object #{className}" style={ backgroundColor: bg } >
       { @props.children }
       <div className="easing-object__label" ref="label"></div>
     </div>
