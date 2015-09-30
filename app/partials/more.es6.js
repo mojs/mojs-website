@@ -19,6 +19,10 @@ module.exports = React.createClass({
     this.innerHeight = this.innerConentEl.offsetHeight;
   },
 
+  _onResize: function () {
+    this._getInnerHeight(); this.render();
+  },
+
   render: function () {
     var className = 'more ';
     className += this.state.isOpen ? 'is-open' : '';
@@ -33,7 +37,7 @@ module.exports = React.createClass({
           <div className="more__arrow"></div>
         </UniteLink>
         <div className="more__content" style = { style } >
-          <Resizable className="more__content-inner cf" ref="inner-content" onResize = { this._getInnerHeight }>
+          <Resizable className="more__content-inner cf" ref="inner-content" onResize = { this._onResize }>
             { this.props.children }
           </Resizable>
         </div>
