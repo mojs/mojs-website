@@ -1,12 +1,12 @@
 @import '../imports.styl'
 
 {el = '.more'}
-  text-align center
   &__header
     position            relative
     display             inline-block
     cursor              pointer
     padding-right       2.2*gs
+    text-align          center
   &__arrow
     border              4*PX solid
     border-top-color    transparent
@@ -22,7 +22,8 @@
     height              0
     opacity             0
     transition          all .25s ease-out
-    
+  &.is-center
+    text-align          center
   &.is-open
     {el}__arrow
       transform         rotate(135deg) translate(3*PX, -3*PX)

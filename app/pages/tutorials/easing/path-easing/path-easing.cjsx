@@ -1368,7 +1368,7 @@ module.exports = React.createClass
       <h2>Practice</h2>
 
       <h3>Easing paths</h3>
-      <ul>
+      <ul className="task-list">
         <li>
           <span>
             Draw an extreme-ease-in-out easing function (yep I did it in this tutorial), 
@@ -1430,12 +1430,17 @@ module.exports = React.createClass
                 <UniteLink link="/app/pages/tutorials/easing/path-easing/files/easing-task-answer-1.svg">answer svg file</UniteLink>
               </em>
             </p>
+            
+            <p>
+              Small comment about the suggested answer.
+            </p>
+
           </More>
 
-          <ORXLine className="post__last-orx-line" type="center" />
+          <ORXLine className="post__list-orx-line" type="center" />
 
         </li>
-        
+
         <li>
           <span>
             Add twitching at the start, to appeal user's attention before the move:

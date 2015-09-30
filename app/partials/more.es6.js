@@ -21,6 +21,7 @@ module.exports = React.createClass({
 
   _getInnerHeight: function () {
     this.innerHeight = this.innerConentEl.offsetHeight;
+    console.log(this.innerConentEl.offsetParent);
   },
 
   render: function () {
@@ -37,7 +38,7 @@ module.exports = React.createClass({
           <div className="more__arrow"></div>
         </UniteLink>
         <div className="more__content" style = { style } >
-          <Resizable className="more__content-inner" ref="inner-content" onResize = { this._getInnerHeight }>
+          <Resizable className="more__content-inner cf" ref="inner-content" onResize = { this._getInnerHeight }>
             { this.props.children }
           </Resizable>
         </div>
