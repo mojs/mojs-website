@@ -32,7 +32,7 @@ module.exports = React.createClass({
     var style = { height: `${height}px` };
 
     return (
-      <div className = {className} >
+      <div className = { `${className} ${this.props.className || ''}` } >
         <UniteLink className="more__header" onTap = { this._onTap }>
           { this.props.label || 'more' }
           <div className="more__arrow"></div>

@@ -1403,7 +1403,9 @@ module.exports = React.createClass
             </em>
           </p>
 
-          <More label="answer">
+          <ORXLine className="post__list-orx-line post__list-orx-line--top" type="center" />
+
+          <More label="answer" className="is-center">
             <EasingObjectGraph
               duration = { 3000 }
               onUpdate = { (o)->
