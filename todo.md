@@ -1,6 +1,5 @@
 # todo
 
-- add more component (switch)
 - add tasks notes
 - fix property curve demo curves
 - fix motion demo with for new mojs version

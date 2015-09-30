@@ -1367,7 +1367,16 @@ module.exports = React.createClass
 
       <h2>Practice</h2>
 
+      <p>
+        <em>Note:</em>&nbsp;
+        Animations and curves are reflecting author's motion intention and in fact they 
+        are always unique like human's fingerprint are. Thus all answers listed in this 
+        section should be treated as "suggested answer" that post's author came with but 
+        never as a supreme court. 
+      </p>
+
       <h3>Easing paths</h3>
+
       <ul className="task-list">
         <li>
           <span>
@@ -1434,7 +1443,20 @@ module.exports = React.createClass
             </p>
             
             <p>
-              Small comment about the suggested answer.
+              Hopefully you did it well. This easing is a good example of how 
+              you want to work with user's attention when moving things around. 
+              In the first stage of the curve, we moving our object very slowly, our 
+              message is: "Hey, I'm moving this thing to the right nice and slowly 
+              so it is clear for you what is happening and what is about to happen". 
+              <br />
+              Then we have very fast curve's motion, the message is: 
+              "Hey, you was ready for the movement, so I won't bother you with 
+              long animations, I'll just shoot this thing to the place where it 
+              should end".
+              <br />
+              The third curve's stage says: "Ok, that was fast I know, that's hypervelocity.  
+              Everything is operating as expected, docking to the final destanation 
+              platform".
             </p>
 
           </More>
@@ -1475,31 +1497,45 @@ module.exports = React.createClass
             </em>
           </p>
 
-          <EasingObjectGraph
-            duration = { 3000 }
-            onUpdate = { (o)->
-              @el ?= document.querySelector('#js-easing-task-2a')
-              translate = 180*o.easedP[0]
-              mojs.h.style(@el, 'transform', "translateX(#{translate}px) translateZ(0)")
-              "translateX( #{translate.toFixed(2)} px)"
-            }
+          <ORXLine className="post__list-orx-line post__list-orx-line--top" type="center" />
 
-            label="translateX"
-            background="#F1E2D7"
-            path={["M0,100 C1.984375,100 2.70793815,100.073064 4.04394531,100 C4.73828125,98.8152313 5.81738611,94.8017758 5.81738611,94.8017758 L7.85351562,104.587891 L9.27734375,97.2636719 L11.072431,102.959963 L12.4135742,98.8152313 L14.050293,101.364746 L15.6270003,98.81523 L17.1100006,100 C50,99.1317495 50,93.4111819 50,50 C50,0 50,1.73472348e-18 100,0"]} >
+          <More label="answer" className="is-center">
+
+            <EasingObjectGraph
+              duration = { 3000 }
+              onUpdate = { (o)->
+                @el ?= document.querySelector('#js-easing-task-2a')
+                translate = 180*o.easedP[0]
+                mojs.h.style(@el, 'transform', "translateX(#{translate}px) translateZ(0)")
+                "translateX( #{translate.toFixed(2)} px)"
+              }
+
+              label="translateX"
+              background="#F1E2D7"
+              path={["M0,100 C1.984375,100 2.70793815,100.073064 4.04394531,100 C4.73828125,98.8152313 5.81738611,94.8017758 5.81738611,94.8017758 L7.85351562,104.587891 L9.27734375,97.2636719 L11.072431,102.959963 L12.4135742,98.8152313 L14.050293,101.364746 L15.6270003,98.81523 L17.1100006,100 C50,99.1317495 50,93.4111819 50,50 C50,0 50,1.73472348e-18 100,0"]} >
+              
+              <div className="path-easing-tutorial__property-curve-task-1" id="js-easing-task-2a"></div>
+
+            </EasingObjectGraph>
+
+            <p className="post__reverse-block post__center-text">
+              <em>
+                <UniteLink link="http://codepen.io/sol0mka/pen/1551ef15264e7e251327db21f0603af9">answer codepen</UniteLink>
+              </em>
+              <em>
+                <UniteLink link="/app/pages/tutorials/easing/path-easing/files/easing-task-answer-2.svg">answer svg file</UniteLink>
+              </em>
+            </p>
             
-            <div className="path-easing-tutorial__property-curve-task-1" id="js-easing-task-2a"></div>
+            <p>
+              Twitching appeals user's attention even before the first slow in motion. 
+              With it you can be sure that user's view is in right spot right before 
+              the slow-ease-in curve's stage. "Hey, don't you see I'm calling!"
+            </p>
 
-          </EasingObjectGraph>
+          </More>
 
-          <p className="post__reverse-block post__center-text">
-            <em>
-              <UniteLink link="http://codepen.io/sol0mka/pen/1551ef15264e7e251327db21f0603af9">answer codepen</UniteLink>
-            </em>
-            <em>
-              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/easing-task-answer-2.svg">answer svg file</UniteLink>
-            </em>
-          </p>
+          <ORXLine className="post__list-orx-line" type="center" />
 
         </li>
 

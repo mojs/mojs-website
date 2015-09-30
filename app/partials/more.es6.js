@@ -8,11 +8,7 @@ module.exports = React.createClass({
     return { isOpen: false };
   },
 
-  _onTap: function () {
-    // console.log(this.state.isOpen);
-    this.setState({ isOpen: !this.state.isOpen });
-    // this.contentHeight = this.state.isOpen ? 'auto' : 0;
-  },
+  _onTap: function () { this.setState({ isOpen: !this.state.isOpen }); },
 
   componentDidMount: function () {
     this.innerConentEl = this.refs['inner-content'].getDOMNode();
@@ -21,7 +17,6 @@ module.exports = React.createClass({
 
   _getInnerHeight: function () {
     this.innerHeight = this.innerConentEl.offsetHeight;
-    console.log(this.innerConentEl.offsetParent);
   },
 
   render: function () {
