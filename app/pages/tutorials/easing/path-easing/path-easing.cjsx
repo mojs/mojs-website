@@ -1729,33 +1729,57 @@ module.exports = React.createClass
             </em>
           </p>
 
-          <EasingObjectGraph
-            duration = { 3000 }
-            delay    = { 0 }
-            onUpdate = { (o)->
-              @el ?= document.querySelector('#js-property-curve-task-01a')
+          <ORXLine className="post__list-orx-line post__list-orx-line--top" type="center" />
 
-              mojs.h.style(@el, 'transform', "scaleX(#{1-o.easedP[0]}) scaleY(#{1+o.easedP[0]}) translateZ(0)")
+          <More label="answer" className="is-center">
+
+            <EasingObjectGraph
+              duration = { 3000 }
+              delay    = { 0 }
+              onUpdate = { (o)->
+                @el ?= document.querySelector('#js-property-curve-task-01a')
+
+                mojs.h.style(@el, 'transform', "scaleX(#{1-o.easedP[0]}) scaleY(#{1+o.easedP[0]}) translateZ(0)")
+                
+                ""
+              }
+
+              label="translateX"
+              background="#F1E2D7"
+              path={["M0,100 C0,100 6.86480761,99.9633906 16.3642461,100 C18.3420122,101.411963 17.7461573,102.36117 21.4635541,99.9500056 C22.4315542,99.9500056 22.0894527,103.409477 24.4702692,99.9525771 C25.7707024,99.9987332 28.6047459,41.7039778 30.7671486,99.9709197 C32.779686,125.226467 34.3119125,102.507133 34.7164192,100 C34.7164192,97.5342804 37.8332109,52.8763829 38.867691,100 C40.0878906,115.457523 40.570773,101.899073 42.8020554,100 L100,100"]} >
               
-              ""
-            }
+              <div className="path-easing-tutorial__property-curve-task-0 path-easing-tutorial__property-curve-task-0--1" id="js-property-curve-task-01a"></div>
 
-            label="translateX"
-            background="#F1E2D7"
-            path={["M0,100 C0,100 6.86480761,99.9633906 16.3642461,100 C18.3420122,101.411963 17.7461573,102.36117 21.4635541,99.9500056 C22.4315542,99.9500056 22.0894527,103.409477 24.4702692,99.9525771 C25.7707024,99.9987332 28.6047459,41.7039778 30.7671486,99.9709197 C32.779686,125.226467 34.3119125,102.507133 34.7164192,100 C34.7164192,97.5342804 37.8332109,52.8763829 38.867691,100 C40.0878906,115.457523 40.570773,101.899073 42.8020554,100 L100,100"]} >
+            </EasingObjectGraph>
             
-            <div className="path-easing-tutorial__property-curve-task-0 path-easing-tutorial__property-curve-task-0--1" id="js-property-curve-task-01a"></div>
+            <p className="post__reverse-block post__center-text">
+              <em>
+                <UniteLink link="http://codepen.io/sol0mka/pen/74b8dd0e13dd1fe014d1edf004bbb60c">answer codepen</UniteLink>
+              </em>
+              <em>
+                <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-2.svg">answer svg file</UniteLink>
+              </em>
+            </p>
 
-          </EasingObjectGraph>
+            <p>
+              The graph was simply moved to zero baseline. This allows us to use it as 
+              a cofficient graph, so we can substract curve's value from 1 for 
+              scaleX and add curve's value to 1 for scaleY:
+            </p>
+            <CodeSample>
+              { js: """
+                        // ..
+                        var easedProgress = easingCurve(progress);
+                        el.style['transform'] = 'scaleX(' + (1-easedProgress) + ') ' +
+                                                'scaleY(' + (1+easedProgress) + ')';
+                        // ..
+                """
+              }
+            </CodeSample>
           
-          <p className="post__reverse-block post__center-text">
-            <em>
-              <UniteLink link="http://codepen.io/sol0mka/pen/74b8dd0e13dd1fe014d1edf004bbb60c">answer codepen</UniteLink>
-            </em>
-            <em>
-              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-2.svg">answer svg file</UniteLink>
-            </em>
-          </p>
+          </More>
+
+          <ORXLine className="post__list-orx-line" type="center" />
 
         </li>
 
@@ -1793,33 +1817,52 @@ module.exports = React.createClass
             </em>
           </p>
 
-          <EasingObjectGraph
-            duration = { 3000 }
-            onUpdate = { (o)->
-              @el ?= document.querySelector('#js-property-curve-task-1a')
 
-              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*o.easedP[1]}deg)")
+          <ORXLine className="post__list-orx-line post__list-orx-line--top" type="center" />
+
+          <More label="answer" className="is-center">
+
+            <EasingObjectGraph
+              duration = { 3000 }
+              onUpdate = { (o)->
+                @el ?= document.querySelector('#js-property-curve-task-1a')
+
+                mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*o.easedP[1]}deg)")
+                
+                ""
+              }
+
+              label={["translateX", "angle"]}
+              opacity = {[.5, 1]}
+              background="#F1E2D7"
+              path={[ "M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100" ]} >
               
-              ""
-            }
+              <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-1a"></div>
 
-            label={["translateX", "angle"]}
-            opacity = {[.5, 1]}
-            background="#F1E2D7"
-            path={[ "M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100" ]} >
+            </EasingObjectGraph>
+
+            <p className="post__reverse-block post__center-text">
+              <em>
+                <UniteLink link="http://codepen.io/sol0mka/pen/0e027f58c588f9a94edd08cf25e58919">answer codepen</UniteLink>
+              </em>
+              <em>
+                <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-3.svg">answer svg file</UniteLink>
+              </em>
+            </p>
             
-            <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-1a"></div>
+            <p>
+              On maximum translateX velocity, the stick has the maximum angle deviation, 
+              this technique is usually called <span className="highlight">drag</span> - 
+              one of the fundamental animation priciples. 
+              You can notice that the angle property curve is in fact the first half 
+              of the <span className="highlight">translateX</span> property curve, 
+              that was expanded to <span className="highlight">1</span> then copied 
+              and flipped vertically.
+            </p>
 
-          </EasingObjectGraph>
+          </More>
 
-          <p className="post__reverse-block post__center-text">
-            <em>
-              <UniteLink link="http://codepen.io/sol0mka/pen/0e027f58c588f9a94edd08cf25e58919">answer codepen</UniteLink>
-            </em>
-            <em>
-              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-3.svg">answer svg file</UniteLink>
-            </em>
-          </p>
+          <ORXLine className="post__list-orx-line" type="center" />
 
         </li>
 
@@ -1857,43 +1900,52 @@ module.exports = React.createClass
               <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-3.svg">bootstrap svg file</UniteLink>
             </em>
           </p>
+          
+          <ORXLine className="post__list-orx-line post__list-orx-line--top" type="center" />
 
+          <More label="answer" className="is-center">
+            <EasingObjectGraph
+              duration = { 3000 }
+              onUpdate = { (o)->
+                @el ?= document.querySelector('#js-property-curve-task-2a')
 
-          <EasingObjectGraph
-            duration = { 3000 }
-            onUpdate = { (o)->
-              @el ?= document.querySelector('#js-property-curve-task-2a')
+                mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg)")
+                
+                ""
+              }
 
-              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg)")
+              label={['translateX', 'angle']}
+              opacity = {[.5, 1]}
+              background="#F1E2D7"
+              path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0,", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100"]} >
               
-              ""
-            }
+              <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-2a"></div>
 
-            label={['translateX', 'angle']}
-            opacity = {[.5, 1]}
-            background="#F1E2D7"
-            path={["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0,", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100"]} >
-            
-            <div className="path-easing-tutorial__property-curve-task-1" id="js-property-curve-task-2a"></div>
+            </EasingObjectGraph>
 
-          </EasingObjectGraph>
+            <p className="post__reverse-block post__center-text">
+              <em>
+                <UniteLink link="http://codepen.io/sol0mka/pen/8d35b8f97d6db48c72820a0f776a1020">answer codepen</UniteLink>
+              </em>
+              <em>
+                <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-4.svg">answer svg file</UniteLink>
+              </em>
+            </p>
+            <p>
+              When the sticks stops, it's angle following thru and then come back. 
+              You may know this animatio principle as <UniteLink link="https://www.youtube.com/watch?v=4OxphYV8W3E">follow thru</UniteLink>, 
+              it adds a great deal of realism to a motion.
+            </p>
+          </More>
 
-          <p className="post__reverse-block post__center-text">
-            <em>
-              <UniteLink link="http://codepen.io/sol0mka/pen/8d35b8f97d6db48c72820a0f776a1020">answer codepen</UniteLink>
-            </em>
-            <em>
-              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-4.svg">answer svg file</UniteLink>
-            </em>
-          </p>
-
+          <ORXLine className="post__list-orx-line" type="center" />
 
         </li>
 
         <li>
           <p>
             For the previous task, add one more scale property curve for squash&stretch 
-            effect (the line was made fat just to empasize scaleX motion):
+            effect (the stick was made fat just to empasize scaleX motion):
           </p>
 
 
@@ -1929,62 +1981,51 @@ module.exports = React.createClass
             </em>
           </p>
 
-          <EasingObjectGraph
-            duration = { 3000 }
-            onUpdate = { (o)->
-              @el ?= document.querySelector('#js-property-curve-task-3a')
+          <ORXLine className="post__list-orx-line post__list-orx-line--top" type="center" />
 
-              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} )")
+          <More label="answer" className="is-center">
+
+            <EasingObjectGraph
+              duration = { 3000 }
+              onUpdate = { (o)->
+                @el ?= document.querySelector('#js-property-curve-task-3a')
+
+                mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} )")
+                
+                ""
+              }
+
+              background="#F1E2D7"
+              opacity = {[ .2, .2, 1 ]}
+              label = {['translateX', 'angle', 'scale']}
+              path = {["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100", "M0,100 C6.69604123,100 36.7852869,100.120092 41.8079414,100 C49.0709648,100 50,93.3039588 50,75 L53,75 C53.7799492,90.208985 56.9783087,106.849836 60.1929207,112.031548 C65.851963,121.153496 70.6802979,100 70.6802979,100 C70.6802979,100 73.6599579,81.7189484 77.2423482,100 C77.2423477,100 80.2498016,111.29863 83.7531832,100 C85.0066376,97.3673859 85.9997787,94.8164368 88.6327322,100 C90.1416016,103.389648 87.9330063,100 100,100"]} >
               
-              ""
-            }
+              <div className="path-easing-tutorial__property-curve-task-1 path-easing-tutorial__property-curve-task-1--fat" id="js-property-curve-task-3a"></div>
 
-            background="#F1E2D7"
-            opacity = {[ .2, .2, 1 ]}
-            label = {['translateX', 'angle', 'scale']}
-            path = {["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100", "M0,100 C6.69604123,100 36.7852869,100.120092 41.8079414,100 C49.0709648,100 50,93.3039588 50,75 L53,75 C53.7799492,90.208985 56.9783087,106.849836 60.1929207,112.031548 C65.851963,121.153496 70.6802979,100 70.6802979,100 C70.6802979,100 73.6599579,81.7189484 77.2423482,100 C77.2423477,100 80.2498016,111.29863 83.7531832,100 C85.0066376,97.3673859 85.9997787,94.8164368 88.6327322,100 C90.1416016,103.389648 87.9330063,100 100,100"]} >
-            
-            <div className="path-easing-tutorial__property-curve-task-1 path-easing-tutorial__property-curve-task-1--fat" id="js-property-curve-task-3a"></div>
+            </EasingObjectGraph>
 
-          </EasingObjectGraph>
+            <p className="post__reverse-block post__center-text">
+              <em>
+                <UniteLink link="http://codepen.io/sol0mka/pen/1d2d3e73a3c5a390cd83bb8493158b3c">answer codepen</UniteLink>
+              </em>
+              <em>
+                <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-5.svg">answer svg file</UniteLink>
+              </em>
+            </p>
 
-          <p className="post__reverse-block post__center-text">
-            <em>
-              <UniteLink link="http://codepen.io/sol0mka/pen/1d2d3e73a3c5a390cd83bb8493158b3c">answer codepen</UniteLink>
-            </em>
-            <em>
-              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-5.svg">answer svg file</UniteLink>
-            </em>
-          </p>
+            <p>
+              The scale property curve was made from 
+              the previous <span className="highlight">drag + follow thru</span> one, 
+              the first "rise" stage was made slightly more steep and the vaciliation motion 
+              stage was slightly delayed, it adds some gummy feeling to the motion. 
+              You may know this technique 
+              as <UniteLink link="https://www.youtube.com/watch?v=haa7n3UGyDc">squash&stretch</UniteLink> animation 
+              principle.
+            </p>
 
+          </More>
 
-          <EasingObjectGraph
-            duration = { 3000 }
-            onUpdate = { (o)->
-              @el ?= document.querySelector('#js-property-curve-task-3b')
-
-              mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) scaleX(#{ 1 + 7*o.easedP[2]} )")
-              
-              ""
-            }
-
-            background="#F1E2D7"
-            opacity = {[ .2, .2, 1 ]}
-            label = {['translateX', 'angle', 'scale']}
-            path = {["M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100", "M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100"]} >
-            
-            <div className="path-easing-tutorial__property-curve-task-1 path-easing-tutorial__property-curve-task-1--fat" id="js-property-curve-task-3b"></div>
-
-          </EasingObjectGraph>
-
-          <p className="post__reverse-block post__center-text">
-            <em>
-              <UniteLink link="http://codepen.io/sol0mka/pen/1d2d3e73a3c5a390cd83bb8493158b3c">answer codepen</UniteLink>
-            </em>
-            <em>
-              <UniteLink link="/app/pages/tutorials/easing/path-easing/files/property-curve-task-answer-5.svg">answer svg file</UniteLink>
-            </em>
-          </p>
+          <ORXLine className="post__list-orx-line" type="center" />
 
         </li>
 
