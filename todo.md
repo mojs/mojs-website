@@ -3,7 +3,6 @@
 - make new mojs release with different path easing defaults
 - fix codepens to the new version + motion demo to the new version + property curves to the new version
 
-- fix heartbeat
 - fix website links // front page
 - fix features copy // front page
 - fix pages trasition

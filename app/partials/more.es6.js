@@ -16,15 +16,10 @@ module.exports = React.createClass({
   },
 
   _getInnerHeight: function () {
-    this.setState({ contentHeight: this.innerConentEl.offsetHeight });
-  },
-
-  _onResize: function () {
-    setTimeout(function () {
-      this._getInnerHeight();
-      // var height = this.state.isOpen ? this.innerHeight : 0;
-      // console.log(height);
-    }.bind(this), 200);
+    var height = this.innerConentEl.offsetHeight;
+    if (height !== this.state.contentHeight) {
+      this.setState({ contentHeight: height });
+    }
   },
 
   render: function () {
@@ -40,7 +35,7 @@ module.exports = React.createClass({
           <div className="more__arrow"></div>
         </UniteLink>
         <div className="more__content" style = { style } >
-          <Resizable className="more__content-inner cf" ref="inner-content" onResize = { this._onResize }>
+          <Resizable className="more__content-inner cf" ref="inner-content" onResize = { this._getInnerHeight }>
             { this.props.children }
           </Resizable>
         </div>
