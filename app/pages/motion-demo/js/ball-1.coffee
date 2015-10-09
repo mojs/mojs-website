@@ -18,7 +18,7 @@ class FirstBall
       x: @o.o2Left,     y: ballStart
       parent:           @o.ctx
       angle:            90
-      delay:            @o.BALL_1_START*@S
+      delay:            ballStart*@S
       duration:         600*@S
       isRunLess:        @o.IS_RUNLESS
       isShowInit:       true
@@ -38,7 +38,7 @@ class FirstBall
       shiftY:           135
 
     trail2 = new mojs.Transit
-      x: @o.o2Left,     y: @o.bottomLine - 92
+      x: @o.o2Left, y: @o.bottomLine - 92
       parent:           @o.ctx
       delay:            (@o.BALL_1_START+700)*@S
       duration:         400*@S
@@ -53,35 +53,37 @@ class FirstBall
       radius:           {0: 85}
       shiftY:           {85: 0}
       angle:            270
+      # onUpdate:(p)-> console.log(p)
     .then
       opacity: 0
       duration: @o.TRAIL_FADE*@S
       delay:  0
       radius: 85
       shiftY: 0
+      # onUpdate:(p)-> console.log(p)
 
-    trail3 = new mojs.Transit
-      x: @o.o2Left, y: @o.topLine
-      parent:           @o.ctx
-      delay:            (@o.BALL_1_START+1150)*@S
-      duration:         375*@S
-      isRunLess:        @o.IS_RUNLESS
-      isShowInit:       true
-      isShowEnd:        true
-      strokeDasharray:  @o.TRAIL_DASH
-      easing:           @FALL_EASING
-      strokeWidth:      1
-      opacity:          @o.TRAIL_OPACITY
-      stroke:           @o.TRAIL_COLOR
-      radius:           {0: 85}
-      shiftY:           {0: 85}
-      angle:            90
-    .then
-      opacity:  0
-      duration: @o.TRAIL_FADE*@S
-      delay:    0
-      radius:   85
-      shiftY:   85
+    # trail3 = new mojs.Transit
+    #   x: @o.o2Left, y: @o.topLine
+    #   parent:           @o.ctx
+    #   delay:            (@o.BALL_1_START+1150)*@S
+    #   duration:         375*@S
+    #   isRunLess:        @o.IS_RUNLESS
+    #   isShowInit:       true
+    #   isShowEnd:        true
+    #   strokeDasharray:  @o.TRAIL_DASH
+    #   easing:           @FALL_EASING
+    #   strokeWidth:      1
+    #   opacity:          @o.TRAIL_OPACITY
+    #   stroke:           @o.TRAIL_COLOR
+    #   radius:           {0: 85}
+    #   shiftY:           {0: 85}
+    #   angle:            90
+    # .then
+    #   opacity:  0
+    #   duration: @o.TRAIL_FADE*@S
+    #   delay:    0
+    #   radius:   85
+    #   shiftY:   85
 
     gooDur = 50
     ball = new mojs.Transit
@@ -283,10 +285,10 @@ class FirstBall
 
     retrunValue =
       tweens: [
-        burst1.tween, burst2.tween, burst3.tween,
-        mp.tween,
-        ball.tween, circle.tween,
-        trail1.tween, trail2.tween, trail3.tween
+        burst1, burst2, burst3,
+        mp,
+        ball, circle,
+        trail1, trail2#, trail3
       ]
       ball: ball
 

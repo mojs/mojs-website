@@ -1,5 +1,5 @@
-mojs         = require 'mo-js'
-{ Howl }     = require 'howler'
+mojs = require 'mo-js'
+Howl  = require('./vendor/howler.min').Howl
 mojs.isDebug = false
 
 Ball_1 = require './ball-1'
@@ -23,12 +23,14 @@ class Main
   CIRCLE_RADIUS:  5
   IS_RUNLESS:     true
   constructor:-> @
-    
+
   init:->
     @vars(); @listenSlider()
     @createBits(); @createSounds()
     @
 
+  run:-> setTimeout (=> @tween.start()), 500
+    # @listenLinks()
   vars:->
     @slider   = document.querySelector '#js-slider'
     @ctx      = document.querySelector '#js-svg-canvas'
@@ -58,6 +60,8 @@ class Main
     @BALL_7_START   = @BALL_6_START + @BALL_6_ARCDUR + 100
     @BALL_7_ARCDUR  = 600
 
+    @TransitStagger = new mojs.Stagger mojs.Transit
+
     @STAGGER_COLORS = [ @PINK, @CYAN, @WHITE ]
     @STAGGER_EASING = 'sin.out'
     @BG = '#3a0839'
@@ -72,7 +76,7 @@ class Main
     !@isIOS and @sound.classList.add 'is-on'
     @clickHandler = if @isIOS or @isTouch() then 'touchstart' else 'click'
 
-    @tween = new mojs.Tween
+    @tween = new mojs.Timeline
       onUpdate:(p)=>
         @progress = p
         @slider.value = p*100000 if @tween.state is 'play'
@@ -105,7 +109,7 @@ class Main
 
     controlsStep = 27
     @addEvent @repeat, =>
-      @clickArea.run(x: 12, y: 10)
+      @clickArea.run(x: 12, y: 10) 
       @bells1.stop(); @tween.restart()
     @addEvent @pin, (e)=>
       @clickArea.run(x: 12+1*controlsStep, y: 10)
@@ -128,17 +132,44 @@ class Main
     @tween.add new Ball_5 @
     @tween.add new Ball_6 @
     @tween.add new Ball_7 @
+
   isOpera:->
     userAgent = navigator.userAgent
     /^Opera\//.test(userAgent) or /\x20OPR\//.test(userAgent)
+
   createSounds:->
     ext = if @isOpera() then 'wav' else 'mp3'
     audio = require "./sounds/bells-1-half.#{ext}"
     @bells1 = new Howl
       urls: [audio]
-  run:-> setTimeout (=> @tween.start()), 500
+      # onload:=> setTimeout (=> @tween.start()), 500
+
   playSound:(audio)-> return if !@isOn; audio.play()
+
+  # listenLinks:->
+  #   @lego = document.querySelector '#js-by-logo'
+  #   @legoSnowball = document.querySelector '#js-by-snowball'
+
+  #   @addEvent @lego, (e)=>
+  #     e.preventDefault()
+  #     href = e.target.getAttribute 'href'
+  #     @legoSnowball.classList.add 'is-shown'
+  #     setTimeout ->
+  #       window.location.href = href
+  #     , 200
+  #     false
+
+  #   @mojs = document.querySelector '#js-with-logo'
+  #   @mojsSnowball = document.querySelector '#js-with-snowball'
+  #   @addEvent @mojs, (e)=>
+  #     e.preventDefault()
+  #     href = e.target.getAttribute 'href'
+  #     @mojsSnowball.classList.add 'is-shown'
+  #     setTimeout ->
+  #       window.location.href = href
+  #     , 200
+  #     false
+
   addEvent:(el, handler)-> el.addEventListener @clickHandler, handler
-  
+
 module.exports = Main
-# new Main

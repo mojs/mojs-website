@@ -1,4 +1,4 @@
-mojs = require 'mo-js'
+# mojs = require './vendor/mo.js'
 
 class FirstBall
   constructor:(@o={})-> @vars(); return @create()
@@ -8,7 +8,7 @@ class FirstBall
     @pathMask = document.querySelector '#js-curve-3-mask'
     @n1       = document.querySelector '#js-n-1'
     @n2       = document.querySelector '#js-n-2'
-    @easing = mojs.easing.bezier(0.435, 0.715, 0.635, 0.395)
+    @easing   = mojs.easing.bezier(0.435, 0.715, 0.635, 0.395)
 
   create:->
     trail = new mojs.Transit
@@ -80,31 +80,34 @@ class FirstBall
       isRunLess:    @o.IS_RUNLESS
 
     nDuration = @o.CHAR_DUR; nDelay = @o.BALL_4_START+200
-    n1Stagger = new mojs.Stagger
-      els:              @n1
+    n1Stagger = new @o.TransitStagger
+      bit:              Array.prototype.slice.call @n1.children, 0
+      quantifier:       'bit'
       duration:         nDuration*@S
       isRunLess:        @o.IS_RUNLESS
       isShowEnd:        true
       delay:            "stagger(#{(nDelay)*@S}, 200)"
-      easing:           @o.STAGGER_EASING
+      easing:           @STAGGER_EASING
       stroke:           @o.STAGGER_COLORS
+      fill:             'none'
       strokeDasharray:  '100%'
-      # strokeDashoffset: '100%': 0
       strokeDashoffset: '100%': '200%'
 
-    n2Stagger = new mojs.Stagger
-      els:              @n2
+    n2Stagger = new @o.TransitStagger
+      bit:              Array.prototype.slice.call @n2.children, 0
+      quantifier:       'bit'
       duration:         nDuration*@S
       isRunLess:        @o.IS_RUNLESS
       isShowEnd:        true
       delay:            "stagger(#{(nDelay)*@S}, 200)"
-      easing:           @o.STAGGER_EASING
+      easing:           @STAGGER_EASING
       stroke:           @o.STAGGER_COLORS
+      fill:             'none'
       strokeDasharray:  '100%'
       strokeDashoffset: '100%': '200%'
-    
-    tween = new mojs.Tween; shift = 22.5; it = @
-    tween.add new mojs.Timeline
+
+    shift = 22.5; it = @
+    tween = new mojs.Tween
       duration:   nDuration*@S
       delay:      nDelay*@S
       easing:     @o.STAGGER_EASING
@@ -116,8 +119,8 @@ class FirstBall
     @o.IS_RUNLESS or tween.start()
 
     [
-      tween, n1Stagger.tween, n2Stagger.tween, burst.tween,
-      mp.tween, trail.tween, trailFade.tween
+      tween, burst, n1Stagger, n2Stagger,
+      mp, trail, trailFade
     ]
 
 

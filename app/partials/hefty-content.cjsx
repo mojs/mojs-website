@@ -24,11 +24,12 @@ module.exports = React.createClass
     node = @getDOMNode().childNodes[0]; rect = node.getBoundingClientRect()
     scrollY = @_getScrollY(); @wHeight = window.innerHeight
     @top = scrollY + rect.top; @bottom = scrollY + rect.bottom
-  _checkVisibility:->
+  _checkVisibility:(isIt)->
     scrollY = @_getScrollY()
     isShow = if scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100 then true
     else false
-    
+
+
     if @state.isShow isnt isShow
       @setState isShow: isShow
       isShow and @props.onShow?()
@@ -39,16 +40,14 @@ module.exports = React.createClass
   _checkHide:->
     scrollY = @_getScrollY()
     isShow = scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100
-    @_onHide() if isShow is false and @_isShow
+    @_onHide() if !isShow and @_isShow
 
   _startLoop:->
     !@_isGotPosition and (@_getPosition(); @_isGotPosition = true)
     !@_isLooping and @_loop()
 
   _loop:->
-    if @isStop or (@stopCnt++ > 3)
-      @_onHide(); @_isLooping = false
-      return @stopCnt = 0
+    if @isStop or (@stopCnt++ > 3) then @_isLooping = false; return @stopCnt = 0
     @_isLooping = true
     if @props.isLaunchOnHover then @_checkHide() else @_checkVisibility()
     requestAnimationFrame(@_loop)
@@ -94,8 +93,9 @@ module.exports = React.createClass
       visibility: if @props.isVisibilityToggle then visibility else null
       cursor: 'default'
 
-    curtainStyle = { display: (if @props.isLaunchOnHover then 'block' else 'none') }
+    @isIt = @props.isIt
 
+    curtainStyle = { display: (if @props.isLaunchOnHover then 'block' else 'none') }
     <div  className = "hefty-content #{@props.className or ''}"
                 style    = style
                 onTap    = { @_onHide } >

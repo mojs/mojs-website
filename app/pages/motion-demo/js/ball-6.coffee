@@ -1,4 +1,4 @@
-mojs = require 'mo-js'
+# mojs = require './vendor/mo.js'
 
 class FirstBall
   constructor:(@o={})-> @vars(); return @create()
@@ -8,7 +8,7 @@ class FirstBall
     @pathMask = document.querySelector '#js-curve-5-mask'
     @line1    = document.querySelector '#js-m-line-1'
     @line2    = document.querySelector '#js-m-line-2'
-    @easing   = mojs.easing.bezier(0.435, 0.715, 0.635, 0.395)
+    @easing = mojs.easing.bezier(0.435, 0.715, 0.635, 0.395)
 
   create:->
     trail = new mojs.Transit
@@ -66,21 +66,28 @@ class FirstBall
       childOptions: radius: { 7: 0 }
 
     mDuration = 1000; mDelay = @o.BALL_6_START+200
-    m1Stagger = new mojs.Stagger
-      els:              @line1
+    m1Stagger = new @o.TransitStagger
+      bit:              Array.prototype.slice.call @line1.children, 0
+      quantifier:       'bit'
       duration:         mDuration*@S
       isRunLess:        @o.IS_RUNLESS
       isShowEnd:        true
       delay:            "stagger(#{(mDelay)*@S}, 200)"
       easing:           @o.STAGGER_EASING
+      fill:             'transparent'
       stroke:           @o.STAGGER_COLORS
       strokeDasharray:  '100%'
       strokeDashoffset: '100%': '200%'
+      # isIt:             true
+      # onUpdate:         (p)-> console.log('tween: ' + p)
+      # onStaggerUpdate:  (p)-> console.log('stagger: ' + p)
 
     # forDelay = @o.BALL_7_START + 4*@o.BALL_7_ARCDUR
     forDelay = mDelay; forDuration = mDuration
-    forStagger = new mojs.Stagger
-      els:              '#js-for-the-web'
+    els = document.querySelector '#js-for-the-web'
+    forStagger = new @o.TransitStagger
+      bit:              Array.prototype.slice.call els.children, 0
+      quantifier:       'bit'
       duration:         forDuration*@S
       isRunLess:        @o.IS_RUNLESS
       isShowEnd:        true
@@ -110,13 +117,15 @@ class FirstBall
       childOptions: radius: { 'rand(2,4)': 0 }
 
     shift = 15
-    m2Stagger = new mojs.Stagger
-      els:              @line2
+    m2Stagger = new @o.TransitStagger
+      bit:              Array.prototype.slice.call @line2.children, 0
+      quantifier:       'bit'
       duration:         mDuration*@S
       isRunLess:        @o.IS_RUNLESS
       isShowEnd:        true
       delay:            "stagger(#{(mDelay)*@S}, 200)"
       easing:           @o.STAGGER_EASING
+      fill:             'transparent'
       stroke:           @o.STAGGER_COLORS
       strokeDasharray:  '100%'
       strokeDashoffset: '100%': '200%'
@@ -126,9 +135,9 @@ class FirstBall
         ), null, null]
 
     [
-      burst.tween, m1Stagger.tween, m2Stagger.tween,
-      mp.tween, trail.tween, trailFade.tween, forStagger.tween,
-      forBurst.tween
+      burst, m1Stagger, m2Stagger,
+      mp, trail, trailFade, forStagger,
+      forBurst
     ]
 
 

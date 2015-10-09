@@ -52,9 +52,9 @@ module.exports = React.createClass
       for path, i in @props.path
         mojs.easing.path @props.path[i], precompute: 2000, eps: .001
     else [ mojs.easing.path @props.path, precompute: 2000, eps: .001 ]
-
     className = if (@state.isSquash) then "is-squash is-pop-#{@state.pop}" else ''
     <HeftyContent
+      isIt = { @props.isIt }
       className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
       onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() }
       isLaunchOnHover = { true } >

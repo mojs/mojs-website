@@ -1,4 +1,4 @@
-mojs = require 'mo-js'
+# mojs = require './vendor/mo.js'
 
 class FirstBall
   constructor:(@o={})-> @vars(); return @create()
@@ -10,7 +10,7 @@ class FirstBall
     @o1Line2   = document.querySelector '#js-o1-line-2'
     @o1circle  = document.querySelector '#js-o1-circle'
     @easing = mojs.easing.bezier(0.435, 0.715, 0.635, 0.395)
-    # @easing = @o.generateBezier(0.435, 0.715, 0.795, 0.570)
+    # @easing = mojs.easing.bezier(0.435, 0.715, 0.795, 0.570)
 
   create:->
     opacityDelta = {}; opacityDelta[@o.TRAIL_OPACITY] = 0
@@ -92,50 +92,52 @@ class FirstBall
       duration:     300*@S
       isRunLess:    @o.IS_RUNLESS
 
-    oLine1Stagger = new mojs.Stagger
-      els:              @o1Line1
-      duration:         1000*@S
+    oDuration = 1000*@S
+    oLine1Stagger = new @o.TransitStagger
+      bit:              Array.prototype.slice.call @o1Line1.children, 0
+      quantifier:       'bit'
+      duration:         oDuration
       isRunLess:        @o.IS_RUNLESS
       isShowEnd:        true
       delay:            "stagger(#{(@o.BALL_3_START)*@S}, 200)"
-      easing:           'sin.out'
+      easing:           @STAGGER_EASING
       stroke:           @o.STAGGER_COLORS
       strokeDasharray:  '100%'
       strokeDashoffset: '100%': 0
 
-    oLine2Stagger = new mojs.Stagger
-      els:              @o1Line2
-      duration:         1000*@S
+    oLine2Stagger = new @o.TransitStagger
+      bit:              Array.prototype.slice.call @o1Line2.children, 0
+      quantifier:       'bit'
+      duration:         oDuration
       isRunLess:        @o.IS_RUNLESS
       isShowEnd:        true
       delay:            "stagger(#{(@o.BALL_3_START+800)*@S}, 200)"
-      easing:           'sin.out'
+      easing:           @STAGGER_EASING
       stroke:           @o.STAGGER_COLORS
       strokeDasharray:  '0 100%': '100% 100%'
       strokeDashoffset: '50%': '200%'
 
     it = @
     translate = "translate(253, 174)"
-    oDuration = 1000*@S; oDelay = (@o.BALL_3_START+1200)*@S
-    oEasing = 'sin.out'
-    oStagger = new mojs.Stagger
-      type:         'circle'
-      els:          @o1circle
-      # fill:         'deeppink'
-      duration:     oDuration
-      isRunLess:    @o.IS_RUNLESS
-      isShowEnd:    true
-      delay:        "stagger(#{oDelay}, 100)"
-      easing:       oEasing
-      stroke:       @o.STAGGER_COLORS
-      radius:       24
-      radiusX:      0:24
+    oDelay = (@o.BALL_3_START+1200)*@S
+    oStagger = new @o.TransitStagger
+      bit:              Array.prototype.slice.call @o1circle.children, 0
+      quantifier:       'bit'
+      type:             'circle'
+      duration:         oDuration
+      isRunLess:        @o.IS_RUNLESS
+      isShowEnd:        true
+      delay:            "stagger(#{oDelay}, 100)"
+      easing:           @o.STAGGER_EASING
+      stroke:           @o.STAGGER_COLORS
+      fill:             'transparent'
+      radius:           24
+      radiusX:          0:24
       strokeDashoffset: 0
 
     [
-      trailFade.tween, oStagger.tween, oLine1Stagger.tween, burst.tween,
-      oLine2Stagger.tween, mp.tween, trail.tween, trailFade.tween,
-      burst2.tween, burst3.tween
+      trailFade, burst
+      mp, trail, trailFade, burst2, burst3, oLine1Stagger, oLine2Stagger, oStagger
     ]
 
 

@@ -30,19 +30,17 @@ module.exports = React.createClass
               <pre>
                 <PrismCode className="language-javascript api-demo__code api-demo__code--normal">
                   { """var burst = new Burst({
-                        shape:      'circle',
-                        fill:         [ 'deeppink', 'cyan', 'orange' ],
-                        x: '50%',   y: '50%'
+                        shape:    'circle',
+                        fill:     [ 'deeppink', 'cyan', 'orange' ],
+                        x: '50%', y: '50%'
                     });
                     """}
                 </PrismCode>
                 <PrismCode className="language-javascript api-demo__code api-demo__code--mobile">
                   { """var burst = new Burst({
-                        shape:   'circle',
-                        fill:      [ 'deeppink',
-                                     'cyan',
-                                     'orange' ],
-                        x: '50%',   y: '50%'
+                        shape:    'circle',
+                        fill:     [ 'deeppink', 'cyan', 'orange' ],
+                        x: '50%', y: '50%'
                     });
                     """}
                 </PrismCode>
