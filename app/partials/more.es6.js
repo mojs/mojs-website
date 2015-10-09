@@ -5,7 +5,7 @@ require('css/partials/more.styl');
 
 module.exports = React.createClass({
   getInitialState: function () {
-    return { isOpen: false };
+    return { isOpen: false, contentHeight: 0 };
   },
 
   _onTap: function () { this.setState({ isOpen: !this.state.isOpen }); },
@@ -16,19 +16,22 @@ module.exports = React.createClass({
   },
 
   _getInnerHeight: function () {
-    this.innerHeight = this.innerConentEl.offsetHeight;
+    this.setState({ contentHeight: this.innerConentEl.offsetHeight });
   },
 
   _onResize: function () {
-    this._getInnerHeight(); this.render();
+    setTimeout(function () {
+      this._getInnerHeight();
+      // var height = this.state.isOpen ? this.innerHeight : 0;
+      // console.log(height);
+    }.bind(this), 200);
   },
 
   render: function () {
     var className = 'more ';
     className += this.state.isOpen ? 'is-open' : '';
-
-    var height = this.state.isOpen ? this.innerHeight : 0;
-    var style = { height: `${height}px` };
+    var height = this.state.isOpen ? this.state.contentHeight : 0;
+    var style  = { height: `${height}px` };
 
     return (
       <div className = { `${className} ${this.props.className || ''}` } >
