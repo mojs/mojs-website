@@ -1,6 +1,7 @@
 React = require 'react'
-require './css/main.styl'
 Tapable = require 'react-tappable'
+
+require './css/main.styl'
 
 MotionDemoComponent = React.createClass
   getInitialState:-> @state = {}
