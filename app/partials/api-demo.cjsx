@@ -1,7 +1,9 @@
 React       = require 'react'
 {PrismCode} = require 'react-prism'
 Tapable     = require 'react-tappable'
-require '../css/partials/api-demo.styl'
+Link        = require 'partials/unite-link'
+
+require 'css/partials/api-demo.styl'
 
 module.exports = React.createClass
   getInitialState:-> @state = shown: 'code'
@@ -68,7 +70,7 @@ module.exports = React.createClass
       </div>
       
       <div className="api-demo__more code-block__footer">
-        See more <a href="#">tutorials</a> or <a href="#">docs</a>. Inspire at <a href="#">demos</a>.
+        See more <Link link="tutorials">tutorials</Link> or <Link link="/" isDisabled="true">docs</Link>. Inspire at <Link link="https://github.com/legomushroom/mojs">demos</Link>.
       </div>
 
     </div>

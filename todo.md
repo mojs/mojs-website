@@ -6,7 +6,6 @@
 - fix website links // front page
 - fix features copy // front page
 - fix pages trasition
-- fix style recalc for h.style
 
 - make mojs nodejs server
 - buy domain

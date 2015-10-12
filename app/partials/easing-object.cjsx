@@ -24,7 +24,8 @@ module.exports = React.createClass
           easing(p) for easing, i in @props.easing
         else @props.easing(p)
         
-        @labelEl.innerText = @props.onUpdate({ objEl, easedP, p }) or ''
+        str = @props.onUpdate({ objEl, easedP, p })
+        if str? then @labelEl.innerText = str
 
     @props.timeline?.add @_tween
     @props.timeline?.append(new mojs.Tween duration: @props.delay) if @props.delay

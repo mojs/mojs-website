@@ -94,7 +94,7 @@ Main = React.createClass
             </PrismCode>
           </div>
           <div className="code-block__footer">
-            Also install thru <a href="https://www.npmjs.com/package/mo-js">npm</a>, <a href="http://bower.io/search/?q=mojs">bower</a> or <a href="http://cdn.jsdelivr.net/mojs/latest/mo.min.js">CDN</a>. <a href="#">Build your own bundle</a>.
+            Also install thru <UniteLink link="https://www.npmjs.com/package/mo-js">npm</UniteLink>, <UniteLink link="http://bower.io/search/?q=mojs">bower</UniteLink> or <UniteLink link="http://www.jsdelivr.com/projects/mojs">CDN</UniteLink>.
           </div>
         </div>
 

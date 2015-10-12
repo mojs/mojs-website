@@ -1186,17 +1186,17 @@ module.exports = React.createClass
           mojs.h.style(@moleHandEl,     'transform', "rotate(#{-200*angleP + 30*noizeP}deg) translateZ(0)");
           mojs.h.style(@moleHandLeftEl, 'transform', "translate(#{100*skewP}px, #{-80*skewP}px) rotate(#{-110*skewP}deg) translateZ(0)");
 
-          mojs.h.style(@mouthEl, 'transform', "scale(#{mouthP - 3*noizeP}) translateX(#{-100*skewP}px) translateZ(0)");
+          mojs.h.style(@mouthEl, 'transform', "scale(#{mouthP - 3*noizeP}) translateX(#{-100*skewP}px)");
 
           mojs.h.style(@glassesEl, 'transform', "translateY(#{-15*noizeP}px)");
           mojs.h.style(@glassesLeftEl, 'transform', "translateY(#{-15*noizeP}px)");
-          mojs.h.style(@coneEl, 'transform', "rotateZ(#{-20*noizeP}deg)");
+          mojs.h.style(@coneEl, 'transform', "rotateZ(#{-20*noizeP}deg) translateZ(0)");
 
           this.moleEyeLashEl.setAttribute('d', "M0,0 Q 6.5 #{10*squintP}, 13 0");
           this.moleEyeLashEl.setAttribute('stroke-width', 2 + 1.5*n_squintP);
           mojs.h.style(this.moleEyeEl, 'transform', "rotate(#{37*n_squintP}deg) translate(#{7*n_squintP}px, #{-4*n_squintP}px) scaleX(#{1-.4*n_squintP})");
 
-          mojs.h.style(@tongueEl, 'transform', "translateX(#{-140*skewP}px)")
+          mojs.h.style(@tongueEl, 'transform', "translateX(#{-140*skewP}px) translateZ(0)")
           @tonguePathEl.setAttribute('d', "M0 30 Q 20 #{10+(550*noizeP)}, 30 25 T 50 30");
           
           "M0 30 Q 20 #{(10+(550*noizeP)).toFixed(2)}, 30 25 T 50 30"
