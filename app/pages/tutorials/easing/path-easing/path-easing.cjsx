@@ -1225,7 +1225,8 @@ module.exports = React.createClass
         That's basically it. We have used 4 property curves to bring our mole to life. 
         I hope you enjoined the process. Thinking in curves could be totally new  
         mindset for you, but it gets very convinient and intuitive when you use 
-        it for a few times.
+        it for a few times. So don't forget to get some practice in the appropriate 
+        section of this tutorial, and the very end.
       </p>
 
       <h2>Options</h2>
