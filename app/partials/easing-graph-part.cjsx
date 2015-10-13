@@ -21,8 +21,8 @@ module.exports = React.createClass
       duration: @props.duration
       onUpdate: (p)=>
         easedP = @props.easing[@props.index](p)
-        mojs.h.style customEl,   'transform', "translate(100px, #{ -200*easedP }px) translateZ(0)"
-        mojs.h.style pointEl,    'transform', "translate(#{ 200*p }px, #{ -200*easedP }px) translateZ(0)"
+        mojs.h.style customEl,   'transform', "translate(100px, #{ -200*easedP }px)"
+        mojs.h.style pointEl,    'transform', "translate(#{ 200*p }px, #{ -200*easedP }px)"
         # mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px) translateZ(0)"
         fixedP = easedP.toFixed(2)
         customLabel1El.innerText = fixedP

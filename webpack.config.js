@@ -29,6 +29,7 @@ module.exports = {
   resolve: {
     root: [path.resolve('./app/'), path.resolve('./app/css/'), path.resolve('./app/partials/')],
     moduleDirectories: ['node_modules'],
+    target: 'node',
     extensions: [
       '', '.js', '.jsx', '.es6',
       '.styl',   '.jade',

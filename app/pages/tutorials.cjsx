@@ -3,7 +3,7 @@ Router = require 'react-router'
 { Route, RouteHandler, Link } = Router
 Sidebar         = require '../partials/tutorials-sidebar'
 TransitionGroup = require '../partials/transition-group'
-require '../css/pages/tutorials-page'
+# require '../css/pages/tutorials-page'
 Sticky          = require '../vendor/react-sticky'
 Physics         = require('impulse')
 # Sticky          = require 'react-sticky'
@@ -72,9 +72,9 @@ module.exports = React.createClass
 
   _redirect:->
     if @context.router.getCurrentPath() is '/tutorials'
-      setTimeout =>
-        @context.router.transitionTo('/tutorials/easing/path-easing')
-      , 150
+      # setTimeout =>
+      @context.router.transitionTo('/tutorials/easing/path-easing')
+      # , 1
 
   render:()->
     sidebarClass = if @state.isSidebarOpen then 'is-sidebar-open' else ''

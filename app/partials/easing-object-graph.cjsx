@@ -2,6 +2,8 @@ EasingGraph   = require './easing-graph'
 EasingObject  = require './easing-object'
 HeftyContent  = require './hefty-content'
 Hammer        = require 'hammerjs'
+HeftyRenderingContent  = require './hefty-rendering-content.es6.js'
+
 
 React         = require 'react'
 Tappable      = require 'react-tappable'
@@ -45,37 +47,41 @@ module.exports = React.createClass
       </Tappable>
     else @_onAdd?()
 
+  componentDidMount:-> setTimeout (=> @setState 'isCouldBeRendered': true) , 2000
+
   render:->
-    @_timeline ?= new mojs.Timeline repeat: 99999999
+    if !@state.isCouldBeRendered then return <div/>
+    else
+      @_timeline ?= new mojs.Timeline repeat: 99999999
 
-    @_easing ?= if mojs.h.isArray @props.path
-      for path, i in @props.path
-        mojs.easing.path @props.path[i], precompute: 2000, eps: .001
-    else [ mojs.easing.path @props.path, precompute: 2000, eps: .001 ]
-    className = if (@state.isSquash) then "is-squash is-pop-#{@state.pop}" else ''
-    <HeftyContent
-      isIt = { @props.isIt }
-      className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
-      onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() }
-      isLaunchOnHover = { true } >
+      @_easing ?= if mojs.h.isArray @props.path
+        for path, i in @props.path
+          mojs.easing.path @props.path[i], precompute: 2000, eps: .001
+      else [ mojs.easing.path @props.path, precompute: 2000, eps: .001 ]
+      className = if (@state.isSquash) then "is-squash is-pop-#{@state.pop}" else ''
+      <HeftyContent
+        className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
+        onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() }
+        isLaunchOnHover = { true }
+        isRenderOnScroll = { true } >
 
-      <div className="easing-object-graph__inner">
-        
-        <Tappable onTap = @_showObject >
-          <EasingObject
-            timeline    = {@_timeline}
-            easing      = {@_easing}
-            duration    = {@props.duration}
-            delay       = {@props.delay}
-            onStart     = {@props.onStart}
-            onUpdate    = {@props.onUpdate}
-            background  = {@props.background}
-            isAlone     = { @props.isGraphLess }>
-            {@props.children}
-          </EasingObject>
-        </Tappable>
+        <div className="easing-object-graph__inner">
+          
+          <Tappable onTap = @_showObject >
+            <EasingObject
+              timeline    = {@_timeline}
+              easing      = {@_easing}
+              duration    = {@props.duration}
+              delay       = {@props.delay}
+              onStart     = {@props.onStart}
+              onUpdate    = {@props.onUpdate}
+              background  = {@props.background}
+              isAlone     = { @props.isGraphLess }>
+              {@props.children}
+            </EasingObject>
+          </Tappable>
 
-        { @_makeGraph() }
+          { @_makeGraph() }
 
-      </div>
-    </HeftyContent>
+        </div>
+      </HeftyContent>

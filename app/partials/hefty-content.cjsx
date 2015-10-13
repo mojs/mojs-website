@@ -93,9 +93,8 @@ module.exports = React.createClass
       visibility: if @props.isVisibilityToggle then visibility else null
       cursor: 'default'
 
-    @isIt = @props.isIt
-
     curtainStyle = { display: (if @props.isLaunchOnHover then 'block' else 'none') }
+
     <div  className = "hefty-content #{@props.className or ''}"
                 style    = style
                 onTap    = { @_onHide } >

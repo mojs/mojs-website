@@ -14,6 +14,7 @@ module.exports = React.createClass
       @burst = new mojs.Burst
         parent:       document.querySelector('#js-burst-container')
         shape:        'circle'
+        radius:       { 15: 50 }
         fill:         ['deeppink', 'cyan', 'orange']
         x: '50%',     y: '50%'
         isRunLess:    true
