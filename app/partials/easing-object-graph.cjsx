@@ -47,7 +47,9 @@ module.exports = React.createClass
       </Tappable>
     else @_onAdd?()
 
-  componentDidMount:-> setTimeout (=> @setState 'isCouldBeRendered': true), 1000
+  
+  componetWillUnmount:-> clearTimeout @_tm
+  componentDidMount:-> @_tm = setTimeout (=> @setState 'isCouldBeRendered': true), 1000
 
   _makePath:(path)-> mojs.easing.path path, precompute: 2000, eps: .001
 
