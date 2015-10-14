@@ -23,6 +23,7 @@ App = React.createClass
   #   # @_transit.el.style['z-index'] = -1
   # _onTap:(e)-> @_transit.run x: e.pageX, y: e.pageY
   render:->
+    @_firstLoadUrl = window.location.href
     name = @context.router.getCurrentPath()
     name = '/tutorials' if name.match /tutorials/
     <div onTap=@_onTap className="app">

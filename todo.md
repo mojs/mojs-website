@@ -5,8 +5,8 @@
 
 - fix features copy // front page
 - fix pages trasition
+- fix layer tree
 
-- make mojs nodejs server
 - buy domain
 - push site to the domain
 

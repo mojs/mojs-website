@@ -13,6 +13,7 @@ CodeSample    = require 'partials/code-sample'
 Pen           = require 'partials/codepen'
 EasingObjectGraph = require 'partials/easing-object-graph'
 EasingGraph       = require 'partials/easing-graph'
+Resizable     = require 'react-component-resizable'
 
 More  = require 'partials/more.es6.js'
 
@@ -24,8 +25,9 @@ require 'css/blocks/post'
 require './path-easing-styles.styl'
 
 module.exports = React.createClass
+  _onResize:-> window.dispatchEvent(new Event('resize'))
   render: ()->
-    <div className="post">
+    <Resizable className="post" onResize=@_onResize>
       <div className="post__header">Easing / Path Easing</div>
       <div className="post__description"> This post is about path easing functions for your precise timing control.</div>
       <ORXLine className="post__orx-line" />
@@ -2023,4 +2025,4 @@ module.exports = React.createClass
       <ORXLine className="post__last-orx-line" type="center" />
       <DisqusComments />
 
-    </div>
+    </Resizable>

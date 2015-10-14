@@ -18,17 +18,17 @@ module.exports = React.createClass
     
   componentWillUnmount:-> @isStop = true
   getInitialState:-> {}
-  _bindWindowResize:-> window.addEventListener 'resize', setTimeout @_getPosition, 500
+  _bindWindowResize:-> window.addEventListener 'resize', @_deferredGetPosition
   _getScrollY:-> if window.pageYOffset? then window.pageYOffset else document.scrollTop
+  _deferredGetPosition:-> setTimeout @_getPosition, 500
   _getPosition:->
     node = @getDOMNode().childNodes[0]; rect = node.getBoundingClientRect()
     scrollY = @_getScrollY(); @wHeight = window.innerHeight
     @top = scrollY + rect.top; @bottom = scrollY + rect.bottom
-  _checkVisibility:(isIt)->
+  _checkVisibility:()->
     scrollY = @_getScrollY()
     isShow = if scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100 then true
     else false
-
 
     if @state.isShow isnt isShow
       @setState isShow: isShow
