@@ -12,7 +12,8 @@ require '../css/partials/easing-object-graph.styl'
 
 module.exports = React.createClass
   getInitialState:-> @_isShow = false; { isSquash: false, pop: 'object' }
-  componentWillUnmount:-> @isStop = true
+  componentWillUnmount:->
+    @_unbindScroll(); @_unbindWindowResize(); @isStop = true; clearTimeout(@_tm)
   getDefaultProps:->
     path:     'M 0,100 L 100,0'
     duration: 2000
@@ -25,9 +26,14 @@ module.exports = React.createClass
   _onHide:-> @setState isSquash: false
 
   _bindScroll:-> document.addEventListener 'scroll', @_startLoop
+  _unbindScroll:-> document.removeEventListener 'scroll', @_startLoop
   _bindWindowResize:-> window.addEventListener 'resize', @_deferredGetPosition
+  _unbindWindowResize:-> window.removeEventListener 'resize', @_deferredGetPosition
+
+  _deferredGetPosition:-> @_tm = setTimeout (=> @_startLoop ), 500
 
   _startLoop:->
+    return if @isStop
     !@_isGotPosition and (@_getPosition(); @_isGotPosition = true)
     !@_isLooping and @_loop()
 
@@ -61,6 +67,7 @@ module.exports = React.createClass
     else @_onAdd?()
 
   _loop:->
+    console.log 'loop'
     if @isStop or (@stopCnt++ > 3) then @_isLooping = false; return @stopCnt = 0
     @_isLooping = true
     @_checkVisibility()
@@ -69,51 +76,58 @@ module.exports = React.createClass
   _checkVisibility:->
     scrollY = @_getScrollY()
     isShow = if scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100 then true
-    else false
 
-    @setState isShow: isShow if @state.isShow isnt isShow
+    if isShow
+      @_unbindScroll()
+      @setState isShow: true
+      @isStop = true
   
-  componetWillUnmount:-> clearTimeout @_tm
+  componetWillUnmount:-> @_unbindScroll(); @isStop = true
+
   componentDidMount:->
-    @stopCnt = 0
-    @_bindScroll(); @_bindWindowResize(); @_getPosition()
-    # @_tm = setTimeout (=> @setState 'isCouldBeRendered': true), 1000
+    @stopCnt = 0; @_bindScroll(); @_bindWindowResize(); @_getPosition()
 
   _makePath:(path)-> mojs.easing.path path, precompute: 2000, eps: .001
 
   render:->
-    if !@state.isShow then return <div/>
-    else
+    className = if (@state.isSquash) then "is-squash is-pop-#{@state.pop}" else ''
+    className = if (@state.isShow) then 'is-shown' else ''
+
+    content = if @state.isShow
       @_timeline ?= new mojs.Timeline repeat: 99999999
 
       @_easing ?= if mojs.h.isArray @props.path
         @_makePath @props.path[i] for path, i in @props.path
       else [ @_makePath @props.path ]
 
-      className = if (@state.isSquash) then "is-squash is-pop-#{@state.pop}" else ''
-      <HeftyContent
-        className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
-        onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() }
-        isLaunchOnHover = { true }
-        isRenderOnScroll = { true } >
+      <div className="easing-object-graph__inner">
+        
+        <Tappable onTap = @_showObject >
+          <EasingObject
+            timeline    = {@_timeline}
+            easing      = {@_easing}
+            duration    = {@props.duration}
+            delay       = {@props.delay}
+            onStart     = {@props.onStart}
+            onUpdate    = {@props.onUpdate}
+            background  = {@props.background}
+            isAlone     = { @props.isGraphLess }>
+            {@props.children}
+          </EasingObject>
+        </Tappable>
 
-        <div className="easing-object-graph__inner">
-          
-          <Tappable onTap = @_showObject >
-            <EasingObject
-              timeline    = {@_timeline}
-              easing      = {@_easing}
-              duration    = {@props.duration}
-              delay       = {@props.delay}
-              onStart     = {@props.onStart}
-              onUpdate    = {@props.onUpdate}
-              background  = {@props.background}
-              isAlone     = { @props.isGraphLess }>
-              {@props.children}
-            </EasingObject>
-          </Tappable>
+        { @_makeGraph() }
 
-          { @_makeGraph() }
+      </div>
+    else null
 
-        </div>
-      </HeftyContent>
+
+    <HeftyContent
+      className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
+      onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() }
+      isLaunchOnHover = { true }
+      isRenderOnScroll = { true } >
+
+      {content}
+
+    </HeftyContent>

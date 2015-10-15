@@ -42,6 +42,11 @@
       margin-left   1*gs 
   .easing-object-graph
     margin          5*gs 0
+    height          320*PX
+    opacity 0
+    transition opacity .2s ease-out
+    &.is-shown
+      opacity 1
     // & + .code-sample
     //   // max-width     64*gs
     //   margin-top   -6.1*gs
