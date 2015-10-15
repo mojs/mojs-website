@@ -67,7 +67,6 @@ module.exports = React.createClass
     else @_onAdd?()
 
   _loop:->
-    console.log 'loop'
     if @isStop or (@stopCnt++ > 3) then @_isLooping = false; return @stopCnt = 0
     @_isLooping = true
     @_checkVisibility()

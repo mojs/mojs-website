@@ -16,9 +16,11 @@ module.exports = React.createClass
       @_onHide(e)
       true
     
-  componentWillUnmount:-> @isStop = true
+  componentWillUnmount:-> @isStop = true; @_unbindWindowResize(); @_unbindScroll()
+
   getInitialState:-> {}
   _bindWindowResize:-> window.addEventListener 'resize', @_deferredGetPosition
+  _unbindWindowResize:-> window.removeEventListener 'resize', @_deferredGetPosition
   _getScrollY:-> if window.pageYOffset? then window.pageYOffset else document.scrollTop
   _deferredGetPosition:-> setTimeout @_getPosition, 500
   _getPosition:->
@@ -36,6 +38,7 @@ module.exports = React.createClass
       isShow or  @props.onHide?()
 
   _bindScroll:-> document.addEventListener 'scroll', @_startLoop
+  _unbindScroll:-> document.removeEventListener 'scroll', @_startLoop
 
   _checkHide:->
     scrollY = @_getScrollY()
