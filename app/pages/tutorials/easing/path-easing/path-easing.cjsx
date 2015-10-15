@@ -2035,6 +2035,8 @@ module.exports = React.createClass
         </div>
 
     className = if @state.isShow then 'is-show' else ''
-    <Resizable className="post #{className}" onResize=@_onResize>
-      {content}
+    classNameLoading = if @state.isShow then 'is-hide' else ''
+    <Resizable className="post" onResize=@_onResize>
+      <div className="post__loading #{classNameLoading}"> Loading The Post.. </div>
+      <div className="post__content #{className}">{content}</div>
     </Resizable>
