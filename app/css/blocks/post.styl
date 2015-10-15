@@ -3,6 +3,8 @@
 {el = '.post'}
   color             c-white
   line-height       1.9
+  transition        opacity .4s ease-out
+  opacity           0 !important
   &__header
     color           c-orange
     font-size       24*PX
@@ -83,6 +85,8 @@
     margin-top      11*gs
     +mobile()
       margin-top    7*gs
+  &.is-show
+    opacity         1 !important
   .post-image
     margin          5*gs auto
     +mobile()

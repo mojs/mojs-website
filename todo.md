@@ -4,7 +4,7 @@
 - fix codepens to the new version + motion demo to the new version + property curves to the new version
 
 - fix features copy // front page
-- fix pages trasition
+- fix -> add loading screen
 - fix layer tree
 
 - buy domain
