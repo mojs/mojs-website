@@ -55,7 +55,7 @@ module.exports = React.createClass
             Animation with equal interim spacing(read with linear easing) can 
             envoke in human brain nothing than suspicious or dull response. 
             By contrast, excellent crafted easing appeal user's attention, 
-            araise curiosity and so involvement.
+            araise curiosity, thus involvement.
             That's why so crutial to embrace the full control over easing functions.
           </p>
 

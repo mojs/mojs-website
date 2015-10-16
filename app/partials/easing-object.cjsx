@@ -18,6 +18,7 @@ module.exports = React.createClass
       onStart:  @props.onStart
       duration: @props.duration
       onUpdate: (p)=>
+        return
         return if !@props.onUpdate?
         
         easedP = if mojs.h.isArray @props.easing

@@ -24,11 +24,11 @@ module.exports = React.createClass
     @_tween = new mojs.Tween
       duration: @props.duration
       onUpdate: (p)=>
-        mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px)"
+        # mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px)"
 
         fixedP = p.toFixed(2)
-        progressLabel1.innerText = fixedP
-        progressLabel2.innerText = fixedP
+        # progressLabel1.innerText = fixedP
+        # progressLabel2.innerText = fixedP
 
     @props.timeline?.add(@_tween)
     @props.timeline?.append(new mojs.Tween duration: @props.delay) if @props.delay
