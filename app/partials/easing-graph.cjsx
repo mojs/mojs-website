@@ -24,7 +24,7 @@ module.exports = React.createClass
     @_tween = new mojs.Tween
       duration: @props.duration
       onUpdate: (p)=>
-        # mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px)"
+        mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px) translateZ(0)"
 
         fixedP = p.toFixed(2)
         # progressLabel1.innerText = fixedP

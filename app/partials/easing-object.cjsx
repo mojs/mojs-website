@@ -18,7 +18,6 @@ module.exports = React.createClass
       onStart:  @props.onStart
       duration: @props.duration
       onUpdate: (p)=>
-        return
         return if !@props.onUpdate?
         
         easedP = if mojs.h.isArray @props.easing
@@ -39,5 +38,5 @@ module.exports = React.createClass
     className = if @props.isAlone then 'is-alone' else ''
     <div className="easing-object #{className}" style={ backgroundColor: bg } >
       { @props.children }
-      <div className="easing-object__label" ref="label"></div>
+      <span className="easing-object__label" ref="label"></span>
     </div>

@@ -22,9 +22,8 @@ module.exports = React.createClass
       onUpdate: (p)=>
         easedP = @props.easing[@props.index](p)
         mojs.h.style customEl,   'transform', "translate3d(100px, #{ -200*easedP }px, 0)"
-        mojs.h.style pointEl,    'transform', "translate(#{ 200*p }px, #{ -200*easedP }px) translateZ(0)"
-        # mojs.h.style progressEl, 'transform', "translateX(#{ 200*p }px) translateZ(0)"
-        fixedP = easedP.toFixed(2)
+        mojs.h.style pointEl,    'transform', "translate3d(#{ 200*p }px, #{ -200*easedP }px, 0)"
+        # fixedP = easedP.toFixed(2)
         # customLabel1El.innerText = fixedP
         # customLabel2El.innerText = fixedP
 
@@ -44,6 +43,12 @@ module.exports = React.createClass
           <div className="easing-graph-line__label easing-graph-line__label--top" ref="customLabel1"></div>
           <div className="easing-graph-line__label easing-graph-line__label--bottom" ref="customLabel2"></div>
         </div>
+      </div>
+
+      <div className="easing-graph-part__graph">
+        <svg viewBox="0 0 100 100">
+          <path d="#{ @props.path }"></path>
+        </svg>
       </div>
 
     </div>
