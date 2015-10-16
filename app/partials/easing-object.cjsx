@@ -25,7 +25,7 @@ module.exports = React.createClass
         else @props.easing(p)
         
         str = @props.onUpdate({ objEl, easedP, p })
-        if str? then @labelEl.innerText = str
+        # if str? then @labelEl.innerText = str
 
     @props.timeline?.add @_tween
     @props.timeline?.append(new mojs.Tween duration: @props.delay) if @props.delay
@@ -38,5 +38,5 @@ module.exports = React.createClass
     className = if @props.isAlone then 'is-alone' else ''
     <div className="easing-object #{className}" style={ backgroundColor: bg } >
       { @props.children }
-      <span className="easing-object__label" ref="label"></span>
+      <div className="easing-object__label" ref="label"></div>
     </div>
