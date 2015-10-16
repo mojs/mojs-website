@@ -452,9 +452,9 @@ module.exports = React.createClass
             the first curve starts to 
             lift our rectangle in air, this curve goes 
             over <span className="highlight">0</span> imitating stretch that object 
-            will get when moving. At the end this curve returns 
+            will get when accelerating. At the end this curve returns 
             back to <span className="highlight">0</span> showing 
-            that's there is no acceleration left in the movement.
+            that's there is no speed left in the movement.
           </p>
 
           <p>
@@ -516,7 +516,7 @@ module.exports = React.createClass
           </CodeSample>
 
           <p>
-            Pretty neat, ha? These curves type allows us to visualy describe how certain properties 
+            Pretty neat, ha? These curves allow us to visualy describe how certain properties 
             behave in time. Then we can compose them together to get our final motion.
             Yep it takes some time to wrap your head around this concept, but when you 
             are using it for few times, it feels very intuitive and you finally 
@@ -653,7 +653,7 @@ module.exports = React.createClass
           <p>
             Whoo! This one is cute!
             <br />
-            Imaging you have to write a tween for every cube's movement. 
+            Imagin you have to write a tween for every cube's movement. 
             I can't.
             <br />
             <span className="highlight">Property curves</span> save us a lot of 
@@ -729,7 +729,7 @@ module.exports = React.createClass
           </CodeSample>
           
           <p>
-            Our mole moves now, but errr.. This motion doesn't convey too much.
+            Our mole moves now, but errr.. This motion doesn't convey too much information.
             Lets add a secondary action to fulfill our scene.
             We will rise mole's hand up(by rotating it) very fast when mole deviates 
             backward, so our curve should rise steeply at the beggining. Then, when 
@@ -851,7 +851,7 @@ module.exports = React.createClass
           <p>
             We will continue working on secondary actions step by step making our scene 
             comprehensive. 
-            It is the mouth's turn now. 
+            This is the mouth's turn now. 
             To implement mouth motion we need to scale it 
             up <span className="highlight">above 1</span> conveying inhale and then scale it down to 
             about <span className="highlight">.3</span> conveying exhale:
@@ -1236,7 +1236,7 @@ module.exports = React.createClass
             I hope you enjoined the process. Thinking in curves could be totally new  
             mindset for you, but it gets very convinient and intuitive when you use 
             it for a few times. So don't forget to get some practice in the appropriate 
-            section of this tutorial, and the very end.
+            section of this tutorial at the very end.
           </p>
 
           <h2>Options</h2>
