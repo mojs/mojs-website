@@ -5,6 +5,7 @@
 
 - fix features copy // front page
 - fix layer tree
+- easing graph object for mobiles
 
 - buy domain
 - push site to the domain

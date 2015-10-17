@@ -5,25 +5,14 @@ Header          = require './partials/header'
 TransitionGroup = require  './partials/transition-group'
 Tappable = require 'react-tappable'
 require './css/main.styl'
-mojs   = require('mo-js')
+# mojs   = require('mo-js')
 
-App = React.createClass
+window.onbeforeunload = ->
+  sessionStorage.setItem('beforeUnloadURL', window.location.href)
+
+module.exports = React.createClass
   contextTypes: router: React.PropTypes.func
-  # getInitialState:-> {}
-
-  # componentDidMount:->
-  #   @_transit = new mojs.Transit
-  #     type: 'circle'
-  #     isRunLess: true
-  #     radius: { 5: 25 }
-  #     duration: 300
-  #     fill: 'white'
-  #     opacity: { .5: 0 }
-  #     easing: 'cubic.out'
-  #   # @_transit.el.style['z-index'] = -1
-  # _onTap:(e)-> @_transit.run x: e.pageX, y: e.pageY
   render:->
-    @_firstLoadUrl = window.location.href
     name = @context.router.getCurrentPath()
     name = '/tutorials' if name.match /tutorials/
     <div onTap=@_onTap className="app">
@@ -32,5 +21,3 @@ App = React.createClass
         <RouteHandler key={name} />
       </TransitionGroup>
     </div>
-
-module.exports = App

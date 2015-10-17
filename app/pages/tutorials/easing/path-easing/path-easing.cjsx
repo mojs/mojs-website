@@ -24,15 +24,28 @@ require 'css/pages/tutorials-page'
 require 'css/blocks/post'
 require './path-easing-styles.styl'
 
+window.onbeforeunload = ->
+  post = document.getElementById 'post'
+  sessionStorage.setItem('beforeUnloadPostHeight', post.offsetHeight)
+
 module.exports = React.createClass
   getInitialState:-> {}
   _onResize:-> window.dispatchEvent(new Event('resize'))
   componentWillUnmout:-> clearTimeout @_tm
   componentDidMount:->
-    @_tm = setTimeout =>
+    @_tm = setTimeout (=>
       @setState { isShow: true }
-    , 500
-  render: ()->
+      document.dispatchEvent new Event('scroll')
+    ), 500
+    @_checkHeight()
+  _checkHeight:->
+    url = sessionStorage.getItem('beforeUnloadURL')
+    height = sessionStorage.getItem('beforeUnloadPostHeight')
+    if url = window.location.href
+      el = @getDOMNode()
+      el.style.height = "#{height}px"
+
+  render:->
     content = null
     if @state.isShow
       content = <div>
@@ -941,7 +954,7 @@ module.exports = React.createClass
               @scopeEl    ?= document.querySelector '#js-mole-sample-8'
               @tongueEl   ?= @scopeEl.querySelector '#js-sample-tongue'
 
-              mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*o.easedP[0]}px)")
+              mojs.h.style(@tongueEl, 'transform', "translateX(#{-550*o.easedP[0]}px) translateZ(0)")
               
               "translateX(#{(-550*o.easedP[0]).toFixed(2)}px)"
             }
@@ -1372,7 +1385,7 @@ module.exports = React.createClass
               <li>
                 <span>
                   Draw an extreme-ease-in-out easing function (yep I did it in this tutorial), 
-                  then generate easing function from it. Make a stick to move 180px right with 
+                  then generate easing function from it. Make the stick to move 180px right with 
                   this generated easing to get the next result:
                 </span>
 
@@ -2036,7 +2049,7 @@ module.exports = React.createClass
 
     className = if @state.isShow then 'is-show' else ''
     classNameLoading = if @state.isShow then 'is-hide' else ''
-    <Resizable className="post" onResize=@_onResize>
+    <Resizable className="post" onResize=@_onResize id="post">
       <div className="post__loading #{classNameLoading}"> Loading The Post.. </div>
       <div className="post__content #{className}">{content}</div>
     </Resizable>
