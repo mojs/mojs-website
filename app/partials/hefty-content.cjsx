@@ -6,13 +6,13 @@ Hammer    = require 'hammerjs'
 require 'css/partials/hefty-content'
 
 module.exports = React.createClass
-  componentDidMount:->
-    (new Hammer document.body).on 'tap', (e)=>
-      has = e.srcEvent.
-      target.classList.contains.bind e.srcEvent.target.classList
-      return if has('hefty-content__curtain') or has('hefty-content__curtain-label')
-      @_onHide(e)
-      true
+  componentDidMount:-> (new Hammer document.body).on 'tap', @_handleBodyTap
+
+  _handleBodyTap:(e)->
+    has = e.srcEvent.target.classList.contains.bind e.srcEvent.target.classList
+    return if has('hefty-content__curtain') or has('hefty-content__curtain-label')
+    @_onHide(e)
+    true
   
   getInitialState:-> {isShow: true}
 
@@ -60,8 +60,8 @@ module.exports = React.createClass
       cursor: 'default'
 
     <div  className = "hefty-content #{@props.className or ''}"
-                style    = style
-                onTap    = { @_onHide } >
+          style     = style
+          onTap     = { @_onHide } >
       
       <div
         className = "hefty-content__inner"

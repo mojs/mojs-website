@@ -18,7 +18,6 @@ module.exports = React.createClass
     delay:    1000
 
   _start:->
-    console.log 'start'
     if !@_easing.length
       if mojs.h.isArray @props.path
         @_easing.push @_makePath @props.path[i] for path, i in @props.path
@@ -63,7 +62,7 @@ module.exports = React.createClass
 
     <HeftyContent
       className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
-      onShow          = { => console.log('str'); @_start() } onHide={ => @_stop(); @_onHide() } >
+      onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() } >
 
       <div className="easing-object-graph__inner">
         

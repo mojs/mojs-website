@@ -3,7 +3,6 @@
 {el = '.post'}
   color             c-white
   line-height       1.9
-  // hl()
   &__content
     opacity         0
     transition      opacity .4s ease-out
@@ -12,7 +11,6 @@
   &__loading
     position        fixed
     nw              50%
-    // margin-left    -8*gs  
     margin-top      3.5*gs
     &.is-hide
       display       none 
@@ -56,14 +54,12 @@
   .easing-object-graph
     margin          5*gs 0
     height          320*PX
-    opacity 0
-    transition opacity .2s ease-out
+    opacity         0
+    transition      opacity .2s ease-out
+    @media all and (max-width: 720px)
+      height        2*320*PX
     &.is-shown
-      opacity 1
-    // & + .code-sample
-    //   // max-width     64*gs
-    //   margin-top   -6.1*gs
-    //   fly()
+      opacity       1
   &__reverse-block
     margin-top     -4*gs
   &__center-text
