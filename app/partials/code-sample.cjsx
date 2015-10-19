@@ -54,7 +54,7 @@ module.exports = React.createClass
         <div className="code-sample__codes">{items}</div>
       </div>
       <div className="code-sample__pen">
-        <HeftyContent isLaunchOnHover = { true } onShow = @_initPen onHide = @_hidePen >
+        <HeftyContent label = { 'tap to see the result' } onShow = @_initPen onHide = @_hidePen >
           { if !@state.isInit or @state.isHidden then null else <Pen pen={@props.pen} /> }
         </HeftyContent>
       </div>
