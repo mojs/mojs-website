@@ -74,7 +74,14 @@ codeSampleBorder()
     
   .hefty-content
     &__inner
-      display block
+      display         block
+      min-height      345*PX
+      border-bottom-left-radius  BRADIUS
+      border-bottom-right-radius BRADIUS
+      overflow        hidden
+    &__curtain
+      border-top-left-radius  0
+      border-top-right-radius 0
     
   &.is-alone
     {el}__syntax

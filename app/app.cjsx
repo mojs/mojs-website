@@ -10,8 +10,15 @@ require './css/main.styl'
 window.onbeforeunload = ->
   sessionStorage.setItem('beforeUnloadURL', window.location.href)
 
+window.MojsWebsite = {}
+
 module.exports = React.createClass
   contextTypes: router: React.PropTypes.func
+  _loop:->
+    window.MojsWebsite.scrollY = if window.pageYOffset? then window.pageYOffset
+    else document.scrollTop
+    requestAnimationFrame(@_loop)
+  componentDidMount:-> @_loop()
   render:->
     name = @context.router.getCurrentPath()
     name = '/tutorials' if name.match /tutorials/

@@ -67,6 +67,7 @@ module.exports = React.createClass
     else @_onAdd?()
 
   _loop:->
+    return
     if @isStop or (@stopCnt++ > 3) then @_isLooping = false; return @stopCnt = 0
     @_isLooping = true
     @_checkVisibility()
@@ -84,7 +85,10 @@ module.exports = React.createClass
   componetWillUnmount:-> @_unbindScroll(); @isStop = true
 
   componentDidMount:->
-    @stopCnt = 0; @_bindScroll(); @_bindWindowResize(); @_getPosition()
+    @stopCnt = 0;
+    # @_bindScroll();
+    @_bindWindowResize();
+    @_getPosition()
 
   _makePath:(path)-> mojs.easing.path path, precompute: 2000, eps: .001
 

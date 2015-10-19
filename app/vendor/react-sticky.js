@@ -25,15 +25,16 @@ var Sticky = React.createClass({
     };
   },
 
+  _getScrollY: function () {
+    return (window.pageYOffset != null) ? window.pageYOffset : document.scrollTop;
+  },
+
   top: function() {
-    return this.getDOMNode().getBoundingClientRect().top;
+    return top;
   },
 
   shouldBeSticky: function() {
-    var position = this.getDOMNode().style.position;
-    this.getDOMNode().style.position = 'relative';
-    var shouldBeSticky = this.top() <= -this.props.topOffset;
-    this.getDOMNode().style.position = position;
+    var shouldBeSticky = this._getScrollY() >= this._offsetTop + this.props.topOffset;
     return shouldBeSticky;
   },
 
@@ -72,6 +73,7 @@ var Sticky = React.createClass({
   },
 
   componentDidMount: function() {
+    this._offsetTop = this.getDOMNode().offsetTop;
     this.state.events.forEach(function(type) {
       window.addEventListener(type, this.handleEvent);
     }, this);

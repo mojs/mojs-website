@@ -9,7 +9,8 @@ module.exports = React.createClass
   componentDidMount:->
     @stopCnt = 0
     if @props.isLaunchOnHover then @setState isShow: true
-    @_bindScroll(); @_bindWindowResize(); @_getPosition()
+    else
+      @_bindScroll(); @_bindWindowResize(); @_getPosition()
     (new Hammer document.body).on 'tap', (e)=>
       has = e.srcEvent.target.classList.contains.bind e.srcEvent.target.classList
       return if has('hefty-content__curtain') or has('hefty-content__curtain-label')
@@ -21,14 +22,13 @@ module.exports = React.createClass
   getInitialState:-> {}
   _bindWindowResize:-> window.addEventListener 'resize', @_deferredGetPosition
   _unbindWindowResize:-> window.removeEventListener 'resize', @_deferredGetPosition
-  _getScrollY:-> if window.pageYOffset? then window.pageYOffset else document.scrollTop
   _deferredGetPosition:-> setTimeout @_getPosition, 500
   _getPosition:->
     node = @getDOMNode().childNodes[0]; rect = node.getBoundingClientRect()
-    scrollY = @_getScrollY(); @wHeight = window.innerHeight
+    scrollY = window.MojsWebsite.scrollY; @wHeight = window.innerHeight
     @top = scrollY + rect.top; @bottom = scrollY + rect.bottom
   _checkVisibility:()->
-    scrollY = @_getScrollY()
+    scrollY = window.MojsWebsite.scrollY
     isShow = if scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100 then true
     else false
 
@@ -41,7 +41,7 @@ module.exports = React.createClass
   _unbindScroll:-> document.removeEventListener 'scroll', @_startLoop
 
   _checkHide:->
-    scrollY = @_getScrollY()
+    scrollY = window.MojsWebsite.scrollY
     isShow = scrollY + @wHeight > @top - 100 and scrollY < @bottom + 100
     @_onHide() if !isShow and @_isShow
 
@@ -50,7 +50,8 @@ module.exports = React.createClass
     !@_isLooping and @_loop()
 
   _loop:->
-    if @isStop or (@stopCnt++ > 3) then @_isLooping = false; return @stopCnt = 0
+    if @isStop or (@stopCnt++ > 3)
+      @_isLooping = false; return @stopCnt = 0
     @_isLooping = true
     if @props.isLaunchOnHover then @_checkHide() else @_checkVisibility()
     requestAnimationFrame(@_loop)

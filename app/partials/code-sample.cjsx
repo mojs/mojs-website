@@ -19,20 +19,15 @@ module.exports = React.createClass
   _showes6:-> @state.show isnt 'es6' and @setState show: 'es6'
   _showcs:->  @state.show isnt 'cs'  and @setState show: 'cs'
 
-  getInitialState:-> { show: 'js', isInit: false }
-  _initPen:-> @setState 'isInit': true
+  getInitialState:-> { show: 'js', isInit: false, isHidden: false }
+  _initPen:-> @setState('isInit': true, 'isHidden': false)
+  _hidePen:-> @setState 'isHidden': true
     
-  shouldComponentUpdate:(nextProps, nextState)-> @state.show isnt nextState.show or @state.isInit isnt nextState.isInit
-  componentDidUpdate:->
-    node = @getDOMNode()
-    activeEl = node.querySelector '.line-numbers.is-show'
-    syntax   = node.querySelector '#js-syntax'
-    syntax.style.height = "#{activeEl.offsetHeight + 2}px"
-    tween    = new mojs.Tween
-      onUpdate:(p)-> activeEl.style.opacity = p
-      onComplete:-> activeEl.style.opacity = 1
-    tween.run()
-    # @_loadPen()
+  shouldComponentUpdate:(nextProps, nextState)->
+    show = @state.show isnt nextState.show
+    init = @state.isInit isnt nextState.isInit
+    hide = @state.isHidden isnt nextState.isHidden
+    show or init or hide
 
   render:->
     items = []; itemButtons = []
@@ -45,13 +40,12 @@ module.exports = React.createClass
       lang = if key is 'cs' then 'coffeescript' else 'javascript'
       id   = "js-#{@props.pen}-#{key}"
       showClass = if @state.show is key then 'is-show' else ''
-      items.push  <pre className="line-numbers #{showClass}" id="#{id}" style={opacity:0} key={i}>
+      items.push  <pre className="line-numbers #{showClass}" id="#{id}" key={i}>
                     <PrismCode className="language-#{lang} code-sample__code">
                       { value }
                     </PrismCode>
                   </pre>
       itemButtons.push <Tappable className="code-sample__button #{showClass}" onTap=@["_show#{key}"] key={i}>{key}</Tappable>
-
 
     className = if !@props.pen? then 'is-alone' else ''
     <div className="code-sample #{className}">
@@ -60,8 +54,8 @@ module.exports = React.createClass
         <div className="code-sample__codes">{items}</div>
       </div>
       <div className="code-sample__pen">
-        <HeftyContent isVisibilityToggle={true} onShow = @_initPen >
-          { if !@state.isInit then null else <Pen pen={@props.pen} /> }
+        <HeftyContent isLaunchOnHover = { true } onShow = @_initPen onHide = @_hidePen >
+          { if !@state.isInit or @state.isHidden then null else <Pen pen={@props.pen} /> }
         </HeftyContent>
       </div>
     </div>
