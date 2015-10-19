@@ -20,13 +20,13 @@ module.exports = React.createClass
     e?.stopPropagation?(); e?.preventDefault?();
     return if @_isShow; @_isShow = true
     @_hideCurtain()
-    @props.onShow?()
+    # @props.onShow?()
 
   _onHide:(e)->
     e?.preventDefault?(); e?.stopPropagation?()
     return if !@_isShow; @_isShow = false
     @_showCurtain()
-    @props.onHide?()
+    # @props.onHide?()
 
   _hideCurtain:()->
     @_curtainEl ?= @refs.curtain.getDOMNode()
