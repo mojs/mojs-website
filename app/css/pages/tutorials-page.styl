@@ -86,6 +86,7 @@ sidebarWidth = 21
     z-index         1
     cursor          pointer
     transform       translateZ(0)
+    transition      transform .2s ease-out
     // display         none
     circle          4*gs
     &:before,
@@ -109,8 +110,13 @@ sidebarWidth = 21
         transform   translate3d(2*PX, 2*PX, 0)
       &:before
         transform   translate3d(-2*PX, -2*PX, 0)
+    .is-header-pinned .sticky &
+      transform     translateY(7*gs) translateZ(0)
     // @media all and (max-width: 1120px)
     //   display     block
+  &__svg-arrow
+    position        absolute
+    z-index         2
   .react-sticky
     position        absolute
     min-height      100%
@@ -120,9 +126,8 @@ sidebarWidth = 21
     right auto !important
   .tutorials-sidebar
     fly()
-  &__svg-arrow
-    position        absolute
-    z-index         2
+    .is-header-pinned .sticky &
+      transform translateY(5*gs)
   .post
     max-width       80*gs
     fly()

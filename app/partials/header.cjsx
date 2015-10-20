@@ -13,22 +13,25 @@ require '../css/partials/header.styl'
 Header = React.createClass
   getInitialState:->
     Router.HistoryLocation.addChangeListener (route)=> @setState 'page': route.path
-    {}
+    { headerPinClass: 'is-header-pinned' }
   _toggleMobileMenu:-> @setState isShowMenu: !@state.isShowMenu
   _onTap:(e)->
     isLink = e.target.classList.contains('link')
     isLinkParent = e.target.parentNode.classList.contains('link')
-    setTimeout =>
-      @_toggleMobileMenu() if isLink or isLinkParent
-    , 100
+    setTimeout (=> @_toggleMobileMenu() if isLink or isLinkParent), 100
     e
+
+  componentDidMount:-> @_headEl = document.querySelector 'html'
+
+  _onPin:->   @_headEl.classList.add     @state.headerPinClass
+  _onUnpin:-> @_headEl.classList.remove  @state.headerPinClass
 
   render:->
     headerClass = if @state.isShowMenu then 'is-show-menu' else ''
     btnClass    = if @state.isShowMenu then 'is-open'      else ''
 
     <Tapable className="header #{headerClass}" onTap=@_onTap>  
-      <Headroom>
+      <Headroom onPin = {@_onPin} onUnpin = {@_onUnpin}>
         <Link to="app" className="header__logo-link">
           <Icon className="header__logo" path="mojs-loop" />
         </Link>

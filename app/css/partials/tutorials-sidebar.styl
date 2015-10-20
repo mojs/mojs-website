@@ -17,6 +17,9 @@ cl-semi-orange = rgba(c-orange, .5)
     border-right    PX solid cl-semi-orange
     padding-right   2*gs
     padding-top     .8*gs
+    transition      transform .2s ease-out
+    .is-header-pinned .sticky &
+      transform translateY(9.5*gs)
   &__link
     color           c-white
     text-decoration none
