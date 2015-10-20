@@ -17,6 +17,7 @@ module.exports = React.createClass
     customLabel1El = @refs['customLabel1'].getDOMNode()
     customLabel2El = @refs['customLabel2'].getDOMNode()
     pointEl        = @refs["point"].getDOMNode()
+    mojs.h.style customEl,   'transform', "translate3d(100px, 0, 0)"
     @_tween = new mojs.Tween
       duration: @props.duration
       onUpdate: (p)=>

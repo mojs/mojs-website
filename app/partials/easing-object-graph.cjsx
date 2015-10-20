@@ -18,15 +18,17 @@ module.exports = React.createClass
     delay:    1000
 
   _start:->
-    if !@_easing.length
-      if mojs.h.isArray @props.path
-        @_easing.push @_makePath @props.path[i] for path, i in @props.path
-      else @_easing.push @_makePath @props.path
+    @setState {'isShow': true}
+    @_initEasings() if !@_easing.length
     @_isTweensAdded and @_timeline.start(); @_isShow = true
+  _stop:->   @_timeline.pause(); @_isShow = false
+  _onAdd:->  @_isTweensAdded = true; (@_isShow or !@_isShow?) and @_start()
+  _onHide:-> @setState {'isShow': false, isSquash: false}
 
-  _stop:-> @_timeline.pause(); @_isShow = false
-  _onAdd:->   @_isTweensAdded = true; (@_isShow or !@_isShow?) and @_start()
-  _onHide:->  @setState isSquash: false
+  _initEasings:->
+    if mojs.h.isArray @props.path
+      @_easing.push @_makePath @props.path[i] for path, i in @props.path
+    else @_easing.push @_makePath @props.path
 
   _showObject:(e)-> @_toggleSquash(e); @setState pop: 'object'
   _showGraph:(e)->  @_toggleSquash(e); @setState pop: 'graph'
@@ -60,27 +62,33 @@ module.exports = React.createClass
     @_timeline ?= new mojs.Timeline repeat: 99999999
     @_easing ?= []
 
+    graphsStyle = { visibility: if @state.isShow then 'visible' else 'hidden' }
+
     <HeftyContent
+      label           = "tap to see the graph"
       className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
       onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() } >
 
       <div className="easing-object-graph__inner">
+        <span style = {graphsStyle}>
         
-        <Tappable onTap = @_showObject >
-          <EasingObject
-            timeline    = {@_timeline}
-            easing      = {@_easing}
-            duration    = {@props.duration}
-            delay       = {@props.delay}
-            onStart     = {@props.onStart}
-            onUpdate    = {@props.onUpdate}
-            background  = {@props.background}
-            isAlone     = { @props.isGraphLess }>
-            {@props.children}
-          </EasingObject>
-        </Tappable>
+          <Tappable onTap = @_showObject >
+            <EasingObject
+              timeline    = {@_timeline}
+              easing      = {@_easing}
+              duration    = {@props.duration}
+              delay       = {@props.delay}
+              onStart     = {@props.onStart}
+              onUpdate    = {@props.onUpdate}
+              background  = {@props.background}
+              isAlone     = {@props.isGraphLess}>
+              {@props.children}
+            </EasingObject>
+          </Tappable>
 
-        { @_makeGraph() }
+          { @_makeGraph() }
+
+        </span>
 
       </div>
 
