@@ -65,7 +65,7 @@ module.exports = React.createClass
     graphsStyle = { visibility: if @state.isShow then 'visible' else 'hidden' }
 
     <HeftyContent
-      label           = "tap to see the graph"
+      label           = { @props.curtainLabel or "tap to see the graph" }
       className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
       onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() } >
 

@@ -34,7 +34,7 @@ module.exports = React.createClass
   componentWillUnmout:-> clearTimeout @_tm
   componentDidMount:->
     @_checkHeight()
-    @_tm = setTimeout (=> @setState { isShow: true } ), 500
+    @_tm = setTimeout (=> @setState({ isShow: true }); @_setRealHeight() ), 500
 
   _checkHeight:->
     url = sessionStorage.getItem('beforeUnloadURL')
@@ -42,6 +42,9 @@ module.exports = React.createClass
     if url = window.location.href
       el = @getDOMNode()
       el.style['min-height'] = "#{height}px"
+
+  _setRealHeight:-> @getDOMNode().style['min-height'] = "auto"
+
 
   render:->
     content = null
@@ -1389,6 +1392,7 @@ module.exports = React.createClass
                 </span>
 
                 <EasingObjectGraph
+                  curtainLabel = 'tap to see the result'
                   duration = { 3000 }
                   isGraphLess = { true }
                   onUpdate = { (o)->
@@ -1474,6 +1478,7 @@ module.exports = React.createClass
                 </span>
 
                 <EasingObjectGraph
+                  curtainLabel = 'tap to see the result'
                   duration = { 3000 }
                   isGraphLess = { true }
                   onUpdate = { (o)->
@@ -1550,6 +1555,7 @@ module.exports = React.createClass
                 </span>
 
                 <EasingObjectGraph
+                  curtainLabel = 'tap to see the result'
                   duration = { 3000 }
                   isGraphLess = { true }
                   onUpdate = { (o)->
@@ -1626,6 +1632,7 @@ module.exports = React.createClass
                   Add heartbeat scale property curve to describe the next effect:
                 </p>
                 <EasingObjectGraph
+                  curtainLabel = 'tap to see the result'
                   duration = { 3000 }
                   delay    = { 0 }
                   isGraphLess = { true }
@@ -1704,6 +1711,7 @@ module.exports = React.createClass
                 </p>
 
                 <EasingObjectGraph
+                  curtainLabel = 'tap to see the result'
                   duration = { 3000 }
                   delay    = { 0 }
                   isGraphLess = { true }
@@ -1794,6 +1802,7 @@ module.exports = React.createClass
 
                 { propCurveEasing1 =  mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,100 50,100 100,100' }
                 <EasingObjectGraph
+                  curtainLabel = 'tap to see the result'
                   duration = { 3000 }
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-1')
@@ -1878,6 +1887,7 @@ module.exports = React.createClass
                 { propCurveEasing2 =  mojs.easing.path 'M0,100 C50,100 50,100 50,50 L50,0 L50,50 C50,72.6779468 52.8514147,105.033368 57.1929207,112.031548 C62.851963,121.153496 67.6802979,100 67.6802979,100 C67.6802979,100 70.6599579,81.7189484 74.2423482,100 C74.2423477,100 77.2498016,111.29863 80.7531832,100 C82.0066376,97.3673859 82.9997787,94.8164368 85.6327322,100 C87.1416016,103.389648 88.1576157,100 100,100' }
 
                 <EasingObjectGraph
+                  curtainLabel = 'tap to see the result'
                   duration = { 3000 }
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-2')
@@ -1958,6 +1968,7 @@ module.exports = React.createClass
                 }
 
                 <EasingObjectGraph
+                  curtainLabel = 'tap to see the result'
                   duration = { 3000 }
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-3')

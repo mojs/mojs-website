@@ -21,7 +21,7 @@ module.exports = React.createClass
   componentDidMount:-> @_loop()
   render:->
     name = @context.router.getCurrentPath()
-    name = '/tutorials' if name.match /tutorials/
+    # name = '/tutorials' if name.match /tutorials/
     <div onTap=@_onTap className="app">
       <Header />
       <TransitionGroup className="pages-wrapper" component="div">

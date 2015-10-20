@@ -5,8 +5,6 @@
 
 - fix features copy // front page
 - add custom font
-- fix graph line
-- more state on reload
 
 - buy domain
 - push site to the domain
