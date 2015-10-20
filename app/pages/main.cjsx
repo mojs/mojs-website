@@ -112,7 +112,7 @@ Main = React.createClass
         <div className="grid-bit grid-bit--4-12">
           <UniteLink
             type="button"
-            link="tutorials"
+            link="path-easing"
             className="button--green"> Learn </UniteLink>
         </div>
         <div className="grid-bit grid-bit--4-12">
