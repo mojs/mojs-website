@@ -1257,9 +1257,8 @@ module.exports = React.createClass
           <h2>Options</h2>
 
           <p> 
-            When you create an easing path with help 
-            of <span className="highlight">mojs.easing.path</span>, you can 
-            pass an object with options just after the path coordinates string, as the 
+            When you create an easing path with <span className="highlight">mojs.easing.path</span>, 
+            you can pass an object with options just after the path coordinates string, as the 
             second parameter:
           </p>
 
