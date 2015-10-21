@@ -6,7 +6,9 @@ Hammer    = require 'hammerjs'
 require 'css/partials/hefty-content'
 
 module.exports = React.createClass
-  componentDidMount:-> (new Hammer document.body).on 'tap', @_handleBodyTap
+  componentDidMount:->
+    @_body = (new Hammer document.body); @_body.on 'tap', @_handleBodyTap
+  componentWillUnmount:-> @_body.off 'tap', @_handleBodyTap
 
   _handleBodyTap:(e)->
     has = e.srcEvent.target.classList.contains.bind e.srcEvent.target.classList

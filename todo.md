@@ -1,7 +1,5 @@
 # todo
 
-- fix codepens to the new version + motion demo to the new version + property curves to the new version
-
 - buy domain
 - push site to the domain
 
