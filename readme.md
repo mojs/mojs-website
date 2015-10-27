@@ -1,5 +1,18 @@
 # mo · js website branch
 
+## Install
+```
+[sudo] npm i
+```
+
+## Launch
+```
+npm run dev
+```
+
+Then open `localhost:8080` in your browser.
+
+
 The MIT License (MIT)
 
 Copyright (c) 2015 Oleg Solomka(@LegoMushroom)
