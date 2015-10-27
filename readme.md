@@ -1,5 +1,7 @@
 # mo · js website branch
 
+Please make sure you are on the `dev` branch, never use `master` for changes.
+
 ## Install
 ```
 [sudo] npm i
@@ -9,11 +11,9 @@
 ```
 npm run dev
 ```
-
 Then open `localhost:8080` in your browser.
 
-
-The MIT License (MIT)
+## The MIT License (MIT)
 
 Copyright (c) 2015 Oleg Solomka(@LegoMushroom)
 
