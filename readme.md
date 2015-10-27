@@ -1,6 +1,19 @@
 # mo · js website branch
 
-The MIT License (MIT)
+Please make sure you are on the `dev` branch, never use `master` for changes.
+
+## Install
+```
+[sudo] npm i
+```
+
+## Launch
+```
+npm run dev
+```
+Then open `localhost:8080` in your browser.
+
+## The MIT License (MIT)
 
 Copyright (c) 2015 Oleg Solomka(@LegoMushroom)
 
