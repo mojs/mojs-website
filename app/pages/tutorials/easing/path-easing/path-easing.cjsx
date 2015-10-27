@@ -55,7 +55,7 @@ module.exports = React.createClass
           <ORXLine className="post__orx-line" />
 
           <p style= { textAlign: 'center' }>
-            <UniteLink link="http://codepen.io/sol0mka/pen/477056cb1ffe88c4bfbf8a3005d99496">demo on CodePen</UniteLink> | 
+            <UniteLink link="http://codepen.io/sol0mka/full/477056cb1ffe88c4bfbf8a3005d99496/">demo on CodePen</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/property-curves">demo's repo on GitHub</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
           </p>
@@ -225,7 +225,7 @@ module.exports = React.createClass
           </EasingObjectGraph>
 
           <em>
-            <i>Note</i>: This path easing is used in the <UniteLink link="http://codepen.io/sol0mka/pen/477056cb1ffe88c4bfbf8a3005d99496">final demo</UniteLink> (with small tweaks), 
+            <i>Note</i>: This path easing is used in the <UniteLink link="http://codepen.io/sol0mka/full/477056cb1ffe88c4bfbf8a3005d99496/">final demo</UniteLink> (with small tweaks), 
             particularly when white cube bounces on the floor.
           </em>
 
@@ -695,7 +695,7 @@ module.exports = React.createClass
           </p>
 
           <p>
-            Consider the <UniteLink link="http://codepen.io/sol0mka/pen/477056cb1ffe88c4bfbf8a3005d99496">final demo</UniteLink>, particulary the 
+            Consider the <UniteLink link="http://codepen.io/sol0mka/full/477056cb1ffe88c4bfbf8a3005d99496/">final demo</UniteLink>, particulary the 
             part when mole deviates slightly back to inhale some air and then bend forward swiftly with his tongue out:
           </p>
 
@@ -1373,7 +1373,7 @@ module.exports = React.createClass
           <br />
 
           <p style= { textAlign: 'center' }>
-            <UniteLink link="http://codepen.io/sol0mka/pen/477056cb1ffe88c4bfbf8a3005d99496">demo on CodePen</UniteLink> | 
+            <UniteLink link="http://codepen.io/sol0mka/full/477056cb1ffe88c4bfbf8a3005d99496/">demo on CodePen</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/property-curves">demo's repo on GitHub</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
           </p>
