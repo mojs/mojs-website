@@ -53,6 +53,12 @@ module.exports = React.createClass
           <div className="post__header">Easing / Path Easing</div>
           <div className="post__description"> This post is about path easing functions for your precise timing control.</div>
           <ORXLine className="post__orx-line" />
+
+          <p style= { textAlign: 'center' }>
+            <UniteLink link="http://codepen.io/sol0mka/pen/477056cb1ffe88c4bfbf8a3005d99496">demo on CodePen</UniteLink> | 
+            <UniteLink link="https://github.com/legomushroom/property-curves">demo's repo on GitHub</UniteLink> | 
+            <UniteLink link="https://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
+          </p>
           
           <p>
             Easing (or timing function) is the secret sauce ingredient that makes a good motion delightful. 
@@ -67,7 +73,7 @@ module.exports = React.createClass
 
           <p>
             Animation with equal interim spacing(read with linear easing) can 
-            envoke in human brain nothing than suspicious or dull response. 
+            envoke in our brain nothing than suspicious or dull response. 
             By contrast, excellent crafted easing appeal user's attention, 
             araise curiosity, thus involvement.
             That's why so crutial to embrace the full control over easing functions.
@@ -219,7 +225,7 @@ module.exports = React.createClass
           </EasingObjectGraph>
 
           <em>
-            <i>Note</i>: This path easing is used in the final demo (with small tweaks), 
+            <i>Note</i>: This path easing is used in the <UniteLink link="http://codepen.io/sol0mka/pen/477056cb1ffe88c4bfbf8a3005d99496">final demo</UniteLink> (with small tweaks), 
             particularly when white cube bounces on the floor.
           </em>
 
@@ -426,7 +432,7 @@ module.exports = React.createClass
             something like exponential-out easing. Don't get fooled by the fact that it looks 
             like an easing -- yes it starts at 0 and ends and 
             1 <span className="highlight">y</span> -- my intention was 
-            to describe how <span className="highlight">translateY</span> property 
+            to describe how the <span className="highlight">translateY</span> property 
             will act in time, but not ease the change. Consider the next example for 
             better understanding what I mean.
           </p>
@@ -477,9 +483,10 @@ module.exports = React.createClass
             1 <span className="highlight">y</span>. In 
             fact <span className="highlight">property curves</span> can get 
             any <span className="highlight">y</span> value you want. It must obey 
-            one law for <span className="highlight">x</span> value though. 
-            It should start at 0 and end at 1, as it represents the progress and 
-            progress can't go beyond 1 as it makes no sense.
+            one law for <span className="highlight">x</span> value though - 
+            start at 0 and end at 1 <span className="highlight">x</span>, 
+            as it represents the progress and progress can't go beyond 1 as it 
+            makes no sense.
           </p>
 
           <p>
@@ -535,7 +542,7 @@ module.exports = React.createClass
             behave in time. Then we can compose them together to get our final motion.
             Yep it takes some time to wrap your head around this concept, but when you 
             are using it for few times, it feels very intuitive and you finally 
-            start to see the matrix in those random hieroglyphs(read path's coordinates).
+            start to see the truth.
           </p>
 
           <p>
@@ -688,7 +695,7 @@ module.exports = React.createClass
           </p>
 
           <p>
-            Consider the <UniteLink link="http://final demo">final demo</UniteLink>, particulary the 
+            Consider the <UniteLink link="http://codepen.io/sol0mka/pen/477056cb1ffe88c4bfbf8a3005d99496">final demo</UniteLink>, particulary the 
             part when mole deviates slightly back to inhale some air and then bend forward swiftly with his tongue out:
           </p>
 
@@ -1366,7 +1373,7 @@ module.exports = React.createClass
           <br />
 
           <p style= { textAlign: 'center' }>
-            <UniteLink link="http://codepen.io/">demo on CodePen</UniteLink> | 
+            <UniteLink link="http://codepen.io/sol0mka/pen/477056cb1ffe88c4bfbf8a3005d99496">demo on CodePen</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/property-curves">demo's repo on GitHub</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
           </p>
