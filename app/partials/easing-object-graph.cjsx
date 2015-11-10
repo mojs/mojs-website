@@ -58,6 +58,7 @@ module.exports = React.createClass
   render:->
     className = if (@state.isSquash) then "is-squash is-pop-#{@state.pop}" else ''
     className = if (@state.isShow) then 'is-shown' else ''
+    className += if (@props.isGraphLess) then 'is-graph-less' else ''
 
     @_timeline ?= new mojs.Timeline repeat: 99999999
     @_easing ?= []

@@ -51,10 +51,10 @@ module.exports = React.createClass
     if @state.isShow
       content = <div>
           <div className="post__header">Easing / Path Easing</div>
-          <div className="post__description"> This post is about path easing functions for your precise timing control.</div>
+          <div className="post__description"> This post is about path easing functions for precise timing function control.</div>
           <ORXLine className="post__orx-line" />
 
-          <p style= { textAlign: 'center' }>
+          <p className="post__top-links">
             <UniteLink link="http://codepen.io/sol0mka/full/477056cb1ffe88c4bfbf8a3005d99496/">demo on CodePen</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/property-curves">demo's repo on GitHub</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
@@ -63,8 +63,7 @@ module.exports = React.createClass
           <p>
             Easing (or timing function) is the secret sauce ingredient that makes our motion work
             look natural and delightful.
-            Linear movement can seem very unnatural, as in the physical world we live in - almost
-            nothing moves linearly.
+            Linear movement can seem very unnatural, as nothing moves linearly in the physical world we live in.
           </p>
 
           <Cite author="Stanislaw Ulam">
@@ -76,12 +75,12 @@ module.exports = React.createClass
             Animation with equal interim spacing (ie. with linear easing) can
             be dull, or make our brain respond with suspicion.
             By contrast, excellently crafted easing appeals to the user's attention,
-            and raises their curiosity, and draws them in.
+            and raises their curiosity, thus draws them in.
             That's why it's so crucial to embrace full control over easing functions.
           </p>
 
           <p>
-            Fortunately <span className="highlight">mo· js</span> &nbsp;
+            Fortunately <span className="highlight">mo· js</span>
             &nbsp;has the most comprehensive set of easing functions available on the modern web. Besides&nbsp;
               <UniteLink link="/easing/basic" isDisabled="true">
                 Base Easing Functions
@@ -231,7 +230,7 @@ module.exports = React.createClass
           <p>
             Here is my <UniteLink link="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</UniteLink> with this bouncy graph.
             Now we can generate our custom easing function from this SVG path.
-            To do this, copy the Path's commands from the
+            To do this, copy the Path's commands from the 
             <span className="highlight">d attribute</span> and pass them to 
             the <span className="highlight">mojs.easing.path</span> function (line 2) and 
             you will get a newly generated easing function back:
@@ -377,7 +376,7 @@ module.exports = React.createClass
             Let me try to express the idea of property curves in one sentence:
           </p>
 
-          <Cite author="LegoMushroom">
+          <Cite className="is-no-author">
             With a property curve we can specify (or draw)
             how a certain property behaves over time.
           </Cite>
@@ -432,7 +431,7 @@ module.exports = React.createClass
             like easing -- yes it starts at 0 and ends at
             1 <span className="highlight">y</span>. My intention was
             to describe how the <span className="highlight">translateY</span> property 
-            will act over time, without using an easing function. Consider the next example for
+            will act over time, consider the next example for
             a better understanding of what I mean.
           </p>
 
@@ -687,7 +686,7 @@ module.exports = React.createClass
           <p>
             Ok, now you have a little clue as to what the heck property curves are, and are hopefully
             convinced that they might be useful. This section will 
-            help you to gain some skills in how and when to use them. Generally, we can use curves for
+            help you to gain some skills in how and when to use them. Generally, we can use curves for 
             <UniteLink link="https://vimeo.com/111574737">lots of different purposes</UniteLink>, 
             but here we will talk with you about how to think in curves when you want to move an object
             on screen or transform it from one state to another.
@@ -943,7 +942,7 @@ module.exports = React.createClass
           </CodeSample>
 
           <p>
-            As you may notice, we've added some motion to the mouth's
+            As you may notice, we've added some motion to the mouth's 
             <span className="highlight">translateX</span> property 
             by reusing the base <span className="highlight">skew</span> curve again. 
             It adds a kind of cartoony feel to the movement.
@@ -953,7 +952,7 @@ module.exports = React.createClass
             Ok cool. Lets add tongue's motion. We need to wrap it with 
             a <span className="highlight">overflow: hidden;</span> wrapper,
             then apply the very first basic <span className="highlight">skew</span> curve 
-            for the <span className="highlight">translate</span> property:
+            for the <span className="highlight">translateX</span> property:
           </p>
 
           <EasingObjectGraph
@@ -1272,9 +1271,9 @@ module.exports = React.createClass
             { js: """
                       var easing = mojs.easing.path('M0,100 ..', {
                         // options
-                        precompute: 140,  // default, could be in range of 100 - 10000
-                        eps:        0.01, // default
-                        rect:       100   // default
+                        precompute: 1450,  // default, could be in range of 100 - 10000
+                        eps:        0.001, // default
+                        rect:       100    // default
                       });
               """
             }
@@ -1349,7 +1348,7 @@ module.exports = React.createClass
             (or at <span className="highlight">rect</span> option's value that you have set). 
             This rule comes from the fact that the <span className="highlight">x</span> axis 
             of your path represents <span className="highlight">progress</span> and the 
-            progress can't go beyond 100% or before 0%. This restriction is a must only for
+            progress can't go beyond 100% or before 0%. This restriction is a must only for 
             <span className="highlight">x</span> values and doesn't apply 
             to <span className="highlight">y</span> values of your path which can take
             any value you want.

@@ -25,7 +25,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Fast</div>
                 <div className="feature__text">
-                  Silky smooth animations for the staggering user's experience.
+                  Silky smooth animations and effects for staggering user's experience.
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Modular</div>
                 <div className="feature__text">
-                  Specific bundle for the current project's needs. Bye bye large file size overheads.
+                  Custom build for the current project's needs. Bye bye large file size overheads.
                 </div>
               </div>
             </div>
@@ -64,7 +64,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Robust</div>
                 <div className="feature__text">
-                  1000+ unit tests and ci techniques carve & backstrap the reliable tool.
+                  1100+ unit tests and ci techniques help us to carve & backstrap the reliable tool.
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Open Sourced</div>
                 <div className="feature__text">
-                  Great growing community refines the tool fast and ships frequently.
+                  Great growing community refines mo· js fast and ships frequently.
                 </div>
               </div>
             </div>
