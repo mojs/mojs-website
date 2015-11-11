@@ -16,7 +16,7 @@ routes = (
     <Route   name="main"            handler={Main}/>
     <Route   name="tutorials"       handler={Tutorials}>
       <Route   name="easing">
-        <Route name="path-easing"   handler={PathEasing} />
+        <Route name="/tutorials/easing/path-easing/"   handler={PathEasing} />
         {#<Route name="getting-started" handler={GettingStarted} />}
         {#<Route name="motion-path"     handler={MotionPath} />}
       </Route>
@@ -25,6 +25,6 @@ routes = (
   </Route>
 )
 
-# Router.run routes, Router.HistoryLocation, (Handler)->
-router = Router.run routes, (Handler)->
+Router.run routes, Router.HistoryLocation, (Handler)->
+  # router = Router.run routes, (Handler)->
   React.render(<Handler/>, document.getElementById('js-content'))

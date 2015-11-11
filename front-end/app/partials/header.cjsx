@@ -37,7 +37,7 @@ Header = React.createClass
         </Link>
         <div className="header__links">
           <div className="header__links-inner">
-            <UniteLink link="path-easing" className="header__link"> Tutorials </UniteLink>
+            <UniteLink link="/tutorials/easing/path-easing/" className="header__link"> Tutorials </UniteLink>
           </div>
           <div className="header__links-inner">
             <UniteLink isDisabled="true" link="/" className="header__link"> APIs </UniteLink>

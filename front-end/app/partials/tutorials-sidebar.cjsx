@@ -34,7 +34,7 @@ module.exports = React.createClass
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Base Easing Funcions </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Bezier Curves </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Springs </UniteLink>
-          <UniteLink link="path-easing" className="tutorials-sidebar__link"> Path Easing </UniteLink>
+          <UniteLink link="/tutorials/easing/path-easing/" className="tutorials-sidebar__link"> Path Easing </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Mix </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Helpers </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Transforms </UniteLink>

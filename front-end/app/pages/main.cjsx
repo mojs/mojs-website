@@ -34,7 +34,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Retina Ready</div>
                 <div className="feature__text">
-                  Screen density independent effects as a response to the modern web call.
+                  Screen density independent effects look good on any device.
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@ Main = React.createClass
         <div className="grid-bit grid-bit--4-12">
           <UniteLink
             type="button"
-            link="path-easing"
+            link="/tutorials/easing/path-easing/"
             className="button--green"> Learn </UniteLink>
         </div>
         <div className="grid-bit grid-bit--4-12">

@@ -1402,6 +1402,10 @@ module.exports = React.createClass
             <br />
             A bunch of great stuff is coming up on other topics also so stay tuned!
           </p>
+          <p>
+            Big thanks to <UniteLink link="https://twitter.com/rachsmithtweets">Rachel Smith</UniteLink> for 
+            help in editing this tutorial!
+          </p>
 
           <br />
 
