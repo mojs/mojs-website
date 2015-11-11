@@ -716,13 +716,17 @@ module.exports = React.createClass
               "skewX(#{(75*o.easedP[0]).toFixed(2)}deg)"
             }
 
-            label="angle"
+            label="skewX angle"
             background="#50E3C2"
             path="M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100">
             
             <MoleSample id="js-mole-sample-1" />
 
           </EasingObjectGraph>
+
+          <p className="post__reverse-block">
+            <em>Y axis represents skewX angle</em>
+          </p>
 
           <p>
             As you can see, our curve goes <span className="highlight">above 0</span> slightly 
@@ -776,14 +780,21 @@ module.exports = React.createClass
               "rotate(#{(-200*angleP).toFixed(2)}deg)"
             }
 
-            label="angle"
+            label="hand's angle"
             background="#50E3C2"
             path="M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100">
             
             <MoleSample id="js-mole-sample-2" />
 
           </EasingObjectGraph>
+          
+          <p className="post__reverse-block">
+            <em>Y axis represents angle of the hand</em>
+          </p>
+          
+          <br />
 
+          <p>There is the full code. Lines 2, 3, 12 and 15 are new:</p>
           <CodeSample pen="95e3300c59686dc1d534d2b38c208ecc">
             { js: """var moleEl          = document.querySelector('#js-mole'),
                           moleHandEl      = document.querySelector('#js-mole-hand'),
@@ -835,13 +846,21 @@ module.exports = React.createClass
               "translate(#{(100*skewP).toFixed(2)}px, #{(-80*skewP).toFixed(2)}px) rotate(#{(-110*skewP).toFixed(2)}deg)"
             }
 
-            label="angle"
+            label="left hand's angle"
             background="#50E3C2"
             path="M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100">
             
             <MoleSample id="js-mole-sample-3" />
 
           </EasingObjectGraph>
+
+          <p className="post__reverse-block">
+            <em>Y axis represents angle and translation of the left hand</em>
+          </p>
+          
+          <br />
+          
+          <p>The full code. Lines 3 and 18 are new:</p>
 
           <CodeSample pen="f9b5528666780ef4e26e83fba7e4a4bb">
             { js: """var moleEl          = document.querySelector('#js-mole'),
@@ -904,13 +923,21 @@ module.exports = React.createClass
               "scale(#{mouthP.toFixed(2)}) translateX(#{(-100*skewP).toFixed(2)}px)"
             }
 
-            label="scale"
+            label="mouth's scale"
             background="#50E3C2"
             path="M0,0 C0,-145.307194 29.1828098,57.0115012 32.0031223,63.7232245 C86.2226562,57.0115012 100,72.4825934 100,72.4825934">
             
             <MoleSample id="js-mole-sample-4" />
 
           </EasingObjectGraph>
+
+          <p className="post__reverse-block">
+            <em>Y axis represents scale of the mouth</em>
+          </p>
+          
+          <br />
+          
+          <p>The full code. Lines 4, 8 and 22 are new:</p>
 
           <CodeSample pen="8d52f3b9b4f35d80cf72bf4dce24276d">
             { js: """var moleEl          = document.querySelector('#js-mole'),
@@ -966,7 +993,7 @@ module.exports = React.createClass
               "translateX(#{(-550*o.easedP[0]).toFixed(2)}px)"
             }
 
-            label="translateX"
+            label="tongue's translateX"
             background="#50E3C2"
             path="M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100">
             
@@ -979,6 +1006,10 @@ module.exports = React.createClass
             </div>
 
           </EasingObjectGraph>
+
+          <p className="post__reverse-block">
+            <em>Y axis represents tranlateX of the tongue</em>
+          </p>
 
           <p>
             Pretty simple and neat. Now we can add <span className="highlight">noize</span> curve to imitate 
@@ -1015,6 +1046,10 @@ module.exports = React.createClass
             </div>
 
           </EasingObjectGraph>
+
+          <p className="post__reverse-block">
+            <em>Y axis represents Y position of the quadratic Bezier curve's handle of the tongue's path</em>
+          </p>
 
           <p>
             We will reuse this noise curve shortly.
@@ -1242,7 +1277,7 @@ module.exports = React.createClass
 
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="http://codepen.io/sol0mka/pen/dbb8241ed1e7eda8c58e850391f9a1a7">codepen</UniteLink> for the graph above.
+              <UniteLink link="http://codepen.io/sol0mka/pen/dbb8241ed1e7eda8c58e850391f9a1a7">codepen</UniteLink> for the graph above (lines 17-37 and 52 on js tab).
             </em>
           </p>
 
