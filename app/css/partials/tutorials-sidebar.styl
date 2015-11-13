@@ -1,0 +1,48 @@
+@import '../imports.styl'
+@import '../blocks/shapes.styl'
+
+cl-semi-orange = rgba(c-orange, .5)
+{el = '.tutorials-sidebar'}
+  position          relative
+  text-align        left
+  width             17.5*gs
+  font-size         16*PX
+  letter-spacing    PX
+  height            100%
+  // overflow-y        auto
+  &__header
+    color           c-orange
+    margin-bottom   .5*gs
+  &__content
+    border-right    PX solid cl-semi-orange
+    padding-right   2*gs
+    padding-top     .8*gs
+    transition      transform .2s ease-out
+    .is-header-pinned .sticky &
+      transform translateY(9.5*gs)
+  &__link
+    color           c-white
+    text-decoration none
+  &__section
+    padding-bottom  3.5*gs
+    {el}__link
+      // margin-top    1.5*gs
+      margin-top    1*gs
+      line-height   1.5
+      width         100%
+  &__social-networks
+    margin-left     3.5*gs
+    margin-top      4.5*gs
+    transform       scale(.85)
+  .orx-line
+    position        relative
+    top             .6*gs
+    width           200%
+  .link
+    &__underline
+      background    c-orange
+      top           50%
+      margin-top   -2*PX
+      left         -2*gs
+      circle        4*PX
+    

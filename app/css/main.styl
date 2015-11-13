@@ -1,0 +1,80 @@
+@import './imports'
+@import './icons'
+// @import './blocks/'
+@import './pages/base-page'
+@import './grid'
+@import './highlight'
+@import './fonts/style'
+
+body
+  overflow-x      hidden
+  font-family     'Century Gothic', AppleGothic, 'CenturyGothic', sans-serif
+  background      c-purple
+  letter-spacing  PX
+  user-select     initial !important
+a,
+.link
+  color c-orange
+  text-decoration none
+  
+  &:active
+    user-select none
+
+html, body
+  margin      0
+  padding     0
+*
+  box-sizing border-box
+  
+.app
+  user-select auto !important
+  cursor default !important
+  tap-highlight-color auto
+em
+  background      c-white-transparent
+  padding         0 .5*gs .3*gs .7*gs
+  border-radius   BRADIUS
+  font-style      normal
+  
+.touchable
+  &:active
+    transform   translate(0, 2*PX)
+    &:after
+      transform   translate(0, -2*PX)
+  &:after
+    content     ''
+    position    absolute
+    opacity     .5
+    nw          -20%
+    rect        140%
+  &.is-disabled
+    opacity     .2
+    &:active
+      transform   none
+    &:after
+      transform   none
+      
+.w-100p-g
+  width 100%
+  
+.fly-g
+  fly()
+  
+// CLEARFIX
+.cf:after,
+.cf:before
+  content ''
+  display table
+.cf:after
+  clear both
+.cf
+  zoom 1
+  
+selection()
+  color       white
+  background  c-orange
+*::selection
+  selection()
+*::-moz-selection
+  selection()
+

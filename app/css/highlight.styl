@@ -1,0 +1,70 @@
+code
+  display         block
+  font-family     consolas, monospace
+  // font-family     inherit
+  line-height     1.4
+  letter-spacing  2*PX
+  
+pre
+  // font inherit
+  font-family     consolas, monospace
+  span
+    white-space pre
+.language-markup
+  .tag
+    > .punctuation
+      color white
+    > .tag
+      color c-orange
+.language-javascript,
+.language-coffeescript
+  .token
+    &.class-name
+      color c-blue
+    &.keyword
+      color c-pink
+    &.string
+      color c-yellow
+      color c-green
+    &.number
+      // color #00C5E9
+      color c-blue
+
+
+
+pre.line-numbers
+  position        relative
+  padding-left    3.5*gs
+  counter-reset   linenumber
+  margin          0
+  & > code
+    position      relative
+
+.line-numbers-rows
+  position          absolute
+  pointer-events    none
+  top               0
+  bottom            0
+  left             -3.8*gs
+  text-align        center
+  width             4*gs
+  font-size         100%
+  letter-spacing   -1px
+  user-select       none
+  > span
+    pointer-events    none
+    display           block
+    counter-increment linenumber
+    &:before
+      content         counter(linenumber)
+      display         block
+      padding-right   0.3em
+      text-align      right
+      
+.highlight
+  border        1px solid rgba(c-orange, .85)
+  color c-orange
+  // color         white
+  padding       1*PX 6*PX 2*PX
+  border-radius 4*PX
+  font-size     .8em

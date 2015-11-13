@@ -1,0 +1,168 @@
+@import '../imports.styl'
+
+{el = '.post'}
+  color             c-white
+  line-height       1.9
+  &__content
+    opacity         0
+    transition      opacity .4s ease-out
+    &.is-show
+      opacity       1
+  &__loading
+    position        fixed
+    nw              50%
+    margin-top      3.5*gs
+    transform       translateX(-50%)
+    margin-left     0*PX
+    .is-sidebar-open &
+      margin-left 90*PX
+    &.is-hide
+      display       none 
+  &__header
+    color           c-orange
+    font-size       24*PX
+    letter-spacing  2*PX
+  &__description
+    color           c-orange
+    font-size       16*PX
+    opacity         .5
+    margin-top      .8*gs
+  &__top-links
+    font-size       12*PX
+    text-align      center
+    padding         gs 0 
+  p
+    // text-align      justify
+    & + p
+      margin-top    1*gs
+    +mobile()
+      line-height   1.5
+      text-align    left
+    &.post__reverse-block
+      text-align    center
+  ul
+    margin          4*gs 0
+    @media all and (max-width: 600px)
+      padding 0
+    // max-width       50*gs
+  li
+    list-style      none
+    position        relative
+    &:before
+      content       '•'
+      position      absolute
+      color         c-orange
+      left         -2*gs
+    & + li
+      margin-top    gs
+  h2, h3
+    color           c-orange
+    margin          5*gs 0
+    font-weight     normal
+  em
+    font-size       12*PX
+    & + em
+      margin-left   1*gs
+  height = 320
+  .easing-object-graph
+    margin          5*gs 0
+    height          height*PX
+    opacity         0
+    transition      opacity .2s ease-out
+    @media all and (max-width: 720px)
+      height        2*height*PX
+      &.is-graph-less
+        height      height*PX
+    &.is-shown
+      opacity       1
+  &__reverse-block
+    margin-top     -4*gs
+    @media all and (max-width: 720px)
+      margin-top   gs
+    @media all and (max-width: 400px)
+      text-align center
+      em
+        font-size   11*PX
+  &__center-text
+    text-align      center
+  &__orx-line
+    margin          3.5*gs 0 3*gs
+    +mobile()
+      margin        1.5*gs 0 1*gs
+  &__last-orx-line
+    margin-top      9*gs
+    margin-bottom   0
+    max-width       40*gs
+    fly()
+    +mobile()
+      margin-top     5*gs
+  &__list-orx-line
+    // max-width     auto
+    margin-top    3*gs
+    margin-bottom 10*gs
+    max-width     32*gs
+    fly()
+    &--top
+      margin-top    4*gs
+      margin-bottom 3*gs 
+  &__social-networks-about
+    margin          9.5*gs auto 0
+    +mobile()
+      margin        6.5*gs auto 0
+  &__comments
+    margin-top      11*gs
+    +mobile()
+      margin-top    7*gs
+  .post-image
+    margin          5*gs auto
+    +mobile()
+      margin        3*gs auto
+  .cite
+    margin          5*gs auto 8*gs
+    &.is-no-author
+      margin        5*gs auto
+    +mobile()
+      margin        3*gs 0 6*gs
+      line-height   1.5
+  .code-sample
+    margin          3.5*gs 0
+    +mobile()
+      margin        2.5*gs 0 3.5*gs
+  .link
+    &.is-disabled
+      opacity .5
+    &__underline
+      bottom 1*PX
+  .easing-graph
+    & + p
+      margin-top 5*gs 
+  @media all and (max-width: 720px)
+    .easing-object-graph
+      margin        3*gs 0
+      .easing-object,
+      .easing-graph
+        clear       both
+      .easing-object
+        border-bottom-left-radius 0
+        border-top-right-radius   BRADIUS
+      .easing-graph
+        border-bottom-left-radius BRADIUS
+        border-top-right-radius   0
+  @media all and (max-width: 340px)
+    .easing-object-graph
+      margin          2*gs 0
+      margin-left    -1*gs
+  @media all and (max-width: 330px)
+    .easing-object-graph
+      margin-left    -1.5*gs
+  @media all and (max-width: 320px)
+    .easing-object-graph
+      margin-left    -2*gs
+      .easing-object,
+      .easing-graph
+        border-radius   0
+      
+
+        
+    
+    

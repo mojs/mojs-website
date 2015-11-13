@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="100px" height="100px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="helpers" transform="translate(-50.000000, -50.000000)" stroke="#979797" stroke-width="0.2">
-        <rect id="rect" x="50" y="50" width="100" height="100" fill="none"></rect>
-        <path d="M100,0 L100,200" id="horizontal-center-guide" fill="#000000"></path>
-        <path d="M0,100 L205,100" id="vertical-center-guide" fill="#000000"></path>
-    </g>
-    <path d="M0,100 C1.984375,100 2.70793815,100.073064 4.04394531,100 C4.73828125,98.8152313 5.81738611,94.8017758 5.81738611,94.8017758 L7.85351562,104.587891 L9.27734375,97.2636719 L11.072431,102.959963 L12.4135742,98.8152313 L14.050293,101.364746 L15.6270003,98.81523 L17.1100006,100 C50,99.1317495 50,93.4111819 50,50 C50,0 50,1.73472348e-18 100,0" id="eaxteme-ease-in-out-path" stroke="#000000" stroke-width="0.5" fill="none"></path>
-</svg>

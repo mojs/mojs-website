@@ -1,0 +1,80 @@
+@import '../imports.styl'
+
+{el = '.api-demo'}
+  position relative
+  &.is-result
+    {el}__result
+      opacity         1
+    {el}__code
+      opacity         0
+  &__buttons
+    position          absolute
+    top               24.8*gs
+    // margin-bottom     gs
+    display           none
+    clearfix()
+  &__button
+    padding           gs 1.5*gs
+    background        c-white-transparent
+    float             left
+    color             white
+    font-size         11*PX
+    letter-spacing    1.7*PX
+    border-bottom-left-radius   BRADIUS
+    border-bottom-right-radius  BRADIUS
+    opacity           .5
+    cursor            pointer
+    transition        opacity .2s ease-out
+    &:hover
+      opacity         .4
+    &:active
+      opacity         .3
+    &.is-active
+      opacity         1
+      cursor          default
+      &:active
+        opacity       1
+  &__code 
+    &--mobile
+      display         none
+  &__more
+    position          absolute
+    color             white
+    top               19.5*gs
+    +mobile()
+      top             29*gs
+  +mobile()
+    height            37*gs
+    margin-top        6.5*gs
+    border-bottom     PX solid c-white-transparent
+    margin-top        0
+    padding-top       4*gs
+    position          relative
+    {el}__result,
+    {el}__code
+      transition      opacity .3s ease-out
+    {el}__result
+      opacity         0
+      .code-block
+        &__body
+          height      18.2*gs
+    {el}__code
+      &--mobile
+        display       block
+      &--normal
+        display       none
+    {el}__buttons
+      display         block
+    .code-block
+      position        absolute
+      width           100%
+      left            0
+      &__body
+        border-bottom-left-radius   0
+      &__footer
+        line-height   1.9*gs
+        font-size     11*PX
+        width         20*gs
+
+
+

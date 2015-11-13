@@ -1,0 +1,14 @@
+
+metrics()
+  maxSize = 20
+  short = m p
+  long  = margin padding
+  for property, j in long
+    for i in 1..maxSize
+      shortSide = -l -r -t -b '';
+      longSide  = -left -right -top -bottom '';
+      for prop, x in longSide
+        .{short[j]}{shortSide[x]}-x{i}-g
+          {property}{prop} i*gs
+
+metrics()

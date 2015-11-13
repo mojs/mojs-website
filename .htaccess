@@ -1,0 +1,13 @@
+DirectoryIndex none.none
+RewriteEngine on
+
+# pass-through if another rewrite rule has been applied already
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule ^ - [L]
+# end of pass through
+
+#Account page redirects
+RewriteRule ^(.*)?dist(.*)?$ dist$2 [L]
+RewriteRule ^(.*)?app(.*)?$ app$2 [L]
+RewriteRule ^(.*) index.html [L]
+#End of Account page redirects

@@ -1,0 +1,42 @@
+@import '../imports.styl'
+
+{el = '.more'}
+  width 100%
+  &__header
+    position            relative
+    display             inline-block
+    cursor              pointer
+    padding-right       2.2*gs
+  arrowSize = 4
+  &__arrow
+    border              arrowSize*PX solid
+    border-top-color    transparent
+    border-right-color  transparent
+    transform           rotate(-45deg)
+    transition          transform .15s ease-out
+    position            absolute
+    right               .2*gs
+    top                 50%
+    margin-top         -(arrowSize*PX)
+    rect                0
+  &__content
+    overflow            hidden
+    height              0
+    opacity             0
+    transition          all .25s ease-out
+    text-align          left
+  &.is-center
+    text-align          center
+  &.is-h2
+    > {el}__header
+      font-size         1.5em
+      margin-top        5*gs 
+  &.is-open
+    > {el}__header > {el}__arrow
+      transform         rotate(135deg) translate(3*PX, -3*PX)
+    > {el}__content
+      opacity           1
+    &.is-border-bottom
+      border-bottom     PX solid rgba(c-orange, .5)
+    
+    
