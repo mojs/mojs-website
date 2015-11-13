@@ -1,8 +1,4 @@
 # todo
 
-- buy domain
-- push site to the domain
-
-- find editors for the tutorial
-- fix features copy // front page
+- add spinner to the index
 - publish projects to codepen and dribbble
