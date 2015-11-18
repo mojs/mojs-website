@@ -6,8 +6,10 @@
 @import '../blocks/motion-demo'
 
 {el = '.main-page'}
-  // position relative
-  // background  #3A0839 url('../i/pattern.png') repeat
+  opacity 0
+  transition opacity .25s linear
+  &.is-shown
+    opacity 1
   &__content
     max-width 70*gs
     fly()

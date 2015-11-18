@@ -12,8 +12,14 @@ SocialNetworksAbout = require '../partials/social-networks-about'
 require '../css/pages/main-page'
 
 Main = React.createClass
+  getInitialState: -> { isShow: false }
+  componentDidMount:->
+    @_tm = setTimeout (=> @setState({ isShow: true });), 100
+  componentWillUnmount:-> clearTimeout @_tm
   render:->
-    <div className="page main-page">
+
+    className = if @state.isShow then 'is-shown' else ''
+    <div className="page main-page #{className}">
       <div className="main-page__content">
         <div className="motion-lettering"></div>
         
