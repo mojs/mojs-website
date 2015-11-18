@@ -14,11 +14,6 @@ require '../css/pages/main-page'
 Main = React.createClass
   render:->
     <div className="page main-page">
-      <div className="spinner">
-        <div className="spinner__el spinner__el--circle"></div>
-        <div className="spinner__el spinner__el--rect"></div>
-        <div className="spinner__el spinner__el--cross"></div>
-      </div>
       <div className="main-page__content">
         <div className="motion-lettering"></div>
         
