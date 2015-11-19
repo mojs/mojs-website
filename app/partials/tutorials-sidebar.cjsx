@@ -25,6 +25,8 @@ module.exports = React.createClass
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Swirl            </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Burst            </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Spriter          </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Radial Spring    </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Spring Wave      </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Stagger Wrapper  </UniteLink>
         </div>
 
@@ -35,9 +37,9 @@ module.exports = React.createClass
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Bezier Curves </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Springs </UniteLink>
           <UniteLink link="/tutorials/easing/path-easing/" className="tutorials-sidebar__link"> Path Easing </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Mix </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Helpers </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Transforms </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Helpers </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Mix </UniteLink>
         </div>
 
         <div className="tutorials-sidebar__section">

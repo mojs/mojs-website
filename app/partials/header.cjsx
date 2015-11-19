@@ -21,7 +21,11 @@ Header = React.createClass
     setTimeout (=> @_toggleMobileMenu() if isLink or isLinkParent), 100
     e
 
-  componentDidMount:-> @_headEl = document.querySelector 'html'
+  componentDidMount:->
+    @_headEl = document.querySelector 'html'
+    @_tm = setTimeout (=> @setState({ isShow: true });), 100
+
+  componentWillUnmount:-> clearTimeout @_tm
 
   _onPin:->   @_headEl.classList.add     @state.headerPinClass
   _onUnpin:-> @_headEl.classList.remove  @state.headerPinClass
@@ -30,7 +34,8 @@ Header = React.createClass
     headerClass = if @state.isShowMenu then 'is-show-menu' else ''
     btnClass    = if @state.isShowMenu then 'is-open'      else ''
 
-    <Tapable className="header #{headerClass}" onTap=@_onTap>  
+    className = if @state.isShow then 'is-shown' else ''
+    <Tapable className="header #{headerClass} #{className}" onTap=@_onTap>  
       <Headroom onPin = {@_onPin} onUnpin = {@_onUnpin}>
         <Link to="app" className="header__logo-link">
           <Icon className="header__logo" path="mojs-loop" />
