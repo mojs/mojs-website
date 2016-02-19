@@ -1682,7 +1682,7 @@ module.exports = React.createClass
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-0')
 
-                    mojs.h.style(@el, 'transform', "scale(#{o.easedP[0]})")
+                    mojs.h.style(@el, 'transform', "scale(#{o.easedP[0]}) translateZ(0)")
                     
                     ""
                   }
@@ -1850,7 +1850,7 @@ module.exports = React.createClass
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-1')
 
-                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing1(o.p))}deg)")
+                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing1(o.p))}deg) translateZ(0)")
                     
                     ""
                   }
@@ -1882,7 +1882,7 @@ module.exports = React.createClass
                     onUpdate = { (o)->
                       @el ?= document.querySelector('#js-property-curve-task-1a')
 
-                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*o.easedP[1]}deg)")
+                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*o.easedP[1]}deg) translateZ(0)")
                       
                       ""
                     }
@@ -1935,7 +1935,7 @@ module.exports = React.createClass
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-2')
 
-                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg)")
+                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg) translateZ(0)")
                     
                     ""
                   }
@@ -1965,7 +1965,7 @@ module.exports = React.createClass
                     onUpdate = { (o)->
                       @el ?= document.querySelector('#js-property-curve-task-2a')
 
-                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg)")
+                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg) translateZ(0)")
                       
                       ""
                     }
@@ -2016,7 +2016,7 @@ module.exports = React.createClass
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-3')
 
-                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} )")
+                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} ) translateZ(0)")
                     
                     ""
                   }
@@ -2047,7 +2047,7 @@ module.exports = React.createClass
                     onUpdate = { (o)->
                       @el ?= document.querySelector('#js-property-curve-task-3a')
 
-                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} )")
+                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} ) translateZ(0)")
                       
                       ""
                     }

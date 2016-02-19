@@ -12,6 +12,8 @@
   opacity     0
   transition  all .3s ease-out
   nw          0
+  .is-safari &
+    font-weight 900
   &.is-show-menu
     {el}__link
       transform   rotateY(0) translateZ(0)
@@ -80,7 +82,7 @@
     display           inline-block
     position          absolute
     left              4.5*gs
-    top               3.5*gs
+    top               3.9*gs
     +mobile()
       top             1.8*gs
       left            2*gs

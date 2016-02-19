@@ -38,7 +38,7 @@ Header = React.createClass
     <Tapable className="header #{headerClass} #{className}" onTap=@_onTap>  
       <Headroom onPin = {@_onPin} onUnpin = {@_onUnpin}>
         <Link to="app" className="header__logo-link">
-          <Icon className="header__logo" path="mojs-loop" />
+          <Icon className="header__logo" path="mojs-logo-triangle" />
         </Link>
         <div className="header__links">
           <div className="header__links-inner">

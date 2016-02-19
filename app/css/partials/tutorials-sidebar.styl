@@ -9,6 +9,9 @@ cl-semi-orange = rgba(c-orange, .5)
   font-size         16*PX
   letter-spacing    PX
   height            100%
+  overflow-x  hidden
+  .is-safari &
+    font-weight 900
   // overflow-y        auto
   &__header
     color           c-orange
@@ -23,6 +26,28 @@ cl-semi-orange = rgba(c-orange, .5)
   &__link
     color           c-white
     text-decoration none
+    &.is-disabled
+      text-decoration line-through
+      opacity         1
+      color           c-creamy-semi
+      &:hover
+        &:after
+          opacity 1
+      &:after
+        opacity             0
+        content             'soon!'
+        position            absolute
+        left                137*PX
+        top                 50%
+        font-size           10*PX
+        color               rgba(#fff, .6)
+        margin-top         -.7*gs
+        background-color    #582A58
+        padding             0 2*PX 0*PX 4*PX
+        border-radius       BRADIUS
+        border-top-right-radius     0
+        border-bottom-right-radius  0
+        rect auto
   &__section
     padding-bottom  3.5*gs
     {el}__link

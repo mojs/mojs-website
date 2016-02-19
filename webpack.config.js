@@ -28,6 +28,7 @@ module.exports = {
     publicPath: 'dist/'
   },
   plugins: [new webpack.optimize.UglifyJsPlugin()],
+  // plugins: [],
   resolve: {
     root: [path.resolve('./app/'), path.resolve('./app/css/'), path.resolve('./app/partials/')],
     moduleDirectories: ['node_modules'],

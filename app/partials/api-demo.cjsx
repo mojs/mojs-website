@@ -71,7 +71,7 @@ module.exports = React.createClass
       </div>
       
       <div className="api-demo__more code-block__footer">
-        See more <Link link="tutorials">tutorials</Link> or <Link link="/" isDisabled="true">docs</Link>. Inspire at <Link link="https://github.com/legomushroom/mojs">demos</Link>.
+        See more <Link link="/tutorials/easing/path-easing/">tutorials</Link> or <Link link="/" isDisabled="true">docs</Link>. Inspire at <Link link="https://github.com/legomushroom/mojs">demos</Link>.
       </div>
 
     </div>

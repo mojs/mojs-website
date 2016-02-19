@@ -25,12 +25,16 @@
   &__description
     color           c-orange
     font-size       16*PX
-    opacity         .5
+    opacity         .75
     margin-top      .8*gs
+    .is-safari &
+      font-weight 900
   &__top-links
     font-size       12*PX
     text-align      center
-    padding         gs 0 
+    padding         gs 0
+    .is-safari &
+      font-weight 900
   p
     // text-align      justify
     & + p
