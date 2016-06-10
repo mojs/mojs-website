@@ -39,7 +39,7 @@ module.exports = React.createClass
       onUpdate: (p)=> @_curtainEl.style.opacity = 1-p
       onComplete: => @_curtainEl.style.display = 'none'; @props.onShow?()
     @_curtainShowTween?.stop()
-    @_curtainHideTween.run()
+    @_curtainHideTween.play()
 
   _showCurtain:()->
     @_curtainEl ?= @refs.curtain.getDOMNode()
@@ -51,7 +51,7 @@ module.exports = React.createClass
       onUpdate:(p)=> @_curtainEl.style.opacity = p
       onComplete: => @_curtainEl.style.opacity = 1; @props.onHide?()
     @_curtainHideTween?.stop()
-    @_curtainShowTween.run()
+    @_curtainShowTween.play()
 
   render:->
     visibility = if !@state.isShow then 'hidden' else 'visible'

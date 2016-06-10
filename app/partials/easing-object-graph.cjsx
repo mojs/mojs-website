@@ -6,7 +6,7 @@ HeftyRenderingContent  = require './hefty-rendering-content.es6.js'
 
 React         = require 'react'
 Tappable      = require 'react-tappable'
-mojs          = require 'mo-js'
+# mojs          = require 'mo-js'
 
 require '../css/partials/easing-object-graph.styl'
 
@@ -20,7 +20,7 @@ module.exports = React.createClass
   _start:->
     @setState {'isShow': true}
     @_initEasings() if !@_easing.length
-    @_isTweensAdded and @_timeline.start(); @_isShow = true
+    @_isTweensAdded and @_timeline.play(); @_isShow = true
   _stop:->   @_timeline.pause(); @_isShow = false
   _onAdd:->  @_isTweensAdded = true; (@_isShow or !@_isShow?) and @_start()
   _onHide:-> @setState {'isShow': false, isSquash: false}

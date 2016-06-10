@@ -1,6 +1,6 @@
 React         = require 'react'
 Tappable      = require 'react-tappable'
-mojs          = require 'mo-js'
+# mojs          = require 'mo-js'
 Graph         = require 'partials/easing-graph-part'
 GraphLabel    = require 'partials/graph-label-part'
 

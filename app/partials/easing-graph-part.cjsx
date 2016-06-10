@@ -1,5 +1,5 @@
 React         = require 'react'
-mojs          = require 'mo-js'
+# mojs          = require 'mo-js'
 
 require '../css/partials/easing-graph-part.styl'
 

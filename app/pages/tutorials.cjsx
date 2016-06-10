@@ -8,7 +8,7 @@ Sticky          = require '../vendor/react-sticky'
 Physics         = require('impulse')
 # Sticky          = require 'react-sticky'
 Tappable        = require 'react-tappable'
-mojs            = require 'mo-js'
+# mojs            = require 'mo-js'
 Hammer          = require 'react-hammerjs'
 Cookies         = require 'cookies-js'
 
@@ -58,22 +58,26 @@ module.exports = React.createClass
     node = @getDOMNode().querySelector '#js-expand-btn'
     @burst = new mojs.Burst
       parent:     node
-      x: '15%',   y: '50%'
+      left: '15%',   y: '50%'
       radius:     30: 70
       degree:     160
       angle:      10
-      delay:      1000
       count:      4
-      stroke:     'white'
-      strokeWidth: 4: 0
-      type:       'line'
-      duration:   400
-      childOptions: radius: 4:0
+      children {
+        shape:      'line'
+        delay:      1000
+        stroke:     'white'
+        strokeWidth: 4: 0
+        duration:   400
+        radius:     4
+      }
+    @burst.replay()
 
   _redirect:->
     if @context.router.getCurrentPath() is '/tutorials'
       # setTimeout =>
-      @context.router.transitionTo('/tutorials/easing/path-easing')
+      # @context.router.transitionTo('/tutorials/easing/path-easing')
+      @context.router.transitionTo('/tutorials/shape')
       # , 1
 
   render:()->

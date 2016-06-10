@@ -21,8 +21,7 @@ module.exports = React.createClass
         <div className="tutorials-sidebar__section">
           <div className="tutorials-sidebar__header"> Modules </div>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Motion Path      </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Transit          </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Swirl            </UniteLink>
+          <UniteLink link="/tutorials/shape/" className="tutorials-sidebar__link"> Shape & ShapeSwirl </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Burst            </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Spriter          </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Radial Spring    </UniteLink>

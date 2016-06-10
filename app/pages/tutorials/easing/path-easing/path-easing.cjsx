@@ -3,7 +3,7 @@ Router      = require 'react-router'
 UniteLink   = require 'partials/unite-link'
 { Route, RouteHandler, Link } = Router
 
-mojs          = require 'mo-js'
+# mojs          = require 'mo-js'
 MoleSample    = require './mole-sample'
 Vimeo         = require 'partials/vimeo'
 PostImage     = require 'partials/post-image'
@@ -13,7 +13,7 @@ CodeSample    = require 'partials/code-sample'
 Pen           = require 'partials/codepen'
 EasingObjectGraph = require 'partials/easing-object-graph'
 EasingGraph       = require 'partials/easing-graph'
-Resizable     = require 'react-component-resizable'
+Resizable         = require 'react-component-resizable'
 
 More  = require 'partials/more.es6.js'
 
@@ -114,7 +114,7 @@ module.exports = React.createClass
                         onUpdate: function (progress) {
                           square.style.transform = 'translateY(' + 200*progress + 'px)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
@@ -147,7 +147,7 @@ module.exports = React.createClass
                           var bounceProgress = mojs.easing.bounce.out(progress);
                           square.style.transform = 'translateY(' + 200*bounceProgress + 'px)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
@@ -248,7 +248,7 @@ module.exports = React.createClass
                           var bounceProgress = bouncyEasing(progress);
                           square.style.transform = 'translateY(' + 200*bounceProgress + 'px)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
@@ -297,7 +297,7 @@ module.exports = React.createClass
                           var extremeInOutProgress = extremeInOutEasing(progress);
                           square.style.transform = 'scale(' + (1 - (.9*extremeInOutProgress)) + ')';
                         }
-                      }).run();
+                      }).play();
 
 
               """
@@ -340,7 +340,7 @@ module.exports = React.createClass
                           var extremeInElasticOutProgress = extremeInElasticOutEasing(progress);
                         square.style.transform = 'scale(' + (1 - (.9*extremeInElasticOutProgress)) + ')';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
@@ -527,7 +527,7 @@ module.exports = React.createClass
                             'translateY(' + -180*translateProgress + 'px) '+
                             'scaleX(' + scaleX + ') ' + 'scaleY(' + scaleY + ')';
                         }
-                      }).run();
+                      }).play();
 
 
               """
@@ -747,7 +747,7 @@ module.exports = React.createClass
                           var skewProgress = skewEasing(progress);
                           moleEl.style['transform'] = 'skewX(' + 75*skewProgress + 'deg)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
@@ -812,7 +812,7 @@ module.exports = React.createClass
                           moleEl.style['transform']     = 'skewX(' + 75*skewProgress + 'deg)';
                           moleHandEl.style['transform'] = 'rotate(' + (-200*handAngleProgress) + 'deg)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
@@ -882,7 +882,7 @@ module.exports = React.createClass
                           moleHandEl.style['transform'] = 'rotate(' + (-200*handAngleProgress) + 'deg)';
                           moleHandLeftEl.style['transform'] = 'translate(' + (100*skewProgress) + 'px,' + (-80*skewProgress) + 'px) rotate(' + (-110*skewProgress) + 'deg)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
@@ -963,7 +963,7 @@ module.exports = React.createClass
                         moleHandLeftEl.style['transform'] = 'translate(' + (100*skewProgress) + 'px,' + (-80*skewProgress) + 'px) rotate(' + (-110*skewProgress) + 'deg)';
                         mouthEl.style['transform']        = 'scale(' + mouthProgress + ') translateX(' + (-100*skewProgress) + 'px)';
                       }
-                    }).run();
+                    }).play();
               """
             }
           </CodeSample>

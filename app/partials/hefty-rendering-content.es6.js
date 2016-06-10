@@ -1,16 +1,19 @@
-var React  = require('react');
+import React from 'react';
 
-module.exports = React.createClass({
+class HeftyContent extends React.Component {
 
-  getInitialState () { return {}; },
+  getInitialState () { return {}; }
 
   componentDidMount () {
     setTimeout(function () {
       this.setState({ isCouldBeRendered: true });
     }.bind(this), this.props.delay || 1000000 )
-  },
+  }
 
   render () {
-    return <div></div>;
+    return (<div></div>);
   }
-});
+
+};
+
+module.exports = HeftyContent;

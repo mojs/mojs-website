@@ -9,19 +9,23 @@ Main      = require './pages/main'
 Tutorials = require './pages/tutorials'
 GettingStarted = require './pages/tutorials/getting-started'
 MotionPath     = require './pages/tutorials/motion-path'
-PathEasing     = require './pages/tutorials/easing/path-easing/path-easing.cjsx'
+# PathEasing     = require './pages/tutorials/easing/path-easing/path-easing.cjsx'
+Shape          = require('./pages/tutorials/shape').default;
+
+  # <Route     name="app" path="/"    handler={App}>
 
 routes = (
   <Route     name="app" path="/"    handler={App}>
     <Route   name="main"            handler={Main}/>
     <Route   name="tutorials"       handler={Tutorials}>
-      <Route   name="easing">
-        <Route name="/tutorials/easing/path-easing/"   handler={PathEasing} />
-        {#<Route name="getting-started" handler={GettingStarted} />}
-        {#<Route name="motion-path"     handler={MotionPath} />}
+      <Route name="/tutorials/shape/"   handler={Shape} />
+      <Route name="easing">
+        {
+          ### <Route name="/tutorials/easing/path-easing/" handler={PathEasing} /> ###
+        }
       </Route>
     </Route>
-    <DefaultRoute                   handler={Main}/>
+    <DefaultRoute handler={Main}/>
   </Route>
 )
 

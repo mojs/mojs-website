@@ -1,7 +1,7 @@
 React         = require 'react'
 {PrismCode}   = require 'react-prism'
 Tappable      = require 'react-tappable'
-mojs          = require 'mo-js'
+# mojs          = require 'mo-js'
 HeftyContent  = require 'partials/hefty-content'
 Pen           = require 'partials/codepen'
 

@@ -1,6 +1,6 @@
 React  = require('react/addons')
 ReactTransitionGroup = React.addons.TransitionGroup
-mojs   = require('mo-js')
+# mojs   = require('mo-js')
  
 TransitionGroupChild = React.createClass
   getInitialState:-> { duration: 401 }
@@ -20,7 +20,7 @@ TransitionGroupChild = React.createClass
           transform = "translateX(#{100*(1-p)}%) translateZ(0)"
           mojs.h.setPrefixedStyle(node, 'transform', transform)
           @props.isFade and (node.style.opacity = mojs.easing.cubic.out(p).toFixed(10))
-      tween.run()
+      tween.play()
     , 1
 
   componentWillLeave: (done)->
@@ -42,7 +42,7 @@ TransitionGroupChild = React.createClass
             transform = "translateX(#{100*(p)}%) translateZ(0)"
             mojs.h.setPrefixedStyle(node, 'transform', transform)
             node.style.opacity = mojs.easing.expo.in 1-p
-        tween.run()
+        tween.play()
       , 1
     else setTimeout (done), @state.duration
   render:-> React.Children.only this.props.children
