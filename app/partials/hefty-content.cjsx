@@ -54,12 +54,18 @@ module.exports = React.createClass
     @_curtainShowTween.play()
 
   render:->
+    p = @props
     visibility = if !@state.isShow then 'hidden' else 'visible'
+
+    children = if @_isShow then p.children else null
 
     style =
       opacity:    if !@state.isShow then 0 else 1
       visibility: if @props.isVisibilityToggle then visibility else null
       cursor: 'default'
+
+    minHeight = if p.minHeight? then "#{p.minHeight}px" else 'none'
+    minWidth = if p.minWidth? then "#{p.minWidth}" else 'none'
 
     <div  className = "hefty-content #{@props.className or ''}"
           style     = style
@@ -68,7 +74,7 @@ module.exports = React.createClass
       <div
         className = "hefty-content__inner"
         onTap     = { @_onHide }
-        style     = { cursor: 'default' } >
+        style     = { cursor: 'default', minHeight: minHeight, minWidth: minWidth } >
 
         <Tappable className="hefty-content__curtain" ref="curtain" style = { display: 'block' } onTap = {@_onShow} stopPropagation = {true}>
           <div className="hefty-content__curtain-label">
@@ -76,7 +82,9 @@ module.exports = React.createClass
           </div>
         </Tappable>
 
-        {@props.children}
+
+
+        {children}
 
       </div>
 

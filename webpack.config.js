@@ -9,7 +9,7 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.(jsx|es6.js|babel.js|.js)$/,
+      { test: /\.(jsx|es6.js|babel.js|babel.jsx|.js)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -41,7 +41,8 @@ module.exports = {
     moduleDirectories: ['node_modules'],
     target: 'node',
     extensions: [
-      '', '.js', '.jsx', '.es6', '.babel.jsx',
+      '', '.js', '.jsx', '.es6', '.es6.js',
+      '.babel.jsx', '.babel.js',
       '.styl',   '.jade',
       '.coffee', '.cjsx',
       '.html',

@@ -11,7 +11,7 @@ module.exports = React.createClass
   render:->
     setTimeout @_loadPen, 10
     <p
-      data-height="345"
+      data-height="#{ @props.height || 345 }"
       data-theme-id="15571"
       data-slug-hash="#{@props.pen}"
       data-default-tab="result"
