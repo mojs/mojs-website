@@ -1,6 +1,8 @@
-import React from 'react';
+import React        from 'react';
 import HeftyContent from './hefty-content';
-import PostImage from './post-image';
+import PostImage    from './post-image';
+
+require('../css/partials/gif.styl');
 
 const Gif = React.createClass({
   getInitialState: function () { return { isHidden: true }; },
@@ -12,7 +14,7 @@ const Gif = React.createClass({
     const p = this.props;
 
     const minHeight = ( p.minHeight != null ) ? p.minHeight : 350;
-    const minWidth  = ( p.minWidth != null ) ? p.minWidth : 350;
+    const minWidth  = ( p.minWidth != null )  ? p.minWidth  : 350;
 
     return (
       <HeftyContent

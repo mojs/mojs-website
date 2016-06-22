@@ -62,10 +62,10 @@ module.exports = React.createClass
     style =
       opacity:    if !@state.isShow then 0 else 1
       visibility: if @props.isVisibilityToggle then visibility else null
-      cursor: 'default'
+      cursor:     'default'
 
     minHeight = if p.minHeight? then "#{p.minHeight}px" else 'none'
-    minWidth = if p.minWidth? then "#{p.minWidth}" else 'none'
+    minWidth = if p.minWidth? then "#{p.minWidth}px" else 'none'
 
     <div  className = "hefty-content #{@props.className or ''}"
           style     = style
@@ -76,13 +76,11 @@ module.exports = React.createClass
         onTap     = { @_onHide }
         style     = { cursor: 'default', minHeight: minHeight, minWidth: minWidth } >
 
-        <Tappable className="hefty-content__curtain" ref="curtain" style = { display: 'block' } onTap = {@_onShow} stopPropagation = {true}>
+        <Tappable className="hefty-content__curtain" ref="curtain" style = { display: 'block', minHeight: minHeight } onTap = {@_onShow} stopPropagation = {true}>
           <div className="hefty-content__curtain-label">
             {@props.label || 'tap to see'}
           </div>
         </Tappable>
-
-
 
         {children}
 
