@@ -44226,60 +44226,78 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If user will click the close button, we can add a "bubble" fade effect to keep the pace:'
+	          'If user will click the close button, we can add a "bubble" fade effect to keep the vibes:'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '97d57587438de4d1e8592304a961be84', height: '500' }),
+	        _react2.default.createElement(_codepen2.default, { pen: '181b4ba2ebb5a05d755647e9144a50d8', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s the exact same effect I\'ve used in `Bubble Layout` demo a while ago, trying to convey the bubble interface (click on any circle to see the close button):'
+	          'This is the entire experience (click the close button):'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '3c49de2d7d0ca3e92bf5db5bf7a2687d', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'That\'s the exact same effect I\'ve used in `Bubble Layout` demo a while ago, when was trying to convey the bubble interface (click on any circle to see the close button):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'yNOage', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Consider the next demo, it shows how you can use shapes as UI elements:'
+	          'In the `Bubble Layout` demo you can notice two more effects that were made with shapes, - one is the subtle white ripple that spreads out when you click on any bubble, the second is the white collision effect right under the project image box when it jumps over the screen:'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '', height: '500' }),
+	        _react2.default.createElement(_codepen2.default, { pen: 'e5fe8c0a9a0a2b387cfa2858ea7e2046', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s a button composed with few shapes. We can expand the effect even more to appeal more attention:'
+	          'Also, since the shapes are tuneable, you can add effects to you UI regarding user interactions:'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '', height: '500' }),
+	        _react2.default.createElement(_codepen2.default, { pen: 'a46534d118a64d2450e6a0e8e93541fd', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If user doesn\'t react much, we can add the callout motion right to the button:'
+	          'Ok. Let\'s do another demo with shapes regarding UI. This time we will have a plus button, it shows up from bottom left, when it stops - it scales down and up imitating press motion, concurrent rotation imitates "let\'s go" gesture, inviting user to follow up with a click:'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '', height: '500' }),
+	        _react2.default.createElement(_codepen2.default, { pen: '1f6cce8046f76ca43aca3a5ac681b97c', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'After user will click the button, we will show a quiz modal:'
+	          'We can expand the effect even more to appeal even more attention and add some playfull experience:'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '', height: '500' }),
+	        _react2.default.createElement(_codepen2.default, { pen: '51350c86ef0e0fb722e034006fcafb8f', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Note that we have few effects here that were composed with shapes - ripple inside a modal, few details in the top and bottom right corners. Also arrow of the modal and modal itself are nothing than just plain mojs shape.'
+	          'If user doesn\'t click the button, let\'s add the callout vibration motion, mimicing incoming call:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '9935b7cec036eae2ddb762213ceae6d4', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'After user will click the button, we will show the quiz modal with two the most valiable questions we have ever had:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '2c95e0397b0d20eb4fbc952e3c5f0fe0', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners. Also arrow of the modal and modal itself are nothing than just plain mojs shape.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Ok, now when the user hovers over the button, we need to show some tension, expressing that something is going to happen if he proceeds:'
+	          'Ok, now when the user hovers over the button, we need to show some tension, expressing that something is going to happen if he proceeds with a click (hover over buttons to see):'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '', height: '500' }),
+	        _react2.default.createElement(_codepen2.default, { pen: 'ad612440c8b08d0b506e0a8cb4152b9c', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Note how the modal inflates and getting bigger - the extend parts are nothing than plain shapes too:'
+	          'Note how the modal inflates and gets bigger - the extend parts are nothing than plain shapes of `curve`, that just get scaled on user\'s iteraction (hover over buttons to see):'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '', height: '500' }),
+	        _react2.default.createElement(_codepen2.default, { pen: '4b54df04faa5b6c885a7b0222c842b5d', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If the leaves the button with his pointer, we need to show the tension relief, just few swirls would do here:'
+	          'If the user leaves the button with his pointer, we need to show the tension relief, just few swirls would do here:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '', height: '500' }),
 	        _react2.default.createElement(
