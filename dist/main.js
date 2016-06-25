@@ -45192,7 +45192,6 @@
 	          ),
 	          ' call has the same value of 600ms because it wasn\'t set and got inherited from the previous state block.'
 	        ),
-	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	          'h2',
 	          null,
@@ -45291,7 +45290,7 @@
 	          { js: 'const timeline = new mojs.Timeline;\ntimeline\n   .add( rect, circle, triangle, polygon, triangle2, polygon2, circle2 );'
 	          }
 	        ),
-	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('p', null),
 	        _react2.default.createElement(
 	          'h2',
 	          null,
@@ -45430,6 +45429,41 @@
 	          }
 	        ),
 	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Here above, shapes had randoms in ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'delay'
+	          ),
+	          ', ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'x'
+	          ),
+	          ', ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'y'
+	          ),
+	          ' and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'radius'
+	          ),
+	          ' properties. Then we\'ve add the mouse click handler, and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'generate'
+	          ),
+	          ' the shapes inside, as the result we have unique pattern every click event fires.'
+	        ),
+	        _react2.default.createElement(
 	          'h2',
 	          null,
 	          'Custom Shapes'
@@ -45534,7 +45568,7 @@
 	              { className: 'highlight' },
 	              'getShape'
 	            ),
-	            ' method returning the shape tags from it excluding ',
+	            ' method to return the shape tags excluding ',
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'highlight' },
@@ -45596,8 +45630,88 @@
 	        _react2.default.createElement(
 	          _codeSample2.default,
 	          { pen: 'bc80126bb5cef3054ee1d4e02882de97' },
-	          { js: '/* ADD CUSTOM SHAPE */\nclass Bubble extends mojs.CustomShape {\n  getShape () { return \'<path d="M83.0657721,87.5048737 C74.252469,95.2810178 62.6770192,99.9991713 49.9995857,99.9991713 C22.385577,99.9991713 0,77.6135943 0,49.9995857 C0,22.385577 22.385577,0 49.9995857,0 C77.6135943,0 99.9991713,22.385577 99.9991713,49.9995857 C99.9991713,50.0248803 99.9991526,50.0501705 99.999115,50.0754564 L100,94.5453117 C100,99.9979302 96.8685022,101.290527 93.0045119,97.4313174 L83.0657721,87.5048737 Z"></path>\'; }\n  getLength () { return 200; } // optional\n}\nmojs.addShape( \'bubble\', Bubble ); // passing name and Bubble class\n\n/* USE CUSTOM SHAPE */\n// now it is avaliable on mojs.Shape constructor as usual\nconst bubble = new mojs.Shape({\n  shape:        \'bubble\',\n  fill:         \'none\',\n  stroke:       \'white\',\n  scale:        { 0 : 1 },\n  strokeWidth:  { 50 : 0 },\n  y:           -20,\n  duration:     1000,\n});'
+	          { js: '/* ADD CUSTOM SHAPE */\nclass Heart extends mojs.CustomShape {\n  getShape () { return \'<path d="M92.5939814,7.35914503 C82.6692916,-2.45304834 66.6322927,-2.45304834 56.7076029,7.35914503 L52.3452392,11.6965095 C51.0327802,12.9714696 48.9328458,12.9839693 47.6203869,11.6715103 L47.6203869,11.6715103 L43.2705228,7.35914503 C33.3833318,-2.45304834 17.3213337,-2.45304834 7.43414268,7.35914503 C-2.47804756,17.1963376 -2.47804756,33.12084 7.43414268,42.9205337 L29.7959439,65.11984 C29.7959439,65.1323396 29.8084435,65.1323396 29.8084435,65.1448392 L43.2580232,78.4819224 C46.9704072,82.1818068 52.9952189,82.1818068 56.7076029,78.4819224 L70.1696822,65.1448392 C70.1696822,65.1448392 70.1696822,65.1323396 70.1821818,65.1323396 L92.5939814,42.9205337 C102.468673,33.12084 102.468673,17.1963376 92.5939814,7.35914503 L92.5939814,7.35914503 Z"></path>\'; }\n  getLength () { return 200; } // optional\n}\nmojs.Heart( \'heart\', Heart ); // passing name and Bubble class\n\n/* USE CUSTOM SHAPE */\n// now it is avaliable on mojs.Shape constructor as usual\nconst heart = new mojs.Shape({\n  shape:    \'heart\',\n  fill:     \'none\',\n  stroke:   \'white\',\n  scale:    { 0 : 1 },\n  strokeWidth: { 50 : 0 },\n  y:         -20,\n  duration:  1000,\n});'
 	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Worth noting that you should remove all presentation attributes from svg tags to add ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'mojs'
+	          ),
+	          ' controls over styling them otherwise they will be static:'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'd2be0ef912c7e21e0e990536ed6d39fa' },
+	          { js: '/* ADD CUSTOM SHAPE */\nclass Heart extends mojs.CustomShape {\n  getShape () { return \'<path d="M79.8226133,31.1716767 C71.2668462,22.7128894 57.4418472,22.7128894 48.8860801,31.1716767 L45.1254217,34.910784 C43.9939916,36.0098876 42.1837033,36.0206631 41.0522732,34.889233 L41.0522732,34.889233 L37.3023903,31.1716767 C28.7789498,22.7128894 14.9323997,22.7128894 6.40895921,31.1716767 C-2.13603238,39.6520152 -2.13603238,53.3800345 6.40895921,61.8280463 L25.686374,80.9653793 C25.686374,80.9761548 25.6971496,80.9761548 25.6971496,80.9869304 L37.2916148,92.4844159 C40.4919458,95.6739714 45.6857491,95.6739714 48.8860801,92.4844159 L60.4913209,80.9869304 C60.4913209,80.9869304 60.4913209,80.9761548 60.5020964,80.9761548 L79.8226133,61.8280463 C88.3352783,53.3800345 88.3352783,39.6520152 79.8226133,31.1716767 L79.8226133,31.1716767 Z"></path><path d="M87.2293862,20.3305554 C81.6681375,14.8323436 72.6818882,14.8323436 67.1206395,20.3305554 L64.6762116,22.7609751 C63.940782,23.4753925 62.7640947,23.4823966 62.0286651,22.746967 L62.0286651,22.746967 L59.5912412,20.3305554 C54.0510049,14.8323436 45.0507473,14.8323436 39.510511,20.3305554 C33.9562665,25.8427754 33.9562665,34.7659879 39.510511,40.2571956 L52.0408306,52.6964621 C52.0408306,52.7034662 52.0478347,52.7034662 52.0478347,52.7104703 L59.5842371,60.1838358 C61.6644523,62.2570469 65.0404244,62.2570469 67.1206395,60.1838358 L74.6640461,52.7104703 C74.6640461,52.7104703 74.6640461,52.7034662 74.6710502,52.7034662 L87.2293862,40.2571956 C92.7626184,34.7659879 92.7626184,25.8427754 87.2293862,20.3305554 L87.2293862,20.3305554 Z" stroke="#50E3C2"></path><path d="M97.1269756,7.85484074 C93.2768804,4.04838642 87.0556308,4.04838642 83.2055356,7.85484074 L81.5132393,9.53743902 C81.0040958,10.0320356 80.1894661,10.0368846 79.6803225,9.52774105 L79.6803225,9.52774105 L77.9928752,7.85484074 C74.157327,4.04838642 67.9263795,4.04838642 64.0908312,7.85484074 C60.245585,11.670993 60.245585,17.8486017 64.0908312,21.6502071 L72.7656679,30.2620069 C72.7656679,30.2668559 72.7705169,30.2668559 72.7705169,30.2717049 L77.9880262,35.4455734 C79.4281752,36.8808733 81.7653866,36.8808733 83.2055356,35.4455734 L88.427894,30.2717049 C88.427894,30.2717049 88.427894,30.2668559 88.4327429,30.2668559 L97.1269756,21.6502071 C100.957675,17.8486017 100.957675,11.670993 97.1269756,7.85484074 L97.1269756,7.85484074 Z"></path>\'; }\n  getLength () { return 200; } // optional\n}\nmojs.addShape( \'heart\', Heart ); // passing name and Bubble class\n\n/* USE CUSTOM SHAPE */\n// now it is avaliable on mojs.Shape constructor as usual\nconst heart = new mojs.Shape({\n  shape:    \'heart\',\n  fill:     \'none\',\n  stroke:   { \'white\' : \'deeppink\' },\n  scale:    { 0 : 1 },\n  strokeWidth: { 50 : 0 },\n  y:         -20,\n  duration:  1000,\n});\n'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Here above, the middle heart has static ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'stroke'
+	          ),
+	          ' property on it\'s tag, so it is left unattended.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Regarding the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'getLength'
+	          ),
+	          ' lifecycle method, it is handy only if you want to use relative percent values for ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'strokeDasharray'
+	          ),
+	          '/',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'strokeDashoffset'
+	          ),
+	          ' properties. Since ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'mojs'
+	          ),
+	          ' knows very little about the custom shape you have had provided it is on you to specify what is the perimeter length of the custom shape.'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: '75894cd43b0f12ecdb425cad5149ab37' },
+	          { js: '/* ADD CUSTOM SHAPE */\nclass Heart extends mojs.CustomShape {\n  getShape () { return \'<path d="M92.5939814,7.35914503 C82.6692916,-2.45304834 66.6322927,-2.45304834 56.7076029,7.35914503 L52.3452392,11.6965095 C51.0327802,12.9714696 48.9328458,12.9839693 47.6203869,11.6715103 L47.6203869,11.6715103 L43.2705228,7.35914503 C33.3833318,-2.45304834 17.3213337,-2.45304834 7.43414268,7.35914503 C-2.47804756,17.1963376 -2.47804756,33.12084 7.43414268,42.9205337 L29.7959439,65.11984 C29.7959439,65.1323396 29.8084435,65.1323396 29.8084435,65.1448392 L43.2580232,78.4819224 C46.9704072,82.1818068 52.9952189,82.1818068 56.7076029,78.4819224 L70.1696822,65.1448392 C70.1696822,65.1448392 70.1696822,65.1323396 70.1821818,65.1323396 L92.5939814,42.9205337 C102.468673,33.12084 102.468673,17.1963376 92.5939814,7.35914503 L92.5939814,7.35914503 Z"></path>\'; }\n  getLength () { return 292.110107421875; } // optional\n}\nmojs.addShape( \'heart\', Heart ); // passing name and Bubble class\n\n/* USE CUSTOM SHAPE */\n// now it is avaliable on mojs.Shape constructor as usual\nconst heart = new mojs.Shape({\n  shape:            \'heart\',\n  fill:             \'none\',\n  stroke:           \'white\',\n  strokeDasharray:  \'100%\',\n  strokeDashoffset: { \'-100%\' : \'100%\' },\n  y:               -20,\n  duration:         1000,\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Here above, we have used percent values for ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'strokeDashoffset'
+	          ),
+	          ' property so we had to provide the shape with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'getLength'
+	          ),
+	          ' method for precise stroke length calculations.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -45618,13 +45732,13 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          ' module with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for your shape, for that it adds more ',
+	          ' module with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for your shape. To give you control over the path, it adds more ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            '6'
 	          ),
-	          ' properties thus allowing to control frequency of size of the path and other parameters (click somewhere to see):'
+	          ' properties, so you can define frequency or size of the path and other parameters (click somewhere to see):'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -45635,7 +45749,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The main idea behind ShapeSwirl is to give you the ability to compose dust/smoke/bubbles effects or bassically any effect that needs to move over sine path (click somewhere to see):'
+	          'How it would be handy will be clear soon, in short the main idea behind ShapeSwirl is to give you the ability to compose dust/smoke/bubbles effects or basically any effect that needs to move over sine path (click somewhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '90e2506d73313d14d49486f7d71fb9d0', height: '500' }),
 	        _react2.default.createElement(
@@ -45653,13 +45767,19 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          ' so I won\'t spend much time with it.'
+	          ' so we won\'t spend much time with it. Nonetheless I encorage you to play with the parameters a bit to get confortable with them.'
 	        ),
 	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	          _cite2.default,
 	          null,
-	          'That was very fast intro to the `Shape` module. You can use ',
+	          'That was very fast intro to the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Shape'
+	          ),
+	          ' module. You can use ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: '' },
@@ -45730,7 +45850,7 @@
 	            { className: 'highlight' },
 	            'ShapeSwirl'
 	          ),
-	          ' modules are tiny bits that compose higher order modules, they have strong use cases and can be used by their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can also use it in your animations to add special effects and details making your animation more expressive. Also ',
+	          ' modules are nothing than tiny bits that compose higher order modules, they have strong use cases and can be used by their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45742,7 +45862,7 @@
 	            { className: 'highlight' },
 	            'UI'
 	          ),
-	          ' thus enhancing it. From the development side of view — ',
+	          ' thus enhancing it. From the development point of view — ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45770,13 +45890,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Motion graphics is indeed one of the strongest use cases for ',
+	          'Motion graphics indeed one of the strongest use cases for ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          's. If you will think about it, nothing breathes life into static content better than the use of motion graphics. With shapes, the limits are simply the imagination of the designer or the artist, - you can create complex mograph sequnces based entirely on geometric and custom shapes.'
+	          's. If you will ponder about it, nothing breathes life into static content better than the use of motion graphics. With shapes, the limits are simply the imagination of the designer or the artist, - you can create complex mograph sequnces based entirely on geometric and custom shapes.'
 	        ),
 	        _react2.default.createElement(
 	          'h4',
