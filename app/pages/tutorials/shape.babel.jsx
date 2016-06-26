@@ -74,7 +74,7 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            Nothing interesting yet. Just hotpink circle right in the center of the codepen. <span className="highlight">isShowStart</span> property says to the shape to be visible even before animation.
+            Nothing interesting yet. Just hotpink circle right in the center of the codepen. <span className="highlight">isShowStart</span> property says to the shape to be visible even before animation starts.
           </p>
 
           <p>
@@ -97,7 +97,27 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            Colors could be expressed in different forms like <UniteLink link="https://www.w3.org/TR/css3-color/">color keywords</UniteLink>, <span className="highlight">rgb</span>, <span className="highlight">rgba</span> or <span className="highlight">hex</span>.
+            The entire list of shape properties with annotations could be found at <UniteLink link="https://github.com/">Shape APIs</UniteLink> section.
+          </p>
+
+          <p>
+            Colors could be expressed in different forms like <UniteLink link="https://www.w3.org/TR/css3-color/">color keywords</UniteLink>, <span className="highlight">rgb</span>, <span className="highlight">rgba</span> or <span className="highlight">hex</span>, numeric properties may be unit based (like <span className="highlight">top</span>/<span className="highlight">left</span> below) or even can be expressed with <span className="highlight">rand</span> strings (like <span className="highlight">x</span> below):
+          </p>
+
+          <CodeSample pen="d7b4e84ddcd72664709f2394ce9f7968">
+            {
+              { js: `var shape = new mojs.Shape({
+  shape:        'circle',
+  top:          '50%',
+  x:            'rand(-250, 250)',
+  isShowStart:  true,
+});`
+              }
+            }
+          </CodeSample>
+
+          <p>
+            We've set random value for the <span className="highlight">x</span> property in interval from <span className="highlight">0</span> to <span className="highlight">200</span> so it should show up in random position inside that gap every time you will rerun the pen. <span className="highlight">rand</span> string syntax is obvious - it takes start and end value to generate the eventual value from.
           </p>
 
           <p>
@@ -156,35 +176,16 @@ var polygon = new mojs.Shape({
               }
             }
           </CodeSample>
+
+        <p>
+          Boolean properties start with <span className="highlight">is</span> prefix. Static shapes are boring tho, lets add some transitions.
+        </p>
           
-          <p>
-            Every property could be unit based (like <span className="highlight">top</span>/<span className="highlight">left</span> below) or even can be expressed with <span className="highlight">rand</span> strings (like <span className="highlight">x</span> below):
-          </p>
-
-          <CodeSample pen="d7b4e84ddcd72664709f2394ce9f7968">
-            {
-              { js: `var shape = new mojs.Shape({
-  shape:        'circle',
-  isShowStart:  true,
-  top:          '50%',
-  x:            'rand(-250, 250)'
-});`
-              }
-            }
-          </CodeSample>
-
-          <p>
-            We've set random value for the <span className="highlight">x</span> property in interval from <span className="highlight">0</span> to <span className="highlight">200</span> so it should show up in random position inside that gap every time you will rerun the pen. <span className="highlight">rand</span> string syntax is obvious - it takes start and end value to generate the eventual value from.
-          </p>
-
-          <p>
-            Please consult <UniteLink link="https://github.com/">Shape APIs</UniteLink> as the full API reference.
-          </p>
 
         <h2>Delta (∆)</h2>
 
         <p>
-          Now let's animate the shape. To keep the <span className="highlight">APIs</span> declarative, <span className="highlight">mojs</span> uses <span className="highlight">delta</span> objects to describe transitions of shape properties:
+          To keep the <span className="highlight">APIs</span> declarative, <span className="highlight">mojs</span> uses <span className="highlight">delta</span> objects to describe transitions of shape properties:
         </p>
 
         <CodeSample pen="16c150d81dfddc047a1eda3eb6dffe75">
@@ -206,7 +207,7 @@ var polygon = new mojs.Shape({
           </p>
 
           <p>
-            Start and end values in the <span className="highlight">delta(∆)</span> object can be <span className="highlight">unit</span> based or random (<span className="highlight">rand</span>) ones or whatever you have — just the same as the static values:
+            Start and end values in the <span className="highlight">delta</span> object can be <span className="highlight">unit</span> based or random (<span className="highlight">rand</span>) ones or whatever you have — just the same as we did it before with static values (all objects in the code sample below are deltas):
           </p>
 
           <CodeSample pen="bbd4fe6c1ac8519c76bc18828844e2c3">
@@ -256,7 +257,7 @@ const polygon = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Here, <span className="highlight">strokeDashoffset</span> property uses <span className="highlight">unit based</span> values in <span className="highlight">delta</span> of the rect shape. The <span className="highlight">x</span> property of the polygon shape uses random unit based values. The <span className="highlight">fill</span> property uses <span className="highlight">color keywords</span> and other values as to animate from to.
+            Here, <span className="highlight">strokeDashoffset</span> property uses <span className="highlight">unit based</span> values in <span className="highlight">delta</span> of the rect shape. The <span className="highlight">x</span> property of the polygon shape uses random unit based values. The <span className="highlight">fill</span> property uses <span className="highlight">color keywords</span> and other values as to animate from into for all shapes.
           </p>
 
           <p>
@@ -274,8 +275,7 @@ const polygon = new mojs.Shape({
   y:          { [50]: -20 },
   scaleX:     { 0 : 1.3 },
   
-  repeat:     999,
-  yoyo:       true,
+  repeat:     5,
   duration:   800,
 
   isShowEnd:  false
@@ -286,15 +286,15 @@ const polygon = new mojs.Shape({
 
 
           <p>
-            If you will translate this code sample to proper English, you will have something like this —  we have a <span className="highlight">orange</span> <span className="highlight">polygon</span> of <span className="highlight">65px radius</span> right in the middle of the screen(by default), when animation starts — it rotates from <span className="highlight">-120</span> to <span className="highlight">-40</span> degrees, shifts <span className="highlight">180</span> to the right starting from <span className="highlight">-200px</span> and <span className="highlight">scale</span>s from <span className="highlight">0</span> to <span className="highlight">1.3</span> concurrently during <span className="highlight">800ms</span> <span className="highlight">999</span> times and <span className="highlight">yoyo</span> filipping direction, with default <span className="highlight">easing</span>. When animation ends, the shape <span className="highlight">dissapears</span>.
+            If you will translate this code sample to proper English, you will have something like this —  we have a <span className="highlight">orange</span> <span className="highlight">polygon</span> of <span className="highlight">65px radius</span> right in the middle of the screen(by default), when animation starts — it rotates from <span className="highlight">-120</span> to <span className="highlight">-40</span> degrees, shifts <span className="highlight">180px</span> to the right starting from <span className="highlight">-200px</span> and <span className="highlight">scale</span>s from <span className="highlight">0</span> to <span className="highlight">1.3</span> concurrently. That's happens during <span className="highlight">800ms</span> and repeats <span className="highlight">5</span> times with default <span className="highlight">easing</span>. When animation ends, the shape <span className="highlight">dissapears</span>.
           </p>
 
           <p>
-            Note that almost every property transition besides <span className="highlight">tween</span> properties and <span className="highlight">boolean</span> values can be expressed in <span className="highlight">delta</span>, please refer to the <UniteLink link="">API's</UniteLink> on that matter. The <span className="highlight">∆</span> symbol in the comment right above properties defines that the property is <span className="highlight">"deltable"</span>.
+            Note that almost every property transition besides <span className="highlight">tween</span> properties (like duration/delay etc) and <span className="highlight">boolean</span> values can be expressed in <span className="highlight">delta</span>, please refer to the <UniteLink link="">API's</UniteLink> on that matter. The <span className="highlight">∆</span> symbol in the comment right above properties defines that the property is <span className="highlight">"deltable"</span>.
           </p>
 
           <p>
-            Delta can also have it's own <span className="highlight">easing</span> field, that can hold any <span className="highlight">mojs</span> <UniteLink link="">easing type</UniteLink>, this makes shape transitions more flexible to the real world needs.
+            Delta can also have it's own explicit <span className="highlight">easing</span> field, that can hold any <span className="highlight">mojs</span> <UniteLink link="">easing type</UniteLink>, this makes shape transitions more flexible to the real world needs.
           </p>
 
           <CodeSample pen="942a661cec312c922af18f3446f894a0">
@@ -316,7 +316,7 @@ const polygon = new mojs.Shape({
           </p>
 
           <p>
-            The 3rd property that is available on delta objects is <span className="highlight">curve</span> property that overrides <span className="highlight">easing</span> property if both present. The <span className="highlight">curve</span> property is the way to go if you want to declare a <span className="highlight">property curve</span> for a property transition, where <span className="highlight">delta</span> values is base curve value, that will be multiplied by curve's value when animation runs:
+            The 3rd property that is available on delta objects is <span className="highlight">curve</span> property that overrides <span className="highlight">easing</span> property if both present. The <span className="highlight">curve</span> property is the way to go if you want to declare a <span className="highlight">property curve</span> for a property transition, where <span className="highlight">delta</span> values is curve's base that will be multiplied by current curve's value when animation runs:
           </p>
 
           <CodeSample pen="8a4d6ffc83e6c8633b26f0691055cdad">
@@ -346,11 +346,11 @@ const circle = new mojs.Shape({
           </CodeSample>
 
           <p>
-            we won't spend a lot of time with <span className="highlight">property</span> curves in this tutorial, but I highly encorage you to dig into the <UniteLink link="http://mojs.io/tutorials/easing/path-easing/">property curves</UniteLink> because of it's power.
+            we won't spend a lot of time with <span className="highlight">property</span> curves in this tutorial, but I highly encorage you to dig into the <UniteLink link="http://mojs.io/tutorials/easing/path-easing/">property curves</UniteLink> as it is a very sophisticated and powerful concept.
           </p>
 
           <p>
-            So to recap, <span className="highlight">delta</span> syntax:
+            So to recap, <span className="highlight">delta</span>'s syntax:
           </p>
 
           <CodeSample>
@@ -364,7 +364,7 @@ const circle = new mojs.Shape({
             }
           </CodeSample>
 
-          <p>At this point we can declare shapes and animate then.</p>
+          <p>At this point we can declare and animate shapes.</p>
 
           <p>Then what?</p>
 
@@ -395,11 +395,11 @@ const circle = new mojs.Shape({
           </CodeSample>
 
           <em>
-            <i>Note</i>: In the demo above, I've added <span className="highlight">MojsPlayer</span> to control the demo sequnce instead of explicit <span className="highlight">.play</span> call. <span className="highlight">MojsPlayer</span> is part of <span className="highlight">mojs tools</span> that gives you GUI contols thus help you to craft your motion sequence. Also it keeps the animation and settings state on reload saving you lots of time. Since our animations can get more complex, the player is getting to be irreplaceable tool for our needs.
+            <i>Note</i>: In the demo above, I've added <span className="highlight">MojsPlayer</span> to control the demo sequnce instead of explicit <span className="highlight">.play</span> call. <span className="highlight">MojsPlayer</span> is part of <span className="highlight">mojs tools</span> that gives you GUI contols thus helps you to craft your motion sequence. Also it keeps the animation and settings state on page reloads, saving you lots of time and effort. Since our animations can get quite complex, the player could be a aide.
           </em>
 
           <p>
-            So here we have continued the sequence with the next state declaration for the <span className="highlight">strokeWidth</span> and <span className="highlight">scale</span> properties. What's important - <span className="highlight">then</span> doesn't need delta to describe new transition - it creates delta automatically from whatever property value was before to the new one.
+            So in the demo above, we have continued the sequence with the next state declaration for the <span className="highlight">strokeWidth</span> and <span className="highlight">scale</span> properties. What's important - <span className="highlight">then</span> doesn't need delta to describe new transition - it creates delta automatically from whatever property value was before to the new one.
           </p>
 
           <p>
@@ -430,11 +430,11 @@ const circle = new mojs.Shape({
           </CodeSample>
 
           <p>
-            As you can witness above, setting <span className="highlight">delta</span> in <span className="highlight">then</span> call tells <span className="highlight">mojs</span> to ignore everything whatever was before and proceed to entire new delta transition.
+            As you can witness, setting <span className="highlight">delta</span> in <span className="highlight">then</span> call tells <span className="highlight">mojs</span> to ignore everything whatever was before and proceed with completely new delta transition.
           </p>
 
           <p>
-            The <span className="highlight">duration</span> is the only tween property that gets inherited from previous then call:
+            The last thing to note is that if property is not set in the new <span className="highlight">then</span> call, it gets inherited from the previous block just as you would expect. This works for all properties excluding tween ones, but not <span className="highlight">duration</span> one. So the <span className="highlight">duration</span> property is the only tween property that gets inherited from previous then call:
           </p>
 
           <CodeSample pen="98772bc3e5e67ed9dba66b7280dfff6a">
@@ -448,10 +448,12 @@ const circle = new mojs.Shape({
   angle:          { [-180] : 0 },
   top: '50%', y: -20,
   
-  duration:       600
+  duration:       600,
+  delay:          200
 }).then({
   
   // duration here will be 600 too because inherited from previous block
+  // delay here will have default 0 value
   
   angle:          -360,
   scale:          2,
@@ -463,7 +465,7 @@ const circle = new mojs.Shape({
           </CodeSample>
 
           <p>
-            In the code sample above, the duration inside <span className="highlight">then</span> call has the same value of 600ms because it wasn't set and got inherited from the previous state block.
+            So in the code sample above, the duration inside <span className="highlight">then</span> call has the same value of 600ms inherited inherited from the previous state block, but <span className="highlight">delay</span> has the default value of 0.
           </p>
 
 
@@ -572,7 +574,7 @@ timeline
           </p>
 
           <p>
-            Note that <span className="highlight">tune</span> call transforms entire shape's property query that was set up with <span className="highlight">then</span> calls. It works that way to keep the chain up to date starting from the new tuned value. Thus you tune not only the first shape state but the subsequent ones. For instance if you had chain of fill <span className="highlight"> yellow -> cyan</span> then <span className="highlight">magenta</span>, and then tune it to <span className="highlight">deepink</span>, you will eventually have <span className="highlight">deepink -> magenta</span> chain. But if you will tune to delta value like <span className="highlight">deeppink -> yellow</span>, you will have the <span className="highlight">deeppink -> yellow -> cyan</span> chain as the result (click somewhere to see):
+            Note that <span className="highlight">tune</span> call transforms entire shape's property query that was set up with <span className="highlight">then</span> calls. It works that way to keep the chain up to date starting from the new tuned value. Thus you tune not only the first shape state but the subsequent ones. For instance if you had chain of fill <span className="highlight"> yellow -> cyan</span> then <span className="highlight">magenta</span>, and tune it to <span className="highlight">deepink</span>, you will eventually have <span className="highlight">deeppink</span>, <span className="highlight">deepink -> magenta</span> chain. But if you will tune to delta value like <span className="highlight">deeppink -> yellow</span>, you will have the <span className="highlight">deeppink -> yellow -> cyan</span> chain as the result (click somewhere to see):
           </p>
 
           <CodeSample pen="0d745dac6d142cd4f6dc5b423a8273b4">
@@ -589,12 +591,12 @@ document.addEventListener( 'click', function (e) {
   circle1
     .replay();
 
-  // static value tune
+  // static value tune, results in 'deeppink' for the first block, 'deeppink' -> 'cyan' for the second one
   circle2
     .tune({ fill: 'deeppink' })
     .replay();
   
-  // delta tune
+  // delta tune, results in 'yellow' -> 'deeppink' for the first block, 'deeppink' : 'cyan' for the second one
   circle3
     .tune({ fill: { 'yellow' : 'deeppink' } })
     .replay();
@@ -629,13 +631,13 @@ document.addEventListener( 'click', function (e) {
           </CodeSample>
 
           <p>
-            Here above, shapes had randoms in <span className="highlight">delay</span>, <span className="highlight">x</span>, <span className="highlight">y</span> and <span className="highlight">radius</span> properties. Then we've add the mouse click handler, and <span className="highlight">generate</span> the shapes inside, as the result we have unique pattern every click event fires.
+            Here above, shapes had randoms in <span className="highlight">delay</span>, <span className="highlight">x</span>, <span className="highlight">y</span> and <span className="highlight">radius</span> properties. Then we've add the mouse click handler, and <span className="highlight">generate</span> the shapes inside, as the result we have unique effect pattern every time the click event fires.
           </p>
 
           <h2>Custom Shapes</h2>
 
           <p>
-            You probably have noticed that <span className="highlight">mojs</span> supports a bunch of built in shapes. Namely they are <span className="highlight">circle</span>, <span className="highlight">rect</span>, <span className="highlight">polygon</span>, <span className="highlight">line</span>, <span className="highlight">cross</span>, <span className="highlight">equal</span>, <span className="highlight">curve</span> and <span className="highlight">zigzag</span>. You can extend the set on shapes by providing <span className="highlight">mojs</span> with a custom one that suits your needs. For that:
+            You probably have noticed that <span className="highlight">mojs</span> supports a bunch of built in shapes. Namely they are <span className="highlight">circle</span>, <span className="highlight">rect</span>, <span className="highlight">polygon</span>, <span className="highlight">line</span>, <span className="highlight">cross</span>, <span className="highlight">equal</span>, <span className="highlight">curve</span> and <span className="highlight">zigzag</span>. You can extend this set of shapes by providing <span className="highlight">mojs</span> with a custom one that suits your needs. For that:
           </p>
 
           <ul>
@@ -702,7 +704,7 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Worth noting that you should remove all presentation attributes from svg tags to add <span className="highlight">mojs</span> controls over styling them otherwise they will be static:
+            Worth noting that you should remove all presentation attributes from svg tags to give <span className="highlight">mojs</span> the ability to style them, otherwise the values will be static:
           </p>
 
           <CodeSample pen="d2be0ef912c7e21e0e990536ed6d39fa">
@@ -735,7 +737,7 @@ const heart = new mojs.Shape({
           </p>
 
           <p>
-            Regarding the <span className="highlight">getLength</span> lifecycle method, it is handy only if you want to use relative percent values for <span className="highlight">strokeDasharray</span>/<span className="highlight">strokeDashoffset</span> properties. Since <span className="highlight">mojs</span> knows very little about the custom shape you have had provided it is on you to specify what is the perimeter length of the custom shape.
+            Regarding the <span className="highlight">getLength</span> lifecycle method, - it is handy only if you want to use relative percent values for <span className="highlight">strokeDasharray</span>/<span className="highlight">strokeDashoffset</span> properties. Since <span className="highlight">mojs</span> knows very little about the custom shape you have had provided, it is on you to specify what is the perimeter length of the custom shape.
           </p>
 
           <CodeSample pen="75894cd43b0f12ecdb425cad5149ab37">
@@ -763,13 +765,13 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Here above, we have used percent values for <span className="highlight">strokeDashoffset</span> property so we had to provide the shape with <span className="highlight">getLength</span> method for precise stroke length calculations.
+            Here above, we have used percent values for <span className="highlight">strokeDashoffset</span> property so we had to provide the custom shape with <span className="highlight">getLength</span> method for precise stroke dash length calculations.
           </p>
 
           <h2>ShapeSwirl</h2>
 
           <p>
-            <span className="highlight">ShapeSwirl</span> module basically is <span className="highlight">Shape</span> module with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for your shape. To give you control over the path, it adds more <span className="highlight">6</span> properties, so you can define frequency or size of the path and other parameters (click somewhere to see):
+            <span className="highlight">ShapeSwirl</span> module basically is <span className="highlight">Shape</span> module with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over dust-like trajectories. To give you control over this behaviour, ShapeSwirl accepts more <span className="highlight">6</span> properties, thus you can define frequency or size of the path and other supporting parameters (click somewhere to see):
           </p>
 
           <CodeSample pen="c6888ce5c9f81ad825444d969779eadc">
@@ -789,7 +791,7 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            How it would be handy will be clear soon, in short the main idea behind ShapeSwirl is to give you the ability to compose dust/smoke/bubbles effects or basically any effect that needs to move over sine path (click somewhere to see):
+            How ShapeSwirl can be handy will be clear soon, in short the main idea behind swirls is to give you the ability to compose dust/smoke/bubbles effects or basically any effect that needs to move over sine path (click somewhere to see):
           </p>
 
           <Pen pen="90e2506d73313d14d49486f7d71fb9d0" height="500"></Pen>
@@ -798,77 +800,83 @@ const heart = new mojs.Shape({
             In any other aspect the <span className="highlight">ShapeSwirl</span> is the same as a simple <span className="highlight">Shape</span> so we won't spend much time with it. Nonetheless I encorage you to play with the parameters a bit to get confortable with them.
           </p>
 
-          <br/>
 
-          <Cite>
-            That was very fast intro to the <span className="highlight">Shape</span> module. You can use <UniteLink link="">Shape APIs</UniteLink> and <UniteLink link="">ShapeSwirl APIs</UniteLink> as reference further on. What is important at this point — is that you should understand the ability to create a <span className="highlight">Shape</span> in any part of the screen or HTMLElement. If you want to animate some property — you add a <span className="highlight">delta</span> object that describes the transition of that property. You can chain the shape transition with <span className="highlight">then</span> calls and <span className="highlight">tune</span> new properties when you want. Tweenable interface allows you to work with <span className="highlight">Shape</span> same as you work with any other <span className="highlight">Tween</span>.
-          </Cite>
+          <h2>Small Recap</h2>
 
-          <br/>
+          <p>
+            That was very fast intro to the <span className="highlight">Shape</span> module. You can use <UniteLink link="">Shape APIs</UniteLink> and <UniteLink link="">ShapeSwirl APIs</UniteLink> as reference further on. What is important at this point — is that you should understand the ability to create a <span className="highlight">Shape</span> in any part of the screen or HTMLElement. If you want to animate some property — you add a <span className="highlight">delta</span> object that describes the transition of that property. You can chain the shape transitions with <span className="highlight">then</span> calls and <span className="highlight">tune</span> new properties when you want. Tweenable interface allows you to work with <span className="highlight">Shape</span> same as you work with any other <span className="highlight">Tween</span>.
+          </p>
 
           <h2>Use Cases</h2>
 
           <p>
-            Despite the fact that <span className="highlight">Shape</span> and <span className="highlight">ShapeSwirl</span> modules are nothing than tiny bits that compose higher order modules, they have strong use cases and can be used by their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also <span className="highlight">Shape</span>s often used to implode them into <span className="highlight">UI</span> thus enhancing it. From the development point of view — <span className="highlight">Shape</span> can be created with just one declarative call allowing you to focus entirely on you motion sequences and don't spend time to bootstrap things, this fact powers you with a <span className="highlight">"shape framework"</span> to think in so your sequences get more organized and consistent. I hope you don't believe me that <span className="highlight">Shape</span>s are usefull just because I claimed it out of loud, so let me convince you with the next real wold use cases.
+            Despite the fact that <span className="highlight">Shape</span> and <span className="highlight">ShapeSwirl</span> modules are nothing than tiny bits that compose higher order modules creating some matured effects, they have strong use cases and can be used by their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also <span className="highlight">Shape</span>s often used to implode them into <span className="highlight">UI</span> thus enhancing it. From the development point of view — <span className="highlight">Shape</span> can be created with just one declarative call allowing you to focus entirely on you motion sequences and don't spend time to bootstrapping things, this fact powers you with a <span className="highlight">"shape framework"</span> to think in so motion your sequences get more organized and consistent.
+          </p>
+
+          <p>
+            I hope you don't believe me that <span className="highlight">Shape</span>s are usefull just because I claimed it out of loud, so let me convince you with the next real wold use cases.
           </p>
 
           <h3>Motion Graphics Use Cases</h3>
 
           <p>
-            Motion graphics indeed one of the strongest use cases for <span className="highlight">Shape</span>s. If you will ponder about it, nothing breathes life into static content better than the use of motion graphics. With shapes, the limits are simply the imagination of the designer or the artist, - you can create complex mograph sequnces based entirely on geometric and custom shapes.
+            Motion graphics indeed one of the strongest use cases for <span className="highlight">Shape</span>s. If you will ponder a bit, nothing breathes life into static content better than the use of motion graphics. With shapes, the limits are simply the imagination of the designer or the artist, - you can create complex mograph sequnces based entirely on geometric or custom shapes or use them aside as reinforcement support.
           </p>
-
 
           <h4>Bubbles</h4>
 
           <p>
-            Demo with custom bubble shapes and built in <span className="highlight">rect</span> and <span className="highlight">circle</span> ones.
+            Lets start with the simple intro sequence, it was composed with custom "speech bubble shapes" and built in ones.
           </p>
 
           <Pen pen="2ef10ed42ff535182c31cd1dbb81e453" height="500"></Pen>
 
+          <p>
+            Custom shapes allow you to use shapes that suite your current needs. To be clear that's not just images that you can animate inside some wrapper, they are highly stylable shapes thus a way flexible than just an image or HTMLElement with a background.
+          </p>
+
           <h4>Geometric Scenes</h4>
 
           <p>
-            We will walk thru some simple geometric scenes and then combine them to get a nice into.
+            Let's walk thru some short random geometric scenes just to get some intuition about shape usage with mograph. After that we will combine them to get a relatively long intro sequence.
           </p>
 
           <p>
-            Another mograph sequence with triangles, - mistical, simple and appealing:
+            We will start with triangles scene, a drip mistical one, at the same time simple and appealing. Just 6 triangles and few then statements:
           </p>
 
           <Pen pen="4db9ec6079a3537d8c60ec888dd8e532"></Pen>
 
           <p>
-            Next demo for mograph, - elegant, contrast and yet simple:
+            The next scene we will compose with another 6 triangles, slightly more elegant, with a little contrast to the first one, but still quite simple:
           </p>
 
           <Pen pen="c0b7b94e90142f19acba6ed9a4b05a2f"></Pen>
 
           <p>
-            The next one is rather funky:
+            Let's do the next one with contrast to the first two, - simple rectangle with some sparks, this one rather funky:
           </p>
 
           <Pen pen="c33a3582fc02842b99fa6eb01be6b3ba" height="700"></Pen>
 
           <p>
-            Note that the best suite for white <span className="highlight">sparks</span> effect on the sides of the square is <span className="highlight">Burst</span> module which we will discuss shortly in the next tutorial, meanwhile in this particular demo, it was made with custom shapes to give you another clue how you would use the custom shapes.
+            Note that the best suite for white <span className="highlight">sparks</span> effect on the sides of the square is the <span className="highlight">Burst</span> module which we will discuss shortly in the next tutorial, meanwhile in this particular demo, it was made with custom shapes to give you yet another clue how you would use the custom shapes.
           </p>
 
           <p>
-            The next demo is just a nice transition between pages/app states:
+            After that we need a nice transition between screens, just few circles will do:
           </p>
 
           <Pen pen="95a862f1ad8445134466ad7d64213d46" height="700"></Pen>
 
           <p>
-            The last scene for this seqence would be <span className="highlight">mojs</span> logo reveal - good use case for shapes in tandem with <span className="highlight">property curves</span> application:
+            The last scene for this seqence would be <span className="highlight">mojs</span> logo reveal - use case for shapes in tandem with <span className="highlight">property curves</span>:
           </p>
 
           <Pen pen="b37bb9c6dede99d0ac75d60b5fb0d43d" height="700"></Pen>
 
           <p>
-            We have a bunch of short contrast scenes which a drip contradict to each other. Let's finnaly connect all of them to get the etntire sequence:
+            Now, lets finnally compose these short scenes into one:
           </p>
 
           <Pen pen="39427561a8a0b15d7896480a7d96d3d1" height="700"></Pen>
@@ -880,13 +888,13 @@ const heart = new mojs.Shape({
           <h4>Word reveal</h4>
 
           <p>
-            The last demo I will give you for the motion graphics use case is word reveal sequnce:
+            There is another demo that can set some light on the shape usage in motion graphics, it was made with bunch of shapes and few characters that compose a <span className="highlight">love</span> word together:
           </p>
 
           <Pen pen="c94452fb65dbf676b0ae8a12d4267473" height="700"></Pen>
 
           <p>
-            That's would be it for mograph use cases demos, I hope you are getting more convinced that shapes could be useful in compositing effects when working with motion graphics on the web.
+            That's was the last demo for the mograph use cases, I hope you getting more convinced that shapes could be useful sometimes. Let's move on.
           </p>
           
           <p>
@@ -971,16 +979,16 @@ const heart = new mojs.Shape({
             </More>
           </p>
 
-
-
           <h2>
             Animation Use Cases
           </h2>
 
           <p>
-            Animation is another strong use case for the Shapes. You can compose some visual effects to support your main sequences thus enhancing it, giving them more details and depth.
+            Animation is another field for Shapes application. You can compose some visual effects to support your main sequence, crafting more details and depth.
+          </p>
 
-            I've made a little animation demo I've made to illustrate the cases:
+          <p>
+            I've made a little animation demo as a starting point to which we will apply some effects - 4 physicly balls in harsh living situation:
           </p>
 
           <Pen pen="3fe5eabaf7cfb83142bbd1be3f2f2850" height="500" />
@@ -990,11 +998,11 @@ const heart = new mojs.Shape({
           </em>
 
           <p>
-            The demo itself is a good illustration on how you can use shapes as "main actors" in your scenes becuase it was composed entirely with shapes. But there is few cases besides that that should be discussed.
+            The demo itself is a good illustration on how you can use shapes as "main actors" in your scenes becuase it was made entirely with shapes. But there is few cases that should be discussed besides that.
           </p>
 
           <p>
-            For instance, you can add the effect of collision of balls with ease:
+            For instance, you can add the effect of collision between balls with ease:
           </p>
 
           <Pen pen="7315f4364360ec87a6655d33782702fe" height="500" />
@@ -1006,25 +1014,25 @@ const heart = new mojs.Shape({
           <Pen pen="c29f0b2ce24147e4886691b61b31b3fb" height="500"></Pen>
 
           <p>
-            The next effect, you can enhance this scene with is the "motion trails":
+            The next effect, you can add to the scene is the "motion trails" effect:
           </p>
 
           <Pen pen="92f9a7b05498b8a0be3734737a9cfc70" height="500"></Pen>
 
           <p>
-            Motion trail effect is ususally used to exaggerate velocity of the object that moves. Just a nice subtle details. The effect was composed with 2 shapes:
+            Motion trail effect is ususally used to exaggerate velocity of the object that moves and the enviroment it moves in. Just a nice subtle detail. The effect was composed with 2 shapes, namely curves. There is another simple example with lines:
           </p>
 
           <Pen pen="fff0bcc079e0448bd0a72ee311ebadfa" height="500"></Pen>
 
           <p>
-            Another effect you can think of will be a "dust trail":
+            The "dust trail" effect can fit this scene too:
           </p>
 
           <Pen pen="6f7b05a45679964ccdf9212fa68075c8" height="500"></Pen>
 
           <p>
-            Effect itself was composed from bunch of swirls, first you want to make the swirls move downward somewhere into the ground:
+            It was composed with bunch of swirls, lets spend some time and see how exactly you can build something like that. First you want to make the swirls move downward, - somewhere into the ground:
           </p>
 
           <Pen pen="80d765ff22ae515cb28a78c0ec5686c9" height="500"></Pen>
@@ -1042,216 +1050,234 @@ const heart = new mojs.Shape({
           <Pen pen="73dcc20f9e36c64e8d3b55d0188f016a" height="500"></Pen>
 
           <p>
-            There is the same effect with simple object:
+            To recap, there is the same exact effect with simple object:
           </p>
 
           <Pen pen="633e6aa52d40691cca2f2cda91650bae" height="500"></Pen>
 
           <em>
-            Note: Again, this dust effect could be done with just one declarative call by using Burst or Stagger modules that we will discuss shortly, but for now Swirl will do too.
+            Note: Again, this dust effect could be done with just one declarative call with <span className="highlight">Burst</span> or <span className="highlight">Stagger</span> modules that we will discuss shortly, but for now let's keep it <span className="highlight">Swirl</span>.
           </em>
 
           <p>
-            That's would be basically it for animation use cases I'll give you. I hope you've got the idea, nonetheless most of applications are obvious so I won't hang here a lot. Just few gifs for you inspiration:
+            That's would be basically it for animation use cases, i hope you've got the idea - you can use the shapes to enhance and support main scenes.
           </p>
 
-          <More label="click here to see the gifs" className=" is-border-bottom">
+          <p>
+            Just few gifs for your inspiration:
+            <More label="click here to see the gifs" className=" is-border-bottom">
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/bens.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/bens.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/galshir-candles.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/galshir-candles.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/space-dog.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/space-dog.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/galshir-coffee-machine.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/galshir-coffee-machine.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/galshir.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/galshir.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/galshir-sharpener.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/galshir-sharpener.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/galshir-toaster.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/galshir-toaster.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-9.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-9.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-11.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-11.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsse-20.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsse-20.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-2.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-2.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-6.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-6.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-8.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-8.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-10.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-10.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-111.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-111.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-12.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-12.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-16.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-16.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-21.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-21.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-24.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-24.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-25.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-25.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-28.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-28.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-31.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-31.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-32.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-32.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-36.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-36.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-38.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-38.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-39.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-39.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/rain_dribbble.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/rain_dribbble.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/sloth.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/sloth.gif" />
 
-            <br/>
+              <br/>
 
-            <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-23.gif" />
-            
-            <br/>
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-23.gif" />
+              
+              <br/>
 
-          </More>
-
+            </More>
+          </p>
 
           <h2>UI Use Cases</h2>
 
           <p>
-            UI is another common use case for shapes. You can enhance UI motion with shapes, add effects or even implode them and use as part of UIs.
+            UI is another common use case for shapes. You can enhance UI transitions with shapes, add effects or even implode shape to use them as part of UIs.
           </p>
 
           <p>
-            Usually motion in UIs helps the user to catch a clue about position, purpose and intention of the UI element. The next demo illustrates how the shapes can be used to appeal user attention, saying "hey, you can close me right here" message:
+            Usually motion in UI helps the user to catch a clue about position, purpose and intention of the UI element.
+          </p>
+
+          <h3>Bubble Close Button</h3>
+
+          <p>
+            The next demo illustrates how the shapes can be used to appeal users' attention, providing them with feedback about availability of the control element playfully:
           </p>
 
           <Pen pen="3e7e766d0d5eaa3fa953c56c394bc1b5" height="500"></Pen>
 
           <p>
-            You can add more effects to the button to fit the mood of your current UIs:
+            Then you can add even more effects to the button to fit the mood of your current UIs:
           </p>
 
           <Pen pen="97d57587438de4d1e8592304a961be84" height="500"></Pen>
 
           <p>
-            If user will click the close button, we can add a "bubble" fade effect to keep the vibes:
+            If user will click the close button, we need to remove it, for that we can add a "bubbles" effect to support the mood of the UIs:
           </p>
 
           <Pen pen="181b4ba2ebb5a05d755647e9144a50d8" height="500"></Pen>
 
           <p>
-            This is the entire open/close experience (click the close button):
+            This is how it will look like if we will connect these two transitions (click the close button):
           </p>
 
           <Pen pen="3c49de2d7d0ca3e92bf5db5bf7a2687d" height="500"></Pen>
 
           <p>
-            That's the exact same effect I've used in `Bubble Layout` demo a while ago, when was trying to convey the bubble interface (click on any circle to see the close button):
+            That's the exact same effect I've used in Bubble Layout demo a while ago, when was trying to convey the bubble interface (click on any circle to see the close button):
           </p>
 
           <Pen pen="yNOage" height="500"></Pen>
 
           <p>
-            In the `Bubble Layout` demo you can notice two more effects that were made with shapes, - one is the subtle white ripple that spreads out when you click on any bubble, the second one is the white collision effect right under the project image box when it jumps over the screen:
+            In this demo above you can notice two more effects that were made with shapes, - one is the subtle white ripple that spreads out when you click on any bubble, the second one is the white collision effect right under the project image box when it jumps over the screen:
           </p>
 
           <Pen pen="e5fe8c0a9a0a2b387cfa2858ea7e2046" height="500"></Pen>
 
+          <h3>Microconfirmations</h3>
+
           <p>
-            Also, since the shapes are tuneable, you can add effects to you UI regarding user interactions:
+            Since the shapes are tuneable, you can add effects to you UI regarding user interactions (hover over the links to see):
           </p>
 
           <Pen pen="a46534d118a64d2450e6a0e8e93541fd" height="500"></Pen>
 
           <p>
-            Ok. Let's do another demo with shapes regarding UI. This time we will have a plus button, it shows up from bottom left, when it stops - it scales down and up imitating press motion, concurrent rotation imitates "let's go" gesture, inviting user to follow up with a click:
+            Another demo for microconfirations is the pointer ripple, the effect that spreads out after user clicks any touchable surface. The <span className="highlight">mojs-player</span> itself has a lot of those so I will put an empty player as demo (click on player controls to see):
+          </p>
+
+          <Pen pen="249b42683dfa4b7a11f641e842270427" height="200"></Pen>
+
+          <h3>Love/Hate Modal</h3>
+
+          <p>
+            Ok. Let's do another demo with shapes regarding UI. This time we will have a plus button, it shows up from bottom left, after it stops - it mimics push transition. Also concurrent rotation of the button imitates "let's go/follow me" gesture, inviting user to follow up with a click:
           </p>
 
           <Pen pen="1f6cce8046f76ca43aca3a5ac681b97c" height="500"></Pen>
 
           <p>
-            We can expand the effect even more to appeal even more attention and add some playfull experience:
+            We can expand the effect even more to appeal even more attention and add some playfull splash experience:
           </p>
 
           <Pen pen="51350c86ef0e0fb722e034006fcafb8f" height="500"></Pen>
 
           <p>
-            If user doesn't click the button, let's add the callout vibration motion, mimicing incoming call:
+            Then, if user doesn't click the button for a while, let's invite user to proceed by adding the callout vibration, mimicing incoming call:
           </p>
 
           <Pen pen="9935b7cec036eae2ddb762213ceae6d4" height="500"></Pen>
 
           <p>
-            After user will click the button, we will show the quiz modal with two the most valiable questions we have ever had:
+            Then when user eventually clicks the button, we will show the quiz modal with the most valiable question we have ever had:
           </p>
 
           <Pen pen="2c95e0397b0d20eb4fbc952e3c5f0fe0" height="500"></Pen>
 
           <p>
-            We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners. Also arrow of the modal and modal itself are nothing than just plain mojs shape. 
+            We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spreading effect. Also arrow of the modal and modal itself are nothing than just plain mojs shape. 
           </p>
 
           <p>
@@ -1261,19 +1287,19 @@ const heart = new mojs.Shape({
           <Pen pen="ad612440c8b08d0b506e0a8cb4152b9c" height="500"></Pen>
 
           <p>
-            Note how the modal inflates and gets bigger - the extend parts are nothing than plain shapes of `curve`, that just get scaled on user's iteraction. I've removed the modal's shape for you to see them (hover over buttons):
+            The extend parts of infalting modal are nothing than plain shapes of <span className="highlight">curve</span>, that just get scaled on user's iteraction. I've set the modal shape to disappear to reveal the extending parts (hover over buttons):
           </p>
 
           <Pen pen="4b54df04faa5b6c885a7b0222c842b5d" height="500"></Pen>
 
           <p>
-            If the user leaves the button with his pointer, we need to show the tension relief, just few swirls would do here (hover over buttons and then release to see):
+            If user leaves the button with his pointer, we need to show the tension relief by mimicing the air currents that float out of the modal, just few swirls would do here (hover over buttons and then release to see):
           </p>
 
           <Pen pen="fcc29bcf5d0eebf37d558864b7a2e334" height="500"></Pen>
 
           <p>
-            If user proceeds with the button click, we will blow up the modal as a consequqnce of modal's tension and show the chosen word:
+            In other case, when user proceeds with the button click, we will blow up the modal as a consequqnce of modal's tension and show the chosen word. That's the entire sequence:
           </p>
 
           <Pen pen="812699ce32c9a7aeb70c9384b32a533a" height="500"></Pen>
@@ -1420,13 +1446,13 @@ const heart = new mojs.Shape({
 
           <h2>Recap</h2>
 
+
           <p>
-            Phew, that was intence. I hope you didn't get bored.
-            In this tutorial we have learned how you can use shapes to enhance your animations, motion graphics sequences and UIs. To create a shape right there where you want it without any bootstrapping, you use a declarative call. Use `then` method to chain the states of the shapes. `tune` shapes afterwards or re`generate` all random properties. Shapes obey the `tweenable` interface thus you have tween properties, callbacks and public method that any `tween` has.
+            Phew, that was intence. I hope you didn't get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes to enhance your animations, motion graphics sequences and UIs. It should be clear at this point that to create a shape you use a declarative call and the shape appears in any place you want without bootsrapping. You  can use `then` method to chain the states of shapes and <span className="highlight">tune</span> shapes afterwards or re<span className="highlight">generate</span> all random properties. Remember that shapes obey the <span className="highlight">tweenable</span> interface thus it has tween properties, callbacks and public method that any <span className="highlight">tween</span> has.
           </p>
 
           <p>
-            Need to admit that this post was written as an introduction to more complex and mature module that is called `Burst`, it was important to tell you about the base concepts and API's syntax here, so now you are ready to the meet the `Burst`!
+            Need to admit that this post was written as an introduction to more complex and mature module that is called <span className="highlight">Burst</span>, it was important to familiarize you with the base concepts and API's syntax before we will proceed further. I think now you are ready now so let me invite you to the meet the <span className="highlight">Burst</span>!
           </p>
 
           <h2>Thank yous</h2>
@@ -1437,7 +1463,7 @@ const heart = new mojs.Shape({
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
             <br />
-            Next: &nbsp;<UniteLink link="/tutorials/easing/mix" isDisabled="true" className="highlight">Burst</UniteLink>
+            Next: &nbsp;<UniteLink link="/tutorials/burst" isDisabled="true" className="highlight">Burst</UniteLink>
           </p>
 
           <SocialNetworksAbout className="post__social-networks-about" />

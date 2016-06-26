@@ -44316,7 +44316,7 @@
 	            { className: 'highlight' },
 	            'isShowStart'
 	          ),
-	          ' property says to the shape to be visible even before animation.'
+	          ' property says to the shape to be visible even before animation starts.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44328,6 +44328,17 @@
 	          { pen: 'd929be6cdb64bb0a2979f35669284197' },
 	          { js: 'var shape = new mojs.Shape({\n  shape:        \'circle\',  // shape "circle" is default\n  radius:       25,        // shape radius\n  fill:         \'white\',    // same as \'transparent\'\n  stroke:       \'#F64040\', // or \'cyan\'\n  strokeWidth:  5,         // width of the stroke\n  isShowStart:  true,      // show before any animation starts\n});\n'
 	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The entire list of shape properties with annotations could be found at ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://github.com/' },
+	            'Shape APIs'
+	          ),
+	          ' section.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44356,7 +44367,66 @@
 	            { className: 'highlight' },
 	            'hex'
 	          ),
-	          '.'
+	          ', numeric properties may be unit based (like ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'top'
+	          ),
+	          '/',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'left'
+	          ),
+	          ' below) or even can be expressed with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'rand'
+	          ),
+	          ' strings (like ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'x'
+	          ),
+	          ' below):'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'd7b4e84ddcd72664709f2394ce9f7968' },
+	          { js: 'var shape = new mojs.Shape({\n  shape:        \'circle\',\n  top:          \'50%\',\n  x:            \'rand(-250, 250)\',\n  isShowStart:  true,\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'We\'ve set random value for the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'x'
+	          ),
+	          ' property in interval from ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '0'
+	          ),
+	          ' to ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '200'
+	          ),
+	          ' so it should show up in random position inside that gap every time you will rerun the pen. ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'rand'
+	          ),
+	          ' string syntax is obvious - it takes start and end value to generate the eventual value from.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44437,77 +44507,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Every property could be unit based (like ',
+	          'Boolean properties start with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'top'
+	            'is'
 	          ),
-	          '/',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'left'
-	          ),
-	          ' below) or even can be expressed with ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'rand'
-	          ),
-	          ' strings (like ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'x'
-	          ),
-	          ' below):'
-	        ),
-	        _react2.default.createElement(
-	          _codeSample2.default,
-	          { pen: 'd7b4e84ddcd72664709f2394ce9f7968' },
-	          { js: 'var shape = new mojs.Shape({\n  shape:        \'circle\',\n  isShowStart:  true,\n  top:          \'50%\',\n  x:            \'rand(-250, 250)\'\n});'
-	          }
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'We\'ve set random value for the ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'x'
-	          ),
-	          ' property in interval from ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            '0'
-	          ),
-	          ' to ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            '200'
-	          ),
-	          ' so it should show up in random position inside that gap every time you will rerun the pen. ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'rand'
-	          ),
-	          ' string syntax is obvious - it takes start and end value to generate the eventual value from.'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Please consult ',
-	          _react2.default.createElement(
-	            _uniteLink2.default,
-	            { link: 'https://github.com/' },
-	            'Shape APIs'
-	          ),
-	          ' as the full API reference.'
+	          ' prefix. Static shapes are boring tho, lets add some transitions.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -44517,7 +44523,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Now let\'s animate the shape. To keep the ',
+	          'To keep the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44639,7 +44645,7 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'delta(∆)'
+	            'delta'
 	          ),
 	          ' object can be ',
 	          _react2.default.createElement(
@@ -44653,7 +44659,7 @@
 	            { className: 'highlight' },
 	            'rand'
 	          ),
-	          ') ones or whatever you have — just the same as the static values:'
+	          ') ones or whatever you have — just the same as we did it before with static values (all objects in the code sample below are deltas):'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -44700,7 +44706,7 @@
 	            { className: 'highlight' },
 	            'color keywords'
 	          ),
-	          ' and other values as to animate from to.'
+	          ' and other values as to animate from into for all shapes.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44722,7 +44728,7 @@
 	        _react2.default.createElement(
 	          _codeSample2.default,
 	          { pen: 'e046c8eaa32149c47c04e209336e0ff0' },
-	          { js: 'const tri = new mojs.Shape({\n  shape:      \'polygon\',\n  fill:       \'cyan\',\n  radius:     65,\n  angle:      { [-120]: -40 },\n  x:          { [-200]: 20 },\n  y:          { [50]: -20 },\n  scaleX:     { 0 : 1.3 },\n  \n  repeat:     999,\n  yoyo:       true,\n  duration:   800,\n\n  isShowEnd:  false\n}).play();'
+	          { js: 'const tri = new mojs.Shape({\n  shape:      \'polygon\',\n  fill:       \'cyan\',\n  radius:     65,\n  angle:      { [-120]: -40 },\n  x:          { [-200]: 20 },\n  y:          { [50]: -20 },\n  scaleX:     { 0 : 1.3 },\n  \n  repeat:     5,\n  duration:   800,\n\n  isShowEnd:  false\n}).play();'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -44762,7 +44768,7 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            '180'
+	            '180px'
 	          ),
 	          ' to the right starting from ',
 	          _react2.default.createElement(
@@ -44788,25 +44794,19 @@
 	            { className: 'highlight' },
 	            '1.3'
 	          ),
-	          ' concurrently during ',
+	          ' concurrently. That\'s happens during ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            '800ms'
 	          ),
-	          ' ',
+	          ' and repeats ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            '999'
+	            '5'
 	          ),
-	          ' times and ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'yoyo'
-	          ),
-	          ' filipping direction, with default ',
+	          ' times with default ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44829,7 +44829,7 @@
 	            { className: 'highlight' },
 	            'tween'
 	          ),
-	          ' properties and ',
+	          ' properties (like duration/delay etc) and ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44864,7 +44864,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Delta can also have it\'s own ',
+	          'Delta can also have it\'s own explicit ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44940,7 +44940,7 @@
 	            { className: 'highlight' },
 	            'delta'
 	          ),
-	          ' values is base curve value, that will be multiplied by curve\'s value when animation runs:'
+	          ' values is curve\'s base that will be multiplied by current curve\'s value when animation runs:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -44963,7 +44963,7 @@
 	            { link: 'http://mojs.io/tutorials/easing/path-easing/' },
 	            'property curves'
 	          ),
-	          ' because of it\'s power.'
+	          ' as it is a very sophisticated and powerful concept.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44974,7 +44974,7 @@
 	            { className: 'highlight' },
 	            'delta'
 	          ),
-	          ' syntax:'
+	          '\'s syntax:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -44985,7 +44985,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'At this point we can declare shapes and animate then.'
+	          'At this point we can declare and animate shapes.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -45046,12 +45046,12 @@
 	            { className: 'highlight' },
 	            'mojs tools'
 	          ),
-	          ' that gives you GUI contols thus help you to craft your motion sequence. Also it keeps the animation and settings state on reload saving you lots of time. Since our animations can get more complex, the player is getting to be irreplaceable tool for our needs.'
+	          ' that gives you GUI contols thus helps you to craft your motion sequence. Also it keeps the animation and settings state on page reloads, saving you lots of time and effort. Since our animations can get quite complex, the player could be a aide.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'So here we have continued the sequence with the next state declaration for the ',
+	          'So in the demo above, we have continued the sequence with the next state declaration for the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45144,7 +45144,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'As you can witness above, setting ',
+	          'As you can witness, setting ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45162,35 +45162,53 @@
 	            { className: 'highlight' },
 	            'mojs'
 	          ),
-	          ' to ignore everything whatever was before and proceed to entire new delta transition.'
+	          ' to ignore everything whatever was before and proceed with completely new delta transition.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'duration'
-	          ),
-	          ' is the only tween property that gets inherited from previous then call:'
-	        ),
-	        _react2.default.createElement(
-	          _codeSample2.default,
-	          { pen: '98772bc3e5e67ed9dba66b7280dfff6a' },
-	          { js: 'const shape = new mojs.Shape({\n  shape:          \'rect\',\n  fill:           \'none\',\n  stroke:         \'cyan\',\n  radius:         10,\n  strokeWidth:    20,\n  angle:          { [-180] : 0 },\n  top: \'50%\', y: -20,\n  \n  duration:       600\n}).then({\n  \n  // duration here will be 600 too because inherited from previous block\n  \n  angle:          -360,\n  scale:          2,\n  strokeWidth:    0,\n  stroke:         { \'magenta\' : \'yellow\'  }\n});'
-	          }
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'In the code sample above, the duration inside ',
+	          'The last thing to note is that if property is not set in the new ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'then'
 	          ),
-	          ' call has the same value of 600ms because it wasn\'t set and got inherited from the previous state block.'
+	          ' call, it gets inherited from the previous block just as you would expect. This works for all properties excluding tween ones, but not ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'duration'
+	          ),
+	          ' one. So the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'duration'
+	          ),
+	          ' property is the only tween property that gets inherited from previous then call:'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: '98772bc3e5e67ed9dba66b7280dfff6a' },
+	          { js: 'const shape = new mojs.Shape({\n  shape:          \'rect\',\n  fill:           \'none\',\n  stroke:         \'cyan\',\n  radius:         10,\n  strokeWidth:    20,\n  angle:          { [-180] : 0 },\n  top: \'50%\', y: -20,\n  \n  duration:       600,\n  delay:          200\n}).then({\n  \n  // duration here will be 600 too because inherited from previous block\n  // delay here will have default 0 value\n  \n  angle:          -360,\n  scale:          2,\n  strokeWidth:    0,\n  stroke:         { \'magenta\' : \'yellow\'  }\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'So in the code sample above, the duration inside ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'then'
+	          ),
+	          ' call has the same value of 600ms inherited inherited from the previous state block, but ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'delay'
+	          ),
+	          ' has the default value of 0.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -45369,13 +45387,19 @@
 	            { className: 'highlight' },
 	            'magenta'
 	          ),
-	          ', and then tune it to ',
+	          ', and tune it to ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'deepink'
 	          ),
 	          ', you will eventually have ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'deeppink'
+	          ),
+	          ', ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45398,7 +45422,7 @@
 	        _react2.default.createElement(
 	          _codeSample2.default,
 	          { pen: '0d745dac6d142cd4f6dc5b423a8273b4' },
-	          { js: 'const circle = new mojs.Shape({\n  fill: { \'magenta\': \'yellow\' },\n}).then({\n  fill: \'cyan\'\n});\n\ndocument.addEventListener( \'click\', function (e) {\n  \n  // no tune\n  circle1\n    .replay();\n\n  // static value tune\n  circle2\n    .tune({ fill: \'deeppink\' })\n    .replay();\n  \n  // delta tune\n  circle3\n    .tune({ fill: { \'yellow\' : \'deeppink\' } })\n    .replay();\n});'
+	          { js: 'const circle = new mojs.Shape({\n  fill: { \'magenta\': \'yellow\' },\n}).then({\n  fill: \'cyan\'\n});\n\ndocument.addEventListener( \'click\', function (e) {\n  \n  // no tune\n  circle1\n    .replay();\n\n  // static value tune, results in \'deeppink\' for the first block, \'deeppink\' -> \'cyan\' for the second one\n  circle2\n    .tune({ fill: \'deeppink\' })\n    .replay();\n  \n  // delta tune, results in \'yellow\' -> \'deeppink\' for the first block, \'deeppink\' : \'cyan\' for the second one\n  circle3\n    .tune({ fill: { \'yellow\' : \'deeppink\' } })\n    .replay();\n});'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -45461,7 +45485,7 @@
 	            { className: 'highlight' },
 	            'generate'
 	          ),
-	          ' the shapes inside, as the result we have unique pattern every click event fires.'
+	          ' the shapes inside, as the result we have unique effect pattern every time the click event fires.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -45525,7 +45549,7 @@
 	            { className: 'highlight' },
 	            'zigzag'
 	          ),
-	          '. You can extend the set on shapes by providing ',
+	          '. You can extend this set of shapes by providing ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45636,13 +45660,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Worth noting that you should remove all presentation attributes from svg tags to add ',
+	          'Worth noting that you should remove all presentation attributes from svg tags to give ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'mojs'
 	          ),
-	          ' controls over styling them otherwise they will be static:'
+	          ' the ability to style them, otherwise the values will be static:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -45670,7 +45694,7 @@
 	            { className: 'highlight' },
 	            'getLength'
 	          ),
-	          ' lifecycle method, it is handy only if you want to use relative percent values for ',
+	          ' lifecycle method, - it is handy only if you want to use relative percent values for ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45688,7 +45712,7 @@
 	            { className: 'highlight' },
 	            'mojs'
 	          ),
-	          ' knows very little about the custom shape you have had provided it is on you to specify what is the perimeter length of the custom shape.'
+	          ' knows very little about the custom shape you have had provided, it is on you to specify what is the perimeter length of the custom shape.'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -45705,13 +45729,13 @@
 	            { className: 'highlight' },
 	            'strokeDashoffset'
 	          ),
-	          ' property so we had to provide the shape with ',
+	          ' property so we had to provide the custom shape with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'getLength'
 	          ),
-	          ' method for precise stroke length calculations.'
+	          ' method for precise stroke dash length calculations.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -45732,13 +45756,13 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          ' module with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for your shape. To give you control over the path, it adds more ',
+	          ' module with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over dust-like trajectories. To give you control over this behaviour, ShapeSwirl accepts more ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            '6'
 	          ),
-	          ' properties, so you can define frequency or size of the path and other parameters (click somewhere to see):'
+	          ' properties, thus you can define frequency or size of the path and other supporting parameters (click somewhere to see):'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -45749,7 +45773,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'How it would be handy will be clear soon, in short the main idea behind ShapeSwirl is to give you the ability to compose dust/smoke/bubbles effects or basically any effect that needs to move over sine path (click somewhere to see):'
+	          'How ShapeSwirl can be handy will be clear soon, in short the main idea behind swirls is to give you the ability to compose dust/smoke/bubbles effects or basically any effect that needs to move over sine path (click somewhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '90e2506d73313d14d49486f7d71fb9d0', height: '500' }),
 	        _react2.default.createElement(
@@ -45769,9 +45793,13 @@
 	          ),
 	          ' so we won\'t spend much time with it. Nonetheless I encorage you to play with the parameters a bit to get confortable with them.'
 	        ),
-	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
-	          _cite2.default,
+	          'h2',
+	          null,
+	          'Small Recap'
+	        ),
+	        _react2.default.createElement(
+	          'p',
 	          null,
 	          'That was very fast intro to the ',
 	          _react2.default.createElement(
@@ -45803,7 +45831,7 @@
 	            { className: 'highlight' },
 	            'delta'
 	          ),
-	          ' object that describes the transition of that property. You can chain the shape transition with ',
+	          ' object that describes the transition of that property. You can chain the shape transitions with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45829,7 +45857,6 @@
 	          ),
 	          '.'
 	        ),
-	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	          'h2',
 	          null,
@@ -45850,7 +45877,7 @@
 	            { className: 'highlight' },
 	            'ShapeSwirl'
 	          ),
-	          ' modules are nothing than tiny bits that compose higher order modules, they have strong use cases and can be used by their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also ',
+	          ' modules are nothing than tiny bits that compose higher order modules creating some matured effects, they have strong use cases and can be used by their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45868,13 +45895,18 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          ' can be created with just one declarative call allowing you to focus entirely on you motion sequences and don\'t spend time to bootstrap things, this fact powers you with a ',
+	          ' can be created with just one declarative call allowing you to focus entirely on you motion sequences and don\'t spend time to bootstrapping things, this fact powers you with a ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            '"shape framework"'
 	          ),
-	          ' to think in so your sequences get more organized and consistent. I hope you don\'t believe me that ',
+	          ' to think in so motion your sequences get more organized and consistent.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'I hope you don\'t believe me that ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45896,7 +45928,7 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          's. If you will ponder about it, nothing breathes life into static content better than the use of motion graphics. With shapes, the limits are simply the imagination of the designer or the artist, - you can create complex mograph sequnces based entirely on geometric and custom shapes.'
+	          's. If you will ponder a bit, nothing breathes life into static content better than the use of motion graphics. With shapes, the limits are simply the imagination of the designer or the artist, - you can create complex mograph sequnces based entirely on geometric or custom shapes or use them aside as reinforcement support.'
 	        ),
 	        _react2.default.createElement(
 	          'h4',
@@ -45906,21 +45938,14 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Demo with custom bubble shapes and built in ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'rect'
-	          ),
-	          ' and ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'circle'
-	          ),
-	          ' ones.'
+	          'Lets start with the simple intro sequence, it was composed with custom "speech bubble shapes" and built in ones.'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '2ef10ed42ff535182c31cd1dbb81e453', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Custom shapes allow you to use shapes that suite your current needs. To be clear that\'s not just images that you can animate inside some wrapper, they are highly stylable shapes thus a way flexible than just an image or HTMLElement with a background.'
+	        ),
 	        _react2.default.createElement(
 	          'h4',
 	          null,
@@ -45929,24 +45954,24 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'We will walk thru some simple geometric scenes and then combine them to get a nice into.'
+	          'Let\'s walk thru some short random geometric scenes just to get some intuition about shape usage with mograph. After that we will combine them to get a relatively long intro sequence.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Another mograph sequence with triangles, - mistical, simple and appealing:'
+	          'We will start with triangles scene, a drip mistical one, at the same time simple and appealing. Just 6 triangles and few then statements:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '4db9ec6079a3537d8c60ec888dd8e532' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Next demo for mograph, - elegant, contrast and yet simple:'
+	          'The next scene we will compose with another 6 triangles, slightly more elegant, with a little contrast to the first one, but still quite simple:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'c0b7b94e90142f19acba6ed9a4b05a2f' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The next one is rather funky:'
+	          'Let\'s do the next one with contrast to the first two, - simple rectangle with some sparks, this one rather funky:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'c33a3582fc02842b99fa6eb01be6b3ba', height: '700' }),
 	        _react2.default.createElement(
@@ -45958,18 +45983,18 @@
 	            { className: 'highlight' },
 	            'sparks'
 	          ),
-	          ' effect on the sides of the square is ',
+	          ' effect on the sides of the square is the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ' module which we will discuss shortly in the next tutorial, meanwhile in this particular demo, it was made with custom shapes to give you another clue how you would use the custom shapes.'
+	          ' module which we will discuss shortly in the next tutorial, meanwhile in this particular demo, it was made with custom shapes to give you yet another clue how you would use the custom shapes.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The next demo is just a nice transition between pages/app states:'
+	          'After that we need a nice transition between screens, just few circles will do:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '95a862f1ad8445134466ad7d64213d46', height: '700' }),
 	        _react2.default.createElement(
@@ -45981,19 +46006,19 @@
 	            { className: 'highlight' },
 	            'mojs'
 	          ),
-	          ' logo reveal - good use case for shapes in tandem with ',
+	          ' logo reveal - use case for shapes in tandem with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'property curves'
 	          ),
-	          ' application:'
+	          ':'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'b37bb9c6dede99d0ac75d60b5fb0d43d', height: '700' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'We have a bunch of short contrast scenes which a drip contradict to each other. Let\'s finnaly connect all of them to get the etntire sequence:'
+	          'Now, lets finnally compose these short scenes into one:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '39427561a8a0b15d7896480a7d96d3d1', height: '700' }),
 	        _react2.default.createElement(
@@ -46015,13 +46040,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The last demo I will give you for the motion graphics use case is word reveal sequnce:'
+	          'There is another demo that can set some light on the shape usage in motion graphics, it was made with bunch of shapes and few characters that compose a ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'love'
+	          ),
+	          ' word together:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'c94452fb65dbf676b0ae8a12d4267473', height: '700' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s would be it for mograph use cases demos, I hope you are getting more convinced that shapes could be useful in compositing effects when working with motion graphics on the web.'
+	          'That\'s was the last demo for the mograph use cases, I hope you getting more convinced that shapes could be useful sometimes. Let\'s move on.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -46083,7 +46114,12 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Animation is another strong use case for the Shapes. You can compose some visual effects to support your main sequences thus enhancing it, giving them more details and depth. I\'ve made a little animation demo I\'ve made to illustrate the cases:'
+	          'Animation is another field for Shapes application. You can compose some visual effects to support your main sequence, crafting more details and depth.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'I\'ve made a little animation demo as a starting point to which we will apply some effects - 4 physicly balls in harsh living situation:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '3fe5eabaf7cfb83142bbd1be3f2f2850', height: '500' }),
 	        _react2.default.createElement(
@@ -46100,12 +46136,12 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The demo itself is a good illustration on how you can use shapes as "main actors" in your scenes becuase it was composed entirely with shapes. But there is few cases besides that that should be discussed.'
+	          'The demo itself is a good illustration on how you can use shapes as "main actors" in your scenes becuase it was made entirely with shapes. But there is few cases that should be discussed besides that.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'For instance, you can add the effect of collision of balls with ease:'
+	          'For instance, you can add the effect of collision between balls with ease:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '7315f4364360ec87a6655d33782702fe', height: '500' }),
 	        _react2.default.createElement(
@@ -46117,25 +46153,25 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The next effect, you can enhance this scene with is the "motion trails":'
+	          'The next effect, you can add to the scene is the "motion trails" effect:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '92f9a7b05498b8a0be3734737a9cfc70', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Motion trail effect is ususally used to exaggerate velocity of the object that moves. Just a nice subtle details. The effect was composed with 2 shapes:'
+	          'Motion trail effect is ususally used to exaggerate velocity of the object that moves and the enviroment it moves in. Just a nice subtle detail. The effect was composed with 2 shapes, namely curves. There is another simple example with lines:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'fff0bcc079e0448bd0a72ee311ebadfa', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Another effect you can think of will be a "dust trail":'
+	          'The "dust trail" effect can fit this scene too:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '6f7b05a45679964ccdf9212fa68075c8', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Effect itself was composed from bunch of swirls, first you want to make the swirls move downward somewhere into the ground:'
+	          'It was composed with bunch of swirls, lets spend some time and see how exactly you can build something like that. First you want to make the swirls move downward, - somewhere into the ground:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '80d765ff22ae515cb28a78c0ec5686c9', height: '500' }),
 	        _react2.default.createElement(
@@ -46159,81 +46195,104 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'There is the same effect with simple object:'
+	          'To recap, there is the same exact effect with simple object:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '633e6aa52d40691cca2f2cda91650bae', height: '500' }),
 	        _react2.default.createElement(
 	          'em',
 	          null,
-	          'Note: Again, this dust effect could be done with just one declarative call by using Burst or Stagger modules that we will discuss shortly, but for now Swirl will do too.'
+	          'Note: Again, this dust effect could be done with just one declarative call with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' or ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Stagger'
+	          ),
+	          ' modules that we will discuss shortly, but for now let\'s keep it ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Swirl'
+	          ),
+	          '.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s would be basically it for animation use cases I\'ll give you. I hope you\'ve got the idea, nonetheless most of applications are obvious so I won\'t hang here a lot. Just few gifs for you inspiration:'
+	          'That\'s would be basically it for animation use cases, i hope you\'ve got the idea - you can use the shapes to enhance and support main scenes.'
 	        ),
 	        _react2.default.createElement(
-	          _more2.default,
-	          { label: 'click here to see the gifs', className: ' is-border-bottom' },
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/bens.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir-candles.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/space-dog.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir-coffee-machine.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir-sharpener.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir-toaster.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-9.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-11.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsse-20.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-2.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-6.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-8.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-10.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-111.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-12.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-16.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-21.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-24.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-25.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-28.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-31.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-32.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-36.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-38.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-39.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/rain_dribbble.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/sloth.gif' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-23.gif' }),
-	          _react2.default.createElement('br', null)
+	          'p',
+	          null,
+	          'Just few gifs for your inspiration:',
+	          _react2.default.createElement(
+	            _more2.default,
+	            { label: 'click here to see the gifs', className: ' is-border-bottom' },
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/bens.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir-candles.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/space-dog.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir-coffee-machine.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir-sharpener.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/galshir-toaster.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-9.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-11.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsse-20.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-2.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-6.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-8.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-10.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-111.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-12.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-16.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-21.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-24.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-25.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-28.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-31.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-32.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-36.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-38.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-39.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/rain_dribbble.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/sloth.gif' }),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_gif2.default, { className: 'gif--50-width', src: '/gifs/shape-animation/LingoAsset-23.gif' }),
+	            _react2.default.createElement('br', null)
+	          )
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -46243,78 +46302,110 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'UI is another common use case for shapes. You can enhance UI motion with shapes, add effects or even implode them and use as part of UIs.'
+	          'UI is another common use case for shapes. You can enhance UI transitions with shapes, add effects or even implode shape to use them as part of UIs.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Usually motion in UIs helps the user to catch a clue about position, purpose and intention of the UI element. The next demo illustrates how the shapes can be used to appeal user attention, saying "hey, you can close me right here" message:'
+	          'Usually motion in UI helps the user to catch a clue about position, purpose and intention of the UI element.'
+	        ),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'Bubble Close Button'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The next demo illustrates how the shapes can be used to appeal users\' attention, providing them with feedback about availability of the control element playfully:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '3e7e766d0d5eaa3fa953c56c394bc1b5', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'You can add more effects to the button to fit the mood of your current UIs:'
+	          'Then you can add even more effects to the button to fit the mood of your current UIs:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '97d57587438de4d1e8592304a961be84', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If user will click the close button, we can add a "bubble" fade effect to keep the vibes:'
+	          'If user will click the close button, we need to remove it, for that we can add a "bubbles" effect to support the mood of the UIs:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '181b4ba2ebb5a05d755647e9144a50d8', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'This is the entire open/close experience (click the close button):'
+	          'This is how it will look like if we will connect these two transitions (click the close button):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '3c49de2d7d0ca3e92bf5db5bf7a2687d', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s the exact same effect I\'ve used in `Bubble Layout` demo a while ago, when was trying to convey the bubble interface (click on any circle to see the close button):'
+	          'That\'s the exact same effect I\'ve used in Bubble Layout demo a while ago, when was trying to convey the bubble interface (click on any circle to see the close button):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'yNOage', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'In the `Bubble Layout` demo you can notice two more effects that were made with shapes, - one is the subtle white ripple that spreads out when you click on any bubble, the second one is the white collision effect right under the project image box when it jumps over the screen:'
+	          'In this demo above you can notice two more effects that were made with shapes, - one is the subtle white ripple that spreads out when you click on any bubble, the second one is the white collision effect right under the project image box when it jumps over the screen:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'e5fe8c0a9a0a2b387cfa2858ea7e2046', height: '500' }),
 	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'Microconfirmations'
+	        ),
+	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Also, since the shapes are tuneable, you can add effects to you UI regarding user interactions:'
+	          'Since the shapes are tuneable, you can add effects to you UI regarding user interactions (hover over the links to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'a46534d118a64d2450e6a0e8e93541fd', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Ok. Let\'s do another demo with shapes regarding UI. This time we will have a plus button, it shows up from bottom left, when it stops - it scales down and up imitating press motion, concurrent rotation imitates "let\'s go" gesture, inviting user to follow up with a click:'
+	          'Another demo for microconfirations is the pointer ripple, the effect that spreads out after user clicks any touchable surface. The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'mojs-player'
+	          ),
+	          ' itself has a lot of those so I will put an empty player as demo (click on player controls to see):'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '249b42683dfa4b7a11f641e842270427', height: '200' }),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'Love/Hate Modal'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Ok. Let\'s do another demo with shapes regarding UI. This time we will have a plus button, it shows up from bottom left, after it stops - it mimics push transition. Also concurrent rotation of the button imitates "let\'s go/follow me" gesture, inviting user to follow up with a click:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '1f6cce8046f76ca43aca3a5ac681b97c', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'We can expand the effect even more to appeal even more attention and add some playfull experience:'
+	          'We can expand the effect even more to appeal even more attention and add some playfull splash experience:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '51350c86ef0e0fb722e034006fcafb8f', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If user doesn\'t click the button, let\'s add the callout vibration motion, mimicing incoming call:'
+	          'Then, if user doesn\'t click the button for a while, let\'s invite user to proceed by adding the callout vibration, mimicing incoming call:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '9935b7cec036eae2ddb762213ceae6d4', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'After user will click the button, we will show the quiz modal with two the most valiable questions we have ever had:'
+	          'Then when user eventually clicks the button, we will show the quiz modal with the most valiable question we have ever had:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '2c95e0397b0d20eb4fbc952e3c5f0fe0', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners. Also arrow of the modal and modal itself are nothing than just plain mojs shape.'
+	          'We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spreading effect. Also arrow of the modal and modal itself are nothing than just plain mojs shape.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -46325,19 +46416,25 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Note how the modal inflates and gets bigger - the extend parts are nothing than plain shapes of `curve`, that just get scaled on user\'s iteraction. I\'ve removed the modal\'s shape for you to see them (hover over buttons):'
+	          'The extend parts of infalting modal are nothing than plain shapes of ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'curve'
+	          ),
+	          ', that just get scaled on user\'s iteraction. I\'ve set the modal shape to disappear to reveal the extending parts (hover over buttons):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '4b54df04faa5b6c885a7b0222c842b5d', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If the user leaves the button with his pointer, we need to show the tension relief, just few swirls would do here (hover over buttons and then release to see):'
+	          'If user leaves the button with his pointer, we need to show the tension relief by mimicing the air currents that float out of the modal, just few swirls would do here (hover over buttons and then release to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'fcc29bcf5d0eebf37d558864b7a2e334', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If user proceeds with the button click, we will blow up the modal as a consequqnce of modal\'s tension and show the chosen word:'
+	          'In other case, when user proceeds with the button click, we will blow up the modal as a consequqnce of modal\'s tension and show the chosen word. That\'s the entire sequence:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '812699ce32c9a7aeb70c9384b32a533a', height: '500' }),
 	        _react2.default.createElement(
@@ -46433,12 +46530,48 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Phew, that was intence. I hope you didn\'t get bored. In this tutorial we have learned how you can use shapes to enhance your animations, motion graphics sequences and UIs. To create a shape right there where you want it without any bootstrapping, you use a declarative call. Use `then` method to chain the states of the shapes. `tune` shapes afterwards or re`generate` all random properties. Shapes obey the `tweenable` interface thus you have tween properties, callbacks and public method that any `tween` has.'
+	          'Phew, that was intence. I hope you didn\'t get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes to enhance your animations, motion graphics sequences and UIs. It should be clear at this point that to create a shape you use a declarative call and the shape appears in any place you want without bootsrapping. You  can use `then` method to chain the states of shapes and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'tune'
+	          ),
+	          ' shapes afterwards or re',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'generate'
+	          ),
+	          ' all random properties. Remember that shapes obey the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'tweenable'
+	          ),
+	          ' interface thus it has tween properties, callbacks and public method that any ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'tween'
+	          ),
+	          ' has.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Need to admit that this post was written as an introduction to more complex and mature module that is called `Burst`, it was important to tell you about the base concepts and API\'s syntax here, so now you are ready to the meet the `Burst`!'
+	          'Need to admit that this post was written as an introduction to more complex and mature module that is called ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ', it was important to familiarize you with the base concepts and API\'s syntax before we will proceed further. I think now you are ready now so let me invite you to the meet the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          '!'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -46457,7 +46590,7 @@
 	          'Next:  ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
-	            { link: '/tutorials/easing/mix', isDisabled: 'true', className: 'highlight' },
+	            { link: '/tutorials/burst', isDisabled: 'true', className: 'highlight' },
 	            'Burst'
 	          )
 	        ),
