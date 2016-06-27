@@ -44310,7 +44310,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Nothing interesting yet. Just hotpink circle right in the center of the codepen. ',
+	          'Nothing interesting yet. Well maybe there is one thing - the shape magically appears just in the middle of the screen. ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'mojs'
+	          ),
+	          ' takes care to create as little container for the shape as possible, bootstrap all the markup and places the result just where you want it. Pretty handy. ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44321,7 +44327,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Next, you can set presentation properties to the shape:'
+	          'Next, you can style the shape:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -44332,7 +44338,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The entire list of shape properties with annotations could be found at ',
+	          'The entire list of shape properties with comments could be found at ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: 'https://github.com/' },
@@ -44367,7 +44373,7 @@
 	            { className: 'highlight' },
 	            'hex'
 	          ),
-	          ', numeric properties may be unit based (like ',
+	          '. Numeric properties may be unit based (like ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44379,7 +44385,7 @@
 	            { className: 'highlight' },
 	            'left'
 	          ),
-	          ' below) or even can be expressed with ',
+	          ' below) or can be expressed with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44426,7 +44432,7 @@
 	            { className: 'highlight' },
 	            'rand'
 	          ),
-	          ' string syntax is obvious - it takes start and end value to generate the eventual value from.'
+	          ' string syntax is obvious - it takes start and end value to generate the eventual value from those two.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44441,7 +44447,7 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'radiusx'
+	            'radiusX'
 	          ),
 	          '/',
 	          _react2.default.createElement(
@@ -44449,7 +44455,7 @@
 	            { className: 'highlight' },
 	            'radiusY'
 	          ),
-	          ' explicitly with appropriate properties which fallback fallback to the value of the ',
+	          ' values explicitly with appropriate properties that by default fallback to the value of the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44496,7 +44502,7 @@
 	            { className: 'highlight' },
 	            'radius'
 	          ),
-	          ' properties too for the size setting purpose:'
+	          ' properties too just like a circle shape:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -44507,13 +44513,41 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
+	          'Radiuses control form of shape not just size, it gets pretty clear with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'zigzag'
+	          ),
+	          ' or ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'curve'
+	          ),
+	          ' shapes:'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'fc3ffe076aaafdb173f12d8688cde450' },
+	          { js: 'var zigzag = new mojs.Shape({\n  shape:        \'zigzag\',\n  points:       11,\n  radius:       25,\n  radiusY:      50,\n  left:         \'25%\',\n  fill:         \'none\',\n  stroke:       \'deeppink\',\n  isShowStart:   true,\n});\n\nvar curve = new mojs.Shape({\n  shape:        \'curve\',\n  points:       11,\n  radius:       25,\n  radiusY:      50,\n  left:         \'50%\',\n  fill:         \'none\',\n  stroke:       \'deeppink\',\n  isShowStart:   true,\n});\n\nvar cross = new mojs.Shape({\n  shape:        \'cross\',\n  points:       11,\n  radius:       25,\n  radiusX:      50,\n  left:         \'75%\',\n  fill:         \'none\',\n  stroke:       \'deeppink\',\n  isShowStart:   true,\n  y:            -25,\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'You can see in example above, the radiusY controls size of the spikes for zigzag shape and bend for the curve shape in the second case.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
 	          'Boolean properties start with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'is'
 	          ),
-	          ' prefix. Static shapes are boring tho, lets add some transitions.'
+	          ' prefix to separate them from other values.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -44670,43 +44704,37 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Here, ',
+	          'Here, delta of the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'strokeDashoffset'
 	          ),
-	          ' property uses ',
+	          ' property on the rectangle uses ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'unit based'
 	          ),
-	          ' values in ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'delta'
-	          ),
-	          ' of the rect shape. The ',
+	          ' values. The delta of the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'x'
 	          ),
-	          ' property of the polygon shape uses random unit based values. The ',
+	          ' property of the polygon shape uses random unit based values. The delta of the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'fill'
 	          ),
-	          ' property uses ',
+	          ' property for all the shapes uses ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'color keywords'
 	          ),
-	          ' and other values as to animate from into for all shapes.'
+	          ' to make transitions.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44728,7 +44756,7 @@
 	        _react2.default.createElement(
 	          _codeSample2.default,
 	          { pen: 'e046c8eaa32149c47c04e209336e0ff0' },
-	          { js: 'const tri = new mojs.Shape({\n  shape:      \'polygon\',\n  fill:       \'cyan\',\n  radius:     65,\n  angle:      { [-120]: -40 },\n  x:          { [-200]: 20 },\n  y:          { [50]: -20 },\n  scaleX:     { 0 : 1.3 },\n  \n  repeat:     5,\n  duration:   800,\n\n  isShowEnd:  false\n}).play();'
+	          { js: 'const tri = new mojs.Shape({\n  shape:      \'polygon\',\n  fill:       \'orange\',\n  radius:     65,\n  angle:      { [-120]: -40 },\n  x:          { [-200]: 20 },\n  y:          { [50]: -20 },\n  scaleX:     { 0 : 1.3 },\n  \n  repeat:     5,\n  duration:   800,\n\n  isShowEnd:  false\n}).play();'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -44794,7 +44822,7 @@
 	            { className: 'highlight' },
 	            '1.3'
 	          ),
-	          ' concurrently. That\'s happens during ',
+	          ' concurrently. That happens during ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44870,7 +44898,7 @@
 	            { className: 'highlight' },
 	            'easing'
 	          ),
-	          ' field, that can hold any ',
+	          ' field that can hold any ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44951,19 +44979,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'we won\'t spend a lot of time with ',
+	          'We won\'t spend a lot of time with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'property'
+	            'property curves'
 	          ),
-	          ' curves in this tutorial, but I highly encorage you to dig into the ',
+	          ' in this tutorial, but I highly encorage you to dig into the ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: 'http://mojs.io/tutorials/easing/path-easing/' },
-	            'property curves'
+	            'topic'
 	          ),
-	          ' as it is a very sophisticated and powerful concept.'
+	          ' because it is a very sophisticated and powerful concept to note.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -46381,13 +46409,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Ok. Let\'s do another demo with shapes regarding UI. This time we will have a plus button, it shows up from bottom left, after it stops - it mimics push transition. Also concurrent rotation of the button imitates "let\'s go/follow me" gesture, inviting user to follow up with a click:'
+	          'Ok. Let\'s do another demo with shapes regarding UI. This time we will have a plus button, it will show up from bottom left, after it will stop - we will mimic button push transition. By adding concurrent rotation of the button we will imitate "let\'s go/follow me" gesture, inviting user to follow up with a click:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '1f6cce8046f76ca43aca3a5ac681b97c', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'We can expand the effect even more to appeal even more attention and add some playfull splash experience:'
+	          'Then we can expand the effect even more to add some playfull splash experience:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '51350c86ef0e0fb722e034006fcafb8f', height: '500' }),
 	        _react2.default.createElement(
@@ -46399,30 +46427,30 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Then when user eventually clicks the button, we will show the quiz modal with the most valiable question we have ever had:'
+	          'When user eventually will click the button, we will show the quiz modal with the most valiable question we have ever had, that\'s how the modal will look like:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '2c95e0397b0d20eb4fbc952e3c5f0fe0', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spreading effect. Also arrow of the modal and modal itself are nothing than just plain mojs shape.'
+	          'We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spread effect. Well basically almost everything including modal shape itself and it\'s corner are shapes.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Ok, now when the user hovers over the button, we need to show some tension, expressing that something is going to happen if he proceeds with a click (hover over buttons to see):'
+	          'Now when the user hovers over any button, we need to show some tension, conveying that something is going to happen if he proceeds with a click (hover over buttons to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'ad612440c8b08d0b506e0a8cb4152b9c', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The extend parts of infalting modal are nothing than plain shapes of ',
+	          'The extend parts of infalting modal are nothing than plain shapes, in fact ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'curve'
 	          ),
-	          ', that just get scaled on user\'s iteraction. I\'ve set the modal shape to disappear to reveal the extending parts (hover over buttons):'
+	          's, that just get scaled when user hovers over the buttons. I\'ve set the modal shape to disappear to reveal the extending parts so it will be clear for you what I mean (hover over buttons):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '4b54df04faa5b6c885a7b0222c842b5d', height: '500' }),
 	        _react2.default.createElement(
@@ -46434,9 +46462,9 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'In other case, when user proceeds with the button click, we will blow up the modal as a consequqnce of modal\'s tension and show the chosen word. That\'s the entire sequence:'
+	          'In the other case, when user proceeds with the button click, we will blow up the modal as a consequqnce of modal\'s tension and show the chosen word. That\'s the entire sequence:'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '812699ce32c9a7aeb70c9384b32a533a', height: '500' }),
+	        _react2.default.createElement(_codepen2.default, { pen: '812699ce32c9a7aeb70c9384b32a533a', height: '600' }),
 	        _react2.default.createElement(
 	          'em',
 	          null,
@@ -46530,13 +46558,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Phew, that was intence. I hope you didn\'t get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes to enhance your animations, motion graphics sequences and UIs. It should be clear at this point that to create a shape you use a declarative call and the shape appears in any place you want without bootsrapping. You  can use `then` method to chain the states of shapes and ',
+	          'Phew, that was intence. I hope you didn\'t get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes. It should be clear at this point that to create a shape you use a declarative call to create one and the shape appears in any place you want without any bootsrapping. You  can use ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'then'
+	          ),
+	          ' method to chain states of shape and ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'tune'
 	          ),
-	          ' shapes afterwards or re',
+	          ' them afterwards or even re',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -46565,7 +46599,7 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ', it was important to familiarize you with the base concepts and API\'s syntax before we will proceed further. I think now you are ready now so let me invite you to the meet the ',
+	          ', it was important to familiarize you with the base concepts and API\'s syntax before we will proceed further. I think now you are ready to meet the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },

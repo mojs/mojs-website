@@ -74,11 +74,11 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            Nothing interesting yet. Just hotpink circle right in the center of the codepen. <span className="highlight">isShowStart</span> property says to the shape to be visible even before animation starts.
+            Nothing interesting yet. Well maybe there is one thing - the shape magically appears just in the middle of the screen. <span className="highlight">mojs</span> takes care to create as little container for the shape as possible, bootstrap all the markup and places the result just where you want it. Pretty handy. <span className="highlight">isShowStart</span> property says to the shape to be visible even before animation starts.
           </p>
 
           <p>
-            Next, you can set presentation properties to the shape:
+            Next, you can style the shape:
           </p>
 
           <CodeSample pen="d929be6cdb64bb0a2979f35669284197">
@@ -97,11 +97,11 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            The entire list of shape properties with annotations could be found at <UniteLink link="https://github.com/">Shape APIs</UniteLink> section.
+            The entire list of shape properties with comments could be found at <UniteLink link="https://github.com/">Shape APIs</UniteLink> section.
           </p>
 
           <p>
-            Colors could be expressed in different forms like <UniteLink link="https://www.w3.org/TR/css3-color/">color keywords</UniteLink>, <span className="highlight">rgb</span>, <span className="highlight">rgba</span> or <span className="highlight">hex</span>, numeric properties may be unit based (like <span className="highlight">top</span>/<span className="highlight">left</span> below) or even can be expressed with <span className="highlight">rand</span> strings (like <span className="highlight">x</span> below):
+            Colors could be expressed in different forms like <UniteLink link="https://www.w3.org/TR/css3-color/">color keywords</UniteLink>, <span className="highlight">rgb</span>, <span className="highlight">rgba</span> or <span className="highlight">hex</span>. Numeric properties may be unit based (like <span className="highlight">top</span>/<span className="highlight">left</span> below) or can be expressed with <span className="highlight">rand</span> strings (like <span className="highlight">x</span> below):
           </p>
 
           <CodeSample pen="d7b4e84ddcd72664709f2394ce9f7968">
@@ -117,11 +117,11 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            We've set random value for the <span className="highlight">x</span> property in interval from <span className="highlight">0</span> to <span className="highlight">200</span> so it should show up in random position inside that gap every time you will rerun the pen. <span className="highlight">rand</span> string syntax is obvious - it takes start and end value to generate the eventual value from.
+            We've set random value for the <span className="highlight">x</span> property in interval from <span className="highlight">0</span> to <span className="highlight">200</span> so it should show up in random position inside that gap every time you will rerun the pen. <span className="highlight">rand</span> string syntax is obvious - it takes start and end value to generate the eventual value from those two.
           </p>
 
           <p>
-            The <span className="highlight">radius</span> property sets shape's (no prizes for guessing) radius. Also you can set <span className="highlight">radiusx</span>/<span className="highlight">radiusY</span> explicitly with appropriate properties which fallback fallback to the value of the <span className="highlight">radius</span> if not set.
+            The <span className="highlight">radius</span> property sets shape's (no prizes for guessing) radius. Also you can set <span className="highlight">radiusX</span>/<span className="highlight">radiusY</span> values explicitly with appropriate properties that by default fallback to the value of the <span className="highlight">radius</span> if not set.
           </p>
 
           <CodeSample pen="617994a375f9373488b3821707d593c2">
@@ -141,7 +141,7 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            Worth noting that the <span className="highlight">radius</span> property is a property that determines size of any shape, not just <span className="highlight">circle</span> as in example above, so if you have a shape of <span className="highlight">rect</span> or <span className="highlight">polygon</span> or any other, they would have <span className="highlight">radius</span> properties too for the size setting purpose:
+            Worth noting that the <span className="highlight">radius</span> property is a property that determines size of any shape, not just <span className="highlight">circle</span> as in example above, so if you have a shape of <span className="highlight">rect</span> or <span className="highlight">polygon</span> or any other, they would have <span className="highlight">radius</span> properties too just like a circle shape:
           </p>
 
           <CodeSample pen="53893077e0318813dd16cefc7b3e9932">
@@ -177,8 +177,55 @@ var polygon = new mojs.Shape({
             }
           </CodeSample>
 
+          <p>
+            Radiuses control form of shape not just size, it gets pretty clear with <span className="highlight">zigzag</span> or <span className="highlight">curve</span> shapes:
+          </p>
+
+          <CodeSample pen="fc3ffe076aaafdb173f12d8688cde450">
+            {
+              { js: `var zigzag = new mojs.Shape({
+  shape:        'zigzag',
+  points:       11,
+  radius:       25,
+  radiusY:      50,
+  left:         '25%',
+  fill:         'none',
+  stroke:       'deeppink',
+  isShowStart:   true,
+});
+
+var curve = new mojs.Shape({
+  shape:        'curve',
+  points:       11,
+  radius:       25,
+  radiusY:      50,
+  left:         '50%',
+  fill:         'none',
+  stroke:       'deeppink',
+  isShowStart:   true,
+});
+
+var cross = new mojs.Shape({
+  shape:        'cross',
+  points:       11,
+  radius:       25,
+  radiusX:      50,
+  left:         '75%',
+  fill:         'none',
+  stroke:       'deeppink',
+  isShowStart:   true,
+  y:            -25,
+});`
+              }
+            }
+          </CodeSample>
+
         <p>
-          Boolean properties start with <span className="highlight">is</span> prefix. Static shapes are boring tho, lets add some transitions.
+          You can see in example above, the radiusY controls size of the spikes for zigzag shape and bend for the curve shape in the second case.
+        </p>
+
+        <p>
+          Boolean properties start with <span className="highlight">is</span> prefix to separate them from other values.
         </p>
           
 
@@ -257,7 +304,7 @@ const polygon = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Here, <span className="highlight">strokeDashoffset</span> property uses <span className="highlight">unit based</span> values in <span className="highlight">delta</span> of the rect shape. The <span className="highlight">x</span> property of the polygon shape uses random unit based values. The <span className="highlight">fill</span> property uses <span className="highlight">color keywords</span> and other values as to animate from into for all shapes.
+            Here, delta of the <span className="highlight">strokeDashoffset</span> property on the rectangle uses <span className="highlight">unit based</span> values. The delta of the <span className="highlight">x</span> property of the polygon shape uses random unit based values. The delta of the <span className="highlight">fill</span> property for all the shapes uses <span className="highlight">color keywords</span> to make transitions.
           </p>
 
           <p>
@@ -268,7 +315,7 @@ const polygon = new mojs.Shape({
             {
               { js: `const tri = new mojs.Shape({
   shape:      'polygon',
-  fill:       'cyan',
+  fill:       'orange',
   radius:     65,
   angle:      { [-120]: -40 },
   x:          { [-200]: 20 },
@@ -286,7 +333,7 @@ const polygon = new mojs.Shape({
 
 
           <p>
-            If you will translate this code sample to proper English, you will have something like this —  we have a <span className="highlight">orange</span> <span className="highlight">polygon</span> of <span className="highlight">65px radius</span> right in the middle of the screen(by default), when animation starts — it rotates from <span className="highlight">-120</span> to <span className="highlight">-40</span> degrees, shifts <span className="highlight">180px</span> to the right starting from <span className="highlight">-200px</span> and <span className="highlight">scale</span>s from <span className="highlight">0</span> to <span className="highlight">1.3</span> concurrently. That's happens during <span className="highlight">800ms</span> and repeats <span className="highlight">5</span> times with default <span className="highlight">easing</span>. When animation ends, the shape <span className="highlight">dissapears</span>.
+            If you will translate this code sample to proper English, you will have something like this —  we have a <span className="highlight">orange</span> <span className="highlight">polygon</span> of <span className="highlight">65px radius</span> right in the middle of the screen(by default), when animation starts — it rotates from <span className="highlight">-120</span> to <span className="highlight">-40</span> degrees, shifts <span className="highlight">180px</span> to the right starting from <span className="highlight">-200px</span> and <span className="highlight">scale</span>s from <span className="highlight">0</span> to <span className="highlight">1.3</span> concurrently. That happens during <span className="highlight">800ms</span> and repeats <span className="highlight">5</span> times with default <span className="highlight">easing</span>. When animation ends, the shape <span className="highlight">dissapears</span>.
           </p>
 
           <p>
@@ -294,7 +341,7 @@ const polygon = new mojs.Shape({
           </p>
 
           <p>
-            Delta can also have it's own explicit <span className="highlight">easing</span> field, that can hold any <span className="highlight">mojs</span> <UniteLink link="">easing type</UniteLink>, this makes shape transitions more flexible to the real world needs.
+            Delta can also have it's own explicit <span className="highlight">easing</span> field that can hold any <span className="highlight">mojs</span> <UniteLink link="">easing type</UniteLink>, this makes shape transitions more flexible to the real world needs.
           </p>
 
           <CodeSample pen="942a661cec312c922af18f3446f894a0">
@@ -346,7 +393,7 @@ const circle = new mojs.Shape({
           </CodeSample>
 
           <p>
-            we won't spend a lot of time with <span className="highlight">property</span> curves in this tutorial, but I highly encorage you to dig into the <UniteLink link="http://mojs.io/tutorials/easing/path-easing/">property curves</UniteLink> as it is a very sophisticated and powerful concept.
+            We won't spend a lot of time with <span className="highlight">property curves</span> in this tutorial, but I highly encorage you to dig into the <UniteLink link="http://mojs.io/tutorials/easing/path-easing/">topic</UniteLink> because it is a very sophisticated and powerful concept to note.
           </p>
 
           <p>
@@ -1253,13 +1300,13 @@ const heart = new mojs.Shape({
           <h3>Love/Hate Modal</h3>
 
           <p>
-            Ok. Let's do another demo with shapes regarding UI. This time we will have a plus button, it shows up from bottom left, after it stops - it mimics push transition. Also concurrent rotation of the button imitates "let's go/follow me" gesture, inviting user to follow up with a click:
+            Ok. Let's do another demo with shapes regarding UI. This time we will have a plus button, it will show up from bottom left, after it will stop - we will mimic button push transition. By adding concurrent rotation of the button we will imitate "let's go/follow me" gesture, inviting user to follow up with a click:
           </p>
 
           <Pen pen="1f6cce8046f76ca43aca3a5ac681b97c" height="500"></Pen>
 
           <p>
-            We can expand the effect even more to appeal even more attention and add some playfull splash experience:
+            Then we can expand the effect even more to add some playfull splash experience:
           </p>
 
           <Pen pen="51350c86ef0e0fb722e034006fcafb8f" height="500"></Pen>
@@ -1271,23 +1318,23 @@ const heart = new mojs.Shape({
           <Pen pen="9935b7cec036eae2ddb762213ceae6d4" height="500"></Pen>
 
           <p>
-            Then when user eventually clicks the button, we will show the quiz modal with the most valiable question we have ever had:
+            When user eventually will click the button, we will show the quiz modal with the most valiable question we have ever had, that's how the modal will look like:
           </p>
 
           <Pen pen="2c95e0397b0d20eb4fbc952e3c5f0fe0" height="500"></Pen>
 
           <p>
-            We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spreading effect. Also arrow of the modal and modal itself are nothing than just plain mojs shape. 
+            We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spread effect. Well basically almost everything including modal shape itself and it's corner are shapes. 
           </p>
 
           <p>
-            Ok, now when the user hovers over the button, we need to show some tension, expressing that something is going to happen if he proceeds with a click (hover over buttons to see):
+            Now when the user hovers over any button, we need to show some tension, conveying that something is going to happen if he proceeds with a click (hover over buttons to see):
           </p>
 
           <Pen pen="ad612440c8b08d0b506e0a8cb4152b9c" height="500"></Pen>
 
           <p>
-            The extend parts of infalting modal are nothing than plain shapes of <span className="highlight">curve</span>, that just get scaled on user's iteraction. I've set the modal shape to disappear to reveal the extending parts (hover over buttons):
+            The extend parts of infalting modal are nothing than plain shapes, in fact <span className="highlight">curve</span>s, that just get scaled when user hovers over the buttons. I've set the modal shape to disappear to reveal the extending parts so it will be clear for you what I mean (hover over buttons):
           </p>
 
           <Pen pen="4b54df04faa5b6c885a7b0222c842b5d" height="500"></Pen>
@@ -1299,10 +1346,10 @@ const heart = new mojs.Shape({
           <Pen pen="fcc29bcf5d0eebf37d558864b7a2e334" height="500"></Pen>
 
           <p>
-            In other case, when user proceeds with the button click, we will blow up the modal as a consequqnce of modal's tension and show the chosen word. That's the entire sequence:
+            In the other case, when user proceeds with the button click, we will blow up the modal as a consequqnce of modal's tension and show the chosen word. That's the entire sequence:
           </p>
 
-          <Pen pen="812699ce32c9a7aeb70c9384b32a533a" height="500"></Pen>
+          <Pen pen="812699ce32c9a7aeb70c9384b32a533a" height="600"></Pen>
           <em>
             You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo3">this repo</UniteLink> since the codepen code could be unreadable.
           </em>
@@ -1448,11 +1495,11 @@ const heart = new mojs.Shape({
 
 
           <p>
-            Phew, that was intence. I hope you didn't get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes to enhance your animations, motion graphics sequences and UIs. It should be clear at this point that to create a shape you use a declarative call and the shape appears in any place you want without bootsrapping. You  can use `then` method to chain the states of shapes and <span className="highlight">tune</span> shapes afterwards or re<span className="highlight">generate</span> all random properties. Remember that shapes obey the <span className="highlight">tweenable</span> interface thus it has tween properties, callbacks and public method that any <span className="highlight">tween</span> has.
+            Phew, that was intence. I hope you didn't get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes. It should be clear at this point that to create a shape you use a declarative call to create one and the shape appears in any place you want without any bootsrapping. You  can use <span className="highlight">then</span> method to chain states of shape and <span className="highlight">tune</span> them afterwards or even re<span className="highlight">generate</span> all random properties. Remember that shapes obey the <span className="highlight">tweenable</span> interface thus it has tween properties, callbacks and public method that any <span className="highlight">tween</span> has.
           </p>
 
           <p>
-            Need to admit that this post was written as an introduction to more complex and mature module that is called <span className="highlight">Burst</span>, it was important to familiarize you with the base concepts and API's syntax before we will proceed further. I think now you are ready now so let me invite you to the meet the <span className="highlight">Burst</span>!
+            Need to admit that this post was written as an introduction to more complex and mature module that is called <span className="highlight">Burst</span>, it was important to familiarize you with the base concepts and API's syntax before we will proceed further. I think now you are ready to meet the <span className="highlight">Burst</span>!
           </p>
 
           <h2>Thank yous</h2>
