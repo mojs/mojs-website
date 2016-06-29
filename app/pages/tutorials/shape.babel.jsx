@@ -39,7 +39,7 @@ const ShapePage = new React.createClass({
     if (this.state.isShow) {
       content = <div>
           <div className="post__header">Shape & ShapeSwirl</div>
-          <div className="post__description"> This post is Shape and ShapeSwirl. Modules that help you to bootsrap motion effects with declarative calls.</div>
+          <div className="post__description"> This post is about Shape and ShapeSwirl. Modules that help you to bootsrap motion effects with declarative calls.</div>
           <ORXLine className="post__orx-line" />
 
           <h2> Shape </h2>
@@ -74,11 +74,11 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            Nothing interesting yet. Well maybe there is one thing - the shape magically appears just in the middle of the screen. <span className="highlight">mojs</span> takes care to create as little container for the shape as possible, bootstrap all the markup and places the result just where you want it. Pretty handy. <span className="highlight">isShowStart</span> property says to the shape to be visible even before animation starts.
+            Nothing interesting yet. Well maybe there is one thing - the shape magically appears just in the middle of the screen. <span className="highlight">mojs</span> takes care to create as little container for the shape as possible, bootstraps all the markup and places the result just where you want it. Pretty handy. <span className="highlight">isShowStart</span> property says to the shape to be visible even before animation starts.
           </p>
 
           <p>
-            Next, you can style the shape:
+            Obviously, you can style the shape:
           </p>
 
           <CodeSample pen="d929be6cdb64bb0a2979f35669284197">
