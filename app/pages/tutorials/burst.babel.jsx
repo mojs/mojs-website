@@ -386,6 +386,36 @@ const ShapePage = new React.createClass({
 
           <Pen pen="6caf96461207a5caa9226fbd2631569d" height="500" />
 
+          <p>
+            Ok. Enough distraction. Lets create something less obvious. Recall this demo with the mole:
+          </p>
+
+          <Pen pen="477056cb1ffe88c4bfbf8a3005d99496" height="600" />
+
+          <p>
+            Could you count how much effects are bursts here? There are quite few. The most noticeable it the effect that appears after door shuts - dust. It it composed from 4 burst (one for each corner), lets start with just one for now:
+          </p>
+
+          <Pen pen="97a95a5cb7663cf336e8d80f9f511553" height="500" />
+
+          <p>
+            How is it possible? The <span className="highlight">Burst</span> compose <span className="highlight">ShapeSwirl</span>s not <span className="highlight">Shape</span>s so, is we set <span className="highlight">isSwirl</span> to <span className="highlight">true</span>, we will have sine paths. That's how you do 4 at once:
+          </p>
+
+          <Pen pen="bbc4c52b7145d9d872ac437f21afd75f" height="500" />
+
+          <p>
+            You can do the same effect with just one if will use <span className="highlight">Stagger</span> module, but that's a topic for the next tutorial.
+          </p>
+
+          <p>
+            Ok. Recalling the mole demo, what else did you notice?
+          </p>
+
+
+
+
+
 
 
 

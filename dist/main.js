@@ -44982,7 +44982,71 @@
 	          ),
 	          's and one subtle circle in the middle. It is a drip more modest than the previous one. I won\'t reacreate exact the same effect here, but rather will do slightly different one:'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '6caf96461207a5caa9226fbd2631569d', height: '500' })
+	        _react2.default.createElement(_codepen2.default, { pen: '6caf96461207a5caa9226fbd2631569d', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Ok. Enough distraction. Lets create something less obvious. Recall this demo with the mole:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '477056cb1ffe88c4bfbf8a3005d99496', height: '600' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Could you count how much effects are bursts here? There are quite few. The most noticeable it the effect that appears after door shuts - dust. It it composed from 4 burst (one for each corner), lets start with just one for now:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '97a95a5cb7663cf336e8d80f9f511553', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'How is it possible? The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' compose ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'ShapeSwirl'
+	          ),
+	          's not ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Shape'
+	          ),
+	          's so, is we set ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'isSwirl'
+	          ),
+	          ' to ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'true'
+	          ),
+	          ', we will have sine paths. That\'s how you do 4 at once:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'bbc4c52b7145d9d872ac437f21afd75f', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'You can do the same effect with just one if will use ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Stagger'
+	          ),
+	          ' module, but that\'s a topic for the next tutorial.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Ok. Recalling the mole demo, what else did you notice?'
+	        )
 	      );
 	    }
 
