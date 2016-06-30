@@ -320,13 +320,13 @@ const ShapePage = new React.createClass({
           <Pen pen="432464f276fe6f06b457915ca6062723" height="500" />
 
           <p>
-            As you can see main swirl's <span className="highlight">radius</span> and <span className="highlight">degree</span> of <span className="highlight">0</span> put the shapes in one point. Then we just have to slightly stagger <span className="highlight">delay</span> on children. The same for other parts - two lines:
+            As you can see main swirl's <span className="highlight">radius</span> and <span className="highlight">degree</span> of <span className="highlight">0</span> put the shapes in one spot. Then we just have to slightly stagger <span className="highlight">delay</span> on children. The same for other parts - vertical and horizontal lines:
           </p>
 
           <Pen pen="33f7924ecd146d951698bf190ac7838e" height="500" />
 
           <p>
-            Catching up? I believe so. Let's refactor it a bit, and make the vertical line start from the bottom, like firework:
+            Catching up? Good. Let's refactor it a bit and make the vertical line start from the bottom, like firework:
           </p>
 
 
@@ -336,8 +336,65 @@ const ShapePage = new React.createClass({
             That's better.
           </p>
 
+          <p>
+            Let's move on. What else we can do with <span className="highlight">Burst</span>? We can blast things up. I love blast thing, do you? Recall this demo from previous tutorial:
+          </p>
+
+          <Pen pen="c94452fb65dbf676b0ae8a12d4267473" height="500" />
+
+          <p>
+            Lets do this blast together. First, you can notice the small particles there:
+          </p>
+          
+          <Pen pen="79db23782ec1eb9d16246b136ec82b9c" height="500" />
+
+          <p>
+            Notice how we use <span className="highlight">pathScale</span> and <span className="highlight">degreeShift</span> properties to add randomness to the blast. The <span className="highlight">pathScale</span> property defines how the length of the path that particle makes when flying scales. The <span className="highlight">degreeShift</span> property defines how much the particle will shift in it's radial position in burst circle. So if particle has <span className="highlight">degreeShift</span> of <span className="highlight">90</span>, it will be shifted in radial shape by 90 degree. Since they both have random values and we <span className="highlight">generate</span> the module on each user click - we always have the random blast pattern.
+          </p>
+
+          <p>
+            Lets add more details to the blast, for instance another burst with large geometric shapes:
+          </p>
+
+          <Pen pen="3b9c757a7625dc015753740bcad8fb66" height="500" />
+
+          <p>
+            Feels rather messy. But it's fine for now, it should get stright when we will add move shapes here:
+          </p>
+
+          <Pen pen="4c8366d3a7eea2a5f83a3d457f8e9cd9" height="500" />
+
+          <p>
+            And the last touch is to add one spot large burst of 3 items:
+          </p>
+
+          <Pen pen="699cfc8716a13e0e1c15105af2b6fb95" height="500" />
+
+          <p>
+            I hope you love to blast thing too now. Notice we did it with no a single repaint!
+          </p>
+
+          <p>
+            If you recall the next old demo, you probably can say now how it was done. How much modules does this blast compose (click close to see the effect)?
+          </p>
+
+          <Pen pen="XJjLxe" height="700" />
+
+          <p>
+            The answer is 2 <span className="highlight">Burst</span>s and one subtle circle in the middle. It is a drip more modest than the previous one. I won't reacreate exact the same effect here, but rather will do slightly different one:
+          </p>
+
+          <Pen pen="6caf96461207a5caa9226fbd2631569d" height="500" />
 
 
+
+
+
+
+          
+
+
+          
 
 
       </div>

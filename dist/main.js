@@ -124,7 +124,7 @@
 
 	MotionPath = __webpack_require__(348);
 
-	Burst = __webpack_require__(356)["default"];
+	Burst = __webpack_require__(349)["default"];
 
 	routes = React.createElement(Route, {
 	  "name": "app",
@@ -44103,194 +44103,7 @@
 
 
 /***/ },
-/* 349 */,
-/* 350 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	exports.__esModule = true;
-	var React = __webpack_require__(2);
-	var UniteLink = __webpack_require__(205);
-	var Resizable = __webpack_require__(335);
-	__webpack_require__(351);
-
-	var More = React.createClass({
-	  displayName: 'More',
-
-	  getInitialState: function getInitialState() {
-	    return { isOpen: false, contentHeight: 0 };
-	  },
-
-	  _onTap: function _onTap() {
-	    this.setState({ isOpen: !this.state.isOpen });
-	  },
-
-	  componentDidMount: function componentDidMount() {
-	    this.innerConentEl = this.refs['inner-content'].getDOMNode();
-	    this._getInnerHeight();
-	  },
-
-	  _getInnerHeight: function _getInnerHeight() {
-	    var height = this.innerConentEl.offsetHeight;
-	    if (height !== this.state.contentHeight) {
-	      this.setState({ contentHeight: height });
-	    }
-	  },
-
-	  render: function render() {
-	    var className = 'more ';
-	    className += this.state.isOpen ? 'is-open' : '';
-	    var height = this.state.isOpen ? this.state.contentHeight : 0;
-	    var style = { height: height + 'px' };
-
-	    return React.createElement(
-	      'div',
-	      { className: className + ' ' + (this.props.className || '') },
-	      React.createElement(
-	        UniteLink,
-	        { className: 'more__header', onTap: this._onTap },
-	        this.props.label || 'more',
-	        React.createElement('div', { className: 'more__arrow' })
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'more__content', style: style },
-	        React.createElement(
-	          Resizable,
-	          { className: 'more__content-inner cf', ref: 'inner-content', onResize: this._getInnerHeight },
-	          this.props.children
-	        )
-	      )
-	    );
-	  }
-	});
-
-	exports.default = More;
-
-/***/ },
-/* 351 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(352);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(204)(content, {});
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Applications/MAMP/htdocs/mojs-website/node_modules/css-loader/index.js!/Applications/MAMP/htdocs/mojs-website/node_modules/autoprefixer-loader/index.js?browsers=last 4 version!/Applications/MAMP/htdocs/mojs-website/node_modules/stylus-loader/index.js?paths=node_modules/!/Applications/MAMP/htdocs/mojs-website/app/css/partials/more.styl", function() {
-			var newContent = require("!!/Applications/MAMP/htdocs/mojs-website/node_modules/css-loader/index.js!/Applications/MAMP/htdocs/mojs-website/node_modules/autoprefixer-loader/index.js?browsers=last 4 version!/Applications/MAMP/htdocs/mojs-website/node_modules/stylus-loader/index.js?paths=node_modules/!/Applications/MAMP/htdocs/mojs-website/app/css/partials/more.styl");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 352 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(203)();
-	exports.push([module.id, ".more {\n  width: 100%;\n}\n.more__header {\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  padding-right: 1.375rem;\n}\n.more__arrow {\n  border: 0.25rem solid;\n  border-top-color: transparent;\n  border-right-color: transparent;\n  -webkit-transform: rotate(-45deg);\n      -ms-transform: rotate(-45deg);\n          transform: rotate(-45deg);\n  -webkit-transition: -webkit-transform 0.15s ease-out;\n          transition: transform 0.15s ease-out;\n  position: absolute;\n  right: 0.125rem;\n  top: 50%;\n  margin-top: -0.25rem;\n  width: 0;\n  height: 0;\n}\n.more__content {\n  overflow: hidden;\n  overflow-y: auto;\n  height: 0;\n  opacity: 0;\n  -webkit-transition: all 0.25s ease-out;\n          transition: all 0.25s ease-out;\n  text-align: left;\n}\n.more.is-center {\n  text-align: center;\n}\n.more.is-h2 > .more__header {\n  font-size: 1.5em;\n  margin-top: 3.125rem;\n}\n.more.is-open > .more__header > .more__arrow {\n  -webkit-transform: rotate(135deg) translate(0.1875rem, -0.1875rem);\n      -ms-transform: rotate(135deg) translate(0.1875rem, -0.1875rem);\n          transform: rotate(135deg) translate(0.1875rem, -0.1875rem);\n}\n.more.is-open > .more__content {\n  opacity: 1;\n}\n.more.is-open.is-border-bottom {\n  border-bottom: 0.0625rem solid rgba(246,64,64,0.5);\n}\n", ""]);
-
-/***/ },
-/* 353 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	exports.__esModule = true;
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _heftyContent = __webpack_require__(334);
-
-	var _heftyContent2 = _interopRequireDefault(_heftyContent);
-
-	var _postImage = __webpack_require__(327);
-
-	var _postImage2 = _interopRequireDefault(_postImage);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	__webpack_require__(354);
-
-	var Gif = _react2.default.createClass({
-	  displayName: 'Gif',
-
-	  getInitialState: function getInitialState() {
-	    return { isHidden: true };
-	  },
-
-	  _showImage: function _showImage() {
-	    this.setState({ isHidden: false });
-	  },
-	  _hideImage: function _hideImage() {
-	    this.setState({ isHidden: true });
-	  },
-
-
-	  render: function render() {
-	    var p = this.props;
-
-	    var minHeight = p.minHeight != null ? p.minHeight : 350;
-	    var minWidth = p.minWidth != null ? p.minWidth : 350;
-
-	    return _react2.default.createElement(
-	      _heftyContent2.default,
-	      {
-	        label: 'tap to see the gif',
-	        onShow: this._showImage,
-	        onHide: this._hideImage,
-	        minHeight: minHeight,
-	        minWidth: minWidth,
-	        className: 'gif ' + (p.className || '') },
-	      this.state.isHidden ? null : _react2.default.createElement(_postImage2.default, { src: p.src })
-	    );
-	  }
-	});
-
-	exports.default = Gif;
-
-/***/ },
-/* 354 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(355);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(204)(content, {});
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Applications/MAMP/htdocs/mojs-website/node_modules/css-loader/index.js!/Applications/MAMP/htdocs/mojs-website/node_modules/autoprefixer-loader/index.js?browsers=last 4 version!/Applications/MAMP/htdocs/mojs-website/node_modules/stylus-loader/index.js?paths=node_modules/!/Applications/MAMP/htdocs/mojs-website/app/css/partials/gif.styl", function() {
-			var newContent = require("!!/Applications/MAMP/htdocs/mojs-website/node_modules/css-loader/index.js!/Applications/MAMP/htdocs/mojs-website/node_modules/autoprefixer-loader/index.js?browsers=last 4 version!/Applications/MAMP/htdocs/mojs-website/node_modules/stylus-loader/index.js?paths=node_modules/!/Applications/MAMP/htdocs/mojs-website/app/css/partials/gif.styl");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 355 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(203)();
-	exports.push([module.id, ".gif .post-image {\n  margin-top: 0;\n  margin-bottom: 0;\n}\n.gif--50-width .post-image {\n  max-width: 31.25rem;\n}\n", ""]);
-
-/***/ },
-/* 356 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45044,26 +44857,132 @@
 	            { className: 'highlight' },
 	            '0'
 	          ),
-	          ' put the shapes in one point. Then we just have to slightly stagger ',
+	          ' put the shapes in one spot. Then we just have to slightly stagger ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'delay'
 	          ),
-	          ' on children. The same for other parts - two lines:'
+	          ' on children. The same for other parts - vertical and horizontal lines:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '33f7924ecd146d951698bf190ac7838e', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Catching up? I believe so. Let\'s refactor it a bit, and make the vertical line start from the bottom, like firework:'
+	          'Catching up? Good. Let\'s refactor it a bit and make the vertical line start from the bottom, like firework:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'a3c64825683dddd18316f8f288475131', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
 	          'That\'s better.'
-	        )
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Let\'s move on. What else we can do with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          '? We can blast things up. I love blast thing, do you? Recall this demo from previous tutorial:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'c94452fb65dbf676b0ae8a12d4267473', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Lets do this blast together. First, you can notice the small particles there:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '79db23782ec1eb9d16246b136ec82b9c', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Notice how we use ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale'
+	          ),
+	          ' and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'degreeShift'
+	          ),
+	          ' properties to add randomness to the blast. The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale'
+	          ),
+	          ' property defines how the length of the path that particle makes when flying scales. The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'degreeShift'
+	          ),
+	          ' property defines how much the particle will shift in it\'s radial position in burst circle. So if particle has ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'degreeShift'
+	          ),
+	          ' of ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '90'
+	          ),
+	          ', it will be shifted in radial shape by 90 degree. Since they both have random values and we ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'generate'
+	          ),
+	          ' the module on each user click - we always have the random blast pattern.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Lets add more details to the blast, for instance another burst with large geometric shapes:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '3b9c757a7625dc015753740bcad8fb66', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Feels rather messy. But it\'s fine for now, it should get stright when we will add move shapes here:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '4c8366d3a7eea2a5f83a3d457f8e9cd9', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'And the last touch is to add one spot large burst of 3 items:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '699cfc8716a13e0e1c15105af2b6fb95', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'I hope you love to blast thing too now. Notice we did it with no a single repaint!'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'If you recall the next old demo, you probably can say now how it was done. How much modules does this blast compose (click close to see the effect)?'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'XJjLxe', height: '700' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The answer is 2 ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          's and one subtle circle in the middle. It is a drip more modest than the previous one. I won\'t reacreate exact the same effect here, but rather will do slightly different one:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '6caf96461207a5caa9226fbd2631569d', height: '500' })
 	      );
 	    }
 
@@ -45087,6 +45006,192 @@
 	});
 
 	exports.default = ShapePage;
+
+/***/ },
+/* 350 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	var React = __webpack_require__(2);
+	var UniteLink = __webpack_require__(205);
+	var Resizable = __webpack_require__(335);
+	__webpack_require__(351);
+
+	var More = React.createClass({
+	  displayName: 'More',
+
+	  getInitialState: function getInitialState() {
+	    return { isOpen: false, contentHeight: 0 };
+	  },
+
+	  _onTap: function _onTap() {
+	    this.setState({ isOpen: !this.state.isOpen });
+	  },
+
+	  componentDidMount: function componentDidMount() {
+	    this.innerConentEl = this.refs['inner-content'].getDOMNode();
+	    this._getInnerHeight();
+	  },
+
+	  _getInnerHeight: function _getInnerHeight() {
+	    var height = this.innerConentEl.offsetHeight;
+	    if (height !== this.state.contentHeight) {
+	      this.setState({ contentHeight: height });
+	    }
+	  },
+
+	  render: function render() {
+	    var className = 'more ';
+	    className += this.state.isOpen ? 'is-open' : '';
+	    var height = this.state.isOpen ? this.state.contentHeight : 0;
+	    var style = { height: height + 'px' };
+
+	    return React.createElement(
+	      'div',
+	      { className: className + ' ' + (this.props.className || '') },
+	      React.createElement(
+	        UniteLink,
+	        { className: 'more__header', onTap: this._onTap },
+	        this.props.label || 'more',
+	        React.createElement('div', { className: 'more__arrow' })
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'more__content', style: style },
+	        React.createElement(
+	          Resizable,
+	          { className: 'more__content-inner cf', ref: 'inner-content', onResize: this._getInnerHeight },
+	          this.props.children
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = More;
+
+/***/ },
+/* 351 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(352);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(204)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/Applications/MAMP/htdocs/mojs-website/node_modules/css-loader/index.js!/Applications/MAMP/htdocs/mojs-website/node_modules/autoprefixer-loader/index.js?browsers=last 4 version!/Applications/MAMP/htdocs/mojs-website/node_modules/stylus-loader/index.js?paths=node_modules/!/Applications/MAMP/htdocs/mojs-website/app/css/partials/more.styl", function() {
+			var newContent = require("!!/Applications/MAMP/htdocs/mojs-website/node_modules/css-loader/index.js!/Applications/MAMP/htdocs/mojs-website/node_modules/autoprefixer-loader/index.js?browsers=last 4 version!/Applications/MAMP/htdocs/mojs-website/node_modules/stylus-loader/index.js?paths=node_modules/!/Applications/MAMP/htdocs/mojs-website/app/css/partials/more.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 352 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(203)();
+	exports.push([module.id, ".more {\n  width: 100%;\n}\n.more__header {\n  position: relative;\n  display: inline-block;\n  cursor: pointer;\n  padding-right: 1.375rem;\n}\n.more__arrow {\n  border: 0.25rem solid;\n  border-top-color: transparent;\n  border-right-color: transparent;\n  -webkit-transform: rotate(-45deg);\n      -ms-transform: rotate(-45deg);\n          transform: rotate(-45deg);\n  -webkit-transition: -webkit-transform 0.15s ease-out;\n          transition: transform 0.15s ease-out;\n  position: absolute;\n  right: 0.125rem;\n  top: 50%;\n  margin-top: -0.25rem;\n  width: 0;\n  height: 0;\n}\n.more__content {\n  overflow: hidden;\n  overflow-y: auto;\n  height: 0;\n  opacity: 0;\n  -webkit-transition: all 0.25s ease-out;\n          transition: all 0.25s ease-out;\n  text-align: left;\n}\n.more.is-center {\n  text-align: center;\n}\n.more.is-h2 > .more__header {\n  font-size: 1.5em;\n  margin-top: 3.125rem;\n}\n.more.is-open > .more__header > .more__arrow {\n  -webkit-transform: rotate(135deg) translate(0.1875rem, -0.1875rem);\n      -ms-transform: rotate(135deg) translate(0.1875rem, -0.1875rem);\n          transform: rotate(135deg) translate(0.1875rem, -0.1875rem);\n}\n.more.is-open > .more__content {\n  opacity: 1;\n}\n.more.is-open.is-border-bottom {\n  border-bottom: 0.0625rem solid rgba(246,64,64,0.5);\n}\n", ""]);
+
+/***/ },
+/* 353 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _heftyContent = __webpack_require__(334);
+
+	var _heftyContent2 = _interopRequireDefault(_heftyContent);
+
+	var _postImage = __webpack_require__(327);
+
+	var _postImage2 = _interopRequireDefault(_postImage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	__webpack_require__(354);
+
+	var Gif = _react2.default.createClass({
+	  displayName: 'Gif',
+
+	  getInitialState: function getInitialState() {
+	    return { isHidden: true };
+	  },
+
+	  _showImage: function _showImage() {
+	    this.setState({ isHidden: false });
+	  },
+	  _hideImage: function _hideImage() {
+	    this.setState({ isHidden: true });
+	  },
+
+
+	  render: function render() {
+	    var p = this.props;
+
+	    var minHeight = p.minHeight != null ? p.minHeight : 350;
+	    var minWidth = p.minWidth != null ? p.minWidth : 350;
+
+	    return _react2.default.createElement(
+	      _heftyContent2.default,
+	      {
+	        label: 'tap to see the gif',
+	        onShow: this._showImage,
+	        onHide: this._hideImage,
+	        minHeight: minHeight,
+	        minWidth: minWidth,
+	        className: 'gif ' + (p.className || '') },
+	      this.state.isHidden ? null : _react2.default.createElement(_postImage2.default, { src: p.src })
+	    );
+	  }
+	});
+
+	exports.default = Gif;
+
+/***/ },
+/* 354 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(355);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(204)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/Applications/MAMP/htdocs/mojs-website/node_modules/css-loader/index.js!/Applications/MAMP/htdocs/mojs-website/node_modules/autoprefixer-loader/index.js?browsers=last 4 version!/Applications/MAMP/htdocs/mojs-website/node_modules/stylus-loader/index.js?paths=node_modules/!/Applications/MAMP/htdocs/mojs-website/app/css/partials/gif.styl", function() {
+			var newContent = require("!!/Applications/MAMP/htdocs/mojs-website/node_modules/css-loader/index.js!/Applications/MAMP/htdocs/mojs-website/node_modules/autoprefixer-loader/index.js?browsers=last 4 version!/Applications/MAMP/htdocs/mojs-website/node_modules/stylus-loader/index.js?paths=node_modules/!/Applications/MAMP/htdocs/mojs-website/app/css/partials/gif.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 355 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(203)();
+	exports.push([module.id, ".gif .post-image {\n  margin-top: 0;\n  margin-bottom: 0;\n}\n.gif--50-width .post-image {\n  max-width: 31.25rem;\n}\n", ""]);
 
 /***/ }
 /******/ ]);
