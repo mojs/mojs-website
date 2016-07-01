@@ -399,7 +399,7 @@ const ShapePage = new React.createClass({
           <Pen pen="97a95a5cb7663cf336e8d80f9f511553" height="500" />
 
           <p>
-            How is it possible? The <span className="highlight">Burst</span> compose <span className="highlight">ShapeSwirl</span>s not <span className="highlight">Shape</span>s so, is we set <span className="highlight">isSwirl</span> to <span className="highlight">true</span>, we will have sine paths. That's how you do 4 at once:
+            How is it possible? The <span className="highlight">Burst</span> compose <span className="highlight">ShapeSwirl</span>s not <span className="highlight">Shape</span>s so, if we set <span className="highlight">isSwirl</span> to <span className="highlight">true</span>, we will have sine paths. That's how you do 4 at once (click to see):
           </p>
 
           <Pen pen="bbc4c52b7145d9d872ac437f21afd75f" height="500" />
@@ -409,8 +409,45 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            Ok. Recalling the mole demo, what else did you notice?
+            Ok. Recalling the mole demo, what else did you notice? Probably that confetti that appear when cube hits the floor. Right! 
           </p>
+
+          <p>
+            That's how you the first large one:
+          </p>
+
+          <Pen pen="421a16733643447bb4770424cf72563d" height="500" />
+
+          <p>
+            The main catch here is to mimic the air flow by rotating the main swirl backward slightly. Then you just have to create more bursts, each one is smaller then previous one.
+          </p>
+
+          <Pen pen="d0d0c2b1e98f1a0f8d6ea250c31ed081" height="500" />
+
+          <p>
+            What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First you want to make <span className="highlight">0 degree</span> burst, and rotate the main swirl downward, imitating air current weakening:
+          </p>
+
+          <Pen pen="828d4f1e1f6fdfd608b588af0b9bdd45" height="500" />
+
+          <p>
+            Then add larger burst <span className="highlight">radius</span>, turn on swirl sine paths and randomize them with <span className="highlight">pathScale</span> property:
+          </p>
+
+          <Pen pen="8b3f0eb920226a7c2d703e601af38fcf" height="500" />
+
+          <p>
+            At last add random <span className="highlight">radius</span> to children and mix <span className="highlight">direction</span> of the swirls:
+          </p>
+
+          <Pen pen="b1e36259bfa2d6023402eef7de77cc8d" height="500" />
+          
+
+
+
+
+
+
 
 
 

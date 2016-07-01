@@ -45016,7 +45016,7 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          's so, is we set ',
+	          's so, if we set ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45028,7 +45028,7 @@
 	            { className: 'highlight' },
 	            'true'
 	          ),
-	          ', we will have sine paths. That\'s how you do 4 at once:'
+	          ', we will have sine paths. That\'s how you do 4 at once (click to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'bbc4c52b7145d9d872ac437f21afd75f', height: '500' }),
 	        _react2.default.createElement(
@@ -45045,8 +45045,68 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Ok. Recalling the mole demo, what else did you notice?'
-	        )
+	          'Ok. Recalling the mole demo, what else did you notice? Probably that confetti that appear when cube hits the floor. Right!'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'That\'s how you the first large one:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '421a16733643447bb4770424cf72563d', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The main catch here is to mimic the air flow by rotating the main swirl backward slightly. Then you just have to create more bursts, each one is smaller then previous one.'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'd0d0c2b1e98f1a0f8d6ea250c31ed081', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First you want to make ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '0 degree'
+	          ),
+	          ' burst, and rotate the main swirl downward, imitating air current weakening:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '828d4f1e1f6fdfd608b588af0b9bdd45', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Then add larger burst ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'radius'
+	          ),
+	          ', turn on swirl sine paths and randomize them with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale'
+	          ),
+	          ' property:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '8b3f0eb920226a7c2d703e601af38fcf', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'At last add random ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'radius'
+	          ),
+	          ' to children and mix ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'direction'
+	          ),
+	          ' of the swirls:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'b1e36259bfa2d6023402eef7de77cc8d', height: '500' })
 	      );
 	    }
 
