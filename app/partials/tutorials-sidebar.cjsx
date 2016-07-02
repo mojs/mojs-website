@@ -20,9 +20,9 @@ module.exports = React.createClass
 
         <div className="tutorials-sidebar__section">
           <div className="tutorials-sidebar__header"> Modules </div>
+          <UniteLink link="/tutorials/shape/" className="tutorials-sidebar__link"> Shape & Swirl </UniteLink>
+          <UniteLink link="/tutorials/burst/" className="tutorials-sidebar__link"> Burst </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Motion Path      </UniteLink>
-          <UniteLink link="/tutorials/shape/" className="tutorials-sidebar__link"> Shape & ShapeSwirl </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Burst            </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Spriter          </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Radial Spring    </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Spring Wave      </UniteLink>

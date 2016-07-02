@@ -37896,17 +37896,16 @@
 	    }, React.createElement("div", {
 	      "className": "tutorials-sidebar__header"
 	    }, " Modules "), React.createElement(UniteLink, {
+	      "link": "/tutorials/shape/",
+	      "className": "tutorials-sidebar__link"
+	    }, " Shape \& Swirl "), React.createElement(UniteLink, {
+	      "link": "/tutorials/burst/",
+	      "className": "tutorials-sidebar__link"
+	    }, " Burst "), React.createElement(UniteLink, {
 	      "link": "/",
 	      "isDisabled": "true",
 	      "className": "tutorials-sidebar__link"
 	    }, " Motion Path      "), React.createElement(UniteLink, {
-	      "link": "/tutorials/shape/",
-	      "className": "tutorials-sidebar__link"
-	    }, " Shape \& ShapeSwirl "), React.createElement(UniteLink, {
-	      "link": "/",
-	      "isDisabled": "true",
-	      "className": "tutorials-sidebar__link"
-	    }, " Burst            "), React.createElement(UniteLink, {
 	      "link": "/",
 	      "isDisabled": "true",
 	      "className": "tutorials-sidebar__link"
@@ -44209,7 +44208,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'post__description' },
-	          ' This post is about Burst - modules that help you to bootsrap motion effects with declarative calls.'
+	          ' This post is about Burst - the module that helps you to bootstrap motion effects with declarative calls.'
 	        ),
 	        _react2.default.createElement(_orxLine2.default, { className: 'post__orx-line' }),
 	        _react2.default.createElement(
@@ -44221,7 +44220,7 @@
 	            { link: '/tutorials/shape/' },
 	            'Shapes & ShapeSwirl'
 	          ),
-	          ' before proceeding with this tutorial. Undestanding those modules is crucial to understand ',
+	          ' before proceeding with this tutorial. Undestanding those modules is crucial for understanding the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44242,7 +44241,7 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ' is higher order module that creates sophisticated visual effects for you, in any part of the screen you want. You can think of ',
+	          ' is higher order module that creates sophisticated visual effects in any part of the screen you want. You can think of ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44254,7 +44253,7 @@
 	            { className: 'highlight' },
 	            'ShapeSwirl'
 	          ),
-	          's together, creating a circle of such by default.'
+	          's together, creating a circle of swirls.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44280,7 +44279,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'In fact, from the technical point of view, ',
+	          'From the technical point of view, ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44296,9 +44295,9 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'ShapeSwirl'
+	            'ShapeSwirls'
 	          ),
-	          's. This allows you to controls either of them. Pictorily it will look like this:'
+	          '. You can control each of them tho. Pictorily it will look like this:'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44320,7 +44319,7 @@
 	            { className: 'highlight' },
 	            '0'
 	          ),
-	          ' size, this helps to mittigate user\'s interaction errors regarding the effect.'
+	          ' size by default completely unreachable for user\'s interaction pointer.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44363,15 +44362,15 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'Shape'
+	            'ShapeSwirl'
 	          ),
-	          ' swirl to control particles radial shape behaviour. The first one is the ',
+	          '  to control the radial shape behaviour that particles compose. The first one is the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'count'
 	          ),
-	          ' property that controls amount of particles:'
+	          ' property that sets amount of particles:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -44381,13 +44380,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Another important property on that matter is ',
+	          'The particles of the burst evenly placed in the circle that has 360 degree. You can set the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'degree'
 	          ),
-	          ' one, it controls degree of the particles circle:'
+	          ' size with appropriate property:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -44397,7 +44396,144 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s won\'t be much interesting unless we can control child swirls. Right?'
+	          'Here above, we have the burst that has ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '30 degree'
+	          ),
+	          ' of sufficient place for particles.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'It is very important to note here that since the main swirl of ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' module has no actual shape - it completely have no style atributtes that define shape\'s presentation - all of them among which are the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'stroke'
+	          ),
+	          ' or ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'strokeWidth'
+	          ),
+	          ' or ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'fill'
+	          ),
+	          ' are completely useless.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Also the main swirl of the burst have no ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'tween'
+	          ),
+	          ' related properties like ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'delay'
+	          ),
+	          ' or ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'duration'
+	          ),
+	          ', the later is computed automatically regarding the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'duration'
+	          ),
+	          ' of the particles.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Nonetheless, all ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'proprties'
+	          ),
+	          ' that control shape position, parent and opacity are present:'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'dd9e8ce40b04df492bbf500616ddb815' },
+	          { js: 'const burst = new mojs.Burst({\n  radius:   { 0: 100 },\n  count:    7,\n  angle:    { 0: 90 },\n  opacity:  { 1: 0 },\n});' }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'To recap, the main swirl of the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' has no ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'style'
+	          ),
+	          ' attributes because it has no shape, has no ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'tween'
+	          ),
+	          ' related properties like ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'duration'
+	          ),
+	          ' which is computed regarding particles ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'duration'
+	          ),
+	          '. But ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' has all other properties most of them regarding position, opacity parent etc. You can always use the ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://github.com/legomushroom/mojs/api/burst.md' },
+	            'Burst API'
+	          ),
+	          ' as reference.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' won\'t be much interesting unless we can control child particles? Right?'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -44423,13 +44559,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'I have some good news for you - I already know ',
+	          'I have some good news for you - you already know ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'Burst'
+	            'Burst\'s'
 	          ),
-	          ' syntax! Confusing claim? Nah! I you are familiar with ',
+	          ' syntax! Confusing claim? Nah! If you are familiar with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44463,9 +44599,9 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'ShapeSwirl'
+	            'ShapeSwirls'
 	          ),
-	          's, remember? This means you can put any property of ',
+	          ', remember? This means you can put any property of ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44493,7 +44629,7 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ' gives you even more control over each child, allowing you to specify explicit property for each of them. These two techniques are called ',
+	          ' gives you even more control over each child, allowing you to specify property for each of them explicitly. These two techniques are called ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44520,7 +44656,7 @@
 	            { className: 'highlight' },
 	            'Stagger Strings'
 	          ),
-	          ' was designed to express continious numeric values with some defined step (see delay property on children):'
+	          ' were designed to express continious numeric values with some defined step (see delay property on children):'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -44542,7 +44678,19 @@
 	            { className: 'highlight' },
 	            'start'
 	          ),
-	          ' value, all subsequent steps will be added to that base value. It is optional tho and can be ommited.'
+	          ' value, all subsequent steps will be added to that start value which is fairy optional tho and can be ommited. If you just write ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'stagger(25)'
+	          ),
+	          ' - this means stagger with 25 step starting from ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '0'
+	          ),
+	          '.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44551,20 +44699,20 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'stagger'
+	            'staggered'
 	          ),
-	          'ed ',
+	          ' the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'delay'
 	          ),
-	          ' property, so it looks rather spiral now.'
+	          ' property so it looks rather spiral now.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Every numeric value can be expressed with stagger stings and alos they can contain ',
+	          'Every numeric value can be expressed with stagger stings. Also they can contain ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44590,7 +44738,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Property Map was designed to express sequential values. You can use it to generate values that repeat over and over at children length. Basically it is just an array that maps its values to children regarding child index with ',
+	          'Property Map was designed to express sequential values. You can use it to generate values that repeat over and over at mapped to children length. Basically it is just an array that maps its values to children regarding child index with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44648,7 +44796,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'So starting from 12 o\'clock clockwise children fill property gets values of ',
+	          'So starting from 12 o\'clock clockwise children ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'fill'
+	          ),
+	          '  roperty gets values of ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44666,7 +44820,7 @@
 	            { className: 'highlight' },
 	            'yellow'
 	          ),
-	          ' and then again starting from the start of property map - ',
+	          ' and then again starting from the beggining of the property map - ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44683,7 +44837,89 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Property maps work with any property and property form, in fact that\'s just a prism(or multiplexer) that feeds children with properties by virtue of modulus function. Good aid if you want to set some property explicitly.'
+	          'Property maps work with any property and property forms, in fact that\'s just a prism(or multiplexer) that feeds children with properties by virtue of modulus function. Good aid if you want to set some property on child explicitly.'
+	        ),
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          ' then, tune, generate and play '
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'You can make ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'then'
+	          ),
+	          ' state chains, ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'tune'
+	          ),
+	          ' and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'generate'
+	          ),
+	          ' any ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' the same as you do with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Shape'
+	          ),
+	          ' or ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'ShapeSwril'
+	          ),
+	          '. Also since the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' is merely a ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'ShapeSwirl'
+	          ),
+	          ' under the hood, you can use any ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'tween'
+	          ),
+	          ' interface public method like ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'play'
+	          ),
+	          ', ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'setProgress'
+	          ),
+	          ', ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'replay'
+	          ),
+	          ' etc.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -44697,6 +44933,17 @@
 	          ' Use Cases '
 	        ),
 	        _react2.default.createElement(
+	          _cite2.default,
+	          null,
+	          'Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Babel'
+	          ),
+	          ' tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, after you will complete this tutorial.'
+	        ),
+	        _react2.default.createElement(
 	          'p',
 	          null,
 	          _react2.default.createElement(
@@ -44704,7 +44951,7 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ', the same as ',
+	          ', in similarity with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44722,18 +44969,47 @@
 	            { link: '/tutorials/shape/' },
 	            ' Shape&ShapeSwirl '
 	          ),
-	          ' tutorial, I won\'t split use cases to different entities but rather will try to do lot\'s of small demos with comments.'
+	          ' tutorial, I won\'t split use cases to different entities but rather will try to do lot\'s of small demos, each with explanation comments. Hang tight!'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'So you can generate numerous effects with ',
+	          'First what comes in mind when I see the default burst is famous twitter\'s fav animation. Animations like that are usually called ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'microconfirmations'
+	          ),
+	          ' but I\'d rather call them ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'microcelebrations'
+	          ),
+	          ' because of their festivity.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Anyways, sequences like are a cinch to do with burst. There is how to do the main part (click anywhere to see):'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'cb910fce2e9ed27f902ae7f895bbb9ac', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Here above, we have declared a burst with 5 particles (which is by default) with a burst delta form 7 to 25. Not how we scale the x axis so the particles fade out. The second step for the sequence like that is to add the supporting orange shape of circle:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '080045a3420abd5344443aff91c85fa2', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'You can generate different effects with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          '. Consider the next demo it uses lots of them:'
+	          '. Consider the next demo which is using lots of burst modules:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'ogOYJj', height: '500' }),
 	        _react2.default.createElement(

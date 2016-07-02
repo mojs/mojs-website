@@ -39,17 +39,17 @@ const ShapePage = new React.createClass({
     if (this.state.isShow) {
       content = <div>
           <div className="post__header"> Burst </div>
-          <div className="post__description"> This post is about Burst - modules that help you to bootsrap motion effects with declarative calls.</div>
+          <div className="post__description"> This post is about Burst - the module that helps you to bootstrap motion effects with declarative calls.</div>
           <ORXLine className="post__orx-line" />
 
           <Cite>
-            Please make sure you are confortable with <UniteLink link="/tutorials/shape/">Shapes & ShapeSwirl</UniteLink> before proceeding with this tutorial. Undestanding those modules is crucial to understand <span className="highlight">Burst</span>.
+            Please make sure you are confortable with <UniteLink link="/tutorials/shape/">Shapes & ShapeSwirl</UniteLink> before proceeding with this tutorial. Undestanding those modules is crucial for understanding the <span className="highlight">Burst</span>.
           </Cite>
 
           <h2> Burst </h2>
           
           <p>
-            <span className="highlight">Burst</span> is higher order module that creates sophisticated visual effects for you, in any part of the screen you want. You can think of <span className="highlight">Burst</span> as particle emmiter that composes bunch of <span className="highlight">ShapeSwirl</span>s together, creating a circle of such by default.
+            <span className="highlight">Burst</span> is higher order module that creates sophisticated visual effects in any part of the screen you want. You can think of <span className="highlight">Burst</span> as particle emmiter that composes bunch of <span className="highlight">ShapeSwirl</span>s together, creating a circle of swirls.
           </p>
 
           <p>
@@ -67,7 +67,7 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            In fact, from the technical point of view, <span className="highlight">Burst</span> is just a main <span className="highlight">ShapeSwirl</span> that holds bunch of child <span className="highlight">ShapeSwirl</span>s. This allows you to controls either of them. Pictorily it will look like this:
+            From the technical point of view, <span className="highlight">Burst</span> is just a main <span className="highlight">ShapeSwirl</span> that holds bunch of child <span className="highlight">ShapeSwirls</span>. You can control each of them tho. Pictorily it will look like this:
           </p>
 
           <p>
@@ -75,7 +75,7 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            The main swirl has no <span className="highlight">shape</span> nor any presentation properties and in fact is <span className="highlight">0</span> size, this helps to mittigate user's interaction errors regarding the effect.
+            The main swirl has no <span className="highlight">shape</span> nor any presentation properties and in fact is <span className="highlight">0</span> size by default completely unreachable for user's interaction pointer.
           </p>
 
           <p>
@@ -89,7 +89,7 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            There is few more properties that <span className="highlight">Burst</span> implements over <span className="highlight">Shape</span> swirl to control particles radial shape behaviour. The first one is the <span className="highlight">count</span> property that controls amount of particles:
+            There is few more properties that <span className="highlight">Burst</span> implements over <span className="highlight">ShapeSwirl</span>  to control the radial shape behaviour that particles compose. The first one is the <span className="highlight">count</span> property that sets amount of particles:
           </p>
 
           <CodeSample pen="fe6f9d1476aae148f1cfb36f599c92ff">
@@ -102,7 +102,7 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            Another important property on that matter is <span className="highlight">degree</span> one, it controls degree of the particles circle:
+           The particles of the burst evenly placed in the circle that has 360 degree. You can set the <span className="highlight">degree</span> size with appropriate property:
           </p>
 
           <CodeSample pen="11fadc18861a656f0a72f5e132f48f12">
@@ -116,7 +116,38 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            That's won't be much interesting unless we can control child swirls. Right?
+            Here above, we have the burst that has <span className="highlight">30 degree</span> of sufficient place for particles.
+          </p>
+
+          <p>
+            It is very important to note here that since the main swirl of <span className="highlight">Burst</span> module has no actual shape - it completely have no style atributtes that define shape's presentation - all of them among which are the <span className="highlight">stroke</span> or <span className="highlight">strokeWidth</span> or <span className="highlight">fill</span> are completely useless.
+          </p>
+
+          <p>
+            Also the main swirl of the burst have no <span className="highlight">tween</span> related properties like <span className="highlight">delay</span> or <span className="highlight">duration</span>, the later is computed automatically regarding the <span className="highlight">duration</span> of the particles.
+          </p>
+
+          <p>
+            Nonetheless, all <span className="highlight">proprties</span> that control shape position, parent and opacity are present:
+          </p>
+
+          <CodeSample pen="dd9e8ce40b04df492bbf500616ddb815">
+            {
+              { js: `const burst = new mojs.Burst({
+  radius:   { 0: 100 },
+  count:    7,
+  angle:    { 0: 90 },
+  opacity:  { 1: 0 },
+});` }
+            }
+          </CodeSample>
+
+          <p>
+            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/api/burst.md">Burst API</UniteLink> as reference.
+          </p>
+
+          <p>
+            <span className="highlight">Burst</span> won't be much interesting unless we can control child particles? Right?
           </p>
 
           <h2> Children Options</h2>
@@ -140,7 +171,7 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            I have some good news for you - I already know <span className="highlight">Burst</span> syntax! Confusing claim? Nah! I you are familiar with <span className="highlight">Shape</span> and <span className="highlight">ShapeSwirl</span> modules - you know the <span className="highlight">Burst</span>. That's because the <span className="highlight">Burst</span> is nothing than just a <span className="highlight">ShapeSwirl</span> that holds child <span className="highlight">ShapeSwirl</span>s, remember? This means you can put any property of <span className="highlight">ShapeSwirl</span> to the <span className="highlight">children</span> object, go try:
+            I have some good news for you - you already know <span className="highlight">Burst's</span> syntax! Confusing claim? Nah! If you are familiar with <span className="highlight">Shape</span> and <span className="highlight">ShapeSwirl</span> modules - you know the <span className="highlight">Burst</span>. That's because the <span className="highlight">Burst</span> is nothing than just a <span className="highlight">ShapeSwirl</span> that holds child <span className="highlight">ShapeSwirls</span>, remember? This means you can put any property of <span className="highlight">ShapeSwirl</span> to the <span className="highlight">children</span> object, go try:
           </p>
 
           <CodeSample pen="64f13b396761ceabeb6e2967472acfa2">
@@ -160,14 +191,14 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            Actually <span className="highlight">Burst</span> gives you even more control over each child, allowing you to specify explicit property for each of them. These two techniques are called <span className="highlight">Stagger Strings</span> and <span className="highlight">Property Maps</span>.
+            Actually <span className="highlight">Burst</span> gives you even more control over each child, allowing you to specify property for each of them explicitly. These two techniques are called <span className="highlight">Stagger Strings</span> and <span className="highlight">Property Maps</span>.
           </p>
 
           
           <h3>Stagger Strings</h3>
 
           <p>
-            <span className="highlight">Stagger Strings</span> was designed to express continious numeric values with some defined step (see delay property on children):
+            <span className="highlight">Stagger Strings</span> were designed to express continious numeric values with some defined step (see delay property on children):
           </p>
 
           <CodeSample pen="3610a7d0e0ab283acf8d42f3a4b6b9a9">
@@ -188,15 +219,15 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            The first parameter in <span className="highlight">stagger</span> function is <span className="highlight">start</span> value, all subsequent steps will be added to that base value. It is optional tho and can be ommited.
+            The first parameter in <span className="highlight">stagger</span> function is <span className="highlight">start</span> value, all subsequent steps will be added to that start value which is fairy optional tho and can be ommited. If you just write <span className="highlight">stagger(25)</span> - this means stagger with 25 step starting from <span className="highlight">0</span>.
           </p>
 
           <p>
-            In the demo above, that's exact the same circe, but we have <span className="highlight">stagger</span>ed <span className="highlight">delay</span> property, so it looks rather spiral now.
+            In the demo above, that's exact the same circe, but we have <span className="highlight">staggered</span> the <span className="highlight">delay</span> property so it looks rather spiral now.
           </p>
 
           <p>
-            Every numeric value can be expressed with stagger stings and alos they can contain <span className="highlight">rand</span>oms (see the delay property in children):
+            Every numeric value can be expressed with stagger stings. Also they can contain <span className="highlight">rand</span>oms (see the delay property in children):
           </p>
 
           <CodeSample pen="05ff77cfc49e2d5f82363d90339a24e1">
@@ -224,7 +255,7 @@ const ShapePage = new React.createClass({
           <h3>Property Maps</h3>
 
           <p>
-            Property Map was designed to express sequential values. You can use it to generate values that repeat over and over at children length. Basically it is just an array that maps its values to children regarding child index with <span className="highlight">mod</span> function. So if you have <span className="highlight">property map</span> with <span className="highlight">3 values</span> and <span className="highlight">5 children</span>, then <span className="highlight">4</span>th and <span className="highlight">5</span>th item will recieve <span className="highlight">0</span>th and <span className="highlight">0</span>st values from the map respecively:
+            Property Map was designed to express sequential values. You can use it to generate values that repeat over and over at mapped to children length. Basically it is just an array that maps its values to children regarding child index with <span className="highlight">mod</span> function. So if you have <span className="highlight">property map</span> with <span className="highlight">3 values</span> and <span className="highlight">5 children</span>, then <span className="highlight">4</span>th and <span className="highlight">5</span>th item will recieve <span className="highlight">0</span>th and <span className="highlight">0</span>st values from the map respecively:
           </p>
 
           <CodeSample pen="c3c518a84fea019d715cad07e87c29bf">
@@ -244,12 +275,19 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            So starting from 12 o'clock clockwise children fill property gets values of <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>, <span className="highlight">yellow</span> and then again starting from the start of property map - <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>.
+            So starting from 12 o'clock clockwise children <span className="highlight">fill</span>  roperty gets values of <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>, <span className="highlight">yellow</span> and then again starting from the beggining of the property map - <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>.
           </p>
 
           <p>
-            Property maps work with any property and property form, in fact that's just a prism(or multiplexer) that feeds children with properties by virtue of modulus function. Good aid if you want to set some property explicitly.
+            Property maps work with any property and property forms, in fact that's just a prism(or multiplexer) that feeds children with properties by virtue of modulus function. Good aid if you want to set some property on child explicitly.
           </p>
+
+          <h2> then, tune, generate and play </h2>
+
+          <p>
+            You can make <span className="highlight">then</span> state chains, <span className="highlight">tune</span> and <span className="highlight">generate</span> any <span className="highlight">Burst</span> the same as you do with <span className="highlight">Shape</span> or <span className="highlight">ShapeSwril</span>. Also since the <span className="highlight">Burst</span> is merely a <span className="highlight">ShapeSwirl</span> under the hood, you can use any <span className="highlight">tween</span> interface public method like <span className="highlight">play</span>, <span className="highlight">setProgress</span>, <span className="highlight">replay</span> etc.
+          </p>
+
 
           <h2> Small Recap </h2>
 
@@ -257,12 +295,32 @@ const ShapePage = new React.createClass({
 
           <h2> Use Cases </h2>
 
+          <Cite>
+            Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the <span className="highlight">Babel</span> tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, after you will complete this tutorial.
+          </Cite>
+
           <p>
-            <span className="highlight">Burst</span>, the same as <span className="highlight">Shape</span> or <span className="highlight">ShapeSwirl</span> has numerous application fields, among which are motion graphics, animation or UI. In contrary to <UniteLink link="/tutorials/shape/"> Shape&ShapeSwirl </UniteLink> tutorial, I won't split use cases to different entities but rather will try to do lot's of small demos with comments.
+            <span className="highlight">Burst</span>, in similarity with <span className="highlight">Shape</span> or <span className="highlight">ShapeSwirl</span> has numerous application fields, among which are motion graphics, animation or UI. In contrary to <UniteLink link="/tutorials/shape/"> Shape&ShapeSwirl </UniteLink> tutorial, I won't split use cases to different entities but rather will try to do lot's of small demos, each with explanation comments. Hang tight!
           </p>
 
           <p>
-            So you can generate numerous effects with <span className="highlight">Burst</span>. Consider the next demo it uses lots of them:
+            First what comes in mind when I see the default burst is famous twitter's fav animation. Animations like that are usually called <span className="highlight">microconfirmations</span> but I'd rather call them <span className="highlight">microcelebrations</span> because of their festivity.
+          </p>
+
+          <p>
+            Anyways, sequences like are a cinch to do with burst. There is how to do the main part (click anywhere to see):
+          </p>
+
+          <Pen pen="cb910fce2e9ed27f902ae7f895bbb9ac" height="500" />
+
+          <p>
+            Here above, we have declared a burst with 5 particles (which is by default) with a burst delta form 7 to 25. Not how we scale the x axis so the particles fade out. The second step for the sequence like that is to add the supporting orange shape of circle:
+          </p>
+
+          <Pen pen="080045a3420abd5344443aff91c85fa2" height="500" />
+
+          <p>
+            You can generate different effects with <span className="highlight">Burst</span>. Consider the next demo which is using lots of burst modules:
           </p>
 
           <Pen pen="ogOYJj" height="500" />
