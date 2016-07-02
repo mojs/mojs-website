@@ -44221,7 +44221,13 @@
 	            { link: '/tutorials/shape/' },
 	            'Shapes & ShapeSwirl'
 	          ),
-	          ' before proceeding with this tutorial.'
+	          ' before proceeding with this tutorial. Undestanding those modules is crucial to understand ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          '.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -44821,7 +44827,13 @@
 	            { className: 'highlight' },
 	            'top'
 	          ),
-	          ' properties, after that lets add some delay property map:'
+	          ' properties, after that lets add some ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'delay'
+	          ),
+	          ' property map:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '2be25259bdd8e01f9ac3770f6f2bd36a', height: '500' }),
 	        _react2.default.createElement(
@@ -44886,13 +44898,13 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          '? We can blast things up. I love blast thing, do you? Recall this demo from previous tutorial:'
+	          '? We can blast things up. I love blast things up, do you? Recall this demo from previous tutorial:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'c94452fb65dbf676b0ae8a12d4267473', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Lets do this blast together. First, you can notice the small particles there:'
+	          'Do you see that blast? Lets make it blast together. First, you can notice the small particles there:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '79db23782ec1eb9d16246b136ec82b9c', height: '500' }),
 	        _react2.default.createElement(
@@ -44934,7 +44946,19 @@
 	            { className: 'highlight' },
 	            '90'
 	          ),
-	          ', it will be shifted in radial shape by 90 degree. Since they both have random values and we ',
+	          ', it will be shifted in radial shape by 90 degree. Since ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale'
+	          ),
+	          ' and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'degreeShift'
+	          ),
+	          ' both have random values and we ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44957,13 +44981,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'And the last touch is to add one spot large burst of 3 items:'
+	          'And the last touch is to add "one spot" large burst of 3 items:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '699cfc8716a13e0e1c15105af2b6fb95', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'I hope you love to blast thing too now. Notice we did it with no a single repaint!'
+	          'Yum. I hope you love to blast things up too now. Notice we did it without a single repaint!'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -44974,13 +44998,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The answer is 2 ',
+	          'The answer is 3 - ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'Burst'
+	            '2 Bursts'
 	          ),
-	          's and one subtle circle in the middle. It is a drip more modest than the previous one. I won\'t reacreate exact the same effect here, but rather will do slightly different one:'
+	          ' and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '1 subtle circle'
+	          ),
+	          ' in the middle. The effect is a drip more modest than the previous one. I won\'t reacreate exact the same sequence here, but rather will do a bit different one:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '6caf96461207a5caa9226fbd2631569d', height: '500' }),
 	        _react2.default.createElement(
@@ -44992,13 +45022,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Could you count how much effects are bursts here? There are quite few. The most noticeable it the effect that appears after door shuts - dust. It it composed from 4 burst (one for each corner), lets start with just one for now:'
+	          'Can you count how much effects are bursts here? There are quite few. The most noticeable it the effect that appears after door shuts down - the dust. It it composed from 4 burst (one for each corner), lets start with just one for now:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '97a95a5cb7663cf336e8d80f9f511553', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'How is it possible? The ',
+	          'How is it possible? Actually the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45010,7 +45040,7 @@
 	            { className: 'highlight' },
 	            'ShapeSwirl'
 	          ),
-	          's not ',
+	          's not simple ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45034,7 +45064,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'You can do the same effect with just one if will use ',
+	          'You can do the same ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '4 dust spots effect'
+	          ),
+	          ' with just one declarative call if will use ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45106,7 +45142,91 @@
 	          ),
 	          ' of the swirls:'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: 'b1e36259bfa2d6023402eef7de77cc8d', height: '500' })
+	        _react2.default.createElement(_codepen2.default, { pen: 'b1e36259bfa2d6023402eef7de77cc8d', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'That\'s it. Ok, lets recall another demo, rember this one from previous tutorial? Did I notice that the dust trail effect is much easier with burst?'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '633e6aa52d40691cca2f2cda91650bae', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'As you remember, first we need to shoot the child swirls downward to the ground:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'c59d4e046a6c78f3ac9d3a5699018fa8', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Now, instead of multiple swirl modules we have been using in previous tutorial, we use just one burst - ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'stagger'
+	          ),
+	          ' expressions turn out to be useful! After that you want to create an ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'overflow: hidden'
+	          ),
+	          ' container and assign it as ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'parent'
+	          ),
+	          ':'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'e48eb4e56ce1fa94c515b4fda6513d24', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'This time we have used ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Shape'
+	          ),
+	          ' module as constrain ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'parent'
+	          ),
+	          '. The last touch is to add the fading burst at the end and make the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'parent'
+	          ),
+	          ' move:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '10cc620075141688d0cf8eca7a561062', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'That\'s exact the same effect as we have mad in the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Shape&ShapeSwirl'
+	          ),
+	          ' tutorial, but just with 2 ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Bursts'
+	          ),
+	          '! ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Bursts'
+	          ),
+	          ' are fun, there is a little demo I\'ve made with the dust effect (click to see):'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '03e9d8f2fbf886aa1505c61c81d782a0', height: '700' })
 	      );
 	    }
 
