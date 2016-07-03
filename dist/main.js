@@ -44974,13 +44974,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'First what comes in mind when I see the default burst is famous twitter\'s fav animation. Animations like that are usually called ',
+	          'First what comes in mind when I see the default burst - is the famous twitter\'s fav animation. Animations like that are usually called ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'microconfirmations'
 	          ),
-	          ' but I\'d rather call them ',
+	          ' but I\'ve used to call them ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44991,15 +44991,98 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Anyways, sequences like are a cinch to do with burst. There is how to do the main part (click anywhere to see):'
+	          'Anyways, sequences like that are a cinch when you have the burst module in your hands. There is how to do the main part (click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'cb910fce2e9ed27f902ae7f895bbb9ac', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Here above, we have declared a burst with 5 particles (which is by default) with a burst delta form 7 to 25. Not how we scale the x axis so the particles fade out. The second step for the sequence like that is to add the supporting orange shape of circle:'
+	          'Here above, we have declared a burst with 5 particles (which is by default) with a burst radius delta form 4 to 19. There are 2 strategies for bursts like that - one is to scale children down (dy default), the scond one is to animate ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'strokeDashoffset'
+	          ),
+	          ' on children which we have used here.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The next step is to add two more shapes to the scene - one circle ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'strokeWidth'
+	          ),
+	          ' animation and the cutom one - start with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'elastic.out'
+	          ),
+	          ' animation of the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'scale'
+	          ),
+	          '(click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '080045a3420abd5344443aff91c85fa2', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'I love to use the burst over sprites because it turns out to be a way flexiable over prorendered sequence of image, - you can play with easings, time, delay, colors etc. Also you can even change shapes with no effort at all, for instance if you want to add more stars instead of lines(click anywhere to see):'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '0fd14523d76f93865539f1f011682da9', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Lets redo the later twitter love animation too. There is the burst animation(click anywhere to see):'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: '28b429cd2d5ae8c0dd0f10cecd6d0bd0', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The catch here is to use the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'in'
+	          ),
+	          ' easing for ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'scale'
+	          ),
+	          ' property and the opposite ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'out'
+	          ),
+	          ' easing for particles position animation. Also we have set the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale'
+	          ),
+	          ' slightly smaller and small ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'degreeShift'
+	          ),
+	          ' for each odd particle. THe next step is to add the circle shape and heart animations almost identical to ones we have use in twitter fav scene(click anywhere to see):'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'e3751855536c67dc6f57f9e74e5e347d', height: '500' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'And the last touch is to add all the color deltas, there are quite some of them(click anywhere to see):'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'f25a2fbaf15c43c0923f507d54951cdb', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
