@@ -39,7 +39,7 @@ const ShapePage = new React.createClass({
     if (this.state.isShow) {
       content = <div>
           <div className="post__header"> Burst </div>
-          <div className="post__description"> This post is about Burst - the module that helps you to bootstrap motion effects with declarative calls.</div>
+          <div className="post__description"> Burst is the module that helps you to craft numerous sophisticated motion effects.</div>
           <ORXLine className="post__orx-line" />
 
           <Cite>
@@ -49,11 +49,11 @@ const ShapePage = new React.createClass({
           <h2> Burst </h2>
           
           <p>
-            <span className="highlight">Burst</span> is higher order module that creates sophisticated visual effects in any part of the screen you want. You can think of <span className="highlight">Burst</span> as particle emmiter that composes bunch of <span className="highlight">ShapeSwirl</span>s together, creating a circle of swirls.
+            <span className="highlight">Burst</span> is higher order module that creates sophisticated visual effects in any part of the screen you want. You can think of <span className="highlight">Burst</span> as particle emmiter that composes bunch of <span className="highlight">ShapeSwirl</span>s together, creating a circle of particles.
           </p>
 
           <p>
-            That's how it looks like:
+            That's how it looks like by default:
           </p>
 
           <CodeSample pen="19099317e0137756f414ed3a043f85ae">
@@ -296,7 +296,7 @@ const ShapePage = new React.createClass({
           <h2> Use Cases </h2>
 
           <Cite>
-            Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the <span className="highlight">Babel</span> tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, after you will complete this tutorial.
+            Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the <span className="highlight">Babel</span> tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, after you will complete this tutorial. I will live a little (×) mark for you indicating that you can skip reading the source code for now.
           </Cite>
 
           <p>
@@ -345,10 +345,10 @@ const ShapePage = new React.createClass({
             And the last touch is to add all the color deltas, there are quite some of them(click anywhere to see):
           </p>
 
-          <Pen pen="f25a2fbaf15c43c0923f507d54951cdb" height="500" />          
+          <Pen pen="f25a2fbaf15c43c0923f507d54951cdb" height="500" />
 
           <p>
-            You can generate different effects with <span className="highlight">Burst</span>. Consider the next demo which is using lots of burst modules:
+            Let's recall the old "motion for the web" demo(×):
           </p>
 
           <Pen pen="ogOYJj" height="500" />
@@ -423,7 +423,7 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            Let's move on. What else we can do with <span className="highlight">Burst</span>? We can blast things up. I love blast things up, do you? Recall this demo from previous tutorial:
+            Let's move on. What else we can do with <span className="highlight">Burst</span>? We can blast things up. I love blast things up, do you? Recall this demo from previous tutorial(×):
           </p>
 
           <Pen pen="c94452fb65dbf676b0ae8a12d4267473" height="500" />
@@ -461,7 +461,7 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            If you recall the next old demo, you probably can say now how it was done. How much modules does this blast compose (click close to see the effect)?
+            If you recall the next old demo, you probably can say now how it was done. How much modules does this blast compose (click close to see the effect)(×)?
           </p>
 
           <Pen pen="XJjLxe" height="700" />
@@ -473,7 +473,7 @@ const ShapePage = new React.createClass({
           <Pen pen="6caf96461207a5caa9226fbd2631569d" height="500" />
 
           <p>
-            Ok. Enough distraction. Lets create something less obvious. Recall this demo with the mole:
+            Ok. Enough distraction. Lets create something less obvious. Recall this demo with the mole(×):
           </p>
 
           <Pen pen="477056cb1ffe88c4bfbf8a3005d99496" height="600" />
@@ -529,7 +529,7 @@ const ShapePage = new React.createClass({
           <Pen pen="b1e36259bfa2d6023402eef7de77cc8d" height="500" />
 
           <p>
-            That's it. Ok, lets recall another demo, rember this one from previous tutorial? Did I notice that the dust trail effect is much easier with burst?
+            That's it. Ok, lets recall another demo, rember this one from previous tutorial? Did I notice that the dust trail effect is much easier with burst(×)?
           </p>
 
           <Pen pen="633e6aa52d40691cca2f2cda91650bae" height="500"></Pen>
@@ -559,10 +559,28 @@ const ShapePage = new React.createClass({
 
           <Pen pen="03e9d8f2fbf886aa1505c61c81d782a0" height="700"></Pen>
 
+          <p>
+            That's <span className="highlight">Burst</span>.
+          </p>
 
+          <h2> Recap </h2>
 
+          <p></p>
 
+          <h2>Thank you!</h2>
 
+          <p>
+            I happy you've made it here! It was a long and intence journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. If you have any questions you can catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag or rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink>. You can help the project on <UniteLink>Patreon</UniteLink> and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'<3'}
+          </p>
+
+          <p style = {{ textAlign: 'center', marginTop: '50px' }}>
+            <br />
+            Next: &nbsp;<UniteLink link="/tutorials/burst" isDisabled="true" className="highlight">Stagger</UniteLink>
+          </p>
+
+          <SocialNetworksAbout className="post__social-networks-about" />
+          <ORXLine className="post__last-orx-line" type="center" />
+          <DisqusComments />
 
 
 

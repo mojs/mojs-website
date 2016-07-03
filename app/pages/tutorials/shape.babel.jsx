@@ -1510,7 +1510,7 @@ const heart = new mojs.Shape({
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
             <br />
-            Next: &nbsp;<UniteLink link="/tutorials/burst" isDisabled="true" className="highlight">Burst</UniteLink>
+            Next: &nbsp;<UniteLink link="/tutorials/burst" className="highlight">Burst</UniteLink>
           </p>
 
           <SocialNetworksAbout className="post__social-networks-about" />

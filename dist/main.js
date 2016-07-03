@@ -23814,8 +23814,7 @@
 	    }, " Tutorials ")), React.createElement("div", {
 	      "className": "header__links-inner"
 	    }, React.createElement(UniteLink, {
-	      "isDisabled": "true",
-	      "link": "/",
+	      "link": "https://github.com/legomushroom/mojs/api/index.md",
 	      "className": "header__link"
 	    }, " APIs ")), React.createElement("div", {
 	      "className": "header__links-inner"
@@ -27363,7 +27362,7 @@
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ApiDemo, Icon, Link, Main, MotionDemo, PrismCode, React, Router, SocialNetworksAbout, UniteLink, mojs;
+	var ApiDemo, Icon, Link, Main, MotionDemo, Pen, PrismCode, React, Router, SocialNetworksAbout, UniteLink, mojs;
 
 	React = __webpack_require__(2);
 
@@ -27378,6 +27377,8 @@
 	Link = Router.Link;
 
 	Icon = __webpack_require__(199);
+
+	Pen = __webpack_require__(340);
 
 	MotionDemo = __webpack_require__(244);
 
@@ -27500,7 +27501,13 @@
 	      "link": "http://bower.io/search/?q=mojs"
 	    }, "bower"), " or ", React.createElement(UniteLink, {
 	      "link": "http://www.jsdelivr.com/projects/mojs"
-	    }, "CDN"), ".")), React.createElement(ApiDemo, null), React.createElement(MotionDemo, null), React.createElement("div", {
+	    }, "CDN"), ".")), React.createElement(ApiDemo, null), React.createElement("br", null), React.createElement("br", null), React.createElement("p", null, "Quick demo:"), React.createElement(Pen, {
+	      "pen": "4f1780feb76ffca8357c8a70513d02bb",
+	      "height": "500"
+	    }), ((function() {
+
+	      /* <MotionDemo /> */
+	    })()), React.createElement("div", {
 	      "className": "main-page__buttons [ grid grid--sliced1 grid--gutter-x6 ]"
 	    }, React.createElement("div", {
 	      "className": "grid-bit grid-bit--4-12"
@@ -37583,7 +37590,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(203)();
-	exports.push([module.id, ".spinner {\n  position: absolute;\n  left: 12.5rem;\n  top: 12.5rem;\n  width: 1.25rem;\n  height: 1.25rem;\n}\n.spinner__el {\n  position: absolute;\n  left: 0;\n  top: 0;\n  background-color: #ffe952;\n  -webkit-transform: rotateY(90deg);\n          transform: rotateY(90deg);\n  background-size: auto 100%;\n  width: 100%;\n  height: 100%;\n}\n.spinner__el--circle {\n  -webkit-animation: spin 2s ease-out infinite;\n          animation: spin 2s ease-out infinite;\n}\n.spinner__el--rect {\n  background-color: #fc46ad;\n  -webkit-animation: spin 2s ease-out 0.666666666666667s infinite;\n          animation: spin 2s ease-out 0.666666666666667s infinite;\n}\n.spinner__el--cross {\n  background-color: #31ffd1;\n  -webkit-animation: spin 2s ease-out -0.666666666666667s infinite;\n          animation: spin 2s ease-out -0.666666666666667s infinite;\n}\n@-webkit-keyframes spin {\n  75% {\n    -webkit-transform: rotateY(90deg);\n            transform: rotateY(90deg);\n  }\n  92% {\n    -webkit-transform: rotateY(0);\n            transform: rotateY(0);\n  }\n  100% {\n    -webkit-transform: rotateY(-90deg);\n            transform: rotateY(-90deg);\n  }\n  0% {\n    -webkit-transform: rotateY(90deg);\n            transform: rotateY(90deg);\n  }\n  86% {\n    -webkit-transform: rotateY(0);\n            transform: rotateY(0);\n  }\n}\n@keyframes spin {\n  75% {\n    -webkit-transform: rotateY(90deg);\n            transform: rotateY(90deg);\n  }\n  92% {\n    -webkit-transform: rotateY(0);\n            transform: rotateY(0);\n  }\n  100% {\n    -webkit-transform: rotateY(-90deg);\n            transform: rotateY(-90deg);\n  }\n  0% {\n    -webkit-transform: rotateY(90deg);\n            transform: rotateY(90deg);\n  }\n  86% {\n    -webkit-transform: rotateY(0);\n            transform: rotateY(0);\n  }\n}\n.feature {\n  color: #fff;\n  text-align: center;\n  width: 12.5rem;\n}\n.feature__image {\n  width: 6.125rem;\n  height: 4.1875rem;\n  background: transparent url("+__webpack_require__(272)+") no-repeat center center;\n  background-size: 100% 100%;\n  margin-bottom: 2.1875rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature__image {\n    background: transparent url("+__webpack_require__(273)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature__header {\n  font-size: 1.125rem;\n  letter-spacing: 0.10625rem;\n  margin-bottom: 0.625rem;\n}\n.feature__text {\n  opacity: 0.65;\n  font-size: 0.75rem;\n  letter-spacing: 0.0625rem;\n  line-height: 1.85;\n}\n.is-safari .feature__text {\n  font-weight: 900;\n}\n.feature--retina .feature__image {\n  width: 4.5rem;\n  height: 4.5rem;\n  background: transparent url("+__webpack_require__(274)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--retina .feature__image {\n    background: transparent url("+__webpack_require__(275)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--retina .feature__header {\n  margin-top: -0.3125rem;\n}\n.feature--simple .feature__image {\n  width: 4.25rem;\n  height: 4.5rem;\n  background: transparent url("+__webpack_require__(276)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--simple .feature__image {\n    background: transparent url("+__webpack_require__(277)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--simple .feature__header {\n  margin-top: -0.3125rem;\n}\n.feature--modular .feature__image {\n  width: 5.0625rem;\n  height: 4.625rem;\n  background: transparent url("+__webpack_require__(278)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--modular .feature__image {\n    background: transparent url("+__webpack_require__(279)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--robust .feature__image {\n  width: 8.75rem;\n  height: 6.25rem;\n  background: transparent url("+__webpack_require__(280)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--robust .feature__image {\n    background: transparent url("+__webpack_require__(281)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--robust .feature__header {\n  margin-top: -1.625rem;\n}\n.feature--open-sourced .feature__image {\n  width: 4.75rem;\n  height: 4.875rem;\n  background: transparent url("+__webpack_require__(282)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--open-sourced .feature__image {\n    background: transparent url("+__webpack_require__(283)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--open-sourced .feature__header {\n  margin-top: -0.25rem;\n}\n.motion-lettering {\n  width: 24.8125rem;\n  height: 17.25rem;\n  background: url("+__webpack_require__(284)+") no-repeat center center;\n  background-size: 100% auto;\n  opacity: 1;\n}\n@media all and (max-width: 640px) {\n  .motion-lettering {\n    width: 12.9025rem;\n    height: 8.97rem;\n  }\n}\n.code-block {\n  color: #fff;\n  font-size: 0.8125rem;\n}\n.code-block__header,\n.code-block__footer {\n  padding-left: 0.3125rem;\n}\n.code-block__header {\n  letter-spacing: 0.125rem;\n}\n.code-block__body {\n  background: rgba(255,255,255,0.2);\n  padding: 1.25rem 1.5625rem;\n  margin: 0.625rem 0;\n  border-radius: 0.25rem;\n  font-family: inherit;\n  letter-spacing: 0.125rem;\n  position: relative;\n  display: block;\n  overflow-x: auto;\n}\n.code-block__footer {\n  letter-spacing: 0.0625rem;\n  font-size: 0.75rem;\n}\n.code-block__footer a {\n  color: #f64040;\n  text-decoration: none;\n}\n.motion-demo {\n  overflow: hidden;\n}\n@media all and (max-width: 640px) {\n  .motion-demo {\n    overflow: visible;\n  }\n}\n.motion-demo__header {\n  font-size: 0.8125rem;\n  color: #fff;\n  letter-spacing: 0.125rem;\n  padding-left: 0.3125rem;\n}\n.motion-demo__ghost,\n.motion-demo__play,\n.motion-demo .motion {\n  -webkit-transition: opacity 0.35s linear, z-index 0.35s linear;\n          transition: opacity 0.35s linear, z-index 0.35s linear;\n}\n.motion-demo__ghost {\n  -webkit-transition-delay: 0.15s;\n          transition-delay: 0.15s;\n}\n.motion-demo__ghost {\n  width: 24.9375rem;\n  height: 17.125rem;\n  margin-left: -12.56640625rem;\n  margin-top: -6.75rem;\n  opacity: 0.2;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  background: url("+__webpack_require__(285)+");\n  background-size: 100% 100%;\n}\n@media all and (max-width: 640px) {\n  .motion-demo__ghost {\n    width: 19.950000000000003rem;\n    height: 13.700000000000001rem;\n    margin-left: -9.25rem;\n    margin-top: -6.375rem;\n  }\n}\n.motion-demo__play {\n  border: 1.125rem solid transparent;\n  border-left-width: 1.875rem;\n  border-left-color: #fff;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  margin-top: -1.25rem;\n  margin-left: -2.5rem;\n  z-index: 1;\n  width: 0;\n  height: 0;\n}\n.motion-demo__play:hover {\n  opacity: 0.85;\n  cursor: pointer;\n}\n.motion-demo__play:after {\n  content: 'play';\n  position: absolute;\n  top: -0.5rem;\n  left: 0.9375rem;\n  color: #fff;\n  letter-spacing: 0.125rem;\n  font-size: 0.75rem;\n}\n.motion-demo__play:before {\n  content: '';\n  position: absolute;\n  width: 5rem;\n  height: 2.5rem;\n  left: -1.875rem;\n  top: -1.25rem;\n  z-index: 1;\n}\n.motion-demo .motion {\n  margin-top: -5.3125rem;\n  opacity: 0;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media all and (max-width: 640px) {\n  .motion-demo .motion {\n    -webkit-transform: scale(0.8);\n        -ms-transform: scale(0.8);\n            transform: scale(0.8);\n    margin-top: -6.875rem;\n  }\n}\n@media all and (max-width: 510px) {\n  .motion-demo .motion {\n    left: 50%;\n    -webkit-transform: scale(0.8) translateX(-59%);\n        -ms-transform: scale(0.8) translateX(-59%);\n            transform: scale(0.8) translateX(-59%);\n  }\n}\n.motion-demo.is-play {\n  opacity: 1;\n}\n.motion-demo.is-play .motion-demo__ghost {\n  opacity: 0;\n}\n.motion-demo.is-play .motion-demo__play {\n  opacity: 0;\n  z-index: -1;\n}\n.motion-demo.is-play .motion {\n  opacity: 1;\n  -webkit-transition-delay: 0.5s;\n          transition-delay: 0.5s;\n}\n.main-page {\n  opacity: 0;\n  -webkit-transition: all 0.25s ease-out;\n          transition: all 0.25s ease-out;\n}\n.main-page.is-shown {\n  opacity: 1;\n}\n.main-page__content {\n  max-width: 43.75rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media all and (max-width: 640px) {\n  .main-page__content {\n    padding: 0 1.25rem;\n    overflow-x: hidden;\n  }\n}\n.main-page .motion-lettering {\n  margin-top: 10rem;\n  margin-bottom: 1.25rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media all and (max-width: 1024px) {\n  .main-page .motion-lettering {\n    margin-top: 7.5rem;\n    margin-bottom: 0rem;\n  }\n}\n@media all and (max-width: 768px) {\n  .main-page .motion-lettering {\n    margin-top: 5rem;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page .motion-lettering {\n    margin-top: 2.8125rem;\n    margin-bottom: 2.1875rem;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page .code-block__body {\n    padding: 0.9375rem 0.9375rem;\n  }\n}\n.main-page__quick-start {\n  margin-top: 1.875rem;\n  padding-top: 0.625rem;\n  padding-bottom: 2.5rem;\n}\n@media all and (max-width: 640px) {\n  .main-page__quick-start {\n    border-bottom: 0.0625rem solid rgba(255,255,255,0.2);\n  }\n  .main-page__quick-start .code-block__body {\n    font-size: 0.5625rem;\n  }\n  .main-page__quick-start .code-block__footer {\n    line-height: 1.9;\n    width: 80%;\n    font-size: 0.6875rem;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page__quick-start-normal {\n    display: none;\n  }\n}\n.main-page__quick-start-mobile {\n  display: none;\n}\n@media all and (max-width: 640px) {\n  .main-page__quick-start-mobile {\n    display: block;\n  }\n}\n.main-page__buttons {\n  margin-top: 5.625rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n.main-page__buttons .button {\n  display: block;\n  width: 100%;\n}\n@media all and (max-width: 640px) {\n  .main-page__buttons {\n    margin-top: -0.9375rem;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page__buttons .grid-bit {\n    width: 100%;\n    max-width: 15rem;\n    float: none;\n    margin-left: auto;\n    margin-right: auto;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page .button {\n    margin-top: 1.875rem;\n    font-size: 0.875rem;\n  }\n}\n.main-page .motion-demo {\n  padding-top: 4.375rem;\n  position: relative;\n}\n@media all and (max-width: 640px) {\n  .main-page .motion-demo {\n    padding-top: 2.5rem;\n  }\n}\n.main-page .social-networks-about {\n  margin-top: 8.4375rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media all and (max-width: 640px) {\n  .main-page .social-networks-about {\n    margin-top: 4.6875rem;\n  }\n  .main-page .social-networks-about .social-networks-about__text {\n    margin-top: -0.625rem;\n  }\n}\n.main-page .api-demo {\n  z-index: 1;\n}\n.main-page__features-row {\n  padding-top: 3.75rem;\n  padding-bottom: 3.75rem;\n}\n@media all and (max-width: 640px) {\n  .main-page__features-row {\n    padding-top: 0;\n    padding-bottom: 0;\n  }\n  .main-page__features-row .feature {\n    width: 100%;\n    text-align: left;\n    max-width: 20rem;\n    height: 6.25rem;\n    margin-left: auto;\n    margin-right: auto;\n  }\n  .main-page__features-row .feature__header {\n    font-size: 0.875rem;\n    margin-bottom: 0.9375rem;\n    letter-spacing: 0.08125rem;\n  }\n  .main-page__features-row .feature__text {\n    font-size: 0.625rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.6;\n  }\n  .main-page__features-row .feature__image {\n    position: relative;\n  }\n  .main-page__features-row .feature__header {\n    margin-top: 0;\n  }\n  .main-page__features-row .feature--fast .feature__image {\n    top: 0.625rem;\n  }\n  .main-page__features-row .feature--retina .feature__image {\n    top: 0.3125rem;\n    left: -0.3125rem;\n  }\n  .main-page__features-row .feature--simple .feature__text,\n  .main-page__features-row .feature--simple .feature__header {\n    margin-left: 7.5rem;\n  }\n  .main-page__features-row .feature--simple .feature__image {\n    margin-left: 0.9375rem;\n    top: 0.3125rem;\n  }\n  .main-page__features-row .feature--modular .feature__text,\n  .main-page__features-row .feature--modular .feature__header {\n    width: 55%;\n  }\n  .main-page__features-row .feature--modular .feature__image {\n    top: 0.625rem;\n  }\n  .main-page__features-row .feature--robust .feature__image {\n    margin-left: -2.5rem;\n    top: 0.625rem;\n    left: 1.25rem;\n  }\n  .main-page__features-row .feature--open-sourced .feature__text,\n  .main-page__features-row .feature--open-sourced .feature__header {\n    width: 55%;\n  }\n  .main-page__features-row .feature--open-sourced .feature__image {\n    top: 0.3125rem;\n    left: -0.625rem;\n  }\n  .main-page__features-row .grid-bit {\n    width: 100%;\n    margin-bottom: 1.25rem;\n    float: none;\n    zoom: 1;\n  }\n  .main-page__features-row .grid-bit:after,\n  .main-page__features-row .grid-bit:before {\n    content: '';\n    display: table;\n  }\n  .main-page__features-row .grid-bit:after {\n    clear: both;\n  }\n  .main-page__features-row--1 .grid-bit:nth-of-type(odd) .feature__image {\n    float: left;\n    margin-right: 1.25rem;\n  }\n  .main-page__features-row--1 .grid-bit:nth-of-type(even) .feature__image {\n    float: right;\n    margin-left: 1.25rem;\n  }\n  .main-page__features-row--2 {\n    border-bottom: 0.0625rem solid rgba(255,255,255,0.2);\n    padding-bottom: 0.3125rem;\n  }\n  .main-page__features-row--2 .grid-bit:nth-of-type(even) .feature__image {\n    float: left;\n    margin-right: 1.25rem;\n  }\n  .main-page__features-row--2 .grid-bit:nth-of-type(odd) .feature__image {\n    float: right;\n    margin-left: 1.25rem;\n  }\n}\n", ""]);
+	exports.push([module.id, ".spinner {\n  position: absolute;\n  left: 12.5rem;\n  top: 12.5rem;\n  width: 1.25rem;\n  height: 1.25rem;\n}\n.spinner__el {\n  position: absolute;\n  left: 0;\n  top: 0;\n  background-color: #ffe952;\n  -webkit-transform: rotateY(90deg);\n          transform: rotateY(90deg);\n  background-size: auto 100%;\n  width: 100%;\n  height: 100%;\n}\n.spinner__el--circle {\n  -webkit-animation: spin 2s ease-out infinite;\n          animation: spin 2s ease-out infinite;\n}\n.spinner__el--rect {\n  background-color: #fc46ad;\n  -webkit-animation: spin 2s ease-out 0.666666666666667s infinite;\n          animation: spin 2s ease-out 0.666666666666667s infinite;\n}\n.spinner__el--cross {\n  background-color: #31ffd1;\n  -webkit-animation: spin 2s ease-out -0.666666666666667s infinite;\n          animation: spin 2s ease-out -0.666666666666667s infinite;\n}\n@-webkit-keyframes spin {\n  75% {\n    -webkit-transform: rotateY(90deg);\n            transform: rotateY(90deg);\n  }\n  92% {\n    -webkit-transform: rotateY(0);\n            transform: rotateY(0);\n  }\n  100% {\n    -webkit-transform: rotateY(-90deg);\n            transform: rotateY(-90deg);\n  }\n  0% {\n    -webkit-transform: rotateY(90deg);\n            transform: rotateY(90deg);\n  }\n  86% {\n    -webkit-transform: rotateY(0);\n            transform: rotateY(0);\n  }\n}\n@keyframes spin {\n  75% {\n    -webkit-transform: rotateY(90deg);\n            transform: rotateY(90deg);\n  }\n  92% {\n    -webkit-transform: rotateY(0);\n            transform: rotateY(0);\n  }\n  100% {\n    -webkit-transform: rotateY(-90deg);\n            transform: rotateY(-90deg);\n  }\n  0% {\n    -webkit-transform: rotateY(90deg);\n            transform: rotateY(90deg);\n  }\n  86% {\n    -webkit-transform: rotateY(0);\n            transform: rotateY(0);\n  }\n}\n.feature {\n  color: #fff;\n  text-align: center;\n  width: 12.5rem;\n}\n.feature__image {\n  width: 6.125rem;\n  height: 4.1875rem;\n  background: transparent url("+__webpack_require__(272)+") no-repeat center center;\n  background-size: 100% 100%;\n  margin-bottom: 2.1875rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature__image {\n    background: transparent url("+__webpack_require__(273)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature__header {\n  font-size: 1.125rem;\n  letter-spacing: 0.10625rem;\n  margin-bottom: 0.625rem;\n}\n.feature__text {\n  opacity: 0.65;\n  font-size: 0.75rem;\n  letter-spacing: 0.0625rem;\n  line-height: 1.85;\n}\n.is-safari .feature__text {\n  font-weight: 900;\n}\n.feature--retina .feature__image {\n  width: 4.5rem;\n  height: 4.5rem;\n  background: transparent url("+__webpack_require__(274)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--retina .feature__image {\n    background: transparent url("+__webpack_require__(275)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--retina .feature__header {\n  margin-top: -0.3125rem;\n}\n.feature--simple .feature__image {\n  width: 4.25rem;\n  height: 4.5rem;\n  background: transparent url("+__webpack_require__(276)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--simple .feature__image {\n    background: transparent url("+__webpack_require__(277)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--simple .feature__header {\n  margin-top: -0.3125rem;\n}\n.feature--modular .feature__image {\n  width: 5.0625rem;\n  height: 4.625rem;\n  background: transparent url("+__webpack_require__(278)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--modular .feature__image {\n    background: transparent url("+__webpack_require__(279)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--robust .feature__image {\n  width: 8.75rem;\n  height: 6.25rem;\n  background: transparent url("+__webpack_require__(280)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--robust .feature__image {\n    background: transparent url("+__webpack_require__(281)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--robust .feature__header {\n  margin-top: -1.625rem;\n}\n.feature--open-sourced .feature__image {\n  width: 4.75rem;\n  height: 4.875rem;\n  background: transparent url("+__webpack_require__(282)+") no-repeat center center;\n  background-size: 100% 100%;\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {\n  .feature--open-sourced .feature__image {\n    background: transparent url("+__webpack_require__(283)+") no-repeat center center;\n    background-size: 100% 100%;\n  }\n}\n.feature--open-sourced .feature__header {\n  margin-top: -0.25rem;\n}\n.motion-lettering {\n  width: 24.8125rem;\n  height: 17.25rem;\n  background: url("+__webpack_require__(284)+") no-repeat center center;\n  background-size: 100% auto;\n  opacity: 1;\n}\n@media all and (max-width: 640px) {\n  .motion-lettering {\n    width: 12.9025rem;\n    height: 8.97rem;\n  }\n}\n.code-block {\n  color: #fff;\n  font-size: 0.8125rem;\n}\n.code-block__header,\n.code-block__footer {\n  padding-left: 0.3125rem;\n}\n.code-block__header {\n  letter-spacing: 0.125rem;\n}\n.code-block__body {\n  background: rgba(255,255,255,0.2);\n  padding: 1.25rem 1.5625rem;\n  margin: 0.625rem 0;\n  border-radius: 0.25rem;\n  font-family: inherit;\n  letter-spacing: 0.125rem;\n  position: relative;\n  display: block;\n  overflow-x: auto;\n}\n.code-block__footer {\n  letter-spacing: 0.0625rem;\n  font-size: 0.75rem;\n}\n.code-block__footer a {\n  color: #f64040;\n  text-decoration: none;\n}\n.motion-demo {\n  overflow: hidden;\n}\n@media all and (max-width: 640px) {\n  .motion-demo {\n    overflow: visible;\n  }\n}\n.motion-demo__header {\n  font-size: 0.8125rem;\n  color: #fff;\n  letter-spacing: 0.125rem;\n  padding-left: 0.3125rem;\n}\n.motion-demo__ghost,\n.motion-demo__play,\n.motion-demo .motion {\n  -webkit-transition: opacity 0.35s linear, z-index 0.35s linear;\n          transition: opacity 0.35s linear, z-index 0.35s linear;\n}\n.motion-demo__ghost {\n  -webkit-transition-delay: 0.15s;\n          transition-delay: 0.15s;\n}\n.motion-demo__ghost {\n  width: 24.9375rem;\n  height: 17.125rem;\n  margin-left: -12.56640625rem;\n  margin-top: -6.75rem;\n  opacity: 0.2;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  background: url("+__webpack_require__(285)+");\n  background-size: 100% 100%;\n}\n@media all and (max-width: 640px) {\n  .motion-demo__ghost {\n    width: 19.950000000000003rem;\n    height: 13.700000000000001rem;\n    margin-left: -9.25rem;\n    margin-top: -6.375rem;\n  }\n}\n.motion-demo__play {\n  border: 1.125rem solid transparent;\n  border-left-width: 1.875rem;\n  border-left-color: #fff;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  margin-top: -1.25rem;\n  margin-left: -2.5rem;\n  z-index: 1;\n  width: 0;\n  height: 0;\n}\n.motion-demo__play:hover {\n  opacity: 0.85;\n  cursor: pointer;\n}\n.motion-demo__play:after {\n  content: 'play';\n  position: absolute;\n  top: -0.5rem;\n  left: 0.9375rem;\n  color: #fff;\n  letter-spacing: 0.125rem;\n  font-size: 0.75rem;\n}\n.motion-demo__play:before {\n  content: '';\n  position: absolute;\n  width: 5rem;\n  height: 2.5rem;\n  left: -1.875rem;\n  top: -1.25rem;\n  z-index: 1;\n}\n.motion-demo .motion {\n  margin-top: -5.3125rem;\n  opacity: 0;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media all and (max-width: 640px) {\n  .motion-demo .motion {\n    -webkit-transform: scale(0.8);\n        -ms-transform: scale(0.8);\n            transform: scale(0.8);\n    margin-top: -6.875rem;\n  }\n}\n@media all and (max-width: 510px) {\n  .motion-demo .motion {\n    left: 50%;\n    -webkit-transform: scale(0.8) translateX(-59%);\n        -ms-transform: scale(0.8) translateX(-59%);\n            transform: scale(0.8) translateX(-59%);\n  }\n}\n.motion-demo.is-play {\n  opacity: 1;\n}\n.motion-demo.is-play .motion-demo__ghost {\n  opacity: 0;\n}\n.motion-demo.is-play .motion-demo__play {\n  opacity: 0;\n  z-index: -1;\n}\n.motion-demo.is-play .motion {\n  opacity: 1;\n  -webkit-transition-delay: 0.5s;\n          transition-delay: 0.5s;\n}\n.main-page {\n  opacity: 0;\n  color: #fff;\n  -webkit-transition: all 0.25s ease-out;\n          transition: all 0.25s ease-out;\n}\n.main-page.is-shown {\n  opacity: 1;\n}\n.main-page__content {\n  max-width: 43.75rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media all and (max-width: 640px) {\n  .main-page__content {\n    padding: 0 1.25rem;\n    overflow-x: hidden;\n  }\n}\n.main-page .motion-lettering {\n  margin-top: 10rem;\n  margin-bottom: 1.25rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media all and (max-width: 1024px) {\n  .main-page .motion-lettering {\n    margin-top: 7.5rem;\n    margin-bottom: 0rem;\n  }\n}\n@media all and (max-width: 768px) {\n  .main-page .motion-lettering {\n    margin-top: 5rem;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page .motion-lettering {\n    margin-top: 2.8125rem;\n    margin-bottom: 2.1875rem;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page .code-block__body {\n    padding: 0.9375rem 0.9375rem;\n  }\n}\n.main-page__quick-start {\n  margin-top: 1.875rem;\n  padding-top: 0.625rem;\n  padding-bottom: 2.5rem;\n}\n@media all and (max-width: 640px) {\n  .main-page__quick-start {\n    border-bottom: 0.0625rem solid rgba(255,255,255,0.2);\n  }\n  .main-page__quick-start .code-block__body {\n    font-size: 0.5625rem;\n  }\n  .main-page__quick-start .code-block__footer {\n    line-height: 1.9;\n    width: 80%;\n    font-size: 0.6875rem;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page__quick-start-normal {\n    display: none;\n  }\n}\n.main-page__quick-start-mobile {\n  display: none;\n}\n@media all and (max-width: 640px) {\n  .main-page__quick-start-mobile {\n    display: block;\n  }\n}\n.main-page__buttons {\n  margin-top: 5.625rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n.main-page__buttons .button {\n  display: block;\n  width: 100%;\n}\n@media all and (max-width: 640px) {\n  .main-page__buttons {\n    margin-top: -0.9375rem;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page__buttons .grid-bit {\n    width: 100%;\n    max-width: 15rem;\n    float: none;\n    margin-left: auto;\n    margin-right: auto;\n  }\n}\n@media all and (max-width: 640px) {\n  .main-page .button {\n    margin-top: 1.875rem;\n    font-size: 0.875rem;\n  }\n}\n.main-page .motion-demo {\n  padding-top: 4.375rem;\n  position: relative;\n}\n@media all and (max-width: 640px) {\n  .main-page .motion-demo {\n    padding-top: 2.5rem;\n  }\n}\n.main-page .social-networks-about {\n  margin-top: 8.4375rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n@media all and (max-width: 640px) {\n  .main-page .social-networks-about {\n    margin-top: 4.6875rem;\n  }\n  .main-page .social-networks-about .social-networks-about__text {\n    margin-top: -0.625rem;\n  }\n}\n.main-page .api-demo {\n  z-index: 1;\n}\n.main-page__features-row {\n  padding-top: 3.75rem;\n  padding-bottom: 3.75rem;\n}\n@media all and (max-width: 640px) {\n  .main-page__features-row {\n    padding-top: 0;\n    padding-bottom: 0;\n  }\n  .main-page__features-row .feature {\n    width: 100%;\n    text-align: left;\n    max-width: 20rem;\n    height: 6.25rem;\n    margin-left: auto;\n    margin-right: auto;\n  }\n  .main-page__features-row .feature__header {\n    font-size: 0.875rem;\n    margin-bottom: 0.9375rem;\n    letter-spacing: 0.08125rem;\n  }\n  .main-page__features-row .feature__text {\n    font-size: 0.625rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.6;\n  }\n  .main-page__features-row .feature__image {\n    position: relative;\n  }\n  .main-page__features-row .feature__header {\n    margin-top: 0;\n  }\n  .main-page__features-row .feature--fast .feature__image {\n    top: 0.625rem;\n  }\n  .main-page__features-row .feature--retina .feature__image {\n    top: 0.3125rem;\n    left: -0.3125rem;\n  }\n  .main-page__features-row .feature--simple .feature__text,\n  .main-page__features-row .feature--simple .feature__header {\n    margin-left: 7.5rem;\n  }\n  .main-page__features-row .feature--simple .feature__image {\n    margin-left: 0.9375rem;\n    top: 0.3125rem;\n  }\n  .main-page__features-row .feature--modular .feature__text,\n  .main-page__features-row .feature--modular .feature__header {\n    width: 55%;\n  }\n  .main-page__features-row .feature--modular .feature__image {\n    top: 0.625rem;\n  }\n  .main-page__features-row .feature--robust .feature__image {\n    margin-left: -2.5rem;\n    top: 0.625rem;\n    left: 1.25rem;\n  }\n  .main-page__features-row .feature--open-sourced .feature__text,\n  .main-page__features-row .feature--open-sourced .feature__header {\n    width: 55%;\n  }\n  .main-page__features-row .feature--open-sourced .feature__image {\n    top: 0.3125rem;\n    left: -0.625rem;\n  }\n  .main-page__features-row .grid-bit {\n    width: 100%;\n    margin-bottom: 1.25rem;\n    float: none;\n    zoom: 1;\n  }\n  .main-page__features-row .grid-bit:after,\n  .main-page__features-row .grid-bit:before {\n    content: '';\n    display: table;\n  }\n  .main-page__features-row .grid-bit:after {\n    clear: both;\n  }\n  .main-page__features-row--1 .grid-bit:nth-of-type(odd) .feature__image {\n    float: left;\n    margin-right: 1.25rem;\n  }\n  .main-page__features-row--1 .grid-bit:nth-of-type(even) .feature__image {\n    float: right;\n    margin-left: 1.25rem;\n  }\n  .main-page__features-row--2 {\n    border-bottom: 0.0625rem solid rgba(255,255,255,0.2);\n    padding-bottom: 0.3125rem;\n  }\n  .main-page__features-row--2 .grid-bit:nth-of-type(even) .feature__image {\n    float: left;\n    margin-right: 1.25rem;\n  }\n  .main-page__features-row--2 .grid-bit:nth-of-type(odd) .feature__image {\n    float: right;\n    margin-left: 1.25rem;\n  }\n}\n", ""]);
 
 /***/ },
 /* 272 */
@@ -44208,7 +44215,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'post__description' },
-	          ' This post is about Burst - the module that helps you to bootstrap motion effects with declarative calls.'
+	          ' Burst is the module that helps you to craft numerous sophisticated motion effects.'
 	        ),
 	        _react2.default.createElement(_orxLine2.default, { className: 'post__orx-line' }),
 	        _react2.default.createElement(
@@ -44253,12 +44260,12 @@
 	            { className: 'highlight' },
 	            'ShapeSwirl'
 	          ),
-	          's together, creating a circle of swirls.'
+	          's together, creating a circle of particles.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s how it looks like:'
+	          'That\'s how it looks like by default:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -44941,7 +44948,7 @@
 	            { className: 'highlight' },
 	            'Babel'
 	          ),
-	          ' tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, after you will complete this tutorial.'
+	          ' tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, after you will complete this tutorial. I will live a little (×) mark for you indicating that you can skip reading the source code for now.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -45086,13 +45093,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'You can generate different effects with ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            'Burst'
-	          ),
-	          '. Consider the next demo which is using lots of burst modules:'
+	          'Let\'s recall the old "motion for the web" demo(×):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'ogOYJj', height: '500' }),
 	        _react2.default.createElement(
@@ -45257,7 +45258,7 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          '? We can blast things up. I love blast things up, do you? Recall this demo from previous tutorial:'
+	          '? We can blast things up. I love blast things up, do you? Recall this demo from previous tutorial(×):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'c94452fb65dbf676b0ae8a12d4267473', height: '500' }),
 	        _react2.default.createElement(
@@ -45351,7 +45352,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If you recall the next old demo, you probably can say now how it was done. How much modules does this blast compose (click close to see the effect)?'
+	          'If you recall the next old demo, you probably can say now how it was done. How much modules does this blast compose (click close to see the effect)(×)?'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'XJjLxe', height: '700' }),
 	        _react2.default.createElement(
@@ -45375,7 +45376,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Ok. Enough distraction. Lets create something less obvious. Recall this demo with the mole:'
+	          'Ok. Enough distraction. Lets create something less obvious. Recall this demo with the mole(×):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '477056cb1ffe88c4bfbf8a3005d99496', height: '600' }),
 	        _react2.default.createElement(
@@ -45505,7 +45506,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s it. Ok, lets recall another demo, rember this one from previous tutorial? Did I notice that the dust trail effect is much easier with burst?'
+	          'That\'s it. Ok, lets recall another demo, rember this one from previous tutorial? Did I notice that the dust trail effect is much easier with burst(×)?'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '633e6aa52d40691cca2f2cda91650bae', height: '500' }),
 	        _react2.default.createElement(
@@ -45585,7 +45586,79 @@
 	          ),
 	          ' are fun, there is a little demo I\'ve made with the dust effect (click to see):'
 	        ),
-	        _react2.default.createElement(_codepen2.default, { pen: '03e9d8f2fbf886aa1505c61c81d782a0', height: '700' })
+	        _react2.default.createElement(_codepen2.default, { pen: '03e9d8f2fbf886aa1505c61c81d782a0', height: '700' }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'That\'s ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          '.'
+	        ),
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          ' Recap '
+	        ),
+	        _react2.default.createElement('p', null),
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'Thank you!'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'I happy you\'ve made it here! It was a long and intence journey, I hope you don\'t feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. If you have any questions you can catch me on twitter (',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://twitter.com/legomushroom' },
+	            '@legomushroom'
+	          ),
+	          '), ask a question on StackOverflow with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '#mojs'
+	          ),
+	          ' tag or rise an issue on ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://github.com/legomushroom/mojs' },
+	            'github repo'
+	          ),
+	          '. You can help the project on ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            null,
+	            'Patreon'
+	          ),
+	          ' and/or on ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://github.com/legomushroom/mojs/issues' },
+	            'github'
+	          ),
+	          '. ',
+	          '<3'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { style: { textAlign: 'center', marginTop: '50px' } },
+	          _react2.default.createElement('br', null),
+	          'Next:  ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: '/tutorials/burst', isDisabled: 'true', className: 'highlight' },
+	            'Stagger'
+	          )
+	        ),
+	        _react2.default.createElement(_socialNetworksAbout2.default, { className: 'post__social-networks-about' }),
+	        _react2.default.createElement(_orxLine2.default, { className: 'post__last-orx-line', type: 'center' }),
+	        _react2.default.createElement(_disqusComments2.default, null)
 	      );
 	    }
 

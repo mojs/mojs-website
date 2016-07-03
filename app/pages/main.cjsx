@@ -5,6 +5,7 @@ UniteLink   = require '../partials/unite-link'
 Router      = require 'react-router'
 Link        = Router.Link
 Icon        = require '../partials/icon'
+Pen         = require '../partials/codepen'
 MotionDemo  = require '../pages/motion-demo/motion-demo.cjsx'
 ApiDemo     = require '../partials/api-demo'
 SocialNetworksAbout = require '../partials/social-networks-about'
@@ -104,7 +105,14 @@ Main = React.createClass
 
       <ApiDemo />
 
-      <MotionDemo />
+      <br />
+      <br />
+
+      <p>Quick demo:</p>
+
+      <Pen pen="4f1780feb76ffca8357c8a70513d02bb" height="500" />
+
+      { ### <MotionDemo /> ### }
       
       <div className="main-page__buttons [ grid grid--sliced1 grid--gutter-x6 ]">
         <div className="grid-bit grid-bit--4-12">
