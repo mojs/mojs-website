@@ -22,11 +22,13 @@ module.exports = React.createClass
           <div className="tutorials-sidebar__header"> Modules </div>
           <UniteLink link="/tutorials/shape/" className="tutorials-sidebar__link"> Shape & Swirl </UniteLink>
           <UniteLink link="/tutorials/burst/" className="tutorials-sidebar__link"> Burst </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Stagger </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Motion Path      </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Spriter          </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Radial Spring    </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Spring Wave      </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Stagger Wrapper  </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Goo Transforms   </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Broom            </UniteLink>
         </div>
 
         <div className="tutorials-sidebar__section">

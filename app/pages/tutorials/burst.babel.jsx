@@ -303,6 +303,8 @@ const ShapePage = new React.createClass({
             <span className="highlight">Burst</span>, in similarity with <span className="highlight">Shape</span> or <span className="highlight">ShapeSwirl</span> has numerous application fields, among which are motion graphics, animation or UI. In contrary to <UniteLink link="/tutorials/shape/"> Shape&ShapeSwirl </UniteLink> tutorial, I won't split use cases to different entities but rather will try to do lot's of small demos, each with explanation comments. Hang tight!
           </p>
 
+          <h3>Microconfirmations</h3>
+
           <p>
             First what comes in mind when I see the default burst - is the famous twitter's fav animation. Animations like that are usually called <span className="highlight">microconfirmations</span> but I've used to call them <span className="highlight">microcelebrations</span> because of their festivity.
           </p>
@@ -348,6 +350,44 @@ const ShapePage = new React.createClass({
           <Pen pen="f25a2fbaf15c43c0923f507d54951cdb" height="500" />
 
           <p>
+            That's basically the same microconfirmations that I've gave you in the <UniteLink link="/tutorials/shape/">Shape&ShapeSwirl</UniteLink> tutorial(×):
+          </p>
+
+          <Pen pen="3c49de2d7d0ca3e92bf5db5bf7a2687d" height="500"></Pen>
+
+          <p>
+            You can imagine that those effects are much easier with <span className="highlight">Burst</span> module. For bubbles instance in the the first part, can be made like this:
+          </p>
+
+          <Pen pen="a336008aff2d73121763887097a99001" height="500"></Pen>
+
+          <p>
+            Here we have static <span className="highlight">radius</span> of <span className="highlight">25</span> and <span className="highlight">3</span> <span className="highlight">white</span> particles. We've set slightly <span className="highlight">rand</span>om <span className="highlight">degreeShift</span> and <span className="highlight">delay</span> on <span className="highlight">children</span> that eventually gives us the bubble like motion. THe second burst is super simple one:
+          </p>
+
+          <Pen pen="afbfb59f00d5dfb8b28fc97510fcc167" height="500"></Pen>
+
+          <p>
+            As you can see, the second burst is amost the basic one, we have only changed the main <span className="highlight">radius</span> to <span className="highlight">0 : 30</span>, as for children, we tweaked the <span className="highlight">shape</span> to line, and made only the <span className="highlight">scaleX</span> to fade out from <span className="highlight">1</span> to <span className="highlight">0</span>. The final touch is to add center circle and cross shape:
+          </p>
+
+          <Pen pen="d260dc9246f2100b9f2dbe79a01d01f6" height="500"></Pen>
+
+          <p>
+            The second part of the demo is even simpler, we just need to set <span className="highlight">degree</span> to <span className="highlight">0</span> so the particles will flow in one direction, set <span className="highlight">isSwirl</span> to <span className="highlight">true</span> (Burst composes ShapeSwirls, remember?) on <span className="highlight">children</span> thus particles will follow sine path. After that we need to slightly randomize <span className="highlight">swirlSize</span>, <span className="highlight">swirlFrequency</span> and <span className="highlight">pathScale</span> parameters (click somewhere to see):
+          </p>
+
+          <Pen pen="60d5d3c97981022f20f86c37580bceb1" height="500"></Pen>
+
+          <p>
+            Just like with previous example the last touches is to add circle and cross transitions (click somewhere to see):
+          </p>
+
+          <Pen pen="f307bc95b1ac02c09042c89ea7afe945" height="500"></Pen>
+
+          <h3>Motion for the web</h3>
+
+          <p>
             Let's recall the old "motion for the web" demo(×):
           </p>
 
@@ -374,7 +414,7 @@ const ShapePage = new React.createClass({
           <Pen pen="953926af8c30d3dd297070b1a079e059" height="500" />
 
           <p>
-            This one is simple too, good for practice basics. Did you notice those meteors on the left of the letters? Those are <span className="highlight">Burst</span> too. How? Well first you have a burst with 3 children:
+            This one is simple too, good one to practice basics. Did you notice those meteors on the left of the letters? Those are <span className="highlight">Burst</span> too. How? Well first you have a burst with 3 children:
           </p>
 
 
@@ -387,7 +427,7 @@ const ShapePage = new React.createClass({
           <Pen pen="d84370a3c19fdcea8c714e7049c9ab5d" height="500" />
 
           <p>
-            Hm, they kind of overlap, so lets add shift them by staggering <span className="highlight">left</span> and <span className="highlight">top</span> properties, after that lets add some <span className="highlight">delay</span> property map:
+            Hm, they kind of overlap, so lets add shift them by staggering <span className="highlight">left</span> and <span className="highlight">top</span> properties, after that lets add some <span className="highlight">delay</span> with a property map:
           </p>
 
           <Pen pen="2be25259bdd8e01f9ac3770f6f2bd36a" height="500" />
@@ -406,7 +446,7 @@ const ShapePage = new React.createClass({
           <Pen pen="432464f276fe6f06b457915ca6062723" height="500" />
 
           <p>
-            As you can see main swirl's <span className="highlight">radius</span> and <span className="highlight">degree</span> of <span className="highlight">0</span> put the shapes in one spot. Then we just have to slightly stagger <span className="highlight">delay</span> on children. The same for other parts - vertical and horizontal lines:
+            As you can see, we've set the main swirl's <span className="highlight">radius</span> and <span className="highlight">degree</span> to <span className="highlight">0</span> to put the shapes in one spot. Then we just have to slightly stagger <span className="highlight">delay</span> on children. The same for other parts - vertical and horizontal lines:
           </p>
 
           <Pen pen="33f7924ecd146d951698bf190ac7838e" height="500" />
@@ -422,6 +462,8 @@ const ShapePage = new React.createClass({
             That's better.
           </p>
 
+          <h3>Blast all the things up</h3>
+
           <p>
             Let's move on. What else we can do with <span className="highlight">Burst</span>? We can blast things up. I love blast things up, do you? Recall this demo from previous tutorial(×):
           </p>
@@ -429,13 +471,13 @@ const ShapePage = new React.createClass({
           <Pen pen="c94452fb65dbf676b0ae8a12d4267473" height="500" />
 
           <p>
-            Do you see that blast? Lets make it blast together. First, you can notice the small particles there:
+            Do you see that blast? Lets make it together. First, you can notice the small particles there:
           </p>
           
           <Pen pen="79db23782ec1eb9d16246b136ec82b9c" height="500" />
 
           <p>
-            Notice how we use <span className="highlight">pathScale</span> and <span className="highlight">degreeShift</span> properties to add randomness to the blast. The <span className="highlight">pathScale</span> property defines how the length of the path that particle makes when flying scales. The <span className="highlight">degreeShift</span> property defines how much the particle will shift in it's radial position in burst circle. So if particle has <span className="highlight">degreeShift</span> of <span className="highlight">90</span>, it will be shifted in radial shape by 90 degree. Since <span className="highlight">pathScale</span> and <span className="highlight">degreeShift</span> both have random values and we <span className="highlight">generate</span> the module on each user click - we always have the random blast pattern.
+            Notice how we use <span className="highlight">pathScale</span> and <span className="highlight">degreeShift</span> properties to add randomness to the blast. The <span className="highlight">pathScale</span> property defines the length of the sine path of the particle scales. The <span className="highlight">degreeShift</span> property defines how much the particle will shift in it's radial position in burst circle. So if particle has <span className="highlight">degreeShift</span> of <span className="highlight">90</span>, it will be shifted in radial shape by 90 degree. Since <span className="highlight">pathScale</span> and <span className="highlight">degreeShift</span> both have random values and we <span className="highlight">generate</span> the module on each user click - we always have the random blast pattern.
           </p>
 
           <p>
@@ -460,6 +502,8 @@ const ShapePage = new React.createClass({
             Yum. I hope you love to blast things up too now. Notice we did it without a single repaint!
           </p>
 
+          <h3>Modal blast</h3>
+
           <p>
             If you recall the next old demo, you probably can say now how it was done. How much modules does this blast compose (click close to see the effect)(×)?
           </p>
@@ -471,6 +515,8 @@ const ShapePage = new React.createClass({
           </p>
 
           <Pen pen="6caf96461207a5caa9226fbd2631569d" height="500" />
+
+          <h3>The sleepy mole</h3>
 
           <p>
             Ok. Enough distraction. Lets create something less obvious. Recall this demo with the mole(×):
@@ -490,9 +536,9 @@ const ShapePage = new React.createClass({
 
           <Pen pen="bbc4c52b7145d9d872ac437f21afd75f" height="500" />
 
-          <p>
-            You can do the same <span className="highlight">4 dust spots effect</span> with just one declarative call if will use <span className="highlight">Stagger</span> module, but that's a topic for the next tutorial.
-          </p>
+          <em>
+            You can do the same <span className="highlight">4 dust points effect</span> with just one declarative call if will use <span className="highlight">Stagger</span> module, but that's a topic for the next tutorial.
+          </em>
 
           <p>
             Ok. Recalling the mole demo, what else did you notice? Probably that confetti that appear when cube hits the floor. Right! 
@@ -511,7 +557,7 @@ const ShapePage = new React.createClass({
           <Pen pen="d0d0c2b1e98f1a0f8d6ea250c31ed081" height="500" />
 
           <p>
-            What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First you want to make <span className="highlight">0 degree</span> burst, and rotate the main swirl downward, imitating air current weakening:
+            What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First you want to make <span className="highlight">0 degree</span> burst, and rotate the main swirl downward, imitating that the air current gets weaker:
           </p>
 
           <Pen pen="828d4f1e1f6fdfd608b588af0b9bdd45" height="500" />
@@ -527,6 +573,8 @@ const ShapePage = new React.createClass({
           </p>
 
           <Pen pen="b1e36259bfa2d6023402eef7de77cc8d" height="500" />
+
+          <h3>The dust trail</h3>
 
           <p>
             That's it. Ok, lets recall another demo, rember this one from previous tutorial? Did I notice that the dust trail effect is much easier with burst(×)?
@@ -560,17 +608,19 @@ const ShapePage = new React.createClass({
           <Pen pen="03e9d8f2fbf886aa1505c61c81d782a0" height="700"></Pen>
 
           <p>
-            That's <span className="highlight">Burst</span>.
+            That's it for <span className="highlight">Burst</span>. I've touched only the surface of the possible effects that you can compose with this module, but that's a good start to convey the idea and APIs. Also my friends from <UniteLink>Codrops</UniteLink> wrote a awesome <UniteLinks link="http://tympanus.net/Development/Animocons/">post</UniteLinks> a while ago, definitely check it out.
           </p>
 
           <h2> Recap </h2>
 
-          <p></p>
+          <p>
+            Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes bunch of child <span className="highlight">ShapeSwirls</span> forming radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the effects modules for you. You can find exhaustive api reference at <UniteLink>Burst API</UniteLink> section.
+          </p>
 
           <h2>Thank you!</h2>
 
           <p>
-            I happy you've made it here! It was a long and intence journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. If you have any questions you can catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag or rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink>. You can help the project on <UniteLink>Patreon</UniteLink> and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'<3'}
+            I happy you've made it here! It was a long and intence journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned if you like these ones. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag or rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink>. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'Love <3.'}
           </p>
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
