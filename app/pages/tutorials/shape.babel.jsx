@@ -39,7 +39,7 @@ const ShapePage = new React.createClass({
     if (this.state.isShow) {
       content = <div>
           <div className="post__header">Shape & ShapeSwirl</div>
-          <div className="post__description"> This post is about Shape and ShapeSwirl. Modules that help you to bootsrap motion effects with declarative calls.</div>
+          <div className="post__description"> This post is about Shape and ShapeSwirl - modules that help you to bootsrap motion effects.</div>
           <ORXLine className="post__orx-line" />
 
           <h2> Shape </h2>
@@ -56,7 +56,7 @@ const ShapePage = new React.createClass({
             Hey Machine! I want a dust trail after this element when it moves!
           </Cite>
           <p>
-            And appropriate effects should appear. Most importantly, <span className="highlight">Shape</span> is a tiny bit that can compose more mature modules like <span className="highlight"><UniteLink link="/tutorials/burst/">Burst</UniteLink></span> or <span className="highlight">Stagger</span>  which we will discuss shortly in the upcoming tutorials, right now I should make sure you are comfortable with <UniteLink link="https://github.com">Shape APIs</UniteLink> and use cases.
+            And appropriate effects should appear. Most importantly, <span className="highlight">Shape</span> is a tiny bit that can be composed into more mature modules like <span className="highlight"><UniteLink link="/tutorials/burst/">Burst</UniteLink></span> or <span className="highlight">Stagger</span>  which we will discuss shortly in the upcoming tutorials, right now I should make sure you are comfortable with <UniteLink link="https://github.com/legomushroom/mojs/api/shape.md">Shape APIs</UniteLink> and use cases.
           </p>
 
           <p>
@@ -74,11 +74,11 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            Nothing interesting yet. Well maybe there is one thing - the shape magically appears just in the middle of the screen. <span className="highlight">mojs</span> takes care to create as little container for the shape as possible, bootstraps all the markup and places the result just where you want it. Pretty handy. <span className="highlight">isShowStart</span> property says to the shape to be visible even before animation starts.
+            Nothing interesting yet. Well maybe there is one thing - the shape magically appears just in the middle of the codepen. <span className="highlight">mojs</span> takes care to create as little container for the shape as possible, bootstraps all the markup and places the result just where you want it. Pretty handy. <span className="highlight">isShowStart</span> property says to the shape to be visible even before animation starts.
           </p>
 
           <p>
-            Obviously, you can style the shape:
+            Obviously, you can style the shape as you want:
           </p>
 
           <CodeSample pen="d929be6cdb64bb0a2979f35669284197">
@@ -97,7 +97,7 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            The entire list of shape properties with comments could be found at <UniteLink link="https://github.com/">Shape APIs</UniteLink> section.
+            The entire list of shape properties with comments could be found at <UniteLink link="https://github.com/legomushroom/mojs/api/shape.md">Shape API</UniteLink> section.
           </p>
 
           <p>
@@ -117,11 +117,11 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            We've set random value for the <span className="highlight">x</span> property in interval from <span className="highlight">0</span> to <span className="highlight">200</span> so it should show up in random position inside that gap every time you will rerun the pen. <span className="highlight">rand</span> string syntax is obvious - it takes start and end value to generate the eventual value from those two.
+            We've set random value for the <span className="highlight">x</span> property in interval from <span className="highlight">-250</span> to <span className="highlight">250</span> so it should show up in random position inside that period every time you will rerun the pen. <span className="highlight">rand</span> string syntax is simple - it takes start and end value to generate the eventual value from those two.
           </p>
 
           <p>
-            The <span className="highlight">radius</span> property sets shape's (no prizes for guessing) radius. Also you can set <span className="highlight">radiusX</span>/<span className="highlight">radiusY</span> values explicitly with appropriate properties that by default fallback to the value of the <span className="highlight">radius</span> if not set.
+            The <span className="highlight">radius</span> property sets shape's (no prizes for guessing) radius. Also you can set <span className="highlight">radiusX</span>/<span className="highlight">radiusY</span> values explicitly with appropriate properties which by default fallback to the value of the <span className="highlight">radius</span>.
           </p>
 
           <CodeSample pen="617994a375f9373488b3821707d593c2">
@@ -178,7 +178,7 @@ var polygon = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Radiuses control form of shape not just size, it gets pretty clear with <span className="highlight">zigzag</span> or <span className="highlight">curve</span> shapes:
+            Also <span className="highlight">radius</span> properties control form of shape not just size - it gets pretty clear with <span className="highlight">zigzag</span> or <span className="highlight">curve</span> shapes:
           </p>
 
           <CodeSample pen="fc3ffe076aaafdb173f12d8688cde450">
@@ -221,11 +221,11 @@ var cross = new mojs.Shape({
           </CodeSample>
 
         <p>
-          You can see in example above, the radiusY controls size of the spikes for zigzag shape and bend for the curve shape in the second case.
+          You can see in example above, the <span className="highlight">radiusY</span> controls size of the spikes for <span className="highlight">zigzag</span> shape in the first case and bend for the <span className="highlight">curve</span> shape in the second one.
         </p>
 
         <p>
-          Boolean properties start with <span className="highlight">is</span> prefix to separate them from other values.
+          As for boolean properties of the shape, they start with <span className="highlight">is</span> prefix to separate them from other values.
         </p>
           
 
@@ -304,7 +304,7 @@ const polygon = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Here, delta of the <span className="highlight">strokeDashoffset</span> property on the rectangle uses <span className="highlight">unit based</span> values. The delta of the <span className="highlight">x</span> property of the polygon shape uses random unit based values. The delta of the <span className="highlight">fill</span> property for all the shapes uses <span className="highlight">color keywords</span> to make transitions.
+            Here, delta of the <span className="highlight">strokeDashoffset</span> property on the rectangle uses <span className="highlight">unit based</span> values. The delta of the <span className="highlight">x</span> property of the polygon shape uses random unit based values. The delta of the <span className="highlight">fill</span> property for all the shapes uses <span className="highlight">color keywords</span> to describe color transitions.
           </p>
 
           <p>
@@ -322,8 +322,10 @@ const polygon = new mojs.Shape({
   y:          { [50]: -20 },
   scaleX:     { 0 : 1.3 },
   
-  repeat:     5,
+  repeat:     10,
   duration:   800,
+  isYoyo:     true,
+  backwardEasing: 'sin.in',
 
   isShowEnd:  false
 }).play();`
@@ -333,11 +335,11 @@ const polygon = new mojs.Shape({
 
 
           <p>
-            If you will translate this code sample to proper English, you will have something like this —  we have a <span className="highlight">orange</span> <span className="highlight">polygon</span> of <span className="highlight">65px radius</span> right in the middle of the screen(by default), when animation starts — it rotates from <span className="highlight">-120</span> to <span className="highlight">-40</span> degrees, shifts <span className="highlight">180px</span> to the right starting from <span className="highlight">-200px</span> and <span className="highlight">scale</span>s from <span className="highlight">0</span> to <span className="highlight">1.3</span> concurrently. That happens during <span className="highlight">800ms</span> and repeats <span className="highlight">5</span> times with default <span className="highlight">easing</span>. When animation ends, the shape <span className="highlight">dissapears</span>.
+            If you will translate this code sample to proper English, you will have something like this —  we have a <span className="highlight">orange</span> <span className="highlight">polygon</span> of <span className="highlight">65px radius</span> right in the middle of the screen(by default), when animation starts — it rotates from <span className="highlight">-120</span> to <span className="highlight">-40</span> degrees, shifts <span className="highlight">180px</span> to the right starting from <span className="highlight">-200px</span> and <span className="highlight">scale</span>s from <span className="highlight">0</span> to <span className="highlight">1.3</span> concurrently. That happens during <span className="highlight">800ms</span> and repeats <span className="highlight">10</span> times with default <span className="highlight">easing</span> and <span className="highlight">sin.in</span> easing when moving backward in <span className="highlight">yoyo</span> period. When animation ends, the shape <span className="highlight">dissapears</span>.
           </p>
 
           <p>
-            Note that almost every property transition besides <span className="highlight">tween</span> properties (like duration/delay etc) and <span className="highlight">boolean</span> values can be expressed in <span className="highlight">delta</span>, please refer to the <UniteLink link="">API's</UniteLink> on that matter. The <span className="highlight">∆</span> symbol in the comment right above properties defines that the property is <span className="highlight">"deltable"</span>.
+            Note that almost every property transition besides <span className="highlight">tween</span> properties (like duration/delay etc) and <span className="highlight">boolean</span> values, can be expressed with <span className="highlight">delta</span> object, please refer to the <UniteLink link="https:/github.com/legomushroom/mojs/api/shape.md">API</UniteLink> on that matter. The <span className="highlight">∆</span> symbol in the comment right above properties defines that the property is <span className="highlight">"deltable" thus supports delta transitions</span>.
           </p>
 
           <p>
@@ -363,7 +365,7 @@ const polygon = new mojs.Shape({
           </p>
 
           <p>
-            The 3rd property that is available on delta objects is <span className="highlight">curve</span> property that overrides <span className="highlight">easing</span> property if both present. The <span className="highlight">curve</span> property is the way to go if you want to declare a <span className="highlight">property curve</span> for a property transition, where <span className="highlight">delta</span> values is curve's base that will be multiplied by current curve's value when animation runs:
+            The 3rd property that is available on delta objects is <span className="highlight">curve</span> property that overrides <span className="highlight">easing</span> property if both present. The <span className="highlight">curve</span> property is the way to go if you want to declare a <span className="highlight">property curve</span> for a property transition, where start and end values of the <span className="highlight">delta</span> are curve's base that will be multiplied by current curve's value when animation runs:
           </p>
 
           <CodeSample pen="8a4d6ffc83e6c8633b26f0691055cdad">
@@ -383,7 +385,7 @@ const circle = new mojs.Shape({
   origin:       { '0 50%' : '100% 50%', easing: shiftCurve },
   isForce3d:    true,
   
-  yoyo:         true,
+  isYoyo:         true,
   delay:        500,
   duration:     800,
   repeat:       999,
@@ -419,7 +421,7 @@ const circle = new mojs.Shape({
           <h2>Then Zen</h2>
 
           <p>
-            You can chain shape states with <span className="highlight">then</span> calls:
+            You can chain shape states with <span className="highlight">then</span> calls (hit play button to see):
           </p>
 
           <CodeSample pen="e4a17fe53a61bea14e783cce0df7ddb2">
@@ -442,7 +444,7 @@ const circle = new mojs.Shape({
           </CodeSample>
 
           <em>
-            <i>Note</i>: In the demo above, I've added <span className="highlight">MojsPlayer</span> to control the demo sequnce instead of explicit <span className="highlight">.play</span> call. <span className="highlight">MojsPlayer</span> is part of <span className="highlight">mojs tools</span> that gives you GUI contols thus helps you to craft your motion sequence. Also it keeps the animation and settings state on page reloads, saving you lots of time and effort. Since our animations can get quite complex, the player could be a aide.
+            <i>Note</i>: In the demo above, I've added <span className="highlight">MojsPlayer</span> to control the demo sequnce instead of explicit <span className="highlight">.play</span> call on the shape. <span className="highlight">MojsPlayer</span> is part of <span className="highlight">mojs tools</span> that gives you GUI contols thus helps you to craft your motion sequence. Also it keeps the animation and settings state on page reloads, saving you lots of time and effort. Since our animations can get quite complex, the player could be a good aide.
           </em>
 
           <p>
@@ -481,7 +483,7 @@ const circle = new mojs.Shape({
           </p>
 
           <p>
-            The last thing to note is that if property is not set in the new <span className="highlight">then</span> call, it gets inherited from the previous block just as you would expect. This works for all properties excluding tween ones, but not <span className="highlight">duration</span> one. So the <span className="highlight">duration</span> property is the only tween property that gets inherited from previous then call:
+            The last thing to note is that if property is not set in the new <span className="highlight">then</span> call, it inherits from the previous block just as you would expect. This works for all properties excluding tween ones, but not the <span className="highlight">duration</span>. So the <span className="highlight">duration</span> property is the only tween property that gets inherited from previous then call:
           </p>
 
           <CodeSample pen="98772bc3e5e67ed9dba66b7280dfff6a">
@@ -512,20 +514,20 @@ const circle = new mojs.Shape({
           </CodeSample>
 
           <p>
-            So in the code sample above, the duration inside <span className="highlight">then</span> call has the same value of 600ms inherited inherited from the previous state block, but <span className="highlight">delay</span> has the default value of 0.
+            So in the code sample above, the duration inside <span className="highlight">then</span> call has the same value of 600ms inherited inherited from the previous state block, but <span className="highlight">delay</span> has the default value of <span className="highlight">0</span>. All other properties that are not set in the new <span className="highlight">then</span> call inherit the previos values ( for instance <span className="highlight">radius</span> or <span className="highlight">fill</span> ).
           </p>
 
 
           <h2>Tweenable interface</h2>
 
           <p>
-            <span className="highlight">Shape</span> obeys <span className="highlight">tweenable</span> interface thus it has the same <span className="highlight">tween properties</span>, <span className="highlight">callbacks</span> and <span className="highlight">public methods</span> as any <UniteLink link="">tween</UniteLink> has:
+            <span className="highlight">Shape</span> obeys <span className="highlight">tweenable</span> interface thus it has the same <span className="highlight">tween properties</span>, <span className="highlight">callbacks</span> and <span className="highlight">public methods</span> as any <UniteLink link="https://github.com/legomushroom/mojs/api/tweens/tween.md">tween</UniteLink> has:
           </p>
 
           <CodeSample pen="911ca9f311423e52a80f4509574925bc">
             {
               { js: `const shape = new mojs.Shape({
-  // shape properties
+  // shape properties which we have already used
   shape:          'rect',
   stroke:         'cyan',
   angle:          { [-360] : 0 },
@@ -579,7 +581,7 @@ const circle = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Also implementing <span className="highlight">tweenable</span> interface means that any <span className="highlight">Shape</span> can be <span className="highlight">add</span>ed or <span className="highlight">append</span>ed to any <span className="highlight">timeline</span> exact the same as any simple <span className="highlight">tween</span>:
+            Also implementing <span className="highlight">tweenable</span> interface means that any <span className="highlight">Shape</span> can be <span className="highlight">add</span>ed or <span className="highlight">append</span>ed to any <span className="highlight">timeline</span> exact the same way as any simple <span className="highlight">tween</span>:
           </p>
 
           <CodeSample pen="72e333584c53191806ec7ecb5bce1630">
@@ -591,12 +593,14 @@ timeline
             }
           </CodeSample>
 
-          <p></p>
+          <p>
+            Here above we have added shapes to timeline just like tween - right with the <span className="highlight">add</span> public method.
+          </p>
 
           <h2> Tune </h2>
 
           <p>
-            You can <span className="highlight">tune</span> any property of shape before playing it. The method was designed to give you the ability to change start properties on the fly regarding user input, thus you can add interactivity (click somewhere to see):
+            After you have created a shape, you can <span className="highlight">tune</span> any of it's properties before playing it. The <span className="highlight">tune</span> method is handy when you want to add some interactivity to your animation or to play the shape regarding user input - the method was exactly designed for this purpose(click somewhere to see):
           </p>
 
           <CodeSample pen="fcf6121653db713d8567271d3e8eea10">
@@ -621,10 +625,46 @@ timeline
           </p>
 
           <p>
-            Note that <span className="highlight">tune</span> call transforms entire shape's property query that was set up with <span className="highlight">then</span> calls. It works that way to keep the chain up to date starting from the new tuned value. Thus you tune not only the first shape state but the subsequent ones. For instance if you had chain of fill <span className="highlight"> yellow -> cyan</span> then <span className="highlight">magenta</span>, and tune it to <span className="highlight">deepink</span>, you will eventually have <span className="highlight">deeppink</span>, <span className="highlight">deepink -> magenta</span> chain. But if you will tune to delta value like <span className="highlight">deeppink -> yellow</span>, you will have the <span className="highlight">deeppink -> yellow -> cyan</span> chain as the result (click somewhere to see):
+            Note that <span className="highlight">tune</span> call transforms entire shape's property query that was set up with <span className="highlight">then</span> calls. It works that way to keep the chain up to date starting from the new tuned value. Thus you tune not only the first shape state but the subsequent ones. For instance if you had chain of fill <span className="highlight"> yellow -> cyan</span> then <span className="highlight">magenta</span>, and tune it to <span className="highlight">deepink</span>, you will eventually have <span className="highlight">deeppink</span> -> <span className="highlight">deepink -> magenta</span> chain. But if you will tune to delta value like <span className="highlight">deeppink -> yellow</span>, you will have the <span className="highlight">deeppink -> yellow -> cyan</span> chain as the result (click somewhere to see):
           </p>
 
           <CodeSample pen="0d745dac6d142cd4f6dc5b423a8273b4">
+            {
+              { js: `const circle = new mojs.Shape({
+  fill: { 'magenta': 'yellow' },
+}).then({
+  fill: 'cyan'
+});
+
+document.addEventListener( 'click', function (e) {
+  
+  // no tune
+  circle1
+    .replay();
+
+  // static value tune, results in 'deeppink' for the first block, 'deeppink' -> 'cyan' for the second one
+  circle2
+    .tune({ fill: 'deeppink' })
+    .replay();
+  
+  // delta tune, results in 'yellow' -> 'deeppink' for the first block, 'deeppink' : 'cyan' for the second one
+  circle3
+    .tune({ fill: { 'yellow' : 'deeppink' } })
+    .replay();
+});`
+              }
+            }
+          </CodeSample>
+
+          <em>
+            1st wasn't tuned at all, 2nd ball was tuned to static value, 3rd ball was tuned to new delta value
+          </em>
+
+          <p>
+            There is the same exact example but for <span className="highlight">y</span> property as it should be a drip more clearer to visualize:
+          </p>
+
+          <CodeSample pen="e991f4bb942c8aa698fbe4a3dba0ad4b">
             {
               { js: `const circle = new mojs.Shape({
   fill: { 'magenta': 'yellow' },

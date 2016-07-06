@@ -608,7 +608,7 @@ const ShapePage = new React.createClass({
           <Pen pen="03e9d8f2fbf886aa1505c61c81d782a0" height="700"></Pen>
 
           <p>
-            That's it for <span className="highlight">Burst</span>. I've touched only the surface of the possible effects that you can compose with this module, but that's a good start to convey the idea and APIs. Also my friends from <UniteLink>Codrops</UniteLink> wrote a awesome <UniteLinks link="http://tympanus.net/Development/Animocons/">post</UniteLinks> a while ago, definitely check it out.
+            That's it for <span className="highlight">Burst</span>. I've touched only the surface of the possible effects that you can compose with this module, but that's a good start to convey the idea and APIs. Also my friends from <UniteLink link="http://tympanus.net/codrops/">Codrops</UniteLink> wrote a awesome <UniteLink link="http://tympanus.net/Development/Animocons/">post</UniteLink> a while ago, definitely check it out.
           </p>
 
           <h2> Recap </h2>
