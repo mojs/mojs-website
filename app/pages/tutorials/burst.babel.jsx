@@ -423,23 +423,27 @@ burst
           </em>
 
           <p>
-            How many burst have you noticed in the demo? There aree quite some actually. I think the most noticeable are collisions with the ground (click to see):
+            How many burst modules have you noticed in this demo? There are quite some actually. I think the most noticeable are collisions with the ground (click to see):
           </p>
 
           <Pen pen="4fe37a79f6d665d749ebcb4f22c2ee4e" height="500" />
 
           <p>
-            This one is rather obvious, <span className="highlight">degree</span> of <span className="highlight">180</span>, <span className="highlight">radius</span> of <span className="highlight">7</span> etc.
+            This one was made by virtue of <span className="highlight">degree: 180</span>, children <span className="highlight">radius</span> of <span className="highlight">7</span> and <span className="highlight">strokeDashoffset</span> animation on particles.
           </p>
 
           <p>
-            There is another one:
+            There is another one burst in that demo:
           </p>
 
           <Pen pen="953926af8c30d3dd297070b1a079e059" height="500" />
 
           <p>
-            This one is simple too, good one to practice basics. Did you notice those meteors on the left of the letters? Those are <span className="highlight">Burst</span> too. How? Well first you have a burst with 3 children:
+            This one is simple too, good one to practice basics.
+          </p>
+
+          <p>
+            Did you notice those meteors on the left of the letters? Those are <span className="highlight">Burst</span> too. How? Well first you have a burst with 3 children:
           </p>
 
 
@@ -452,7 +456,7 @@ burst
           <Pen pen="d84370a3c19fdcea8c714e7049c9ab5d" height="500" />
 
           <p>
-            Hm, they kind of overlap, so lets add shift them by staggering <span className="highlight">left</span> and <span className="highlight">top</span> properties, after that lets add some <span className="highlight">delay</span> with a property map:
+            Hm, they kind of overlap, so lets shift them by staggering <span className="highlight">left</span> and <span className="highlight">top</span> properties on children, after that lets add some <span className="highlight">delay</span> with a property map:
           </p>
 
           <Pen pen="2be25259bdd8e01f9ac3770f6f2bd36a" height="500" />
@@ -465,19 +469,27 @@ burst
           <Pen pen="bf8377efd5b0dada9537481e29ecd6af" height="500" />
 
           <p>
-            Pretty yummy. What else we have got there? Letters! That's how O letter was made:
+            Pretty yummy.
+          </p>
+
+          <p>
+            What else have we got in the demo? Letters! That's how O letter was made:
           </p>
 
           <Pen pen="432464f276fe6f06b457915ca6062723" height="500" />
 
           <p>
-            As you can see, we've set the main swirl's <span className="highlight">radius</span> and <span className="highlight">degree</span> to <span className="highlight">0</span> to put the shapes in one spot. Then we just have to slightly stagger <span className="highlight">delay</span> on children. The same for other parts - vertical and horizontal lines:
+            As you can see, we've set the main swirl's <span className="highlight">radius</span> and <span className="highlight">degree</span> to <span className="highlight">0</span> to put the child shapes in the one spot. Then we just have to slightly stagger <span className="highlight">delay</span> on children.
+          </p>
+
+          <p>
+            The same technique for the other parts - vertical and horizontal lines:
           </p>
 
           <Pen pen="33f7924ecd146d951698bf190ac7838e" height="500" />
 
           <p>
-            Catching up? Good. Let's refactor it a bit and make the vertical line start from the bottom, like firework:
+            Catching up? Good. Let's refactor it a bit and make the vertical line to start from the bottom, like firework launch:
           </p>
 
 
@@ -490,19 +502,19 @@ burst
           <h3>Blast all the things up</h3>
 
           <p>
-            Let's move on. What else we can do with <span className="highlight">Burst</span>? We can blast things up. I love blast things up, do you? Recall this demo from previous tutorial(×):
+            Let's move on. What else we can do with <span className="highlight">Burst</span>? We can blast things up. I love blasting things up, do you? Recall this demo from the <UniteLink link="/tutorials/shape/">Shape&ShapeSwirl</UniteLink> tutorial(×):
           </p>
 
           <Pen pen="c94452fb65dbf676b0ae8a12d4267473" height="500" />
 
           <p>
-            Do you see that blast? Lets make it together. First, you can notice the small particles there:
+            Do you see that blast at the start? Lets make it together. First, you can notice these small particles:
           </p>
           
           <Pen pen="79db23782ec1eb9d16246b136ec82b9c" height="500" />
 
           <p>
-            Notice how we use <span className="highlight">pathScale</span> and <span className="highlight">degreeShift</span> properties to add randomness to the blast. The <span className="highlight">pathScale</span> property defines the length of the sine path of the particle scales. The <span className="highlight">degreeShift</span> property defines how much the particle will shift in it's radial position in burst circle. So if particle has <span className="highlight">degreeShift</span> of <span className="highlight">90</span>, it will be shifted in radial shape by 90 degree. Since <span className="highlight">pathScale</span> and <span className="highlight">degreeShift</span> both have random values and we <span className="highlight">generate</span> the module on each user click - we always have the random blast pattern.
+            Notice how we use <span className="highlight">pathScale</span> and <span className="highlight">degreeShift</span> properties to add randomness to the blast. The <span className="highlight">pathScale</span> property defines how the length of the particle's path scales. The <span className="highlight">degreeShift</span> property defines how much the particle will shift in it's radial position in burst circle shape. So if particle has <span className="highlight">degreeShift</span> of <span className="highlight">90</span>, it will be shifted in radial shape by 90 degree. Since <span className="highlight">pathScale</span> and <span className="highlight">degreeShift</span> both have random values and we <span className="highlight">generate</span> the module on each user click - we always have the random blast pattern.
           </p>
 
           <p>
@@ -512,13 +524,13 @@ burst
           <Pen pen="3b9c757a7625dc015753740bcad8fb66" height="500" />
 
           <p>
-            Feels rather messy. But it's fine for now, it should get stright when we will add move shapes here:
+            Feels rather messy. But it's fine for now, it should get straight when we will add more shapes:
           </p>
 
           <Pen pen="4c8366d3a7eea2a5f83a3d457f8e9cd9" height="500" />
 
           <p>
-            And the last touch is to add "one spot" large burst of 3 items:
+            And the last touch is to add "one spot" large burst of 3 items - one red, one white and one black:
           </p>
 
           <Pen pen="699cfc8716a13e0e1c15105af2b6fb95" height="500" />
@@ -530,16 +542,20 @@ burst
           <h3>Modal blast</h3>
 
           <p>
-            If you recall the next old demo, you probably can say now how it was done. How much modules does this blast compose (click close to see the effect)(×)?
+            If you recall the next old demo, you probably can say now how it was done. How many modules does this blast compose (click close to see the effect)(×)?
           </p>
 
           <Pen pen="XJjLxe" height="700" />
 
           <p>
-            The answer is 3 - <span className="highlight">2 Bursts</span> and <span className="highlight">1 subtle circle</span> in the middle. The effect is a drip more modest than the previous one. I won't reacreate exact the same sequence here, but rather will do a bit different one:
+            The answer is 3 - <span className="highlight">2 Bursts</span> and <span className="highlight">1 subtle circle</span> in the middle.
           </p>
 
           <Pen pen="6caf96461207a5caa9226fbd2631569d" height="500" />
+
+          <p>
+            The effect is a drip more modest than the previous one. As you can see, I havn't reacreated exact the same sequence here, but rather made a bit different one.
+          </p>
 
           <h3>The sleepy mole</h3>
 
@@ -550,13 +566,13 @@ burst
           <Pen pen="477056cb1ffe88c4bfbf8a3005d99496" height="600" />
 
           <p>
-            Can you count how much effects are bursts here? There are quite few. The most noticeable it the effect that appears after door shuts down - the dust. It it composed from 4 burst (one for each corner), lets start with just one for now:
+            Can you count how much effects are bursts here? There are quite few. The most noticeable is the effect that appears after door shuts down - the 4 spots of dust. This one was composed with 4 bursts (one for each corner), lets start with just one for now:
           </p>
 
           <Pen pen="97a95a5cb7663cf336e8d80f9f511553" height="500" />
 
           <p>
-            How is it possible? Actually the <span className="highlight">Burst</span> compose <span className="highlight">ShapeSwirl</span>s not simple <span className="highlight">Shape</span>s so, if we set <span className="highlight">isSwirl</span> to <span className="highlight">true</span>, we will have sine paths. That's how you do 4 at once (click to see):
+            How is it possible? Remember that the <span className="highlight">Burst</span> composes <span className="highlight">ShapeSwirl</span>s not simple <span className="highlight">Shape</span>s so, if we set <span className="highlight">isSwirl</span> to <span className="highlight">true</span>, we will have sine paths. That's how you do 4 at once (click to see):
           </p>
 
           <Pen pen="bbc4c52b7145d9d872ac437f21afd75f" height="500" />
@@ -576,19 +592,19 @@ burst
           <Pen pen="421a16733643447bb4770424cf72563d" height="500" />
 
           <p>
-            The main catch here is to mimic the air flow by rotating the main swirl backward slightly. Then you just have to create more bursts, each one is smaller then previous one.
+            The main catch here is to mimic the air flow by rotating the main swirl backward slightly. Then you have to create more bursts, each one is smaller then previous one and each of them should have a smaller delay.
           </p>
 
           <Pen pen="d0d0c2b1e98f1a0f8d6ea250c31ed081" height="500" />
 
           <p>
-            What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First you want to make <span className="highlight">0 degree</span> burst, and rotate the main swirl downward, imitating that the air current gets weaker:
+            What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First you want to make <span className="highlight">0 degree</span> burst, and rotate the main swirl downward, imitating that the air current that comes out form his mouth gets weaker:
           </p>
 
           <Pen pen="828d4f1e1f6fdfd608b588af0b9bdd45" height="500" />
 
           <p>
-            Then add larger burst <span className="highlight">radius</span>, turn on swirl sine paths and randomize them with <span className="highlight">pathScale</span> property:
+            Then add larger burst's <span className="highlight">radius</span>, turn on swirl sine paths and randomize them with <span className="highlight">pathScale</span> property:
           </p>
 
           <Pen pen="8b3f0eb920226a7c2d703e601af38fcf" height="500" />
@@ -599,6 +615,10 @@ burst
 
           <Pen pen="b1e36259bfa2d6023402eef7de77cc8d" height="500" />
 
+          <p>
+            You can see that the <span className="highlight">Burst</span> module is pretty flexible thus helps you to craft numerous sophisticated effects.
+          </p>
+
           <h3>The dust trail</h3>
 
           <p>
@@ -608,38 +628,42 @@ burst
           <Pen pen="633e6aa52d40691cca2f2cda91650bae" height="500"></Pen>
 
           <p>
-            As you remember, first we need to shoot the child swirls downward to the ground:
+            As you remember, to create the dust trail effect, you first we need to shoot the child swirls downward to the ground with random children radiuses:
           </p>
 
           <Pen pen="c59d4e046a6c78f3ac9d3a5699018fa8" height="500"></Pen>
 
           <p>
-            Now, instead of multiple swirl modules we have been using in previous tutorial, we use just one burst - <span className="highlight">stagger</span> expressions turn out to be useful! After that you want to create an <span className="highlight">overflow: hidden</span> container and assign it as <span className="highlight">parent</span>:
+            Look, now instead of multiple swirl modules which we have been using in previous tutorial, we use just one burst - <span className="highlight">stagger</span> expressions turn out to be useful! After that you want to create an <span className="highlight">overflow: hidden</span> container and assign it as <span className="highlight">parent</span> to the burst:
           </p>
 
 
           <Pen pen="e48eb4e56ce1fa94c515b4fda6513d24" height="500"></Pen>
 
           <p>
-            This time we have used <span className="highlight">Shape</span> module as constrain <span className="highlight">parent</span>. The last touch is to add the fading burst at the end and make the <span className="highlight">parent</span> move:
+            This time we have used <span className="highlight">Shape</span> module as <span className="highlight">parent</span> overflow constrain.
+          </p>
+
+          <p>
+             The last touch is to add the fading burst at the end and make the <span className="highlight">parent</span> move:
           </p>
 
           <Pen pen="10cc620075141688d0cf8eca7a561062" height="500"></Pen>
 
           <p>
-            That's exact the same effect as we have mad in the <span className="highlight">Shape&ShapeSwirl</span> tutorial, but just with 2 <span className="highlight">Bursts</span>! <span className="highlight">Bursts</span> are fun, there is a little demo I've made with the dust effect (click to see):
+            That's exact the same effect as we have made in the <UniteLink link="/tutorials/shape/">Shape&ShapeSwirl</UniteLink> tutorial, but this time with just 2 <span className="highlight">Bursts</span>! <span className="highlight">Bursts</span> are fun, there is a little demo I've made with the dust effect (click to see):
           </p>
 
           <Pen pen="03e9d8f2fbf886aa1505c61c81d782a0" height="700"></Pen>
 
           <p>
-            That's it for <span className="highlight">Burst</span>. I've touched only the surface of the possible effects that you can compose with this module, but that's a good start to convey the idea and APIs. Also my friends from <UniteLink link="http://tympanus.net/codrops/">Codrops</UniteLink> wrote a awesome <UniteLink link="http://tympanus.net/Development/Animocons/">post</UniteLink> a while ago, definitely check it out.
+            That's it for <span className="highlight">Burst</span>. We've touched only the surface of the possible effects that you can compose with this module, but that's a good start to convey the idea and APIs. Also my friends from <UniteLink link="http://tympanus.net/codrops/">Codrops</UniteLink> wrote a awesome <UniteLink link="http://tympanus.net/Development/Animocons/">post</UniteLink> a while ago on the <span className="highlight">Burst</span> matter, definitely check it out.
           </p>
 
           <h2> Recap </h2>
 
           <p>
-            Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes bunch of child <span className="highlight">ShapeSwirls</span> forming radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the effects modules for you. You can find exhaustive api reference at <UniteLink>Burst API</UniteLink> section.
+            Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes bunch of child <span className="highlight">ShapeSwirls</span> forming radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls and could not be set either. To control child swirls, pass the <span className="highlight">ShapeSwirl</span> properties to the <span className="highlight">children</span> property of the main swirl. You can find exhaustive api reference at <UniteLink>Burst API</UniteLink> section.
           </p>
 
           <h2>Thank you!</h2>
