@@ -47308,7 +47308,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          '[image with main swirl and child swirls]'
+	          _react2.default.createElement(_postImage2.default, { src: 'images/burst-pic.png' })
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -47386,13 +47386,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The particles of the burst evenly placed in the circle that has 360 degree. You can set the ',
+	          'The particles of the burst evenly placed in the circle that has 360 degree which you can change with the the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'degree'
 	          ),
-	          ' size with appropriate property:'
+	          ' property:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -47539,7 +47539,7 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ' won\'t be much interesting unless we can control child particles? Right?'
+	          ' won\'t be much interesting unless we can control child particles, right?'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -47690,7 +47690,13 @@
 	            { className: 'highlight' },
 	            'stagger(25)'
 	          ),
-	          ' - this means stagger with 25 step starting from ',
+	          ' - this means stagger with step of ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '25'
+	          ),
+	          ', starting from ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -47734,7 +47740,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'We have staggered the delay with random function in period of 0 to 100.'
+	          'We have staggered the delay with random function in interval of 0 to 100.'
 	        ),
 	        _react2.default.createElement(
 	          'h3',
@@ -47744,7 +47750,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Property Map was designed to express sequential values. You can use it to generate values that repeat over and over at mapped to children length. Basically it is just an array that maps its values to children regarding child index with ',
+	          'Property Map was designed to express sequential values. You can use it to generate values that repeat over and over but are mapped to children length. Basically it is just an array that maps its values to children regarding child index with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -47762,7 +47768,7 @@
 	            { className: 'highlight' },
 	            '3 values'
 	          ),
-	          ' and ',
+	          ' and burst has ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -47790,7 +47796,7 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            '0'
+	            '1'
 	          ),
 	          'st values from the map respecively:'
 	        ),
@@ -47925,14 +47931,53 @@
 	            { className: 'highlight' },
 	            'replay'
 	          ),
-	          ' etc.'
+	          ' etc (click somewhere to see):'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'dbf4904aa71f428a38401610e1c8f863' },
+	          { js: 'document.addEventListener( \'click\', function (e) {\nburst\n  .tune({ x: e.pageX, y: e.pageY })\n  .setSpeed(3)\n  .replay();\n});' }
 	        ),
 	        _react2.default.createElement(
 	          'h2',
 	          null,
-	          ' Small Recap '
+	          ' Recap '
 	        ),
-	        _react2.default.createElement('p', null),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'That\'s basically the burst, as I said you already know it so we won\'t go thru the children options again, instead let\'s jog thru some use cases in the next section which will help as to gain some intuition over where and how to use the bursts. As you remember, - ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' is just a composition of bunch of ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'ShapeSwirls'
+	          ),
+	          '. There is the main swirl in the center of the burst but it has no visual shape. Also it has no tween properties and it\'s durations is calculated regarding duration of the children. All child swirls use the main one as ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'parent'
+	          ),
+	          '. You can set properties of ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'children'
+	          ),
+	          ' with the appropriate property. Please, use the ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: '/tutorials/burst.md' },
+	            'Burst API'
+	          ),
+	          ' as the reference.'
+	        ),
 	        _react2.default.createElement(
 	          'h2',
 	          null,
@@ -47947,7 +47992,7 @@
 	            { className: 'highlight' },
 	            'Babel'
 	          ),
-	          ' tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, after you will complete this tutorial. I will live a little (×) mark for you indicating that you can skip reading the source code for now.'
+	          ' tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, - after you will complete this tutorial. I will leave a little (×) mark for you to indicate that you can skip reading the source code of the codepen for now.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -48002,13 +48047,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Anyways, sequences like that are a cinch when you have the burst module in your hands. There is how to do the main part (click anywhere to see):'
+	          'Anyways, sequences like that are a cinch when you have the burst module in your hands. There is how to do the main part of the sequence (click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'cb910fce2e9ed27f902ae7f895bbb9ac', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Here above, we have declared a burst with 5 particles (which is by default) with a burst radius delta form 4 to 19. There are 2 strategies for bursts like that - one is to scale children down (dy default), the scond one is to animate ',
+	          'Here above, we have declared a burst with 5 particles (which is by default) with a burst\'s radius transition form 4 to 19. There are 2 strategies for bursts like that - one is to scale children down (dy default), the scond one is to animate ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -48019,19 +48064,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The next step is to add two more shapes to the scene - one circle ',
+	          'The next step is to add two more shapes to the scene - one circle with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'strokeWidth'
 	          ),
-	          ' animation and the cutom one - start with ',
+	          ' animation and a cutom one - the star with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'elastic.out'
 	          ),
-	          ' animation of the ',
+	          ' transition for the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -48043,13 +48088,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'I love to use the burst over sprites because it turns out to be a way flexiable over prorendered sequence of image, - you can play with easings, time, delay, colors etc. Also you can even change shapes with no effort at all, for instance if you want to add more stars instead of lines(click anywhere to see):'
+	          'I love using the burst module over sprites because it turns out to be a way flexible over prerendered sequence of images, - you can play with easings, time, delay, colors etc. Also you can even change shapes with no effort at all - for instance if you want to add stars instead of lines(click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '0fd14523d76f93865539f1f011682da9', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Lets redo the later twitter love animation too. There is the burst animation(click anywhere to see):'
+	          'Ok, lets redo the later twitter love animation too. There is the burst part of the sequence(click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '28b429cd2d5ae8c0dd0f10cecd6d0bd0', height: '500' }),
 	        _react2.default.createElement(
@@ -48073,19 +48118,24 @@
 	            { className: 'highlight' },
 	            'out'
 	          ),
-	          ' easing for particles position animation. Also we have set the ',
+	          ' easing for particles position. Also we have set the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'pathScale'
 	          ),
-	          ' slightly smaller and small ',
+	          ' slightly smaller for "inner" particles. Alos we have defined a small ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'degreeShift'
 	          ),
-	          ' for each odd particle. THe next step is to add the circle shape and heart animations almost identical to ones we have use in twitter fav scene(click anywhere to see):'
+	          ' for each odd("inner") particle.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The next step is to add the circle shape and heart animations almost identical to ones we have used in the twitter fav scene(click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'e3751855536c67dc6f57f9e74e5e347d', height: '500' }),
 	        _react2.default.createElement(
@@ -48115,7 +48165,7 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ' module. For bubbles instance in the the first part, can be made like this:'
+	          ' module. For instance bubbles, in the the first part, can be made like this:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'a336008aff2d73121763887097a99001', height: '500' }),
 	        _react2.default.createElement(
@@ -48133,7 +48183,7 @@
 	            { className: 'highlight' },
 	            '25'
 	          ),
-	          ' and ',
+	          ' on burst and ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -48169,13 +48219,18 @@
 	            { className: 'highlight' },
 	            'children'
 	          ),
-	          ' that eventually gives us the bubble like motion. THe second burst is super simple one:'
+	          ' that eventually gives us the bubble like motion.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The second burst is super simple one:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'afbfb59f00d5dfb8b28fc97510fcc167', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'As you can see, the second burst is amost the basic one, we have only changed the main ',
+	          'As you can see, the second burst is amost the default one, we have only changed the main ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -48187,13 +48242,19 @@
 	            { className: 'highlight' },
 	            '0 : 30'
 	          ),
-	          ', as for children, we tweaked the ',
+	          '. As for children, we tweaked the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'shape'
 	          ),
-	          ' to line, and made only the ',
+	          ' to ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'line'
+	          ),
+	          ' value, and made the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -48211,7 +48272,24 @@
 	            { className: 'highlight' },
 	            '0'
 	          ),
-	          '. The final touch is to add center circle and cross shape:'
+	          '.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The final touch is to add center ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'circle'
+	          ),
+	          ' and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'cross'
+	          ),
+	          ' shapes:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'd260dc9246f2100b9f2dbe79a01d01f6', height: '500' }),
 	        _react2.default.createElement(
@@ -48229,7 +48307,7 @@
 	            { className: 'highlight' },
 	            '0'
 	          ),
-	          ' so the particles will flow in one direction, set ',
+	          ' so the particles will flow in one direction, then set ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -48271,7 +48349,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Just like with previous example the last touches is to add circle and cross transitions (click somewhere to see):'
+	          'Just like with previous example, the last touch is to add ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'circle'
+	          ),
+	          ' and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'cross'
+	          ),
+	          ' transitions (click somewhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'f307bc95b1ac02c09042c89ea7afe945', height: '500' }),
 	        _react2.default.createElement(

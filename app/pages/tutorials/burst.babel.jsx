@@ -71,7 +71,7 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            [image with main swirl and child swirls]
+            <PostImage src="images/burst-pic.png"></PostImage>
           </p>
 
           <p>
@@ -102,7 +102,7 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-           The particles of the burst evenly placed in the circle that has 360 degree. You can set the <span className="highlight">degree</span> size with appropriate property:
+           The particles of the burst evenly placed in the circle that has 360 degree which you can change with the the <span className="highlight">degree</span> property:
           </p>
 
           <CodeSample pen="11fadc18861a656f0a72f5e132f48f12">
@@ -147,7 +147,7 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            <span className="highlight">Burst</span> won't be much interesting unless we can control child particles? Right?
+            <span className="highlight">Burst</span> won't be much interesting unless we can control child particles, right?
           </p>
 
           <h2> Children Options</h2>
@@ -219,7 +219,7 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            The first parameter in <span className="highlight">stagger</span> function is <span className="highlight">start</span> value, all subsequent steps will be added to that start value which is fairy optional tho and can be ommited. If you just write <span className="highlight">stagger(25)</span> - this means stagger with 25 step starting from <span className="highlight">0</span>.
+            The first parameter in <span className="highlight">stagger</span> function is <span className="highlight">start</span> value, all subsequent steps will be added to that start value which is fairy optional tho and can be ommited. If you just write <span className="highlight">stagger(25)</span> - this means stagger with step of <span className="highlight">25</span>, starting from <span className="highlight">0</span>.
           </p>
 
           <p>
@@ -248,14 +248,14 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            We have staggered the delay with random function in period of 0 to 100.
+            We have staggered the delay with random function in interval of 0 to 100.
           </p>
 
 
           <h3>Property Maps</h3>
 
           <p>
-            Property Map was designed to express sequential values. You can use it to generate values that repeat over and over at mapped to children length. Basically it is just an array that maps its values to children regarding child index with <span className="highlight">mod</span> function. So if you have <span className="highlight">property map</span> with <span className="highlight">3 values</span> and <span className="highlight">5 children</span>, then <span className="highlight">4</span>th and <span className="highlight">5</span>th item will recieve <span className="highlight">0</span>th and <span className="highlight">0</span>st values from the map respecively:
+            Property Map was designed to express sequential values. You can use it to generate values that repeat over and over but are mapped to children length. Basically it is just an array that maps its values to children regarding child index with <span className="highlight">mod</span> function. So if you have <span className="highlight">property map</span> with <span className="highlight">3 values</span> and burst has <span className="highlight">5 children</span>, then <span className="highlight">4</span>th and <span className="highlight">5</span>th item will recieve <span className="highlight">0</span>th and <span className="highlight">1</span>st values from the map respecively:
           </p>
 
           <CodeSample pen="c3c518a84fea019d715cad07e87c29bf">
@@ -285,18 +285,31 @@ const ShapePage = new React.createClass({
           <h2> then, tune, generate and play </h2>
 
           <p>
-            You can make <span className="highlight">then</span> state chains, <span className="highlight">tune</span> and <span className="highlight">generate</span> any <span className="highlight">Burst</span> the same as you do with <span className="highlight">Shape</span> or <span className="highlight">ShapeSwril</span>. Also since the <span className="highlight">Burst</span> is merely a <span className="highlight">ShapeSwirl</span> under the hood, you can use any <span className="highlight">tween</span> interface public method like <span className="highlight">play</span>, <span className="highlight">setProgress</span>, <span className="highlight">replay</span> etc.
+            You can make <span className="highlight">then</span> state chains, <span className="highlight">tune</span> and <span className="highlight">generate</span> any <span className="highlight">Burst</span> the same as you do with <span className="highlight">Shape</span> or <span className="highlight">ShapeSwril</span>. Also since the <span className="highlight">Burst</span> is merely a <span className="highlight">ShapeSwirl</span> under the hood, you can use any <span className="highlight">tween</span> interface public method like <span className="highlight">play</span>, <span className="highlight">setProgress</span>, <span className="highlight">replay</span> etc (click somewhere to see):
           </p>
 
+          <CodeSample pen="dbf4904aa71f428a38401610e1c8f863">
+            {
+              { js: `document.addEventListener( 'click', function (e) {
+burst
+  .tune({ x: e.pageX, y: e.pageY })
+  .setSpeed(3)
+  .replay();
+});` }
+            }
+          </CodeSample>
 
-          <h2> Small Recap </h2>
 
-          <p></p>
+          <h2> Recap </h2>
+
+          <p>
+            That's basically the burst, as I said you already know it so we won't go thru the children options again, instead let's jog thru some use cases in the next section which will help as to gain some intuition over where and how to use the bursts. As you remember, - <span className="highlight">Burst</span> is just a composition of bunch of <span className="highlight">ShapeSwirls</span>. There is the main swirl in the center of the burst but it has no visual shape. Also it has no tween properties and it's durations is calculated regarding duration of the children. All child swirls use the main one as <span className="highlight">parent</span>. You can set properties of <span className="highlight">children</span> with the appropriate property. Please, use the <UniteLink link="/tutorials/burst.md">Burst API</UniteLink> as the reference.
+          </p>
 
           <h2> Use Cases </h2>
 
           <Cite>
-            Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the <span className="highlight">Babel</span> tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, after you will complete this tutorial. I will live a little (×) mark for you indicating that you can skip reading the source code for now.
+            Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the <span className="highlight">Babel</span> tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, - after you will complete this tutorial. I will leave a little (×) mark for you to indicate that you can skip reading the source code of the codepen for now.
           </Cite>
 
           <p>
@@ -310,35 +323,39 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            Anyways, sequences like that are a cinch when you have the burst module in your hands. There is how to do the main part (click anywhere to see):
+            Anyways, sequences like that are a cinch when you have the burst module in your hands. There is how to do the main part of the sequence (click anywhere to see):
           </p>
 
           <Pen pen="cb910fce2e9ed27f902ae7f895bbb9ac" height="500" />
 
           <p>
-            Here above, we have declared a burst with 5 particles (which is by default) with a burst radius delta form 4 to 19. There are 2 strategies for bursts like that - one is to scale children down (dy default), the scond one is to animate <span className="highlight">strokeDashoffset</span> on children which we have used here.
+            Here above, we have declared a burst with 5 particles (which is by default) with a burst's radius transition form 4 to 19. There are 2 strategies for bursts like that - one is to scale children down (dy default), the scond one is to animate <span className="highlight">strokeDashoffset</span> on children which we have used here.
           </p>
 
           <p>
-            The next step is to add two more shapes to the scene - one circle <span className="highlight">strokeWidth</span> animation and the cutom one - start with <span className="highlight">elastic.out</span> animation of the <span className="highlight">scale</span>(click anywhere to see):
+            The next step is to add two more shapes to the scene - one circle with <span className="highlight">strokeWidth</span> animation and a cutom one - the star with <span className="highlight">elastic.out</span> transition for the <span className="highlight">scale</span>(click anywhere to see):
           </p>
 
           <Pen pen="080045a3420abd5344443aff91c85fa2" height="500" />
 
           <p>
-            I love to use the burst over sprites because it turns out to be a way flexiable over prorendered sequence of image, - you can play with easings, time, delay, colors etc. Also you can even change shapes with no effort at all, for instance if you want to add more stars instead of lines(click anywhere to see):
+            I love using the burst module over sprites because it turns out to be a way flexible over prerendered sequence of images, - you can play with easings, time, delay, colors etc. Also you can even change shapes with no effort at all - for instance if you want to add stars instead of lines(click anywhere to see):
           </p>
 
           <Pen pen="0fd14523d76f93865539f1f011682da9" height="500" />
 
           <p>
-            Lets redo the later twitter love animation too. There is the burst animation(click anywhere to see):
+            Ok, lets redo the later twitter love animation too. There is the burst part of the sequence(click anywhere to see):
           </p>
 
           <Pen pen="28b429cd2d5ae8c0dd0f10cecd6d0bd0" height="500" />
 
           <p>
-            The catch here is to use the <span className="highlight">in</span> easing for <span className="highlight">scale</span> property and the opposite <span className="highlight">out</span> easing for particles position animation. Also we have set the <span className="highlight">pathScale</span> slightly smaller and small <span className="highlight">degreeShift</span> for each odd particle. THe next step is to add the circle shape and heart animations almost identical to ones we have use in twitter fav scene(click anywhere to see):
+            The catch here is to use the <span className="highlight">in</span> easing for <span className="highlight">scale</span> property and the opposite <span className="highlight">out</span> easing for particles position. Also we have set the <span className="highlight">pathScale</span> slightly smaller for "inner" particles. Alos we have defined a small <span className="highlight">degreeShift</span> for each odd("inner") particle.
+          </p>
+
+          <p>
+            The next step is to add the circle shape and heart animations almost identical to ones we have used in the twitter fav scene(click anywhere to see):
           </p>
 
           <Pen pen="e3751855536c67dc6f57f9e74e5e347d" height="500" />
@@ -356,31 +373,39 @@ const ShapePage = new React.createClass({
           <Pen pen="3c49de2d7d0ca3e92bf5db5bf7a2687d" height="500"></Pen>
 
           <p>
-            You can imagine that those effects are much easier with <span className="highlight">Burst</span> module. For bubbles instance in the the first part, can be made like this:
+            You can imagine that those effects are much easier with <span className="highlight">Burst</span> module. For instance bubbles, in the the first part, can be made like this:
           </p>
 
           <Pen pen="a336008aff2d73121763887097a99001" height="500"></Pen>
 
           <p>
-            Here we have static <span className="highlight">radius</span> of <span className="highlight">25</span> and <span className="highlight">3</span> <span className="highlight">white</span> particles. We've set slightly <span className="highlight">rand</span>om <span className="highlight">degreeShift</span> and <span className="highlight">delay</span> on <span className="highlight">children</span> that eventually gives us the bubble like motion. THe second burst is super simple one:
+            Here we have static <span className="highlight">radius</span> of <span className="highlight">25</span> on burst and <span className="highlight">3</span> <span className="highlight">white</span> particles. We've set slightly <span className="highlight">rand</span>om <span className="highlight">degreeShift</span> and <span className="highlight">delay</span> on <span className="highlight">children</span> that eventually gives us the bubble like motion.
+          </p>
+
+          <p>
+            The second burst is super simple one:
           </p>
 
           <Pen pen="afbfb59f00d5dfb8b28fc97510fcc167" height="500"></Pen>
 
           <p>
-            As you can see, the second burst is amost the basic one, we have only changed the main <span className="highlight">radius</span> to <span className="highlight">0 : 30</span>, as for children, we tweaked the <span className="highlight">shape</span> to line, and made only the <span className="highlight">scaleX</span> to fade out from <span className="highlight">1</span> to <span className="highlight">0</span>. The final touch is to add center circle and cross shape:
+            As you can see, the second burst is amost the default one, we have only changed the main <span className="highlight">radius</span> to <span className="highlight">0 : 30</span>. As for children, we tweaked the <span className="highlight">shape</span> to <span className="highlight">line</span> value, and made the <span className="highlight">scaleX</span> to fade out from <span className="highlight">1</span> to <span className="highlight">0</span>.
+          </p>
+
+          <p>
+            The final touch is to add center <span className="highlight">circle</span> and <span className="highlight">cross</span> shapes:
           </p>
 
           <Pen pen="d260dc9246f2100b9f2dbe79a01d01f6" height="500"></Pen>
 
           <p>
-            The second part of the demo is even simpler, we just need to set <span className="highlight">degree</span> to <span className="highlight">0</span> so the particles will flow in one direction, set <span className="highlight">isSwirl</span> to <span className="highlight">true</span> (Burst composes ShapeSwirls, remember?) on <span className="highlight">children</span> thus particles will follow sine path. After that we need to slightly randomize <span className="highlight">swirlSize</span>, <span className="highlight">swirlFrequency</span> and <span className="highlight">pathScale</span> parameters (click somewhere to see):
+            The second part of the demo is even simpler, we just need to set <span className="highlight">degree</span> to <span className="highlight">0</span> so the particles will flow in one direction, then set <span className="highlight">isSwirl</span> to <span className="highlight">true</span> (Burst composes ShapeSwirls, remember?) on <span className="highlight">children</span> thus particles will follow sine path. After that we need to slightly randomize <span className="highlight">swirlSize</span>, <span className="highlight">swirlFrequency</span> and <span className="highlight">pathScale</span> parameters (click somewhere to see):
           </p>
 
           <Pen pen="60d5d3c97981022f20f86c37580bceb1" height="500"></Pen>
 
           <p>
-            Just like with previous example the last touches is to add circle and cross transitions (click somewhere to see):
+            Just like with previous example, the last touch is to add <span className="highlight">circle</span> and <span className="highlight">cross</span> transitions (click somewhere to see):
           </p>
 
           <Pen pen="f307bc95b1ac02c09042c89ea7afe945" height="500"></Pen>
