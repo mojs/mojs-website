@@ -46276,7 +46276,7 @@
 	            { link: 'https://github.com/legomushroom/shape-demo1' },
 	            'this repo'
 	          ),
-	          ' since the codepen code could be unreadable.'
+	          ' since the bundeled codepen code could be unreadable.'
 	        ),
 	        _react2.default.createElement(
 	          'h4',
@@ -46377,7 +46377,7 @@
 	            { link: 'https://github.com/legomushroom/shape-demo2' },
 	            'this repo'
 	          ),
-	          ' since the codepen code could be unreadable.'
+	          ' since the bundeled codepen code could be unreadable.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -46599,7 +46599,7 @@
 	        _react2.default.createElement(
 	          'h3',
 	          null,
-	          'Microconfirmations'
+	          'Microinteractions'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -46610,7 +46610,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Another demo for microconfirations is the pointer ripple, the effect that spreads out after user clicks any touchable surface. The ',
+	          'Another demo for microiteractions is the pointer ripple, the effect that spreads out after user clicks any touchable surface. The ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -46620,6 +46620,12 @@
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '249b42683dfa4b7a11f641e842270427', height: '200' }),
 	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'That\'s basically exact the same principle we have used in this tune demo:'
+	        ),
+	        _react2.default.createElement(_codepen2.default, { pen: 'fcf6121653db713d8567271d3e8eea10', height: '200' }),
+	        _react2.default.createElement(
 	          'h3',
 	          null,
 	          'Love/Hate Modal'
@@ -46627,36 +46633,36 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Ok. Let\'s do another demo with shapes regarding UI. This time we will have a plus button, it will show up from bottom left, after it will stop - we will mimic button push transition. By adding concurrent rotation of the button we will imitate "let\'s go/follow me" gesture, inviting user to follow up with a click:'
+	          'Ok. Let\'s do another demo with shapes regarding UI. This time we will have a plus button, it will show up from bottom left, after it will stop - we will mimic button push transition by adding concurrent rotation of the button. By that we will imitate "let\'s go/follow me" gesture, inviting user to follow up with a click:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '1f6cce8046f76ca43aca3a5ac681b97c', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Then we can expand the effect even more to add some playfull splash experience:'
+	          'Then we can expand the button sequence even more to add some playfull splash effect:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '51350c86ef0e0fb722e034006fcafb8f', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Then, if user doesn\'t click the button for a while, let\'s invite user to proceed by adding the callout vibration, mimicing incoming call:'
+	          'Then, if user doesn\'t click the button for a while, let\'s invite him to proceed by adding the callout vibration, to mime an incoming call:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '9935b7cec036eae2ddb762213ceae6d4', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'When user eventually will click the button, we will show the quiz modal with the most valiable question we have ever had, that\'s how the modal will look like:'
+	          'When user eventually will click the button, we will show the quiz modal with the most valiable question we have ever had. That\'s how the modal will look like:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '2c95e0397b0d20eb4fbc952e3c5f0fe0', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spread effect. Well basically almost everything including modal shape itself and it\'s corner are shapes.'
+	          'Every piece of this sequence is composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spread effect, modal shape itself and it\'s corner are shapes too.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Now when the user hovers over any button, we need to show some tension, conveying that something is going to happen if he proceeds with a click (hover over buttons to see):'
+	          'Now when the user hovers over any button, we need to show some tension, conveying that something is going to happen if he will proceed with a click (hover over buttons to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'ad612440c8b08d0b506e0a8cb4152b9c', height: '500' }),
 	        _react2.default.createElement(
@@ -46674,13 +46680,24 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If user leaves the button with his pointer, we need to show the tension relief by mimicing the air currents that float out of the modal, just few swirls would do here (hover over buttons and then release to see):'
+	          'As you can see now - the extending parts are just ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'curves'
+	          ),
+	          ' on each side of the modal. Each of them gets larger when user hovers over the buttons.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Next, if user leaves the button with his pointer, we need to show the tension relief by mimicing the air currents that float out of the modal, just few swirls would do here (hover over buttons and then release to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'fcc29bcf5d0eebf37d558864b7a2e334', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'In the other case, when user proceeds with the button click, we will blow up the modal as a consequqnce of modal\'s tension and show the chosen word. That\'s the entire sequence:'
+	          'In the other case, when user finally proceeds with the button click, we will blow up the modal as a consequqnce of modal\'s tension and show the chosen word. That\'s the entire sequence:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '812699ce32c9a7aeb70c9384b32a533a', height: '600' }),
 	        _react2.default.createElement(
@@ -46692,7 +46709,7 @@
 	            { link: 'https://github.com/legomushroom/shape-demo3' },
 	            'this repo'
 	          ),
-	          ' since the codepen code could be unreadable.'
+	          ' since the bundeled codepen code could be unreadable.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -46776,7 +46793,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Phew, that was intence. I hope you didn\'t get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes. It should be clear at this point that to create a shape you use a declarative call to create one and the shape appears in any place you want without any bootsrapping. You  can use ',
+	          'Phew, that was intence. I hope you didn\'t get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes. It is probably is clear at this point that to create a shape you use a declarative call and the shape appears in any place you of the screen( or HTMLElement) you want without any bootsrapping. You  can use ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -46794,13 +46811,13 @@
 	            { className: 'highlight' },
 	            'generate'
 	          ),
-	          ' all random properties. Remember that shapes obey the ',
+	          ' all random properties on it before strating the animation. Remember that shapes obey the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'tweenable'
 	          ),
-	          ' interface thus it has tween properties, callbacks and public method that any ',
+	          ' interface thus it has tween properties, callbacks and public methods that any ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -46819,8 +46836,8 @@
 	          ),
 	          ', it was important to familiarize you with the base concepts and API\'s syntax before we will proceed further. I think now you are ready to meet the ',
 	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
+	            _uniteLink2.default,
+	            { link: '/tutorials/burst/' },
 	            'Burst'
 	          ),
 	          '!'
@@ -46828,12 +46845,43 @@
 	        _react2.default.createElement(
 	          'h2',
 	          null,
-	          'Thank yous'
+	          'Thank you!'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Thank yous paragraph.'
+	          'I deeply appriciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter (',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://twitter.com/legomushroom' },
+	            '@legomushroom'
+	          ),
+	          '), ask a question on StackOverflow with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '#mojs'
+	          ),
+	          ' tag, rise an issue on ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://github.com/legomushroom/mojs' },
+	            'github repo'
+	          ),
+	          ' or leave a comment in the section below. You can help the project on ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            null,
+	            'Patreon'
+	          ),
+	          ' (project does need help) and/or on ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://github.com/legomushroom/mojs/issues' },
+	            'github'
+	          ),
+	          '. ',
+	          'Love <3.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -47216,7 +47264,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s how it looks like by default:'
+	          'That\'s how it looks like by default (click somewhere to see):'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -47255,7 +47303,7 @@
 	            { className: 'highlight' },
 	            'ShapeSwirls'
 	          ),
-	          '. You can control each of them tho. Pictorily it will look like this:'
+	          '. Nonetheless, you can control each of the child swirls. Pictorily it looks like this:'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -48825,13 +48873,13 @@
 	            { className: 'highlight' },
 	            '#mojs'
 	          ),
-	          ' tag or rise an issue on ',
+	          ' tag, rise an issue on ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: 'https://github.com/legomushroom/mojs' },
 	            'github repo'
 	          ),
-	          '. You can help the project on ',
+	          ' or leave a comment in the section below. You can help the project on ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            null,

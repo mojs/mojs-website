@@ -53,7 +53,7 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            That's how it looks like by default:
+            That's how it looks like by default (click somewhere to see):
           </p>
 
           <CodeSample pen="19099317e0137756f414ed3a043f85ae">
@@ -67,7 +67,7 @@ const ShapePage = new React.createClass({
           </p>
 
           <p>
-            From the technical point of view, <span className="highlight">Burst</span> is just a main <span className="highlight">ShapeSwirl</span> that holds bunch of child <span className="highlight">ShapeSwirls</span>. You can control each of them tho. Pictorily it will look like this:
+            From the technical point of view, <span className="highlight">Burst</span> is just a main <span className="highlight">ShapeSwirl</span> that holds bunch of child <span className="highlight">ShapeSwirls</span>. Nonetheless, you can control each of the child swirls. Pictorily it looks like this:
           </p>
 
           <p>
@@ -620,7 +620,7 @@ const ShapePage = new React.createClass({
           <h2>Thank you!</h2>
 
           <p>
-            I happy you've made it here! It was a long and intence journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned if you like these ones. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag or rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink>. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'Love <3.'}
+            I happy you've made it here! It was a long and intence journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned if you like these ones. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'Love <3.'}
           </p>
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>

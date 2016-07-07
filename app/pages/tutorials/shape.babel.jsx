@@ -1063,7 +1063,7 @@ const heart = new mojs.Shape({
           <Pen pen="39427561a8a0b15d7896480a7d96d3d1" height="700"></Pen>
 
           <em>
-            You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo1">this repo</UniteLink> since the codepen code could be unreadable.
+            You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo1">this repo</UniteLink> since the bundeled codepen code could be unreadable.
           </em>
 
           <h4>Word reveal</h4>
@@ -1175,7 +1175,7 @@ const heart = new mojs.Shape({
           <Pen pen="3fe5eabaf7cfb83142bbd1be3f2f2850" height="500" />
 
           <em>
-            You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo2">this repo</UniteLink> since the codepen code could be unreadable.
+            You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo2">this repo</UniteLink> since the bundeled codepen code could be unreadable.
           </em>
 
           <p>
@@ -1417,7 +1417,7 @@ const heart = new mojs.Shape({
 
           <Pen pen="e5fe8c0a9a0a2b387cfa2858ea7e2046" height="500"></Pen>
 
-          <h3>Microconfirmations</h3>
+          <h3>Microinteractions</h3>
 
           <p>
             Since the shapes are tuneable, you can add effects to you UI regarding user interactions (hover over the links to see):
@@ -1426,43 +1426,51 @@ const heart = new mojs.Shape({
           <Pen pen="a46534d118a64d2450e6a0e8e93541fd" height="500"></Pen>
 
           <p>
-            Another demo for microconfirations is the pointer ripple, the effect that spreads out after user clicks any touchable surface. The <span className="highlight">mojs-player</span> itself has a lot of those so I will put an empty player as demo (click on player controls to see):
+            Another demo for microiteractions is the pointer ripple, the effect that spreads out after user clicks any touchable surface. The <span className="highlight">mojs-player</span> itself has a lot of those so I will put an empty player as demo (click on player controls to see):
           </p>
 
           <Pen pen="249b42683dfa4b7a11f641e842270427" height="200"></Pen>
 
+          <p>
+            That's basically exact the same principle we have used in this tune demo:
+          </p>
+
+          <Pen pen="fcf6121653db713d8567271d3e8eea10" height="200"></Pen>
+
+
+
           <h3>Love/Hate Modal</h3>
 
           <p>
-            Ok. Let's do another demo with shapes regarding UI. This time we will have a plus button, it will show up from bottom left, after it will stop - we will mimic button push transition. By adding concurrent rotation of the button we will imitate "let's go/follow me" gesture, inviting user to follow up with a click:
+            Ok. Let's do another demo with shapes regarding UI. This time we will have a plus button, it will show up from bottom left, after it will stop - we will mimic button push transition by adding concurrent rotation of the button. By that we will imitate "let's go/follow me" gesture, inviting user to follow up with a click:
           </p>
 
           <Pen pen="1f6cce8046f76ca43aca3a5ac681b97c" height="500"></Pen>
 
           <p>
-            Then we can expand the effect even more to add some playfull splash experience:
+            Then we can expand the button sequence even more to add some playfull splash effect:
           </p>
 
           <Pen pen="51350c86ef0e0fb722e034006fcafb8f" height="500"></Pen>
 
           <p>
-            Then, if user doesn't click the button for a while, let's invite user to proceed by adding the callout vibration, mimicing incoming call:
+            Then, if user doesn't click the button for a while, let's invite him to proceed by adding the callout vibration, to mime an incoming call:
           </p>
 
           <Pen pen="9935b7cec036eae2ddb762213ceae6d4" height="500"></Pen>
 
           <p>
-            When user eventually will click the button, we will show the quiz modal with the most valiable question we have ever had, that's how the modal will look like:
+            When user eventually will click the button, we will show the quiz modal with the most valiable question we have ever had. That's how the modal will look like:
           </p>
 
           <Pen pen="2c95e0397b0d20eb4fbc952e3c5f0fe0" height="500"></Pen>
 
           <p>
-            We have few effects here that composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spread effect. Well basically almost everything including modal shape itself and it's corner are shapes. 
+            Every piece of this sequence is composed with shapes - ripple inside a modal, few details in the top and bottom right corners, backround spread effect, modal shape itself and it's corner are shapes too.
           </p>
 
           <p>
-            Now when the user hovers over any button, we need to show some tension, conveying that something is going to happen if he proceeds with a click (hover over buttons to see):
+            Now when the user hovers over any button, we need to show some tension, conveying that something is going to happen if he will proceed with a click (hover over buttons to see):
           </p>
 
           <Pen pen="ad612440c8b08d0b506e0a8cb4152b9c" height="500"></Pen>
@@ -1474,18 +1482,22 @@ const heart = new mojs.Shape({
           <Pen pen="4b54df04faa5b6c885a7b0222c842b5d" height="500"></Pen>
 
           <p>
-            If user leaves the button with his pointer, we need to show the tension relief by mimicing the air currents that float out of the modal, just few swirls would do here (hover over buttons and then release to see):
+            As you can see now - the extending parts are just <span className="highlight">curves</span> on each side of the modal. Each of them gets larger when user hovers over the buttons.
+          </p>
+
+          <p>
+            Next, if user leaves the button with his pointer, we need to show the tension relief by mimicing the air currents that float out of the modal, just few swirls would do here (hover over buttons and then release to see):
           </p>
 
           <Pen pen="fcc29bcf5d0eebf37d558864b7a2e334" height="500"></Pen>
 
           <p>
-            In the other case, when user proceeds with the button click, we will blow up the modal as a consequqnce of modal's tension and show the chosen word. That's the entire sequence:
+            In the other case, when user finally proceeds with the button click, we will blow up the modal as a consequqnce of modal's tension and show the chosen word. That's the entire sequence:
           </p>
 
           <Pen pen="812699ce32c9a7aeb70c9384b32a533a" height="600"></Pen>
           <em>
-            You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo3">this repo</UniteLink> since the codepen code could be unreadable.
+            You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo3">this repo</UniteLink> since the bundeled codepen code could be unreadable.
           </em>
 
           <p>There are few gifs for your inspiration over the UI's and shapes:</p>
@@ -1627,19 +1639,18 @@ const heart = new mojs.Shape({
 
           <h2>Recap</h2>
 
-
           <p>
-            Phew, that was intence. I hope you didn't get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes. It should be clear at this point that to create a shape you use a declarative call to create one and the shape appears in any place you want without any bootsrapping. You  can use <span className="highlight">then</span> method to chain states of shape and <span className="highlight">tune</span> them afterwards or even re<span className="highlight">generate</span> all random properties. Remember that shapes obey the <span className="highlight">tweenable</span> interface thus it has tween properties, callbacks and public method that any <span className="highlight">tween</span> has.
+            Phew, that was intence. I hope you didn't get bored. We have touched only surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes. It is probably is clear at this point that to create a shape you use a declarative call and the shape appears in any place you of the screen( or HTMLElement) you want without any bootsrapping. You  can use <span className="highlight">then</span> method to chain states of shape and <span className="highlight">tune</span> them afterwards or even re<span className="highlight">generate</span> all random properties on it before strating the animation. Remember that shapes obey the <span className="highlight">tweenable</span> interface thus it has tween properties, callbacks and public methods that any <span className="highlight">tween</span> has.
           </p>
 
           <p>
-            Need to admit that this post was written as an introduction to more complex and mature module that is called <span className="highlight">Burst</span>, it was important to familiarize you with the base concepts and API's syntax before we will proceed further. I think now you are ready to meet the <span className="highlight">Burst</span>!
+            Need to admit that this post was written as an introduction to more complex and mature module that is called <span className="highlight">Burst</span>, it was important to familiarize you with the base concepts and API's syntax before we will proceed further. I think now you are ready to meet the <UniteLink link="/tutorials/burst/">Burst</UniteLink>!
           </p>
 
-          <h2>Thank yous</h2>
+          <h2>Thank you!</h2>
 
           <p>
-            Thank yous paragraph.
+            I deeply appriciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'Love <3.'}
           </p>
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
