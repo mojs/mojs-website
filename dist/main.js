@@ -51,7 +51,7 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var App, Burst, DefaultRoute, GettingStarted, Main, MotionPath, React, Route, Router, Shape, Tutorials, routes;
+	var App, Burst, DefaultRoute, GettingStarted, Main, MotionPath, React, Route, Router, Shape, Tutorials, root, routes;
 
 	React = __webpack_require__(2);
 
@@ -77,9 +77,11 @@
 
 	Burst = __webpack_require__(340)["default"];
 
+	root = 1 ? '/mojs-website/' : '/';
+
 	routes = React.createElement(Route, {
 	  "name": "app",
-	  "path": "/",
+	  "path": "" + root,
 	  "handler": App
 	}, React.createElement(Route, {
 	  "name": "main",
@@ -88,10 +90,10 @@
 	  "name": "tutorials",
 	  "handler": Tutorials
 	}, React.createElement(Route, {
-	  "name": "/tutorials/burst/",
+	  "name": root + "tutorials/burst/",
 	  "handler": Burst
 	}), React.createElement(Route, {
-	  "name": "/tutorials/shape/",
+	  "name": root + "tutorials/shape/",
 	  "handler": Shape
 	}), ((function() {
 
@@ -45410,12 +45412,12 @@
 	            { className: 'highlight' },
 	            'y'
 	          ),
-	          ' property as it should be a drip more clearer to visualize:'
+	          ' property as it should be a drip easeir to visualize:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
 	          { pen: 'e991f4bb942c8aa698fbe4a3dba0ad4b' },
-	          { js: 'const circle = new mojs.Shape({\n  fill: { \'magenta\': \'yellow\' },\n}).then({\n  fill: \'cyan\'\n});\n\ndocument.addEventListener( \'click\', function (e) {\n  \n  // no tune\n  circle1\n    .replay();\n\n  // static value tune, results in \'deeppink\' for the first block, \'deeppink\' -> \'cyan\' for the second one\n  circle2\n    .tune({ fill: \'deeppink\' })\n    .replay();\n  \n  // delta tune, results in \'yellow\' -> \'deeppink\' for the first block, \'deeppink\' : \'cyan\' for the second one\n  circle3\n    .tune({ fill: { \'yellow\' : \'deeppink\' } })\n    .replay();\n});'
+	          { js: 'const circle = new mojs.Shape({\n  y: { [-25]: 25 },\n}).then({\n  y: 50\n});\n\ndocument.addEventListener( \'click\', function (e) {\n  \n  // no tune\n  circle1\n    .replay();\n\n  // static value tune, results in \'deeppink\' for the first block, \'deeppink\' -> \'cyan\' for the second one\n  circle2\n    .tune({ y: -100 })\n    .replay();\n  \n  // delta tune, results in \'yellow\' -> \'deeppink\' for the first block, \'deeppink\' : \'cyan\' for the second one\n  circle3\n    .tune({ y: { [-100] : 25 } })\n    .replay();\n});'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -45616,9 +45618,9 @@
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'highlight' },
-	              'name'
+	              'custom name'
 	            ),
-	            ' that will be used in ',
+	            ' that will be used further in ',
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'highlight' },
@@ -45630,7 +45632,7 @@
 	              { className: 'highlight' },
 	              'mojs.Shape'
 	            ),
-	            ' constructor:'
+	            ' constructor as you did it before:'
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -45647,7 +45649,7 @@
 	        _react2.default.createElement(
 	          _codeSample2.default,
 	          { pen: 'bc80126bb5cef3054ee1d4e02882de97' },
-	          { js: '/* ADD CUSTOM SHAPE */\nclass Heart extends mojs.CustomShape {\n  getShape () { return \'<path d="M92.5939814,7.35914503 C82.6692916,-2.45304834 66.6322927,-2.45304834 56.7076029,7.35914503 L52.3452392,11.6965095 C51.0327802,12.9714696 48.9328458,12.9839693 47.6203869,11.6715103 L47.6203869,11.6715103 L43.2705228,7.35914503 C33.3833318,-2.45304834 17.3213337,-2.45304834 7.43414268,7.35914503 C-2.47804756,17.1963376 -2.47804756,33.12084 7.43414268,42.9205337 L29.7959439,65.11984 C29.7959439,65.1323396 29.8084435,65.1323396 29.8084435,65.1448392 L43.2580232,78.4819224 C46.9704072,82.1818068 52.9952189,82.1818068 56.7076029,78.4819224 L70.1696822,65.1448392 C70.1696822,65.1448392 70.1696822,65.1323396 70.1821818,65.1323396 L92.5939814,42.9205337 C102.468673,33.12084 102.468673,17.1963376 92.5939814,7.35914503 L92.5939814,7.35914503 Z"></path>\'; }\n  getLength () { return 200; } // optional\n}\nmojs.addSHape( \'heart\', Heart ); // passing name and Bubble class\n\n/* USE CUSTOM SHAPE */\n// now it is avaliable on mojs.Shape constructor as usual\nconst heart = new mojs.Shape({\n  shape:    \'heart\',\n  fill:     \'none\',\n  stroke:   \'white\',\n  scale:    { 0 : 1 },\n  strokeWidth: { 50 : 0 },\n  y:         -20,\n  duration:  1000,\n});'
+	          { js: '/* ADD CUSTOM SHAPE SOMEWHERE IN YOUR CODE */\nclass Heart extends mojs.CustomShape {\n  getShape () { return \'<path d="M92.5939814,7.35914503 C82.6692916,-2.45304834 66.6322927,-2.45304834 56.7076029,7.35914503 L52.3452392,11.6965095 C51.0327802,12.9714696 48.9328458,12.9839693 47.6203869,11.6715103 L47.6203869,11.6715103 L43.2705228,7.35914503 C33.3833318,-2.45304834 17.3213337,-2.45304834 7.43414268,7.35914503 C-2.47804756,17.1963376 -2.47804756,33.12084 7.43414268,42.9205337 L29.7959439,65.11984 C29.7959439,65.1323396 29.8084435,65.1323396 29.8084435,65.1448392 L43.2580232,78.4819224 C46.9704072,82.1818068 52.9952189,82.1818068 56.7076029,78.4819224 L70.1696822,65.1448392 C70.1696822,65.1448392 70.1696822,65.1323396 70.1821818,65.1323396 L92.5939814,42.9205337 C102.468673,33.12084 102.468673,17.1963376 92.5939814,7.35914503 L92.5939814,7.35914503 Z"></path>\'; }\n  getLength () { return 200; } // optional\n}\nmojs.addSHape( \'heart\', Heart ); // passing name and Bubble class\n\n/* USE CUSTOM SHAPE */\n// now it is avaliable on mojs.Shape constructor as usual\nconst heart = new mojs.Shape({\n  shape:    \'heart\',\n  fill:     \'none\',\n  stroke:   \'white\',\n  scale:    { 0 : 1 },\n  strokeWidth: { 50 : 0 },\n  y:         -20,\n  duration:  1000,\n});'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -45676,12 +45678,12 @@
 	            { className: 'highlight' },
 	            'stroke'
 	          ),
-	          ' property on it\'s tag, so it is left unattended.'
+	          ' property on it\'s tag, so it was left unattended.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Regarding the ',
+	          'Regarding the second ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45705,7 +45707,25 @@
 	            { className: 'highlight' },
 	            'mojs'
 	          ),
-	          ' knows very little about the custom shape you have had provided, it is on you to specify what is the perimeter length of the custom shape.'
+	          ' knows very little about the custom shape you have had provided, it is on you to specify what is the perimeter length of the custom shape. In the example below, we return the precise ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '292.110107421875'
+	          ),
+	          ' length of the heart from the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'getLength'
+	          ),
+	          ' method, this allows us to use percent values in ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'strokeDash*'
+	          ),
+	          ' properties.'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -45749,7 +45769,7 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          ' module with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over dust-like trajectories. To give you control over this behaviour, ShapeSwirl accepts more ',
+	          ' with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over sine trajectories. To give you control over this behaviour, ShapeSwirl accepts more ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45760,7 +45780,222 @@
 	        _react2.default.createElement(
 	          _codeSample2.default,
 	          { pen: 'c6888ce5c9f81ad825444d969779eadc' },
-	          { js: 'const shapeSwirl = new mojs.ShapeSwirl({\n  shape:          \'circle\',\n  isSwirl:        true, // sets if the shape should follow sinusoidal path, true by default\n  swirlSize:      10, // defines amplitude of the sine\n  swirlFrequency: 3, // defines frequency of the sine\n  pathScale:      \'rand( .1, 1 )\', // defines how much the total path length should be scaled\n  degreeShift:    45, // angle shift for the sinusoidal path\n  direction:      1, // direction of the sine could be 1 or -1\n  x:              { 0 : 90 }\n});'
+	          { js: 'const shapeSwirl = new mojs.ShapeSwirl({\n  shape:          \'circle\',\n  isSwirl:        true, // sets if the shape should follow sinusoidal path, true by default\n  swirlSize:      10, // defines amplitude of the sine\n  swirlFrequency: 3, // defines frequency of the sine\n  pathScale:      \'rand( .1, 1 )\', // defines how much the total path length should be scaled\n  direction:      1, // direction of the sine could be 1 or -1\n  degreeShift:    45, // angle shift for the sinusoidal path\n  x:              { 0 : 90 }\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'isSwirl'
+	          ),
+	          ' property (',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'true'
+	          ),
+	          ' by default) defines if shape should follow sine path, if set to ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'false'
+	          ),
+	          ' it will act axactly the same as simple ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Shape'
+	          ),
+	          '.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'swirlSize'
+	          ),
+	          ' property (',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '10'
+	          ),
+	          ' by default) defines the deviation or amplitude of the sine. There is example with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'swirlSize: 10'
+	          ),
+	          ':'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: '0b3e2fe009d06a67a08e8ae04a7f7904' },
+	          { js: 'const swirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  y:              { 0: -150 },\n  radius:         8,\n  swirlSize:      35,\n  swirlFrequency: 4, \n  duration:       1000,\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'direction'
+	          ),
+	          ' property (',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '1'
+	          ),
+	          ' by default) defines direction of the amplitude of the sine - it have value of either ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '1'
+	          ),
+	          ' or ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '1'
+	          ),
+	          '. There is the example for ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '-1'
+	          ),
+	          ' note how it strats to the left instead of right:'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'f1fb2e4dc7bb9b11e3b6b96299fa99f9' },
+	          { js: 'const swirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  y:              { 0: -150 },\n  radius:         8,\n  pathScale:      .5,\n  duration:       1000,\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'swirlFrequency'
+	          ),
+	          ' property (',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '3'
+	          ),
+	          ' by default) defines the frequency of the sine, there is the example with ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'swirlFrequency: 10'
+	          ),
+	          ':'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'd63af6450cb170fafc8636f185634830' },
+	          { js: 'const swirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  y:              { 0: -150 },\n  radius:         8,\n  swirlFrequency: 10, \n  duration:       1000,\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale'
+	          ),
+	          ' property (',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '1'
+	          ),
+	          ' by default) defines the scale size of the sine path, there is the exaple for ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale: .5'
+	          ),
+	          ' - eventual sine has exact half of the radius:'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'b4c26893f3814227480d7cc5ab5ceded' },
+	          { js: 'const swirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  y:              { 0: -150 },\n  radius:         8,\n  pathScale:      .5,\n  duration:       1000,\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale'
+	          ),
+	          ' property usefull when you have a bunch of ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'ShapeSwirls'
+	          ),
+	          ' and want to randomize their sines.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'degreeShift'
+	          ),
+	          ' property (',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '0'
+	          ),
+	          ' by default) defines angle of the swirl. This property gets to be interesting ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'shapeSwirl'
+	          ),
+	          ' is used inside other modules (like ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          '). For now it will act just like angle of the sine path, there is the example for ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'degreeShift: 90'
+	          ),
+	          ':'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: '6bc8f77ec8528e0c8c394660db150a9e' },
+	          { js: 'const swirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  y:              { 0: -150 },\n  radius:         8,\n  pathScale:      .5,\n  duration:       1000,\n});'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -45784,12 +46019,12 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          ' so we won\'t spend much time with it. Nonetheless I encorage you to play with the parameters a bit to get confortable with them.'
+	          '.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
 	          null,
-	          'Small Recap'
+	          'Recap'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -45803,16 +46038,16 @@
 	          ' module. You can use ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
-	            { link: '' },
+	            { link: 'https://github.com/legomushroom/mojs/api/shape.md' },
 	            'Shape APIs'
 	          ),
 	          ' and ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
-	            { link: '' },
-	            'ShapeSwirl APIs'
+	            { link: 'https://github.com/legomushroom/mojs/api/shape-swirl.md' },
+	            'ShapeSwirl API'
 	          ),
-	          ' as reference further on. What is important at this point — is that you should understand the ability to create a ',
+	          ' sections as reference further on. What is important at this point — is that you should understand the ability to create a ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -45848,7 +46083,19 @@
 	            { className: 'highlight' },
 	            'Tween'
 	          ),
-	          '.'
+	          '. Now you probably asking yourself - Why do we need something as simple as an animatable shape? In the next section I will cover few use cases for shapes but most imporantly it will become cristal clear why do we need shapes in the next ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: '/tutorials/burst/' },
+	            'Burst Tutorial'
+	          ),
+	          '. Probably, you can treat this tutorial as finished at this point, the further sections are rather optional annd were written just for fun. So you can skip reading them in favor of ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: '/tutorials/burst/' },
+	            'Burst Tutorial'
+	          ),
+	          ' but I highly engorage you to read them to gain solid understanding of the shapes.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -45894,7 +46141,7 @@
 	            { className: 'highlight' },
 	            '"shape framework"'
 	          ),
-	          ' to think in so motion your sequences get more organized and consistent.'
+	          ' to think in, so your motion sequences get more organized and consistent.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -45905,7 +46152,13 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          's are usefull just because I claimed it out of loud, so let me convince you with the next real wold use cases.'
+	          's are usefull just because I claimed it out of loud, so let me convince you with the next real wold use cases. Note that the code samples are omitted in this section but feel free to check the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Babel'
+	          ),
+	          ' tab of the codepen samples and tweak the part that interests you.'
 	        ),
 	        _react2.default.createElement(
 	          'h3',
@@ -45931,13 +46184,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Lets start with the simple intro sequence, it was composed with custom "speech bubble shapes" and built in ones.'
+	          'Lets start with the simple intro sequence, it was composed with custom "speech bubble" shapes and few built in ones.'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '2ef10ed42ff535182c31cd1dbb81e453', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Custom shapes allow you to use shapes that suite your current needs. To be clear that\'s not just images that you can animate inside some wrapper, they are highly stylable shapes thus a way flexible than just an image or HTMLElement with a background.'
+	          'Custom shapes allow you to use shapes that suite your current needs. To be clear that\'s not just images that you can animate inside some wrapper, they are highly stylable shapes thus a way flexible than just an image or HTMLElement with some background.'
 	        ),
 	        _react2.default.createElement(
 	          'h4',
@@ -45947,7 +46200,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Let\'s walk thru some short random geometric scenes just to get some intuition about shape usage with mograph. After that we will combine them to get a relatively long intro sequence.'
+	          'Let\'s walk thru some short random geometric scenes just to get some intuition about shape usage with mograph. After that we will combine them to get slightly longer intro sequence.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -45958,7 +46211,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The next scene we will compose with another 6 triangles, slightly more elegant, with a little contrast to the first one, but still quite simple:'
+	          'We will compose the next scene by using another 6 triangles, slightly more elegant, with a little contrast to the first one, but still quite simple:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'c0b7b94e90142f19acba6ed9a4b05a2f' }),
 	        _react2.default.createElement(
@@ -45987,7 +46240,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'After that we need a nice transition between screens, just few circles will do:'
+	          'After that we need a nice transition between screens, just few circles will do the trick:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '95a862f1ad8445134466ad7d64213d46', height: '700' }),
 	        _react2.default.createElement(
@@ -46011,7 +46264,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Now, lets finnally compose these short scenes into one:'
+	          'Now, lets finally compose these short scenes into one:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '39427561a8a0b15d7896480a7d96d3d1', height: '700' }),
 	        _react2.default.createElement(
@@ -46152,13 +46405,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Motion trail effect is ususally used to exaggerate velocity of the object that moves and the enviroment it moves in. Just a nice subtle detail. The effect was composed with 2 shapes, namely curves. There is another simple example with lines:'
+	          'Motion trail effect is ususally used to exaggerate velocity of the object that moves and the enviroment it moves in. Just a nice subtle detail. The effect was composed with 2 shapes, namely curves. There is another simple example with lines instead of curves:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'fff0bcc079e0448bd0a72ee311ebadfa', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The "dust trail" effect can fit this scene too:'
+	          'The another effect that can fit this scene is the "dust trail" effect:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '6f7b05a45679964ccdf9212fa68075c8', height: '500' }),
 	        _react2.default.createElement(
@@ -46217,7 +46470,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s would be basically it for animation use cases, i hope you\'ve got the idea - you can use the shapes to enhance and support main scenes.'
+	          'That\'s would be basically it for animation use cases. My effort in this section was focused to convey the idea of how you can use the shapes to enhance and support your main animation scenes, applying little effects and details.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -46295,7 +46548,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'UI is another common use case for shapes. You can enhance UI transitions with shapes, add effects or even implode shape to use them as part of UIs.'
+	          'UI is another common use case for shapes. You can enhance UI transitions with shapes, add effects or even implode shapes to use them as part of UIs.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -46310,19 +46563,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The next demo illustrates how the shapes can be used to appeal users\' attention, providing them with feedback about availability of the control element playfully:'
+	          'The next demo illustrates how the shapes can be used to appeal users\' attention, providing them with feedback about availability of the control element in a playful way. There is a demo with two shapes that act like in place of UI element:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '3e7e766d0d5eaa3fa953c56c394bc1b5', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Then you can add even more effects to the button to fit the mood of your current UIs:'
+	          'Then you can add even more effects to the button to fit the mood of your current UIs, for instance "bubble UI" in this case:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '97d57587438de4d1e8592304a961be84', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If user will click the close button, we need to remove it, for that we can add a "bubbles" effect to support the mood of the UIs:'
+	          'If user will click the close button, we need to remove it, for that we can add a "bubbles" effect to keep the "bubbles" pace:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '181b4ba2ebb5a05d755647e9144a50d8', height: '500' }),
 	        _react2.default.createElement(

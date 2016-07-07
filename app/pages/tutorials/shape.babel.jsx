@@ -661,15 +661,15 @@ document.addEventListener( 'click', function (e) {
           </em>
 
           <p>
-            There is the same exact example but for <span className="highlight">y</span> property as it should be a drip more clearer to visualize:
+            There is the same exact example but for <span className="highlight">y</span> property as it should be a drip easeir to visualize:
           </p>
 
           <CodeSample pen="e991f4bb942c8aa698fbe4a3dba0ad4b">
             {
               { js: `const circle = new mojs.Shape({
-  fill: { 'magenta': 'yellow' },
+  y: { [-25]: 25 },
 }).then({
-  fill: 'cyan'
+  y: 50
 });
 
 document.addEventListener( 'click', function (e) {
@@ -680,12 +680,12 @@ document.addEventListener( 'click', function (e) {
 
   // static value tune, results in 'deeppink' for the first block, 'deeppink' -> 'cyan' for the second one
   circle2
-    .tune({ fill: 'deeppink' })
+    .tune({ y: -100 })
     .replay();
   
   // delta tune, results in 'yellow' -> 'deeppink' for the first block, 'deeppink' : 'cyan' for the second one
   circle3
-    .tune({ fill: { 'yellow' : 'deeppink' } })
+    .tune({ y: { [-100] : 25 } })
     .replay();
 });`
               }
@@ -748,7 +748,7 @@ document.addEventListener( 'click', function (e) {
 
           <ul>
             <li>
-              Now you can register this shape in <span className="highlight">mojs</span> with a <span className="highlight">name</span> that will be used in <span className="highlight">shape</span> property of <span className="highlight">mojs.Shape</span> constructor:
+              Now you can register this shape in <span className="highlight">mojs</span> with a <span className="highlight">custom name</span> that will be used further in <span className="highlight">shape</span> property of <span className="highlight">mojs.Shape</span> constructor as you did it before:
             </li>
           </ul>
 
@@ -768,7 +768,7 @@ new mojs.Shape({ shape: 'bubble' });`
 
           <CodeSample pen="bc80126bb5cef3054ee1d4e02882de97">
             {
-              { js: `/* ADD CUSTOM SHAPE */
+              { js: `/* ADD CUSTOM SHAPE SOMEWHERE IN YOUR CODE */
 class Heart extends mojs.CustomShape {
   getShape () { return '<path d="M92.5939814,7.35914503 C82.6692916,-2.45304834 66.6322927,-2.45304834 56.7076029,7.35914503 L52.3452392,11.6965095 C51.0327802,12.9714696 48.9328458,12.9839693 47.6203869,11.6715103 L47.6203869,11.6715103 L43.2705228,7.35914503 C33.3833318,-2.45304834 17.3213337,-2.45304834 7.43414268,7.35914503 C-2.47804756,17.1963376 -2.47804756,33.12084 7.43414268,42.9205337 L29.7959439,65.11984 C29.7959439,65.1323396 29.8084435,65.1323396 29.8084435,65.1448392 L43.2580232,78.4819224 C46.9704072,82.1818068 52.9952189,82.1818068 56.7076029,78.4819224 L70.1696822,65.1448392 C70.1696822,65.1448392 70.1696822,65.1323396 70.1821818,65.1323396 L92.5939814,42.9205337 C102.468673,33.12084 102.468673,17.1963376 92.5939814,7.35914503 L92.5939814,7.35914503 Z"></path>'; }
   getLength () { return 200; } // optional
@@ -820,11 +820,11 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Here above, the middle heart has static <span className="highlight">stroke</span> property on it's tag, so it is left unattended.
+            Here above, the middle heart has static <span className="highlight">stroke</span> property on it's tag, so it was left unattended.
           </p>
 
           <p>
-            Regarding the <span className="highlight">getLength</span> lifecycle method, - it is handy only if you want to use relative percent values for <span className="highlight">strokeDasharray</span>/<span className="highlight">strokeDashoffset</span> properties. Since <span className="highlight">mojs</span> knows very little about the custom shape you have had provided, it is on you to specify what is the perimeter length of the custom shape.
+            Regarding the second <span className="highlight">getLength</span> lifecycle method, - it is handy only if you want to use relative percent values for <span className="highlight">strokeDasharray</span>/<span className="highlight">strokeDashoffset</span> properties. Since <span className="highlight">mojs</span> knows very little about the custom shape you have had provided, it is on you to specify what is the perimeter length of the custom shape. In the example below, we return the precise <span className="highlight">292.110107421875</span> length of the heart from the <span className="highlight">getLength</span> method, this allows us to use percent values in <span className="highlight">strokeDash*</span> properties.
           </p>
 
           <CodeSample pen="75894cd43b0f12ecdb425cad5149ab37">
@@ -858,7 +858,7 @@ const heart = new mojs.Shape({
           <h2>ShapeSwirl</h2>
 
           <p>
-            <span className="highlight">ShapeSwirl</span> module basically is <span className="highlight">Shape</span> module with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over dust-like trajectories. To give you control over this behaviour, ShapeSwirl accepts more <span className="highlight">6</span> properties, thus you can define frequency or size of the path and other supporting parameters (click somewhere to see):
+            <span className="highlight">ShapeSwirl</span> module basically is <span className="highlight">Shape</span> with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over sine trajectories. To give you control over this behaviour, ShapeSwirl accepts more <span className="highlight">6</span> properties, thus you can define frequency or size of the path and other supporting parameters (click somewhere to see):
           </p>
 
           <CodeSample pen="c6888ce5c9f81ad825444d969779eadc">
@@ -869,9 +869,103 @@ const heart = new mojs.Shape({
   swirlSize:      10, // defines amplitude of the sine
   swirlFrequency: 3, // defines frequency of the sine
   pathScale:      'rand( .1, 1 )', // defines how much the total path length should be scaled
-  degreeShift:    45, // angle shift for the sinusoidal path
   direction:      1, // direction of the sine could be 1 or -1
+  degreeShift:    45, // angle shift for the sinusoidal path
   x:              { 0 : 90 }
+});`
+              }
+            }
+          </CodeSample>
+
+          <p>
+            The <span className="highlight">isSwirl</span> property (<span className="highlight">true</span> by default) defines if shape should follow sine path, if set to <span className="highlight">false</span> it will act axactly the same as simple <span className="highlight">Shape</span>.
+          </p>
+
+          <p>
+            The <span className="highlight">swirlSize</span> property (<span className="highlight">10</span> by default) defines the deviation or amplitude of the sine. There is example with <span className="highlight">swirlSize: 10</span>:
+          </p>
+
+          <CodeSample pen="0b3e2fe009d06a67a08e8ae04a7f7904">
+            {
+              { js: `const swirl = new mojs.ShapeSwirl({
+  fill:           'cyan',
+  y:              { 0: -150 },
+  radius:         8,
+  swirlSize:      35,
+  swirlFrequency: 4, 
+  duration:       1000,
+});`
+              }
+            }
+          </CodeSample>
+
+          <p>
+            The <span className="highlight">direction</span> property (<span className="highlight">1</span> by default) defines direction of the amplitude of the sine - it have value of either <span className="highlight">1</span> or <span className="highlight">1</span>. There is the example for <span className="highlight">-1</span> note how it strats to the left instead of right:
+          </p>
+
+          <CodeSample pen="f1fb2e4dc7bb9b11e3b6b96299fa99f9">
+            {
+              { js: `const swirl = new mojs.ShapeSwirl({
+  fill:           'cyan',
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});`
+              }
+            }
+          </CodeSample>
+
+          <p>
+            The <span className="highlight">swirlFrequency</span> property (<span className="highlight">3</span> by default) defines the frequency of the sine, there is the example with <span className="highlight">swirlFrequency: 10</span>:
+          </p>
+
+          <CodeSample pen="d63af6450cb170fafc8636f185634830">
+            {
+              { js: `const swirl = new mojs.ShapeSwirl({
+  fill:           'cyan',
+  y:              { 0: -150 },
+  radius:         8,
+  swirlFrequency: 10, 
+  duration:       1000,
+});`
+              }
+            }
+          </CodeSample>
+
+          <p>
+            The <span className="highlight">pathScale</span> property (<span className="highlight">1</span> by default) defines the scale size of the sine path, there is the exaple for <span className="highlight">pathScale: .5</span> - eventual sine has exact half of the radius:
+          </p>
+
+          <CodeSample pen="b4c26893f3814227480d7cc5ab5ceded">
+            {
+              { js: `const swirl = new mojs.ShapeSwirl({
+  fill:           'cyan',
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});`
+              }
+            }
+          </CodeSample>
+
+          <p>
+            The <span className="highlight">pathScale</span> property usefull when you have a bunch of <span className="highlight">ShapeSwirls</span> and want to randomize their sines.
+          </p>
+
+          <p>
+            The <span className="highlight">degreeShift</span> property (<span className="highlight">0</span> by default) defines angle of the swirl. This property gets to be interesting <span className="highlight">shapeSwirl</span> is used inside other modules (like <span className="highlight">Burst</span>). For now it will act just like angle of the sine path, there is the example for <span className="highlight">degreeShift: 90</span>:
+          </p>
+
+          <CodeSample pen="6bc8f77ec8528e0c8c394660db150a9e">
+            {
+              { js: `const swirl = new mojs.ShapeSwirl({
+  fill:           'cyan',
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
 });`
               }
             }
@@ -884,24 +978,24 @@ const heart = new mojs.Shape({
           <Pen pen="90e2506d73313d14d49486f7d71fb9d0" height="500"></Pen>
 
           <p>
-            In any other aspect the <span className="highlight">ShapeSwirl</span> is the same as a simple <span className="highlight">Shape</span> so we won't spend much time with it. Nonetheless I encorage you to play with the parameters a bit to get confortable with them.
+            In any other aspect the <span className="highlight">ShapeSwirl</span> is the same as a simple <span className="highlight">Shape</span>.
           </p>
 
 
-          <h2>Small Recap</h2>
+          <h2>Recap</h2>
 
           <p>
-            That was very fast intro to the <span className="highlight">Shape</span> module. You can use <UniteLink link="">Shape APIs</UniteLink> and <UniteLink link="">ShapeSwirl APIs</UniteLink> as reference further on. What is important at this point — is that you should understand the ability to create a <span className="highlight">Shape</span> in any part of the screen or HTMLElement. If you want to animate some property — you add a <span className="highlight">delta</span> object that describes the transition of that property. You can chain the shape transitions with <span className="highlight">then</span> calls and <span className="highlight">tune</span> new properties when you want. Tweenable interface allows you to work with <span className="highlight">Shape</span> same as you work with any other <span className="highlight">Tween</span>.
+            That was very fast intro to the <span className="highlight">Shape</span> module. You can use <UniteLink link="https://github.com/legomushroom/mojs/api/shape.md">Shape APIs</UniteLink> and <UniteLink link="https://github.com/legomushroom/mojs/api/shape-swirl.md">ShapeSwirl API</UniteLink> sections as reference further on. What is important at this point — is that you should understand the ability to create a <span className="highlight">Shape</span> in any part of the screen or HTMLElement. If you want to animate some property — you add a <span className="highlight">delta</span> object that describes the transition of that property. You can chain the shape transitions with <span className="highlight">then</span> calls and <span className="highlight">tune</span> new properties when you want. Tweenable interface allows you to work with <span className="highlight">Shape</span> same as you work with any other <span className="highlight">Tween</span>. Now you probably asking yourself - Why do we need something as simple as an animatable shape? In the next section I will cover few use cases for shapes but most imporantly it will become cristal clear why do we need shapes in the next <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink>. Probably, you can treat this tutorial as finished at this point, the further sections are rather optional annd were written just for fun. So you can skip reading them in favor of <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink> but I highly engorage you to read them to gain solid understanding of the shapes.
           </p>
 
           <h2>Use Cases</h2>
 
           <p>
-            Despite the fact that <span className="highlight">Shape</span> and <span className="highlight">ShapeSwirl</span> modules are nothing than tiny bits that compose higher order modules creating some matured effects, they have strong use cases and can be used by their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also <span className="highlight">Shape</span>s often used to implode them into <span className="highlight">UI</span> thus enhancing it. From the development point of view — <span className="highlight">Shape</span> can be created with just one declarative call allowing you to focus entirely on you motion sequences and don't spend time to bootstrapping things, this fact powers you with a <span className="highlight">"shape framework"</span> to think in so motion your sequences get more organized and consistent.
+            Despite the fact that <span className="highlight">Shape</span> and <span className="highlight">ShapeSwirl</span> modules are nothing than tiny bits that compose higher order modules creating some matured effects, they have strong use cases and can be used by their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also <span className="highlight">Shape</span>s often used to implode them into <span className="highlight">UI</span> thus enhancing it. From the development point of view — <span className="highlight">Shape</span> can be created with just one declarative call allowing you to focus entirely on you motion sequences and don't spend time to bootstrapping things, this fact powers you with a <span className="highlight">"shape framework"</span> to think in, so your motion sequences get more organized and consistent.
           </p>
 
           <p>
-            I hope you don't believe me that <span className="highlight">Shape</span>s are usefull just because I claimed it out of loud, so let me convince you with the next real wold use cases.
+            I hope you don't believe me that <span className="highlight">Shape</span>s are usefull just because I claimed it out of loud, so let me convince you with the next real wold use cases. Note that the code samples are omitted in this section but feel free to check the <span className="highlight">Babel</span> tab of the codepen samples and tweak the part that interests you.
           </p>
 
           <h3>Motion Graphics Use Cases</h3>
@@ -913,19 +1007,19 @@ const heart = new mojs.Shape({
           <h4>Bubbles</h4>
 
           <p>
-            Lets start with the simple intro sequence, it was composed with custom "speech bubble shapes" and built in ones.
+            Lets start with the simple intro sequence, it was composed with custom "speech bubble" shapes and few built in ones.
           </p>
 
           <Pen pen="2ef10ed42ff535182c31cd1dbb81e453" height="500"></Pen>
 
           <p>
-            Custom shapes allow you to use shapes that suite your current needs. To be clear that's not just images that you can animate inside some wrapper, they are highly stylable shapes thus a way flexible than just an image or HTMLElement with a background.
+            Custom shapes allow you to use shapes that suite your current needs. To be clear that's not just images that you can animate inside some wrapper, they are highly stylable shapes thus a way flexible than just an image or HTMLElement with some background.
           </p>
 
           <h4>Geometric Scenes</h4>
 
           <p>
-            Let's walk thru some short random geometric scenes just to get some intuition about shape usage with mograph. After that we will combine them to get a relatively long intro sequence.
+            Let's walk thru some short random geometric scenes just to get some intuition about shape usage with mograph. After that we will combine them to get slightly longer intro sequence.
           </p>
 
           <p>
@@ -935,7 +1029,7 @@ const heart = new mojs.Shape({
           <Pen pen="4db9ec6079a3537d8c60ec888dd8e532"></Pen>
 
           <p>
-            The next scene we will compose with another 6 triangles, slightly more elegant, with a little contrast to the first one, but still quite simple:
+            We will compose the next scene by using another 6 triangles, slightly more elegant, with a little contrast to the first one, but still quite simple:
           </p>
 
           <Pen pen="c0b7b94e90142f19acba6ed9a4b05a2f"></Pen>
@@ -951,7 +1045,7 @@ const heart = new mojs.Shape({
           </p>
 
           <p>
-            After that we need a nice transition between screens, just few circles will do:
+            After that we need a nice transition between screens, just few circles will do the trick:
           </p>
 
           <Pen pen="95a862f1ad8445134466ad7d64213d46" height="700"></Pen>
@@ -963,7 +1057,7 @@ const heart = new mojs.Shape({
           <Pen pen="b37bb9c6dede99d0ac75d60b5fb0d43d" height="700"></Pen>
 
           <p>
-            Now, lets finnally compose these short scenes into one:
+            Now, lets finally compose these short scenes into one:
           </p>
 
           <Pen pen="39427561a8a0b15d7896480a7d96d3d1" height="700"></Pen>
@@ -1107,13 +1201,13 @@ const heart = new mojs.Shape({
           <Pen pen="92f9a7b05498b8a0be3734737a9cfc70" height="500"></Pen>
 
           <p>
-            Motion trail effect is ususally used to exaggerate velocity of the object that moves and the enviroment it moves in. Just a nice subtle detail. The effect was composed with 2 shapes, namely curves. There is another simple example with lines:
+            Motion trail effect is ususally used to exaggerate velocity of the object that moves and the enviroment it moves in. Just a nice subtle detail. The effect was composed with 2 shapes, namely curves. There is another simple example with lines instead of curves:
           </p>
 
           <Pen pen="fff0bcc079e0448bd0a72ee311ebadfa" height="500"></Pen>
 
           <p>
-            The "dust trail" effect can fit this scene too:
+            The another effect that can fit this scene is the "dust trail" effect:
           </p>
 
           <Pen pen="6f7b05a45679964ccdf9212fa68075c8" height="500"></Pen>
@@ -1147,7 +1241,7 @@ const heart = new mojs.Shape({
           </em>
 
           <p>
-            That's would be basically it for animation use cases, i hope you've got the idea - you can use the shapes to enhance and support main scenes.
+            That's would be basically it for animation use cases. My effort in this section was focused to convey the idea of how you can use the shapes to enhance and support your main animation scenes, applying little effects and details.
           </p>
 
           <p>
@@ -1278,7 +1372,7 @@ const heart = new mojs.Shape({
           <h2>UI Use Cases</h2>
 
           <p>
-            UI is another common use case for shapes. You can enhance UI transitions with shapes, add effects or even implode shape to use them as part of UIs.
+            UI is another common use case for shapes. You can enhance UI transitions with shapes, add effects or even implode shapes to use them as part of UIs.
           </p>
 
           <p>
@@ -1288,19 +1382,19 @@ const heart = new mojs.Shape({
           <h3>Bubble Close Button</h3>
 
           <p>
-            The next demo illustrates how the shapes can be used to appeal users' attention, providing them with feedback about availability of the control element playfully:
+            The next demo illustrates how the shapes can be used to appeal users' attention, providing them with feedback about availability of the control element in a playful way. There is a demo with two shapes that act like in place of UI element:
           </p>
 
           <Pen pen="3e7e766d0d5eaa3fa953c56c394bc1b5" height="500"></Pen>
 
           <p>
-            Then you can add even more effects to the button to fit the mood of your current UIs:
+            Then you can add even more effects to the button to fit the mood of your current UIs, for instance "bubble UI" in this case:
           </p>
 
           <Pen pen="97d57587438de4d1e8592304a961be84" height="500"></Pen>
 
           <p>
-            If user will click the close button, we need to remove it, for that we can add a "bubbles" effect to support the mood of the UIs:
+            If user will click the close button, we need to remove it, for that we can add a "bubbles" effect to keep the "bubbles" pace:
           </p>
 
           <Pen pen="181b4ba2ebb5a05d755647e9144a50d8" height="500"></Pen>

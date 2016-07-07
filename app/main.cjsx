@@ -15,12 +15,14 @@ Burst          = require('./pages/tutorials/burst').default;
 
   # <Route     name="app" path="/"    handler={App}>
 
+root = if 1 then '/mojs-website/' else '/'
+
 routes = (
-  <Route     name="app" path="/"    handler={App}>
+  <Route     name="app" path="#{root}" handler={App}>
     <Route   name="main"            handler={Main}/>
     <Route   name="tutorials"       handler={Tutorials}>
-      <Route name="/tutorials/burst/" handler={Burst} />
-      <Route name="/tutorials/shape/"   handler={Shape} />
+      <Route name="#{root}tutorials/burst/" handler={Burst} />
+      <Route name="#{root}tutorials/shape/"   handler={Shape} />
       { ### <Route name="/tutorials/shape/"   handler={Shape} /> ### }
       <Route name="easing">
         {
