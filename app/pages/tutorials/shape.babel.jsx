@@ -14,7 +14,7 @@ import DisqusComments from 'disqus-comments';
 // const More = require('partials/more');
 
 const ShapePage = new React.createClass({
-  getInitialState () { return { isShow: false }; },
+  getInitialState () { return {}; },
   _onResize () { window.dispatchEvent(new Event('resize')) },
   componentWillUnmout () { clearTimeout(this._tm); },
   componentDidMount () {
@@ -26,9 +26,10 @@ const ShapePage = new React.createClass({
   _checkHeight () {
     const url = sessionStorage.getItem('beforeUnloadURL');
     const height = sessionStorage.getItem('beforeUnloadPostHeight');
+
     if (url === window.location.href) {
       const el = this.getDOMNode();
-      el.style['min-height'] = "#{height}px"
+      el.style['min-height'] = `${height}px`;
     }
   },
   _setRealHeight () { this.getDOMNode().style['min-height'] = "auto"; },
