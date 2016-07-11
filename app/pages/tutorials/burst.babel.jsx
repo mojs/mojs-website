@@ -645,7 +645,7 @@ burst
           </p>
 
           <p>
-             The last touch is to add the fading burst at the end and make the <span className="highlight">parent</span> move:
+             The last touch is to add the fading burst at the end and make the <span className="highlight">parent</span> move to the left:
           </p>
 
           <Pen pen="10cc620075141688d0cf8eca7a561062" height="500"></Pen>
@@ -666,10 +666,14 @@ burst
             Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes bunch of child <span className="highlight">ShapeSwirls</span> forming radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls and could not be set either. To control child swirls, pass the <span className="highlight">ShapeSwirl</span> properties to the <span className="highlight">children</span> property of the main swirl. You can find exhaustive api reference at <UniteLink>Burst API</UniteLink> section.
           </p>
 
+          <p>
+            
+          </p>
+
           <h2>Thank you!</h2>
 
           <p>
-            I happy you've made it here! It was a long and intence journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned if you like these ones. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'Love <3.'}
+            I happy you've made it here! It was a long and intence journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'Love <3.'}
           </p>
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
