@@ -10,12 +10,12 @@ Tutorials = require './pages/tutorials'
 GettingStarted = require './pages/tutorials/getting-started'
 MotionPath     = require './pages/tutorials/motion-path'
 # PathEasing     = require './pages/tutorials/easing/path-easing/path-easing.cjsx'
-Shape          = require('./pages/tutorials/shape').default;
-Burst          = require('./pages/tutorials/burst').default;
+Shape          = require('./pages/tutorials/shape.babel.jsx').default;
+Burst          = require('./pages/tutorials/burst.babel.jsx').default;
 
   # <Route     name="app" path="/"    handler={App}>
 
-root = if 1 then '/mojs-website/' else '/'
+root = if 0 then '/mojs-website/' else '/'
 
 routes = (
   <Route     name="app" path="#{root}" handler={App}>

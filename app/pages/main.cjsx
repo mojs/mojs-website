@@ -1,5 +1,5 @@
 React       = require 'react'
-mojs        = require 'mo-js'
+# mojs        = require 'mo-js'
 {PrismCode} = require 'react-prism'
 UniteLink   = require '../partials/unite-link'
 Router      = require 'react-router'
@@ -9,6 +9,8 @@ Pen         = require '../partials/codepen'
 # MotionDemo  = require '../pages/motion-demo/motion-demo.cjsx'
 ApiDemo     = require '../partials/api-demo'
 SocialNetworksAbout = require '../partials/social-networks-about'
+
+# console.log(mojs);
 
 require '../css/pages/main-page'
 
