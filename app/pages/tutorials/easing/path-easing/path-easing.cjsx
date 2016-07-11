@@ -1,9 +1,8 @@
 React       = require 'react'
 Router      = require 'react-router'
 UniteLink   = require 'partials/unite-link'
-{ Route, RouteHandler, Link } = Router
+{ Link } = Router
 
-# mojs          = require 'mo-js'
 MoleSample    = require './mole-sample'
 Vimeo         = require 'partials/vimeo'
 PostImage     = require 'partials/post-image'
@@ -15,7 +14,8 @@ EasingObjectGraph = require 'partials/easing-object-graph'
 EasingGraph       = require 'partials/easing-graph'
 Resizable         = require 'react-component-resizable'
 
-More  = require 'partials/more.es6.js'
+More  = require('partials/more.babel.jsx').default
+
 
 HeftyContent        = require 'partials/hefty-content'
 DisqusComments      = require 'partials/disqus-comments'

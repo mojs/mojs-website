@@ -1,1 +1,0 @@
-Ultimately this isn't user interacts with your app, it is you interacting with the user thru motion, conveying the right ideas about location, composition and material of you interface.

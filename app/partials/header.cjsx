@@ -4,7 +4,7 @@ Link      = Router.Link
 Icon      = require './icon'
 Button    = require './button'
 UniteLink = require './unite-link'
-Headroom  = require 'react-headroom'
+Headroom  = require('react-headroom').default
 Tapable   = require 'react-tappable'
 Router    = require 'react-router'
 require '../css/partials/header.styl'

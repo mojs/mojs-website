@@ -13,8 +13,7 @@ import SocialNetworksAbout from 'social-networks-about';
 import DisqusComments from 'disqus-comments';
 // const More = require('partials/more');
 
-
-const ShapePage = new React.createClass({
+const BurstPage = new React.createClass({
   getInitialState () { return { isShow: false }; },
   _onResize () { window.dispatchEvent(new Event('resize')) },
   componentWillUnmout () { clearTimeout(this._tm); },
@@ -29,7 +28,7 @@ const ShapePage = new React.createClass({
     const height = sessionStorage.getItem('beforeUnloadPostHeight');
     if (url === window.location.href) {
       const el = this.getDOMNode();
-      el.style['min-height'] = "#{height}px"
+      el.style['min-height'] = `${height}px`;
     }
   },
   _setRealHeight () { this.getDOMNode().style['min-height'] = "auto"; },
@@ -678,36 +677,12 @@ burst
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
             <br />
-            Next: &nbsp;<UniteLink link="/tutorials/burst" isDisabled="true" className="highlight">Stagger</UniteLink>
+            Next: &nbsp;<UniteLink link="/tutorials/stagger" isDisabled="true" className="highlight">Stagger</UniteLink>
           </p>
 
           <SocialNetworksAbout className="post__social-networks-about" />
           <ORXLine className="post__last-orx-line" type="center" />
           <DisqusComments />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-
-
-          
-
-
       </div>
     }
 
@@ -720,4 +695,4 @@ burst
   }
 });
 
-export default ShapePage;
+export default BurstPage;

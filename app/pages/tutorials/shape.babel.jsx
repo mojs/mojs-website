@@ -6,16 +6,15 @@ import Cite         from 'partials/cite';
 import CodeSample   from 'partials/code-sample';
 import Pen          from 'partials/codepen';
 import HeftyContent from 'partials/hefty-content';
-import More         from 'partials/more';
+import More         from 'partials/more.babel.jsx';
 import PostImage    from 'partials/post-image';
-import Gif          from 'partials/gif';
+import Gif          from 'partials/gif.babel.jsx';
 import SocialNetworksAbout from 'social-networks-about';
 import DisqusComments from 'disqus-comments';
 // const More = require('partials/more');
 
-
 const ShapePage = new React.createClass({
-  getInitialState () { return { isShow: false }; },
+  getInitialState () { return {}; },
   _onResize () { window.dispatchEvent(new Event('resize')) },
   componentWillUnmout () { clearTimeout(this._tm); },
   componentDidMount () {
@@ -27,9 +26,10 @@ const ShapePage = new React.createClass({
   _checkHeight () {
     const url = sessionStorage.getItem('beforeUnloadURL');
     const height = sessionStorage.getItem('beforeUnloadPostHeight');
+
     if (url === window.location.href) {
       const el = this.getDOMNode();
-      el.style['min-height'] = "#{height}px"
+      el.style['min-height'] = `${height}px`;
     }
   },
   _setRealHeight () { this.getDOMNode().style['min-height'] = "auto"; },

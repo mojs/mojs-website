@@ -8,10 +8,14 @@ Please make sure you are on the `dev` branch, never use `master` for changes.
 ```
 
 ## Launch
+
+Point your apach webserver to /mojs-website/ folder and run:
+
 ```
-npm run dev
+webpack
 ```
-Then open `localhost:8080` in your browser.
+
+Open `localhost` in your browser - the main page should appear.
 
 ## The MIT License (MIT)
 
