@@ -20,12 +20,15 @@ module.exports = React.createClass
 
         <div className="tutorials-sidebar__section">
           <div className="tutorials-sidebar__header"> Modules </div>
+          <UniteLink link="/tutorials/shape/" className="tutorials-sidebar__link"> Shape & Swirl </UniteLink>
+          <UniteLink link="/tutorials/burst/" className="tutorials-sidebar__link"> Burst </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Stagger </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Motion Path      </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Transit          </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Swirl            </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Burst            </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Spriter          </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Stagger Wrapper  </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Radial Spring    </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Spring Wave      </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Goo Transforms   </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Broom            </UniteLink>
         </div>
 
         <div className="tutorials-sidebar__section">
@@ -34,10 +37,10 @@ module.exports = React.createClass
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Base Easing Funcions </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Bezier Curves </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Springs </UniteLink>
-          <UniteLink link="path-easing" className="tutorials-sidebar__link"> Path Easing </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Mix </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Helpers </UniteLink>
+          <UniteLink link="/tutorials/easing/path-easing/" className="tutorials-sidebar__link"> Path Easing </UniteLink>
           <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Transforms </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Helpers </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Mix </UniteLink>
         </div>
 
         <div className="tutorials-sidebar__section">

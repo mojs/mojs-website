@@ -1,12 +1,16 @@
 @import '../imports'
+@import '../blocks/spinner'
 @import '../blocks/feature'
 @import '../blocks/motion-lettering'
 @import '../blocks/code-block'
 @import '../blocks/motion-demo'
 
 {el = '.main-page'}
-  // position relative
-  // background  #3A0839 url('../i/pattern.png') repeat
+  opacity 0
+  color white
+  transition all .25s ease-out
+  &.is-shown
+    opacity 1
   &__content
     max-width 70*gs
     fly()

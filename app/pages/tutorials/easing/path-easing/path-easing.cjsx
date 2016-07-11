@@ -3,7 +3,7 @@ Router      = require 'react-router'
 UniteLink   = require 'partials/unite-link'
 { Route, RouteHandler, Link } = Router
 
-mojs          = require 'mo-js'
+# mojs          = require 'mo-js'
 MoleSample    = require './mole-sample'
 Vimeo         = require 'partials/vimeo'
 PostImage     = require 'partials/post-image'
@@ -13,7 +13,7 @@ CodeSample    = require 'partials/code-sample'
 Pen           = require 'partials/codepen'
 EasingObjectGraph = require 'partials/easing-object-graph'
 EasingGraph       = require 'partials/easing-graph'
-Resizable     = require 'react-component-resizable'
+Resizable         = require 'react-component-resizable'
 
 More  = require 'partials/more.es6.js'
 
@@ -51,19 +51,19 @@ module.exports = React.createClass
     if @state.isShow
       content = <div>
           <div className="post__header">Easing / Path Easing</div>
-          <div className="post__description"> This post is about path easing functions for your precise timing control.</div>
+          <div className="post__description"> This post is about path easing functions for precise timing function control.</div>
           <ORXLine className="post__orx-line" />
 
-          <p style= { textAlign: 'center' }>
+          <p className="post__top-links">
             <UniteLink link="http://codepen.io/sol0mka/full/477056cb1ffe88c4bfbf8a3005d99496/">demo on CodePen</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/property-curves">demo's repo on GitHub</UniteLink> | 
             <UniteLink link="https://github.com/legomushroom/mojs/">mo · js on GitHub</UniteLink>
           </p>
           
           <p>
-            Easing (or timing function) is the secret sauce ingredient that makes a good motion delightful. 
-            Linear movement trudging unnaturally and sloppy, 
-            this feeling comes from our physical world experience - nothing moves linearly around us.
+            Easing (or timing function) is the secret sauce ingredient that makes our motion work
+            look natural and delightful.
+            Linear movement can seem very unnatural, as nothing moves linearly in our physical world.
           </p>
 
           <Cite author="Stanislaw Ulam">
@@ -72,17 +72,16 @@ module.exports = React.createClass
           </Cite>
 
           <p>
-            Animation with equal interim spacing(read with linear easing) can 
-            envoke in our brain nothing than suspicious or dull response. 
-            By contrast, excellent crafted easing appeal user's attention, 
-            araise curiosity, thus involvement.
-            That's why so crutial to embrace the full control over easing functions.
+            Animation with equal interim spacing (ie. with linear easing) can
+            be dull, or make our brain respond with suspicion.
+            By contrast, excellently crafted easing appeals to the user's attention,
+            and raises their curiosity, thus draws them in.
+            That's why it's so crucial to embrace full control over easing functions.
           </p>
 
           <p>
-            Fortunately <span className="highlight">mo· js</span> 
-            &nbsp;has the best set of easing functions of various 
-            types in the modern web. Besides 
+            Fortunately <span className="highlight">mo· js</span>
+            &nbsp;has the most comprehensive set of easing functions available on the modern web. Besides&nbsp;
               <UniteLink link="/easing/basic" isDisabled="true">
                 Base Easing Functions
               </UniteLink>, 
@@ -93,9 +92,9 @@ module.exports = React.createClass
                 Springs
               </UniteLink> which you can find in other web animation libraries, 
               <span className="highlight">mo· js</span>
-              &nbsp;has super precise easing function type 
+              &nbsp; has a super precise easing function type
               - <span className="highlight">path easing</span>.
-              It allows you to draw your timing functions. 
+              It allows you to draw your own timing functions.
               That's what this tutorial is dedicated to, hang tight!
           </p>
 
@@ -103,7 +102,7 @@ module.exports = React.createClass
 
           <p>
             Consider the example below, 
-            the case when we need precise control over easing function. 
+            a case where we need precise control over the easing function.
             The start point is a simple falling square:
           </p>
 
@@ -115,28 +114,28 @@ module.exports = React.createClass
                         onUpdate: function (progress) {
                           square.style.transform = 'translateY(' + 200*progress + 'px)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
 
           <em>
-            <i>Note</i>: No vendor prefixes used in the code above for 
+            <i>Note</i>: No vendor prefixes are used in the code above for
             clarity's sake but some browsers still do need them.
           </em>
 
           <p>
             We've created a tween here by constructing 
-            the <span className="highlight">mojs.Tween</span> class (line 2), 
-            on every frame update, we multiply tween's progress(it is in range of from 0 to 1) 
+            the <span className="highlight">mojs.Tween</span> class (line 2).
+            On every frame update, we multiply the tween's progress (in a range from 0 to 1)
             by 200 and set the result as the current 
             <span className="highlight">translateY</span> property (line 6) of our 
             <span className="highlight">square</span> object (line 1).
           </p>
 
           <p>
-            As the result we have one sloppy movement here, it doesn’t really look 
-            like something falling down at all, so lets add bounce easing:
+            As a result we have one sloppy movement here, it doesn’t really look
+            like something falling down at all. So lets add bounce easing:
           </p>
 
           <CodeSample pen="bd62b1fd5a638e34f03607f6a6968769">
@@ -148,21 +147,21 @@ module.exports = React.createClass
                           var bounceProgress = mojs.easing.bounce.out(progress);
                           square.style.transform = 'translateY(' + 200*bounceProgress + 'px)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
 
           <p>
             The bounce easing was added by passing the linear progress 
-            thru <span className="highlight">bounce.out</span> function 
+            through a <span className="highlight">bounce.out</span> function
             (line 6)
             &nbsp;that is available on 
             <span className="highlight">mojs.easing</span> object - the place where 
             all easing functions and helpers are stored. 
-            The outcome is pretty obvious - you probably did it thousands times in a row - 
-            we have something that kind of looking like falling object with it’s own physics, 
-            despite the fact that it doesn't obey any physics laws, its behavior is hardcoded 
+            The outcome is pretty obvious - you've probably seen it before -
+            we have something that kind of looks like a falling object with it’s own physics,
+            despite the fact that it doesn't obey any physics laws. It's behavior is hardcoded
             into this graph:
           </p>
 
@@ -182,19 +181,18 @@ module.exports = React.createClass
           </EasingObjectGraph>
 
           <p>
-            If you'll think about it, this common bounce easing graph represents 
-            composition of object's parameters like the material it is made of or 
-            it's weight or acceleration it has. 
-            Savvy readers starting to grasp the main issue of this widespread easing function 
-            - the limit to one set of these parameters that can not be effectively 
-            changed on demand.
+            If you think about it, this common bounce easing graph represents
+            composition of an object's parameters like the material it is made of or
+            it's weight or acceleration.
+            Savvy readers starting to grasp the main issue of this widespread easing function
+            - you are unable to change individual properties on demand, so it is quite limited.
           </p>
 
           <p>
-            But what if we want to change the weight parameter of our object so it will 
+            What if we want to change the weight parameter of our object so it will
             have much wider bouncing amplitude range? That’s the point where the 
             <span className="highlight">path easing</span> become irreplaceable. 
-            Lets jump to vector graphics editor 
+            Lets jump to a vector graphics editor
             with <UniteLink link="/app/pages/tutorials/easing/path-easing/files/bounce-easing.svg">this common graph</UniteLink> as a bootstrap. 
           </p>
 
@@ -204,9 +202,9 @@ module.exports = React.createClass
           </em>
 
           <p>
-            We will amplify the bouncing curves a bit, to add our motion feel of much more lighter object 
+            We will amplify the bouncing curves a bit, to make our motion feel like it belongs to a lighter object
             (or much more bouncy one - made of rubber instead of wood).
-            That's what the bouncy graph might look like:
+            This is what the bouncy graph might look like:
           </p>
 
           <EasingObjectGraph
@@ -226,16 +224,16 @@ module.exports = React.createClass
 
           <em>
             <i>Note</i>: This path easing is used in the <UniteLink link="http://codepen.io/sol0mka/full/477056cb1ffe88c4bfbf8a3005d99496/">final demo</UniteLink> (with small tweaks), 
-            particularly when white cube bounces on the floor.
+            particularly when the white cube bounces on the floor.
           </em>
 
           <p>
-            There is my <UniteLink link="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</UniteLink> with this bouncy graph.
+            Here is my <UniteLink link="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</UniteLink> with this bouncy graph.
             Now we can generate our custom easing function from this SVG path.
-            For this simply copy the Path's commands from 
+            To do this, copy the Path's commands from the 
             <span className="highlight">d attribute</span> and pass them to 
             the <span className="highlight">mojs.easing.path</span> function (line 2) and 
-            you will have newely generated easing function back:
+            you will get a newly generated easing function back:
           </p>
 
           <CodeSample pen="c4b415a9167718d3134df04f07ac609b">
@@ -250,7 +248,7 @@ module.exports = React.createClass
                           var bounceProgress = bouncyEasing(progress);
                           square.style.transform = 'translateY(' + 200*bounceProgress + 'px)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
@@ -262,7 +260,7 @@ module.exports = React.createClass
 
           <p>
             You can literally draw your easing functions with <span className="highlight">Path easing</span>.
-            There are few more examples of custom easing you can draw:
+            These are a few more examples of the custom easing you can draw:
           </p>
 
           <ul>
@@ -299,7 +297,7 @@ module.exports = React.createClass
                           var extremeInOutProgress = extremeInOutEasing(progress);
                           square.style.transform = 'scale(' + (1 - (.9*extremeInOutProgress)) + ')';
                         }
-                      }).run();
+                      }).play();
 
 
               """
@@ -342,55 +340,55 @@ module.exports = React.createClass
                           var extremeInElasticOutProgress = extremeInElasticOutEasing(progress);
                         square.style.transform = 'scale(' + (1 - (.9*extremeInElasticOutProgress)) + ')';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
 
           <em>
             <i>Note</i>: 
-            As you can see in the <UniteLink href="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</UniteLink>, by default <span className="highlight">mo· js</span> expects you to draw your easing paths in rectangle of 100x100, but 
-            you can change that with special option, we will talk about it a bit later, 
-            in <span className="highlight">options</span> section of this tutorial.
+            As you can see in the <UniteLink href="/app/pages/tutorials/easing/path-easing/files/bouncy-easing.svg">.svg file</UniteLink>, by default <span className="highlight">mo· js</span> expects you to draw your easing paths in a 100x100 rectangle, but
+            you can change that with a special option, which we'll cover a little later
+            in the <span className="highlight">options</span> section of this tutorial.
           </em>
           
           <p>
-            Imagine what amount of 
-            freedom <span className="highlight">path easing</span> can give you,  
-            how comprehensive your easing functions can now be.
+            Imagine the amount of
+            freedom <span className="highlight">path easing</span> can give you
+            and how comprehensive your easing functions can now be.
             <br />
             Nonetheless, <span className="highlight">it has much more powerfull purposes</span>, so keep reading!
           </p>
 
           <h2>Property curves</h2>
           
-          <h3>Make acquaintance</h3>
+          <h3>Getting acquainted with property curves</h3>
 
           <p>
             If you are familiar with After Effects workflow and have ever worked 
             with <UniteLink link="http://www.schoolofmotion.com/intro-to-animation-curves-in-after-effects/">animation curves</UniteLink> (go watch this video, I'll be waiting on you here) 
-            this idea won't be entirely new for you.
-            If you haven't - no worries, it is pretty simple but be attentive it can change 
-            the way you are treating your animations!
+            this idea won't be entirely new to you.
+            If you haven't - no worries, it is pretty simple but when used attentively, it can change
+            the way you create your animations!
           </p>
 
           <p>
             Let me try to express the idea of property curves in one sentence:
           </p>
 
-          <Cite author="LegoMushroom">
-            With property curves we can specify(or draw) 
-            how would a certain property behave in time.
+          <Cite className="is-no-author">
+            With a property curve we can specify (or draw)
+            how a certain property behaves over time.
           </Cite>
 
           <p>
-            Yes exactly. We can draw for instance, how a translate or scale(or any other) 
-            propety will act on progress change. To describe it more verbosely consider
+            Yes exactly. We can draw for instance how a translate or scale (or any other)
+            property will act on progress change. To describe it more verbosely consider
             the next use case.
           </p>
 
           <p>
-            We have our square, but now it starts at very bottom, then jumps up with squash&stretch motion. 
+            We have our square, but now it starts at very bottom - then jumps up with squash & stretch motion.
             Just like this:
           </p>
 
@@ -399,11 +397,11 @@ module.exports = React.createClass
           </HeftyContent>
 
           <p>
-            As you may guessed, this motion will be composed with 2 <span className="highlight">property curves</span>.
+            As you may have guessed, this motion will be composed with 2 <span className="highlight">property curves</span>.
             The first one for <span className="highlight">y</span> position 
-            or <span className="highlight">translateY</span> property, 
+            or the <span className="highlight">translateY</span> property,
             the second one is for the <span className="highlight">scale</span> property to describe 
-            squash&stretch effect.
+            squash & stretch effect.
           </p>
 
           <p>
@@ -427,14 +425,14 @@ module.exports = React.createClass
           </EasingObjectGraph>
 
           <p>
-            The delay at very start was made to give some time for initial squash 
+            The delay at the very start was made to give some time for the initial squash
             property curve to act. So it waits some time and then grows to 1 with
-            something like exponential-out easing. Don't get fooled by the fact that it looks 
-            like an easing -- yes it starts at 0 and ends and 
-            1 <span className="highlight">y</span> -- my intention was 
+            something that looks like exponential-out easing. Don't be fooled by the fact that it looks
+            like easing -- yes it starts at 0 and ends at
+            1 <span className="highlight">y</span>. My intention was
             to describe how the <span className="highlight">translateY</span> property 
-            will act in time, but not ease the change. Consider the next example for 
-            better understanding what I mean.
+            will act over time, consider the next example for
+            a better understanding of what I mean.
           </p>
 
           <p>
@@ -460,37 +458,36 @@ module.exports = React.createClass
 
           <p>
             The <span className="highlight">scale</span> property 
-            curve represents deviation from <span className="highlight">0</span>. 
+            curve represents the deviation from <span className="highlight">0</span>.
             We can set <span className="highlight">scaleY</span>&nbsp;
             as <span className="highlight">1 + curve progress</span>&nbsp;
             and <span className="highlight">scaleX</span> as <span className="highlight">1 - curve progress</span>&nbsp;
             to imitate the desired effect.
 
-            While the <span className="highlight">translateY</span> curve in passive state 
-            at the begining, this curve goes 
-            under <span className="highlight">0</span> imitating squash motion, showing 
+            While the <span className="highlight">translateY</span> curve is in a passive state
+            at the beginning, this curve goes
+            under <span className="highlight">0</span>, imitating a squash motion, and showing
             that our rectangle accumulates some power for the subsequent jump. When 
             the first curve starts to 
             lift our rectangle in the air, this curve goes 
-            over <span className="highlight">0</span> imitating stretch that object 
-            will get when accelerating. At the end this curve returns 
+            over <span className="highlight">0</span>, imitating the stretch that object
+            will experience when accelerating. At the end, this curve returns
             back to <span className="highlight">0</span> showing 
             that there is no speed left in the movement.
           </p>
 
           <p>
-            You can notice that now it doesn't starts at 0 and ends at 
+            You may notice that now it doesn't starts at 0 and end at
             1 <span className="highlight">y</span>. In 
-            fact <span className="highlight">property curves</span> can get 
-            any <span className="highlight">y</span> value you want. It must obey 
-            one law for <span className="highlight">x</span> value though - 
+            fact <span className="highlight">property curves</span> can use
+            any <span className="highlight">y</span> value you want. They must obey
+            one law for the <span className="highlight">x</span> value though -
             start at 0 and end at 1 <span className="highlight">x</span>, 
-            as it represents the progress and progress can't go beyond 1 as it 
-            makes no sense.
+            as it represents the progress from start (0) to finish (1).
           </p>
 
           <p>
-            That's how our two property curves work together:
+            This is how our two property curves work together:
           </p>
 
           <EasingObjectGraph
@@ -530,7 +527,7 @@ module.exports = React.createClass
                             'translateY(' + -180*translateProgress + 'px) '+
                             'scaleX(' + scaleX + ') ' + 'scaleY(' + scaleY + ')';
                         }
-                      }).run();
+                      }).play();
 
 
               """
@@ -538,33 +535,34 @@ module.exports = React.createClass
           </CodeSample>
 
           <p>
-            Pretty neat, ha? Property curves allow us to visualy describe how certain properties 
-            behave in time. Then we can compose them together to get our final motion.
-            Yep it takes some time to wrap your head around this concept, but when you 
-            are using it for few times, it feels very intuitive and you finally 
+            Pretty neat, huh? Property curves allow us to visually describe how certain properties
+            behave over time. We can compose them simultaneously to get our final motion.
+            Yep it takes some time to wrap your head around this concept, but when you
+            have used it a few times, it feels very intuitive and you finally
             start to see the truth.
           </p>
 
           <p>
-            "We can use 5 common tweens here instead of these property curves." - one will say 
-            and will be right. We can use 5 tweens instead of two property curves. 
-            One, delayed, for translateY property and four for squash&strech motion 
-            (two for squash and two for stretch). But there are few problems though. 
-            Even if we omit amount of code we will get, these 5 tweens should be precisely 
-            timed to get the same eventual motion. All this 
-            little timing nuances should be kept in your head while you are coding. Ugh.
-            Also maintaining such chain would be itchy.
-            By contrast, property curves are much more intuitive and convient way 
-            to correlate property change with time. 
-            Maitaining a property curve wouldn't be much harder than 
-            merely maintaining one clean svg file.
+            "We can use 5 common tweens here instead of these property curves." - one could say
+            and would be right. We can use 5 tweens instead of two property curves.
+            One, delayed, for translateY property and four for squash & strech motion
+            (two for squash and two for stretch). But there are few problems with this.
+            Even if we don't acknowledge the amount of code that would require, these 5 tweens
+            would need to be precisely
+            timed to get the same eventual motion. All of the
+            little timing nuances would need to be kept in your head while you are coding. Ugh.
+            Also maintaining such a chain of tweens would be annoying.
+            By contrast, property curves are much more intuitive and convenient way
+            to correlate property changes with time.
+            Maintaining a property curve wouldn't be much harder than
+            maintaining one clean svg file.
           </p>
 
-          <h3>More complex property curve</h3>
+          <h3>More complex property curves</h3>
 
           <p>
-            Consider the next more complex example, where the tween animation is helpless. 
-            Splitting a motion like that to bunch of tweens will be nightmare.
+            Consider the next more complex example, where the a tween animation is could not compete.
+            Splitting motion like this in to several tweens would be a nightmare to manage.
             It will also consist of two property curves just like the previous example 
             but it will have much more advanced curves so don't freak out, they are 
             so complicated only for demonstration purposes.
@@ -590,7 +588,7 @@ module.exports = React.createClass
           </EasingObjectGraph>
 
           <p>
-            We can insert inactive periods between the bounce ones 
+            We can insert inactive periods between the bounces
             to make some room for squash motion:
           </p>
 
@@ -632,9 +630,9 @@ module.exports = React.createClass
           </EasingObjectGraph>
 
           <p>
-            Don't freak out, it is actually an easy one. If you will take some time, you 
-            may notice that the pattern is repeatative. On every translateY period, 
-            we have according squash&streatch period and then it recur over and over.
+            Don't freak out, it is actually an easy one. If you take some time, you
+            may notice that the pattern is repetitive. On every translateY period,
+            we have according squash & streatch period which then recurs over and over.
             One such period period looks like this:
           </p>
 
@@ -675,35 +673,35 @@ module.exports = React.createClass
           <p>
             Whoo! This one is cute!
             <br />
-            Imagine you have to write a tween for every cube's movement. 
+            Imagine if you had to write a tween for every cube's movement.
             I can't.
             <br />
             <span className="highlight">Property curves</span> save us a lot of 
-            time and effort. Bring our work to the whole new level by allowing 
+            time and effort. They will bring our work to a whole new level by allowing
             us to intuitively and visually describe our motion intention.
           </p>
 
           <h2>Thinking in property curves</h2>
 
           <p>
-            Ok, now you have some clue what the heck property curves are and hopefully 
+            Ok, now you have a little clue as to what the heck property curves are, and are hopefully
             convinced that they might be useful. This section will 
-            help you to gain some skill how and when to use them. Generally, we can use curves in 
+            help you to gain some skills in how and when to use them. Generally, we can use curves for 
             <UniteLink link="https://vimeo.com/111574737">lots of different purposes</UniteLink>, 
-            but here we will talk with you on how to think in curves when you want to move an object 
-            on screen or transform it from one state into another.
+            but here we will talk with you about how to think in curves when you want to move an object
+            on screen or transform it from one state to another.
           </p>
 
           <p>
-            Consider the <UniteLink link="http://codepen.io/sol0mka/full/477056cb1ffe88c4bfbf8a3005d99496/">final demo</UniteLink>, particulary the 
-            part when mole deviates slightly back to inhale some air and then bend forward swiftly with his tongue out:
+            Consider the <UniteLink link="http://codepen.io/sol0mka/full/477056cb1ffe88c4bfbf8a3005d99496/">final demo</UniteLink>, particularly the
+            part where mole deviates slightly back to inhale some air and then bends forward swiftly with his tongue out:
           </p>
 
           <Vimeo id="137677120" name="Inhale" />
 
           <p>
-            We can describe the swinging motion with the next propety curve 
-            for <span className="highlight">skewX</span> property:
+            We can describe the swinging motion with the next property curve
+            for the <span className="highlight">skewX</span> property:
           </p>
 
           <EasingObjectGraph
@@ -718,7 +716,7 @@ module.exports = React.createClass
               "skewX(#{(75*o.easedP[0]).toFixed(2)}deg)"
             }
 
-            label="angle"
+            label="skewX angle"
             background="#50E3C2"
             path="M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100">
             
@@ -726,10 +724,14 @@ module.exports = React.createClass
 
           </EasingObjectGraph>
 
+          <p className="post__reverse-block">
+            <em>Y axis represents skewX angle</em>
+          </p>
+
           <p>
             As you can see, our curve goes <span className="highlight">above 0</span> slightly 
             to implement the backward move then it goes <span className="highlight">below 0</span> to 
-            make the forward move. This is base curve for our scene, we will use 
+            make the forward move. This is the base curve for our scene, we will use
             it more further on. The code:
           </p>
 
@@ -745,19 +747,19 @@ module.exports = React.createClass
                           var skewProgress = skewEasing(progress);
                           moleEl.style['transform'] = 'skewX(' + 75*skewProgress + 'deg)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
           
           <p>
-            Our mole moves now, but errr.. This motion doesn't convey too much information.
+            Our mole moves now, but err... this motion doesn't convey too much information.
             Lets add a secondary action to fulfill our scene.
-            We will rise mole's hand up(by rotating it) very fast when mole deviates 
-            backward, so our curve should rise steeply at the beginning. Then, when 
-            mole bends forward, we will rotate our hand to small negative number, so the curve 
-            goes below zero. After that, when mole moves to it's start position 
-            we will change hand's angle all way up to zero slowly:
+            We will rise the mole's hand up (by rotating it) very fast when the mole deviates
+            backward, so our curve should rise steeply at the beginning. Then, when the
+            mole bends forward, we will rotate the hand to a small negative number, so the curve
+            goes below zero. After that, when the mole moves to it's start position
+            we will change the hand's angle all way up to zero slowly:
           </p>
 
           <EasingObjectGraph
@@ -778,14 +780,21 @@ module.exports = React.createClass
               "rotate(#{(-200*angleP).toFixed(2)}deg)"
             }
 
-            label="angle"
+            label="hand's angle"
             background="#50E3C2"
             path="M0,100 C0,100 12.0486221,-124.260309 24,99.7583642 C28.9933624,142.723104 100,100 100,100">
             
             <MoleSample id="js-mole-sample-2" />
 
           </EasingObjectGraph>
+          
+          <p className="post__reverse-block">
+            <em>Y axis represents angle of the hand</em>
+          </p>
+          
+          <br />
 
+          <p>There is the full code. Lines 2, 3, 12 and 15 are new:</p>
           <CodeSample pen="95e3300c59686dc1d534d2b38c208ecc">
             { js: """var moleEl          = document.querySelector('#js-mole'),
                           moleHandEl      = document.querySelector('#js-mole-hand'),
@@ -803,7 +812,7 @@ module.exports = React.createClass
                           moleEl.style['transform']     = 'skewX(' + 75*skewProgress + 'deg)';
                           moleHandEl.style['transform'] = 'rotate(' + (-200*handAngleProgress) + 'deg)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
@@ -813,7 +822,7 @@ module.exports = React.createClass
             Luckily we can use the same 
             <span className="highlight">skew</span> curve for 
             <span className="highlight">translate</span> and <span className="highlight">rotate</span> properties.
-            This is highly illustrative situation - you will often reuse the same 
+            This is highly illustrative example - you will often reuse the same
             curves on a scene:
           </p>
 
@@ -837,13 +846,21 @@ module.exports = React.createClass
               "translate(#{(100*skewP).toFixed(2)}px, #{(-80*skewP).toFixed(2)}px) rotate(#{(-110*skewP).toFixed(2)}deg)"
             }
 
-            label="angle"
+            label="left hand's angle"
             background="#50E3C2"
             path="M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100">
             
             <MoleSample id="js-mole-sample-3" />
 
           </EasingObjectGraph>
+
+          <p className="post__reverse-block">
+            <em>Y axis represents angle and translation of the left hand</em>
+          </p>
+          
+          <br />
+          
+          <p>The full code. Lines 3 and 18 are new:</p>
 
           <CodeSample pen="f9b5528666780ef4e26e83fba7e4a4bb">
             { js: """var moleEl          = document.querySelector('#js-mole'),
@@ -865,18 +882,18 @@ module.exports = React.createClass
                           moleHandEl.style['transform'] = 'rotate(' + (-200*handAngleProgress) + 'deg)';
                           moleHandLeftEl.style['transform'] = 'translate(' + (100*skewProgress) + 'px,' + (-80*skewProgress) + 'px) rotate(' + (-110*skewProgress) + 'deg)';
                         }
-                      }).run();
+                      }).play();
               """
             }
           </CodeSample>
 
           <p>
-            We will continue working on secondary actions step by step making our scene 
+            We will continue working on secondary actions step by step to make our scene
             comprehensive. 
-            This is the mouth's turn now. 
+            It is the mouth's turn now.
             To implement mouth motion we need to scale it 
-            up <span className="highlight">above 1</span> conveying inhale and then scale it down to 
-            about <span className="highlight">.3</span> conveying exhale:
+            up <span className="highlight">above 1</span> to convey the inhale and then scale it down to
+            about <span className="highlight">.3</span> to convey the exhale:
           </p>
 
           <EasingObjectGraph
@@ -906,13 +923,21 @@ module.exports = React.createClass
               "scale(#{mouthP.toFixed(2)}) translateX(#{(-100*skewP).toFixed(2)}px)"
             }
 
-            label="scale"
+            label="mouth's scale"
             background="#50E3C2"
             path="M0,0 C0,-145.307194 29.1828098,57.0115012 32.0031223,63.7232245 C86.2226562,57.0115012 100,72.4825934 100,72.4825934">
             
             <MoleSample id="js-mole-sample-4" />
 
           </EasingObjectGraph>
+
+          <p className="post__reverse-block">
+            <em>Y axis represents scale of the mouth</em>
+          </p>
+          
+          <br />
+          
+          <p>The full code. Lines 4, 8 and 22 are new:</p>
 
           <CodeSample pen="8d52f3b9b4f35d80cf72bf4dce24276d">
             { js: """var moleEl          = document.querySelector('#js-mole'),
@@ -938,23 +963,23 @@ module.exports = React.createClass
                         moleHandLeftEl.style['transform'] = 'translate(' + (100*skewProgress) + 'px,' + (-80*skewProgress) + 'px) rotate(' + (-110*skewProgress) + 'deg)';
                         mouthEl.style['transform']        = 'scale(' + mouthProgress + ') translateX(' + (-100*skewProgress) + 'px)';
                       }
-                    }).run();
+                    }).play();
               """
             }
           </CodeSample>
 
           <p>
-            As you can notice, we've added some motion to the mouth's  
+            As you may notice, we've added some motion to the mouth's 
             <span className="highlight">translateX</span> property 
             by reusing the base <span className="highlight">skew</span> curve again. 
-            It adds kind of cartoony feel to the movement.
+            It adds a kind of cartoony feel to the movement.
           </p>
 
           <p>
             Ok cool. Lets add tongue's motion. We need to wrap it with 
             a <span className="highlight">overflow: hidden;</span> wrapper,
             then apply the very first basic <span className="highlight">skew</span> curve 
-            for <span className="highlight">translate</span> property:
+            for the <span className="highlight">translateX</span> property:
           </p>
 
           <EasingObjectGraph
@@ -968,7 +993,7 @@ module.exports = React.createClass
               "translateX(#{(-550*o.easedP[0]).toFixed(2)}px)"
             }
 
-            label="translateX"
+            label="tongue's translateX"
             background="#50E3C2"
             path="M0,100 C0,100 18.1450901,69.0663515 24.0949898,99.9609384 C30.0448895,130.855525 100,100 100,100">
             
@@ -981,6 +1006,10 @@ module.exports = React.createClass
             </div>
 
           </EasingObjectGraph>
+
+          <p className="post__reverse-block">
+            <em>Y axis represents tranlateX of the tongue</em>
+          </p>
 
           <p>
             Pretty simple and neat. Now we can add <span className="highlight">noize</span> curve to imitate 
@@ -1018,9 +1047,13 @@ module.exports = React.createClass
 
           </EasingObjectGraph>
 
+          <p className="post__reverse-block">
+            <em>Y axis represents Y position of the quadratic Bezier curve's handle of the tongue's path</em>
+          </p>
+
           <p>
-            We will reuse this noize curve further on shorlty. 
-            Meanwhile lets add the tongue to the entire scene:
+            We will reuse this noise curve shortly.
+            Meanwhile let's add the tongue to the entire scene:
           </p>
 
           <EasingObjectGraph
@@ -1075,10 +1108,10 @@ module.exports = React.createClass
 
 
           <p>
-            Few touches left. We see how mole blows air from his mouth, but his effort 
-            should be emphasized by adding some twitching to the whole mole's body. Luckily 
-            we already have our <span className="highlight">noize</span> curve to use here. 
-            We need add it as a cofficient to all small parts to make them twitch and wiggle:
+            Few touches left. We see how the mole blows air from his mouth, but his effort
+            should be emphasized by adding some twitching to the mole's entire body. Luckily
+            we already have our <span className="highlight">noise</span> curve to use here.
+            We need add it as a coefficient to all small parts to make them twitch and wiggle:
           </p>
 
           <EasingObjectGraph
@@ -1149,9 +1182,9 @@ module.exports = React.createClass
           </p>
 
           <p>
-            The latest touch would be to add saliva with <span className="highlight">Burst</span> module. 
-            In short, this module type allows us to grenerate various effects in declarative way. 
-            We will look at it in detail in dedicated tutorial. That's our entire scene 
+            The last touch would be to add saliva with a <span className="highlight">Burst</span> module.
+            In short, this module type allows us to generate various effects in declarative way.
+            We will look at it in detail in a dedicated tutorial. This is our entire scene
             with saliva added:
           </p>
 
@@ -1244,21 +1277,21 @@ module.exports = React.createClass
 
           <p className="post__reverse-block post__center-text">
             <em>
-              <UniteLink link="http://codepen.io/sol0mka/pen/dbb8241ed1e7eda8c58e850391f9a1a7">codepen</UniteLink> for the graph above.
+              <UniteLink link="http://codepen.io/sol0mka/pen/dbb8241ed1e7eda8c58e850391f9a1a7">codepen</UniteLink> for the graph above (lines 17-37 and 52 on js tab).
             </em>
           </p>
 
           <em>
             <i>Note</i>:
-            For simplisity's sake we have omited the eye motion in this tutorial.
+            For simplicity's sake we have omitted the eye motion in this tutorial.
           </em>
 
           <p>
             That's basically it. We have used 4 property curves to bring our mole to life. 
-            I hope you enjoined the process. Thinking in curves could be totally new  
-            mindset for you, but it gets very convinient and intuitive when you use 
-            it for a few times. So don't forget to get some practice in the appropriate 
-            section of this tutorial at the very end.
+            I hope you enjoyed the process. Thinking in curves could be a totally new
+            mindset for you, but it will be convenient and intuitive after you've used
+            it a few times. So don't forget to get some practice in the appropriate
+            section of this tutorial at the end.
           </p>
 
           <h2>Options</h2>
@@ -1273,9 +1306,9 @@ module.exports = React.createClass
             { js: """
                       var easing = mojs.easing.path('M0,100 ..', {
                         // options
-                        precompute: 140,  // default, could be in range of 100 - 10000
-                        eps:        0.01, // default
-                        rect:       100   // default
+                        precompute: 1450,  // default, could be in range of 100 - 10000
+                        eps:        0.001, // default
+                        rect:       100    // default
                       });
               """
             }
@@ -1283,31 +1316,31 @@ module.exports = React.createClass
 
           <p>
             To generate an easing function from a SVG path, 
-            the <span className="highlight">mo· js</span> should sample 
+            the <span className="highlight">mo· js</span> will sample
             path's coordinates values. 
             The <span className="highlight">precompute</span> option defines how 
-            much samples it should take from the path on initialization stage. 
+            many samples it should take from the path on initialization stage.
             This value could be in range of <span className="highlight">100 - 10000</span>.
-            More samples, means your result easing function would be more performant 
+            More samples means your resulting easing function would be more performant
             on runtime, but it will take longer to get all those samples.
           </p>
 
           <p>
-            The <span className="highlight">eps</span> option defines how precise will the 
-            result easing function be. Smaller <span className="highlight">eps</span> option is, more precisely it will work on during the runtime (but more slowly 
-            though). If you are using very big time resolution (long tween duration) and see that your path easing function gives to your motion some twitching, 
-            increase <span className="highlight">precompute</span> option and decrease 
+            The <span className="highlight">eps</span> option defines how precise the
+            resulting easing function will be. The smaller the <span className="highlight">eps</span> option is, the more precisely
+            it will work during the runtime (however it will also run more slowly). If you are using a very large time resolution (long tween duration) and see that your path easing function gives your motion some twitching,
+            increase the <span className="highlight">precompute</span> option and decrease
             the <span className="highlight">eps</span> one to solve the issue. 
-            In most tough cases <span className="highlight">precompute</span> of 3000 and 
+            In most tough cases a <span className="highlight">precompute</span> of 3000 and an
             <span className="highlight">eps</span> of 0.0001 should be enough.
           </p>
 
           <p>
-            The <span className="highlight">rect</span> option provides desired 
-            rectangle size, easing path was drawn into.
+            The <span className="highlight">rect</span> option provides the desired
+            rectangle size that the easing path is drawn into.
             By default the rectangle 
-            is <span className="highlight">100</span>(means 100x100), but you can 
-            specify any size that works good for you.
+            is <span className="highlight">100</span> (means 100x100), but you can
+            specify any size that works well for you.
           </p>
 
           <h2>Recap</h2>
@@ -1317,7 +1350,7 @@ module.exports = React.createClass
             <span className="highlight">mo· js</span> has <span className="highlight">path easing</span> that allows you to generate advanced easing functions from SVG 
             path coordinates. To do so the path's data should be sent to 
             the <span className="highlight">mojs.easing.path</span> method, 
-            the newely generated easing function will be returned back:
+            the newly generated easing function will be returned back:
           </p>
 
           <CodeSample>
@@ -1330,9 +1363,9 @@ module.exports = React.createClass
           </CodeSample>
 
           <p>
-            The <span className="highlight">path easing</span> also allows as to 
+            The <span className="highlight">path easing</span> also allows us to
             generate the <span className="highlight">property curves</span> - 
-            much more complex and powerfull easing paths, to descibe a property 
+            much more complex and powerful easing paths, to describe a property
             change in time with a graph.
           </p>
 
@@ -1341,7 +1374,7 @@ module.exports = React.createClass
             with <span className="highlight">precompute</span> and 
             <span className="highlight">eps</span> options. 
             The <span className="highlight">rect</span> option 
-            specifies the rectangle's size, easing path was drawn into.
+            specifies the rectangle's size that the easing path was drawn in to.
           </p>
 
           <p>
@@ -1350,7 +1383,7 @@ module.exports = React.createClass
             (or at <span className="highlight">rect</span> option's value that you have set). 
             This rule comes from the fact that the <span className="highlight">x</span> axis 
             of your path represents <span className="highlight">progress</span> and the 
-            progress can't go beyond 100% or before 0%. This restriction is must only for 
+            progress can't go beyond 100% or before 0%. This restriction is a must only for 
             <span className="highlight">x</span> values and doesn't apply 
             to <span className="highlight">y</span> values of your path which can take
             any value you want.
@@ -1359,15 +1392,19 @@ module.exports = React.createClass
           <h2>Thank you!</h2>
 
           <p>
-            Thanks a lot to the reader for time and effort in reading this tutorial! 
-            In a short future we are planning to add a page with a searchable list of path 
+            Thanks a lot to you, reader, for the time and effort it took to read this tutorial!
+            In the near future we are planning to add a page with a searchable list of path
             easings powered by live examples and graphs.
-            So developers can collaborate and share their easing paths and find ones 
+            Developers will be able to collaborate and share their easing paths and find ones
             that suite their current needs.
             <br />
-            Don't forget to do practice tasks from the next section.
+            Don't forget to do the practice tasks from the next section.
             <br />
-            Bunch of great stuff is comming up on other topics also so stay tuned! 
+            A bunch of great stuff is coming up on other topics also so stay tuned!
+          </p>
+          <p>
+            Big thanks to <UniteLink link="https://twitter.com/rachsmithtweets">Rachel Smith</UniteLink> for 
+            help in editing this tutorial!
           </p>
 
           <br />
@@ -1381,10 +1418,10 @@ module.exports = React.createClass
           <More label="Practice" className="is-h2 is-border-bottom">
             <p>
               <em>Note:</em>&nbsp;
-              Animations and curves are reflecting author's motion intention and in fact they 
-              are always unique like human's fingerprint are. Thus all answers listed in this 
-              section should be treated as "suggested answer" that post's author came with but 
-              never as a supreme court. 
+              Animations and curves are representative of an author's motion intention, in fact they
+              are always unique - like a human's fingerprint. Thus all of the answers listed in this
+              section should be treated as "suggested answer" that the post's author came up with but
+              not as a strict law.
             </p>
 
             <h3>Easing paths</h3>
@@ -1458,17 +1495,17 @@ module.exports = React.createClass
                   <p>
                     Hopefully you did it well. This easing is a good example of how 
                     you might want to work with user's attention when moving things around. 
-                    In the first stage of the curve, we moving our object very slowly, our 
+                    In the first stage of the curve, we are moving our object very slowly, our
                     message is: "Hey, I'm moving this thing to the right nice and slowly 
                     so it is clear for you what is happening and what is about to happen". 
                     <br />
-                    Then we have very fast curve's motion, the message is: 
-                    "Hey, you was ready for the movement, so I won't bother you with 
+                    Then we have a very fast curve's motion, the message is:
+                    "Hey, you were ready for the movement, so I won't bother you with
                     long animations, I'll just shoot this thing to the place where it 
                     should end".
                     <br />
                     The third curve's stage says: "Ok, that was fast I know, that's hypervelocity.  
-                    Everything is operating as expected, docking to the final destanation 
+                    Everything is operating as expected, docking to the final destination
                     platform".
                   </p>
 
@@ -1480,7 +1517,7 @@ module.exports = React.createClass
 
               <li>
                 <span>
-                  Add twitching at the start, to appeal user's attention before the move:
+                  Add twitching at the start, to appeal to user's attention before the move:
                 </span>
 
                 <EasingObjectGraph
@@ -1542,7 +1579,7 @@ module.exports = React.createClass
                   </p>
                   
                   <p>
-                    Twitching appeals user's attention even before the object going to move. 
+                    Twitching appeals to the user's attention even before the object going to move.
                     With it you can be sure that user's view is in the right spot just before 
                     the slow-ease-in curve's stage. "Hey, don't you see - I'm calling!"
                   </p>
@@ -1556,8 +1593,8 @@ module.exports = React.createClass
 
               <li>
                 <span>
-                  Add "elastic" move at the end, when movement slightly overlaps 
-                  the final position then goes backward:
+                  Add an "elastic" move at the end, when movement slightly overlaps
+                  the final position, then goes backward:
                 </span>
 
                 <EasingObjectGraph
@@ -1619,8 +1656,8 @@ module.exports = React.createClass
                   </p>
                   
                   <p>
-                    With elastic motion at the end we are adding the little physical detail, 
-                    while spending the same time declaring object's end position.
+                    With elastic motion at the end we are adding a little physical detail,
+                    while spending the same time declaring the object's end position.
                   </p>
                 </More>
 
@@ -1635,7 +1672,7 @@ module.exports = React.createClass
             <ul>
               <li>
                 <p>
-                  Add heartbeat scale property curve to describe the next effect:
+                  Add a heartbeat scale property curve to describe the next effect:
                 </p>
                 <EasingObjectGraph
                   curtainLabel = 'tap to see the result'
@@ -1645,7 +1682,7 @@ module.exports = React.createClass
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-0')
 
-                    mojs.h.style(@el, 'transform', "scale(#{o.easedP[0]})")
+                    mojs.h.style(@el, 'transform', "scale(#{o.easedP[0]}) translateZ(0)")
                     
                     ""
                   }
@@ -1699,10 +1736,10 @@ module.exports = React.createClass
                   </p>
 
                   <p>
-                    If you will compare the curve with <UniteLink link="https://mariamanna.files.wordpress.com/2009/06/cardiograph.jpg">real cardio graph</UniteLink>, 
-                    you will notice how different they are. That's because our understanding of 
-                    heartbeat differs from the real one. You often want to have "fake" common 
-                    motion over precise one for the sake of user's perception.
+                    If you compare the curve with a <UniteLink link="https://mariamanna.files.wordpress.com/2009/06/cardiograph.jpg">real cardio graph</UniteLink>,
+                    you will notice how different they are. That's because our understanding of a
+                    heartbeat differs from the real one. You often want to "fake" common
+                    motion over using a precise or realistic one, for the sake of user's perception.
                   </p>
 
                 </More>
@@ -1713,7 +1750,7 @@ module.exports = React.createClass
 
               <li>
                 <p>
-                  Alter the previous heartbeat scale property curve to describe the next squash&stretch effect:
+                  Alter the previous heartbeat, scale the property curve to describe the next squash & stretch effect:
                 </p>
 
                 <EasingObjectGraph
@@ -1779,9 +1816,9 @@ module.exports = React.createClass
                   </p>
 
                   <p>
-                    The graph was simply moved to zero baseline. This allows us to use it as 
-                    a cofficient graph, so we can substract curve's value from 1 for 
-                    scaleX and add curve's value to 1 for scaleY:
+                    The graph was simply moved to a zero baseline. This allows us to use it as
+                    a coefficient graph, so we can subtract the curve's value from 1 for
+                    scaleX and add the curve's value to 1 for scaleY:
                   </p>
                   <CodeSample>
                     { js: """
@@ -1802,7 +1839,7 @@ module.exports = React.createClass
 
               <li>
                 <p>
-                  With given translateX extreme easing, add angle property curve 
+                  Given the translateX extreme easing, add an angle property curve
                   to describe the next motion:
                 </p>
 
@@ -1813,7 +1850,7 @@ module.exports = React.createClass
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-1')
 
-                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing1(o.p))}deg)")
+                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing1(o.p))}deg) translateZ(0)")
                     
                     ""
                   }
@@ -1845,7 +1882,7 @@ module.exports = React.createClass
                     onUpdate = { (o)->
                       @el ?= document.querySelector('#js-property-curve-task-1a')
 
-                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*o.easedP[1]}deg)")
+                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*o.easedP[1]}deg) translateZ(0)")
                       
                       ""
                     }
@@ -1869,12 +1906,12 @@ module.exports = React.createClass
                   </p>
                   
                   <p>
-                    On maximum translateX velocity, the stick has the maximum angle deviation, 
-                    this technique is usually called <span className="highlight">drag</span> - 
-                    one of the fundamental animation priciples. 
-                    You can notice that the angle property curve is in fact the first half 
+                    On maximum translateX velocity, the stick has the maximum angle of deviation.
+                    This technique is usually called <span className="highlight">drag</span> -
+                    one of the fundamental animation principles.
+                    You may notice that the angle property curve is in fact the first half
                     of the <span className="highlight">translateX</span> property curve, 
-                    that was expanded to <span className="highlight">1</span> then copied 
+                    that was expanded to <span className="highlight">1</span>, then copied
                     and flipped vertically.
                   </p>
 
@@ -1886,7 +1923,7 @@ module.exports = React.createClass
 
               <li>
                 <p>
-                  Alter the previous angle property curve, to add the next vaciliation motion
+                  Alter the previous angle property curve, to add the next oscillating motion
                   at the end:
                 </p>
 
@@ -1898,7 +1935,7 @@ module.exports = React.createClass
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-2')
 
-                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg)")
+                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg) translateZ(0)")
                     
                     ""
                   }
@@ -1928,7 +1965,7 @@ module.exports = React.createClass
                     onUpdate = { (o)->
                       @el ?= document.querySelector('#js-property-curve-task-2a')
 
-                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg)")
+                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing2(o.p))}deg) translateZ(0)")
                       
                       ""
                     }
@@ -1951,8 +1988,8 @@ module.exports = React.createClass
                     </em>
                   </p>
                   <p>
-                    When the sticks stops, it's angle following thru and then come back. 
-                    You may know this animatio principle as <UniteLink link="https://www.youtube.com/watch?v=4OxphYV8W3E">follow thru</UniteLink>, 
+                    When the sticks stops, it's angle follows through and then comes back.
+                    You may know this animation principle as <UniteLink link="https://www.youtube.com/watch?v=4OxphYV8W3E">follow through</UniteLink>,
                     it adds a great deal of realism to a motion.
                   </p>
                 </More>
@@ -1963,8 +2000,8 @@ module.exports = React.createClass
 
               <li>
                 <p>
-                  For the previous task, add one more scale property curve for squash&stretch 
-                  effect (the stick was made fat just to empasize scaleX motion):
+                  For the previous task, add one more scale property curve for squash & stretch
+                  effect (the stick was made fat just to emphasize the scaleX motion):
                 </p>
 
 
@@ -1979,7 +2016,7 @@ module.exports = React.createClass
                   onUpdate = { (o)->
                     @el ?= document.querySelector('#js-property-curve-task-3')
 
-                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} )")
+                    mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} ) translateZ(0)")
                     
                     ""
                   }
@@ -2010,7 +2047,7 @@ module.exports = React.createClass
                     onUpdate = { (o)->
                       @el ?= document.querySelector('#js-property-curve-task-3a')
 
-                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} )")
+                      mojs.h.style(@el, 'transform', "translateX(#{180*o.easedP[0]}px) rotate(#{-140*(propCurveEasing3(o.p))}deg) scaleY(#{ 1 + propCurveEasing4(o.p)} ) scaleX(#{ 1 - propCurveEasing4(o.p)} ) translateZ(0)")
                       
                       ""
                     }
@@ -2035,11 +2072,11 @@ module.exports = React.createClass
 
                   <p>
                     The scale property curve was made from 
-                    the previous <span className="highlight">drag + follow thru</span> one, 
-                    the first "rise" stage was made slightly more steep and the vaciliation motion 
-                    stage was slightly delayed, it adds some gummy feeling to the motion. 
+                    the previous <span className="highlight">drag + follow through</span> one.
+                    The first "rise" stage was made slightly more steep and the oscillating motion
+                    stage was slightly delayed, it adds a gummy feeling to the motion.
                     You may know this technique 
-                    as <UniteLink link="https://www.youtube.com/watch?v=haa7n3UGyDc">squash&stretch</UniteLink> animation 
+                    as the <UniteLink link="https://www.youtube.com/watch?v=haa7n3UGyDc">squash & stretch</UniteLink> animation
                     principle.
                   </p>
 

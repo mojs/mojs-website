@@ -12,6 +12,10 @@
     position        fixed
     nw              50%
     margin-top      3.5*gs
+    transform       translateX(-50%)
+    margin-left     0*PX
+    .is-sidebar-open &
+      margin-left 90*PX
     &.is-hide
       display       none 
   &__header
@@ -21,8 +25,16 @@
   &__description
     color           c-orange
     font-size       16*PX
-    opacity         .5
+    opacity         .75
     margin-top      .8*gs
+    .is-safari &
+      font-weight 900
+  &__top-links
+    font-size       12*PX
+    text-align      center
+    padding         gs 0
+    .is-safari &
+      font-weight 900
   p
     // text-align      justify
     & + p
@@ -30,8 +42,12 @@
     +mobile()
       line-height   1.5
       text-align    left
+    &.post__reverse-block
+      text-align    center
   ul
     margin          4*gs 0
+    @media all and (max-width: 600px)
+      padding 0
     // max-width       50*gs
   li
     list-style      none
@@ -50,18 +66,27 @@
   em
     font-size       12*PX
     & + em
-      margin-left   1*gs 
+      margin-left   1*gs
+  height = 320
   .easing-object-graph
     margin          5*gs 0
-    height          320*PX
+    height          height*PX
     opacity         0
     transition      opacity .2s ease-out
     @media all and (max-width: 720px)
-      height        2*320*PX
+      height        2*height*PX
+      &.is-graph-less
+        height      height*PX
     &.is-shown
       opacity       1
   &__reverse-block
     margin-top     -4*gs
+    @media all and (max-width: 720px)
+      margin-top   gs
+    @media all and (max-width: 400px)
+      text-align center
+      em
+        font-size   11*PX
   &__center-text
     text-align      center
   &__orx-line
@@ -98,6 +123,8 @@
       margin        3*gs auto
   .cite
     margin          5*gs auto 8*gs
+    &.is-no-author
+      margin        5*gs auto
     +mobile()
       margin        3*gs 0 6*gs
       line-height   1.5
@@ -113,7 +140,6 @@
   .easing-graph
     & + p
       margin-top 5*gs 
-      
   @media all and (max-width: 720px)
     .easing-object-graph
       margin        3*gs 0
@@ -126,7 +152,6 @@
       .easing-graph
         border-bottom-left-radius BRADIUS
         border-top-right-radius   0
-  
   @media all and (max-width: 340px)
     .easing-object-graph
       margin          2*gs 0

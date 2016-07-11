@@ -21,7 +21,11 @@ Header = React.createClass
     setTimeout (=> @_toggleMobileMenu() if isLink or isLinkParent), 100
     e
 
-  componentDidMount:-> @_headEl = document.querySelector 'html'
+  componentDidMount:->
+    @_headEl = document.querySelector 'html'
+    @_tm = setTimeout (=> @setState({ isShow: true });), 100
+
+  componentWillUnmount:-> clearTimeout @_tm
 
   _onPin:->   @_headEl.classList.add     @state.headerPinClass
   _onUnpin:-> @_headEl.classList.remove  @state.headerPinClass
@@ -30,17 +34,18 @@ Header = React.createClass
     headerClass = if @state.isShowMenu then 'is-show-menu' else ''
     btnClass    = if @state.isShowMenu then 'is-open'      else ''
 
-    <Tapable className="header #{headerClass}" onTap=@_onTap>  
+    className = if @state.isShow then 'is-shown' else ''
+    <Tapable className="header #{headerClass} #{className}" onTap=@_onTap>  
       <Headroom onPin = {@_onPin} onUnpin = {@_onUnpin}>
         <Link to="app" className="header__logo-link">
-          <Icon className="header__logo" path="mojs-loop" />
+          <Icon className="header__logo" path="mojs-logo-triangle" />
         </Link>
         <div className="header__links">
           <div className="header__links-inner">
-            <UniteLink link="path-easing" className="header__link"> Tutorials </UniteLink>
+            <UniteLink link="/tutorials/easing/path-easing/" className="header__link"> Tutorials </UniteLink>
           </div>
           <div className="header__links-inner">
-            <UniteLink isDisabled="true" link="/" className="header__link"> APIs </UniteLink>
+            <UniteLink link="https://github.com/legomushroom/mojs/api/index.md" className="header__link"> APIs </UniteLink>
           </div>
           <div className="header__links-inner">
             <UniteLink

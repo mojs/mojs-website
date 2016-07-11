@@ -3,19 +3,82 @@
   <head>
     <meta charset="UTF-8">
     <title>mo · js - Motion Graphics For The Web</title>
+
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- facebook meta -->
+    <meta property="og:image" content="http://mojs.io/app/css/i/mojs-loop.png"/>
+    <meta property="og:title" content="• mo · js •"/>
+    <meta property="og:description" content="motion graphics library for the web"/>
+    <meta property="og:site_name" content="mojs website"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://mojs.io/" />
+
+    <!-- twitter meta -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://mojs.io/">
+    <meta name="twitter:title" content="• mo · js •">
+    <meta name="twitter:description" content="motion graphics library for the web">
+    <meta name="twitter:image" content="http://mojs.io/app/css/i/mojs-loop.png">
+    <meta name="twitter:site" content="mojs website">
+  <meta name="twitter:creator" content="@legomushroom">
+
   </head>
-  <body>
+  <body style="background: #3a0839">
+    <style>
+        .spinner{position:fixed;left:50%;top:50%;width:1.25rem;height:1.25rem; -webkit-transform: translate(-50%, -50%);
+           -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+             -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);}
+        .spinner__el{position:absolute;left:0;top:0;background-color:#ffe952;-webkit-transform:rotateY(90deg);transform:rotateY(90deg);background-size:auto 100%;width:100%;height:100%}.spinner__el--circle{-webkit-animation:spin 2s ease-out infinite;animation:spin 2s ease-out infinite}.spinner__el--rect{background-color:#fc46ad;-webkit-animation:spin 2s ease-out .666666666666667s infinite;animation:spin 2s ease-out .666666666666667s infinite}.spinner__el--cross{background-color:#31ffd1;-webkit-animation:spin 2s ease-out -.666666666666667s infinite;animation:spin 2s ease-out -.666666666666667s infinite}@-webkit-keyframes spin{75%{-webkit-transform:rotateY(90deg);transform:rotateY(90deg)}92%{-webkit-transform:rotateY(0);transform:rotateY(0)}100%{-webkit-transform:rotateY(-90deg);transform:rotateY(-90deg)}0%{-webkit-transform:rotateY(90deg);transform:rotateY(90deg)}86%{-webkit-transform:rotateY(0);transform:rotateY(0)}}@keyframes spin{75%{-webkit-transform:rotateY(90deg);transform:rotateY(90deg)}92%{-webkit-transform:rotateY(0);transform:rotateY(0)}100%{-webkit-transform:rotateY(-90deg);transform:rotateY(-90deg)}0%{-webkit-transform:rotateY(90deg);transform:rotateY(90deg)}86%{-webkit-transform:rotateY(0);transform:rotateY(0)}}
+    </style>
+
+
     <svg style="display:none;">
+      <path id="mojs-logo-triangle-shape" d="M15.1586992,1.77279907 C16.6170828,1.50849655 18.1651404,1.9781055 19.2730872,2.95036121 C20.3527158,3.84710192 20.9981331,5.11433813 21.7202454,6.28954042 C24.7408456,11.2935896 27.7579061,16.2988186 30.7773265,21.3028677 C31.3094713,22.2043281 31.8003189,23.1624248 31.9371898,24.2137353 C32.1684545,25.6650393 31.7590216,27.2390552 30.7431088,28.3198638 C29.9785193,29.1540686 28.9154096,29.6720544 27.8121826,29.8820805 C27.0074758,30.0460896 26.1827103,30.009512 25.3673842,30.0130518 C18.7598211,30.0118719 12.152258,30.0154116 5.5446949,30.010692 C4.01905577,30.0213113 2.43678039,29.5245641 1.34535256,28.4248768 C0.557164675,27.6296094 0.0627773639,26.5452611 0.0108607966,25.4243352 C-0.0705538202,24.1158017 0.31056098,22.8060883 0.992555886,21.6934219 C4.40371034,16.0191771 7.81840456,10.3472921 11.2460779,4.6836666 C12.107421,3.26304054 13.4855698,2.06541972 15.1586992,1.77279907 L15.1586992,1.77279907 Z M15.3616458,9.87768317 C14.9132754,10.0676506 14.5958764,10.4617446 14.3551723,10.8711775 C12.3150872,14.3354284 10.2785419,17.8008593 8.23727686,21.2627504 C7.97415426,21.6993215 7.7027722,22.1677505 7.70749189,22.6939957 C7.69451275,23.1152279 7.93757668,23.5164014 8.29391312,23.7311472 C8.7009862,23.9883702 9.19891328,24.0178682 9.66852222,24.021408 C14.0719911,24.0190481 18.4754599,24.0237678 22.8801087,24.0202281 C23.5196264,24.0308474 24.2948351,23.8621185 24.5862759,23.219061 C24.8505784,22.5642043 24.4765431,21.888109 24.1178468,21.3524245 C21.8488569,17.7973195 19.5940259,14.2339551 17.3214962,10.68239 C16.9297621,10.0393325 16.1108963,9.53196603 15.3616458,9.87768317 L15.3616458,9.87768317 Z" id="Shape" fill="#F34246"></path>
       <path id="mojs-loop-shape" d="M16,0C7.164,0,0,7.164,0,16c0,8.836,7.164,16,16,16c8.836,0,16-7.164,16-16C32,7.164,24.836,0,16,0z M16,23.877c-4.35,0-7.877-3.527-7.877-7.877c0-4.35,3.527-7.877,7.877-7.877c4.35,0,7.877,3.527,7.877,7.877 C23.877,20.35,20.35,23.877,16,23.877z"></path>
       <path id="twitter-shape" d="M10.064,29.838 C6.356,29.838 2.905,28.717 0,26.794 C0.514,26.856 1.036,26.889 1.566,26.889 C4.642,26.889 7.473,25.806 9.72,23.989 C6.847,23.934 4.423,21.976 3.587,19.284 C3.987,19.363 4.399,19.406 4.822,19.406 C5.421,19.406 6,19.323 6.551,19.168 C3.548,18.546 1.284,15.807 1.284,12.524 L1.284,12.439 C2.169,12.947 3.182,13.251 4.258,13.286 C2.496,12.072 1.337,9.997 1.337,7.647 C1.337,6.405 1.661,5.241 2.226,4.241 C5.466,8.339 10.303,11.037 15.76,11.319 C15.648,10.823 15.59,10.306 15.59,9.775 C15.59,6.033 18.529,3 22.155,3 C24.043,3 25.749,3.823 26.946,5.14 C28.442,4.836 29.847,4.272 31.116,3.496 C30.626,5.078 29.585,6.406 28.228,7.245 C29.558,7.08 30.822,6.716 32,6.176 C31.12,7.535 30.007,8.729 28.724,9.684 C28.738,9.975 28.744,10.267 28.744,10.56 C28.743,19.514 22.139,29.838 10.064,29.838"></path>
       <path id="dribbble-shape" d="M14.3725218,0.0815765895 C16.5768477,-0.139962666 18.8283993,0.0892158742 20.936885,0.775362534 C24.0864182,1.78791499 26.892871,3.81857576 28.8569018,6.47843578 C30.6848117,8.92370136 31.7730848,11.9092727 31.9647653,14.9559583 C32.1710302,18.0269508 31.4682016,21.156974 29.9479529,23.835585 C28.763145,25.9606951 27.0685781,27.7913455 25.0732951,29.1789174 C23.1856586,30.4678731 21.0285583,31.3720866 18.7721453,31.7533564 C16.3386361,32.1943514 13.8030362,32.0373989 11.4334205,31.3352791 C8.83601054,30.5637114 6.44208755,29.1157197 4.55236765,27.173258 C2.56889098,25.148153 1.13406507,22.5862148 0.464572243,19.8298219 C-0.188947207,17.1921853 -0.151444496,14.3885678 0.567357448,11.7682932 C1.05558718,9.97653368 1.86397893,8.27366768 2.93488965,6.75761691 C4.09469569,5.13461616 5.54966194,3.7213485 7.21367108,2.62059702 C9.35202006,1.21844104 11.8265044,0.330200582 14.3725218,0.0815765895 L14.3725218,0.0815765895 Z M13.4193548,3.90957818 C15.0445683,6.07691409 16.4497868,8.41199828 17.6748843,10.8387097 C19.9697077,9.81812353 22.1290967,8.37605222 23.7419355,6.39338038 C22.4666516,5.3403723 20.98306,4.55378794 19.4087203,4.09071813 C17.4686389,3.52051495 15.3889981,3.46130968 13.4193548,3.90957818 L13.4193548,3.90957818 Z M5.85870045,8.99765171 C5.07437428,10.1896725 4.43245771,11.4982277 4.12903226,12.8924286 C7.95548481,12.9787764 11.8026905,12.5498455 15.483871,11.5108639 C14.9142326,10.4016809 14.2615817,9.33532073 13.5924713,8.28159684 C12.7687857,7.02077864 11.8907125,5.79084909 10.9060111,4.64516129 C8.86790803,5.61955753 7.11390856,7.14714127 5.85870045,8.99765171 L5.85870045,8.99765171 Z M19.0967742,13.254258 C19.3894297,13.9053839 19.6714043,14.5607379 19.9498187,15.218206 C20.339314,15.1745157 20.7245369,15.096296 21.1154563,15.0582432 C23.7116168,14.735499 26.3519249,14.9426754 28.9032258,15.483871 C28.7864484,12.8687971 27.8087939,10.3129164 26.1746227,8.25806452 C24.2442356,10.4376451 21.7677007,12.0936472 19.0967742,13.254258 L19.0967742,13.254258 Z M3.61576017,16.0598654 C3.54976145,19.0305495 4.6300563,22.0053999 6.56486091,24.2580645 C7.72713313,22.4859314 9.17493665,20.906844 10.8047577,19.5541342 C12.6471641,18.0375438 14.7681546,16.857742 17.0322581,16.1022244 C16.7939679,15.5508632 16.5674881,14.9939468 16.309051,14.4516129 C12.2136567,15.7279376 7.89247729,16.1598604 3.61576017,16.0598654 L3.61576017,16.0598654 Z M20.6451613,17.7283283 C21.6284237,20.5366472 22.4250816,23.4089854 23.0222161,26.3225806 C25.8011884,24.4340076 27.7827851,21.4329191 28.3870968,18.1458773 C25.8557344,17.5761044 23.2238926,17.3648403 20.6451613,17.7283283 L20.6451613,17.7283283 Z M8.77419355,26.3478654 C10.6049943,27.7568131 12.8130931,28.6492907 15.0894119,28.8480993 C16.9682451,29.0353827 18.8784038,28.7386105 20.6451613,28.0622292 C20.0534576,24.8438354 19.2327298,21.6701015 18.1781051,18.5806452 C14.2742531,19.8887479 10.9321716,22.7592267 8.77419355,26.3478654 L8.77419355,26.3478654 Z"></path>
     </svg>
 
-    <main id="js-content"></main>
+    <main id="js-content">
+        <div class="spinner">
+            <div class="spinner__el spinner__el--circle"></div>
+            <div class="spinner__el spinner__el--rect"></div>
+            <div class="spinner__el spinner__el--cross"></div>
+        </div>
+    </main>
 
     <script src="app/vendor/prism.min.js"></script>
+
     <script src="dist/main.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-70377631-1', 'auto'); ga('send', 'pageview');
+    </script>
 <!-- 
     <script src="http://localhost:8080/webpack-dev-server.js"></script>
      -->

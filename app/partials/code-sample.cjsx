@@ -1,7 +1,7 @@
 React         = require 'react'
 {PrismCode}   = require 'react-prism'
 Tappable      = require 'react-tappable'
-mojs          = require 'mo-js'
+# mojs          = require 'mo-js'
 HeftyContent  = require 'partials/hefty-content'
 Pen           = require 'partials/codepen'
 
@@ -19,9 +19,7 @@ module.exports = React.createClass
   _showes6:-> @state.show isnt 'es6' and @setState show: 'es6'
   _showcs:->  @state.show isnt 'cs'  and @setState show: 'cs'
 
-  getInitialState:-> { show: 'js', isInit: false, isHidden: false }
-  _initPen:-> @setState('isInit': true, 'isHidden': false)
-  _hidePen:-> @setState 'isHidden': true
+  getInitialState:-> { show: 'js' }
     
   shouldComponentUpdate:(nextProps, nextState)->
     show = @state.show isnt nextState.show
@@ -54,8 +52,6 @@ module.exports = React.createClass
         <div className="code-sample__codes">{items}</div>
       </div>
       <div className="code-sample__pen">
-        <HeftyContent label = { 'tap to see the result' } onShow = @_initPen onHide = @_hidePen >
-          { if !@state.isInit or @state.isHidden then null else <Pen pen={@props.pen} /> }
-        </HeftyContent>
+        <Pen pen={@props.pen} />
       </div>
     </div>

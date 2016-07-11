@@ -5,15 +5,20 @@ UniteLink   = require '../partials/unite-link'
 Router      = require 'react-router'
 Link        = Router.Link
 Icon        = require '../partials/icon'
-MotionDemo  = require '../pages/motion-demo/motion-demo.cjsx'
+Pen         = require '../partials/codepen'
+# MotionDemo  = require '../pages/motion-demo/motion-demo.cjsx'
 ApiDemo     = require '../partials/api-demo'
 SocialNetworksAbout = require '../partials/social-networks-about'
 
 require '../css/pages/main-page'
 
 Main = React.createClass
+  getInitialState: -> { isShow: false }
+  componentDidMount:-> @_tm = setTimeout (=> @setState({ isShow: true });), 100
+  componentWillUnmount:-> clearTimeout @_tm
   render:->
-    <div className="page main-page">
+    className = if @state.isShow then 'is-shown' else ''
+    <div className="page main-page #{className}">
       <div className="main-page__content">
         <div className="motion-lettering"></div>
         
@@ -25,7 +30,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Fast</div>
                 <div className="feature__text">
-                  Silky smooth animations for the staggering user's experience.
+                  Silky smooth animations and effects for staggering user's experience.
                 </div>
               </div>
             </div>
@@ -34,7 +39,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Retina Ready</div>
                 <div className="feature__text">
-                  Screen density independent effects as a response to the modern web call.
+                  Screen density independent effects look good on any device.
                 </div>
               </div>
             </div>
@@ -55,7 +60,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Modular</div>
                 <div className="feature__text">
-                  Specific bundle for the current project's needs. Bye bye large file size overheads.
+                  Custom build for the current project's needs. Bye bye large file size overheads.
                 </div>
               </div>
             </div>
@@ -64,7 +69,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Robust</div>
                 <div className="feature__text">
-                  1000+ unit tests and ci techniques carve & backstrap the reliable tool.
+                  1100+ unit tests and ci techniques help us to carve & backstrap the reliable tool.
                 </div>
               </div>
             </div>
@@ -73,7 +78,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Open Sourced</div>
                 <div className="feature__text">
-                  Great growing community refines the tool fast and ships frequently.
+                  Great growing community refines mo· js fast and ships frequently.
                 </div>
               </div>
             </div>
@@ -100,7 +105,14 @@ Main = React.createClass
 
       <ApiDemo />
 
-      <MotionDemo />
+      <br />
+      <br />
+
+      <p>Quick demo:</p>
+
+      <Pen pen="4f1780feb76ffca8357c8a70513d02bb" height="500" />
+
+      { ### <MotionDemo /> ### }
       
       <div className="main-page__buttons [ grid grid--sliced1 grid--gutter-x6 ]">
         <div className="grid-bit grid-bit--4-12">
@@ -112,7 +124,7 @@ Main = React.createClass
         <div className="grid-bit grid-bit--4-12">
           <UniteLink
             type="button"
-            link="path-easing"
+            link="/tutorials/easing/path-easing/"
             className="button--green"> Learn </UniteLink>
         </div>
         <div className="grid-bit grid-bit--4-12">

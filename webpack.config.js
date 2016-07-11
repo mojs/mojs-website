@@ -1,4 +1,5 @@
-var path = require('path');
+var path    = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   watch: true,
@@ -8,7 +9,14 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.(jsx|es6.js)$/, exclude: /node_modules/, loaders: ['6to5-loader?optional=coreAliasing'] },
+      { test: /\.(jsx|es6.js|babel.js|babel.jsx|.js)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: [ 'es2015-loose', 'react', 'babel-preset-stage-2' ],
+          plugins: [ 'transform-runtime' ]
+        }
+      },
       { test: /\.coffee$/, exclude: /node_modules/, loaders: ['coffee-loader?bare=true'] },
       { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']},
       { test: /\.jade$/, loaders: ['jade'] },
@@ -26,12 +34,15 @@ module.exports = {
     filename: 'main.js',
     publicPath: 'dist/'
   },
+  // plugins: [new webpack.optimize.UglifyJsPlugin()],
+  // plugins: [],
   resolve: {
     root: [path.resolve('./app/'), path.resolve('./app/css/'), path.resolve('./app/partials/')],
     moduleDirectories: ['node_modules'],
     target: 'node',
     extensions: [
-      '', '.js', '.jsx', '.es6',
+      '', '.js', '.jsx', '.es6', '.es6.js',
+      '.babel.jsx', '.babel.js',
       '.styl',   '.jade',
       '.coffee', '.cjsx',
       '.html',

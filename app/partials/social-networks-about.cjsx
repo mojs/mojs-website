@@ -11,6 +11,6 @@ module.exports = React.createClass
         <SocialNetworks />
       </div>
       <div className="social-networks-about__text">
-        <a className="social-networks-about__link" href="https://twitter.com/legomushroom">@legomushroom</a> 2015 MIT
+        <a className="social-networks-about__link" href="https://twitter.com/legomushroom">@legomushroom</a> 2016 MIT
       </div>
     </div>

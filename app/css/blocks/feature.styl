@@ -13,10 +13,12 @@
     letter-spacing  1.7*PX
     margin-bottom   gs
   &__text
-    opacity         .5
+    opacity         .65
     font-size       12*PX
     letter-spacing  PX
     line-height     1.85
+    .is-safari &
+      font-weight 900
   &--retina
     {el}__image
       rect 72*PX

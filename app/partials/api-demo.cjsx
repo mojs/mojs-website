@@ -13,12 +13,12 @@ module.exports = React.createClass
     if !@burst?
       @burst = new mojs.Burst
         parent:       document.querySelector('#js-burst-container')
-        shape:        'circle'
         radius:       { 15: 50 }
-        fill:         ['deeppink', 'cyan', 'orange']
-        x: '50%',     y: '50%'
-        isRunLess:    true
-    @burst.run()
+        children:
+          fill:         ['deeppink', 'cyan', 'orange']
+          radius:       7
+    
+    @burst.replay()
 
   render:->
     mainClass = if @state.shown is 'result' then 'is-result' else ''
@@ -33,17 +33,19 @@ module.exports = React.createClass
               <pre>
                 <PrismCode className="language-javascript api-demo__code api-demo__code--normal">
                   { """var burst = new Burst({
-                        shape:    'circle',
-                        fill:     [ 'deeppink', 'cyan', 'orange' ],
-                        x: '50%', y: '50%'
+                        radius:   { 15: 50 }
+                        children: {
+                          fill:   [ 'deeppink', 'cyan', 'orange' ],
+                      }
                     });
                     """}
                 </PrismCode>
                 <PrismCode className="language-javascript api-demo__code api-demo__code--mobile">
                   { """var burst = new Burst({
-                        shape:    'circle',
-                        fill:     [ 'deeppink', 'cyan', 'orange' ],
-                        x: '50%', y: '50%'
+                        radius:   { 15: 50 }
+                        children: {
+                          fill:   [ 'deeppink', 'cyan', 'orange' ],
+                        }
                     });
                     """}
                 </PrismCode>
@@ -57,7 +59,7 @@ module.exports = React.createClass
             <Tapable className="code-block__body" id="js-burst-container" onTap=@runBurst>
               <pre>
                 <PrismCode className="language-markup">
-                  {"""\n\n\n\n\n\n"""}
+                  {"""\n\n\n\n\n\n\n"""}
                 </PrismCode>
               </pre>
             </Tapable>
@@ -69,9 +71,8 @@ module.exports = React.createClass
         <Tapable className="api-demo__button api-demo__button--code #{codeBtnClass}" onTap=@showCode>Code</Tapable>
         <Tapable className="api-demo__button api-demo__button--result #{resultBtnClass}" onTap=@showResult >Result</Tapable>
       </div>
-      
       <div className="api-demo__more code-block__footer">
-        See more <Link link="tutorials">tutorials</Link> or <Link link="/" isDisabled="true">docs</Link>. Inspire at <Link link="https://github.com/legomushroom/mojs">demos</Link>.
+        See more <Link link="/tutorials/easing/path-easing/">tutorials</Link> or <Link link="/" isDisabled="true">docs</Link>. Inspire at <Link link="https://github.com/legomushroom/mojs">demos</Link>.
       </div>
 
     </div>

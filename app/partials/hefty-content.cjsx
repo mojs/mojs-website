@@ -39,7 +39,7 @@ module.exports = React.createClass
       onUpdate: (p)=> @_curtainEl.style.opacity = 1-p
       onComplete: => @_curtainEl.style.display = 'none'; @props.onShow?()
     @_curtainShowTween?.stop()
-    @_curtainHideTween.run()
+    @_curtainHideTween.play()
 
   _showCurtain:()->
     @_curtainEl ?= @refs.curtain.getDOMNode()
@@ -51,15 +51,21 @@ module.exports = React.createClass
       onUpdate:(p)=> @_curtainEl.style.opacity = p
       onComplete: => @_curtainEl.style.opacity = 1; @props.onHide?()
     @_curtainHideTween?.stop()
-    @_curtainShowTween.run()
+    @_curtainShowTween.play()
 
   render:->
+    p = @props
     visibility = if !@state.isShow then 'hidden' else 'visible'
+
+    children = if @_isShow then p.children else null
 
     style =
       opacity:    if !@state.isShow then 0 else 1
       visibility: if @props.isVisibilityToggle then visibility else null
-      cursor: 'default'
+      cursor:     'default'
+
+    minHeight = if p.minHeight? then "#{p.minHeight}px" else 'none'
+    minWidth = if p.minWidth? then "#{p.minWidth}px" else 'none'
 
     <div  className = "hefty-content #{@props.className or ''}"
           style     = style
@@ -68,15 +74,15 @@ module.exports = React.createClass
       <div
         className = "hefty-content__inner"
         onTap     = { @_onHide }
-        style     = { cursor: 'default' } >
+        style     = { cursor: 'default', minHeight: minHeight, minWidth: minWidth } >
 
-        <Tappable className="hefty-content__curtain" ref="curtain" style = { display: 'block' } onTap = {@_onShow} stopPropagation = {true}>
+        <Tappable className="hefty-content__curtain" ref="curtain" style = { display: 'block', minHeight: minHeight } onTap = {@_onShow} stopPropagation = {true}>
           <div className="hefty-content__curtain-label">
             {@props.label || 'tap to see'}
           </div>
         </Tappable>
 
-        {@props.children}
+        {children}
 
       </div>
 
