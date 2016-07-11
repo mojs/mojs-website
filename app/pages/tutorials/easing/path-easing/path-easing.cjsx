@@ -16,7 +16,6 @@ Resizable         = require 'react-component-resizable'
 
 More  = require('partials/more.babel.jsx').default
 
-
 HeftyContent        = require 'partials/hefty-content'
 DisqusComments      = require 'partials/disqus-comments'
 SocialNetworksAbout = require 'partials/social-networks-about'
@@ -1417,7 +1416,7 @@ module.exports = React.createClass
 
           <More label="Practice" className="is-h2 is-border-bottom">
             <p>
-              <em>Note:</em>&nbsp;
+              <em>Note:</em>  
               Animations and curves are representative of an author's motion intention, in fact they
               are always unique - like a human's fingerprint. Thus all of the answers listed in this
               section should be treated as "suggested answer" that the post's author came up with but
