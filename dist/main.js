@@ -35857,7 +35857,7 @@
 	      }, "mo · js on GitHub")), React.createElement(More, {
 	        "label": "Practice",
 	        "className": "is-h2 is-border-bottom"
-	      }, React.createElement("p", null, React.createElement("em", null, "Note:"), "Animations and curves are representative of an author\'s motion intention, in fact they\nare always unique - like a human\'s fingerprint. Thus all of the answers listed in this\nsection should be treated as \"suggested answer\" that the post\'s author came up with but\nnot as a strict law."), React.createElement("h3", null, "Easing paths"), React.createElement("ul", {
+	      }, React.createElement("p", null, React.createElement("em", null, "Note:"), " Animations and curves are representative of an author\'s motion intention, in fact they\nare always unique - like a human\'s fingerprint. Thus all of the answers listed in this\nsection should be treated as \"suggested answer\" that the post\'s author came up with but\nnot as a strict law."), React.createElement("h3", null, "Easing paths"), React.createElement("ul", {
 	        "className": "task-list"
 	      }, React.createElement("li", null, React.createElement("span", null, "Draw an extreme-ease-in-out easing function (yep I did it in this tutorial), \nthen generate easing function from it. Make the stick to move 180px right with \nthis generated easing to get the next result:"), React.createElement(EasingObjectGraph, {
 	        "curtainLabel": 'tap to see the result',

@@ -1415,8 +1415,7 @@ module.exports = React.createClass
 
           <More label="Practice" className="is-h2 is-border-bottom">
             <p>
-              <em>Note:</em>  
-              Animations and curves are representative of an author's motion intention, in fact they
+              <em>Note:</em> Animations and curves are representative of an author's motion intention, in fact they
               are always unique - like a human's fingerprint. Thus all of the answers listed in this
               section should be treated as "suggested answer" that the post's author came up with but
               not as a strict law.
