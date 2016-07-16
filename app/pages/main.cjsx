@@ -71,7 +71,7 @@ Main = React.createClass
                 <div className="feature__image"></div>
                 <div className="feature__header">Robust</div>
                 <div className="feature__text">
-                  1100+ unit tests and ci techniques help us to carve & backstrap the reliable tool.
+                  1580+ unit tests and ci techniques help us to carve & backstrap the reliable tool.
                 </div>
               </div>
             </div>

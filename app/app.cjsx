@@ -7,7 +7,6 @@ Tappable = require 'react-tappable'
 require './css/main.styl'
 # mojs   = require('mo-js')
 
-
 unloadEvent = if 'onpagehide' in window then 'pagehide' else 'beforeunload';
 window.addEventListener unloadEvent, ->
   sessionStorage.setItem('beforeUnloadURL', window.location.href)

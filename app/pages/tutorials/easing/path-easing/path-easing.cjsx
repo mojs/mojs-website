@@ -79,8 +79,7 @@ module.exports = React.createClass
           </p>
 
           <p>
-            Fortunately <span className="highlight">mo· js</span>
-            &nbsp;has the most comprehensive set of easing functions available on the modern web. Besides&nbsp;
+            Fortunately <span className="highlight">mo· js</span> has the most comprehensive set of easing functions available on the modern web. Besides&nbsp;
               <UniteLink link="/easing/basic" isDisabled="true">
                 Base Easing Functions
               </UniteLink>, 

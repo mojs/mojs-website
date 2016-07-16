@@ -27698,7 +27698,7 @@
 	      "className": "feature__header"
 	    }, "Robust"), React.createElement("div", {
 	      "className": "feature__text"
-	    }, "1100+ unit tests and ci techniques help us to carve \& backstrap the reliable tool."))), React.createElement("div", {
+	    }, "1580+ unit tests and ci techniques help us to carve \& backstrap the reliable tool."))), React.createElement("div", {
 	      "className": "grid-bit grid-bit--4-12"
 	    }, React.createElement("div", {
 	      "className": "feature feature--open-sourced"
@@ -31594,11 +31594,19 @@
 	      "link": "/",
 	      "isDisabled": "true",
 	      "className": "tutorials-sidebar__link"
-	    }, " Tween           "), React.createElement(UniteLink, {
+	    }, " Tween    "), React.createElement(UniteLink, {
 	      "link": "/",
 	      "isDisabled": "true",
 	      "className": "tutorials-sidebar__link"
-	    }, " Timeline        ")), React.createElement(ORXLine, null)), React.createElement(SocialNetworks, {
+	    }, " Timeline "), React.createElement(UniteLink, {
+	      "link": "/",
+	      "isDisabled": "true",
+	      "className": "tutorials-sidebar__link"
+	    }, " HTween "), React.createElement(UniteLink, {
+	      "link": "/",
+	      "isDisabled": "true",
+	      "className": "tutorials-sidebar__link"
+	    }, " OTween   ")), React.createElement(ORXLine, null)), React.createElement(SocialNetworks, {
 	      "className": "tutorials-sidebar__social-networks"
 	    }));
 	  }
@@ -34947,7 +34955,7 @@
 	        "author": "Stanislaw Ulam"
 	      }, "Using a term like nonlinear science is like referring to the \nbulk of zoology as the study of non-elephant animals."), React.createElement("p", null, "Animation with equal interim spacing (ie. with linear easing) can\nbe dull, or make our brain respond with suspicion.\nBy contrast, excellently crafted easing appeals to the user\'s attention,\nand raises their curiosity, thus draws them in.\nThat\'s why it\'s so crucial to embrace full control over easing functions."), React.createElement("p", null, "Fortunately ", React.createElement("span", {
 	        "className": "highlight"
-	      }, "mo· js"), "has the most comprehensive set of easing functions available on the modern web. Besides ", React.createElement(UniteLink, {
+	      }, "mo· js"), " has the most comprehensive set of easing functions available on the modern web. Besides ", React.createElement(UniteLink, {
 	        "link": "/easing/basic",
 	        "isDisabled": "true"
 	      }, "Base Easing Functions"), ", ", React.createElement(UniteLink, {
@@ -39719,7 +39727,7 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'dissapears'
+	            'disappears'
 	          ),
 	          '.'
 	        ),
@@ -39848,7 +39856,7 @@
 	        _react2.default.createElement(
 	          _codeSample2.default,
 	          { pen: '8a4d6ffc83e6c8633b26f0691055cdad' },
-	          { js: 'const shiftCurve = mojs.easing.path( \'M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0\' );\nconst scaleCurveBase = mojs.easing.path( \'M0,100 C21.3776817,95.8051376 50,77.3262711 50,-700 C50,80.1708527 76.6222458,93.9449005 100,100\' );\nconst scaleCurve = (p) => { return 1 + scaleCurveBase(p); };\nconst nScaleCurve = (p) => { return 1 - scaleCurveBase(p)/10; };\n\nconst circle = new mojs.Shape({\n  shape:        \'rect\',\n  fill:         \'#F64040\',\n  radius:       10,\n  x:            { [-125]  : 125, easing: shiftCurve },\n  scaleX:       { 1 : 1, curve: scaleCurve },\n  scaleY:       { 1 : 1, curve: nScaleCurve },\n  origin:       { \'0 50%\' : \'100% 50%\', easing: shiftCurve },\n  isForce3d:    true,\n  \n  isYoyo:         true,\n  delay:        500,\n  duration:     800,\n  repeat:       999,\n}).play();'
+	          { js: 'const shiftCurve = mojs.easing.path( \'M0,100 C50,100 50,100 50,50 C50,0 50,0 100,0\' );\nconst scaleCurveBase = mojs.easing.path( \'M0,100 C21.3776817,95.8051376 50,77.3262711 50,-700 C50,80.1708527 76.6222458,93.9449005 100,100\' );\nconst scaleCurve = (p) => { return 1 + scaleCurveBase(p); };\nconst nScaleCurve = (p) => { return 1 - scaleCurveBase(p)/10; };\n\nconst circle = new mojs.Shape({\n  shape:        \'rect\',\n  fill:         \'#F64040\',\n  radius:       10,\n  x:            { [-125]  : 125, easing: shiftCurve },\n  scaleX:       { 1 : 1, curve: scaleCurve },\n  scaleY:       { 1 : 1, curve: nScaleCurve },\n  origin:       { \'0 50%\' : \'100% 50%\', easing: shiftCurve },\n  isForce3d:    true,\n  \n  isYoyo:       true,\n  delay:        500,\n  duration:     800,\n  repeat:       999,\n}).play();'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -40140,7 +40148,7 @@
 	        _react2.default.createElement(
 	          'h2',
 	          null,
-	          'Tweenable interface'
+	          'Tweenable Interface'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -40185,7 +40193,7 @@
 	        _react2.default.createElement(
 	          _codeSample2.default,
 	          { pen: '911ca9f311423e52a80f4509574925bc' },
-	          { js: 'const shape = new mojs.Shape({\n  // shape properties which we have already used\n  shape:          \'rect\',\n  stroke:         \'cyan\',\n  angle:          { [-360] : 0 },\n  \n  // tween properties\n  duration:       600,\n  delay:          200,\n  repeat:         0,\n  speed:          1,\n  yoyo:           false,\n  easing:         \'sin.out\',\n  backwardEasing: \'sin.in\',\n  yoyo:           true,\n\n  // callbacks\n  onStart (isForward, isYoyo) {\n    //...\n  },\n  onRepeatStart (isForward, isYoyo) {\n    //...\n  },\n  onUpdate (ep, p, isForward, isYoyo) {\n    //...\n  },\n  onRepeatComplete (isForward, isYoyo) {\n    //...\n  },\n  onComplete (isForward, isYoyo) {\n    //...\n  },\n  onProgress (p, isForward, isYoyo) {\n    //...\n  },\n  onPlaybackStart () {},\n  onPlaybackPause () {},\n  onPlaybackStop () {},\n  onPlaybackComplete () {},\n})\n// tween public methods\n.play()\n.playBackward()\n.pause()\n.stop()\n.replay()\n.replayBackward()\n.setProgress()\n.setSpeed()\n.reset()'
+	          { js: 'const shape = new mojs.Shape({\n  // shape properties which we have already used\n  shape:          \'rect\',\n  stroke:         \'cyan\',\n  angle:          { [-360] : 0 },\n  \n  // tween properties\n  duration:       600,\n  delay:          200,\n  repeat:         0,\n  speed:          1,\n  yoyo:           false,\n  easing:         \'sin.out\',\n  backwardEasing: \'sin.in\',\n  yoyo:           true,\n\n  // callbacks\n  onStart (isForward, isYoyo) {\n    //...\n  },\n  onRepeatStart (isForward, isYoyo) {\n    //...\n  },\n  onUpdate (ep, p, isForward, isYoyo) {\n    //...\n  },\n  onRepeatComplete (isForward, isYoyo) {\n    //...\n  },\n  onComplete (isForward, isYoyo) {\n    //...\n  },\n  onProgress (p, isForward, isYoyo) {\n    //...\n  },\n  onRefresh (isBefore) {\n    //...\n  },\n  onPlaybackStart () {},\n  onPlaybackPause () {},\n  onPlaybackStop () {},\n  onPlaybackComplete () {},\n})\n// tween public methods\n.play()\n.playBackward()\n.pause()\n.stop()\n.replay()\n.replayBackward()\n.setProgress()\n.setSpeed()\n.reset()'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -41860,7 +41868,7 @@
 	          'Next:  ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
-	            { link: '/tutorials/burst', className: 'highlight' },
+	            { link: '/tutorials/burst/', className: 'highlight' },
 	            'Burst'
 	          )
 	        ),

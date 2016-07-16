@@ -335,7 +335,7 @@ const polygon = new mojs.Shape({
 
 
           <p>
-            If you will translate this code sample to proper English, you will have something like this —  we have a <span className="highlight">orange</span> <span className="highlight">polygon</span> of <span className="highlight">65px radius</span> right in the middle of the screen(by default), when animation starts — it rotates from <span className="highlight">-120</span> to <span className="highlight">-40</span> degrees, shifts <span className="highlight">180px</span> to the right starting from <span className="highlight">-200px</span> and <span className="highlight">scale</span>s from <span className="highlight">0</span> to <span className="highlight">1.3</span> concurrently. That happens during <span className="highlight">800ms</span> and repeats <span className="highlight">10</span> times with default <span className="highlight">easing</span> and <span className="highlight">sin.in</span> easing when moving backward in <span className="highlight">yoyo</span> period. When animation ends, the shape <span className="highlight">dissapears</span>.
+            If you will translate this code sample to proper English, you will have something like this —  we have a <span className="highlight">orange</span> <span className="highlight">polygon</span> of <span className="highlight">65px radius</span> right in the middle of the screen(by default), when animation starts — it rotates from <span className="highlight">-120</span> to <span className="highlight">-40</span> degrees, shifts <span className="highlight">180px</span> to the right starting from <span className="highlight">-200px</span> and <span className="highlight">scale</span>s from <span className="highlight">0</span> to <span className="highlight">1.3</span> concurrently. That happens during <span className="highlight">800ms</span> and repeats <span className="highlight">10</span> times with default <span className="highlight">easing</span> and <span className="highlight">sin.in</span> easing when moving backward in <span className="highlight">yoyo</span> period. When animation ends, the shape <span className="highlight">disappears</span>.
           </p>
 
           <p>
@@ -385,7 +385,7 @@ const circle = new mojs.Shape({
   origin:       { '0 50%' : '100% 50%', easing: shiftCurve },
   isForce3d:    true,
   
-  isYoyo:         true,
+  isYoyo:       true,
   delay:        500,
   duration:     800,
   repeat:       999,
@@ -518,7 +518,7 @@ const circle = new mojs.Shape({
           </p>
 
 
-          <h2>Tweenable interface</h2>
+          <h2>Tweenable Interface</h2>
 
           <p>
             <span className="highlight">Shape</span> obeys <span className="highlight">tweenable</span> interface thus it has the same <span className="highlight">tween properties</span>, <span className="highlight">callbacks</span> and <span className="highlight">public methods</span> as any <UniteLink link="https://github.com/legomushroom/mojs/api/tweens/tween.md">tween</UniteLink> has:
@@ -559,6 +559,9 @@ const circle = new mojs.Shape({
     //...
   },
   onProgress (p, isForward, isYoyo) {
+    //...
+  },
+  onRefresh (isBefore) {
     //...
   },
   onPlaybackStart () {},
@@ -1655,7 +1658,7 @@ const heart = new mojs.Shape({
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
             <br />
-            Next: &nbsp;<UniteLink link="/tutorials/burst" className="highlight">Burst</UniteLink>
+            Next: &nbsp;<UniteLink link="/tutorials/burst/" className="highlight">Burst</UniteLink>
           </p>
 
           <SocialNetworksAbout className="post__social-networks-about" />
