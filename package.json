@@ -62,6 +62,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-preset-stage-2": "^6.11.0",
+    "babel-runtime": "^6.9.2",
     "cjsx-loader": "^2.0.1",
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.9.1",
