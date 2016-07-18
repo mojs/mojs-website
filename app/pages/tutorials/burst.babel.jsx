@@ -142,7 +142,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/api/burst.md">Burst API</UniteLink> as reference.
+            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as reference.
           </p>
 
           <p>
@@ -302,7 +302,7 @@ burst
           <h2> Recap </h2>
 
           <p>
-            That's basically the burst, as I said you already know it so we won't go thru the children options again, instead let's jog thru some use cases in the next section which will help as to gain some intuition over where and how to use the bursts. As you remember, - <span className="highlight">Burst</span> is just a composition of bunch of <span className="highlight">ShapeSwirls</span>. There is the main swirl in the center of the burst but it has no visual shape. Also it has no tween properties and it's durations is calculated regarding duration of the children. All child swirls use the main one as <span className="highlight">parent</span>. You can set properties of <span className="highlight">children</span> with the appropriate property. Please, use the <UniteLink link="/tutorials/burst.md">Burst API</UniteLink> as the reference.
+            That's basically the burst, as I said you already know it so we won't go thru the children options again, instead let's jog thru some use cases in the next section which will help as to gain some intuition over where and how to use the bursts. As you remember, - <span className="highlight">Burst</span> is just a composition of bunch of <span className="highlight">ShapeSwirls</span>. There is the main swirl in the center of the burst but it has no visual shape. Also it has no tween properties and it's durations is calculated regarding duration of the children. All child swirls use the main one as <span className="highlight">parent</span>. You can set properties of <span className="highlight">children</span> with the appropriate property. Please, use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as the reference.
           </p>
 
           <h2> Use Cases </h2>
@@ -662,12 +662,9 @@ burst
           <h2> Recap </h2>
 
           <p>
-            Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes bunch of child <span className="highlight">ShapeSwirls</span> forming radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls and could not be set either. To control child swirls, pass the <span className="highlight">ShapeSwirl</span> properties to the <span className="highlight">children</span> property of the main swirl. You can find exhaustive API reference at <UniteLink>Burst API</UniteLink> section.
+            Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes bunch of child <span className="highlight">ShapeSwirls</span> forming radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls and could not be set either. To control child swirls, pass the <span className="highlight">ShapeSwirl</span> properties to the <span className="highlight">children</span> property of the main swirl. You can find exhaustive API reference at <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> section.
           </p>
-
-          <p>
             
-          </p>
 
           <h2>Thank you!</h2>
 
