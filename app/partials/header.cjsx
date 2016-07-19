@@ -42,10 +42,10 @@ Header = React.createClass
         </Link>
         <div className="header__links">
           <div className="header__links-inner">
-            <UniteLink link="/tutorials/easing/path-easing/" className="header__link"> Tutorials </UniteLink>
+            <UniteLink link="/tutorials/shape/" className="header__link"> Tutorials </UniteLink>
           </div>
           <div className="header__links-inner">
-            <UniteLink link="https://github.com/legomushroom/mojs/api/index.md" className="header__link"> APIs </UniteLink>
+            <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/index.md" className="header__link"> APIs </UniteLink>
           </div>
           <div className="header__links-inner">
             <UniteLink

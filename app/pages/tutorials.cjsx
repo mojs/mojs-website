@@ -74,10 +74,10 @@ module.exports = React.createClass
     @burst.replay()
 
   _redirect:->
-    if @context.router.getCurrentPath() is '/tutorials'
+    if @context.router.getCurrentPath() is '/tutorials/'
       # setTimeout =>
       # @context.router.transitionTo('/tutorials/easing/path-easing')
-      @context.router.transitionTo('/tutorials/shape')
+      @context.router.transitionTo('/tutorials/shape/')
       # , 1
 
   render:()->

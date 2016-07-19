@@ -42,13 +42,13 @@ const BurstPage = new React.createClass({
           <ORXLine className="post__orx-line" />
 
           <Cite>
-            Please make sure you are confortable with <UniteLink link="/tutorials/shape/">Shapes & ShapeSwirl</UniteLink> before proceeding with this tutorial. Undestanding those modules is crucial for understanding the <span className="highlight">Burst</span>.
+            Please make sure you are comfortable with <UniteLink link="/tutorials/shape/">Shapes & ShapeSwirl</UniteLink> before proceeding with this tutorial. Understanding those modules is crucial for understanding the <span className="highlight">Burst</span>.
           </Cite>
 
           <h2> Burst </h2>
           
           <p>
-            <span className="highlight">Burst</span> is higher order module that creates sophisticated visual effects in any part of the screen you want. You can think of <span className="highlight">Burst</span> as particle emmiter that composes bunch of <span className="highlight">ShapeSwirl</span>s together, creating a circle of particles.
+            <span className="highlight">Burst</span> is higher order module that creates sophisticated visual effects in any part of the screen you want. You can think of <span className="highlight">Burst</span> as particle emitter that composes bunch of <span className="highlight">ShapeSwirl</span>s together, creating a circle of particles.
           </p>
 
           <p>
@@ -88,7 +88,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            There is few more properties that <span className="highlight">Burst</span> implements over <span className="highlight">ShapeSwirl</span>  to control the radial shape behaviour that particles compose. The first one is the <span className="highlight">count</span> property that sets amount of particles:
+            There is few more properties that <span className="highlight">Burst</span> implements over <span className="highlight">ShapeSwirl</span>  to control the radial shape behavior that particles compose. The first one is the <span className="highlight">count</span> property that sets amount of particles:
           </p>
 
           <CodeSample pen="fe6f9d1476aae148f1cfb36f599c92ff">
@@ -119,7 +119,7 @@ const BurstPage = new React.createClass({
           </p>
 
           <p>
-            It is very important to note here that since the main swirl of <span className="highlight">Burst</span> module has no actual shape - it completely have no style atributtes that define shape's presentation - all of them among which are the <span className="highlight">stroke</span> or <span className="highlight">strokeWidth</span> or <span className="highlight">fill</span> are completely useless.
+            It is very important to note here that since the main swirl of <span className="highlight">Burst</span> module has no actual shape - it completely have no style attributes that define shape's presentation - all of them among which are the <span className="highlight">stroke</span> or <span className="highlight">strokeWidth</span> or <span className="highlight">fill</span> are completely useless.
           </p>
 
           <p>
@@ -127,7 +127,7 @@ const BurstPage = new React.createClass({
           </p>
 
           <p>
-            Nonetheless, all <span className="highlight">proprties</span> that control shape position, parent and opacity are present:
+            Nonetheless, all <span className="highlight">properties</span> that control shape position, parent and opacity are present:
           </p>
 
           <CodeSample pen="dd9e8ce40b04df492bbf500616ddb815">
@@ -142,7 +142,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/api/burst.md">Burst API</UniteLink> as reference.
+            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as reference.
           </p>
 
           <p>
@@ -218,11 +218,11 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            The first parameter in <span className="highlight">stagger</span> function is <span className="highlight">start</span> value, all subsequent steps will be added to that start value which is fairy optional tho and can be ommited. If you just write <span className="highlight">stagger(25)</span> - this means stagger with step of <span className="highlight">25</span>, starting from <span className="highlight">0</span>.
+            The first parameter in <span className="highlight">stagger</span> function is <span className="highlight">start</span> value, all subsequent steps will be added to that start value which is fairy optional tho and can be omitted. If you just write <span className="highlight">stagger(25)</span> - this means stagger with step of <span className="highlight">25</span>, starting from <span className="highlight">0</span>.
           </p>
 
           <p>
-            In the demo above, that's exact the same circe, but we have <span className="highlight">staggered</span> the <span className="highlight">delay</span> property so it looks rather spiral now.
+            In the demo above, that's exact the same circle, but we have <span className="highlight">staggered</span> the <span className="highlight">delay</span> property so it looks rather spiral now.
           </p>
 
           <p>
@@ -254,7 +254,7 @@ const BurstPage = new React.createClass({
           <h3>Property Maps</h3>
 
           <p>
-            Property Map was designed to express sequential values. You can use it to generate values that repeat over and over but are mapped to children length. Basically it is just an array that maps its values to children regarding child index with <span className="highlight">mod</span> function. So if you have <span className="highlight">property map</span> with <span className="highlight">3 values</span> and burst has <span className="highlight">5 children</span>, then <span className="highlight">4</span>th and <span className="highlight">5</span>th item will recieve <span className="highlight">0</span>th and <span className="highlight">1</span>st values from the map respecively:
+            Property Map was designed to express sequential values. You can use it to generate values that repeat over and over but are mapped to children length. Basically it is just an array that maps its values to children regarding child index with <span className="highlight">mod</span> function. So if you have <span className="highlight">property map</span> with <span className="highlight">3 values</span> and burst has <span className="highlight">5 children</span>, then <span className="highlight">4</span>th and <span className="highlight">5</span>th item will receive <span className="highlight">0</span>th and <span className="highlight">1</span>st values from the map respectively:
           </p>
 
           <CodeSample pen="c3c518a84fea019d715cad07e87c29bf">
@@ -274,7 +274,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            So starting from 12 o'clock clockwise children <span className="highlight">fill</span>  roperty gets values of <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>, <span className="highlight">yellow</span> and then again starting from the beggining of the property map - <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>.
+            So starting from 12 o'clock clockwise children <span className="highlight">fill</span> property gets values of <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>, <span className="highlight">yellow</span> and then again starting from the beginning of the property map - <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>.
           </p>
 
           <p>
@@ -302,13 +302,13 @@ burst
           <h2> Recap </h2>
 
           <p>
-            That's basically the burst, as I said you already know it so we won't go thru the children options again, instead let's jog thru some use cases in the next section which will help as to gain some intuition over where and how to use the bursts. As you remember, - <span className="highlight">Burst</span> is just a composition of bunch of <span className="highlight">ShapeSwirls</span>. There is the main swirl in the center of the burst but it has no visual shape. Also it has no tween properties and it's durations is calculated regarding duration of the children. All child swirls use the main one as <span className="highlight">parent</span>. You can set properties of <span className="highlight">children</span> with the appropriate property. Please, use the <UniteLink link="/tutorials/burst.md">Burst API</UniteLink> as the reference.
+            That's basically the burst, as I said you already know it so we won't go thru the children options again, instead let's jog thru some use cases in the next section which will help as to gain some intuition over where and how to use the bursts. As you remember, - <span className="highlight">Burst</span> is just a composition of bunch of <span className="highlight">ShapeSwirls</span>. There is the main swirl in the center of the burst but it has no visual shape. Also it has no tween properties and it's durations is calculated regarding duration of the children. All child swirls use the main one as <span className="highlight">parent</span>. You can set properties of <span className="highlight">children</span> with the appropriate property. Please, use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as the reference.
           </p>
 
           <h2> Use Cases </h2>
 
           <Cite>
-            Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the <span className="highlight">Babel</span> tab of the pens and I highly encorage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (codepen can contain bundeled code) or it could be too large to understand sparingly, but you can return to them later, - after you will complete this tutorial. I will leave a little (×) mark for you to indicate that you can skip reading the source code of the codepen for now.
+            Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the <span className="highlight">Babel</span> tab of the pens and I highly encourage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (Codepen can contain bundled code) or it could be too large to understand sparingly, but you can return to them later, - after you will complete this tutorial. I will leave a little (×) mark for you to indicate that you can skip reading the source code of the Codepen for now.
           </Cite>
 
           <p>
@@ -318,7 +318,7 @@ burst
           <h3>Microconfirmations</h3>
 
           <p>
-            First what comes in mind when I see the default burst - is the famous twitter's fav animation. Animations like that are usually called <span className="highlight">microconfirmations</span> but I've used to call them <span className="highlight">microcelebrations</span> because of their festivity.
+            First what comes in mind when I see the default burst - is the famous Twitter's fav animation. Animations like that are usually called <span className="highlight">microconfirmations</span> but I've used to call them <span className="highlight">microcelebrations</span> because of their festivity.
           </p>
 
           <p>
@@ -328,23 +328,23 @@ burst
           <Pen pen="cb910fce2e9ed27f902ae7f895bbb9ac" height="500" />
 
           <p>
-            Here above, we have declared a burst with 5 particles (which is by default) with a burst's radius transition form 4 to 19. There are 2 strategies for bursts like that - one is to scale children down (dy default), the scond one is to animate <span className="highlight">strokeDashoffset</span> on children which we have used here.
+            Here above, we have declared a burst with 5 particles (which is by default) with a burst's radius transition form 4 to 19. There are 2 strategies for bursts like that - one is to scale children down (by default), the second one is to animate <span className="highlight">strokeDashoffset</span> on children which we have used here.
           </p>
 
           <p>
-            The next step is to add two more shapes to the scene - one circle with <span className="highlight">strokeWidth</span> animation and a cutom one - the star with <span className="highlight">elastic.out</span> transition for the <span className="highlight">scale</span>(click anywhere to see):
+            The next step is to add two more shapes to the scene - one circle with <span className="highlight">strokeWidth</span> animation and a custom one - the star with <span className="highlight">elastic.out</span> transition for the <span className="highlight">scale</span>(click anywhere to see):
           </p>
 
           <Pen pen="080045a3420abd5344443aff91c85fa2" height="500" />
 
           <p>
-            I love using the burst module over sprites because it turns out to be a way flexible over prerendered sequence of images, - you can play with easings, time, delay, colors etc. Also you can even change shapes with no effort at all - for instance if you want to add stars instead of lines(click anywhere to see):
+            I love using the burst module over sprites because it turns out to be a way flexible over pre-rendered sequence of images, - you can play with easings, time, delay, colors etc. Also you can even change shapes with no effort at all - for instance if you want to add stars instead of lines(click anywhere to see):
           </p>
 
           <Pen pen="0fd14523d76f93865539f1f011682da9" height="500" />
 
           <p>
-            Ok, lets redo the later twitter love animation too. There is the burst part of the sequence(click anywhere to see):
+            Ok, lets redo the later Twitter love animation too. There is the burst part of the sequence(click anywhere to see):
           </p>
 
           <Pen pen="28b429cd2d5ae8c0dd0f10cecd6d0bd0" height="500" />
@@ -354,7 +354,7 @@ burst
           </p>
 
           <p>
-            The next step is to add the circle shape and heart animations almost identical to ones we have used in the twitter fav scene(click anywhere to see):
+            The next step is to add the circle shape and heart animations almost identical to ones we have used in the Twitter fav scene(click anywhere to see):
           </p>
 
           <Pen pen="e3751855536c67dc6f57f9e74e5e347d" height="500" />
@@ -388,7 +388,7 @@ burst
           <Pen pen="afbfb59f00d5dfb8b28fc97510fcc167" height="500"></Pen>
 
           <p>
-            As you can see, the second burst is amost the default one, we have only changed the main <span className="highlight">radius</span> to <span className="highlight">0 : 30</span>. As for children, we tweaked the <span className="highlight">shape</span> to <span className="highlight">line</span> value, and made the <span className="highlight">scaleX</span> to fade out from <span className="highlight">1</span> to <span className="highlight">0</span>.
+            As you can see, the second burst is almost the default one, we have only changed the main <span className="highlight">radius</span> to <span className="highlight">0 : 30</span>. As for children, we tweaked the <span className="highlight">shape</span> to <span className="highlight">line</span> value, and made the <span className="highlight">scaleX</span> to fade out from <span className="highlight">1</span> to <span className="highlight">0</span>.
           </p>
 
           <p>
@@ -418,7 +418,7 @@ burst
           <Pen pen="ogOYJj" height="500" />
 
           <em>
-            Note that the demo was made a while ago so it contains depreacated syntax.
+            Note that the demo was made a while ago so it contains deprecated syntax.
           </em>
 
           <p>
@@ -553,13 +553,13 @@ burst
           <Pen pen="6caf96461207a5caa9226fbd2631569d" height="500" />
 
           <p>
-            The effect is a drip more modest than the previous one. As you can see, I havn't reacreated exact the same sequence here, but rather made a bit different one.
+            The effect is a drip more modest than the previous one. As you can see, I haven't recreated exact the same sequence here, but rather made a bit different one.
           </p>
 
           <h3>The sleepy mole</h3>
 
           <p>
-            Ok. Enough distraction. Lets create something less obvious. Recall this demo with the mole(×):
+            OK. Enough distraction. Lets create something less obvious. Recall this demo with the mole(×):
           </p>
 
           <Pen pen="477056cb1ffe88c4bfbf8a3005d99496" height="600" />
@@ -581,7 +581,7 @@ burst
           </em>
 
           <p>
-            Ok. Recalling the mole demo, what else did you notice? Probably that confetti that appear when cube hits the floor. Right! 
+            OK. Recalling the mole demo, what else did you notice? Probably that confetti that appear when cube hits the floor. Right! 
           </p>
 
           <p>
@@ -621,7 +621,7 @@ burst
           <h3>The dust trail</h3>
 
           <p>
-            That's it. Ok, lets recall another demo, rember this one from previous tutorial? Did I notice that the dust trail effect is much easier with burst(×)?
+            That's it. OK, lets recall another demo, remember this one from previous tutorial? Did I notice that the dust trail effect is much easier with burst(×)?
           </p>
 
           <Pen pen="633e6aa52d40691cca2f2cda91650bae" height="500"></Pen>
@@ -662,17 +662,14 @@ burst
           <h2> Recap </h2>
 
           <p>
-            Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes bunch of child <span className="highlight">ShapeSwirls</span> forming radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls and could not be set either. To control child swirls, pass the <span className="highlight">ShapeSwirl</span> properties to the <span className="highlight">children</span> property of the main swirl. You can find exhaustive api reference at <UniteLink>Burst API</UniteLink> section.
+            Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes bunch of child <span className="highlight">ShapeSwirls</span> forming radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls and could not be set either. To control child swirls, pass the <span className="highlight">ShapeSwirl</span> properties to the <span className="highlight">children</span> property of the main swirl. You can find exhaustive API reference at <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> section.
           </p>
-
-          <p>
             
-          </p>
 
           <h2>Thank you!</h2>
 
           <p>
-            I happy you've made it here! It was a long and intence journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'Love <3.'}
+            I happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">github repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">github</UniteLink>. {'Love <3.'}
           </p>
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>

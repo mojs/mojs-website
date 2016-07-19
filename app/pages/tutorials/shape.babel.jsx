@@ -56,7 +56,7 @@ const ShapePage = new React.createClass({
             Hey Machine! I want a dust trail after this element when it moves!
           </Cite>
           <p>
-            ...and appropriate effects should appear. Most importantly, <span className="highlight">Shape</span> is a tiny bit that can be composed into more mature modules like <span className="highlight"><UniteLink link="/tutorials/burst/">Burst</UniteLink></span> or <span className="highlight">Stagger</span>  which we will discuss shortly in the upcoming tutorials, right now I should make sure you are comfortable with <UniteLink link="https://github.com/legomushroom/mojs/api/shape.md">Shape APIs</UniteLink> and use cases.
+            And appropriate effects should appear. Most importantly, <span className="highlight">Shape</span> is a tiny bit that can be composed into more mature modules like <span className="highlight"><UniteLink link="/tutorials/burst/">Burst</UniteLink></span> or <span className="highlight">Stagger</span>  which we will discuss shortly in the upcoming tutorials, right now I should make sure you are comfortable with <UniteLink link="https://github.com/legomushroom/mojs/api/shape.md">Shape APIs</UniteLink> and use cases.
           </p>
 
           <p>
@@ -97,7 +97,7 @@ const ShapePage = new React.createClass({
           </CodeSample>
 
           <p>
-            The entire list of shape properties with comments could be found at <UniteLink link="https://github.com/legomushroom/mojs/api/shape.md">Shape API</UniteLink> section.
+            The entire list of shape properties with comments could be found at <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/shape.md">Shape API</UniteLink> section.
           </p>
 
           <p>
@@ -525,7 +525,7 @@ const circle = new mojs.Shape({
           <h2>Tweenable Interface</h2>
 
           <p>
-            <span className="highlight">Shape</span> obeys <span className="highlight">tweenable</span> interface thus it has the same <span className="highlight">tween properties</span>, <span className="highlight">callbacks</span> and <span className="highlight">public methods</span> as any <UniteLink link="https://github.com/legomushroom/mojs/api/tweens/tween.md">tween</UniteLink> has:
+            <span className="highlight">Shape</span> obeys <span className="highlight">tweenable</span> interface thus it has the same <span className="highlight">tween properties</span>, <span className="highlight">callbacks</span> and <span className="highlight">public methods</span> as any <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/tweens/tween.md">tween</UniteLink> has:
           </p>
 
           <CodeSample pen="911ca9f311423e52a80f4509574925bc">
@@ -996,7 +996,7 @@ const heart = new mojs.Shape({
           <h2>Recap</h2>
 
           <p>
-            That was very fast intro to the <span className="highlight">Shape</span> module. You can use <UniteLink link="https://github.com/legomushroom/mojs/api/shape.md">Shape APIs</UniteLink> and <UniteLink link="https://github.com/legomushroom/mojs/api/shape-swirl.md">ShapeSwirl API</UniteLink> sections as reference further on. What is important at this point — is that you should understand the ability to create a <span className="highlight">Shape</span> in any part of the screen or HTMLElement. If you want to animate some property — you add a <span className="highlight">delta</span> object that describes the transition of that property. You can chain the shape transitions with <span className="highlight">then</span> calls and <span className="highlight">tune</span> new properties when you want. Tweenable interface allows you to work with <span className="highlight">Shape</span> same as you work with any other <span className="highlight">Tween</span>. Now you probably asking yourself - Why do we need something as simple as an animatable shape? In the next section I will cover few use cases for shapes but most importantly it will become crystal clear why do we need shapes in the next <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink>. Probably, you can treat this tutorial as finished at this point, the further sections are rather optional and were written just for fun. So you can skip reading them in favor of <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink> but I highly encourage you to read them to gain solid understanding of the shapes.
+            That was very fast intro to the <span className="highlight">Shape</span> module. You can use <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/shape.md">Shape APIs</UniteLink> and <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/shape-swirl.md">ShapeSwirl API</UniteLink> sections as reference further on. What is important at this point — is that you should understand the ability to create a <span className="highlight">Shape</span> in any part of the screen or HTMLElement. If you want to animate some property — you add a <span className="highlight">delta</span> object that describes the transition of that property. You can chain the shape transitions with <span className="highlight">then</span> calls and <span className="highlight">tune</span> new properties when you want. Tweenable interface allows you to work with <span className="highlight">Shape</span> same as you work with any other <span className="highlight">Tween</span>. Now you probably asking yourself - Why do we need something as simple as an animatable shape? In the next section I will cover few use cases for shapes but most importantly it will become crystal clear why do we need shapes in the next <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink>. Probably, you can treat this tutorial as finished at this point, the further sections are rather optional and were written just for fun. So you can skip reading them in favor of <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink> but I highly encourage you to read them to gain solid understanding of the shapes.
           </p>
 
           <h2>Use Cases</h2>
