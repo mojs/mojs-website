@@ -39810,7 +39810,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Delta can also have it\'s own explicit ',
+	          'Delta can also have its own explicit ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -40303,7 +40303,7 @@
 	            { className: 'highlight' },
 	            'tune'
 	          ),
-	          ' any of it\'s properties before starting the animation. The ',
+	          ' any of its properties before starting the animation. The ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -40697,7 +40697,7 @@
 	            { className: 'highlight' },
 	            'stroke'
 	          ),
-	          ' property on it\'s tag, so it was left unattended.'
+	          ' property on its tag, so it was left unattended.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -41203,7 +41203,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Lets start with the simple intro sequence, it was composed of custom "speech bubble" shapes and few built in ones.'
+	          'Let\'s start with the simple intro sequence, it was composed of custom "speech bubble" shapes and few built in ones.'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '2ef10ed42ff535182c31cd1dbb81e453', height: '500' }),
 	        _react2.default.createElement(
@@ -41283,7 +41283,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Now, lets finally compose these short scenes into one:'
+	          'Now, let\'s finally compose these short scenes into one:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '39427561a8a0b15d7896480a7d96d3d1', height: '700' }),
 	        _react2.default.createElement(
@@ -41436,7 +41436,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'It was composed of bunch of swirls, lets spend some time and see how exactly you can build something like that. First, you want to make the swirls move downward, - somewhere into the ground:'
+	          'It was composed of bunch of swirls, let\'s spend some time and see how exactly you can build something like that. First, you want to make the swirls move downward, - somewhere into the ground:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '80d765ff22ae515cb28a78c0ec5686c9', height: '500' }),
 	        _react2.default.createElement(
@@ -41641,7 +41641,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s basically exact the same principle we have used in this tune demo:'
+	          'That\'s basically exact the same principle we have used in this tune demo (click somewhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'fcf6121653db713d8567271d3e8eea10', height: '200' }),
 	        _react2.default.createElement(
@@ -41676,7 +41676,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Every piece of this sequence is composed of shapes - ripple inside a modal, few details in the top and bottom right corners, background spread effect, modal shape itself and it\'s corner are shapes too.'
+	          'Every piece of this sequence is composed of shapes - ripple inside a modal, few details in the top and bottom right corners, background spread effect, modal shape itself and its corner are shapes too.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -42177,7 +42177,7 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ' as particle emitter that composes bunch of ',
+	          ' as particle emitter that composes a bunch of ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42204,7 +42204,7 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          ', mojs takes care about all bootstrapping work, creating as little container as possible and positioning the effect for you.'
+	          ', mojs takes care about all bootstrapping work, creating as narrow container as possible and positioning the effect for you.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -42221,13 +42221,13 @@
 	            { className: 'highlight' },
 	            'ShapeSwirl'
 	          ),
-	          ' that holds bunch of child ',
+	          ' that holds a bunch of child ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'ShapeSwirls'
 	          ),
-	          '. Nonetheless, you can control each of the child swirls. Pictorily it looks like this:'
+	          '. Nonetheless, you can control each of the child swirls. Pictorially it looks like this:'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -42243,7 +42243,7 @@
 	            { className: 'highlight' },
 	            'shape'
 	          ),
-	          ' nor any presentation properties and in fact is ',
+	          ' nor any presentation properties and in fact, is ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42282,7 +42282,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'There is few more properties that ',
+	          'There are few more properties that ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42310,7 +42310,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The particles of the burst evenly placed in the circle that has 360 degree which you can change with the the ',
+	          'The particles of the burst evenly placed in the circle that has 360 degrees which you can change with the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42330,7 +42330,7 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            '30 degree'
+	            '30 degrees'
 	          ),
 	          ' of sufficient place for particles.'
 	        ),
@@ -42366,7 +42366,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Also the main swirl of the burst have no ',
+	          'Also, the main swirl of the burst have no ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42384,7 +42384,7 @@
 	            { className: 'highlight' },
 	            'duration'
 	          ),
-	          ', the later is computed automatically regarding the ',
+	          ', the later one gets computed automatically regarding the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42453,7 +42453,7 @@
 	            { link: 'https://github.com/legomushroom/mojs/blob/master/api/burst.md' },
 	            'Burst API'
 	          ),
-	          ' as reference.'
+	          ' as the reference.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -42586,7 +42586,7 @@
 	            { className: 'highlight' },
 	            'Stagger Strings'
 	          ),
-	          ' were designed to express continious numeric values with some defined step (see delay property on children):'
+	          ' were designed to express continuous numeric values with some defined step (see delay property on children):'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
@@ -42648,7 +42648,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Every numeric value can be expressed with stagger stings. Also they can contain ',
+	          'Every numeric value can be expressed with stagger stings. Also, they can contain ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42674,7 +42674,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Property Map was designed to express sequential values. You can use it to generate values that repeat over and over but are mapped to children length. Basically it is just an array that maps its values to children regarding child index with ',
+	          'Property Map was designed to express sequential values. You can use it to generate values that repeat over and over but are mapped to children length. Basically, it is just an array that maps its values to children regarding child index with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42773,7 +42773,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Property maps work with any property and property forms, in fact that\'s just a prism(or multiplexer) that feeds children with properties by virtue of modulus function. Good aid if you want to set some property on child explicitly.'
+	          'Property maps work with any property and property forms, in fact, that\'s just a prism(or multiplexer) that feeds children with properties by virtue of modulus function. Good aid if you want to set some property on child explicitly.'
 	        ),
 	        _react2.default.createElement(
 	          'h2',
@@ -42819,7 +42819,7 @@
 	            { className: 'highlight' },
 	            'ShapeSwril'
 	          ),
-	          '. Also since the ',
+	          '. Also, since the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42870,19 +42870,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s basically the burst, as I said you already know it so we won\'t go thru the children options again, instead let\'s jog thru some use cases in the next section which will help as to gain some intuition over where and how to use the bursts. As you remember, - ',
+	          'That\'s basically the burst, as I said you already know it so we won\'t go thru the children options again, instead, let\'s jog thru some use cases in the next section which will help as to gain some intuition over where and how to use the bursts. As you remember, - ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ' is just a composition of bunch of ',
+	          ' is just a composition of a bunch of ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'ShapeSwirls'
 	          ),
-	          '. There is the main swirl in the center of the burst but it has no visual shape. Also it has no tween properties and it\'s durations is calculated regarding duration of the children. All child swirls use the main one as ',
+	          '. There is the main swirl in the center of the burst but it has no visual shape. Also, it has no tween properties and its durations is calculated regarding the duration of the children. All child swirls use the main one as a ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -42938,7 +42938,7 @@
 	            { className: 'highlight' },
 	            'ShapeSwirl'
 	          ),
-	          ' has numerous application fields, among which are motion graphics, animation or UI. In contrary to ',
+	          ', has numerous application fields, among which are motion graphics, animation or UI. In contrary to ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: '/tutorials/shape/' },
@@ -42949,22 +42949,22 @@
 	        _react2.default.createElement(
 	          'h3',
 	          null,
-	          'Microconfirmations'
+	          'Micro Confirmations'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'First what comes in mind when I see the default burst - is the famous Twitter\'s fav animation. Animations like that are usually called ',
+	          'First what comes to mind when I see the default burst - is the famous Twitter\'s fav animation. Animations like that are usually called ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'microconfirmations'
+	            'micro confirmations'
 	          ),
 	          ' but I\'ve used to call them ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'microcelebrations'
+	            'micro celebrations'
 	          ),
 	          ' because of their festivity.'
 	        ),
@@ -42977,7 +42977,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Here above, we have declared a burst with 5 particles (which is by default) with a burst\'s radius transition form 4 to 19. There are 2 strategies for bursts like that - one is to scale children down (by default), the second one is to animate ',
+	          'Here above, we have declared a burst with 5 particles (which is by default) with a burst\'s radius transition from 4 to 19. There are 2 strategies for bursts like that - one is to scale children down (by default), the second one is to animate ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43012,13 +43012,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'I love using the burst module over sprites because it turns out to be a way flexible over pre-rendered sequence of images, - you can play with easings, time, delay, colors etc. Also you can even change shapes with no effort at all - for instance if you want to add stars instead of lines(click anywhere to see):'
+	          'I love using the burst module over sprites because it turns out to be a way flexible over pre-rendered sequence of images, - you can play with easings, time, delay, colors etc. Also, you can even change shapes with no effort at all - for instance, if you want to add stars instead of lines(click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '0fd14523d76f93865539f1f011682da9', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Ok, lets redo the later Twitter love animation too. There is the burst part of the sequence(click anywhere to see):'
+	          'Ok, let\'s redo the later Twitter love animation too. There is the burst part of the sequence(click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '28b429cd2d5ae8c0dd0f10cecd6d0bd0', height: '500' }),
 	        _react2.default.createElement(
@@ -43048,7 +43048,7 @@
 	            { className: 'highlight' },
 	            'pathScale'
 	          ),
-	          ' slightly smaller for "inner" particles. Alos we have defined a small ',
+	          ' slightly smaller for "inner" particles. Also, we have defined a small ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43071,7 +43071,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s basically the same microconfirmations that I\'ve gave you in the ',
+	          'That\'s basically the same micro confirmations that I\'ve given you in the ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: '/tutorials/shape/' },
@@ -43089,13 +43089,13 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ' module. For instance bubbles, in the the first part, can be made like this:'
+	          ' module. For instance bubbles, in the first part, can be made like this:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'a336008aff2d73121763887097a99001', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Here we have static ',
+	          'Here we have the static ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43273,7 +43273,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Just like with previous example, the last touch is to add ',
+	          'Just like with the previous example, the last touch is to add ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43348,7 +43348,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'This one is simple too, good one to practice basics.'
+	          'This one is simple too, the good one to practice basics.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -43383,7 +43383,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Hm, they kind of overlap, so lets shift them by staggering ',
+	          'Hm, they kind of overlap, so let\'s shift them by staggering ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43395,7 +43395,7 @@
 	            { className: 'highlight' },
 	            'top'
 	          ),
-	          ' properties on children, after that lets add some ',
+	          ' properties on children, after that let\'s add some ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43459,7 +43459,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Catching up? Good. Let\'s refactor it a bit and make the vertical line to start from the bottom, like firework launch:'
+	          'Catching up? Good. Let\'s refactor it a bit and make the vertical line start from the bottom, like firework launch:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'a3c64825683dddd18316f8f288475131', height: '500' }),
 	        _react2.default.createElement(
@@ -43493,7 +43493,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Do you see that blast at the start? Lets make it together. First, you can notice these small particles:'
+	          'Do you see that blast at the start? Let\'s make it together. First, you can notice these small particles:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '79db23782ec1eb9d16246b136ec82b9c', height: '500' }),
 	        _react2.default.createElement(
@@ -43523,7 +43523,7 @@
 	            { className: 'highlight' },
 	            'degreeShift'
 	          ),
-	          ' property defines how much the particle will shift in it\'s radial position in burst circle shape. So if particle has ',
+	          ' property defines how much the particle will shift in its radial position in burst circle shape. So if a particle has ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43535,7 +43535,7 @@
 	            { className: 'highlight' },
 	            '90'
 	          ),
-	          ', it will be shifted in radial shape by 90 degree. Since ',
+	          ', it will be shifted in radial shape by 90 degrees. Since ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43558,7 +43558,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Lets add more details to the blast, for instance another burst with large geometric shapes:'
+	          'Let\'s add more details to the blast, for instance, another burst with large geometric shapes:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '3b9c757a7625dc015753740bcad8fb66', height: '500' }),
 	        _react2.default.createElement(
@@ -43610,7 +43610,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The effect is a drip more modest than the previous one. As you can see, I haven\'t recreated exact the same sequence here, but rather made a bit different one.'
+	          'The effect is a bit more modest than the previous one. As you can see, I haven\'t recreated exactly the same sequence here, but rather made a bit different one.'
 	        ),
 	        _react2.default.createElement(
 	          'h3',
@@ -43620,13 +43620,13 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'OK. Enough distraction. Lets create something less obvious. Recall this demo with the mole(×):'
+	          'OK. Enough distraction. Let\'s create something less straightforward. Recall this demo with the mole(×):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '477056cb1ffe88c4bfbf8a3005d99496', height: '600' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Can you count how much effects are bursts here? There are quite few. The most noticeable is the effect that appears after door shuts down - the 4 spots of dust. This one was composed with 4 bursts (one for each corner), lets start with just one for now:'
+	          'Can you count how much effects are bursts here? There are quite a few. The most noticeable is the effect that appears after the door shuts down - the 4 spots of dust. This one was composed with 4 bursts (one for each corner), let\'s start with just one for now:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '97a95a5cb7663cf336e8d80f9f511553', height: '500' }),
 	        _react2.default.createElement(
@@ -43642,9 +43642,9 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'ShapeSwirl'
+	            'ShapeSwirls'
 	          ),
-	          's not simple ',
+	          ', not simple ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43685,7 +43685,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'OK. Recalling the mole demo, what else did you notice? Probably that confetti that appear when cube hits the floor. Right!'
+	          'OK. Recalling the mole demo, what else did you notice? Probably that confetti that appears when cube hits the floor. Right!'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -43696,19 +43696,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The main catch here is to mimic the air flow by rotating the main swirl backward slightly. Then you have to create more bursts, each one is smaller then previous one and each of them should have a smaller delay.'
+	          'The main catch here is to mimic the air flow by rotating the main swirl backward slightly. Then you have to create more bursts, each one is smaller than previous one and each of them should have a smaller delay.'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'd0d0c2b1e98f1a0f8d6ea250c31ed081', height: '500' }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First you want to make ',
+	          'What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First, you want to make ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            '0 degree'
+	            '0-degree'
 	          ),
-	          ' burst, and rotate the main swirl downward, imitating that the air current that comes out form his mouth gets weaker:'
+	          ' burst, and rotate the main swirl downward, imitating that the air current that comes out from his mouth gets weaker:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '828d4f1e1f6fdfd608b588af0b9bdd45', height: '500' }),
 	        _react2.default.createElement(
@@ -43732,7 +43732,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'At last add random ',
+	          'At last, add random ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43766,7 +43766,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s it. OK, lets recall another demo, remember this one from previous tutorial? Did I notice that the dust trail effect is much easier with burst(×)?'
+	          'That\'s it. OK, let\'s recall another demo, remember this one from previous the tutorial? Did I notice that the dust trail effect is much easier with burst(×)?'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '633e6aa52d40691cca2f2cda91650bae', height: '500' }),
 	        _react2.default.createElement(
@@ -43778,7 +43778,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Look, now instead of multiple swirl modules which we have been using in previous tutorial, we use just one burst - ',
+	          'Look, now instead of multiple swirl modules which we have been using in the previous tutorial, we use just one burst - ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43802,7 +43802,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'This time we have used ',
+	          'This time, we have used ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43861,13 +43861,13 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          '. We\'ve touched only the surface of the possible effects that you can compose with this module, but that\'s a good start to convey the idea and APIs. Also my friends from ',
+	          '. We\'ve touched only the surface of the possible effects that you can compose with this module, but that\'s a good start to convey the idea and APIs. Also, my friends from ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: 'http://tympanus.net/codrops/' },
 	            'Codrops'
 	          ),
-	          ' wrote a awesome ',
+	          ' wrote an awesome ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: 'http://tympanus.net/Development/Animocons/' },
@@ -43895,13 +43895,13 @@
 	            { className: 'highlight' },
 	            'ShapeSwirl'
 	          ),
-	          ' that composes bunch of child ',
+	          ' that composes a bunch of child ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'ShapeSwirls'
 	          ),
-	          ' forming radial shape by default. ',
+	          ' forming the radial shape by default. ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43951,7 +43951,7 @@
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: 'https://github.com/legomushroom/mojs' },
-	            'github repo'
+	            'GitHub repo'
 	          ),
 	          ' or leave a comment in the section below. You can help the project on ',
 	          _react2.default.createElement(
@@ -43963,7 +43963,7 @@
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: 'https://github.com/legomushroom/mojs/issues' },
-	            'github'
+	            'GitHub'
 	          ),
 	          '. ',
 	          'Love <3.'

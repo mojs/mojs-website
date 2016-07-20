@@ -347,7 +347,7 @@ const polygon = new mojs.Shape({
           </p>
 
           <p>
-            Delta can also have it's own explicit <span className="highlight">easing</span> field that can hold any <span className="highlight">mojs</span> <UniteLink link="">easing type</UniteLink>, this makes shape transitions more flexible to the real world needs.
+            Delta can also have its own explicit <span className="highlight">easing</span> field that can hold any <span className="highlight">mojs</span> <UniteLink link="">easing type</UniteLink>, this makes shape transitions more flexible to the real world needs.
           </p>
 
           <CodeSample pen="942a661cec312c922af18f3446f894a0">
@@ -607,7 +607,7 @@ timeline
           <h2> Tune </h2>
 
           <p>
-            After you have created a shape, you can <span className="highlight">tune</span> any of it's properties before starting the animation. The <span className="highlight">tune</span> method is handy when you want to add some interactivity to your animation or to play the shape regarding user input - the method was exactly designed for this purpose(click somewhere to see):
+            After you have created a shape, you can <span className="highlight">tune</span> any of its properties before starting the animation. The <span className="highlight">tune</span> method is handy when you want to add some interactivity to your animation or to play the shape regarding user input - the method was exactly designed for this purpose(click somewhere to see):
           </p>
 
           <CodeSample pen="fcf6121653db713d8567271d3e8eea10">
@@ -831,7 +831,7 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Here above, the middle heart has static <span className="highlight">stroke</span> property on it's tag, so it was left unattended.
+            Here above, the middle heart has static <span className="highlight">stroke</span> property on its tag, so it was left unattended.
           </p>
 
           <p>
@@ -1018,7 +1018,7 @@ const heart = new mojs.Shape({
           <h4>Bubbles</h4>
 
           <p>
-            Lets start with the simple intro sequence, it was composed of custom "speech bubble" shapes and few built in ones.
+            Let's start with the simple intro sequence, it was composed of custom "speech bubble" shapes and few built in ones.
           </p>
 
           <Pen pen="2ef10ed42ff535182c31cd1dbb81e453" height="500"></Pen>
@@ -1068,7 +1068,7 @@ const heart = new mojs.Shape({
           <Pen pen="b37bb9c6dede99d0ac75d60b5fb0d43d" height="700"></Pen>
 
           <p>
-            Now, lets finally compose these short scenes into one:
+            Now, let's finally compose these short scenes into one:
           </p>
 
           <Pen pen="39427561a8a0b15d7896480a7d96d3d1" height="700"></Pen>
@@ -1224,7 +1224,7 @@ const heart = new mojs.Shape({
           <Pen pen="6f7b05a45679964ccdf9212fa68075c8" height="500"></Pen>
 
           <p>
-            It was composed of bunch of swirls, lets spend some time and see how exactly you can build something like that. First, you want to make the swirls move downward, - somewhere into the ground:
+            It was composed of bunch of swirls, let's spend some time and see how exactly you can build something like that. First, you want to make the swirls move downward, - somewhere into the ground:
           </p>
 
           <Pen pen="80d765ff22ae515cb28a78c0ec5686c9" height="500"></Pen>
@@ -1443,7 +1443,7 @@ const heart = new mojs.Shape({
           <Pen pen="249b42683dfa4b7a11f641e842270427" height="200"></Pen>
 
           <p>
-            That's basically exact the same principle we have used in this tune demo:
+            That's basically exact the same principle we have used in this tune demo (click somewhere to see):
           </p>
 
           <Pen pen="fcf6121653db713d8567271d3e8eea10" height="200"></Pen>
@@ -1477,7 +1477,7 @@ const heart = new mojs.Shape({
           <Pen pen="2c95e0397b0d20eb4fbc952e3c5f0fe0" height="500"></Pen>
 
           <p>
-            Every piece of this sequence is composed of shapes - ripple inside a modal, few details in the top and bottom right corners, background spread effect, modal shape itself and it's corner are shapes too.
+            Every piece of this sequence is composed of shapes - ripple inside a modal, few details in the top and bottom right corners, background spread effect, modal shape itself and its corner are shapes too.
           </p>
 
           <p>
