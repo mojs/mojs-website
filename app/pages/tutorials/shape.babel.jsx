@@ -809,7 +809,11 @@ const heart = new mojs.Shape({
             {
               { js: `/* ADD CUSTOM SHAPE */
 class Heart extends mojs.CustomShape {
-  getShape () { return '<path d="M79.8226133,31.1716767 C71.2668462,22.7128894 57.4418472,22.7128894 48.8860801,31.1716767 L45.1254217,34.910784 C43.9939916,36.0098876 42.1837033,36.0206631 41.0522732,34.889233 L41.0522732,34.889233 L37.3023903,31.1716767 C28.7789498,22.7128894 14.9323997,22.7128894 6.40895921,31.1716767 C-2.13603238,39.6520152 -2.13603238,53.3800345 6.40895921,61.8280463 L25.686374,80.9653793 C25.686374,80.9761548 25.6971496,80.9761548 25.6971496,80.9869304 L37.2916148,92.4844159 C40.4919458,95.6739714 45.6857491,95.6739714 48.8860801,92.4844159 L60.4913209,80.9869304 C60.4913209,80.9869304 60.4913209,80.9761548 60.5020964,80.9761548 L79.8226133,61.8280463 C88.3352783,53.3800345 88.3352783,39.6520152 79.8226133,31.1716767 L79.8226133,31.1716767 Z"></path><path d="M87.2293862,20.3305554 C81.6681375,14.8323436 72.6818882,14.8323436 67.1206395,20.3305554 L64.6762116,22.7609751 C63.940782,23.4753925 62.7640947,23.4823966 62.0286651,22.746967 L62.0286651,22.746967 L59.5912412,20.3305554 C54.0510049,14.8323436 45.0507473,14.8323436 39.510511,20.3305554 C33.9562665,25.8427754 33.9562665,34.7659879 39.510511,40.2571956 L52.0408306,52.6964621 C52.0408306,52.7034662 52.0478347,52.7034662 52.0478347,52.7104703 L59.5842371,60.1838358 C61.6644523,62.2570469 65.0404244,62.2570469 67.1206395,60.1838358 L74.6640461,52.7104703 C74.6640461,52.7104703 74.6640461,52.7034662 74.6710502,52.7034662 L87.2293862,40.2571956 C92.7626184,34.7659879 92.7626184,25.8427754 87.2293862,20.3305554 L87.2293862,20.3305554 Z" stroke="#50E3C2"></path><path d="M97.1269756,7.85484074 C93.2768804,4.04838642 87.0556308,4.04838642 83.2055356,7.85484074 L81.5132393,9.53743902 C81.0040958,10.0320356 80.1894661,10.0368846 79.6803225,9.52774105 L79.6803225,9.52774105 L77.9928752,7.85484074 C74.157327,4.04838642 67.9263795,4.04838642 64.0908312,7.85484074 C60.245585,11.670993 60.245585,17.8486017 64.0908312,21.6502071 L72.7656679,30.2620069 C72.7656679,30.2668559 72.7705169,30.2668559 72.7705169,30.2717049 L77.9880262,35.4455734 C79.4281752,36.8808733 81.7653866,36.8808733 83.2055356,35.4455734 L88.427894,30.2717049 C88.427894,30.2717049 88.427894,30.2668559 88.4327429,30.2668559 L97.1269756,21.6502071 C100.957675,17.8486017 100.957675,11.670993 97.1269756,7.85484074 L97.1269756,7.85484074 Z"></path>'; }
+  getShape () {
+      return '<path d="M79.8226133,31.1716767 C71.2668462,22.7128894 57.4418472,22.7128894 48.8860801,31.1716767 L45.1254217,34.910784 C43.9939916,36.0098876 42.1837033,36.0206631 41.0522732,34.889233 L41.0522732,34.889233 L37.3023903,31.1716767 C28.7789498,22.7128894 14.9323997,22.7128894 6.40895921,31.1716767 C-2.13603238,39.6520152 -2.13603238,53.3800345 6.40895921,61.8280463 L25.686374,80.9653793 C25.686374,80.9761548 25.6971496,80.9761548 25.6971496,80.9869304 L37.2916148,92.4844159 C40.4919458,95.6739714 45.6857491,95.6739714 48.8860801,92.4844159 L60.4913209,80.9869304 C60.4913209,80.9869304 60.4913209,80.9761548 60.5020964,80.9761548 L79.8226133,61.8280463 C88.3352783,53.3800345 88.3352783,39.6520152 79.8226133,31.1716767 L79.8226133,31.1716767 Z"></path>' +
+             '<path stroke="#50E3C2" d="M87.2293862,20.3305554 C81.6681375,14.8323436 72.6818882,14.8323436 67.1206395,20.3305554 L64.6762116,22.7609751 C63.940782,23.4753925 62.7640947,23.4823966 62.0286651,22.746967 L62.0286651,22.746967 L59.5912412,20.3305554 C54.0510049,14.8323436 45.0507473,14.8323436 39.510511,20.3305554 C33.9562665,25.8427754 33.9562665,34.7659879 39.510511,40.2571956 L52.0408306,52.6964621 C52.0408306,52.7034662 52.0478347,52.7034662 52.0478347,52.7104703 L59.5842371,60.1838358 C61.6644523,62.2570469 65.0404244,62.2570469 67.1206395,60.1838358 L74.6640461,52.7104703 C74.6640461,52.7104703 74.6640461,52.7034662 74.6710502,52.7034662 L87.2293862,40.2571956 C92.7626184,34.7659879 92.7626184,25.8427754 87.2293862,20.3305554 L87.2293862,20.3305554 Z"></path>' +
+             '<path d="M97.1269756,7.85484074 C93.2768804,4.04838642 87.0556308,4.04838642 83.2055356,7.85484074 L81.5132393,9.53743902 C81.0040958,10.0320356 80.1894661,10.0368846 79.6803225,9.52774105 L79.6803225,9.52774105 L77.9928752,7.85484074 C74.157327,4.04838642 67.9263795,4.04838642 64.0908312,7.85484074 C60.245585,11.670993 60.245585,17.8486017 64.0908312,21.6502071 L72.7656679,30.2620069 C72.7656679,30.2668559 72.7705169,30.2668559 72.7705169,30.2717049 L77.9880262,35.4455734 C79.4281752,36.8808733 81.7653866,36.8808733 83.2055356,35.4455734 L88.427894,30.2717049 C88.427894,30.2717049 88.427894,30.2668559 88.4327429,30.2668559 L97.1269756,21.6502071 C100.957675,17.8486017 100.957675,11.670993 97.1269756,7.85484074 L97.1269756,7.85484074 Z"></path>';
+  }
   getLength () { return 200; } // optional
 }
 mojs.addShape( 'heart', Heart ); // passing name and Bubble class
@@ -863,13 +867,13 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            Here above, we have used percent values for <span className="highlight">strokeDashoffset</span> property so we had to provide the custom shape with <span className="highlight">getLength</span> method for precise stroke dash length calculations.
+            Here above, we have used percent values for <span className="highlight">strokeDashoffset</span> property so we had to provide the custom shape with <span className="highlight">getLength</span> method for precise stroke dash length calculations. Read how to find out what the exact length is <UniteLink link="https://github.com/legomushroom/mojs/wiki/Get-the-exact-length-for-a-custom-shape">in the Wiki</UniteLink>.
           </p>
 
           <h2>ShapeSwirl</h2>
 
           <p>
-            <span className="highlight">ShapeSwirl</span> module basically is <span className="highlight">Shape</span> with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over sine trajectories. To give you control over this behavior, ShapeSwirl accepts more <span className="highlight">6</span> properties, thus you can define frequency or size of the path and other supporting parameters (click somewhere to see):
+            <span className="highlight">ShapeSwirl</span> module basically is a <span className="highlight">Shape</span> with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape, making it easy to send the shapes over sine trajectories. To give you control over this behavior, ShapeSwirl accepts 6 properties, thus you can define frequency or size of the path and other supporting parameters (click somewhere to see):
           </p>
 
           <CodeSample pen="c6888ce5c9f81ad825444d969779eadc">
@@ -893,7 +897,7 @@ const heart = new mojs.Shape({
           </p>
 
           <p>
-            The <span className="highlight">swirlSize</span> property (<span className="highlight">10</span> by default) defines the deviation or amplitude of the sine. There is example with <span className="highlight">swirlSize: 10</span>:
+            The <span className="highlight">swirlSize</span> property (<span className="highlight">10</span> by default) defines the deviation or amplitude of the sine. Here is an example with <span className="highlight">swirlSize: 35</span>:
           </p>
 
           <CodeSample pen="0b3e2fe009d06a67a08e8ae04a7f7904">
@@ -905,13 +909,14 @@ const heart = new mojs.Shape({
   swirlSize:      35,
   swirlFrequency: 4, 
   duration:       1000,
+  direction:       -1,
 });`
               }
             }
           </CodeSample>
 
           <p>
-            The <span className="highlight">direction</span> property (<span className="highlight">1</span> by default) defines direction of the amplitude of the sine - it have value of either <span className="highlight">1</span> or <span className="highlight">1</span>. There is the example for <span className="highlight">-1</span> note how it starts to the left instead of right:
+            The <span className="highlight">direction</span> property (<span className="highlight">1</span> by default) defines direction of the amplitude of the sine - it have value of either <span className="highlight">1</span> or <span className="highlight">-1</span>. Here is an example for <span className="highlight">-1</span>, notice how it starts to the left instead of right:
           </p>
 
           <CodeSample pen="f1fb2e4dc7bb9b11e3b6b96299fa99f9">
@@ -928,7 +933,7 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            The <span className="highlight">swirlFrequency</span> property (<span className="highlight">3</span> by default) defines the frequency of the sine, there is the example with <span className="highlight">swirlFrequency: 10</span>:
+            The <span className="highlight">swirlFrequency</span> property (<span className="highlight">3</span> by default) defines the frequency of the sine, here is an example with <span className="highlight">swirlFrequency: 10</span>:
           </p>
 
           <CodeSample pen="d63af6450cb170fafc8636f185634830">
@@ -945,7 +950,7 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            The <span className="highlight">pathScale</span> property (<span className="highlight">1</span> by default) defines the scale size of the sine path, there is the example for <span className="highlight">pathScale: .5</span> - eventual sine has exact half of the radius:
+            The <span className="highlight">pathScale</span> property (<span className="highlight">1</span> by default) defines the scale size of the sine path. Here is an example of <span className="highlight">pathScale: .5</span> - which scales the sine by half (of the original radius):
           </p>
 
           <CodeSample pen="b4c26893f3814227480d7cc5ab5ceded">
@@ -966,7 +971,7 @@ const heart = new mojs.Shape({
           </p>
 
           <p>
-            The <span className="highlight">degreeShift</span> property (<span className="highlight">0</span> by default) defines angle of the swirl. This property gets to be interesting <span className="highlight">shapeSwirl</span> is used inside other modules (like <span className="highlight">Burst</span>). For now it will act just like angle of the sine path, there is the example for <span className="highlight">degreeShift: 90</span>:
+            The <span className="highlight">degreeShift</span> property (<span className="highlight">0</span> by default) defines angle of the swirl. This property gets to be interesting when <span className="highlight">shapeSwirl</span> is used inside other modules (like <span className="highlight">Burst</span>). For now it will act just like angle of the sine path, there is the example for <span className="highlight">degreeShift: 90</span>:
           </p>
 
           <CodeSample pen="6bc8f77ec8528e0c8c394660db150a9e">
@@ -975,7 +980,7 @@ const heart = new mojs.Shape({
   fill:           'cyan',
   y:              { 0: -150 },
   radius:         8,
-  pathScale:      .5,
+  degreeShift:    90,
   duration:       1000,
 });`
               }
@@ -996,17 +1001,17 @@ const heart = new mojs.Shape({
           <h2>Recap</h2>
 
           <p>
-            That was pertty fast intro to the <span className="highlight">Shape</span> module. You can use <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/shape.md">Shape APIs</UniteLink> and <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/shape-swirl.md">ShapeSwirl API</UniteLink> sections as reference further on. What is important at this point — is that you should understand the ability to create a <span className="highlight">Shape</span> in any part of the screen or HTMLElement. If you want to animate some property — you add a <span className="highlight">delta</span> object that describes the transition of that property. You can chain the shape transitions with <span className="highlight">then</span> calls and <span className="highlight">tune</span> new properties when you want. Tweenable interface allows you to work with <span className="highlight">Shape</span> same as you work with any other <span className="highlight">Tween</span>. Now you probably asking yourself - Why do we need something as simple as an animatable shape? In the next section I will cover few use cases for shapes but most importantly it will become crystal clear why do we need shapes in the next <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink>. Probably, you can treat this tutorial as finished at this point, the further sections are rather optional and were written just for fun. So you can skip reading them in favor of <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink> but I highly encourage you to read them to gain solid understanding of the shapes.
+            That was a pretty fast intro to the <span className="highlight">Shape</span> module. You can use <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/shape.md">Shape APIs</UniteLink> and <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/shape-swirl.md">ShapeSwirl API</UniteLink> sections as reference further on. What is important at this point — is that you should understand the ability to create a <span className="highlight">Shape</span> in any part of the screen or HTMLElement. If you want to animate some property — you add a <span className="highlight">delta</span> object that describes the transition of that property. You can chain the shape transitions with <span className="highlight">then</span> calls and <span className="highlight">tune</span> new properties when you want. Tweenable interface allows you to work with <span className="highlight">Shape</span> same as you work with any other <span className="highlight">Tween</span>. Now you probably asking yourself - Why do we need something as simple as an animatable shape? In the next section I will cover few use cases for shapes but most importantly it will become crystal clear why do we need shapes in the next <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink>. Probably, you can treat this tutorial as finished at this point, the further sections are rather optional and were written just for fun. So you can skip reading them in favor of <UniteLink link="/tutorials/burst/">Burst Tutorial</UniteLink> but I highly encourage you to read them to gain solid understanding of the shapes.
           </p>
 
           <h2>Use Cases</h2>
 
           <p>
-            Despite the fact that <span className="highlight">Shape</span> and <span className="highlight">ShapeSwirl</span> modules are nothing than tiny bits that compose higher order modules creating some matured effects, they have strong use cases and can be used on their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also, <span className="highlight">Shape</span>s often used to implode them into <span className="highlight">UI</span> thus enhancing it. From the development point of view — <span className="highlight">Shape</span> can be created with just one declarative call allowing you to focus entirely on you motion sequences and don't spend the time to bootstrapping things, this fact powers you with a <span className="highlight">"shape framework"</span> to think in, so your motion sequences get more organized and consistent.
+            Despite the fact that <span className="highlight">Shape</span> and <span className="highlight">ShapeSwirl</span> modules are nothing than tiny bits that compose higher order modules creating some matured effects, they have strong use cases and can be used on their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also, <span className="highlight">Shape</span> is often used to implode them into <span className="highlight">UI</span> thus enhancing it. From the development point of view — <span className="highlight">Shape</span> can be created with just one declarative call allowing you to focus entirely on you motion sequences and don't spend the time to bootstrapping things, this fact powers you with a <span className="highlight">"shape framework"</span> to think in, so your motion sequences get more organized and consistent.
           </p>
 
           <p>
-            I hope you don't believe me that <span className="highlight">Shape</span>s are useful just because I claimed it out of loud, so let me convince you with the next real wold use cases. Note that the code samples are omitted in this section but feel free to check the <span className="highlight">Babel</span> tab of the Codepen samples and tweak the part that interests you.
+            I hope you don't believe that <span className="highlight">Shape</span>s are useful just because I claimed it out loud, so let me convince you with the next real world use cases. Note that the code samples are omitted in this section but feel free to check the <span className="highlight">Babel</span> tab of the Codepen samples and tweak the part that interests you.
           </p>
 
           <h3>Motion Graphics Use Cases</h3>
@@ -1252,7 +1257,7 @@ const heart = new mojs.Shape({
           </em>
 
           <p>
-            That's would be basically it for animation use cases. My effort in this section was focused to convey the idea of how you can use the shapes to enhance and support your main animation scenes, applying little effects and details.
+            That's basically all for animation use cases. My effort in this section was focused to convey the idea of how you can use the shapes to enhance and support your main animation scenes, applying little effects and details.
           </p>
 
           <p>
@@ -1297,7 +1302,7 @@ const heart = new mojs.Shape({
 
               <br/>
 
-              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsse-20.gif" />
+              <Gif className="gif--50-width" src="/gifs/shape-animation/LingoAsset-20.gif" />
 
               <br/>
 
@@ -1417,7 +1422,7 @@ const heart = new mojs.Shape({
           <Pen pen="3c49de2d7d0ca3e92bf5db5bf7a2687d" height="500"></Pen>
 
           <p>
-            That's the exact same effect I've used in Bubble Layout demo a while ago, when was trying to convey the bubble interface (click on any circle to see the close button):
+            That's the exact same effect I've used in Bubble Layout demo a while ago, when I was trying to convey the bubble interface (click on any circle to see the close button):
           </p>
 
           <Pen pen="yNOage" height="500"></Pen>
@@ -1651,7 +1656,7 @@ const heart = new mojs.Shape({
           <h2>Recap</h2>
 
           <p>
-            Phew, that was intense. I hope you didn't get bored. We have touched only the surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes. It is probably is clear at this point that to create a shape you use a declarative call and the shape appears in any place you of the screen( or HTMLElement) you want without any bootstrapping. You  can use <span className="highlight">then</span> method to chain states of shape and <span className="highlight">tune</span> them afterward or even re<span className="highlight">generate</span> all random properties on it before starting the animation. Remember that shapes obey the <span className="highlight">tweenable</span> interface thus it has tween properties, callbacks and public methods that any <span className="highlight">tween</span> has.
+            Phew, that was intense. I hope you didn't get bored. We have touched only the surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes. At this point it's probably clear that to create a shape you use a declarative call and the shape appears in any place of the screen( or HTMLElement) you want without any bootstrapping. You  can use <span className="highlight">then</span> method to chain states of shape and <span className="highlight">tune</span> them afterward or even re<span className="highlight">generate</span> all random properties on it before starting the animation. Remember that shapes obey the <span className="highlight">tweenable</span> interface thus it has tween properties, callbacks and public methods that any <span className="highlight">tween</span> has.
           </p>
 
           <p>
@@ -1661,7 +1666,7 @@ const heart = new mojs.Shape({
           <h2>Thank you!</h2>
 
           <p>
-            I deeply appreciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">GitHub</UniteLink>. {'Love <3.'}
+            I deeply appreciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink link="https://www.patreon.com">Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">GitHub</UniteLink>. {'Love <3.'}
           </p>
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
