@@ -869,20 +869,34 @@ const heart = new mojs.Shape({
           <h2>ShapeSwirl</h2>
 
           <p>
-            <span className="highlight">ShapeSwirl</span> module basically is <span className="highlight">Shape</span> with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over sine trajectories. To give you control over this behavior, ShapeSwirl accepts more <span className="highlight">6</span> properties, thus you can define frequency or size of the path and other supporting parameters (click somewhere to see):
+            <span className="highlight">ShapeSwirl</span> module basically is <span className="highlight">Shape</span> with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over sine trajectories (click somewhere to see).
           </p>
 
           <CodeSample pen="c6888ce5c9f81ad825444d969779eadc">
             {
               { js: `const shapeSwirl = new mojs.ShapeSwirl({
-  shape:          'circle',
+  fill:           'cyan',
+  y:              { 0: -150 },
+  duration:       1000
+});`
+              }
+            }
+          </CodeSample>
+
+          <p>To give you control over this behavior, ShapeSwirl accepts more <span className="highlight">6</span> properties, thus you can define frequency or size of the path and other supporting parameters:
+          </p>
+
+          <CodeSample>
+            {
+              { js: `const shapeSwirl = new mojs.ShapeSwirl({
+  y:              { 0: -150 },
+  // other props:
   isSwirl:        true, // sets if the shape should follow sinusoidal path, true by default
   swirlSize:      10, // defines amplitude of the sine
   swirlFrequency: 3, // defines frequency of the sine
   pathScale:      'rand( .1, 1 )', // defines how much the total path length should be scaled
   direction:      1, // direction of the sine could be 1 or -1
   degreeShift:    45, // angle shift for the sinusoidal path
-  x:              { 0 : 90 }
 });`
               }
             }
@@ -911,23 +925,6 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            The <span className="highlight">direction</span> property (<span className="highlight">1</span> by default) defines direction of the amplitude of the sine - it have value of either <span className="highlight">1</span> or <span className="highlight">1</span>. There is the example for <span className="highlight">-1</span> note how it starts to the left instead of right:
-          </p>
-
-          <CodeSample pen="f1fb2e4dc7bb9b11e3b6b96299fa99f9">
-            {
-              { js: `const swirl = new mojs.ShapeSwirl({
-  fill:           'cyan',
-  y:              { 0: -150 },
-  radius:         8,
-  pathScale:      .5,
-  duration:       1000,
-});`
-              }
-            }
-          </CodeSample>
-
-          <p>
             The <span className="highlight">swirlFrequency</span> property (<span className="highlight">3</span> by default) defines the frequency of the sine, there is the example with <span className="highlight">swirlFrequency: 10</span>:
           </p>
 
@@ -939,6 +936,25 @@ const heart = new mojs.Shape({
   radius:         8,
   swirlFrequency: 10, 
   duration:       1000,
+});`
+              }
+            }
+          </CodeSample>
+
+          <p>
+            The <span className="highlight">direction</span> property (<span className="highlight">1</span> by default) defines direction of the amplitude of the sine - it have value of either <span className="highlight">1</span> or <span className="highlight">-1</span>. There is the example for <span className="highlight">-1</span> note how it starts to the left instead of right:
+          </p>
+
+          <CodeSample pen="f1fb2e4dc7bb9b11e3b6b96299fa99f9">
+            {
+              { js: `const swirl = new mojs.ShapeSwirl({
+  fill:           'cyan',
+  y:              { 0: -150 },
+  radius:         8,
+  direction:      -1,
+  swirlSize:      35,
+  swirlFrequency: 4,
+  duration:       1000
 });`
               }
             }
@@ -962,7 +978,25 @@ const heart = new mojs.Shape({
           </CodeSample>
 
           <p>
-            The <span className="highlight">pathScale</span> property useful when you have a bunch of <span className="highlight">ShapeSwirls</span> and want to randomize their sines.
+            You are probably thinking - why not just to shorten the <span className="highlight">y</span> value instead of <span className="highlight">pathScale</span> one? Well, because the <span className="highlight">pathScale</span> scales the actual path of the swirl, for instance if you will add the transition for the <span className="highlight">x</span> property, the path scale will affect the product of <span className="highlight">y</span> and <span className="highlight">x</span> - actual path that the shape makes (click somewhere to see):
+          </p>
+
+          <CodeSample pen="49bc780ab7d4d812e1832437fa9c6762">
+            {
+              { js: `const swirl = new mojs.ShapeSwirl({
+  fill:           'cyan',
+  x:              { 0: -100 },
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});`
+              }
+            }
+          </CodeSample>
+
+          <p>
+            The <span className="highlight">pathScale</span> property will become very useful when we will discuss the <span className="highlight">Burst</span> module shortly and will have a bunch of <span className="highlight">ShapeSwirls</span> at once and will want to randomize their sines.
           </p>
 
           <p>

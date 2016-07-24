@@ -40788,18 +40788,29 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          ' with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over sine trajectories. To give you control over this behavior, ShapeSwirl accepts more ',
+	          ' with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over sine trajectories (click somewhere to see).'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'c6888ce5c9f81ad825444d969779eadc' },
+	          { js: 'const shapeSwirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  y:              { 0: -150 },\n  duration:       1000\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'To give you control over this behavior, ShapeSwirl accepts more ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            '6'
 	          ),
-	          ' properties, thus you can define frequency or size of the path and other supporting parameters (click somewhere to see):'
+	          ' properties, thus you can define frequency or size of the path and other supporting parameters:'
 	        ),
 	        _react2.default.createElement(
 	          _codeSample2.default,
-	          { pen: 'c6888ce5c9f81ad825444d969779eadc' },
-	          { js: 'const shapeSwirl = new mojs.ShapeSwirl({\n  shape:          \'circle\',\n  isSwirl:        true, // sets if the shape should follow sinusoidal path, true by default\n  swirlSize:      10, // defines amplitude of the sine\n  swirlFrequency: 3, // defines frequency of the sine\n  pathScale:      \'rand( .1, 1 )\', // defines how much the total path length should be scaled\n  direction:      1, // direction of the sine could be 1 or -1\n  degreeShift:    45, // angle shift for the sinusoidal path\n  x:              { 0 : 90 }\n});'
+	          null,
+	          { js: 'const shapeSwirl = new mojs.ShapeSwirl({\n  y:              { 0: -150 },\n  // other props:\n  isSwirl:        true, // sets if the shape should follow sinusoidal path, true by default\n  swirlSize:      10, // defines amplitude of the sine\n  swirlFrequency: 3, // defines frequency of the sine\n  pathScale:      \'rand( .1, 1 )\', // defines how much the total path length should be scaled\n  direction:      1, // direction of the sine could be 1 or -1\n  degreeShift:    45, // angle shift for the sinusoidal path\n});'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -40867,47 +40878,6 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
-	            'direction'
-	          ),
-	          ' property (',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            '1'
-	          ),
-	          ' by default) defines direction of the amplitude of the sine - it have value of either ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            '1'
-	          ),
-	          ' or ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            '1'
-	          ),
-	          '. There is the example for ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
-	            '-1'
-	          ),
-	          ' note how it starts to the left instead of right:'
-	        ),
-	        _react2.default.createElement(
-	          _codeSample2.default,
-	          { pen: 'f1fb2e4dc7bb9b11e3b6b96299fa99f9' },
-	          { js: 'const swirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  y:              { 0: -150 },\n  radius:         8,\n  pathScale:      .5,\n  duration:       1000,\n});'
-	          }
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'The ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'highlight' },
 	            'swirlFrequency'
 	          ),
 	          ' property (',
@@ -40928,6 +40898,47 @@
 	          _codeSample2.default,
 	          { pen: 'd63af6450cb170fafc8636f185634830' },
 	          { js: 'const swirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  y:              { 0: -150 },\n  radius:         8,\n  swirlFrequency: 10, \n  duration:       1000,\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'The ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'direction'
+	          ),
+	          ' property (',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '1'
+	          ),
+	          ' by default) defines direction of the amplitude of the sine - it have value of either ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '1'
+	          ),
+	          ' or ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '-1'
+	          ),
+	          '. There is the example for ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            '-1'
+	          ),
+	          ' note how it starts to the left instead of right:'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: 'f1fb2e4dc7bb9b11e3b6b96299fa99f9' },
+	          { js: 'const swirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  y:              { 0: -150 },\n  radius:         8,\n  direction:      -1,\n  swirlSize:      35,\n  swirlFrequency: 4,\n  duration:       1000\n});'
 	          }
 	        ),
 	        _react2.default.createElement(
@@ -40962,19 +40973,72 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
+	          'You are probably thinking - why not just to shorten the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'y'
+	          ),
+	          ' value instead of ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale'
+	          ),
+	          ' one? Well, because the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'pathScale'
+	          ),
+	          ' scales the actual path of the swirl, for instance if you will add the transition for the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'x'
+	          ),
+	          ' property, the path scale will affect the product of ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'y'
+	          ),
+	          ' and ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'x'
+	          ),
+	          ' - actual path that the shape makes (click somewhere to see):'
+	        ),
+	        _react2.default.createElement(
+	          _codeSample2.default,
+	          { pen: '49bc780ab7d4d812e1832437fa9c6762' },
+	          { js: 'const swirl = new mojs.ShapeSwirl({\n  fill:           \'cyan\',\n  x:              { 0: -100 },\n  y:              { 0: -150 },\n  radius:         8,\n  pathScale:      .5,\n  duration:       1000,\n});'
+	          }
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
 	          'The ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'pathScale'
 	          ),
-	          ' property useful when you have a bunch of ',
+	          ' property will become very useful when we will discuss the ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'highlight' },
+	            'Burst'
+	          ),
+	          ' module shortly and will have a bunch of ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            'ShapeSwirls'
 	          ),
-	          ' and want to randomize their sines.'
+	          ' at once and will want to randomize their sines.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
