@@ -9,7 +9,7 @@ Please make sure you are on the `dev` branch, never use `master` for changes.
 
 ## Launch
 
-Point your apach webserver to /mojs-website/ folder and run:
+Point your apache webserver to /mojs-website/ folder and run:
 
 ```
 webpack

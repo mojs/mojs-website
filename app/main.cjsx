@@ -4,9 +4,9 @@ DefaultRoute      = Router.DefaultRoute
 Route             = Router.Route
 React.initializeTouchEvents(true)
 
-App       = require './app'
-Main      = require './pages/main'
-Tutorials = require './pages/tutorials'
+App            = require './app'
+Main           = require './pages/main'
+Tutorials      = require './pages/tutorials'
 GettingStarted = require './pages/tutorials/getting-started'
 MotionPath     = require './pages/tutorials/motion-path'
 PathEasing     = require './pages/tutorials/easing/path-easing/path-easing.cjsx'
