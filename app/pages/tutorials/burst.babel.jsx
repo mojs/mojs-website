@@ -672,6 +672,10 @@ burst
             I happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">GitHub</UniteLink>. {'Love <3.'}
           </p>
 
+          <p>
+            Big kudos to <a href="https://twitter.com/jonassandstedt">Jonas Sandstedt</a> for his help in read proofing this tutorial!
+          </p>
+
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
             <br />
             Next: &nbsp;<UniteLink link="/tutorials/stagger" isDisabled="true" className="highlight">Stagger</UniteLink>
