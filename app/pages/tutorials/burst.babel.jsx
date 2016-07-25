@@ -62,11 +62,11 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            Just like with <span className="highlight">Shape</span>, mojs takes care about all bootstrapping work, create as narrow container for the burst as possible, and positioning the effect for you.
+            Just like with <span className="highlight">Shape</span>, mojs takes care about all bootstrapping work, create as narrow container for the burst as possible and positioning the effect for you.
           </p>
 
           <p>
-            From the technical point of view, <span className="highlight">Burst</span> is just a main <span className="highlight">ShapeSwirl</span> that holds a bunch of child <span className="highlight">ShapeSwirls</span>. Nonetheless, you can control each of the child swirls. Pictorially it looks like this:
+            From the technical point of view, <span className="highlight">Burst</span> is just a main <span className="highlight">ShapeSwirl</span> that holds a bunch of child <span className="highlight">ShapeSwirls</span>. Pictorially it looks like this:
           </p>
 
           <p>
@@ -88,7 +88,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            There are few more properties that <span className="highlight">Burst</span> implements over <span className="highlight">ShapeSwirl</span>  to control the radial shape behavior that particles compose. The first one is the <span className="highlight">count</span> property that sets amount of particles:
+            There are few more properties that <span className="highlight">Burst</span> implements over <span className="highlight">ShapeSwirl</span>  to control the radial shape behavior that particles compose. The first one is the <span className="highlight">count</span> property that sets the amount of particles:
           </p>
 
           <CodeSample pen="fe6f9d1476aae148f1cfb36f599c92ff">
@@ -142,7 +142,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, it has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as the reference.
+            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, it has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles' <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity, parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as the reference.
           </p>
 
           <p>
@@ -218,7 +218,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            The first parameter in <span className="highlight">stagger</span> function is <span className="highlight">start</span> value, all subsequent steps will be added to that start value which is fairy optional tho and can be omitted. If you just write <span className="highlight">stagger(25)</span> - this means stagger with step of <span className="highlight">25</span>, starting from <span className="highlight">0</span>.
+            The first parameter in <span className="highlight">stagger</span> function is <span className="highlight">start</span> value, all subsequent steps will be added to that start value which is fairy optional tho and can be omitted. If you just write <span className="highlight">stagger(25)</span>, it will mean to stagger with step of <span className="highlight">25</span>, starting from <span className="highlight">0</span>.
           </p>
 
           <p>
@@ -274,7 +274,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            So starting from 12 o'clock clockwise, the 5 childrens <span className="highlight">fill</span> properties gets values of <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>, <span className="highlight">yellow</span> and then again starting from the beginning of the property map - <span className="highlight">deeppink</span>, <span className="highlight">cyan</span> ( <code className="code-inline">[0],[1],[2],[0],[1]</code> ).
+            So starting from 12 o'clock clockwise, the 5 childrens <span className="highlight">fill</span> properties get values of <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>, <span className="highlight">yellow</span> and then again starting from the beginning of the property map - <span className="highlight">deeppink</span>, <span className="highlight">cyan</span> ( <code className="code-inline">[0],[1],[2],[0],[1]</code> ).
           </p>
 
           <p>
@@ -350,7 +350,7 @@ burst
           <Pen pen="28b429cd2d5ae8c0dd0f10cecd6d0bd0" height="500" />
 
           <p>
-            The catch here is to use the <span className="highlight">in</span> easing for <span className="highlight">scale</span> property and the opposite <span className="highlight">out</span> easing for particles position. Also we have set the <span className="highlight">pathScale</span> slightly smaller for "inner" particles. Also, we have defined a small <span className="highlight">degreeShift</span> for each odd("inner") particle.
+            The catch here is to use the <span className="highlight">in</span> easing for <span className="highlight">scale</span> property and the opposite <span className="highlight">out</span> easing for particles position. Also, we have set the <span className="highlight">pathScale</span> slightly smaller for "inner" particles. After that, we have defined a small <span className="highlight">degreeShift</span> for each odd("inner") particle.
           </p>
 
           <p>

@@ -1014,6 +1014,10 @@ const heart = new mojs.Shape({
 
           <h2>Use Cases</h2>
 
+          <Cite>
+            Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the <span className="highlight">Babel</span> tab of the pens and I highly encourage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (Codepen can contain bundled code) or it could be too large to understand sparingly, but you can return to them later, - after you will complete this tutorial. I will leave a little (×) mark for you to indicate that you can skip reading the source code of the Codepen for now.
+          </Cite>
+
           <p>
             Despite the fact that <span className="highlight">Shape</span> and <span className="highlight">ShapeSwirl</span> modules are nothing than tiny bits that compose higher order modules creating some matured effects, they have strong use cases and can be used on their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also, <span className="highlight">Shapes</span> are often used to implode them into <span className="highlight">UI</span> thus enhancing it. From the development point of view — <span className="highlight">Shape</span> can be created with just one declarative call allowing you to focus entirely on you motion sequences and don't spend the time bootstrapping things, this fact powers you with a <span className="highlight">"shape framework"</span> to think in, so your motion sequences get more organized and consistent.
           </p>
