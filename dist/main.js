@@ -31602,11 +31602,15 @@
 	      "link": "/",
 	      "isDisabled": "true",
 	      "className": "tutorials-sidebar__link"
-	    }, " HTween "), React.createElement(UniteLink, {
+	    }, " Html "), React.createElement(UniteLink, {
 	      "link": "/",
 	      "isDisabled": "true",
 	      "className": "tutorials-sidebar__link"
-	    }, " OTween   ")), React.createElement(ORXLine, null)), React.createElement(SocialNetworks, {
+	    }, " Svg   "), React.createElement(UniteLink, {
+	      "link": "/",
+	      "isDisabled": "true",
+	      "className": "tutorials-sidebar__link"
+	    }, " Object   ")), React.createElement(ORXLine, null)), React.createElement(SocialNetworks, {
 	      "className": "tutorials-sidebar__social-networks"
 	    }));
 	  }
@@ -41464,7 +41468,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'I\'ve made a little animation demo as a starting point to which we will apply some effects. 4 physical balls in a harsh living situation:'
+	          'I\'ve made a little animation demo as a starting point to which we will apply some effects. 4 physical balls in a harsh living situation(x):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '3fe5eabaf7cfb83142bbd1be3f2f2850', height: '500' }),
 	        _react2.default.createElement(
@@ -41486,9 +41490,20 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'For instance, you can add the effect of collision between balls with ease:'
+	          'For instance, you can add the effect of collision between balls with ease(x):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '7315f4364360ec87a6655d33782702fe', height: '500' }),
+	        _react2.default.createElement(
+	          'em',
+	          null,
+	          'You can find the entire source code in ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://github.com/legomushroom/shape-demo2' },
+	            'this repo'
+	          ),
+	          ' since the bundled Codepen code could be unreadable.'
+	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
@@ -41498,9 +41513,20 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The next effect, you can add to the scene is the "motion trails" effect:'
+	          'The next effect, you can add to the scene is the "motion trails" effect (x):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '92f9a7b05498b8a0be3734737a9cfc70', height: '500' }),
+	        _react2.default.createElement(
+	          'em',
+	          null,
+	          'You can find the entire source code in ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://github.com/legomushroom/shape-demo2' },
+	            'this repo'
+	          ),
+	          ' since the bundled Codepen code could be unreadable.'
+	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
@@ -41515,9 +41541,20 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The next effect that can fit this scene is the "dust trail" effect:'
+	          'The next effect that can fit this scene is the "dust trail" effect (x):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '6f7b05a45679964ccdf9212fa68075c8', height: '500' }),
+	        _react2.default.createElement(
+	          'em',
+	          null,
+	          'You can find the entire source code in ',
+	          _react2.default.createElement(
+	            _uniteLink2.default,
+	            { link: 'https://github.com/legomushroom/shape-demo2' },
+	            'this repo'
+	          ),
+	          ' since the bundled Codepen code could be unreadable.'
+	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
@@ -41691,7 +41728,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s the exact same effect I\'ve used in Bubble Layout demo a while ago, when I was trying to convey the bubble interface (click on any circle to see the close button):'
+	          'That\'s the exact same effect I\'ve used in Bubble Layout demo a while ago, when I was trying to convey the bubble interface (click on any circle to see the close button)(x):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'yNOage', height: '500' }),
 	        _react2.default.createElement(
@@ -41807,7 +41844,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'In the other case, when the user finally proceeds with the button click, we will blow up the modal as a consequence of the modal\'s tension and show the chosen word. That\'s the entire sequence:'
+	          'In the other case, when the user finally proceeds with the button click, we will blow up the modal as a consequence of the modal\'s tension and show the chosen word. That\'s the entire sequence (x):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '812699ce32c9a7aeb70c9384b32a533a', height: '600' }),
 	        _react2.default.createElement(
@@ -42306,7 +42343,7 @@
 	            { className: 'highlight' },
 	            'Shape'
 	          ),
-	          ', mojs takes care about all bootstrapping work, create as narrow container for the burst as possible and positioning the effect for you.'
+	          ', mojs takes care about all bootstrapping work, creates as narrow container for the burst as possible and positioning the effect for you.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -42525,7 +42562,7 @@
 	            { className: 'highlight' },
 	            'style'
 	          ),
-	          ' attributes because it has no shape, it has no ',
+	          ' attributes because it has no shape, furthermore it has no ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43079,7 +43116,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Anyways, sequences like that are a cinch when you have the burst module in your hands. There is how to do the main part of the sequence (click anywhere to see):'
+	          'Anyways, sequences like that are a cinch when you have the burst module in your hands. Here\'s how to do the main part of the sequence (click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'cb910fce2e9ed27f902ae7f895bbb9ac', height: '500' }),
 	        _react2.default.createElement(
@@ -43173,7 +43210,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'And the last touch is to add all the color deltas, there are quite some of them(click anywhere to see):'
+	          'And the last touch is to add all the color deltas, there are quite some of them (click anywhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'f25a2fbaf15c43c0923f507d54951cdb', height: '500' }),
 	        _react2.default.createElement(
@@ -43197,7 +43234,7 @@
 	            { className: 'highlight' },
 	            'Burst'
 	          ),
-	          ' module. For instance bubbles, in the first part, can be made like this:'
+	          ' module. For instance bubbles, in the first part could be made like this:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'a336008aff2d73121763887097a99001', height: '500' }),
 	        _react2.default.createElement(
@@ -43327,7 +43364,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The second part of the demo is even simpler, we just need to set ',
+	          'The second part - the bubble fadeout effect is even simpler, we just need to set ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43427,7 +43464,7 @@
 	            { className: 'highlight' },
 	            'degree: 180'
 	          ),
-	          ', children ',
+	          ', childrens\' ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43450,7 +43487,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'There is another one burst in that demo:'
+	          'There is another burst in that demo:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '953926af8c30d3dd297070b1a079e059', height: '500' }),
 	        _react2.default.createElement(
@@ -43509,7 +43546,7 @@
 	            { className: 'highlight' },
 	            'delay'
 	          ),
-	          ' with a property map:'
+	          ' with help of property map:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '2be25259bdd8e01f9ac3770f6f2bd36a', height: '500' }),
 	        _react2.default.createElement(
@@ -43521,7 +43558,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Pretty yummy.'
+	          'Pretty yummy detail.'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -43567,7 +43604,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Catching up? Good. Let\'s refactor it a bit and make the vertical line start from the bottom, like firework launch:'
+	          'Good. Let\'s refactor it a bit and make the vertical line start from the bottom, like firework launch:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'a3c64825683dddd18316f8f288475131', height: '500' }),
 	        _react2.default.createElement(
@@ -43593,7 +43630,7 @@
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: '/tutorials/shape/' },
-	            'Shape&ShapeSwirl'
+	            'Shape & ShapeSwirl'
 	          ),
 	          ' tutorial(×):'
 	        ),
@@ -43601,7 +43638,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Do you see that blast at the start? Let\'s make it together. First, you can notice these small particles:'
+	          'Do you see that blast at the start? Let\'s make it together. First, you can notice these small particles (click somewhere to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '79db23782ec1eb9d16246b136ec82b9c', height: '500' }),
 	        _react2.default.createElement(
@@ -43694,7 +43731,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'If you recall the next old demo, you probably can say now how it was done. How many modules does this blast compose (click close to see the effect)(×)?'
+	          'If you recall the next old demo, you probably can say now how it was made. How many modules does this blast compose (click close to see the effect)(×)?'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'XJjLxe', height: '700' }),
 	        _react2.default.createElement(
@@ -43718,7 +43755,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'The effect is a bit more modest than the previous one. As you can see, I haven\'t recreated exactly the same sequence here, but rather made a bit different one.'
+	          'The effect is a bit more modest than the previous one. As you can see, I haven\'t recreated exactly the same sequence here, but rather made a slightly different one.'
 	        ),
 	        _react2.default.createElement(
 	          'h3',
@@ -43770,7 +43807,7 @@
 	            { className: 'highlight' },
 	            'true'
 	          ),
-	          ', we will have sine paths. That\'s how you do 4 at once (click to see):'
+	          ', we will have sine paths. This is how you do 4 at once (click to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: 'bbc4c52b7145d9d872ac437f21afd75f', height: '500' }),
 	        _react2.default.createElement(
@@ -43793,12 +43830,12 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'OK. Recalling the mole demo, what else did you notice? Probably that confetti that appears when cube hits the floor. Right!'
+	          'OK. Recalling the mole demo, what else did you notice? Probably confetti that appears when cube hits the floor. Right!'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s how you the first large one:'
+	          'That\'s how you do the first large one:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '421a16733643447bb4770424cf72563d', height: '500' }),
 	        _react2.default.createElement(
@@ -43816,7 +43853,7 @@
 	            { className: 'highlight' },
 	            '0-degree'
 	          ),
-	          ' burst, and rotate the main swirl downward, imitating that the air current that comes out from his mouth gets weaker:'
+	          ' burst, and rotate the main swirl downward, imitating that the air current which comes out of his mouth gets weaker:'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '828d4f1e1f6fdfd608b588af0b9bdd45', height: '500' }),
 	        _react2.default.createElement(
@@ -43874,7 +43911,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'That\'s it. OK, let\'s recall another demo, remember this one from previous the tutorial? Did I notice that the dust trail effect is much easier with burst(×)?'
+	          'OK, let\'s recall another demo, remember this one from previous the tutorial? Did I notice that the dust trail effect is much easier with burst(×)?'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '633e6aa52d40691cca2f2cda91650bae', height: '500' }),
 	        _react2.default.createElement(
@@ -43886,7 +43923,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Look, now instead of multiple swirl modules which we have been using in the previous tutorial, we use just one burst - ',
+	          'Now instead of multiple swirl modules which we have been using in the previous tutorial, we use just one burst - ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43910,7 +43947,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'This time, we have used ',
+	          'This time, we have used the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -43943,7 +43980,7 @@
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: '/tutorials/shape/' },
-	            'Shape&ShapeSwirl'
+	            'Shape & ShapeSwirl'
 	          ),
 	          ' tutorial, but this time with just 2 ',
 	          _react2.default.createElement(
@@ -43957,7 +43994,7 @@
 	            { className: 'highlight' },
 	            'Bursts'
 	          ),
-	          ' are fun, there is a little demo I\'ve made with the dust effect (click to see):'
+	          ' are fun, there is a little demo I\'ve made with this dust trail effect (click to see):'
 	        ),
 	        _react2.default.createElement(_codepen2.default, { pen: '03e9d8f2fbf886aa1505c61c81d782a0', height: '700' }),
 	        _react2.default.createElement(
@@ -44015,7 +44052,7 @@
 	            { className: 'highlight' },
 	            'mojs'
 	          ),
-	          ' takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls and could not be set either. To control child swirls, pass the ',
+	          ' takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls. To control child swirls, pass the ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
@@ -44043,19 +44080,19 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'I happy you\'ve made it here! It was a long and intense journey, I hope you don\'t feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter (',
+	          'I\'m happy you\'ve made it here! It was a long and intense journey, I hope you don\'t feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules that will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: 'https://twitter.com/legomushroom' },
 	            '@legomushroom'
 	          ),
-	          '), ask a question on StackOverflow with ',
+	          ', ask a question on StackOverflow with ',
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'highlight' },
 	            '#mojs'
 	          ),
-	          ' tag, rise an issue on ',
+	          ' tag, rise an issue on the ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
 	            { link: 'https://github.com/legomushroom/mojs' },
@@ -44064,13 +44101,13 @@
 	          ' or leave a comment in the section below. You can help the project on ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
-	            null,
+	            { link: 'https://patreon.com' },
 	            'Patreon'
 	          ),
 	          ' (project does need help) and/or on ',
 	          _react2.default.createElement(
 	            _uniteLink2.default,
-	            { link: 'https://github.com/legomushroom/mojs/issues' },
+	            { link: 'https://github.com/legomushroom/mojs/' },
 	            'GitHub'
 	          ),
 	          '. ',

@@ -1197,7 +1197,7 @@ const heart = new mojs.Shape({
           </p>
 
           <p>
-            I've made a little animation demo as a starting point to which we will apply some effects. 4 physical balls in a harsh living situation:
+            I've made a little animation demo as a starting point to which we will apply some effects. 4 physical balls in a harsh living situation(x):
           </p>
 
           <Pen pen="3fe5eabaf7cfb83142bbd1be3f2f2850" height="500" />
@@ -1211,10 +1211,14 @@ const heart = new mojs.Shape({
           </p>
 
           <p>
-            For instance, you can add the effect of collision between balls with ease:
+            For instance, you can add the effect of collision between balls with ease(x):
           </p>
 
           <Pen pen="7315f4364360ec87a6655d33782702fe" height="500" />
+
+          <em>
+            You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo2">this repo</UniteLink> since the bundled Codepen code could be unreadable.
+          </em>
 
           <p>
             As you would expect, the effect itself was composed of bunch of shapes and swirls:
@@ -1223,10 +1227,14 @@ const heart = new mojs.Shape({
           <Pen pen="c29f0b2ce24147e4886691b61b31b3fb" height="500"></Pen>
 
           <p>
-            The next effect, you can add to the scene is the "motion trails" effect:
+            The next effect, you can add to the scene is the "motion trails" effect (x):
           </p>
 
           <Pen pen="92f9a7b05498b8a0be3734737a9cfc70" height="500"></Pen>
+
+          <em>
+            You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo2">this repo</UniteLink> since the bundled Codepen code could be unreadable.
+          </em>
 
           <p>
             Motion trail effect is usually used to exaggerate velocity of the object that moves and the environment it moves in. Just a nice subtle detail. The effect was composed of 2 shapes, namely curves.
@@ -1239,10 +1247,14 @@ const heart = new mojs.Shape({
           <Pen pen="fff0bcc079e0448bd0a72ee311ebadfa" height="500"></Pen>
 
           <p>
-            The next effect that can fit this scene is the "dust trail" effect:
+            The next effect that can fit this scene is the "dust trail" effect (x):
           </p>
 
           <Pen pen="6f7b05a45679964ccdf9212fa68075c8" height="500"></Pen>
+
+          <em>
+            You can find the entire source code in <UniteLink link="https://github.com/legomushroom/shape-demo2">this repo</UniteLink> since the bundled Codepen code could be unreadable.
+          </em>
 
           <p>
             It was composed of bunch of swirls, let's spend some time and see how exactly you can build something like that. First, you want to make the swirls move downward, - somewhere into the ground:
@@ -1438,7 +1450,7 @@ const heart = new mojs.Shape({
           <Pen pen="3c49de2d7d0ca3e92bf5db5bf7a2687d" height="500"></Pen>
 
           <p>
-            That's the exact same effect I've used in Bubble Layout demo a while ago, when I was trying to convey the bubble interface (click on any circle to see the close button):
+            That's the exact same effect I've used in Bubble Layout demo a while ago, when I was trying to convey the bubble interface (click on any circle to see the close button)(x):
           </p>
 
           <Pen pen="yNOage" height="500"></Pen>
@@ -1530,7 +1542,7 @@ const heart = new mojs.Shape({
           <Pen pen="fcc29bcf5d0eebf37d558864b7a2e334" height="500"></Pen>
 
           <p>
-            In the other case, when the user finally proceeds with the button click, we will blow up the modal as a consequence of the modal's tension and show the chosen word. That's the entire sequence:
+            In the other case, when the user finally proceeds with the button click, we will blow up the modal as a consequence of the modal's tension and show the chosen word. That's the entire sequence (x):
           </p>
 
           <Pen pen="812699ce32c9a7aeb70c9384b32a533a" height="600"></Pen>

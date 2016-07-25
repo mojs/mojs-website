@@ -372,7 +372,7 @@ burst
           <Pen pen="3c49de2d7d0ca3e92bf5db5bf7a2687d" height="500"></Pen>
 
           <p>
-            You can imagine that those effects are much easier with <span className="highlight">Burst</span> module. For instance bubbles, in the first part, can be made like this:
+            You can imagine that those effects are much easier with <span className="highlight">Burst</span> module. For instance bubbles, in the first part could be made like this:
           </p>
 
           <Pen pen="a336008aff2d73121763887097a99001" height="500"></Pen>
@@ -398,7 +398,7 @@ burst
           <Pen pen="d260dc9246f2100b9f2dbe79a01d01f6" height="500"></Pen>
 
           <p>
-            The second part of the demo is even simpler, we just need to set <span className="highlight">degree</span> to <span className="highlight">0</span> so the particles will flow in one direction, then set <span className="highlight">isSwirl</span> to <span className="highlight">true</span> (Burst composes ShapeSwirls, remember?) on <span className="highlight">children</span> thus particles will follow sine path. After that we need to slightly randomize <span className="highlight">swirlSize</span>, <span className="highlight">swirlFrequency</span> and <span className="highlight">pathScale</span> parameters (click somewhere to see):
+            The second part - the bubble fadeout effect is even simpler, we just need to set <span className="highlight">degree</span> to <span className="highlight">0</span> so the particles will flow in one direction, then set <span className="highlight">isSwirl</span> to <span className="highlight">true</span> (Burst composes ShapeSwirls, remember?) on <span className="highlight">children</span> thus particles will follow sine path. After that we need to slightly randomize <span className="highlight">swirlSize</span>, <span className="highlight">swirlFrequency</span> and <span className="highlight">pathScale</span> parameters (click somewhere to see):
           </p>
 
           <Pen pen="60d5d3c97981022f20f86c37580bceb1" height="500"></Pen>
@@ -428,11 +428,11 @@ burst
           <Pen pen="4fe37a79f6d665d749ebcb4f22c2ee4e" height="500" />
 
           <p>
-            This one was made by virtue of <span className="highlight">degree: 180</span>, children <span className="highlight">radius</span> of <span className="highlight">7</span> and <span className="highlight">strokeDashoffset</span> animation on particles.
+            This one was made by virtue of <span className="highlight">degree: 180</span>, childrens' <span className="highlight">radius</span> of <span className="highlight">7</span> and <span className="highlight">strokeDashoffset</span> animation on particles.
           </p>
 
           <p>
-            There is another one burst in that demo:
+            There is another burst in that demo:
           </p>
 
           <Pen pen="953926af8c30d3dd297070b1a079e059" height="500" />
@@ -455,7 +455,7 @@ burst
           <Pen pen="d84370a3c19fdcea8c714e7049c9ab5d" height="500" />
 
           <p>
-            Hm, they kind of overlap, so let's shift them by staggering <span className="highlight">left</span> and <span className="highlight">top</span> properties on children, after that let's add some <span className="highlight">delay</span> with a property map:
+            Hm, they kind of overlap, so let's shift them by staggering <span className="highlight">left</span> and <span className="highlight">top</span> properties on children, after that let's add some <span className="highlight">delay</span> with help of property map:
           </p>
 
           <Pen pen="2be25259bdd8e01f9ac3770f6f2bd36a" height="500" />
@@ -468,7 +468,7 @@ burst
           <Pen pen="bf8377efd5b0dada9537481e29ecd6af" height="500" />
 
           <p>
-            Pretty yummy.
+            Pretty yummy detail.
           </p>
 
           <p>
@@ -488,7 +488,7 @@ burst
           <Pen pen="33f7924ecd146d951698bf190ac7838e" height="500" />
 
           <p>
-            Catching up? Good. Let's refactor it a bit and make the vertical line start from the bottom, like firework launch:
+            Good. Let's refactor it a bit and make the vertical line start from the bottom, like firework launch:
           </p>
 
 
@@ -507,7 +507,7 @@ burst
           <Pen pen="c94452fb65dbf676b0ae8a12d4267473" height="500" />
 
           <p>
-            Do you see that blast at the start? Let's make it together. First, you can notice these small particles:
+            Do you see that blast at the start? Let's make it together. First, you can notice these small particles (click somewhere to see):
           </p>
           
           <Pen pen="79db23782ec1eb9d16246b136ec82b9c" height="500" />
@@ -541,7 +541,7 @@ burst
           <h3>Modal blast</h3>
 
           <p>
-            If you recall the next old demo, you probably can say now how it was done. How many modules does this blast compose (click close to see the effect)(×)?
+            If you recall the next old demo, you probably can say now how it was made. How many modules does this blast compose (click close to see the effect)(×)?
           </p>
 
           <Pen pen="XJjLxe" height="700" />
@@ -553,7 +553,7 @@ burst
           <Pen pen="6caf96461207a5caa9226fbd2631569d" height="500" />
 
           <p>
-            The effect is a bit more modest than the previous one. As you can see, I haven't recreated exactly the same sequence here, but rather made a bit different one.
+            The effect is a bit more modest than the previous one. As you can see, I haven't recreated exactly the same sequence here, but rather made a slightly different one.
           </p>
 
           <h3>The sleepy mole</h3>
@@ -581,11 +581,11 @@ burst
           </em>
 
           <p>
-            OK. Recalling the mole demo, what else did you notice? Probably that confetti that appears when cube hits the floor. Right! 
+            OK. Recalling the mole demo, what else did you notice? Probably confetti that appears when cube hits the floor. Right! 
           </p>
 
           <p>
-            That's how you the first large one:
+            That's how you do the first large one:
           </p>
 
           <Pen pen="421a16733643447bb4770424cf72563d" height="500" />
@@ -597,7 +597,7 @@ burst
           <Pen pen="d0d0c2b1e98f1a0f8d6ea250c31ed081" height="500" />
 
           <p>
-            What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First, you want to make <span className="highlight">0-degree</span> burst, and rotate the main swirl downward, imitating that the air current that comes out from his mouth gets weaker:
+            What else have you noticed in the mole demo? Yep saliva that comes from the mole mouth when it teases. First, you want to make <span className="highlight">0-degree</span> burst, and rotate the main swirl downward, imitating that the air current which comes out of his mouth gets weaker:
           </p>
 
           <Pen pen="828d4f1e1f6fdfd608b588af0b9bdd45" height="500" />
@@ -621,7 +621,7 @@ burst
           <h3>The dust trail</h3>
 
           <p>
-            That's it. OK, let's recall another demo, remember this one from previous the tutorial? Did I notice that the dust trail effect is much easier with burst(×)?
+            OK, let's recall another demo, remember this one from previous the tutorial? Did I notice that the dust trail effect is much easier with burst(×)?
           </p>
 
           <Pen pen="633e6aa52d40691cca2f2cda91650bae" height="500"></Pen>
@@ -633,7 +633,7 @@ burst
           <Pen pen="c59d4e046a6c78f3ac9d3a5699018fa8" height="500"></Pen>
 
           <p>
-            Look, now instead of multiple swirl modules which we have been using in the previous tutorial, we use just one burst - <span className="highlight">stagger</span> expressions turn out to be useful! After that you want to create an <span className="highlight">overflow: hidden</span> container and assign it as <span className="highlight">parent</span> to the burst:
+            Now instead of multiple swirl modules which we have been using in the previous tutorial, we use just one burst - <span className="highlight">stagger</span> expressions turn out to be useful! After that you want to create an <span className="highlight">overflow: hidden</span> container and assign it as <span className="highlight">parent</span> to the burst:
           </p>
 
 
@@ -650,7 +650,7 @@ burst
           <Pen pen="10cc620075141688d0cf8eca7a561062" height="500"></Pen>
 
           <p>
-            That's exact the same effect as we have made in the <UniteLink link="/tutorials/shape/">Shape & ShapeSwirl</UniteLink> tutorial, but this time with just 2 <span className="highlight">Bursts</span>! <span className="highlight">Bursts</span> are fun, there is a little demo I've made with the dust effect (click to see):
+            That's exact the same effect as we have made in the <UniteLink link="/tutorials/shape/">Shape & ShapeSwirl</UniteLink> tutorial, but this time with just 2 <span className="highlight">Bursts</span>! <span className="highlight">Bursts</span> are fun, there is a little demo I've made with this dust trail effect (click to see):
           </p>
 
           <Pen pen="03e9d8f2fbf886aa1505c61c81d782a0" height="700"></Pen>
@@ -662,14 +662,14 @@ burst
           <h2> Recap </h2>
 
           <p>
-            Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes a bunch of child <span className="highlight">ShapeSwirls</span> forming the radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls and could not be set either. To control child swirls, pass the <span className="highlight">ShapeSwirl</span> properties to the <span className="highlight">children</span> property of the main swirl. You can find exhaustive API reference at <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> section.
+            Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes a bunch of child <span className="highlight">ShapeSwirls</span> forming the radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls. To control child swirls, pass the <span className="highlight">ShapeSwirl</span> properties to the <span className="highlight">children</span> property of the main swirl. You can find exhaustive API reference at <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> section.
           </p>
             
 
           <h2>Thank you!</h2>
 
           <p>
-            I'm happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules that will land to the mojs shortly, so stay tuned. For any questions, catch me on Twitter <UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>, ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on the <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink link="https://patreon.com">Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">GitHub</UniteLink>. {'Love <3.'}
+            I'm happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules that will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter <UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>, ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on the <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink link="https://patreon.com">Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/">GitHub</UniteLink>. {'Love <3.'}
           </p>
 
           <p>
