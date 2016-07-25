@@ -62,7 +62,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            Just like with <span className="highlight">Shape</span>, mojs takes care about all bootstrapping work, creating as narrow container as possible and positioning the effect for you.
+            Just like with <span className="highlight">Shape</span>, mojs takes care about all bootstrapping work, create as narrow container for the burst as possible, and positioning the effect for you.
           </p>
 
           <p>
@@ -101,7 +101,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-           The particles of the burst evenly placed in the circle that has 360 degrees which you can change with the <span className="highlight">degree</span> property:
+           The particles of the burst are evenly placed in a 360 degree circle, which you can narrow down with the <span className="highlight">degree</span> property:
           </p>
 
           <CodeSample pen="11fadc18861a656f0a72f5e132f48f12">
@@ -115,11 +115,11 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            Here above, we have the burst that has <span className="highlight">30 degrees</span> of sufficient place for particles.
+            Here above, we have a burst that has <span className="highlight">30 degrees</span> of sufficient place for particles.
           </p>
 
           <p>
-            It is very important to note here that since the main swirl of <span className="highlight">Burst</span> module has no actual shape - it completely have no style attributes that define shape's presentation - all of them among which are the <span className="highlight">stroke</span> or <span className="highlight">strokeWidth</span> or <span className="highlight">fill</span> are completely useless.
+            It is very important to note here that since the main swirl of <span className="highlight">Burst</span> module has no actual shape - it has no style attributes that define shape's presentation - all of them among which are the <span className="highlight">stroke</span> or <span className="highlight">strokeWidth</span> or <span className="highlight">fill</span> are completely useless.
           </p>
 
           <p>
@@ -142,7 +142,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as the reference.
+            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, it has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as the reference.
           </p>
 
           <p>
@@ -222,7 +222,7 @@ const BurstPage = new React.createClass({
           </p>
 
           <p>
-            In the demo above, that's exact the same circle, but we have <span className="highlight">staggered</span> the <span className="highlight">delay</span> property so it looks rather spiral now.
+            In the demo above, that's exact the same circle as in the demo before, but we have <span className="highlight">staggered</span> the <span className="highlight">delay</span> property so it looks rather spiral now.
           </p>
 
           <p>
@@ -254,7 +254,7 @@ const BurstPage = new React.createClass({
           <h3>Property Maps</h3>
 
           <p>
-            Property Map was designed to express sequential values. You can use it to generate values that repeat over and over but are mapped to children length. Basically, it is just an array that maps its values to children regarding child index with <span className="highlight">mod</span> function. So if you have <span className="highlight">property map</span> with <span className="highlight">3 values</span> and burst has <span className="highlight">5 children</span>, then <span className="highlight">4</span>th and <span className="highlight">5</span>th item will receive <span className="highlight">0</span>th and <span className="highlight">1</span>st values from the map respectively:
+            Property Map was designed to express sequential values. You can use it to generate values that repeat over and over but are mapped to children length. Basically, it is just an array that maps its values to children regarding child index with <span className="highlight">mod</span> function. So if you have a <span className="highlight">property map</span> with <span className="highlight">3 values</span> and burst has <span className="highlight">5 children</span>, then the <span className="highlight">4</span>th and <span className="highlight">5</span>th items will receive the <span className="highlight">0</span>th and <span className="highlight">1</span>st values from the map respectively:
           </p>
 
           <CodeSample pen="c3c518a84fea019d715cad07e87c29bf">
@@ -274,11 +274,11 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            So starting from 12 o'clock clockwise children <span className="highlight">fill</span> property gets values of <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>, <span className="highlight">yellow</span> and then again starting from the beginning of the property map - <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>.
+            So starting from 12 o'clock clockwise, the 5 childrens <span className="highlight">fill</span> properties gets values of <span className="highlight">deeppink</span>, <span className="highlight">cyan</span>, <span className="highlight">yellow</span> and then again starting from the beginning of the property map - <span className="highlight">deeppink</span>, <span className="highlight">cyan</span> ( <code className="code-inline">[0],[1],[2],[0],[1]</code> ).
           </p>
 
           <p>
-            Property maps work with any property and property forms, in fact, that's just a prism(or multiplexer) that feeds children with properties by virtue of modulus function. Good aid if you want to set some property on child explicitly.
+            Property maps work with any property and property forms, in fact, that's just a prism (or multiplexer) that feeds children with properties by virtue of modulus function. Good aid if you want to set some property on child explicitly.
           </p>
 
           <h2> then, tune, generate and play </h2>
@@ -312,13 +312,13 @@ burst
           </Cite>
 
           <p>
-            <span className="highlight">Burst</span>, in similarity with <span className="highlight">Shape</span> or <span className="highlight">ShapeSwirl</span>, has numerous application fields, among which are motion graphics, animation or UI. In contrary to <UniteLink link="/tutorials/shape/"> Shape&ShapeSwirl </UniteLink> tutorial, I won't split use cases to different entities but rather will try to do lot's of small demos, each with explanation comments. Hang tight!
+            <span className="highlight">Burst</span>, in similarity with <span className="highlight">Shape</span> or <span className="highlight">ShapeSwirl</span>, has numerous application fields, among which are motion graphics, animation or UI. In contrary to the <UniteLink link="/tutorials/shape/"> Shape & ShapeSwirl </UniteLink> tutorial, I won't split use cases to different entities but rather will try to do lot's of small demos, each with explanation comments. Hang tight!
           </p>
 
           <h3>Micro Confirmations</h3>
 
           <p>
-            First what comes to mind when I see the default burst - is the famous Twitter's fav animation. Animations like that are usually called <span className="highlight">micro confirmations</span> but I've used to call them <span className="highlight">micro celebrations</span> because of their festivity.
+            The first thing that comes to mind when I see the default burst - is the famous Twitter's fav animation. Animations like that are usually called <span className="highlight">micro confirmations</span> but I've used to call them <span className="highlight">micro celebrations</span> because of their festivity.
           </p>
 
           <p>
@@ -366,7 +366,7 @@ burst
           <Pen pen="f25a2fbaf15c43c0923f507d54951cdb" height="500" />
 
           <p>
-            That's basically the same micro confirmations that I've given you in the <UniteLink link="/tutorials/shape/">Shape&ShapeSwirl</UniteLink> tutorial(×):
+            That's basically the same micro confirmations that I've given you in the <UniteLink link="/tutorials/shape/">Shape & ShapeSwirl</UniteLink> tutorial(×):
           </p>
 
           <Pen pen="3c49de2d7d0ca3e92bf5db5bf7a2687d" height="500"></Pen>
