@@ -62,7 +62,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            Just like with <span className="highlight">Shape</span>, mojs takes care about all bootstrapping work, create as narrow container for the burst as possible and positioning the effect for you.
+            Just like with <span className="highlight">Shape</span>, mojs takes care about all bootstrapping work, creates as narrow container for the burst as possible and positioning the effect for you.
           </p>
 
           <p>
@@ -142,7 +142,7 @@ const BurstPage = new React.createClass({
           </CodeSample>
 
           <p>
-            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, it has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles' <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity, parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as the reference.
+            To recap, the main swirl of the <span className="highlight">Burst</span> has no <span className="highlight">style</span> attributes because it has no shape, furthermore it has no <span className="highlight">tween</span> related properties like <span className="highlight">duration</span> which is computed regarding particles' <span className="highlight">duration</span>. But <span className="highlight">Burst</span> has all other properties most of them regarding position, opacity, parent etc. You can always use the <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> as the reference.
           </p>
 
           <p>
@@ -322,7 +322,7 @@ burst
           </p>
 
           <p>
-            Anyways, sequences like that are a cinch when you have the burst module in your hands. There is how to do the main part of the sequence (click anywhere to see):
+            Anyways, sequences like that are a cinch when you have the burst module in your hands. Here's how to do the main part of the sequence (click anywhere to see):
           </p>
 
           <Pen pen="cb910fce2e9ed27f902ae7f895bbb9ac" height="500" />
@@ -360,7 +360,7 @@ burst
           <Pen pen="e3751855536c67dc6f57f9e74e5e347d" height="500" />
 
           <p>
-            And the last touch is to add all the color deltas, there are quite some of them(click anywhere to see):
+            And the last touch is to add all the color deltas, there are quite some of them (click anywhere to see):
           </p>
 
           <Pen pen="f25a2fbaf15c43c0923f507d54951cdb" height="500" />
@@ -501,7 +501,7 @@ burst
           <h3>Blast all the things up</h3>
 
           <p>
-            Let's move on. What else we can do with <span className="highlight">Burst</span>? We can blast things up. I love blasting things up, do you? Recall this demo from the <UniteLink link="/tutorials/shape/">Shape&ShapeSwirl</UniteLink> tutorial(×):
+            Let's move on. What else we can do with <span className="highlight">Burst</span>? We can blast things up. I love blasting things up, do you? Recall this demo from the <UniteLink link="/tutorials/shape/">Shape & ShapeSwirl</UniteLink> tutorial(×):
           </p>
 
           <Pen pen="c94452fb65dbf676b0ae8a12d4267473" height="500" />
@@ -571,7 +571,7 @@ burst
           <Pen pen="97a95a5cb7663cf336e8d80f9f511553" height="500" />
 
           <p>
-            How is it possible? Remember that the <span className="highlight">Burst</span> composes <span className="highlight">ShapeSwirls</span>, not simple <span className="highlight">Shape</span>s so, if we set <span className="highlight">isSwirl</span> to <span className="highlight">true</span>, we will have sine paths. That's how you do 4 at once (click to see):
+            How is it possible? Remember that the <span className="highlight">Burst</span> composes <span className="highlight">ShapeSwirls</span>, not simple <span className="highlight">Shape</span>s so, if we set <span className="highlight">isSwirl</span> to <span className="highlight">true</span>, we will have sine paths. This is how you do 4 at once (click to see):
           </p>
 
           <Pen pen="bbc4c52b7145d9d872ac437f21afd75f" height="500" />
@@ -640,7 +640,7 @@ burst
           <Pen pen="e48eb4e56ce1fa94c515b4fda6513d24" height="500"></Pen>
 
           <p>
-            This time, we have used <span className="highlight">Shape</span> module as <span className="highlight">parent</span> overflow constrain.
+            This time, we have used the <span className="highlight">Shape</span> module as <span className="highlight">parent</span> overflow constrain.
           </p>
 
           <p>
@@ -650,7 +650,7 @@ burst
           <Pen pen="10cc620075141688d0cf8eca7a561062" height="500"></Pen>
 
           <p>
-            That's exact the same effect as we have made in the <UniteLink link="/tutorials/shape/">Shape&ShapeSwirl</UniteLink> tutorial, but this time with just 2 <span className="highlight">Bursts</span>! <span className="highlight">Bursts</span> are fun, there is a little demo I've made with the dust effect (click to see):
+            That's exact the same effect as we have made in the <UniteLink link="/tutorials/shape/">Shape & ShapeSwirl</UniteLink> tutorial, but this time with just 2 <span className="highlight">Bursts</span>! <span className="highlight">Bursts</span> are fun, there is a little demo I've made with the dust effect (click to see):
           </p>
 
           <Pen pen="03e9d8f2fbf886aa1505c61c81d782a0" height="700"></Pen>
@@ -669,7 +669,7 @@ burst
           <h2>Thank you!</h2>
 
           <p>
-            I happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink>Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">GitHub</UniteLink>. {'Love <3.'}
+            I'm happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules that will land to the mojs shortly, so stay tuned. For any questions, catch me on Twitter <UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>, ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on the <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink link="https://patreon.com">Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/issues">GitHub</UniteLink>. {'Love <3.'}
           </p>
 
           <p>
