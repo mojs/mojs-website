@@ -42033,7 +42033,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Big kudos to ',
+	          'Kudos to ',
 	          _react2.default.createElement(
 	            'a',
 	            { href: 'https://twitter.com/jonassandstedt' },
@@ -44121,7 +44121,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Big kudos to ',
+	          'Kudos to ',
 	          _react2.default.createElement(
 	            'a',
 	            { href: 'https://twitter.com/jonassandstedt' },

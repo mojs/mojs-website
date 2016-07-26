@@ -677,7 +677,7 @@ burst
           </p>
 
           <p>
-            Big kudos to <a href="https://twitter.com/jonassandstedt">Jonas Sandstedt</a> for his help in read proofing this tutorial!
+            Kudos to <a href="https://twitter.com/jonassandstedt">Jonas Sandstedt</a> for his help in read proofing this tutorial!
           </p>
 
           <p style = {{ textAlign: 'center', marginTop: '50px' }}>
