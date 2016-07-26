@@ -1,4 +1,4 @@
-# mo · js website branch
+# mo · js website repo
 
 Please make sure you are on the `dev` branch, never use `master` for changes.
 
