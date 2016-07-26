@@ -15,7 +15,7 @@ module.exports = React.createClass
   getDefaultProps:->
     path:     'M 0,100 L 100,0'
     duration: 2000
-    delay:    1000
+    delay:    350
 
   _start:->
     @setState {'isShow': true}
@@ -68,7 +68,9 @@ module.exports = React.createClass
     <HeftyContent
       label           = { @props.curtainLabel or "tap to see the graph" }
       className       = "easing-object-graph #{className} is-pop-#{@state.pop}"
-      onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() } >
+      onShow          = { => @_start() } onHide={ => @_stop(); @_onHide() }
+      minHeight       = {320}
+      minWidth        = {640} >
 
       <div className="easing-object-graph__inner">
         <span style = {graphsStyle}>

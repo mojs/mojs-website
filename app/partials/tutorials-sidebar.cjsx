@@ -45,8 +45,11 @@ module.exports = React.createClass
 
         <div className="tutorials-sidebar__section">
           <div className="tutorials-sidebar__header"> Tweening </div>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Tween           </UniteLink>
-          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Timeline        </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Tween    </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Timeline </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Html </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Svg   </UniteLink>
+          <UniteLink link="/" isDisabled="true" className="tutorials-sidebar__link"> Object   </UniteLink>
         </div>
 
         <ORXLine />
