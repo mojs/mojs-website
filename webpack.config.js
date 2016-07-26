@@ -1,4 +1,6 @@
 var path = require('path');
+var webpack = require('webpack');
+var UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 
 module.exports = {
   watch: true,
@@ -29,6 +31,14 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
+    }),
+    new UnminifiedWebpackPlugin()
+  ],
   output: {
     path:     __dirname + '/dist',
     filename: 'main.js',

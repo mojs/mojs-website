@@ -382,7 +382,7 @@ burst
           </p>
 
           <p>
-            The second burst is super simple one:
+            The second burst is super simple too:
           </p>
 
           <Pen pen="afbfb59f00d5dfb8b28fc97510fcc167" height="500"></Pen>
@@ -664,12 +664,16 @@ burst
           <p>
             Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main <span className="highlight">ShapeSwirl</span> that composes a bunch of child <span className="highlight">ShapeSwirls</span> forming the radial shape by default. <span className="highlight">mojs</span> takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls. To control child swirls, pass the <span className="highlight">ShapeSwirl</span> properties to the <span className="highlight">children</span> property of the main swirl. You can find exhaustive API reference at <UniteLink link="https://github.com/legomushroom/mojs/blob/master/api/burst.md">Burst API</UniteLink> section.
           </p>
+
+          <p>
+            Burst is indeed an interesting module but, please don't overuse it. Your intention should be to guide and cheer users but not overwhelm them. Be cautious and think twice, if you feel that anyhow the effect you've done makes a visual noize rather than helps to solve a real problem, skip it entirely.
+          </p>
             
 
           <h2>Thank you!</h2>
 
           <p>
-            I'm happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules that will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter <UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>, ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on the <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink link="https://patreon.com">Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/">GitHub</UniteLink>. {'Love <3.'}
+            I'm happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules that will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter <UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>, ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on the <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink link="https://patreon.com/user?u=3219311&utm_medium=social&utm_source=twitter&utm_campaign=creatorshare">Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/">GitHub</UniteLink>. {'Love <3.'}
           </p>
 
           <p>

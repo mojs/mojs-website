@@ -1700,7 +1700,7 @@ const heart = new mojs.Shape({
           <h2>Thank you!</h2>
 
           <p>
-            I deeply appreciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink link="https://www.patreon.com">Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/">GitHub</UniteLink>. {'Love <3.'}
+            I deeply appreciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter (<UniteLink link="https://twitter.com/legomushroom">@legomushroom</UniteLink>), ask a question on StackOverflow with <span className="highlight">#mojs</span> tag, rise an issue on <UniteLink link="https://github.com/legomushroom/mojs">GitHub repo</UniteLink> or leave a comment in the section below. You can help the project on <UniteLink link="https://patreon.com/user?u=3219311&utm_medium=social&utm_source=twitter&utm_campaign=creatorshare">Patreon</UniteLink> (project does need help) and/or on <UniteLink link="https://github.com/legomushroom/mojs/">GitHub</UniteLink>. {'Love <3.'}
           </p>
 
           <p>
