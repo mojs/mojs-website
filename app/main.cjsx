@@ -6,6 +6,7 @@ React.initializeTouchEvents(true)
 
 App            = require './app'
 Main           = require './pages/main'
+Download       = require './pages/download'
 Tutorials      = require './pages/tutorials'
 GettingStarted = require './pages/tutorials/getting-started'
 MotionPath     = require './pages/tutorials/motion-path'
@@ -18,6 +19,7 @@ root = if 0 then '/mojs-website/' else '/'
 routes = (
   <Route     name="app" path="#{root}" handler={App}>
     <Route   name="main"            handler={Main}/>
+    <Route   name="#{root}download/"        handler={Download}/>
     <Route   name="tutorials"       handler={Tutorials}>
       <Route name="#{root}tutorials/burst/" handler={Burst} />
       <Route name="#{root}tutorials/shape/"   handler={Shape} />
