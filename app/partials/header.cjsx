@@ -60,7 +60,7 @@ Header = React.createClass
           <div className="header__links-inner">
             <UniteLink
               type="button"
-              link="https://github.com/legomushroom/mojs"
+              link="/download/"
               className="header__link button--orange"> Download </UniteLink>
           </div>
         </div>

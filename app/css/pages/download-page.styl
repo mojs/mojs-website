@@ -1,0 +1,75 @@
+@import '../imports'
+// @import '../blocks/motion-lettering'
+
+{el = '.download-page'}
+
+  &__options
+    margin-top          2*gs
+    margin-bottom      3*gs
+  
+  opacity 0
+  color white
+  transition all .25s ease-out
+  &.is-shown
+    opacity 1
+  &__content
+    max-width 70*gs
+    fly()
+    +mobile()
+      padding 0 2*gs
+      overflow-x hidden
+  &__quick-start
+    margin-top          3*gs
+    padding-top         gs
+    padding-bottom      4*gs
+    +mobile()
+      border-bottom       PX solid c-white-transparent
+      .code-block
+        &__body
+          font-size     9*PX
+        &__footer
+          line-height   1.9
+          width         80%
+          font-size     11*PX
+  &__quick-start-normal
+    +mobile()
+      display     none
+  &__quick-start-mobile
+    display       none
+    +mobile()
+      display     block
+  &__buttons
+    margin-top    9*gs
+    fly()
+    .button
+      display     block
+      width       100%
+    +mobile()
+      margin-top -1.5*gs
+    .grid-bit
+      +mobile()
+        width     100%
+        max-width 24*gs
+        float     none
+        fly()
+  .button
+    +mobile()
+      margin-top  3*gs
+      font-size   14*PX
+      
+  {social = '.social-networks-about'}
+    margin-top        13.5*gs
+    fly()
+    +mobile()
+      margin-top      7.5*gs
+      {social}__text
+        margin-top    -1*gs
+
+      
+  
+            
+
+
+
+
+          
