@@ -3,21 +3,65 @@
 
 {el = '.download-page'}
 
+  padding-top     16.5*gs
+  padding-bottom  14*gs
+  +mobile()
+    padding-top   9*gs
+    padding-bottom 5*gs
+
+  .post__header
+    color             c-orange
+    font-size         1.5rem
+    letter-spacing    .125rem
+  .post__description
+    color             c-orange
+    font-size         1rem
+    opacity           .75
+    margin-top        .5rem
+
   &__options
-    margin-top          2*gs
-    margin-bottom      3*gs
+    margin-top        2*gs
+    margin-bottom     3*gs
+    width             100%
+    @media (min-width: 490px)
+      float             left
+      width             50%
+    @media (min-width: 1080px)
+      width             25%
+    .language-markup
+      overflow        scroll
+      white-space     nowrap
+    .button
+      margin-top     gs
+    
+  .code-block
+    
+    @media (min-width: 490px) and (max-width: 1079px)
+      &:nth-child(odd)
+        padding-left      gs
+      &:nth-child(even)
+        padding-right     gs
+    @media (min-width: 1080px)
+      padding-right       2*gs
   
-  opacity 0
-  color white
-  transition all .25s ease-out
+  opacity       0
+  color         white
+  transition    all .25s ease-out
   &.is-shown
-    opacity 1
+    opacity     1
   &__content
-    max-width 70*gs
-    fly()
+    //max-width   50em
+    margin      3*gs 6*gs
+    &:after
+      content ""
+      display table
+      clear   both
     +mobile()
-      padding 0 2*gs
-      overflow-x hidden
+      margin    0 2*gs
+  &__list
+    margin      10*gs 6*gs 3*gs
+    +mobile()
+      margin    0 2*gs
   &__quick-start
     margin-top          3*gs
     padding-top         gs
@@ -65,11 +109,130 @@
       {social}__text
         margin-top    -1*gs
 
-      
+.listitems__wrap
+  position    relative
+
+.listitems
+  @media (min-width: 730px)
+    max-width 70%
+    
+  &:after
+    content   ""
+    display   table
+    clear     both
+
+.listitem
+  padding       .6em .5em .6em 3em
+  @media (min-width: 730px)
+    padding       1.5em .5em 1.5em 3em
+
+  cursor        pointer
+  font-size       18*PX
+  letter-spacing  1.7*PX
+  margin-bottom   gs
+
+  display       inline-block
+  float         left
+  width         100%
+  @media (min-width: 450px)
+    width       50%
+  @media (min-width: 970px)
+    width       33.3%
+  @media (min-width: 1150px)
+    width       25%
+  @media (min-width: 1450px)
+    width       20%
+    
+  &__wrap
+    position    relative
+
   
-            
+  &__checkbox
+    position    absolute
+    opacity     0
+    z-index     -1
 
+    &:checked ~ .listitem__wrap .listitem__indicator
+      &:after
+        cb = cubic-bezier(.02,.22,0,1.74)
+        transform       scale(0.6)
+        opacity         1
+        transition      transform 0.5s cb, opacity 0.5s cb
+      
+    &:active ~ .listitem__wrap .listitem__indicator, &:focus ~ .listitem__wrap .listitem__indicator
+      border            2px solid c-orange
+      
+  &__indicator
+    radius = 2em
+    position            absolute
+    top                 -0.3em    
+    left                -3em
+    display             block
+    width               radius
+    height              radius
+    border              1px solid c-orange
+    user-select         none
+    border-radius       100%
+    transition          border
+    &:after
+      cb          = cubic-bezier(.77,0,1,.67)
+      content           ""
+      display           block
+      width             100%
+      height            100%
+      position          absolute
+      top               -1px
+      left              -1px
+      border-radius     100%
+      background        c-orange
+      border            1px solid c-orange
+      transform         scale(0)
+      opacity           1
+      transition        transform 0.2s cb, opacity 0.2s cb
+   
 
+  &__description
+    display         none
+    opacity         .65
+    font-size       12*PX
+    letter-spacing  PX
+    line-height     1.85
+    margin-top      1.5em
+    .is-safari &
+      font-weight 900   
+    
+    @media (min-width: 730px)
+        display     block
+        width       25%
+        position    absolute
+        top         0
+        right       0
+        opacity     0
+        transition  opacity 0.2s 0.2s
+    
+    &__header
+        color       c-orange
+    p
+      margin-top    0
+  
+.listitem__checkbox:focus ~ .listitem__description
+  @media (min-width: 730px)
+    opacity     1
 
+.button--customdownload
+  clear         both
+  display       block
+  width         100%
+  @media (min-width: 450px)
+    width       calc(50% - 2em)
+  @media (min-width: 970px)
+    width       calc(33.3% - 2em)
+  @media (min-width: 1150px)
+    width       calc(25% - 2em)
+  @media (min-width: 1450px)
+    width       calc(20% - 2em)
 
-          
+.row
+  clear       both
+  padding-top gs*2
+
