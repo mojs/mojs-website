@@ -10,14 +10,16 @@ Physics         = require('impulse')
 Tappable        = require 'react-tappable'
 # mojs            = require 'mo-js'
 Hammer          = require 'react-hammerjs'
-Cookies         = require 'cookies-js'
+# Cookies         = require 'cookies-js'
 
 # transition = null
 module.exports = React.createClass
   contextTypes: router: React.PropTypes.func
   getInitialState:-> { isSidebarOpen: window.innerWidth > 1120 }
   componentDidMount:->
-    @_redirect(); @_showBurst(); @_addImpulse()
+    @_redirect()
+    # @_showBurst();
+    @_addImpulse()
     window.addEventListener 'resize', @_checkSidebarStatus
   componentWillUnmount:-> @_unbindResize()
   componentDidUpdate:->
@@ -51,27 +53,29 @@ module.exports = React.createClass
       @impulseMenu.position mojs.h.clamp e.deltaX, -@sidebarWidth, 0
     else @setState isSidebarOpen: !(e.deltaX < -(@sidebarWidth/5))
 
-  _showBurst:->
-    return if Cookies('mojs-tutorials-burst')
-    Cookies('mojs-tutorials-burst', true)
+  # _showBurst:->
+  #   return if Cookies('mojs-tutorials-burst')
+  #   Cookies('mojs-tutorials-burst', true)
 
-    node = @getDOMNode().querySelector '#js-expand-btn'
-    @burst = new mojs.Burst
-      parent:     node
-      left: '15%',   y: '50%'
-      radius:     30: 70
-      degree:     160
-      angle:      10
-      count:      4
-      children {
-        shape:      'line'
-        delay:      1000
-        stroke:     'white'
-        strokeWidth: 4: 0
-        duration:   400
-        radius:     4
-      }
-    @burst.replay()
+  #   node = @getDOMNode().querySelector '#js-expand-btn'
+  #   @burst = new mojs.Burst
+  #     parent:     node
+  #     left: '15%',   y: '50%'
+  #     radius:     30: 70
+  #     degree:     160
+  #     angle:      10
+  #     count:      4
+  #     children:   {
+  #       shape:      'line'
+  #       stroke:     'white'
+  #       strokeWidth: 4: 0
+  #       scale:      1
+  #       duration:   400
+  #       delay:      5000
+  #       radius:     4
+  #     }
+  #   @burst.replay()
+  #   console.log 'yep'
 
   _redirect:->
     if @context.router.getCurrentPath() is '/tutorials/'
