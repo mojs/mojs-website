@@ -25,6 +25,7 @@ require './path-easing-styles.styl'
 
 window.onbeforeunload = ->
   post = document.getElementById 'post'
+  return if !post
   sessionStorage.setItem('beforeUnloadPostHeight', post.offsetHeight)
 
 module.exports = React.createClass

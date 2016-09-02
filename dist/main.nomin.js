@@ -35267,6 +35267,9 @@
 	window.onbeforeunload = function() {
 	  var post;
 	  post = document.getElementById('post');
+	  if (!post) {
+	    return;
+	  }
 	  return sessionStorage.setItem('beforeUnloadPostHeight', post.offsetHeight);
 	};
 	
