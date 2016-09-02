@@ -14,18 +14,18 @@ module.exports = React.createClass
     isDownload = if @props.download is true then true else false
 
     if @props.isDisabled or !@props.link
-      <Tappable href="#{@props.link}" className="#{classAttr}" download="#{isDownload}" onTap=@props.onTap>
+      <Tappable href="#{@props.link}" className="#{classAttr}" download={isDownload} onTap=@props.onTap>
         { @props.children }
         <span className="link__underline"></span>
       </Tappable>
     else
       if @props.link.match(/https?/) or @props.link.match(/\.[a-zA-Z0-9]{3}$/)
-        <a href="#{@props.link}" className="#{classAttr}" download="#{isDownload}">
+        <a href="#{@props.link}" className="#{classAttr}" download={isDownload}>
           { @props.children }
           <span className="link__underline"></span>
         </a>
       else
-        <Link to="#{@props.link}" className="#{classAttr}" download="#{isDownload}">
+        <Link to="#{@props.link}" className="#{classAttr}" download={isDownload}>
           { @props.children }
           <span className="link__underline"></span>
         </Link>

@@ -8,6 +8,7 @@ RewriteRule ^ - [L]
 
 #Account page redirects
 RewriteRule ^(.*)?dist(.*)?$ dist$2 [L]
+RewriteRule ^(.*)?favicons(.*)?$ favicons$2 [L]
 RewriteRule ^(.*)?gifs(.*)?$ gifs$2 [L]
 RewriteRule ^(.*)?images(.*)?$ images$2 [L]
 RewriteRule ^(.*)?app(.*)?$ app$2 [L]
