@@ -23984,9 +23984,9 @@
 	    }, " Tutorials ")), React.createElement("div", {
 	      "className": "header__links-inner"
 	    }, React.createElement(UniteLink, {
-	      "link": "https://github.com/legomushroom/mojs/blob/master/api/index.md",
+	      "link": "https://github.com/legomushroom/mojs/blob/master/api/readme.md",
 	      "className": "header__link"
-	    }, " APIs ")), React.createElement("div", {
+	    }, " Docs ")), React.createElement("div", {
 	      "className": "header__links-inner"
 	    }, React.createElement(UniteLink, {
 	      "link": "https://github.com/legomushroom/mojs",
