@@ -49,7 +49,7 @@ Header = React.createClass
           </div>
           <div className="header__links-inner">
             <UniteLink
-              link="https://github.com/legomushroom/mojs"
+              link="https://github.com/legomushroom/mojs#demos"
               className="header__link"> Demos </UniteLink>
           </div>
           <div className="header__links-inner">
