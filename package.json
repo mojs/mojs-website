@@ -47,7 +47,7 @@
     "react-router": "^0.13.3",
     "react-router-component": "^0.24.4",
     "react-sticky": "^2.1.1",
-    "react-tappable": "^0.5.0-beta.3",
+    "react-tappable": "^0.5.7",
     "tapjs": "^1.0.6"
   },
   "devDependencies": {
