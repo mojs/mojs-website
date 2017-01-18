@@ -284,7 +284,7 @@ const BurstPage = new React.createClass({
           <h2> then, tune, generate and play </h2>
 
           <p>
-            You can make <span className="highlight">then</span> state chains, <span className="highlight">tune</span> and <span className="highlight">generate</span> any <span className="highlight">Burst</span> the same as you do with <span className="highlight">Shape</span> or <span className="highlight">ShapeSwril</span>. Also, since the <span className="highlight">Burst</span> is merely a <span className="highlight">ShapeSwirl</span> under the hood, you can use any <span className="highlight">tween</span> interface public method like <span className="highlight">play</span>, <span className="highlight">setProgress</span>, <span className="highlight">replay</span> etc (click somewhere to see):
+            You can make <span className="highlight">then</span> state chains, <span className="highlight">tune</span> and <span className="highlight">generate</span> any <span className="highlight">Burst</span> the same as you do with <span className="highlight">Shape</span> or <span className="highlight">ShapeSwirl</span>. Also, since the <span className="highlight">Burst</span> is merely a <span className="highlight">ShapeSwirl</span> under the hood, you can use any <span className="highlight">tween</span> interface public method like <span className="highlight">play</span>, <span className="highlight">setProgress</span>, <span className="highlight">replay</span> etc (click somewhere to see):
           </p>
 
           <CodeSample pen="dbf4904aa71f428a38401610e1c8f863">
