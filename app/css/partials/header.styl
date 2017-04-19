@@ -3,7 +3,7 @@
 
 .headroom
   transition all .3s ease-out
-  
+
 {el = '.header'}
   position    fixed
   z-index     headerLayer
@@ -12,6 +12,10 @@
   opacity     0
   transition  all .3s ease-out
   nw          0
+  background-color rgba(255,255,255,.97)
+  padding-bottom   1.875rem
+  +mobile()
+    padding-bottom 3.45rem
   .is-safari &
     font-weight 900
   &.is-show-menu
@@ -43,7 +47,7 @@
       text-align  center
       padding     2*gs gs
       // opacity     0
-      border-radius BRADIUS
+      border-radius  0 BRADIUS
       border-top-right-radius 0
       transition  opacity .3s ease-out, top 0s linear
       transition-delay 0s, .3s
@@ -101,4 +105,4 @@
 
 
 
-  
+
