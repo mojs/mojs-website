@@ -17,7 +17,7 @@ module.exports = React.createClass
         children:
           fill:         ['deeppink', 'cyan', 'orange']
           radius:       7
-    
+
     @burst.replay()
 
   render:->
@@ -33,7 +33,7 @@ module.exports = React.createClass
               <pre>
                 <PrismCode className="language-javascript api-demo__code api-demo__code--normal">
                   { """var burst = new Burst({
-                        radius:   { 15: 50 }
+                        radius:   { 15: 50 },
                         children: {
                           fill:   [ 'deeppink', 'cyan', 'orange' ],
                       }
@@ -42,7 +42,7 @@ module.exports = React.createClass
                 </PrismCode>
                 <PrismCode className="language-javascript api-demo__code api-demo__code--mobile">
                   { """var burst = new Burst({
-                        radius:   { 15: 50 }
+                        radius:   { 15: 50 },
                         children: {
                           fill:   [ 'deeppink', 'cyan', 'orange' ],
                         }
