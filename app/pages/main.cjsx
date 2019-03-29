@@ -92,7 +92,7 @@ Main = React.createClass
           <div className="code-block__header">Quick start:</div>
           <div className="code-block__body main-page__quick-start-normal">
             <PrismCode className="language-markup">
-              {'<script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>'}
+              {'<script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>'}
             </PrismCode>
           </div>
           <div className="code-block__body main-page__quick-start-mobile">
@@ -143,7 +143,7 @@ Main = React.createClass
     </div>
 
 # <pre className="code-block__body">
-#   {'<script src="http://cdn.jsdelivr.net/mojs/0.119.0/mo.min.js"></script>'}
+#   {'<script src="https://cdn.jsdelivr.net/mojs/0.119.0/mo.min.js"></script>'}
 # </pre>
 
 module.exports = Main

@@ -29,7 +29,7 @@ Download = React.createClass
             <div className="code-block__header">LATEST VERSION:</div>
             <UniteLink
               type="button"
-              link="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"
+              link="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"
               download
               className="button--blue"> Download </UniteLink>
         </div>
@@ -38,7 +38,7 @@ Download = React.createClass
           <div className="code-block__header">CDN:</div>
           <div className="code-block__body download-page__quick-start-normal">
             <PrismCode className="language-markup">
-              {'<script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>'}
+              {'<script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>'}
             </PrismCode>
           </div>
           <div className="code-block__body download-page__quick-start-mobile">
@@ -307,7 +307,7 @@ Download = React.createClass
     </div>
 
 # <pre className="code-block__body">
-#   {'<script src="http://cdn.jsdelivr.net/mojs/0.119.0/mo.min.js"></script>'}
+#   {'<script src="https://cdn.jsdelivr.net/mojs/0.119.0/mo.min.js"></script>'}
 # </pre>
 
 module.exports = Download
