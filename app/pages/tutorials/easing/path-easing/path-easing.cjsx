@@ -181,7 +181,7 @@ module.exports = React.createClass
           <p>
             If you think about it, this common bounce easing graph represents
             composition of an object's parameters like the material it is made of or
-            it's weight or acceleration.
+            its weight or acceleration.
             Savvy readers starting to grasp the main issue of this widespread easing function
             - you are unable to change individual properties on demand, so it is quite limited.
           </p>
